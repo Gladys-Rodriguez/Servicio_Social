@@ -87,6 +87,8 @@
         </div>
     </div>
 
+    <!-- End Section Header principal -->
+
 
 
     @yield('content')
