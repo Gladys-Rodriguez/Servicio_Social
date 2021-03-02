@@ -30,6 +30,37 @@
 </head>
 <body>
 
+   <!-- Header -->
+   <header class="d-none d-md-block">
+    <nav class="navbar fixed-top" role="navigation" id="barraGobmx">
+        <div class="container u-noPaddingContainer">
+            <a class="navbar-brand" style="padding-left: 8px;" href="https://www.gob.mx/">
+                <img src="{{asset('img/gobmxlogo.svg')}}" height="29" alt="Página de inicio, Gobierno de México">
+            </a>
+            <div class="text-rigth barraGobmx-enlaces">
+                <a href="https://www.gob.mx/tramites" title="Trámites" class="nav-link">
+                    Trámites
+                </a>
+                <a href="https://www.gob.mx/gobierno" title="Gobierno" class="nav-link">
+                    Gobierno
+                </a>
+                <a href="https://www.gob.mx/participa" title="Participación Ciudadana" class="nav-link">
+                    Participa
+                </a>
+                <a href="https://datos.gob.mx" title="Datos Abiertos" class="nav-link">
+                    Datos
+                </a>
+                <a href="https://www.gob.mx/busqueda">
+                <span class="sr-only nav-link">Búsqueda</span><svg class="svg-inline--fa fa-search fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg><!-- <i class="fas fa-search"></i> -->
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+   <!-- Fin Header -->
+
+   <!-- Inicio Menu Principal -->
     <div class="u-noPaddingContainer contenedorGobierno">
         <div class="container">
             <div class="row no-gutters">
@@ -87,15 +118,15 @@
         </div>
     </div>
 
-    <!-- End Section Header principal -->
+    <!-- End Menu principal -->
 
     <!-- Barra de Navegación -->
     <nav class="navbar navbar-expand-xl navbar-dark d-block d-xl-flex justify-content-center" id="menu-principal">
         <div class="u-noPaddingContainer">
 
             <!-- Banderin -->
-            <p class="nav-link banderin u-oculto">
-                <img src="" alt="" class="banderin-img">
+            <p class="nav-link banderin  ">
+                <img src="{{asset('img/banderin.png')}}" alt="" class="banderin-img">
             </p>
 
 
