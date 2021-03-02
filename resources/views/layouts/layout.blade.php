@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class=class="fontawesome-i2svg-active fontawesome-i2svg-complete js svg wf-opensans-n3-active wf-opensans-i3-active wf-opensans-i4-active wf-opensans-n4-active wf-opensans-n6-active wf-opensans-n7-active wf-active" style="font-size: 12 px;">
 <head>
     <!--  Scripts -->
     <script src="{{ asset('js/app.js') }} defer"></script>
@@ -89,9 +89,104 @@
 
     <!-- End Section Header principal -->
 
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-xl navbar-dark d-block d-xl-flex justify-content-center" id="menu-principal">
+        <div class="u-noPaddingContainer">
 
+            <!-- Banderin -->
+            <p class="nav-link banderin u-oculto">
+                <img src="" alt="" class="banderin-img">
+            </p>
+
+
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span> Menú principal
+            </button>
+
+            <div class="navbar-collapse d-xl-flex justify-content-md-around collapse" id="navbarSupportedContent" style="">
+                <ul class="navbar-nav">
+    <li class="nav-item">
+        <a class="nav-link" href="/" >
+          Inicio
+        </a>
+    </li>
+    <li class="nav-item dropdown">
+     <a class="nav-link dropdown-toggle" title="Menú Conócenos" href="#" id="Dropdown11" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Servicio Social
+     </a>
+
+     <!-- Sub menu -->
+     <ul class="dropdown-menu" aria-labelledby="Dropdown11">
+         <li>
+       <a class="dropdown-item" href="https://www.ipn.mx/imageninstitucional/" title="Imagen Institucional">
+        <!--OPCION DE SUBMENU-->
+        </a>
+    </li>
+        <!-- Fin Sub menu -->
+    </ul>
+    </li>
+
+    <li class="nav-item dropdown">
+     <a class="nav-link dropdown-toggle" title="Menú Oferta Educativa" href="#" id="Dropdown14" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Prácticas y Visitas Escolares
+     </a>
+
+     <!-- Inicio Sub menú -->
+     <ul class="dropdown-menu" aria-labelledby="Dropdown14">
+         <li>
+       <a class="dropdown-item" href="https://admision.ipn.mx" title="Admisión">
+        <!--OPCION DE SUBMENU-->
+        </a>
+        </li>
+     <!-- Fin sub menú -->
+    </ul>
+    </li>
+
+    <li class="nav-item dropdown">
+     <a class="nav-link dropdown-toggle" title="Menú Estudiantes" href="#" id="Dropdown15" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Becas
+     </a>
+
+     <!-- Inicio sub menú -->
+     <ul class="dropdown-menu" aria-labelledby="Dropdown15">
+         <li>
+       <a class="dropdown-item" href="estudiantes/tramites.html" title="Trámites escolares">
+       <!--OPCION DE SUBMENU-->
+        </a>
+        </li>
+     <!-- Fin sub menú -->
+    </ul>
+    </li>
+
+
+
+        <!-- Opciones de accesibilidad flotantes -->
+        <div id="contenedorAccesibilidad-scroll" class="contenedorAccesibilidad u-oculto">
+            <svg class="svg-inline--fa fa-accessible-icon fa-w-14" aria-hidden="true" data-prefix="fab" data-icon="accessible-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M423.9 255.8L411 413.1c-3.3 40.7-63.9 35.1-60.6-4.9l10-122.5-41.1 2.3c10.1 20.7 15.8 43.9 15.8 68.5 0 41.2-16.1 78.7-42.3 106.5l-39.3-39.3c57.9-63.7 13.1-167.2-74-167.2-25.9 0-49.5 9.9-67.2 26L73 243.2c22-20.7 50.1-35.1 81.4-40.2l75.3-85.7-42.6-24.8-51.6 46c-30 26.8-70.6-18.5-40.5-45.4l68-60.7c9.8-8.8 24.1-10.2 35.5-3.6 0 0 139.3 80.9 139.5 81.1 16.2 10.1 20.7 36 6.1 52.6L285.7 229l106.1-5.9c18.5-1.1 33.6 14.4 32.1 32.7zm-64.9-154c28.1 0 50.9-22.8 50.9-50.9C409.9 22.8 387.1 0 359 0c-28.1 0-50.9 22.8-50.9 50.9 0 28.1 22.8 50.9 50.9 50.9zM179.6 456.5c-80.6 0-127.4-90.6-82.7-156.1l-39.7-39.7C36.4 287 24 320.3 24 356.4c0 130.7 150.7 201.4 251.4 122.5l-39.7-39.7c-16 10.9-35.3 17.3-56.1 17.3z"></path></svg><!-- <i class="fab fa-accessible-icon"></i> -->
+            <a class="btn--accesibilidad contraste">
+                <svg class="svg-inline--fa fa-adjust fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="adjust" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"></path></svg><!-- <i class="fas fa-adjust"></i> -->
+            </a>
+            <a class="btn--accesibilidad aumentaLetra">A+</a>
+            <a class="btn--accesibilidad reduceLetra">A-</a>
+            <a class="btn--accesibilidad resetLetra">A </a>
+        </div>
+    </nav>
+    <!-- Fin barra de navegación -->
 
     @yield('content')
+
+
+<!-- Herramientas JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/js/all.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/featherlight/1.7.13/featherlight.min.js"></script>
+<script src="{{asset('js/scripts.min.js')}}"></script>
+
+
+<!-- Fin de JS -->
 
 </body>
 </html>
