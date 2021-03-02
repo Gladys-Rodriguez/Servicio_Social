@@ -141,8 +141,13 @@
           Inicio
         </a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/Servicio_Social" >
+          Servicio
+        </a>
+    </li>
     <li class="nav-item dropdown">
-     <a class="nav-link dropdown-toggle" title="Menú Conócenos" href="#" id="Dropdown11" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     <a class="nav-link dropdown-toggle" href="/Servicio_Social" id="Dropdown11" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Servicio Social
      </a>
 
