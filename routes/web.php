@@ -17,4 +17,7 @@ Route::get('/', function () {
     return view('home');
 }) -> name('home');
 
+Route::get('/Servicio_Social', function (){
+    return view('Servicio');
+}) -> name('Servicio');
 
