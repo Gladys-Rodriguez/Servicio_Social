@@ -146,21 +146,22 @@
           Servicio
         </a>
     </li>
-    <li class="nav-item dropdown">
+<!-- <li class="nav-item dropdown">
      <a class="nav-link dropdown-toggle" href="/Servicio_Social" id="Dropdown11" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Servicio Social
      </a>
+-->
 
      <!-- Sub menu -->
-     <ul class="dropdown-menu" aria-labelledby="Dropdown11">
+<!--     <ul class="dropdown-menu" aria-labelledby="Dropdown11">
          <li>
        <a class="dropdown-item" href="https://www.ipn.mx/imageninstitucional/" title="Imagen Institucional">
-        <!--OPCION DE SUBMENU-->
-        </a>
+-->        <!--OPCION DE SUBMENU-->
+<!--        </a>
     </li>
-        <!-- Fin Sub menu -->
-    </ul>
-    </li>
+-->        <!-- Fin Sub menu -->
+<!--    </ul>
+    </li> -->
 
     <li class="nav-item dropdown">
      <a class="nav-link dropdown-toggle" title="Menú Oferta Educativa" href="#" id="Dropdown14" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
