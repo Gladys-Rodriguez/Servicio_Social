@@ -21,7 +21,9 @@
     <link rel="stylesheet" href="{{asset('css/estilos.min.css') }}">
     <link rel="stylesheet" href="{{asset('css/estilo-compresion.min.css') }}">
     <link rel="stylesheet" href="{{asset('css/jssorStyle.css') }}">
+
     <!-- Fin Estilos -->
+    <link rel="stylesheet" href="{{asset('css/style_acceso.css') }}">
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -219,12 +221,20 @@
     <!-- Fin del contenedor del nombre -->
 
 
-    @yield('content')
 
+
+
+    <div class="contenido--main">
+        @yield('content')
+    </div>
 
     <!-- Footer-->
     <div class="bg--blanco">
+
+
+
         <div class="container  ">
+
         <div class="fa-4x text-center">
 
         <a href="https://www.facebook.com/ricardo.floresmagon.1023611" target="_blank">
