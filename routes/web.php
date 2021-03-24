@@ -42,3 +42,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/', function () {
     return view('Inicio');
 }) -> name('Inicio');
+
+//Ruta para Formatos Administrativos
+Route::get('/FormatosAdministrativos', function (){
+    return view('FormatosA');
+}) -> name('FormatosA');
+
+
