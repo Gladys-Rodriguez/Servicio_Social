@@ -22,7 +22,7 @@ class DatosServicio extends Migration
             $table->date('Fecha_Termino');
             $table->date('Fecha_Inscripcion');
 
-            $table->primary('No_Registro') -> unique();
+            $table->primary('No_Registro');
             $table->foreign('Boleta_DS')->references('No_Boleta')->on('Alumno_Datos')->onDelete('cascade');
             $table->foreign('Clave_Depen_DS')->references('Clave_Dependencia')->on('Datos_Dependencias')->onDelete('cascade');
 
