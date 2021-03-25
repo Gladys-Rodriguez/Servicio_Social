@@ -266,3 +266,15 @@ i{
         margin-right:auto;
     }
 }
+
+
+.content{
+    margin-left: 0px;
+    /*background: url("../img/cecyt13/banner.png") no-repeat;*/
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    background-attachment: fixed;
+
+}
