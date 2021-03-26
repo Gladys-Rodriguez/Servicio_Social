@@ -1,0 +1,77 @@
+.TituloFA{
+    background-color: white;
+    border: 2px solid black;
+    padding: 15px;
+    text-align: center;
+    margin: 20px auto;
+    width: 400px;
+}
+
+
+#texto{
+    font: bold 35px Tahoma;
+    width:100%;
+    color: #952F57;
+}
+
+
+.boton {
+    text-decoration: none;
+    text-align:center;
+    display: inline;
+    padding: 10px 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #952F57;
+    border-radius: 6px;
+    border: 2px solid #952F57;
+    width:400px;
+    height:60px;
+
+}
+
+.divboton{
+    width:400px;
+    height:60px;
+    float: left;
+    padding: 17px 32px;
+}
+
+.padre{
+    background-color: white;
+    border: 2px solid black;
+    padding: 15px;
+    margin: 20px auto;
+    width: 950px;
+    height:200px;
+}
+
+button:hover{
+    color: #952F57;
+    background-color: #ffffff;
+}
+
+button:active{
+    color: #952F57;
+    background-color: #8a8b8fe3;
+}
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a:hover{
+    color: #952F57;
+    background-color: #ffffff;
+}
+
+a:active{
+    color: #952F57;
+    background-color: #8a8b8fe3;
+}
+
+body{
+    background-color: grey;
+}
