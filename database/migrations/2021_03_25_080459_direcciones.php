@@ -15,13 +15,15 @@ class Direcciones extends Migration
     {
         //
         Schema::create('Direcciones', function(Blueprint $table){
-            $table->increments('Id_direccion');
+            $table->integer('Id_direccion');
             $table->string('Alcaldia');
             $table->string('Colonia');
             $table->string('Calle');
             $table->string('Num_ext');
             $table->string('Num_int')->nullable();
             $table->integer('CP');
+
+            $table->primary('Id_direccion');
 
         });
     }
@@ -37,3 +39,4 @@ class Direcciones extends Migration
         Schema::dropIfExists('Direcciones');
     }
 }
+

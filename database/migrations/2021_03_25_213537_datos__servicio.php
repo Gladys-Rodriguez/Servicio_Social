@@ -15,18 +15,16 @@ class DatosServicio extends Migration
     {
         //
         Schema::create ('Datos_Servicio', function(Blueprint $table){
-            $table->integer('No_Registro')->notnull();
-            $table->integer('Boleta_DS');
-            $table->integer('Clave_Depen_DS');
+            $table->integer('No_Registro')->notnull()->unique();
             $table->date('Fecha_Inicio');
             $table->date('Fecha_Termino');
             $table->date('Fecha_Inscripcion');
+            $table->integer('Clave_Depen_DS');
+            $table->integer('No_Boleta_DS');
 
             $table->primary('No_Registro');
-            $table->foreign('Boleta_DS')->references('No_Boleta')->on('Alumno_Datos')->onDelete('cascade');
             $table->foreign('Clave_Depen_DS')->references('Clave_Dependencia')->on('Datos_Dependencias')->onDelete('cascade');
-
-
+            $table->foreign('No_Boleta_DS')->references('No_Boleta')->on('Alumno_Datos')->onDelete('cascade');
         });
     }
 

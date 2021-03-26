@@ -22,7 +22,7 @@ class DatosDependencias extends Migration
             $table->string('Am_Responsable', 30);
             $table->string('Telefono', 30);
             $table->string('email')->unique();
-            $table->integer('Direc_Depen')->unsigned();
+            $table->integer('Direc_Depen');
 
             $table->primary('Clave_Dependencia');
             $table->foreign('Direc_Depen')->references('Id_direccion')->on('Direcciones')->onDelete('cascade');
