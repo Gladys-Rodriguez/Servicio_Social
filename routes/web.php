@@ -49,3 +49,4 @@ Route::get('/FormatosAdministrativos', function (){
 }) -> name('FormatosA');
 
 
+/*Route::get('/', [App\Http\Controllers\AlumnoController::class, 'muestra']);*/
