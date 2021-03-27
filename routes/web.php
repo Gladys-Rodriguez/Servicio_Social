@@ -42,3 +42,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/', function () {
     return view('Inicio');
 }) -> name('Inicio');
+
+/*Route::get('/', [App\Http\Controllers\AlumnoController::class, 'muestra']);*/
