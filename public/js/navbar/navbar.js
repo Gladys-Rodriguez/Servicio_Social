@@ -1,7 +1,8 @@
 /* ==== MENU SHOW Y HIDDEN ==== */
 const navMenu = document.getElementById('nav-menu'),
       toggleMenu = document.getElementById('nav-toggle'),
-      closeMenu = document.getElementById('nav-close')
+      closeMenu = document.getElementById('nav-close'),
+      ContePrin = document.getElementById('conte-prin')
 
 
 /* SHOW */
@@ -13,6 +14,8 @@ toggleMenu.addEventListener('click', ()=>{
 closeMenu.addEventListener('click', ()=>{
     navMenu.classList.remove('show')
 })
+
+
 /* ==== ACTIVE AND REMOVE MENU ====*/
 const navLink = document.querySelectorAll('.nav_link')
 

@@ -50,3 +50,11 @@ Route::get('/FormatosAdministrativos', function (){
 
 
 /*Route::get('/', [App\Http\Controllers\AlumnoController::class, 'muestra']);*/
+
+//Ruta Registro Alumno
+Route::get('/RegistroAlumno', function (){
+    return view('Alumno.RegistroAlumno');
+}) -> name('RegistroAlumno');
+
+//Ruta post controlador de registro alumno
+Route::post('RegistroAlumno', [App\Http\Controllers\AlumnoController::class, 'create'])->name('RegistroAlumnno.create');

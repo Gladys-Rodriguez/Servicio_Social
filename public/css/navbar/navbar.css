@@ -8,7 +8,7 @@
     /* === COLORES === */
     --white-color: #E6E7E9;
     --blackboard-color: #565656;
-    --oxblood-color: #76323F;
+    --oxblood-color: #76323f;
     --tan-color: #C09F80;
     --grain-color: #D7CEC7;
     --charcoal-color: #3C3C3C;
@@ -268,13 +268,3 @@ i{
 }
 
 
-.content{
-    margin-left: 0px;
-    /*background: url("../img/cecyt13/banner.png") no-repeat;*/
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    height: 100vh;
-    background-attachment: fixed;
-
-}

@@ -7,9 +7,11 @@
 
     <!-- ==== CONTENIDO CSS === -->
     <link rel="stylesheet" href="{{asset('css/navbar/navbar.css')}}">
+    @yield('css')
+
     <!-- ==== FIN CSS === -->
 
-    <title>Document</title>
+    <title>@yield('title')</title>
 </head>
 <header class="header">
     <a href="#" class="header_logo"> APOYOS EDUCATIVOS</a>
@@ -17,6 +19,9 @@
     <nav class="nav" id="nav-menu">
         <div class="nav_content bd-grid">
             <ion-icon name="close-outline" class="nav_close" id="nav-close"></ion-icon>
+
+
+
             <div class="nav_profile">
                 <div class="nav_img">
                     <img src="{{asset('img/logo/logoSAE3.png')}}" alt="">
@@ -50,11 +55,12 @@
 <body>
 
 
-    <main>
+    <main class="conte_prin" id="conte-prin">
     @yield('content')
     </main>
 
 
+    @yield('script')
     <!-- ==== IONICONS ==== -->
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <!-- ==== CONTENIDO JS ==== -->
