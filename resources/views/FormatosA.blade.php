@@ -22,7 +22,7 @@
 
     <div class="padre">
         <div class="divboton">
-            <button class="boton"><a href="http://laweb.com" target="_blank">RELACIÓN DE INICIOS</a></button>
+            <button class="boton"><a href="{{url('/rela_inicio') }}" target="_blank">RELACIÓN DE INICIOS</a></button>
         </div>
 
         <div class="divboton">
