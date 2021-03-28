@@ -102,6 +102,13 @@ Route::post('/upload', [App\Http\Controllers\FilesController::class, 'store'])->
 
 
 
-//Ruta para Formatos Administrativos
+//Ruta para Formatos Administrativos prueba de archivos
+Route::get('/FormatosAdministrativosPA', function (){
+    return view('FormatosAPruebaArchivos');
+}) -> name('FormatosAPruebaArchivos');
+
+//Ruta para prueba de subida de archivos
+Route::get('/FormatosAdministrativosPA', [App\Http\Controllers\FormatosAController::class, 'index'])->name('FormatosAdministrativosPA');
+Route::post('/upload', [App\Http\Controllers\FormatosAFilesController::class, 'store'])->name('user.files.store');
 
 

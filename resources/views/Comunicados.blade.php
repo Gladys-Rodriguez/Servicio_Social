@@ -20,6 +20,31 @@
     <br>
 
     <div class="padre">
+        <ul class="slider">
+        <li id="slide1">
+        <img src="{{ asset('img/carrusel/1.jpeg')}}">
+        </li>
 
+        <li id="slide2">
+        <img src="{{ asset('img/carrusel/2.png')}}">
+        </li>
+
+        <li id="slide3">
+        <img src="{{ asset('img/carrusel/3.jpg')}}">
+        </li>
+
+        </ul>
+
+        <ul class="menu">
+            <li>
+                <a href="#slide1">1</a>
+            </li>
+            <li>
+                <a href="#slide2">2</a>
+            </li>
+            <li>
+                <a href="#slide3">3</a>
+            </li>
+        </ul>
 
     </div>

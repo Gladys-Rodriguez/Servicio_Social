@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Informes Trimestrales') }}</div>
+                <div class="card-header">{{ __('Relacion de inicios') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -18,7 +18,7 @@
                     <input type="file" class="form-control" name="files[]" multiple>
 
                     <button type="submit" class="mt-4 btn btn-primary float-right"> Subir </button>
-                    
+
 
                     </form>
 
