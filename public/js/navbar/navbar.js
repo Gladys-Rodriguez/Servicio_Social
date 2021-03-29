@@ -2,17 +2,26 @@
 const navMenu = document.getElementById('nav-menu'),
       toggleMenu = document.getElementById('nav-toggle'),
       closeMenu = document.getElementById('nav-close'),
-      ContePrin = document.getElementById('conte-prin')
+      headerLog = document.getElementById('header-logo'),
+      subMenu =  document.getElementById('sub_menu')
 
 
 /* SHOW */
 toggleMenu.addEventListener('click', ()=>{
     navMenu.classList.toggle('show')
+    headerLog.classList.toggle('hide')
+    toggleMenu.classList.toggle('hide')
+    //subMenu.classList.slideToggle()
+
 })
+
+
 
 /* HIDDEN */
 closeMenu.addEventListener('click', ()=>{
     navMenu.classList.remove('show')
+    headerLog.classList.remove('hide')
+    toggleMenu.classList.remove('hide')
 })
 
 
@@ -26,6 +35,11 @@ function linkAction(){
 
     //Remove menu mobile
     navMenu.classList.remove('show') //desaparece el menu al dar click
+    headerLog.classList.remove('hide')
+    toggleMenu.classList.remove('hide')
+
 }
 
 navLink.forEach(n => n.addEventListener('click', linkAction))
+
+
