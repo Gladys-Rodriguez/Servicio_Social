@@ -14,7 +14,7 @@
     <title>@yield('title')</title>
 </head>
 <header class="header">
-    <a href="#" class="header_logo" id="header-logo"> APOYOS EDUCATIVOS</a>
+    <a href="#" class="header_logo"> APOYOS EDUCATIVOS</a>
     <ion-icon name="menu-outline" class="header_toggle" id="nav-toggle"></ion-icon>
     <nav class="nav" id="nav-menu">
         <div class="nav_content bd-grid">
@@ -36,21 +36,9 @@
            <div class="nav_menu">
                <ul class="nav_list">
                    <li class="nav_item"><a href="#" class="nav_link active"><i class="fas fa-home"></i>INICIO</a></li>
-
-                   <li class="nav_item dropdown">
-
-                        <a href="#" class="nav_link dropdown_link"><i class="far fa-handshake"> SERVICIO SOCIAL</i><i class='bx bxs-chevron-down dropdown_icon'></i></a>
-
-                        <ul class="dropdown_menu">
-                            <li class="dropdown_item"><a href="#" class="nav_link">Submit 1</a></li>
-                            <li class="dropdown_item"><a href="#" class="nav_link">Submit 2</a></li>
-                            <li class="dropdown_item"><a href="#" class="nav_link">Submit 3</a></li>
-
-                        </ul>
-
-                  </li>
+                   <li class="nav_item"><a href="#" class="nav_link"><i class="fas fa-users"></i>SERVICIO SOCIAL</a></li>
                    <li class="nav_item"><a href="#" class="nav_link"><i class="fas fa-coins"></i>BECAS</a></li>
-                   <li class="nav_item"><a href="#" class="nav_link"><i class="fas fa-bus"></i>PRACTICAS Y VISITAS</a></li>
+                   <li class="nav_item"><a href="#" class="nav_link"><i class="fas fa-bus"></i>PRACTICAS Y VISITAS ESCOLARES</a></li>
 
                 </ul>
            </div>
@@ -68,7 +56,6 @@
 
 
     <main class="conte_prin" id="conte-prin">
-
     @yield('content')
     </main>
 
@@ -78,9 +65,6 @@
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <!-- ==== CONTENIDO JS ==== -->
     <script src="{{asset('js/navbar/navbar.js')}}"></script>
-    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-
-
     <!-- ==== FIN JS ==== -->
 </body>
 </html>

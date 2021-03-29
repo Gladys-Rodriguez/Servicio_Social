@@ -1,4 +1,4 @@
-@extends('layouts.navbar')
+@extends('layouts.navbarsub')
 
 
 @section('title', 'Registro')
@@ -15,12 +15,13 @@
    <!-- <img src="img/shape.png" class="square" alt="" /> -->
     <div class="form">
       <div class="contact-info">
-        <h3 class="title">Datos Personales</h3>
+        <h3 class="title">Let's get in touch</h3>
         <p class="text">
-          Te pedimos que ingreses tus datos personales para el correcto registro.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+          dolorum adipisci recusandae praesentium dicta!
         </p>
 
-        <!--<div class="info">
+        <div class="info">
           <div class="information">
             <img src="img/location.png" class="icon" alt="" />
             <p>92 Cherry Drive Uniondale, NY 11553</p>
@@ -33,7 +34,7 @@
             <img src="img/phone.png" class="icon" alt="" />
             <p>123-456-789</p>
           </div>
-        </div> -->
+        </div>
 
         <div class="social-media">
           <p>Connect with us :</p>
@@ -44,12 +45,12 @@
             <a href="#">
               <i class="fab fa-twitter"></i>
             </a>
-            <!--<a href="#">
-              <i class=""></i>
+            <a href="#">
+              <i class="fab fa-instagram"></i>
             </a>
             <a href="#">
-              <i class=""></i>
-            </a>-->
+              <i class="fab fa-linkedin-in"></i>
+            </a>
           </div>
         </div>
       </div>
