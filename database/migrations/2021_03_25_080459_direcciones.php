@@ -15,6 +15,7 @@ class Direcciones extends Migration
     {
         //
         Schema::create('Direcciones', function(Blueprint $table){
+
             $table->integer('Id_direccion');
             $table->string('Alcaldia');
             $table->string('Colonia');
