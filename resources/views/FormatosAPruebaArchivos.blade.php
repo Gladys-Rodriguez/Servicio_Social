@@ -21,6 +21,13 @@
     <br>
 
     <div class="padre">
+    <form method="POST" action="{{ route('user.files.store')  }}" enctype="multipart/form-data">
+                    @csrf
+                    <input type="file" class="form-control" name="files[]" multiple>
+
+                    <button type="submit" class="mt-4 btn btn-primary float-right"> Subir </button>
+    </form>
+
         <div class="divboton">
             <button class="boton"><a href="{{url('/rela_inicio') }}" target="_blank">RELACIÓN DE INICIOS</a></button>
         </div>
@@ -44,6 +51,11 @@
         <div class="divboton">
         <button class="boton"><a href="http://laweb.com" target="_blank">OFICIO DE RESGUARDO</a></button>
         </div>
+    </form>
+
+
+    </form>
+
     </div>
 
 
@@ -56,10 +68,4 @@
 
 </body>
 </html>
-
-
-
-
-
-
 
