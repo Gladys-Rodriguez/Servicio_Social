@@ -10,7 +10,7 @@ class Dato_Servicio extends Model
     use HasFactory;
     protected $table = "Datos_Servicio";
     protected $primaryKey = 'No_Registro';
-    protected $foreignKey = 'No_Boleta_DS';
+    //protected $foreignKey = 'No_Boleta_DS';
     //protected $foreignKey = 'Clave_Depen_DS';
 
 
