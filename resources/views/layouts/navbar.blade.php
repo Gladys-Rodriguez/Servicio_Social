@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- ==== CONTENIDO CSS === -->
-    <link rel="stylesheet" href="{{asset('css/navbar/navbar.css')}}">
+    <link rel="stylesheet" href="{{asset('css/layout/navbar.css')}}">
     @yield('css')
 
     <!-- ==== FIN CSS === -->
@@ -77,7 +77,7 @@
     <!-- ==== IONICONS ==== -->
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <!-- ==== CONTENIDO JS ==== -->
-    <script src="{{asset('js/navbar/navbar.js')}}"></script>
+    <script src="{{asset('js/layouts/navbar.js')}}"></script>
     <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 
 

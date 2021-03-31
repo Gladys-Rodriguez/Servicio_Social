@@ -4,7 +4,7 @@
 @section('title', 'Registro')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/Alumno/FormularioAlumno.css')}}">
+<link rel="stylesheet" href="{{asset('css/Pantallas_Alumno_Servicio/FormularioAlumno.css')}}">
 @endsection
 
 @section('content')
@@ -127,5 +127,5 @@
 @section('script')
 <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"> </script>
 
-<script src="{{asset('js/Alumno/FormularioAlumno.js')}}"></script>
+<script src="{{asset('js/Pantallas_Alumno_Servicio/FormularioAlumno.js')}}"></script>
 @endsection
