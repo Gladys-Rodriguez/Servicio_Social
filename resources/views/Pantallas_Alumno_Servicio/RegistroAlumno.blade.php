@@ -1,26 +1,29 @@
-@extends('layouts.navbar')
+@extends('Pantallas_Alumno_Servicio.Layout_Alumno.Layout_Alumno')
 
 
 @section('title', 'Registro')
 
 @section('css')
+<!--
 <link rel="stylesheet" href="{{asset('css/Pantallas_Alumno_Servicio/FormularioAlumno.css')}}">
+-->
 @endsection
 
 @section('content')
-<br>
 
+<!--<br>
 <section class="form section" id="forms">
 <div class="container" bd-grid>
+-->
    <!-- <span class="big-circle"></span> -->
    <!-- <img src="img/shape.png" class="square" alt="" /> -->
-    <div class="form">
+ <!--   <div class="form">
       <div class="contact-info">
         <h3 class="title">Datos Personales</h3>
         <p class="text">
           Te pedimos que ingreses tus datos personales para el correcto registro.
         </p>
-
+    -->
         <!--<div class="info">
           <div class="information">
             <img src="img/location.png" class="icon" alt="" />
@@ -35,7 +38,7 @@
             <p>123-456-789</p>
           </div>
         </div> -->
-
+<!--
         <div class="social-media">
           <p>Connect with us :</p>
           <div class="social-icons">
@@ -45,21 +48,23 @@
             <a href="#">
               <i class="fab fa-twitter"></i>
             </a>
+-->
             <!--<a href="#">
               <i class=""></i>
             </a>
             <a href="#">
               <i class=""></i>
             </a>-->
-          </div>
+ <!--         </div>
         </div>
       </div>
-
-      <div class="contact-form">
+-->
+<!--      <div class="contact-form">
         <span class="circle one"></span>
         <span class="circle two"></span>
 
         <form action="{{route('RegistroAlumnno.create')}}" method="POST" autocomplete="off">
+
             @csrf
 
           <h3 class="title">Registro</h3>
@@ -122,6 +127,7 @@
       </div>
     </div>
   </div>
+-->
 
 </section>
 
