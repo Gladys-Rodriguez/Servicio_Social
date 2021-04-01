@@ -1,0 +1,10 @@
+diff a/public/css/navbar/navbar.css b/public/css/navbar/navbar.css	(rejected hunks)
+@@ -76,7 +76,7 @@
+     top: 0;
+     left: 0;
+     padding: 0 1.5rem;
+-    background-color: rgba(255, 255, 255, 0.1);
++    background-color: var(--oxblood-color);
+     z-index: var(--z-fixed);
+     display: flex;
+     justify-content: space-between;

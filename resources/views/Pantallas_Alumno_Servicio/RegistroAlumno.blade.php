@@ -4,13 +4,14 @@
 @section('title', 'Registro')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/Alumno/FormularioAlumno.css')}}">
+<link rel="stylesheet" href="{{asset('css/Pantallas_Alumno_Servicio/FormularioAlumno.css')}}">
 @endsection
 
 @section('content')
 <br>
 
-<div class="container">
+<section class="form section" id="forms">
+<div class="container" bd-grid>
    <!-- <span class="big-circle"></span> -->
    <!-- <img src="img/shape.png" class="square" alt="" /> -->
     <div class="form">
@@ -122,10 +123,12 @@
     </div>
   </div>
 
+</section>
+
 @endsection
 
 @section('script')
 <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"> </script>
 
-<script src="{{asset('js/Alumno/FormularioAlumno.js')}}"></script>
+<script src="{{asset('js/Pantallas_Alumno_Servicio/FormularioAlumno.js')}}"></script>
 @endsection

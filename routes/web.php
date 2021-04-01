@@ -97,7 +97,7 @@ Route::post('/upload', [App\Http\Controllers\FormatosAFilesController::class, 's
 
 //Ruta Registro Alumno
 Route::get('/RegistroAlumno', function (){
-    return view('Alumno.RegistroAlumno');
+    return view('Pantallas_Alumno_Servicio.RegistroAlumno');
 }) -> name('RegistroAlumno');
 
 //Ruta post controlador de registro alumno

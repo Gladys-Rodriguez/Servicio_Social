@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- ==== CONTENIDO CSS === -->
-    <link rel="stylesheet" href="{{asset('css/navbar/navbar.css')}}">
+    <link rel="stylesheet" href="{{asset('css/layout/navbar.css')}}">
     @yield('css')
 
     <!-- ==== FIN CSS === -->
@@ -16,6 +16,11 @@
 <header class="header">
     <a href="#" class="header_logo" id="header-logo"> APOYOS EDUCATIVOS</a>
     <ion-icon name="menu-outline" class="header_toggle" id="nav-toggle"></ion-icon>
+
+</header>
+<body>
+
+
     <nav class="nav" id="nav-menu">
         <div class="nav_content bd-grid">
             <ion-icon name="close-outline" class="nav_close" id="nav-close"></ion-icon>
@@ -63,11 +68,9 @@
         </div> -->
 
     </nav>
-</header>
-<body>
 
 
-    <main class="conte_prin" id="conte-prin">
+    <main class="l-main">
 
     @yield('content')
     </main>
@@ -77,7 +80,7 @@
     <!-- ==== IONICONS ==== -->
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <!-- ==== CONTENIDO JS ==== -->
-    <script src="{{asset('js/navbar/navbar.js')}}"></script>
+    <script src="{{asset('js/layouts/navbar.js')}}"></script>
     <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 
 
