@@ -143,11 +143,25 @@ Route::get('/validacionReportes', function () {
 }) -> name('validacionReportes');
 
 
+//Ruta Admin Becas Index 
+Route::get('/Admin_Becas_Index', function () {
+    return view('Pantallas_Admin_Becas.Admin_Becas_Index');
+}) -> name('Admin_Becas_Index');
 
+//Ruta Validacion_Alumno_Becas
+Route::get('/Validacion_Alumno_Becas', function () {
+    return view('Pantallas_Admin_Becas.Validacion_Alumno_Becas');
+}) -> name('Validacion_Alumno_Becas');
 
+//Ruta Admin Practicas y Visitas Index
+Route::get('/Admin_Practicas_Visitas_Index', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.Admin_Practicas_Visitas_Index');
+}) -> name('Admin_Practicas_Visitas_Index');
 
-
-
+//Ruta Admin Practicas y Visitas Index
+Route::get('/Validacion_Practicas_Visitas', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.Validacion_Practicas_Visitas');
+}) -> name('Validacion_Practicas_Visitas');
 
 
 
