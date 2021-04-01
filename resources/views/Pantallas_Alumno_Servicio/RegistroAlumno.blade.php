@@ -10,7 +10,8 @@
 @section('content')
 <br>
 
-<div class="container">
+<section class="form section" id="forms">
+<div class="container" bd-grid>
    <!-- <span class="big-circle"></span> -->
    <!-- <img src="img/shape.png" class="square" alt="" /> -->
     <div class="form">
@@ -121,6 +122,8 @@
       </div>
     </div>
   </div>
+
+</section>
 
 @endsection
 
