@@ -1,4 +1,4 @@
-@extends('layouts.navbar')
+@extends('layouts.navbarLoginForm')
 
 @section('title', 'Practicas Y Visitas Index')
 
@@ -11,7 +11,7 @@
 <div class="container">
     <div class="informacion">
       <div class="contact-info">
-        <h3 class="title">"Inicio de sesión"</h3>
+        <h3 class="title">"INICIO DE SESIÓN"</h3>
         <p class="text">
           Bienvenido
         </p>

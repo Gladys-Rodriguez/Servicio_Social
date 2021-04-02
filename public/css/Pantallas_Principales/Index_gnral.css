@@ -171,7 +171,7 @@ form {
   text-align: center;
   position: relative;
   font-weight: 1000;
-  font-size: 1.5rem;
+  font-size: 2.0rem;
   line-height: 1;
   margin-bottom: 0.7rem;
 
@@ -187,11 +187,11 @@ h3::after,h3:before{
 }
 
 h3::before{
-    left: 60px;
+    left: 10px;
 }
 
 h3::after{
-    right: 60px;
+    right: 10px;
 }
 
 .input-container {

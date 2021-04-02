@@ -1,4 +1,4 @@
-@extends('layouts.navbar')
+@extends('layouts.navbarPracticasIndex')
 
 @section('title', 'Practicas Y Visitas Index')
 
@@ -11,7 +11,7 @@
 <div class="container">
     <div class="informacion">
       <div class="contact-info">
-        <h3 class="title">"Practicas Y Visitas"</h3>
+        <h3 class="title">"PRACTICAS Y VISITAS "</h3>
         <p class="text">
           Bienvenido
         </p>
@@ -27,13 +27,13 @@
         <!--radio buttons end-->
         <!--slide images start-->
         <div class="slide first">
-        <img src="{{ asset('img/carrusel/1.jpeg')}}">
+        <img src="{{ asset('img/practicas/practica1.jpg')}}">
         </div>
         <div class="slide">
-        <img src="{{ asset('img/carrusel/2.png')}}">
+        <img src="{{ asset('img/practicas/practica2.jpg')}}">
         </div>
         <div class="slide">
-        <img src="{{ asset('img/carrusel/3.jpg')}}">
+        <img src="{{ asset('img/practicas/practica3.jpg')}}">
         </div>
 
         <!--slide images end-->

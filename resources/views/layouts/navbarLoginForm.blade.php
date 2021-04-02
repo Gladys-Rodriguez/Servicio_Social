@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- ==== CONTENIDO CSS === -->
-    <link rel="stylesheet" href="{{asset('css/Pantallas_Principales/navbarIndex_gnral.css')}}">
+    <link rel="stylesheet" href="{{asset('css/layout/navbar.css')}}">
     @yield('css')
 
     <!-- ==== FIN CSS === -->
@@ -40,23 +40,8 @@
 
            <div class="nav_menu">
                <ul class="nav_list">
-                   <li class="nav_item"><a href="#" class="nav_link active"><i class="fas fa-home"></i>INICIO</a></li>
 
-                   <li class="nav_item dropdown">
-
-                        <a href="#" class="nav_link dropdown_link"><i class="far fa-handshake"> SERVICIO SOCIAL</i><i class='bx bxs-chevron-down dropdown_icon'></i></a>
-
-                        <ul class="dropdown_menu">
-                            <li class="dropdown_item"><a href="#" class="nav_link">Submit 1</a></li>
-                            <li class="dropdown_item"><a href="#" class="nav_link">Submit 2</a></li>
-                            <li class="dropdown_item"><a href="#" class="nav_link">Submit 3</a></li>
-
-                        </ul>
-
-                  </li>
-                   <li class="nav_item"><a href="#" class="nav_link"><i class="fas fa-coins"></i>BECAS</a></li>
-                   <li class="nav_item"><a href="#" class="nav_link"><i class="fas fa-bus"></i>PRACTICAS Y VISITAS</a></li>
-
+                   <li class="nav_item"><a href="{{url('/Index_gnral')}}" class="nav_link active"><i class="fas fa-home"></i>HOME</a></li>
                 </ul>
            </div>
         </div>
