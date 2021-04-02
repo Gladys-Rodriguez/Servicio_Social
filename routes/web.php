@@ -117,6 +117,11 @@ Route::get('/files', [App\Http\Controllers\FilesController::class, 'index'])->na
 Route::post('/upload', [App\Http\Controllers\FilesController::class, 'store'])->name('user.files.store');
 
 
+//Rutas Practicas-y-Vistas Docente
+Route::get('/VisitasEscolaresIndex','DocenteIndexController');
+
+
+
 
 
 
