@@ -120,7 +120,44 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/files', [App\Http\Controllers\FilesController::class, 'index'])->name('index');
 Route::post('/upload', [App\Http\Controllers\FilesController::class, 'store'])->name('user.files.store');
 
-//Pantallas generales
+//------------------------IVAN------------------------------------
+
+//Pantalla general
 Route::get('/Index_gnral', function (){
     return view('Pantallas_Principales.Index_gnral');
 }) -> name('Index_gnral');
+
+
+//Pantalla general con segunda barra
+Route::get('/Index_gnral2', function (){
+    return view('Pantallas_Principales.Index_gnral2');
+}) -> name('Index_gnral2');
+
+//Pantalla general de servicio
+Route::get('/ServicioIndex', function (){
+    return view('Pantallas_Principales.ServicioIndex');
+}) -> name('ServicioIndex');
+
+//Pantalla general de becas
+Route::get('/BecasIndex', function (){
+    return view('Pantallas_Principales.BecasIndex');
+}) -> name('BecasIndex');
+
+//Pantalla general de practicas
+Route::get('/PracticasIndex', function (){
+    return view('Pantallas_Principales.PracticasIndex');
+}) -> name('PracticasIndex');
+
+//Pantalla Login
+Route::get('/LoginForm', function (){
+    return view('Pantallas_Principales.LoginForm');
+}) -> name('LoginForm');
+
+//Pantalla Registro
+Route::get('/RegisterForm', function (){
+    return view('Pantallas_Principales.RegisterForm');
+}) -> name('RegisterForm');
+
+//------------------------IVAN------------------------------------
+
+

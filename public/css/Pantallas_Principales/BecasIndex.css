@@ -50,7 +50,6 @@ textarea {
 
   }
 
-
   .slides{
     width: 500%;
     height: 500px;
@@ -187,11 +186,11 @@ h3::after,h3:before{
 }
 
 h3::before{
-    left: 60px;
+    left: 210px;
 }
 
 h3::after{
-    right: 60px;
+    right: 210px;
 }
 
 .input-container {

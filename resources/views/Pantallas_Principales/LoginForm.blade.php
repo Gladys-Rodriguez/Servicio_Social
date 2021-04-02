@@ -1,9 +1,9 @@
 @extends('layouts.navbar')
 
-@section('title', 'Index General')
+@section('title', 'Practicas Y Visitas Index')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/Pantallas_Principales/Index_gnral.css')}}">
+<link rel="stylesheet" href="{{asset('css/Pantallas_Principales/LoginForm.css')}}">
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
 <div class="container">
     <div class="informacion">
       <div class="contact-info">
-        <h3 class="title">"CECyT 13 "Ricardo Flores Magón"</h3>
+        <h3 class="title">"Inicio de sesión"</h3>
         <p class="text">
           Bienvenido
         </p>

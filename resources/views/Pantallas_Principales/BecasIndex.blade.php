@@ -1,9 +1,9 @@
 @extends('layouts.navbar')
 
-@section('title', 'Index General')
+@section('title', 'BecasIndex')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/Pantallas_Principales/Index_gnral.css')}}">
+<link rel="stylesheet" href="{{asset('css/Pantallas_Principales/BecasIndex.css')}}">
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
 <div class="container">
     <div class="informacion">
       <div class="contact-info">
-        <h3 class="title">"CECyT 13 "Ricardo Flores Magón"</h3>
+        <h3 class="title">"Becas"</h3>
         <p class="text">
           Bienvenido
         </p>

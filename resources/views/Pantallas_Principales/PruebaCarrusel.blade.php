@@ -1,21 +1,12 @@
-@extends('layouts.navbar')
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="{{asset('css/Pantallas_Principales/PruebaCarrusel.css')}}">
+  </head>
+  <body>
 
-@section('title', 'Index General')
-
-@section('css')
-<link rel="stylesheet" href="{{asset('css/Pantallas_Principales/Index_gnral.css')}}">
-@endsection
-
-@section('content')
-<br>
-<div class="container">
-    <div class="informacion">
-      <div class="contact-info">
-        <h3 class="title">"CECyT 13 "Ricardo Flores Magón"</h3>
-        <p class="text">
-          Bienvenido
-        </p>
-      </div>
     <!--image slider start-->
     <div class="slider">
       <div class="slides">
@@ -65,9 +56,8 @@
       if(counter > 3){
         counter = 1;
       }
-    }, 4000);
+    }, 5000);
     </script>
 
-     </div>
-</div>
-@endsection
+  </body>
+</html>
