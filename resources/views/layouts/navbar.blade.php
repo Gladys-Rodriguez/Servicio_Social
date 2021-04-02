@@ -16,6 +16,11 @@
 <header class="header">
     <a href="#" class="header_logo" id="header-logo"> APOYOS EDUCATIVOS</a>
     <ion-icon name="menu-outline" class="header_toggle" id="nav-toggle"></ion-icon>
+
+</header>
+<body>
+
+
     <nav class="nav" id="nav-menu">
         <div class="nav_content bd-grid">
             <ion-icon name="close-outline" class="nav_close" id="nav-close"></ion-icon>
@@ -63,11 +68,9 @@
         </div> -->
 
     </nav>
-</header>
-<body>
 
 
-    <main class="conte_prin" id="conte-prin">
+    <main class="l-main">
 
     @yield('content')
     </main>
