@@ -1,4 +1,4 @@
-@extends('Pantallas_Alumno_Servicio.Layout_Alumno.Layout_Alumno')
+@extends('Pantallas_Alumno_Servicio.Layout_Alumno.Layout_Alumno2')
 
 
 @section('title', 'Registro')
@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-
+<h1> PRUEBA </h1>
 <!--<br>
 <section class="form section" id="forms">
 <div class="container" bd-grid>
