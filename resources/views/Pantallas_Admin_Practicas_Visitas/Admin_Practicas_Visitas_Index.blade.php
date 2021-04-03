@@ -1,17 +1,10 @@
-@extends('layouts.navbarAdminPracticasVisitas_Index')
+@extends('Pantallas_Alumno_Servicio.Layout_Alumno.Layout_Alumno2')
 
+@section('css')
+<link rel="stylesheet" href="{{asset('css/Pantallas_Admin_PracticasVisitas/estilo.css')}}">
+@endsection
 
-
-
-
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device=width,initial-scale=1.0">
-        <title> Index AdminPracticasVisitas </title>
-        <link rel="stylesheet" href="{{asset('css/Pantallas_Admin_PracticasVisitas/estilo.css')}}">
-    <body>
+@section('content')
         <div class="container">
             <div class="card">
                 <div class=imgBx>
@@ -97,5 +90,4 @@
 
 
         </div>
-    </body>
-    </html>
+        @endsection 
