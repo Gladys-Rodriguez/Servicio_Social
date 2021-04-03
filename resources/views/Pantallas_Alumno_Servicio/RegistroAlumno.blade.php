@@ -1,18 +1,22 @@
-@extends('layouts.navbar')
+@extends('Pantallas_Alumno_Servicio.Layout_Alumno.Layout_Alumno2')
 
 
 @section('title', 'Registro')
 
 @section('css')
+
 <link rel="stylesheet" href="{{asset('css/Pantallas_Alumno_Servicio/FormularioAlumno.css')}}">
+
 @endsection
 
 @section('content')
+<h1> PRUEBA </h1>
 <br>
+<section class="form section" id="forms">
+<div class="container" bd-grid>
 
-<div class="container">
-   <!-- <span class="big-circle"></span> -->
-   <!-- <img src="img/shape.png" class="square" alt="" /> -->
+    <span class="big-circle"></span>
+   <img src="img/shape.png" class="square" alt="" />
     <div class="form">
       <div class="contact-info">
         <h3 class="title">Datos Personales</h3>
@@ -44,6 +48,7 @@
             <a href="#">
               <i class="fab fa-twitter"></i>
             </a>
+
             <!--<a href="#">
               <i class=""></i>
             </a>
@@ -59,6 +64,7 @@
         <span class="circle two"></span>
 
         <form action="{{route('RegistroAlumnno.create')}}" method="POST" autocomplete="off">
+
             @csrf
 
           <h3 class="title">Registro</h3>
@@ -121,6 +127,9 @@
       </div>
     </div>
   </div>
+
+
+</section>
 
 @endsection
 

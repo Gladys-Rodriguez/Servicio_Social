@@ -100,6 +100,15 @@ Route::get('/RegistroAlumno', function (){
     return view('Pantallas_Alumno_Servicio.RegistroAlumno');
 }) -> name('RegistroAlumno');
 
+Route::get('/LayoutAlumno', function (){
+    return view('Pantallas_Alumno_Servicio.Layout_Alumno.Layout_Alumno2');
+}) -> name('LayoutAlumno');
+
+Route::get('/AlumnoIndex', function (){
+    return view('Pantallas_Alumno_Servicio.Alumno_Index');
+}) -> name('AlumnoIndex');
+
+
 //Ruta post controlador de registro alumno
 Route::post('RegistroAlumno', [App\Http\Controllers\AlumnoController::class, 'create'])->name('RegistroAlumnno.create');
 Auth::routes();

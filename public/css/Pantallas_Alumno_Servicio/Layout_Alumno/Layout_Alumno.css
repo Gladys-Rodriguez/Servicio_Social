@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  min-height: 100vh;
+}
+
+.section-main{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: url("/img/wallpaper/wall1.jpg")no-repeat;;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 100px;
+}
+
+.section-main h1{
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 60px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 80px;
+}
+
+header{
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 100px;
+  transition: 0.6s;
+}
+
+header.sticky{
+  background:rgba(60, 60, 60, .8);
+  padding: 15px 100px;
+}
+
+header .brand{
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+header .nav-menu{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*header .menu a{
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  margin: 0 30px;
+  padding: 0 10px;
+  border-radius: 20px;
+  transition: 0.3s;
+  transition-property: color, background;
+}
+
+header .menu a:hover{
+  color: #000;
+  background: #fff;
+}
+*/
+header .btn{
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
+}
+
+.section-two{
+  min-height: 100vh;
+  background: #001018;
+  padding: 20px 100px;
+}
+
+.section-two h2{
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 30px 0;
+}
+
+.section-two p{
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 18px;
+  margin: 30px 0;
+}
+
+header .menu ul{
+    float: right;
+    margin-right: 40px;
+    list-style: none;
+    position: relative;
+  }
+
+
+  header .menu ul li{
+    /*float: left;*/
+    display: inline-block;
+    /*background: #1b1b1b;*/
+    margin: 0 5px;
+  }
+  header .menu ul li a{
+    color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  margin: 0 30px;
+  padding: 0 10px;
+  border-radius: 20px;
+  transition: 0.3s;
+  transition-property: color, background;
+  }
+
+  header .menu ul li a:hover{
+    color: cyan;
+    border-radius: 5px;
+    box-shadow:  0 0 5px #33ffff,
+                 0 0 10px #66ffff;
+  }
+  header .menu ul ul li a:hover{
+    box-shadow: none;
+  }
+  header .menu ul ul{
+    position: absolute;
+    top: 90px;
+    border-top: 3px solid cyan;
+    opacity: 0;
+    visibility: hidden;
+    transition: top .3s;
+  }
+  header .menu ul ul ul{
+    border-top: none;
+  }
+  header .menu ul li:hover > ul{
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+  }
+  header .menu ul ul li{
+    position: relative;
+    margin: 0px;
+    width: 150px;
+    float: none;
+    display: list-item;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+  }
+  header .menu ul ul li a{
+    line-height: 50px;
+  }
+  header .menu ul ul ul li{
+    position: relative;
+    top: -60px;
+    left: 150px;
+  }
+  .show,.icon,input{
+    display: none;
+  }
+  .fa-plus{
+    font-size: 15px;
+    margin-left: 40px;
+  }
+
+
+@media (max-width: 1060px){
+  header .btn{
+    display: block;
+  }
+
+
+  header .menu{
+    position: fixed;
+    background: rgba(60, 60, 60, .8);
+    flex-direction: column;
+    min-width: 400px;
+    height: 100vh;
+    top: 0;
+    right: -100%;
+    padding: 80px 50px;
+    transition: 0.5s;
+    transition-property: right;
+  }
+
+  header .menu.active{
+    right: 0;
+  }
+
+  header .menu .close-btn{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 25px;
+  }
+
+  /*header .menu a{
+    display: block;
+    font-size: 20px;
+    margin: 20px;
+    padding: 0 15px;
+  }*/
+
+  header .menu ul{
+    margin-right: 0px;
+    float: left;
+  }
+  header .menu .logo{
+    padding-left: 30px;
+    width: 100%;
+  }
+   .show + a,  ul{
+    display:none;
+  }
+  header .menu ul li, header .menu ul ul li{
+    display: block;
+    width: 100%;
+  }
+  header .menu ul li a:hover{
+    box-shadow: none;
+  }
+  .show{
+    display: block;
+    color: white;
+    font-size: 18px;
+    padding: 0 20px;
+    line-height: 70px;
+    cursor: pointer;
+  }
+  .show:hover{
+    color: cyan;
+  }
+
+  .icon{
+    display: block;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 40px;
+    line-height: 70px;
+    cursor: pointer;
+    font-size: 25px;
+  }
+  header .menu ul ul{
+    top: 70px;
+    border-top: 0px;
+    float: none;
+    position: static;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+  }
+  header .menu ul ul a{
+    padding-left: 40px;
+  }
+  header .menu ul ul ul a{
+    padding-left: 80px;
+  }
+  header .menu ul ul ul li{
+    position: static;
+  }
+   [id^=btn]:checked +  ul{
+    display: block;
+
+  }
+  header .menu ul ul li{
+    border-bottom: 0px;
+  }
+
+}
+
+@media (max-width: 630px){
+  .section-main h1{
+    font-size: 50px;
+    line-height: 60px;
+  }
+}
+
+
