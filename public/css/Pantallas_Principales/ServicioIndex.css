@@ -23,7 +23,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: blue 2px solid;
+  /*border: blue 2px solid;*/
   margin: 5px auto;
 }
 
@@ -38,7 +38,7 @@ textarea {
   overflow: hidden;
   display: grid;
   grid-template-rows: 150px;
-  border: red 2px solid;
+  /*border: red 2px solid;*/
 
 }
 

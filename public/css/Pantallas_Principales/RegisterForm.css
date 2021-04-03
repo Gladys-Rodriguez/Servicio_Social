@@ -15,7 +15,7 @@ textarea {
 
 .container {
   position: relative;
-  width: 860px;
+  width: 600px;
   min-height: 30vh;
   padding: 1rem;
   /*background-color: #fafafa;*/
@@ -23,7 +23,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: blue 2px solid;
+  /*border: blue 2px solid;*/
   margin: 5px auto;
 }
 
@@ -38,9 +38,84 @@ textarea {
   overflow: hidden;
   display: grid;
   grid-template-rows: 150px;
-  border: red 2px solid;
+  /*border: red 2px solid;*/
 
 }
+
+.login-box {
+    background: #565656;
+    color: #fff;
+    border-radius: 10px;
+
+  }
+
+  .login-box .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+  }
+
+  .login-box h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .login-box label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+  }
+
+  .login-box input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .login-box input[type="text"], .login-box input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  .login-box input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #CF6D1B;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+  }
+
+  .login-box input[type="submit"]:hover {
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+  }
+
+  .login-box a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+  }
+
+  .login-box a:hover {
+    color: #fff;
+  }
+
+  */
+
 
 .slider{
     width: 820px;
@@ -186,11 +261,11 @@ h3::after,h3:before{
 }
 
 h3::before{
-    left: 160px;
+    left: 25px;
 }
 
 h3::after{
-    right: 160px;
+    right: 25px;
 }
 
 .input-container {

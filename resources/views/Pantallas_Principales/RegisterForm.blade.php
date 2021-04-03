@@ -12,61 +12,24 @@
     <div class="informacion">
       <div class="contact-info">
         <h3 class="title">"REGISTRO"</h3>
-        <p class="text">
-          Bienvenido
-        </p>
       </div>
-    <!--image slider start-->
-    <div class="slider">
-      <div class="slides">
-        <!--radio buttons start-->
-        <input type="radio" name="radio-btn" id="radio1">
-        <input type="radio" name="radio-btn" id="radio2">
-        <input type="radio" name="radio-btn" id="radio3">
-        <input type="radio" name="radio-btn" id="radio4">
-        <!--radio buttons end-->
-        <!--slide images start-->
-        <div class="slide first">
-        <img src="{{ asset('img/carrusel/1.jpeg')}}">
-        </div>
-        <div class="slide">
-        <img src="{{ asset('img/carrusel/2.png')}}">
-        </div>
-        <div class="slide">
-        <img src="{{ asset('img/carrusel/3.jpg')}}">
-        </div>
-
-        <!--slide images end-->
-        <!--automatic navigation start-->
-        <div class="navigation-auto">
-          <div class="auto-btn1"></div>
-          <div class="auto-btn2"></div>
-          <div class="auto-btn3"></div>
-
-        </div>
-        <!--automatic navigation end-->
-      </div>
-      <!--manual navigation start-->
-      <div class="navigation-manual">
-        <label for="radio1" class="manual-btn"></label>
-        <label for="radio2" class="manual-btn"></label>
-        <label for="radio3" class="manual-btn"></label>
-
-      </div>
-      <!--manual navigation end-->
+    <!--Formulario-->
+    <div class="login-box">
+      <form method="post">
+      @csrf
+        <!-- USERNAME INPUT -->
+        <label for="matricula">Matricula</label>
+        <input type="text" placeholder="Matricula">
+        <!-- USERNAME INPUT -->
+        <label for="correo">Correo Institcuional</label>
+        <input type="text" placeholder="Correo Institucional">
+        <!-- PASSWORD INPUT -->
+        <label for="contraseña">Contraseña</label>
+        <input type="password" placeholder="Contraseña">
+        <input type="submit" value="Registrar">
+      </form>
     </div>
-    <!--image slider end-->
 
-    <script type="text/javascript">
-    var counter = 1;
-    setInterval(function(){
-      document.getElementById('radio' + counter).checked = true;
-      counter++;
-      if(counter > 3){
-        counter = 1;
-      }
-    }, 4000);
-    </script>
 
      </div>
 </div>
