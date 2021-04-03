@@ -186,11 +186,11 @@ h3::after,h3:before{
 }
 
 h3::before{
-    left: 80px;
+    left: 55px;
 }
 
 h3::after{
-    right: 80px;
+    right: 55px;
 }
 
 .input-container {

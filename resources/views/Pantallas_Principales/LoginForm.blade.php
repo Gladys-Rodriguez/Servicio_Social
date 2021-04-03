@@ -1,4 +1,4 @@
-@extends('layouts.navbarLoginForm')
+@extends('Pantallas_Principales.navbarLoginForm')
 
 @section('title', 'Practicas Y Visitas Index')
 
@@ -27,7 +27,7 @@
         <label for="contraseña">Contraseña</label>
         <input type="password" placeholder="Contraseña">
         <input type="submit" value="Entrar">
-        <a href="#">¿No tienes cuenta?</a>
+        <a href="{{url('/RegisterForm')}}">¿No tienes cuenta?</a>
       </form>
     </div>
 

@@ -1,4 +1,4 @@
-@extends('layouts.navbarServicioIndex')
+@extends('Pantallas_Principales.navbarServicioIndex')
 
 @section('title', 'Servicio Index')
 

@@ -1,4 +1,4 @@
-@extends('layouts.navbarIndex_gnral')
+@extends('Pantallas_Principales.navbarIndex_gnral')
 
 @section('title', 'Index General')
 

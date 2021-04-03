@@ -1,4 +1,4 @@
-@extends('layouts.navbarBecasIndex')
+@extends('Pantallas_Principales.navbarBecasIndex')
 
 @section('title', 'BecasIndex')
 

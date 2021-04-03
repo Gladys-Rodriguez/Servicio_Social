@@ -1,4 +1,4 @@
-@extends('layouts.navbarRegisterForm')
+@extends('Pantallas_Principales.navbarRegisterForm')
 
 @section('title', 'Practicas Y Visitas Index')
 
