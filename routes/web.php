@@ -40,8 +40,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Nuevas rutas
 
 Route::get('/', function () {
-    return view('Inicio');
-}) -> name('Inicio');
+    return view('Pantallas_Principales.Index_gnral');
+}) -> name('Index_gnral');
+
 
 //Ruta para Formatos Administrativos de la diapositiva 12
 Route::get('/FormatosAdministrativos', function (){
@@ -173,8 +174,57 @@ Route::get('/Validacion_Practicas_Visitas', function () {
 }) -> name('Validacion_Practicas_Visitas');
 
 
+//------------------------IVAN INICIO------------------------------------
+
+//Pantalla general
+Route::get('/Index_gnral', function (){
+    return view('Pantallas_Principales.Index_gnral');
+}) -> name('Index_gnral');
+
+
+//Pantalla general con segunda barra
+Route::get('/Index_gnral2', function (){
+    return view('Pantallas_Principales.Index_gnral2');
+}) -> name('Index_gnral2');
+
+//Pantalla general de servicio
+Route::get('/ServicioIndex', function (){
+    return view('Pantallas_Principales.ServicioIndex');
+}) -> name('ServicioIndex');
+
+//Pantalla general de becas
+Route::get('/BecasIndex', function (){
+    return view('Pantallas_Principales.BecasIndex');
+}) -> name('BecasIndex');
+
+//Pantalla general de practicas
+Route::get('/PracticasIndex', function (){
+    return view('Pantallas_Principales.PracticasIndex');
+}) -> name('PracticasIndex');
+
+//Pantalla Registro
+Route::get('/RegisterForm', function (){
+    return view('Pantallas_Principales.RegisterForm');
+}) -> name('RegisterForm');
+
+//RUTAS PARA EL LOGIN
+//Pantalla Login
+Route::get('/LoginForm', function (){
+    return view('Pantallas_Principales.LoginForm');
+}) -> name('LoginForm');
+
+Route::post('LoginForm',function(){
+    return 'Post login';
+});
+
+//------------------------IVAN TERMINO------------------------------------
 
 
 
+Auth::routes();
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
