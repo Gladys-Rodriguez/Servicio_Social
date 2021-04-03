@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="{{asset('css/Pantallas_Admin_PracticasVisitas/Layout_Admin_Practicas.css')}}">
+    <link rel="stylesheet" href="{{asset('css/Pantallas_Alumno_Servicio/Layout_Alumno/Layout_Alumno2.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     @yield('css')
 
@@ -20,44 +20,16 @@
         <div class="nav__content bd-grid">
             <a href="" class="nav__perfil">
                 <div class="nav__img">
-                    <img src="assets/img/perfil.jpg" alt="">
+                    <img src="{{asset('img/logo/logoSAE3.png')}}" alt="">
                 </div>
 
-                <div>
-                    <span class="nav__name">Clay</span>
-                    <span class="nav__name">Mitchell</span>
-                </div>
             </a>
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="#" class="nav__link active">Home</a></li>
+                    <li class="nav__item"><a href="{{url('/Admin_Becas_Index')}}" class="nav__link active">HOME</a></li>
+                    <li class="nav__item"><a href="{{url('/Validacion_Alumno_Becas')}}" class="nav__link">VALIDACIÓN DE DOCUMENTOS</a></li>
 
-                    <li class="nav__item dropdown">
-                        <a href="#" class="nav__link dropdown__link">About <i class='bx bx-chevron-down dropdown__icon'></i></a>
-
-
-                        <ul class="dropdown__menu">
-                            <li class="dropdown__item"><a href="#" class="nav__link">About me</a></li>
-                            <li class="dropdown__item"><a href="#" class="nav__link">Location</a></li>
-                            <li class="dropdown__item"><a href="#" class="nav__link">Studies</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav__item"><a href="#" class="nav__link">Skills</a></li>
-
-                    <li class="nav__item dropdown">
-                        <a href="#" class="nav__link dropdown__link">Works <i class='bx bx-chevron-down dropdown__icon'></i></a>
-
-
-                        <ul class="dropdown__menu">
-                            <li class="dropdown__item"><a href="#" class="nav__link">Recent jobs</a></li>
-                            <li class="dropdown__item"><a href="#" class="nav__link">Better jobs</a></li>
-                            <li class="dropdown__item"><a href="#" class="nav__link">Work Awards</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -97,7 +69,7 @@
         </script>
 
     <section class="section-main">
-      <h1>Bienvenido Alumno </h1>
+      <h1>ADMINISTRACIÓN DE BECAS</h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-*{
+/**{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,7 +14,7 @@ body{
     min-height: 100vh;
 
 }
-
+*/
 .container{
     position: relative;
     display: flex;
@@ -22,6 +22,8 @@ body{
     align-items: center;
     flex-wrap: wrap;
     max-width: 1100px;
+    margin: 5px auto;
+    color: white;
 }
 .container .card{
     position: relative;
@@ -120,4 +122,8 @@ body{
     line-height: 1.4em;
     font-weight: 300;
 
+}
+
+a{
+    color:white;
 }

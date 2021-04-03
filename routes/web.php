@@ -152,6 +152,7 @@ Route::get('/validacionReportes', function () {
     return view('Pantallas_Admin_Servicio.validacionReportes');
 }) -> name('validacionReportes');
 
+//------------------------FER INICIO------------------------------------
 
 //Ruta Admin Becas Index 
 Route::get('/Admin_Becas_Index', function () {
@@ -172,6 +173,8 @@ Route::get('/Admin_Practicas_Visitas_Index', function () {
 Route::get('/Validacion_Practicas_Visitas', function () {
     return view('Pantallas_Admin_Practicas_Visitas.Validacion_Practicas_Visitas');
 }) -> name('Validacion_Practicas_Visitas');
+
+//------------------------FER TERMINO------------------------------------
 
 
 //------------------------IVAN INICIO------------------------------------

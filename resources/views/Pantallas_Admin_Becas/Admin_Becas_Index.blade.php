@@ -1,17 +1,11 @@
-@extends('layouts.navbarAdminBecas_Index')
+@extends('Pantallas_Admin_Becas.navbar_Admin_Becas_Index')
 
+@section('css')
+<link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Becas/estilo.css')}}">
+@endsection
 
+@section('content')
 
-
-
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device=width,initial-scale=1.0">
-        <title> Index AdminBecas </title>
-        <link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Becas/estilo.css')}}">
-    <body>
         <div class="container">
             <div class="card">
                 <div class=imgBx>
@@ -98,5 +92,4 @@
 
 
         </div>
-    </body>
-    </html>
+        @endsection

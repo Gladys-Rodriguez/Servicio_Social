@@ -1,17 +1,10 @@
-@extends('layouts.navbarAdminPracticasVisitas_Index')
+@extends('Pantallas_Admin_Practicas_Visitas.navbar_Validacion_Practicas_Visitas')
 
+@section('css')
+<link rel="stylesheet" href="{{asset('css/Pantallas_Admin_PracticasVisitas/estilo.css')}}">
+@endsection
 
-
-
-
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device=width,initial-scale=1.0">
-        <title> Validacion_Practicas_Visitas </title>
-        <link rel="stylesheet" href="{{asset('css/Pantallas_Admin_PracticasVisitas/estilo.css')}}">
-    <body>
+@section('content')
         <div class="container">
             <div class="card">
                 <div class=imgBx>
@@ -19,8 +12,7 @@
                     </div>
                     <div class="contentBx">
                         <div class="content">
-                        <h1> Calendario de visitas </h1>
-                        <p>  </p>
+                        <p><a href="{{asset('https://www.ipn.mx/assets/files/main/docs/inicio/cal-Escolarizada-20-21.pdf')}}" target="_blank"> <h1> Calendario de visitas </h1> </a> </p>
                     
                     </div>
                 </div>
@@ -32,8 +24,7 @@
                     </div>
                     <div class="contentBx">
                         <div class="content">
-                        <h1> Requerimientos de empresas </h1>
-                        <p>  </p>
+                        <p>  <a href="{{asset('https://www.ipn.mx/assets/files/secgeneral/docs/Memorias/MemoriaAnual2016/NMS/CECyT13.pdf')}}" target="_blank"> <h1> Requerimientos de empresas </h1> </a></p>
                     
                     </div>
                 </div>
@@ -46,8 +37,7 @@
                     </div>
                     <div class="contentBx">
                         <div class="content">
-                        <h1> Solicitud de visita </h1>
-                        <p>  </p>
+                        <p><a href="{{asset('https://www.cecyt13.ipn.mx/assets/files/cecyt13/docs/conocenos/certificacion/19PRAVIS.pdf')}}" target="_blank"> <h1> Solicitud de visita </h1> </a></p>
                     
                     </div>
                 </div>
@@ -60,8 +50,7 @@
                     </div>
                     <div class="contentBx">
                         <div class="content">
-                        <h1>  Informe de visita </h1>
-                        <p>  </p>
+                        <p> <a href="{{asset('https://www.cecyt13.ipn.mx/assets/files/cecyt13/docs/conocenos/certificacion/18CONDOCEXT.pdf')}}" target="_blank"> <h1> Informe de visita </h1> </a> </p>
                     
                     </div>
                 </div>
@@ -74,8 +63,7 @@
                     </div>
                     <div class="contentBx">
                         <div class="content">
-                        <h1> Informe de visita concluida  </h1>
-                        <p>  </p>
+                        <p> <a href="{{asset('https://www.cecyt13.ipn.mx/assets/files/cecyt13/docs/conocenos/certificacion/18CONDOCEXT.pdf')}}" target="_blank"> <h1> Informe de visita concluida </h1> </a></p>
                     
                     </div>
                 </div>
@@ -88,8 +76,7 @@
                     </div>
                     <div class="contentBx">
                         <div class="content">
-                        <h1>  Documentos comprobatorios</h1>
-                        <p>  </p>
+                        <p> <a href="{{asset('https://www.cecyt13.ipn.mx/assets/files/cecyt13/docs/conocenos/certificacion/19PRAVIS.pdf')}}" target="_blank"> <h1> Documentos comprobatorios </h1> </p>
                     
                     </div>
                 </div>
@@ -97,5 +84,4 @@
 
 
         </div>
-    </body>
-    </html>
+        @endsection
