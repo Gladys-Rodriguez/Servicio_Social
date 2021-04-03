@@ -40,8 +40,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Nuevas rutas
 
 Route::get('/', function () {
-    return view('Inicio');
-}) -> name('Inicio');
+    return view('Pantallas_Principales.Index_gnral');
+}) -> name('Index_gnral');
+
 
 //Ruta para Formatos Administrativos de la diapositiva 12
 Route::get('/FormatosAdministrativos', function (){
@@ -101,8 +102,13 @@ Route::get('/RegistroAlumno', function (){
 }) -> name('RegistroAlumno');
 
 Route::get('/LayoutAlumno', function (){
-    return view('Pantallas_Alumno_Servicio.Layout_Alumno.Layout_Alumno');
+    return view('Pantallas_Alumno_Servicio.Layout_Alumno.Layout_Alumno2');
 }) -> name('LayoutAlumno');
+
+Route::get('/AlumnoIndex', function (){
+    return view('Pantallas_Alumno_Servicio.Alumno_Index');
+}) -> name('AlumnoIndex');
+
 
 //Ruta post controlador de registro alumno
 Route::post('RegistroAlumno', [App\Http\Controllers\AlumnoController::class, 'create'])->name('RegistroAlumnno.create');
@@ -120,8 +126,108 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/files', [App\Http\Controllers\FilesController::class, 'index'])->name('index');
 Route::post('/upload', [App\Http\Controllers\FilesController::class, 'store'])->name('user.files.store');
 
+//Ruta Admin Servicio Index 
+Route::get('/AdminIndex', function () {
+    return view('Pantallas_Admin_Servicio.AdminServicio_Index');
+}) -> name('AdminServicio_Index');
+
+//Ruta Admin Servicio concentrados de informacion
+
+Route::get('/concentrados', function () {
+    return view('Pantallas_Admin_Servicio.concentrados');
+}) -> name('concentrados');
+
+//Ruta Estadisicas de informacion
+Route::get('/estadistica', function () {
+    return view('Pantallas_Admin_Servicio.estadistica');
+}) -> name('estadistica');
+
+//Ruta validación Documentos Alumno
+Route::get('/validacionAlumno', function () {
+    return view('Pantallas_Admin_Servicio.validacionAlumno');
+}) -> name('validacionAlumno');
+
+//Ruta validacion Reportes
+Route::get('/validacionReportes', function () {
+    return view('Pantallas_Admin_Servicio.validacionReportes');
+}) -> name('validacionReportes');
+
+//------------------------FER INICIO------------------------------------
+
+//Ruta Admin Becas Index 
+Route::get('/Admin_Becas_Index', function () {
+    return view('Pantallas_Admin_Becas.Admin_Becas_Index');
+}) -> name('Admin_Becas_Index');
+
+//Ruta Validacion_Alumno_Becas
+Route::get('/Validacion_Alumno_Becas', function () {
+    return view('Pantallas_Admin_Becas.Validacion_Alumno_Becas');
+}) -> name('Validacion_Alumno_Becas');
+
+//Ruta Admin Practicas y Visitas Index
+Route::get('/Admin_Practicas_Visitas_Index', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.Admin_Practicas_Visitas_Index');
+}) -> name('Admin_Practicas_Visitas_Index');
+
+//Ruta Admin Practicas y Visitas Index
+Route::get('/Validacion_Practicas_Visitas', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.Validacion_Practicas_Visitas');
+}) -> name('Validacion_Practicas_Visitas');
+
+//------------------------FER TERMINO------------------------------------
+
+
+//------------------------IVAN INICIO------------------------------------
+
+//Pantalla general
+Route::get('/Index_gnral', function (){
+    return view('Pantallas_Principales.Index_gnral');
+}) -> name('Index_gnral');
+
+
+//Pantalla general con segunda barra
+Route::get('/Index_gnral2', function (){
+    return view('Pantallas_Principales.Index_gnral2');
+}) -> name('Index_gnral2');
+
+//Pantalla general de servicio
+Route::get('/ServicioIndex', function (){
+    return view('Pantallas_Principales.ServicioIndex');
+}) -> name('ServicioIndex');
+
+//Pantalla general de becas
+Route::get('/BecasIndex', function (){
+    return view('Pantallas_Principales.BecasIndex');
+}) -> name('BecasIndex');
+
+//Pantalla general de practicas
+Route::get('/PracticasIndex', function (){
+    return view('Pantallas_Principales.PracticasIndex');
+}) -> name('PracticasIndex');
+
+//Pantalla Registro
+Route::get('/RegisterForm', function (){
+    return view('Pantallas_Principales.RegisterForm');
+}) -> name('RegisterForm');
+
+//RUTAS PARA EL LOGIN
+//Pantalla Login
+Route::get('/LoginForm', function (){
+    return view('Pantallas_Principales.LoginForm');
+}) -> name('LoginForm');
+
+Route::post('LoginForm',function(){
+    return 'Post login';
+});
+
+//------------------------IVAN TERMINO------------------------------------
 
 
 
+Auth::routes();
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
