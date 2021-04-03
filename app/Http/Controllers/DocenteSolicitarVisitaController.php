@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class DocenteIndexController extends Controller
+class DocenteSolicitarVisitaController extends Controller
 {
     /**
      * Handle the incoming request.
@@ -14,6 +14,6 @@ class DocenteIndexController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('Pantallas_Docente_Practicas_Visitas.IndexVisitas');
+        return view('Pantallas_Docente_Practicas_Visitas.SolicitarVisita');
     }
 }

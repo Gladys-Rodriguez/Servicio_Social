@@ -122,7 +122,9 @@ Route::post('/upload', [App\Http\Controllers\FilesController::class, 'store'])->
 
 
 //Rutas Practicas-y-Vistas Docente
-Route::get('/VisitasEscolaresIndex','DocenteIndexController');
+Route::get('/VisitasEscolares/Index','DocenteIndexController');
+Route::get('/VisitasEscolares/SolicitarVisita','DocenteSolicitarVisitaController');
+Route::get('/VisitasEscolares/MisVisitas','DocenteMisVisitasController');
 
 
 
