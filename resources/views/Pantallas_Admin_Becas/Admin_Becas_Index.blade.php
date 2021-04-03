@@ -20,7 +20,7 @@
                     <div class="contentBx">
                         <div class="content">
                         <h1> Beca Institucional </h1>
-                        <p>  </p>
+                        <p><a href="{{asset('https://www.ipn.mx/daes/becas/institucional.html')}}" target="_blank">Ver Requisitos</a> </p>
                     
                     </div>
                 </div>
@@ -28,12 +28,12 @@
 
             <div class="card">
                 <div class=imgBx>
-                    <img src="{{asset('img/becas/benito.png')}}" alt="">
+                    <img src="{{asset('img/becas/benito.jpg')}}" alt="">
                     </div>
                     <div class="contentBx">
                         <div class="content">
                         <h1> Beca Benito Juárez </h1>
-                        <p>  </p>
+                        <p><a href="{{asset('https://becasbenitojuarez.net/becas-benito-juarez-nivel-medio-superior/')}}" target="_blank">Ver Requisitos</a>  </p>
                     
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                     <div class="contentBx">
                         <div class="content">
                         <h1>  Beca Excelencia </h1>
-                        <p>  </p>
+                        <p> <a href="{{asset('https://www.ipn.mx/daes/becas/beca-excelencia.html')}}" target="_blank">Ver Requisitos</a> </p>
                     
                     </div>
                 </div>
@@ -61,11 +61,26 @@
                     <div class="contentBx">
                         <div class="content">
                         <h1>  Beca Transporte </h1>
-                        <p>  </p>
+                        <p> <a href="{{asset('https://www.ipn.mx/daes/becas/beca-transporte-ipn.html')}}" target="_blank">Ver Requisitos</a> </p>
                     
                     </div>
                 </div>
             </div>
+
+
+            <div class="card">
+                <div class=imgBx>
+                    <img src="{{asset('img/becas/becalos.png')}}" alt="">
+                    </div>
+                    <div class="contentBx">
+                        <div class="content">
+                        <h1>  Bécalos </h1>
+                        <p> <a href="{{asset('https://www.ipn.mx/daes/becas/ipn-b%C3%A9calos.html')}}" target="_blank">Ver Requisitos</a> </p>
+                    
+                    </div>
+                </div>
+            </div>
+
 
 
             <div class="card">
@@ -75,21 +90,7 @@
                     <div class="contentBx">
                         <div class="content">
                         <h1>  SIBEC </h1>
-                        <p>  </p>
-                    
-                    </div>
-                </div>
-            </div>
-
-            
-            <div class="card">
-                <div class=imgBx>
-                    <img src="{{asset('img/becas/convocatoria.jpg')}}" alt="">
-                    </div>
-                    <div class="contentBx">
-                        <div class="content">
-                        <h1>  Convocatorias </h1>
-                        <p>  </p>
+                        <p> <a href="{{asset('https://www.sibec.ipn.mx/')}}" target="_blank">Ir a página oficial SIBEC</a> </p>
                     
                     </div>
                 </div>
