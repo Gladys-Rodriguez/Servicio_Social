@@ -159,6 +159,11 @@ Route::get('/Admin_Becas_Index', function () {
     return view('Pantallas_Admin_Becas.Admin_Becas_Index');
 }) -> name('Admin_Becas_Index');
 
+//Ruta Admin Becas Index2
+Route::get('/Admin_Becas_Index2', function () {
+    return view('Pantallas_Admin_Becas.Admin_Becas_Index2');
+}) -> name('Admin_Becas_Index2');
+
 //Ruta Validacion_Alumno_Becas
 Route::get('/Validacion_Alumno_Becas', function () {
     return view('Pantallas_Admin_Becas.Validacion_Alumno_Becas');
