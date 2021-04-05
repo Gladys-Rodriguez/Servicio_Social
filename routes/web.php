@@ -127,8 +127,8 @@ Route::post('/upload', [App\Http\Controllers\FilesController::class, 'store'])->
 
 //Ruta Admin Servicio Index 
 Route::get('/AdminIndex', function () {
-    return view('Pantallas_Admin_Servicio.AdminServicio_Index');
-}) -> name('AdminServicio_Index');
+    return view('Pantallas_Admin_Servicio.AdminServicio_Index2');
+}) -> name('AdminServicio_Index2');
 
 //Ruta Admin Servicio concentrados de informacion
 
