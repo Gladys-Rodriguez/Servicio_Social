@@ -230,6 +230,10 @@ Route::get('/ConvocatoriaBecas', function (){
 Route::get('/FormatosBeca', function (){
     return view('Pantallas_Alumno_Becas.FormatosBeca');
 }) -> name('FormatosBeca');
+
+Route::get('/MiBeca', function (){
+    return view('Pantallas_Alumno_Becas.MiBeca');
+}) -> name('MiBeca');
 //-----------------------SANTOS TERMINO----------------------------------
 
 

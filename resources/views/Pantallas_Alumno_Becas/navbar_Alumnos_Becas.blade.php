@@ -29,6 +29,7 @@
                 <ul class="nav__list">
                     <li class="nav__item"><a href="#" class="nav__link active">HOME</a></li>
                     <li class="nav__item"><a href="{{url('/FormatosBeca')}}" class="nav__link">DESCARGA FORMATOS</a></li>
+                    <li class="nav__item"><a href="{{url('/MiBeca')}}" class="nav__link">MI BECA</a></li>
                     <li class="nav__item"><a href="#" class="nav__link">REGISTRO</a></li>
 
                 </ul>
