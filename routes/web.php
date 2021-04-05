@@ -226,6 +226,10 @@ Route::post('LoginForm',function(){
 Route::get('/ConvocatoriaBecas', function (){
     return view('Pantallas_Alumno_Becas.ConvocatoriaBecas');
 }) -> name('ConvocatoriaBecas');
+
+Route::get('/FormatosBeca', function (){
+    return view('Pantallas_Alumno_Becas.FormatosBeca');
+}) -> name('FormatosBeca');
 //-----------------------SANTOS TERMINO----------------------------------
 
 
