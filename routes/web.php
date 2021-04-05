@@ -222,6 +222,12 @@ Route::post('LoginForm',function(){
 
 //------------------------IVAN TERMINO------------------------------------
 
+//-----------------------SANTOS INICIO-----------------------------------
+Route::get('/ConvocatoriaBecas', function (){
+    return view('Pantallas_Alumno_Becas.ConvocatoriaBecas');
+}) -> name('ConvocatoriaBecas');
+//-----------------------SANTOS TERMINO----------------------------------
+
 
 
 Auth::routes();
