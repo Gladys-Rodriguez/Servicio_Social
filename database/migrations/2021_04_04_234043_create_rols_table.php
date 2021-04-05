@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFormatosAPruebasTable extends Migration
+class CreateRolsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateFormatosAPruebasTable extends Migration
      */
     public function up()
     {
-        Schema::create('formatos_a_pruebas', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->unsignedBigInteger('user_id');
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        Schema::create('rols', function (Blueprint $table) {
+            $table->id()->unique()->notnull();
+            $table -> string('Tipo_rol', 30);
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateFormatosAPruebasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('formatos_a_pruebas');
+        Schema::dropIfExists('rols');
     }
 }
