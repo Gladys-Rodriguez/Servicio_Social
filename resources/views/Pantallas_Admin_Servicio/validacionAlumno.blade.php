@@ -1,1 +1,1 @@
-@extends('layouts.navbarAdminIndex')
+@extends('layouts.navbarAdminIndex2')
