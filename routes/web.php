@@ -129,6 +129,40 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/files', [App\Http\Controllers\FilesController::class, 'index'])->name('index');
 Route::post('/upload', [App\Http\Controllers\FilesController::class, 'store'])->name('user.files.store');
 
+//Ruta Admin Servicio Index 
+Route::get('/AdminIndex', function () {
+    return view('Pantallas_Admin_Servicio.AdminServicio_Index2');
+}) -> name('AdminServicio_Index2');
+
+//Ruta Admin Servicio concentrados de informacion
+
+Route::get('/concentrados', function () {
+    return view('Pantallas_Admin_Servicio.concentrados');
+}) -> name('concentrados');
+
+//Ruta Estadisicas de informacion
+Route::get('/estadistica', function () {
+    return view('Pantallas_Admin_Servicio.estadistica');
+}) -> name('estadistica');
+
+//Ruta validación Documentos Alumno
+Route::get('/validacionAlumno', function () {
+    return view('Pantallas_Admin_Servicio.validacionAlumno');
+}) -> name('validacionAlumno');
+
+//Ruta validacion Reportes
+Route::get('/validacionReportes', function () {
+    return view('Pantallas_Admin_Servicio.validacionReportes');
+}) -> name('validacionReportes');
+
+
+
+
+
+
+
+
+
 
 
 
