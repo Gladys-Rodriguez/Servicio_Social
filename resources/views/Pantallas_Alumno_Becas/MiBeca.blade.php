@@ -20,35 +20,40 @@
     <div class="secciones">
            <article id="tab1">
                 <h1>Datos Personales</h1>
-                <p>Nombre:</p>
-                <p>Teléfono:</p>
-                <p>Email:</p>
-                <p>Semestre:</p>
-                <p>Carrera:</p>
-                <p>Turno</p>
-                <p>Grupo:</p>       
+                <p>Nombre: Laura Guerrero Nápoles</p>
+                <p>Teléfono: 5578945693</p>
+                <p>Email: laura@gmail.com</p>
+                <p>Semestre: 4</p>
+                <p>Carrera: Contaduría</p>
+                <p>Turno: M</p>
+                <p>Grupo: 4CM40</p>       
            </article> 
            <article id="tab2">
                 <h1>Dirección</h1>
-                <p>Calle:</p>
-                <p>Número Interior:</p>
-                <p>Número exterior:</p>
-                <p>Colonia</p> 
-                <p>Delegación/Municipio:</p>
-                <p>Estado:</p>                    
+                <p>Calle: Av Del Rosario</p>
+                <p>Número Interior: 5</p>
+                <p>Número exterior: 216</p>
+                <p>Colonia: Olivar Del Conde</p> 
+                <P>C.P: 01509</P>
+                <p>Delegación/Municipio: Álvaro Obregón</p>
+                <p>Estado: CDMX</p>                    
            </article> 
            <article id="tab3">
                 <h1>Datos Beca</h1>
-                <p>Solicitud Num:</p>
-                <p>Beca:</p>     
+                <p>Solicitud Num:012500</p>
+                <p>Beca: Institucional</p>
+                <p>Monto: $4500.00</p>
+                <p>Fecha de Inicio: 16/01/2021</p>
+                <p>Fecha Fin: 16/12/2021</p>     
            </article> 
            <article id="tab4">
                 <h1>Documentos</h1>
-                <p>Acta de nacimiento:</p>
-                <p>CURP:</p>
-                <p>Constancia:</p>
-                <p>Solicitud:</p>
-                <p>Estudio Socioeconómico:</p>   
+                <h1 class="Va">Estado</h1>
+                <p>Acta de nacimiento: <input type="file" name="" id=""></p>
+                <p>CURP: <input type="file" name="" id=""></p>
+                <p>Constancia: <input type="file" name="" id=""></p>
+                <p>Solicitud: <input type="file" name="" id=""></p>
+                <p>Estudio Socioeconómico: <input type="file" name="" id=""></p>   
            </article> 
     </div>  
     </div>

@@ -30,7 +30,7 @@
                     <li class="nav__item"><a href="#" class="nav__link active">HOME</a></li>
                     <li class="nav__item"><a href="{{url('/ConvocatoriaBecas')}}" class="nav__link">CONVOCATORIAS</a></li>
                     <li class="nav__item"><a href="{{url('/FormatosBeca')}}" class="nav__link">DESCARGA FORMATOS</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">REGISTRO</a></li>
+                    <li class="nav__item"><a href="{{url('/RegisterForm')}}" class="nav__link">REGISTRO</a></li>
 
                 </ul>
             </div>
