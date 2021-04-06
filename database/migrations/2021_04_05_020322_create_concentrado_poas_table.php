@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFormatosAPruebasTable extends Migration
+class CreateConcentradoPoasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateFormatosAPruebasTable extends Migration
      */
     public function up()
     {
-        Schema::create('formatos_a_pruebas', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->unsignedBigInteger('user_id');
+        Schema::create('concentrado_poas', function (Blueprint $table) {
+            $table->id()->unique()->notnull();
+            $table->string('nombre');
+            $table->unsignedBigInteger('usuario');
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('usuario')->references('id')->on('usuarios')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateFormatosAPruebasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('formatos_a_pruebas');
+        Schema::dropIfExists('concentrado_poas');
     }
 }
