@@ -173,6 +173,11 @@ Route::post('LoginForm',function(){
     return 'Post login';
 });
 
+//Pantalla general con segunda barra
+Route::get('/Carrusel2', function (){
+    return view('Pantallas_Principales.PruebaCarrusel');
+}) -> name('Carrusel');
+
 //------------------------IVAN TERMINO------------------------------------
 
 
