@@ -19,13 +19,13 @@
           @csrf
         <!-- USERNAME INPUT -->
         <label>Matricula</label>
-        <input type="text" name="id" placeholder="Matricula">
+        <input type="text" name="id" placeholder="Matricula" required minlength="10" maxlength="10" >
         <!-- USERNAME INPUT -->
-        <label>Correo Institcuional</label>
-        <input type="email" name="email" placeholder="Correo Institucional">
+        <label>Correo Institucional</label>
+        <input type="email" name="email" placeholder="Correo Institucional" required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
         <!-- PASSWORD INPUT -->
         <label>Contraseña</label>
-        <input type="password" name="password" placeholder="Contraseña">
+        <input type="password" name="password" placeholder="Contraseña" required>
         <!-- ROL INPUT
         <label>Rol</label>
         <input type="int" name="rol" placeholder="Rol"> -->

@@ -165,7 +165,7 @@ Route::get('/RegisterForm', function (){
 
 //Ruta para recibir los datos que enviamos
 Route::resource('Servicio','registro');
-Route::post('/registros/(id)', [App\Http\Controllers\registro::class, 'store'])->name('registros.store');
+Route::post('/registros/(id)', [App\Http\Controllers\registro::class, 'store'])->name('registros.store'); //aqui se edita la pantalla de alcance
 
 
 //RUTAS PARA EL LOGIN
