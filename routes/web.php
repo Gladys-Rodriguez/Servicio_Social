@@ -163,6 +163,11 @@ Route::get('/RegisterForm', function (){
     return view('Pantallas_Principales.RegisterForm');
 }) -> name('RegisterForm');
 
+//Ruta para recibir los datos que enviamos
+Route::resource('Servicio','registro');
+Route::post('/registros/(id)', [App\Http\Controllers\registro::class, 'store'])->name('registros.store');
+
+
 //RUTAS PARA EL LOGIN
 //Pantalla Login
 Route::get('/LoginForm', function (){
