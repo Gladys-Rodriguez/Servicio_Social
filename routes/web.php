@@ -163,7 +163,7 @@ Route::get('/RegisterForm', function (){
     return view('Pantallas_Principales.RegisterForm');
 }) -> name('RegisterForm');
 
-//Ruta para recibir los datos que enviamos
+//Ruta para recibir los datos que enviamos para el registro
 Route::resource('Servicio','registro');
 Route::post('/registros/(id)', [App\Http\Controllers\registro::class, 'store'])->name('registros.store'); //aqui se edita la pantalla de alcance
 
@@ -175,6 +175,8 @@ Route::get('/LoginForm', function (){
 }) -> name('LoginForm');
 
 Route::post('/login/(id)', [App\Http\Controllers\login::class, 'store'])->name('login.store'); //aqui se edita la pantalla de alcance
+
+Route::get('admins/login', 'loginUsuario@showLoginForm');
 
 
 //Pantalla general con segunda barra

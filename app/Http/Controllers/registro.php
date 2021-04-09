@@ -42,7 +42,7 @@ class registro extends Controller
       $registro->id=$request->id;
       $registro->email=$request->email;
       $registro->password=$request->password;
-      $registro->rol= 1;
+      $registro->rol= 3;
 
       $registro->save();
 
