@@ -167,6 +167,10 @@ Route::get('/RegisterForm', function (){
 Route::resource('Servicio','registro');
 Route::post('/registros/(id)', [App\Http\Controllers\registro::class, 'store'])->name('registros.store'); //aqui se edita la pantalla de alcance
 
+//Ruta oara pantalla de registro exitoso
+Route::get('/Registro_exitoso', function (){
+    return view('Pantallas_Principales.Registro_exitoso');
+}) -> name('Registro_exitoso');
 
 //RUTAS PARA EL LOGIN
 //Pantalla Login
@@ -185,8 +189,6 @@ Route::get('/Carrusel2', function (){
 }) -> name('Carrusel');
 
 //------------------------IVAN TERMINO------------------------------------
-
-
 
 Auth::routes();
 

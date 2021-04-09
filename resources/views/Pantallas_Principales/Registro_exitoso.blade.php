@@ -1,6 +1,6 @@
-@extends('Pantallas_Principales.navbarRegisterForm')
+@extends('Pantallas_Principales.navbarRegistro_exitoso')
 
-@section('title', 'Registro')
+@section('title', 'Registro exitoso')
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantallas_Principales/RegisterForm.css')}}">
@@ -35,22 +35,10 @@
 
 <br>
 <div class="container">
-<div class="informacion">
+    <div class="informacion">
       <div class="contact-info">
-        <h3 class="title">"Registro"</h3>
-
-      <div class="errores">
-       @if($errors->any())
-        <ul>
-        @foreach($errors->all() as $error)
-            <li>{{$error}}</li>
-        @endforeach
-        </ul>
-        @endif
+        <h3 class="title">"REGISTRO"</h3>
       </div>
-
-      </div>
-
     <!--Formulario-->
     <div class="login-box">
     <form action="{{route('registros.store')}}" method="POST">

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Unique;
 use App\Models\Usuario;
+use App\Models\User;
 
 class registro extends Controller
 {
@@ -39,15 +41,23 @@ class registro extends Controller
       //return $request->all();
       $registro= new Usuario;
 
+      $validated = $request->validate([
+        'email' => 'unique:usuarios',
+       ]);
+
       $registro->id=$request->id;
       $registro->email=$request->email;
       $registro->password=$request->password;
       $registro->rol= 3;
 
       $registro->save();
+      return redirect('Registro_exitoso');
 
 
     }
+
+
+
 
     /**
      * Display the specified resource.
