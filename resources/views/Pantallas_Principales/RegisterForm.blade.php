@@ -1,6 +1,6 @@
 @extends('Pantallas_Principales.navbarRegisterForm')
 
-@section('title', 'Practicas Y Visitas Index')
+@section('title', 'Registro')
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantallas_Principales/RegisterForm.css')}}">
@@ -15,19 +15,25 @@
       </div>
     <!--Formulario-->
     <div class="login-box">
-      <form method="post">
-      @csrf
+    <form action="{{route('registros.store')}}" method="POST">
+          @csrf
         <!-- USERNAME INPUT -->
-        <label for="matricula">Matricula</label>
-        <input type="text" placeholder="Matricula">
+        <label>Matricula</label>
+        <input type="text" name="id" placeholder="Matricula" required minlength="10" maxlength="10" >
         <!-- USERNAME INPUT -->
-        <label for="correo">Correo Institcuional</label>
-        <input type="text" placeholder="Correo Institucional">
+        <label>Correo Institucional</label>
+        <input type="email" name="email" placeholder="Correo Institucional" required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
         <!-- PASSWORD INPUT -->
-        <label for="contraseña">Contraseña</label>
-        <input type="password" placeholder="Contraseña">
-        <input type="submit" value="Registrar">
+        <label>Contraseña</label>
+        <input type="password" name="password" placeholder="Contraseña" required>
+        <!-- ROL INPUT
+        <label>Rol</label>
+        <input type="int" name="rol" placeholder="Rol"> -->
+
+        <button type="submit">Entrar</button>
+
       </form>
+
     </div>
 
 

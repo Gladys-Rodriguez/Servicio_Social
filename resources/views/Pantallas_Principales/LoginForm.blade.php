@@ -1,6 +1,6 @@
 @extends('Pantallas_Principales.navbarLoginForm')
 
-@section('title', 'Practicas Y Visitas Index')
+@section('title', 'LOGIN')
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantallas_Principales/LoginForm.css')}}">
@@ -15,18 +15,15 @@
       </div>
     <!--Formulario-->
     <div class="login-box">
-      <form method="post">
-      @csrf
+      <form action="{{route('registros.nuevoregistro')}}" method="POST">
+          @csrf
         <!-- USERNAME INPUT -->
-        <label for="matricula">Matricula</label>
-        <input type="text" placeholder="Matricula">
-        <!-- USERNAME INPUT -->
-        <label for="correo">Correo Institcuional</label>
-        <input type="text" placeholder="Correo Institucional">
+        <label>Correo Institcuional</label>
+        <input type="text" name= "correo" placeholder="Correo Institucional">
         <!-- PASSWORD INPUT -->
-        <label for="contraseña">Contraseña</label>
-        <input type="password" placeholder="Contraseña">
-        <input type="submit" value="Entrar">
+        <label>Contraseña</label>
+        <input type="password" name="contraseña" placeholder="Contraseña">
+        <button type="submit">Entrar</button>
         <a href="{{url('/RegisterForm')}}">¿No tienes cuenta?</a>
       </form>
     </div>
