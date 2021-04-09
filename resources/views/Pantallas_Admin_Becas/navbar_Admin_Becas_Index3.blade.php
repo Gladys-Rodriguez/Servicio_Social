@@ -27,8 +27,8 @@
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="{{url('/Admin_Becas_Index3')}}" class="nav__link ">HOME</a></li>
-                    <li class="nav__item"><a href="{{url('/Validacion_Alumno_Becas')}}" class="nav__link active">VALIDACIÓN DE DOCUMENTOS</a></li>
+                    <li class="nav__item"><a href="{{url('/Admin_Becas_Index3')}}" class="nav__link active">HOME</a></li>
+                    <li class="nav__item"><a href="{{url('/Validacion_Alumno_Becas')}}" class="nav__link">VALIDACIÓN DE DOCUMENTOS</a></li>
 
                 </ul>
             </div>
@@ -69,7 +69,7 @@
         </script>
 
     <section class="section-main">
-      <h1>VALIDACIÓN DE DOCUMENTOS</h1>
+      <h1>ADMINISTRACIÓN DE BECAS</h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->

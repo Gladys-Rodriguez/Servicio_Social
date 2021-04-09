@@ -130,7 +130,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/files', [App\Http\Controllers\FilesController::class, 'index'])->name('index');
 Route::post('/upload', [App\Http\Controllers\FilesController::class, 'store'])->name('user.files.store');
 
-<<<<<<< HEAD
 //Ruta Admin Servicio Index 
 Route::get('/AdminIndex', function () {
     return view('Pantallas_Admin_Servicio.AdminServicio_Index');
@@ -169,6 +168,11 @@ Route::get('/Admin_Becas_Index2', function () {
     return view('Pantallas_Admin_Becas.Admin_Becas_Index2');
 }) -> name('Admin_Becas_Index2');
 
+//Ruta Admin Becas Index3
+Route::get('/Admin_Becas_Index3', function () {
+    return view('Pantallas_Admin_Becas.Admin_Becas_Index3');
+}) -> name('Admin_Becas_Index3');
+
 //Ruta Validacion_Alumno_Becas
 Route::get('/Validacion_Alumno_Becas', function () {
     return view('Pantallas_Admin_Becas.Validacion_Alumno_Becas');
@@ -180,6 +184,12 @@ Route::get('/Admin_Practicas_Visitas_Index', function () {
 }) -> name('Admin_Practicas_Visitas_Index');
 
 //Ruta Admin Practicas y Visitas Index
+Route::get('/Admin_Practicas_Visitas_Index2', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.Admin_Practicas_Visitas_Index2');
+}) -> name('Admin_Practicas_Visitas_Index2');
+
+
+//Ruta Validacion Practicas y Visitas Index
 Route::get('/Validacion_Practicas_Visitas', function () {
     return view('Pantallas_Admin_Practicas_Visitas.Validacion_Practicas_Visitas');
 }) -> name('Validacion_Practicas_Visitas');
@@ -187,8 +197,6 @@ Route::get('/Validacion_Practicas_Visitas', function () {
 //------------------------FER TERMINO------------------------------------
 
 
-=======
->>>>>>> c375f70ee334833bb71d08b65d42211d1e3bfa8b
 //------------------------IVAN INICIO------------------------------------
 
 //Pantalla general
