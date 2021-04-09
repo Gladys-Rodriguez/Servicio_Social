@@ -15,14 +15,14 @@
       </div>
     <!--Formulario-->
     <div class="login-box">
-      <form action="{{route('registros.nuevoregistro')}}" method="POST">
+    <form action="{{route('login.store')}}" method="POST">
           @csrf
         <!-- USERNAME INPUT -->
-        <label>Correo Institcuional</label>
-        <input type="text" name= "correo" placeholder="Correo Institucional">
+        <label>Correo Institucional</label>
+        <input type="email" name="email" placeholder="correo@hotmail.com">
         <!-- PASSWORD INPUT -->
         <label>Contraseña</label>
-        <input type="password" name="contraseña" placeholder="Contraseña">
+        <input type="password" name="password" placeholder="Contraseña">
         <button type="submit">Entrar</button>
         <a href="{{url('/RegisterForm')}}">¿No tienes cuenta?</a>
       </form>

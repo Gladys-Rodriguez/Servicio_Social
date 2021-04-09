@@ -174,9 +174,8 @@ Route::get('/LoginForm', function (){
     return view('Pantallas_Principales.LoginForm');
 }) -> name('LoginForm');
 
-Route::post('LoginForm',function(){
-    return 'Post login';
-});
+Route::post('/login/(id)', [App\Http\Controllers\login::class, 'store'])->name('login.store'); //aqui se edita la pantalla de alcance
+
 
 //Pantalla general con segunda barra
 Route::get('/Carrusel2', function (){
@@ -186,6 +185,14 @@ Route::get('/Carrusel2', function (){
 //------------------------IVAN TERMINO------------------------------------
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
