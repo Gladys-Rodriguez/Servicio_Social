@@ -19,8 +19,10 @@
         </ul>
     <div class="secciones">
            <article id="tab1">
+           @foreach ($datos as $dato)
                 <h1>Datos Personales</h1>
-                <p>Nombre: Laura Guerrero Nápoles</p>
+                <p>Nombre: {{$dato->nombre}}</p>
+                @endforeach
                 <p>Teléfono: 5578945693</p>
                 <p>Email: laura@gmail.com</p>
                 <p>Semestre: 4</p>

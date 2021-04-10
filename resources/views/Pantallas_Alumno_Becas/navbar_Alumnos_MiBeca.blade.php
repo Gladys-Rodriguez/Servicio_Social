@@ -71,7 +71,7 @@
         </script>
 
     <section class="section-main">
-      <h1>FORMATOS DE BECAS</h1>
+      <h1>MI BECA</h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->
