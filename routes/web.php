@@ -182,6 +182,11 @@ Route::post('/login/(id)', [App\Http\Controllers\login::class, 'store'])->name('
 
 Route::get('admins/login', 'loginUsuario@showLoginForm');
 
+Route::post('/login/(idd)', [App\Http\Controllers\loginPrueba::class, 'authenticate'])->name('loginPrueba.authenticate'); //aqui se edita la pantalla de alcance
+
+Route::get('/LoginFormPrueba', function (){
+    return view('Pantallas_Principales.LoginFormPrueba');
+}) -> name('LoginFormPrueba');
 
 //Pantalla general con segunda barra
 Route::get('/Carrusel2', function (){
