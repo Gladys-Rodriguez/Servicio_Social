@@ -25,10 +25,10 @@
                 <p>Email: {{$dato->email}}</p>
                 <p>Teléfono: {{$dato->telefono}}</p>
                 <p>Celular: {{$dato->celular}}</p>   
-                <p>Semestre: 4</p>
-                <p>Carrera: Contaduría</p>
-                <p>Turno: M</p>
-                <p>Grupo: 4CM40</p>       
+                <p>Semestre: {{$dato->semestre}}</p>
+                <p>Carrera: {{$dato->carrera}}</p>
+                <p>Turno: {{$dato->turno}}</p>
+                <p>Grupo: {{$dato->grupo}}</p>       
            </article> 
            <article id="tab2">
                 <h1>Dirección</h1>
