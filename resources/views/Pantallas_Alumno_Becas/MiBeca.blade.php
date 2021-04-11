@@ -38,16 +38,20 @@
                 <p>Colonia: {{$dato->colonia}}</p> 
                 <P>C.P: {{$dato->cp}}</P>
                 <p>Delegación/Municipio: {{$dato->alcaldia}}</p>
-                <p>Estado: CDMX</p>    
-                @endforeach                
+                <p>Estado: CDMX</p>                  
            </article> 
            <article id="tab3">
+           @if($dato->id_direcciones=='2')
+           <p>No tienes beca asignada</p>
+           @else
                 <h1>Datos Beca</h1>
                 <p>Solicitud Num:012500</p>
                 <p>Beca: Institucional</p>
                 <p>Monto: $4500.00</p>
                 <p>Fecha de Inicio: 16/01/2021</p>
-                <p>Fecha Fin: 16/12/2021</p>     
+                <p>Fecha Fin: 16/12/2021</p> 
+          @endif
+          @endforeach      
            </article> 
            <article id="tab4">
                 <h1>Documentos</h1>
