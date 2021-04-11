@@ -20,11 +20,11 @@
     <div class="secciones">
            <article id="tab1">
            @foreach ($datos as $dato)
-                <h1>Datos Personales</h1>
-                <p>Nombre: {{$dato->nombre}}</p>
-                @endforeach
-                <p>Teléfono: 5578945693</p>
-                <p>Email: laura@gmail.com</p>
+                <h1>Datos Personales</h1>   
+                <p>Nombre: {{$dato->fullname}} </p>
+                <p>Email: {{$dato->email}}</p>
+                <p>Teléfono: {{$dato->telefono}}</p>
+                <p>Celular: {{$dato->celular}}</p>   
                 <p>Semestre: 4</p>
                 <p>Carrera: Contaduría</p>
                 <p>Turno: M</p>
@@ -32,13 +32,14 @@
            </article> 
            <article id="tab2">
                 <h1>Dirección</h1>
-                <p>Calle: Av Del Rosario</p>
-                <p>Número Interior: 5</p>
-                <p>Número exterior: 216</p>
-                <p>Colonia: Olivar Del Conde</p> 
-                <P>C.P: 01509</P>
-                <p>Delegación/Municipio: Álvaro Obregón</p>
-                <p>Estado: CDMX</p>                    
+                <p>Calle: {{$dato->calle}}</p>
+                <p>Número Interior: {{$dato->num_int}}</p>
+                <p>Número exterior: {{$dato->num_ext}}</p>
+                <p>Colonia: {{$dato->colonia}}</p> 
+                <P>C.P: {{$dato->cp}}</P>
+                <p>Delegación/Municipio: {{$dato->alcaldia}}</p>
+                <p>Estado: CDMX</p>    
+                @endforeach                
            </article> 
            <article id="tab3">
                 <h1>Datos Beca</h1>
