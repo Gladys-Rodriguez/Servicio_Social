@@ -17,7 +17,6 @@
                         <div class="content">
                         <h1>  Solicitud De Beca </h1>
                         <p> <a href="{{asset('doc/solicitud.pdf')}}" target="_blank">Visualizar</a> </p>
-                    
                     </div>
                 </div>
             </div>

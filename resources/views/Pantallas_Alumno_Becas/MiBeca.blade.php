@@ -8,9 +8,35 @@
 @section('content')
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>  
 <script src="{{asset('js/Pantallas_Alumno_Becas/MiBeca.js')}}"></script>
+<script type="text/javascript"> 
+     function cambiar(){
+    var pdrs = document.getElementById('file-upload').files[0].name;
+    document.getElementById('info').innerHTML = pdrs;
+     }   
+     function cambiar1(){
+    var pdrs = document.getElementById('file-upload1').files[0].name;
+    document.getElementById('info1').innerHTML = pdrs;
+     }   
+     function cambiar2(){
+    var pdrs = document.getElementById('file-upload2').files[0].name;
+    document.getElementById('info2').innerHTML = pdrs;
+     } 
+     function cambiar3(){
+    var pdrs = document.getElementById('file-upload3').files[0].name;
+    document.getElementById('info3').innerHTML = pdrs;
+     } 
+     function cambiar4(){
+    var pdrs = document.getElementById('file-upload4').files[0].name;
+    document.getElementById('info4').innerHTML = pdrs;
+     } 
+     function cambiar5(){
+    var pdrs = document.getElementById('file-upload5').files[0].name;
+    document.getElementById('info5').innerHTML = pdrs;
+     } 
+   </script>
 
-
-    <div class="wrap">
+     
+<div class="wrap">
         <ul class="tabs">
             <li><a href="#tab1"><span class="fas fa-user"></span><span class="tab-text">Personales</span></a></li>
             <li><a href="#tab2"><span class="fas fa-address-book"></span><span class="tab-text">Dirección</span></a></li>
@@ -54,14 +80,106 @@
           @endforeach      
            </article> 
            <article id="tab4">
-                <h1>Documentos</h1>
-                <h1 class="Va">Estado</h1>
-                <p>Acta de nacimiento: <input type="file" name="" id=""></p>
-                <p>CURP: <input type="file" name="" id=""></p>
-                <p>Constancia: <input type="file" name="" id=""></p>
-                <p>Solicitud: <input type="file" name="" id=""></p>
-                <p>Estudio Socioeconómico: <input type="file" name="" id=""></p>   
+                <h1>Documentos</h1> 
+                <div class="container">
+                    <table class="table">
+                         <thead>
+                              <tr>
+                                   <th>Documento</th>
+                                   <th></th>
+                                   <th></th>
+                                   <th>Estado</th>
+                              </tr>
+                         </thead>
+                         <tbody>
+                              <tr>
+                                   <td data-label="Documentos">Acta de nacimiento</td>
+                                   <td data-label="">
+                                        <form action="" id="1">
+                                        <label for="file-upload" class="subir">
+                                             <i class="fas fa-cloud-upload-alt"></i> Subir archivo
+                                        </label>
+                                        <input id="file-upload" onchange="cambiar()" type="file" style='display: none;'/>
+                                        <div id="info"></div>
+                                   </td>
+                                   <td data-label=""><input type="button" value="Enviar" class="Btn_chido"></td></td>
+                                   </form>
+                                   <td data-label="Estado">Rechazado</td>
+                              </tr>
+                              <tr>
+                                   <td data-label="Documentos">CURP</td>
+                                   <td data-label="">
+                                   <form action="" id="2"></form>
+                                        <label for="file-upload1" class="subir">
+                                             <i class="fas fa-cloud-upload-alt"></i> Subir archivo
+                                        </label>
+                                        <input id="file-upload1" onchange="cambiar1()" type="file" style='display: none;'/>
+                                        <div id="info1"></div>
+                                   </td>
+                                   <td data-label=""><input type="button" value="Enviar" class="Btn_chido"></td>
+                                   </form>
+                                   <td data-label="Estado">Rechazado</td>
+                              </tr>
+                              <tr>
+                                   <td data-label="Documentos">Constancia</td>
+                                   <td data-label="">
+                                        <form action="" id="3">
+                                        <label for="file-upload2" class="subir">
+                                             <i class="fas fa-cloud-upload-alt"></i> Subir archivo
+                                        </label>
+                                        <input id="file-upload2" onchange="cambiar2()" type="file" style='display: none;'/>
+                                        <div id="info2"></div>
+                                   </td>
+                                   <td data-label=""><input type="button" value="Enviar" class="Btn_chido"></td></td>
+                                   </form>
+                                   <td data-label="Estado">Rechazado</td>
+                              </tr>
+                              <tr>
+                                   <td data-label="Documentos">No. IMSS</td>
+                                   <td data-label="">
+                                        <form action="" id="4">
+                                        <label for="file-upload3" class="subir">
+                                             <i class="fas fa-cloud-upload-alt"></i> Subir archivo
+                                        </label>
+                                        <input id="file-upload3" onchange="cambiar3()" type="file" style='display: none;'/>
+                                        <div id="info3"></div>
+                                   </td>
+                                   <td data-label=""><input type="button" value="Enviar" class="Btn_chido"></td></td>
+                                   </form>
+                                   <td data-label="Estado">Rechazado</td>
+                              </tr>
+                              <tr>
+                                   <td data-label="Documentos">Estudio Socioeconómico</td>
+                                   <td data-label="">
+                                        <form action="" id="5">
+                                        <label for="file-upload4" class="subir">
+                                             <i class="fas fa-cloud-upload-alt"></i> Subir archivo
+                                        </label>
+                                        <input id="file-upload4" onchange="cambiar4()" type="file" style='display: none;'/>
+                                        <div id="info4"></div>
+                                   </td>
+                                   <td data-label=""><input type="button" value="Enviar" class="Btn_chido"></td></td>
+                                   </form>
+                                   <td data-label="Estado">Rechazado</td>
+                              </tr>
+                              <tr>
+                                   <td data-label="Documentos">Solicitud</td>
+                                   <td data-label="">
+                                        <form action="" id="6"></form>
+                                        <label for="file-upload5" class="subir">
+                                             <i class="fas fa-cloud-upload-alt"></i> Subir archivo
+                                        </label>
+                                        <input id="file-upload5" onchange="cambiar5()" type="file" style='display: none;'/>
+                                        <div id="info5"></div>
+                                   </td>
+                                   <td data-label=""><input type="button" value="Enviar" class="Btn_chido"></td></td>
+                                   </form>
+                                   <td data-label="Estado">Rechazado</td>
+                               </tr>
+                         </tbody>
+                    </table>
+                </div>
            </article> 
-    </div>  
+        </div>  
     </div>
-        @endsection
+@endsection
