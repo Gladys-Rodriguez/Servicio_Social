@@ -6,11 +6,12 @@
 @section('css')
 
 <link rel="stylesheet" href="{{asset('css/Pantallas_Alumno_Servicio/FormularioAlumno.css')}}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 
 @endsection
 
 @section('content')
-<h1> PRUEBA </h1>
+<!--<h1> PRUEBA </h1>
 <br>
 <section class="form section" id="forms">
 <div class="container" bd-grid>
@@ -23,7 +24,7 @@
         <p class="text">
           Te pedimos que ingreses tus datos personales para el correcto registro.
         </p>
-
+    -->
         <!--<div class="info">
           <div class="information">
             <img src="img/location.png" class="icon" alt="" />
@@ -38,7 +39,7 @@
             <p>123-456-789</p>
           </div>
         </div> -->
-
+<!--
         <div class="social-media">
           <p>Connect with us :</p>
           <div class="social-icons">
@@ -48,14 +49,14 @@
             <a href="#">
               <i class="fab fa-twitter"></i>
             </a>
-
+        -->
             <!--<a href="#">
               <i class=""></i>
             </a>
             <a href="#">
               <i class=""></i>
             </a>-->
-          </div>
+ <!--         </div>
         </div>
       </div>
 
@@ -130,7 +131,156 @@
 
 
 </section>
+-->
 
+ <div class="container">
+    <h2>Signup Form</h2>
+        <div class="progress-bar">
+            <div class="step">
+                <p>Datos</p>
+                <div class="bullet">
+                    <span>1</span>
+                 </div>
+                <div class="check fas fa-check"></div>
+            </div>
+            <div class="step">
+                <p>Domicilio</p>
+                <div class="bullet">
+                    <span>2</span>
+                </div>
+             <div class="check fas fa-check"></div>
+            </div>
+        <!--<div class="step">
+        <p>Birth</p>
+        <div class="bullet">
+          <span>3</span>
+        </div>
+        <div class="check fas fa-check">
+    </div>
+    </div>
+        <div class="step">
+        <p>Submit</p>
+        <div class="bullet">
+          <span>4</span>
+        </div>
+<div class="check fas fa-check">
+</div>
+</div>-->
+        </div>
+<div class="form-outer">
+      <form action="#" >
+        <div class="page slide-page">
+          <div class="title">Datos Personales:</div>
+          <br>
+    <div class="field">
+        <div class="label">First Name</div>
+        <input type="text">
+    </div>
+    <div class="field">
+        <div class="label">Apellido Paterno</div>
+        <input type="text">
+    </div>
+    <div class="field">
+        <div class="label">Apellido Materno</div>
+        <input type="text">
+    </div>
+    <div class="field">
+        <div class="label">Nombre(s)</div>
+        <input type="text">
+    </div>
+    <div class="field">
+        <div class="label">Teléfono Local</div>
+        <input type="text">
+    </div>
+    <div class="field">
+        <div class="label">Teléfono Celular</div>
+        <input type="text">
+    </div>
+    <div class="field">
+        <button class="firstNext next">Next</button>
+    </div>
+</div>
+<div class="page">
+          <div class="title">Domicilio:</div>
+          <br>
+            <div class="field">
+                <div class="label">Ciudad o Estado:</div>
+                <input type="text">
+          </div>
+            <div class="field">
+                <div class="label">Municipio o Alcaldía:</div>
+            <input type="text">
+          </div>
+          <div class="field">
+            <div class="label">Colonia</div>
+         <input type="text">
+         </div>
+         <div class="field">
+          <div class="label">Calle:</div>
+            <input type="text">
+         </div>
+        <div class="field">
+            <div class="label">Num. Ext:</div>
+            <input type="Number">
+        </div>
+        <div class="field">
+            <div class="label">Num. Int:</div>
+            <input type="Number">
+        </div>
+        <div class="field">
+            <div class="label">CP:</div>
+            <input type="Number">
+      </div>
+      <br>
+        <div class="field btns">
+            <button class="prev-1 prev">Previous</button>
+
+        </div>
+        <div class="field btns">
+            <button class="submit sub">Submit</button>
+        </div>
+
+
+</div>
+<!--        <div class="page">
+          <div class="title">Date of Birth:</div>
+        <br>
+        <div class="field">
+            <div class="label">Date</div>
+            <input type="text">
+        </div>
+        <div class="field">
+            <div class="label">Gender</div>
+            <select>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+        <div class="field btns">
+            <button class="prev-2 prev">Previous</button>
+            <button class="next-2 next">Next</button>
+        </div>
+    </div>
+        <div class="page">
+          <div class="title">Login Details:</div>
+          <br>
+        <div class="field">
+            <div class="label">Username</div>
+            <input type="text">
+        </div>
+        <div class="field">
+            <div class="label">Password</div>
+            <input type="password">
+        </div>
+        <div class="field btns">
+            <button class="prev-3 prev">Previous</button>
+            <button class="submit">Submit</button>
+         </div>
+        </div> -->
+</form>
+</div>
+ </div>
 @endsection
 
 @section('script')
