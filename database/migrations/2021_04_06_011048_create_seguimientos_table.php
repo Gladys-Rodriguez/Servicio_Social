@@ -14,7 +14,7 @@ class CreateSeguimientosTable extends Migration
     public function up()
     {
         Schema::create('seguimientos', function (Blueprint $table) {
-            $table->id();
+            $table->bigInteger('id_seguimientos')->unsigned()->notnull();
             $table->bigInteger('id_registros')->unsigned()->notnull();
             $table->bigInteger('id_liberaciones')->unsigned()->notnull();
             $table->bigInteger('id_doc_seguimientos')->unsigned()->notnull();
@@ -22,11 +22,12 @@ class CreateSeguimientosTable extends Migration
             $table->bigInteger('id_alumnos')->unsigned()->notnull();
             $table->timestamps();
 
-            $table->foreign('id_registros')->references('id')->on('registros')->onDelete('cascade');
-            $table->foreign('id_liberaciones')->references('id')->on('liberacions')->onDelete('cascade');
-            $table->foreign('id_doc_seguimientos')->references('id')->on('doc_seguimientos')->onDelete('cascade');
-            $table->foreign('id_reportes')->references('id')->on('reportes')->onDelete('cascade');
-            $table->foreign('id_alumnos')->references('id')->on('alumnos')->onDelete('cascade');
+            $table->primary('id_seguimientos');
+            $table->foreign('id_registros')->references('id_registros')->on('registros')->onDelete('cascade');
+            $table->foreign('id_liberaciones')->references('id_liberacions')->on('liberacions')->onDelete('cascade');
+            $table->foreign('id_doc_seguimientos')->references('id_doc_seguimientos')->on('doc_seguimientos')->onDelete('cascade');
+            $table->foreign('id_reportes')->references('id_reportes')->on('reportes')->onDelete('cascade');
+            $table->foreign('id_alumnos')->references('id_alumnos')->on('alumnos')->onDelete('cascade');
         });
 
     }

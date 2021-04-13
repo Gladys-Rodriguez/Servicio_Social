@@ -14,7 +14,7 @@ class CreateAlumnosTable extends Migration
     public function up()
     {
         Schema::create('alumnos', function (Blueprint $table) {
-            $table->id();
+            $table->bigInteger('id_alumnos')->unsigned()->notnull();
             $table->string('carrera',40)->notnull();
             $table->char('semestre',1)->notnull();
             $table->char('grupo', 5)->notnull();
@@ -22,10 +22,11 @@ class CreateAlumnosTable extends Migration
             $table->bigInteger('id_datos')->unsigned()->notnull();
             $table->bigInteger('id_usuarios')->unsigned()->notnull();
             $table->timestamps();
+            $table->primary('id_alumnos');
 
 
-            $table->foreign('id_datos')->references('id')->on('datos')->onDelete('cascade');
-            $table->foreign('id_usuarios')->references('id')->on('usuarios')->onDelete('cascade');
+            $table->foreign('id_datos')->references('id_datos')->on('datos')->onDelete('cascade');
+            $table->foreign('id_usuarios')->references('id_usuarios')->on('usuarios')->onDelete('cascade');
         });
     }
 

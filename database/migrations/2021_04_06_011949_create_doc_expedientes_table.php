@@ -14,15 +14,17 @@ class CreateDocExpedientesTable extends Migration
     public function up()
     {
         Schema::create('doc_expedientes', function (Blueprint $table) {
-            $table->id();
+            $table->bigInteger('id_doc_expedientes')->unsigned()->notnull();
             $table->string('nombre_doc');
             $table->string('file');
             $table->boolean('estado');
             $table->text('observaciones');
             $table->bigInteger('id_alumnos')->unsigned()->notnull();
+            $table->text('tipo_doc');
             $table->timestamps();
 
-            $table->foreign('id_alumnos')->references('id')->on('alumnos')->onDelete('cascade');
+            $table->primary('id_doc_expedientes');
+            $table->foreign('id_alumnos')->references('id_alumnos')->on('alumnos')->onDelete('cascade');
         });
     }
 

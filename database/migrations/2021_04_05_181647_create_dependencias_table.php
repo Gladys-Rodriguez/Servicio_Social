@@ -14,7 +14,7 @@ class CreateDependenciasTable extends Migration
     public function up()
     {
         Schema::create('dependencias', function (Blueprint $table) {
-            $table->id();
+            $table->bigInteger('id_dependencias')->unsigned()->notnull();
             $table->string('nombre_depen')->notnull();
             $table->string('nom_responsable',30)->notnull();
             $table->string('ap_responsable',30)->notnull();
@@ -24,7 +24,8 @@ class CreateDependenciasTable extends Migration
             $table->bigInteger('id_direcciones')->unsigned()->notnull();
             $table->timestamps();
 
-            $table->foreign('id_direcciones')->references('id')->on('direccions')->onDelete('cascade');
+            $table->primary('id_dependencias');
+            $table->foreign('id_direcciones')->references('id_direccions')->on('direccions')->onDelete('cascade');
         });
     }
 
