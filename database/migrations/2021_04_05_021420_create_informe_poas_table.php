@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFilepruebasTable extends Migration
+class CreateInformePoasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class CreateFilepruebasTable extends Migration
      */
     public function up()
     {
-        Schema::create('filepruebas', function (Blueprint $table) {
-            $table->id();
+        Schema::create('informe_poas', function (Blueprint $table) {
+            $table->id()->unique()->notnull();
+            $table->string('nombre');
+            $table->unsignedBigInteger('usuario');
+
+            $table->foreign('usuario')->references('id')->on('usuarios')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateFilepruebasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('filepruebas');
+        Schema::dropIfExists('informe_poas');
     }
 }

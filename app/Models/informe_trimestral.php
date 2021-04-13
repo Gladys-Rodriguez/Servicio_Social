@@ -5,7 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class fileprueba extends Model
+class informe_trimestral extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'usuario'    
+    ];
 }
