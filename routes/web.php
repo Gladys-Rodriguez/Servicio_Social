@@ -118,10 +118,12 @@ Route::post('RegistroAlumno', [App\Http\Controllers\AlumnoController::class, 'cr
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/AdminIndex', [App\Http\Controllers\ServicioController::class, 'index'])->name('home');
+Route::get('/logout', [App\Http\Controllers\ServicioController::class, 'getLogout'])->name('logout');
+Route::get('/AdminBecas', [App\Http\Controllers\BecasController::class, 'index'])->name('home');
+Route::get('/AdminPracticas', [App\Http\Controllers\PracticasController::class, 'index'])->name('home');
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
@@ -139,6 +141,12 @@ Route::get('/AdminIndex', function () {
 Route::get('/concentrados', function () {
     return view('Pantallas_Admin_Servicio.concentrados');
 }) -> name('concentrados');
+
+//Ruta documentos concentrados iniciales
+Route::get('/docs_concentrados', function () {
+    return view('Pantallas_Admin_Servicio.docs_concentrados');
+}) -> name('docs_concentrados');
+
 
 //Ruta Estadisicas de informacion
 Route::get('/estadistica', function () {

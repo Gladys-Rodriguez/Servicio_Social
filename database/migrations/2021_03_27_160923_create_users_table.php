@@ -17,6 +17,8 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name')->index();
             $table->string('email')->index();
+            $table->string('tipo')->nullable();
+            //1.Superadmin //2.Admin Servicio Social //3. Admin Becas //4.Admin practicas y visitas //5. alumnos
             $table->string('password')->index();
             
             $table->timestamps();
