@@ -184,6 +184,10 @@ Route::get('admins/login', 'loginUsuario@showLoginForm');
 
 Route::post('/login/(idd)', [App\Http\Controllers\loginPrueba::class, 'authenticate'])->name('loginPrueba.authenticate'); //aqui se edita la pantalla de alcance
 
+//prueba de login con otros modelos
+Route::get('admins/login', 'AdministratorsController@showLoginForm');
+Route::post('admins/login', 'AdministratorsController@login');
+
 Route::get('/LoginFormPrueba', function (){
     return view('Pantallas_Principales.LoginFormPrueba');
 }) -> name('LoginFormPrueba');

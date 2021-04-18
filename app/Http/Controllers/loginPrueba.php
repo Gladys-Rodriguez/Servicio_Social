@@ -6,14 +6,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Usuario;
 use App\Models\User;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
 
 class loginPrueba extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+        use AuthenticatesUsers;
+        protected $loginView= 'Pantallas_Principales.loginpruebaa';
+
+
     public function index()
     {
         //
@@ -99,4 +100,8 @@ class loginPrueba extends Controller
             'email' => 'The provided credentials do not match our records.',
         ]);
     }
+
+    //public function showLoginForm(){
+    //    return 'el formulario para administradores';
+    //}
 }
