@@ -39,7 +39,7 @@ class registro extends Controller
     public function store(Request $request)
     {
       //return $request->all();
-      $registro= new Usuario;
+      $registro= new User;
 
       $validated = $request->validate([
         'email' => 'unique:usuarios',
