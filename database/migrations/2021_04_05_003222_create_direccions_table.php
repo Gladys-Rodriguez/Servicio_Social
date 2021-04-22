@@ -23,8 +23,10 @@ class CreateDireccionsTable extends Migration
             $table->string('num_int',30)->nullable();
             $table->integer('cp')->notnull();
             $table->timestamps();
-
+            $table->bigInteger('id_alumnos')->unsigned()->notnull();
             $table->primary('id_direccions');
+
+            $table->foreign('id_alumnos')->references('id_alumnos')->on('alumnos')->onDelete('cascade');
         });
     }
 

@@ -443,23 +443,28 @@ textarea.input {
   margin : 0 auto;
   padding-top: 2rem;
 
+
 }
-.container .form-outer form{
-  display: flex;
+.container .form-outer .separa{
+
   width: 400%;
+  display: flex;
+}
+.form-outer .separa form{
+    width: 25%;
+}
+ .form-outer .separa form .page{
 
-
+    padding-left: 2rem;
+    transition: margin-left 0.3s ease-in-out;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+#social{
+    display: none;
 
 }
-.form-outer form .page{
-  width: 25%;
-  padding-left: 2rem;
-  transition: margin-left 0.3s ease-in-out;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
 
-
-}
 .form-outer form .page .title{
   text-align: left;
   color: rgba(175, 175, 185);

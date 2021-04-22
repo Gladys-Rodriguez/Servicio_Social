@@ -21,6 +21,7 @@ class CreateAlumnosTable extends Migration
             $table->string('turno', 10)->notnull();
             $table->bigInteger('id_datos')->unsigned()->notnull();
             $table->bigInteger('id_usuarios')->unsigned()->notnull();
+
             $table->timestamps();
             $table->primary('id_alumnos');
 

@@ -21,11 +21,11 @@ class CreateDatosTable extends Migration
             $table->string('telefono');
             $table->string('celular');
             $table->timestamp('email_verified_at')->nullable();
-            $table->bigInteger('id_direccions')->unsigned()->notnull();
+            //$table->bigInteger('id_direccions')->unsigned()->notnull();
             $table->timestamps();
 
             $table->primary('id_datos');
-            $table->foreign('id_direccions')->references('id_direccions')->on('direccions')->onDelete('cascade');
+            //$table->foreign('id_direccions')->references('id_direccions')->on('direccions')->onDelete('cascade');
         });
     }
 

@@ -114,9 +114,15 @@ Route::get('/RegistroA', function (){
 }) -> name('RegistroA');
 
 
-//Ruta post controlador de registro alumno
-Route::post('RegistroAlumno', [App\Http\Controllers\AlumnoController::class, 'create'])->name('RegistroAlumnno.create');
+//Ruta para obtener los datos desde el controlador
+Route::get('RegistroAlumno', [App\Http\Controllers\AlumnosController::class, 'index'])->name('RegistroAlumno.index');
+Route::post('RegistroAlumno', [App\Http\Controllers\AlumnosController::class, 'store'])->name('RegistroAlumno.store');
 Auth::routes();
+//Ruta de controlador para guardar datos de un formulario
+//Route::post('DatosAlumno', [App\Http\Controllers\AlumnoController::class, 'create'])->name('DatosAlumnno.create');
+Route::resource('direcciones', "DireccionsController");
+Route::resource('alumnos', "AlumnosController");
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -129,6 +135,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/files', [App\Http\Controllers\FilesController::class, 'index'])->name('index');
 Route::post('/upload', [App\Http\Controllers\FilesController::class, 'store'])->name('user.files.store');
+
 
 //------------------------IVAN INICIO------------------------------------
 
