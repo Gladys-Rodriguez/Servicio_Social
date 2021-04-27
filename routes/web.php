@@ -40,8 +40,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Nuevas rutas
 
 Route::get('/', function () {
-    return view('Inicio');
-}) -> name('Inicio');
+    return view('Pantallas_Principales.Index_gnral');
+}) -> name('Index_gnral');
+
 
 //Ruta para Formatos Administrativos de la diapositiva 12
 Route::get('/FormatosAdministrativos', function (){
@@ -131,17 +132,30 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/files', [App\Http\Controllers\FilesController::class, 'index'])->name('index');
 Route::post('/upload', [App\Http\Controllers\FilesController::class, 'store'])->name('user.files.store');
 
-//Ruta Admin Servicio Index 
-Route::get('/AdminIndex', function () {
-    return view('Pantallas_Admin_Servicio.AdminServicio_Index2');
-}) -> name('AdminServicio_Index2');
+//------------------------IVAN INICIO------------------------------------
 
-//Ruta Admin Servicio concentrados de informacion
+//Pantalla general
+Route::get('/Index_gnral', function (){
+    return view('Pantallas_Principales.Index_gnral');
+}) -> name('Index_gnral');
 
-Route::get('/concentrados', function () {
-    return view('Pantallas_Admin_Servicio.concentrados');
-}) -> name('concentrados');
 
+//Pantalla general con segunda barra
+Route::get('/Index_gnral2', function (){
+    return view('Pantallas_Principales.Index_gnral2');
+}) -> name('Index_gnral2');
+
+//Pantalla general de servicio
+Route::get('/ServicioIndex', function (){
+    return view('Pantallas_Principales.ServicioIndex');
+}) -> name('ServicioIndex');
+
+//Pantalla general de becas
+Route::get('/BecasIndex', function (){
+    return view('Pantallas_Principales.BecasIndex');
+}) -> name('BecasIndex');
+
+<<<<<<< HEAD
 //Ruta documentos concentrados iniciales
 Route::get('/docs_concentrados', function () {
     return view('Pantallas_Admin_Servicio.docs_concentrados');
@@ -152,27 +166,66 @@ Route::get('/docs_concentrados', function () {
 Route::get('/estadistica', function () {
     return view('Pantallas_Admin_Servicio.estadistica');
 }) -> name('estadistica');
+=======
+//Pantalla general de practicas
+Route::get('/PracticasIndex', function (){
+    return view('Pantallas_Principales.PracticasIndex');
+}) -> name('PracticasIndex');
+>>>>>>> 22be4150550ca4a9b83490d329ba4c66097c6830
 
-//Ruta validación Documentos Alumno
-Route::get('/validacionAlumno', function () {
-    return view('Pantallas_Admin_Servicio.validacionAlumno');
-}) -> name('validacionAlumno');
+//Pantalla Registro
+Route::get('/RegisterForm', function (){
+    return view('Pantallas_Principales.RegisterForm');
+}) -> name('RegisterForm');
 
-//Ruta validacion Reportes
-Route::get('/validacionReportes', function () {
-    return view('Pantallas_Admin_Servicio.validacionReportes');
-}) -> name('validacionReportes');
+//Ruta para recibir los datos que enviamos para el registro
+Route::resource('Servicio','registro');
+Route::post('/registros/(id)', [App\Http\Controllers\registro::class, 'store'])->name('registros.store'); //aqui se edita la pantalla de alcance
 
+//Ruta oara pantalla de registro exitoso
+Route::get('/Registro_exitoso', function (){
+    return view('Pantallas_Principales.Registro_exitoso');
+}) -> name('Registro_exitoso');
 
+//RUTAS PARA EL LOGIN
+//Pantalla Login
+Route::get('/LoginForm', function (){
+    return view('Pantallas_Principales.LoginForm');
+}) -> name('LoginForm');
 
+Route::post('/login/(id)', [App\Http\Controllers\login::class, 'store'])->name('login.store'); //aqui se edita la pantalla de alcance
 
+Route::get('admins/login', 'loginUsuario@showLoginForm');
 
+Route::post('/login/(idd)', [App\Http\Controllers\loginPrueba::class, 'authenticate'])->name('loginPrueba.authenticate'); //aqui se edita la pantalla de alcance
 
+//prueba de login con otros modelos
+Route::get('admins/login', 'AdministratorsController@showLoginForm');
+Route::post('admins/login', 'AdministratorsController@login');
 
+Route::get('/LoginFormPrueba', function (){
+    return view('Pantallas_Principales.LoginFormPrueba');
+}) -> name('LoginFormPrueba');
 
+//Pantalla general con segunda barra
+Route::get('/Carrusel2', function (){
+    return view('Pantallas_Principales.PruebaCarrusel');
+}) -> name('Carrusel');
 
+//------------------------IVAN TERMINO------------------------------------
 
+Auth::routes();
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Auth::routes();
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -20,8 +20,6 @@ class CreateUsuariosTable extends Migration
             $table->timestamps();
             $table->bigInteger('rol')->unsigned()->notnull();
 
-
-
             $table->foreign('rol')->references('id')->on('rols')->onDelete('cascade');
         });
     }
