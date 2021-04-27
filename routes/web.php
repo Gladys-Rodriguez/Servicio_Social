@@ -197,6 +197,16 @@ Route::get('/Carrusel2', function (){
     return view('Pantallas_Principales.PruebaCarrusel');
 }) -> name('Carrusel');
 
+
+//Rutas de Omar para el login
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/AdminIndex', [App\Http\Controllers\ServicioSocialController::class, 'index'])->name('home');
+Route::get('/Admin_Becas_Index', [App\Http\Controllers\BecasController ::class, 'index'])->name('home');
+Route::get('/AdminPracticas', [App\Http\Controllers\AlumnoLController ::class, 'index'])->name('home');
+Route::get('/Index_gnral', [App\Http\Controllers\PracticasController::class, 'index'])->name('home');
+//DocenteController
+
+
 //------------------------IVAN TERMINO------------------------------------
 
 Auth::routes();

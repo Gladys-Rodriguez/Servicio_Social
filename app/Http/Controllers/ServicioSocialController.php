@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Http\Request;
-use Illuminate\Http\Unique;
-use App\Models\Usuario;
-use App\Models\User;
 
-class registro extends Controller
+class ServicioSocialController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -38,27 +34,8 @@ class registro extends Controller
      */
     public function store(Request $request)
     {
-      //return $request->all();
-      $registro= new User;
-
-      $validated = $request->validate([
-        'email' => 'unique:usuarios',
-       ]);
-
-      $registro->id=$request->id;
-      $registro->email=$request->email;
-      $registro->password=bcrypt($request->password);
-      //$registro->password=bcrypt($request->password);
-      $registro->rol= 3;
-
-      $registro->save();
-      return redirect('Registro_exitoso');
-
-
+        //
     }
-
-
-
 
     /**
      * Display the specified resource.
@@ -66,9 +43,16 @@ class registro extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('serviciosocial',['only'=> ['index']]);
+    }
+
     public function show($id)
     {
         //
+        return view('/AdminIndex');
     }
 
     /**
