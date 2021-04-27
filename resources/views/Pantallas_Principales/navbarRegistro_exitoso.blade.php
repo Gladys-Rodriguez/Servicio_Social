@@ -27,7 +27,7 @@
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="{{url('/Index_gnral')}}" class="nav__link active">Regresar</a></li>
+                    <li class="nav__item"><a href="{{url('/')}}" class="nav__link active">Regresar</a></li>
                 </ul>
             </div>
         </div>

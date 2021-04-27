@@ -18,7 +18,9 @@ class CreateUsersTable extends Migration
             $table->string('name')->index()->default('Prueba');
             $table->string('email')->index();
             $table->string('password')->index();
-            $table->bigInteger('rol')->unsigned()->notnull()->default('0');
+            //$table->string('rol')->nullable();
+            //$table->string('tipo')->nullable();
+            $table->bigInteger('rol')->nullable()->default('1');
             $table->timestamps();
 
             //$table->foreign('rol')->references('id')->on('rols')->onDelete('cascade');
