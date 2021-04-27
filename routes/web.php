@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DocenteController;
+use App\Http\Controllers\AlumnooController;
 
 /*
 |--------------------------------------------------------------------------
@@ -197,7 +199,20 @@ Route::get('/Carrusel2', function (){
     return view('Pantallas_Principales.PruebaCarrusel');
 }) -> name('Carrusel');
 
+//prueba de varios roles
+Route::resource('/alumno', AlumnoController::class);
+
+Route::resource('/docentes', DocenteController::class);
+
 //------------------------IVAN TERMINO------------------------------------
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
