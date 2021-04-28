@@ -1,6 +1,6 @@
 @extends('Pantallas_Alumno_Servicio.Layout_Alumno.Layout_Alumno2')
 
-
+<!-- comentario -->
 @section('title', 'Registro')
 
 @section('css')
