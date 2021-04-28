@@ -14,7 +14,7 @@ class CreateRegistrosTable extends Migration
     public function up()
     {
         Schema::create('registros', function (Blueprint $table) {
-            $table->id();
+            $table->bigInteger('id_registros')->unsigned()->notnull();
             $table->string('estado');
             $table->date('fecha_envio');
             $table->text('observaciones');
@@ -22,8 +22,9 @@ class CreateRegistrosTable extends Migration
             $table->bigInteger('id_servicios')->unsigned()->notnull();
             $table->timestamps();
 
-            $table->foreign('id_alumnos')->references('id')->on('alumnos')->onDelete('cascade');
-            $table->foreign('id_servicios')->references('id')->on('servicios')->onDelete('cascade');
+            $table->primary('id_registros');
+            $table->foreign('id_alumnos')->references('id_alumnos')->on('alumnos')->onDelete('cascade');
+            $table->foreign('id_servicios')->references('id_servicios')->on('servicios')->onDelete('cascade');
         });
     }
 

@@ -14,7 +14,7 @@ class CreateExpedienteBecasTable extends Migration
     public function up()
     {
         Schema::create('expediente_becas', function (Blueprint $table) {
-            $table->id();
+            $table->bigInteger('id_expediente_becas')->unsigned()->notnull();
             $table->string('Nombre_beca');
             $table->date('Fecha_Inicio');
             $table->date('Fecha_Fin');
@@ -22,8 +22,9 @@ class CreateExpedienteBecasTable extends Migration
             $table->bigInteger('id_alumnos')->unsigned()->notnull();
             $table->bigInteger('id_docs_becas')->unsigned()->notnull();
 
-            $table->foreign('id_alumnos')->references('id')->on('alumnos')->onDelete('cascade');
-            $table->foreign('Id_docs_becas')->references('id')->on('docs_becas')->onDelete('cascade');
+            $table->primary('id_expediente_becas');
+            $table->foreign('id_alumnos')->references('id_alumnos')->on('alumnos')->onDelete('cascade');
+            $table->foreign('Id_docs_becas')->references('id_docs_becas')->on('docs_becas')->onDelete('cascade');
             $table->timestamps();
         });
     }
