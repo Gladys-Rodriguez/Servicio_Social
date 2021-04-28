@@ -49,7 +49,7 @@ class registro extends Controller
       $registro->email=$request->email;
       $registro->password=bcrypt($request->password);
       //$registro->password=bcrypt($request->password);
-      $registro->rol= 5;
+      $registro->rol= 3;
 
       $registro->save();
       return redirect('Registro_exitoso');
