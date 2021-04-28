@@ -40,8 +40,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Nuevas rutas
 
 Route::get('/', function () {
-    return view('Inicio');
-}) -> name('Inicio');
+    return view('Pantallas_Principales.Index_gnral');
+}) -> name('Index_gnral');
+
 
 //Ruta para Formatos Administrativos de la diapositiva 12
 Route::get('/FormatosAdministrativos', function (){
@@ -101,8 +102,17 @@ Route::get('/RegistroAlumno', function (){
 }) -> name('RegistroAlumno');
 
 Route::get('/LayoutAlumno', function (){
-    return view('Pantallas_Alumno_Servicio.Layout_Alumno.Layout_Alumno');
+    return view('Pantallas_Alumno_Servicio.Layout_Alumno.Layout_Alumno2');
 }) -> name('LayoutAlumno');
+
+Route::get('/AlumnoIndex', function (){
+    return view('Pantallas_Alumno_Servicio.Alumno_Index');
+}) -> name('AlumnoIndex');
+
+Route::get('/RegistroA', function (){
+    return view('Pantallas_Alumno_Servicio.FormRegistro');
+}) -> name('RegistroA');
+
 
 //Ruta post controlador de registro alumno
 Route::post('RegistroAlumno', [App\Http\Controllers\AlumnoController::class, 'create'])->name('RegistroAlumnno.create');
@@ -120,15 +130,118 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/files', [App\Http\Controllers\FilesController::class, 'index'])->name('index');
 Route::post('/upload', [App\Http\Controllers\FilesController::class, 'store'])->name('user.files.store');
 
+//------------------------IVAN INICIO------------------------------------
 
-//Rutas Practicas-y-Vistas Docente
-Route::get('/VisitasEscolares/Index','DocenteIndexController');
-Route::get('/VisitasEscolares/SolicitarVisita','DocenteSolicitarVisitaController');
-Route::get('/VisitasEscolares/MisVisitas','DocenteMisVisitasController');
-
-
-
+//Pantalla general
+Route::get('/Index_gnral', function (){
+    return view('Pantallas_Principales.Index_gnral');
+}) -> name('Index_gnral');
 
 
+//Pantalla general con segunda barra
+Route::get('/Index_gnral2', function (){
+    return view('Pantallas_Principales.Index_gnral2');
+}) -> name('Index_gnral2');
+
+//Pantalla general de servicio
+Route::get('/ServicioIndex', function (){
+    return view('Pantallas_Principales.ServicioIndex');
+}) -> name('ServicioIndex');
+
+//Pantalla general de becas
+Route::get('/BecasIndex', function (){
+    return view('Pantallas_Principales.BecasIndex');
+}) -> name('BecasIndex');
+
+//Pantalla general de practicas
+Route::get('/PracticasIndex', function (){
+    return view('Pantallas_Principales.PracticasIndex');
+}) -> name('PracticasIndex');
+
+//Pantalla Registro
+Route::get('/RegisterForm', function (){
+    return view('Pantallas_Principales.RegisterForm');
+}) -> name('RegisterForm');
+
+//Ruta para recibir los datos que enviamos para el registro
+Route::resource('Servicio','registro');
+Route::post('/registros/(id)', [App\Http\Controllers\registro::class, 'store'])->name('registros.store'); //aqui se edita la pantalla de alcance
+
+//Ruta oara pantalla de registro exitoso
+Route::get('/Registro_exitoso', function (){
+    return view('Pantallas_Principales.Registro_exitoso');
+}) -> name('Registro_exitoso');
+
+//RUTAS PARA EL LOGIN
+//Pantalla Login
+Route::get('/LoginForm', function (){
+    return view('Pantallas_Principales.LoginForm');
+}) -> name('LoginForm');
+
+Route::post('/login/(id)', [App\Http\Controllers\login::class, 'store'])->name('login.store'); //aqui se edita la pantalla de alcance
+
+Route::get('admins/login', 'loginUsuario@showLoginForm');
+
+Route::post('/login/(idd)', [App\Http\Controllers\loginPrueba::class, 'authenticate'])->name('loginPrueba.authenticate'); //aqui se edita la pantalla de alcance
+
+//prueba de login con otros modelos
+Route::get('admins/login', 'AdministratorsController@showLoginForm');
+Route::post('admins/login', 'AdministratorsController@login');
+
+Route::get('/LoginFormPrueba', function (){
+    return view('Pantallas_Principales.LoginFormPrueba');
+}) -> name('LoginFormPrueba');
+
+//Pantalla general con segunda barra
+Route::get('/Carrusel2', function (){
+    return view('Pantallas_Principales.PruebaCarrusel');
+}) -> name('Carrusel');
 
 
+//Rutas de Omar para el login
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/AdminIndex', [App\Http\Controllers\ServicioSocialController::class, 'index'])->name('home');
+Route::get('/Admin_Becas_Index', [App\Http\Controllers\BecasController ::class, 'index'])->name('home');
+Route::get('/AdminPracticas', [App\Http\Controllers\AlumnoLController ::class, 'index'])->name('home');
+Route::get('/Index_gnral', [App\Http\Controllers\PracticasController::class, 'index'])->name('home');
+//DocenteController
+
+
+//------------------------IVAN TERMINO------------------------------------
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

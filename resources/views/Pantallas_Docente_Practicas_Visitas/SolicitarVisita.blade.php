@@ -36,7 +36,7 @@ Solicitar Visita Escolar
 
             <div class="col">
                 <label>Profesor:</label>
-                <input type="text" value="Dr Profesor Patricio">
+                <input type="text" value="RODRIGUEZ PEREZ MANUEL">
 
                 <label for="Carrera">Carrera</label>
                 <select name="carrera" id="Carrera">

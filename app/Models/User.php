@@ -23,6 +23,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'rol',
     ];
 
     /**
@@ -47,6 +48,19 @@ class User extends Authenticatable
 
     //Relación Uno a Uno
 
+    /**Prueba de roles
+    public function role(){
+        return $this->belongsTo('App\Role');
+    }
+
+    public function esAdmin(){
+
+        if($this->role->nombre_rol=='administrador'){
+            return true;
+        }
+
+        return false;
+    } */
 
 
 
