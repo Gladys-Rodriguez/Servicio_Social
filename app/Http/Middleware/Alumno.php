@@ -22,13 +22,13 @@ class Alumno
                 return redirect('/SuperAdmin_Index');//si es super administrador continua al HOME
             break;
 			case('2'):
-                return redirect('AdminIndex');// si es un usuario de servicio social
+                return redirect('/AdminIndex');// si es un usuario de servicio social
 			break;
             case ('3'):
-                return redirect('/Admin_Becas_Index');//si es administrador de becas
+                return redirect('/Admin_Becas_Index3');//si es administrador de becas
             break;
             case ('4'):
-                return redirect('/Practicas');//si es administrador de practicas
+                return redirect('/Admin_Practicas_Visitas_Index2');//si es administrador de practicas
             break;
             case ('5'):
                 return $next($request);//si es alumno

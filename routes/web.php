@@ -136,6 +136,59 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/files', [App\Http\Controllers\FilesController::class, 'index'])->name('index');
 Route::post('/upload', [App\Http\Controllers\FilesController::class, 'store'])->name('user.files.store');
 
+//Ruta Admin Servicio Index
+Route::get('/AdminIndex', function () {
+    return view('Pantallas_Admin_Servicio.AdminServicio_Index');
+}) -> name('AdminServicio_Index');
+
+//Ruta Admin Servicio concentrados de informacion
+
+Route::get('/concentrados', function () {
+    return view('Pantallas_Admin_Servicio.concentrados');
+}) -> name('concentrados');
+
+//Ruta Estadisicas de informacion
+Route::get('/estadistica', function () {
+    return view('Pantallas_Admin_Servicio.estadistica');
+}) -> name('estadistica');
+
+//Ruta validación Documentos Alumno
+Route::get('/validacionAlumno', function () {
+    return view('Pantallas_Admin_Servicio.validacionAlumno');
+}) -> name('validacionAlumno');
+
+//Ruta validacion Reportes
+Route::get('/validacionReportes', function () {
+    return view('Pantallas_Admin_Servicio.validacionReportes');
+}) -> name('validacionReportes');
+
+//------------------------FER INICIO------------------------------------
+
+
+//Ruta Admin Becas Index3
+Route::get('/Admin_Becas_Index3', function () {
+    return view('Pantallas_Admin_Becas.Admin_Becas_Index3');
+}) -> name('Admin_Becas_Index3');
+
+//Ruta Validacion_Alumno_Becas
+Route::get('/Validacion_Alumno_Becas', function () {
+    return view('Pantallas_Admin_Becas.Validacion_Alumno_Becas');
+}) -> name('Validacion_Alumno_Becas');
+
+
+//Ruta Admin Practicas y Visitas Index
+Route::get('/Admin_Practicas_Visitas_Index2', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.Admin_Practicas_Visitas_Index2');
+}) -> name('Admin_Practicas_Visitas_Index2');
+
+
+//Ruta Validacion Practicas y Visitas Index
+Route::get('/Validacion_Practicas_Visitas', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.Validacion_Practicas_Visitas');
+}) -> name('Validacion_Practicas_Visitas');
+
+//------------------------FER TERMINO------------------------------------
+
 
 //------------------------IVAN INICIO------------------------------------
 
@@ -209,9 +262,14 @@ Route::get('/Carrusel2', function (){
 //Rutas de Omar para el login
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/AdminIndex', [App\Http\Controllers\ServicioSocialController::class, 'index'])->name('home');
-Route::get('/Admin_Becas_Index', [App\Http\Controllers\BecasController ::class, 'index'])->name('home');
-Route::get('/AdminPracticas', [App\Http\Controllers\AlumnoLController ::class, 'index'])->name('home');
-Route::get('/Index_gnral', [App\Http\Controllers\PracticasController::class, 'index'])->name('home');
+Route::get('/Admin_Becas_Index3.blade', [App\Http\Controllers\BecasController ::class, 'index'])->name('home');
+Route::get('/logout', [App\Http\Controllers\BecasController::class, 'getLogout'])->name('logout');
+Route::get('/Admin_Practicas_Visitas_Index2.blade', [App\Http\Controllers\PracticasController ::class, 'index'])->name('home');
+Route::get('/logout', [App\Http\Controllers\BecasController::class, 'getLogout'])->name('logout');
+Route::get('/RegistroAlumno.blade', [App\Http\Controllers\AlumnoLController::class, 'index'])->name('home');
+Route::get('/logout', [App\Http\Controllers\BecasController::class, 'getLogout'])->name('logout');
+
+
 //DocenteController
 
 

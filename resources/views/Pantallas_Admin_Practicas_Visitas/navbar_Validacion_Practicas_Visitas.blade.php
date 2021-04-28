@@ -20,46 +20,16 @@
         <div class="nav__content bd-grid">
             <a href="" class="nav__perfil">
                 <div class="nav__img">
-                    <img src="assets/img/perfil.jpg" alt="">
+                    <img src="{{asset('img/logo/logoSAE3.png')}}" alt="">
                 </div>
 
-                <div>
-                   <!-- <span class="nav__name">Clay</span>
-                    <span class="nav__name">Mitchell</span>
-                </div> -->
             </a>
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="#" class="nav__link active">Home</a></li>
+                    <li class="nav__item"><a href="{{url('/Admin_Practicas_Visitas_Index2')}}" class="nav__link">HOME</a></li>
+                    <li class="nav__item"><a href="{{url('/Validacion_Practicas_Visitas')}}" class="nav__link active">VALIDACIÓN DE DOCUMENTOS</a></li>
 
-                    <li class="nav__item dropdown">
-                        <a href="#" class="nav__link dropdown__link">Servicio Social <i class='bx bx-chevron-down dropdown__icon'></i></a>
-
-
-                        <ul class="dropdown__menu">
-                            <li class="dropdown__item"><a href="#" class="nav__link">Registro</a></li>
-                           <!-- <li class="dropdown__item"><a href="#" class="nav__link">Location</a></li>
-                            <li class="dropdown__item"><a href="#" class="nav__link">Studies</a></li> -->
-                        </ul>
-                    </li>
-
-                    <!--<li class="nav__item"><a href="#" class="nav__link">Skills</a></li>-->
-
-                    <li class="nav__item dropdown">
-                        <a href="#" class="nav__link dropdown__link">Becas <i class='bx bx-chevron-down dropdown__icon'></i></a>
-
-
-                        <ul class="dropdown__menu">
-                            <li class="dropdown__item"><a href="#" class="nav__link">Convocatoria</a></li>
-                            <li class="dropdown__item"><a href="#" class="nav__link">Perfil</a></li>
-                            <li class="dropdown__item"><a href="#" class="nav__link">Registro</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
-
-                   <!-- <li class="nav__item"><a href="#" class="nav__link">Contact</a></li> -->
                 </ul>
             </div>
         </div>
@@ -99,8 +69,7 @@
         </script>
 
     <section class="section-main">
-      <h1>Bienvenido Alumno
-      <br> Usuario con matricula: {{ Auth::user()->id}}</h1>
+      <h1>VALIDACIÓN DE DOCUMENTOS</h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->
