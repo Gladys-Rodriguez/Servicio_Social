@@ -15,6 +15,7 @@ class ServicioSocialController extends Controller
     public function index()
     {
         //
+        return view('AdminIndex');
     }
 
     /**
@@ -53,7 +54,7 @@ class ServicioSocialController extends Controller
     public function show($id)
     {
         //
-        return view('/AdminIndex');
+
     }
 
     /**

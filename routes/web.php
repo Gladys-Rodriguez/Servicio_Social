@@ -138,7 +138,7 @@ Route::post('/upload', [App\Http\Controllers\FilesController::class, 'store'])->
 
 //Ruta Admin Servicio Index
 Route::get('/AdminIndex', function () {
-    return view('Pantallas_Admin_Servicio.AdminServicio_Index');
+    return view('Pantallas_Admin_Servicio.AdminServicio_Index2');
 }) -> name('AdminServicio_Index');
 
 //Ruta Admin Servicio concentrados de informacion
@@ -261,7 +261,8 @@ Route::get('/Carrusel2', function (){
 
 //Rutas de Omar para el login
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/AdminIndex', [App\Http\Controllers\ServicioSocialController::class, 'index'])->name('home');
+Route::get('/AdminServicio_Index2.blade', [App\Http\Controllers\ServicioSocialController::class, 'index'])->name('home');
+Route::get('/logout', [App\Http\Controllers\BecasController::class, 'getLogout'])->name('logout');
 Route::get('/Admin_Becas_Index3.blade', [App\Http\Controllers\BecasController ::class, 'index'])->name('home');
 Route::get('/logout', [App\Http\Controllers\BecasController::class, 'getLogout'])->name('logout');
 Route::get('/Admin_Practicas_Visitas_Index2.blade', [App\Http\Controllers\PracticasController ::class, 'index'])->name('home');
