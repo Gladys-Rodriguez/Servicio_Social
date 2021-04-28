@@ -245,3 +245,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Rutas Practicas-y-Vistas Docente
+Route::get('/VisitasEscolares/Index','DocenteIndexController');
+Route::get('/VisitasEscolares/SolicitarVisita','DocenteSolicitarVisitaController');
+Route::get('/VisitasEscolares/MisVisitas','DocenteMisVisitasController');
