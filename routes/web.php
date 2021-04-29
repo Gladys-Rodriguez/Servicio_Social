@@ -241,13 +241,11 @@ Route::get('/LoginForm', function (){
 
 Route::post('/login/(id)', [App\Http\Controllers\login::class, 'store'])->name('login.store'); //aqui se edita la pantalla de alcance
 
-Route::get('admins/login', 'loginUsuario@showLoginForm');
+Route::get('/Logueado', function (){
+    return view('Pantallas_Principales.Logueado');
+}) -> name('Logueado');
 
 Route::post('/login/(idd)', [App\Http\Controllers\loginPrueba::class, 'authenticate'])->name('loginPrueba.authenticate'); //aqui se edita la pantalla de alcance
-
-//prueba de login con otros modelos
-Route::get('admins/login', 'AdministratorsController@showLoginForm');
-Route::post('admins/login', 'AdministratorsController@login');
 
 Route::get('/LoginFormPrueba', function (){
     return view('Pantallas_Principales.LoginFormPrueba');
@@ -259,7 +257,7 @@ Route::get('/Carrusel2', function (){
 }) -> name('Carrusel');
 
 
-//Rutas de Omar para el login
+//Rutas con ayuda de Omar para el login
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/AdminServicio_Index2.blade', [App\Http\Controllers\ServicioSocialController::class, 'index'])->name('home');
 Route::get('/logout', [App\Http\Controllers\BecasController::class, 'getLogout'])->name('logout');
@@ -269,10 +267,12 @@ Route::get('/Admin_Practicas_Visitas_Index2.blade', [App\Http\Controllers\Practi
 Route::get('/logout', [App\Http\Controllers\BecasController::class, 'getLogout'])->name('logout');
 Route::get('/RegistroAlumno.blade', [App\Http\Controllers\AlumnoLController::class, 'index'])->name('home');
 Route::get('/logout', [App\Http\Controllers\BecasController::class, 'getLogout'])->name('logout');
-
-
 //DocenteController
 
+//Vista para prueba de consulta
+Route::get('/consultaPrueba', function (){
+    return view('Pantallas_Principales.consultaPrueba');
+}) -> name('consultaPrueba');
 
 //------------------------IVAN TERMINO------------------------------------
 
