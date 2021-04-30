@@ -93,6 +93,9 @@ Route::get('/FormatosAdministrativosPA', function (){
 Route::get('/FormatosAdministrativosPA', [App\Http\Controllers\FormatosAController::class, 'index'])->name('FormatosAdministrativosPA');
 Route::post('/upload', [App\Http\Controllers\FormatosAFilesController::class, 'store'])->name('user.files.store');
 
+// ************************************* RUTAS    DE    GLADYS    *******************************************
+
+
 
 /*Route::get('/', [App\Http\Controllers\AlumnoController::class, 'muestra']);*/
 
@@ -100,21 +103,14 @@ Route::post('/upload', [App\Http\Controllers\FormatosAFilesController::class, 's
 Route::get('/RegistroAlumno', function (){
     return view('Pantallas_Alumno_Servicio.RegistroAlumno');
 }) -> name('RegistroAlumno');
+Route::get('/RegistroAlumno/Nuevo_Registro', function (){
+    return view('Pantallas_Alumno_Servicio.Registros.NuevoRegistro');
+}) -> name('Nuevo Registro');
 
-Route::get('/LayoutAlumno', function (){
-    return view('Pantallas_Alumno_Servicio.Layout_Alumno.Layout_Alumno2');
-}) -> name('LayoutAlumno');
-
-Route::get('/AlumnoIndex', function (){
-    return view('Pantallas_Alumno_Servicio.Alumno_Index');
-}) -> name('AlumnoIndex');
-
-Route::get('/RegistroA', function (){
-    return view('Pantallas_Alumno_Servicio.FormRegistro');
-}) -> name('RegistroA');
 
 
 //Ruta para obtener los datos desde el controlador
+
 Route::get('RegistroAlumno', [App\Http\Controllers\AlumnosController::class, 'index'])->name('RegistroAlumno.index');
 Route::post('RegistroAlumno', [App\Http\Controllers\AlumnosController::class, 'store'])->name('RegistroAlumno.store');
 Auth::routes();
@@ -123,6 +119,10 @@ Auth::routes();
 Route::resource('direcciones', "DireccionsController");
 Route::resource('alumnos', "AlumnosController");
 
+
+
+
+// ************************************* FIN   RUTAS    DE    GLADYS    *******************************************
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
