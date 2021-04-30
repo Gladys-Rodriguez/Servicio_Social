@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 
-class editarController extends Controller
+class showController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,6 @@ class editarController extends Controller
     public function index()
     {
         //
-        $Users= User::all();
-        return view("Pantallas_Principales.showPrueba", compact("Users"));
     }
 
     /**
@@ -62,8 +60,6 @@ class editarController extends Controller
     public function edit($id)
     {
         //
-        $Users= User::findOrFail($id);
-        return view("Pantallas_Principales.pruebaEditarForm", compact("Users"));
     }
 
     /**
