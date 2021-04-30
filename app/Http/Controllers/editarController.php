@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
 
-class consultaController extends Controller
+class editarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,6 @@ class consultaController extends Controller
     public function index()
     {
         //
-        $Users= User::all();
-        return view("Pantallas_Principales.consultaPrueba", compact("Users"));
-
     }
 
     /**
@@ -50,6 +46,8 @@ class consultaController extends Controller
     public function show($id)
     {
         //
+        $Users= User::findOrFail($id);
+        return view("Pantallas_Principales.showPrueba", compact("Users"));
     }
 
     /**

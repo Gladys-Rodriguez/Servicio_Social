@@ -15,15 +15,16 @@ textarea {
 
 .container {
   position: relative;
-  width: 860px;
-  min-height: 30vh;
+  width: 1100px;
+  min-height: 40vh;
+  height: 400px;
   padding: 1rem;
   /*background-color: #fafafa;*/
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  /*border: blue 2px solid;*/
+  border: blue 2px solid;
   margin: 5px auto;
 }
 
@@ -38,7 +39,7 @@ textarea {
   overflow: hidden;
   display: grid;
   grid-template-rows: 150px;
-  /*border: red 2px solid;*/
+  border: red 2px solid;
 
 }
 
@@ -306,8 +307,6 @@ textarea.input {
 }
 
 
-
-
 .contact-info {
   padding: 2.3rem 2.2rem;
   position: relative;
@@ -316,6 +315,16 @@ textarea.input {
 .contact-info .title {
   color: #565656;
 }
+
+.tabla-consulta {
+    padding: 2.3rem 2.2rem;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .tabla-consulta .title {
+    color: #565656;
+  }
 
 .text {
   color: black;

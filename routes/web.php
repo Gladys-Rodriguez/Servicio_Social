@@ -270,9 +270,14 @@ Route::get('/logout', [App\Http\Controllers\BecasController::class, 'getLogout']
 //DocenteController
 
 //Vista para prueba de consulta
-Route::get('/consultaPrueba', function (){
-    return view('Pantallas_Principales.consultaPrueba');
-}) -> name('consultaPrueba');
+Route::get('/consultaPrueba', [App\Http\Controllers\consultaController::class, 'index'])->name('home');
+
+//Vista para editar y actualizar datos
+//Route::get('/showPrueba', [App\Http\Controllers\editarController::class, 'show'])->name('home');
+Route::get('/showPrueba', function (){
+    return view('Pantallas_Principales.showPrueba');
+}) -> name('showPrueba');
+
 
 //------------------------IVAN TERMINO------------------------------------
 
