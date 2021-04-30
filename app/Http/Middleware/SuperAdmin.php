@@ -19,7 +19,7 @@ class SuperAdmin
 
  public function handle(Request $request, Closure $next)
     {
-        switch(auth::user()->rol){
+        switch(auth::user()->id_rol){
             case ('1'):
                 return $next($request);//si es super administrador continua al HOME
             break;

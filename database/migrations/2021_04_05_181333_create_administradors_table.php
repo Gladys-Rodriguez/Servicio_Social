@@ -17,12 +17,12 @@ class CreateAdministradorsTable extends Migration
             $table->increments('id_administradors')->unsigned()->notnull();
             $table->string('descripcion')->notnull();
             $table->unsignedInteger('id_datos')->unsigned()->notnull();
-            $table->bigInteger('id_usuarios')->unsigned()->notnull();
+            $table->bigInteger('id')->unsigned()->notnull();
             $table->timestamps();
 
 
             $table->foreign('id_datos')->references('id_datos')->on('datos')->onDelete('cascade');
-            $table->foreign('id_usuarios')->references('id_usuarios')->on('usuarios')->onDelete('cascade');
+            $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

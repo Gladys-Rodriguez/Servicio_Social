@@ -42,18 +42,17 @@ class registro extends Controller
       $registro= new User;
 
       $validated = $request->validate([
-        'email' => 'unique:usuarios',
+        'email' => 'unique:users',
        ]);
 
       $registro->id=$request->id;
       $registro->email=$request->email;
       $registro->password=bcrypt($request->password);
       //$registro->password=bcrypt($request->password);
-      $registro->rol= 4;
+      $registro->id_rol= 5;
 
       $registro->save();
       return redirect('Registro_exitoso');
-
 
     }
 

@@ -18,12 +18,11 @@ class CreateUsersTable extends Migration
             $table->string('name')->index()->default('Prueba');
             $table->string('email')->index();
             $table->string('password')->index();
-            //$table->string('rol')->nullable();
-            //$table->string('tipo')->nullable();
-            $table->bigInteger('rol')->nullable()->default('1');
+            $table->bigInteger('id_rol')->unsigned()->notnull();
             $table->timestamps();
 
-            //$table->foreign('rol')->references('id')->on('rols')->onDelete('cascade');
+            $table->foreign('id_rol')->references('id_rol')->on('rols')->onDelete('cascade');
+
         });
     }
 

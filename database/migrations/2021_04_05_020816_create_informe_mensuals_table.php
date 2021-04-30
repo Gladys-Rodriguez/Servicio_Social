@@ -16,10 +16,10 @@ class CreateInformeMensualsTable extends Migration
         Schema::create('informe_mensuals', function (Blueprint $table) {
             $table->increments('id_informe_mensuals')->unsigned()->notnull();
             $table->string('nombre');
-            $table->unsignedBigInteger('usuario');
+            $table->unsignedBigInteger('user');
 
 
-            $table->foreign('usuario')->references('id_usuarios')->on('usuarios')->onDelete('cascade');
+            $table->foreign('user')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -17,7 +17,7 @@ class Alumno
      */
     public function handle(Request $request, Closure $next)
     {
-        switch(auth::user()->rol){
+        switch(auth::user()->id_rol){
             case ('1'):
                 return redirect('/SuperAdmin_Index');//si es super administrador continua al HOME
             break;
