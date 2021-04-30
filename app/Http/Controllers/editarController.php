@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class editarController extends Controller
 {
@@ -14,6 +15,8 @@ class editarController extends Controller
     public function index()
     {
         //
+        $Users= User::all();
+        return view("Pantallas_Principales.showPrueba", compact("Users"));
     }
 
     /**

@@ -273,10 +273,10 @@ Route::get('/logout', [App\Http\Controllers\BecasController::class, 'getLogout']
 Route::get('/consultaPrueba', [App\Http\Controllers\consultaController::class, 'index'])->name('home');
 
 //Vista para editar y actualizar datos
-//Route::get('/showPrueba', [App\Http\Controllers\editarController::class, 'show'])->name('home');
-Route::get('/showPrueba', function (){
-    return view('Pantallas_Principales.showPrueba');
-}) -> name('showPrueba');
+Route::get('/showPrueba/{id}', [App\Http\Controllers\editarController::class, 'show'])->name('home');
+//Route::get('/showPrueba', function (){
+//    return view('Pantallas_Principales.showPrueba');
+//}) -> name('showPrueba');
 
 
 //------------------------IVAN TERMINO------------------------------------

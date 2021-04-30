@@ -1,9 +1,9 @@
-@extends('Pantallas_Principales.navbarconsultaPrueba')
+@extends('Pantallas_Principales.navbarshowPrueba')
 
-@section('title', 'ConsultaPrueba')
+@section('title', 'SHOW PRUEBA')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/Pantallas_Principales/consultaPrueba.css')}}">
+<link rel="stylesheet" href="{{asset('css/Pantallas_Principales/showPrueba.css')}}">
 @endsection
 
 @section('content')
@@ -17,23 +17,11 @@
         </p>
       </div>
 
-    <div class="tabla-consulta">
-         <table border="1">
-             <tr>
-                 <td>Boleta</td>
-                 <td>Nombre</td>
-                 <td>Correo</td>
-            </tr>
-               @foreach($Users as $User)
-               <tr>
-                 <td>{{$User->id}}</td>
-                 <td>{{$User->name}}</td>
-                 <td>{{$User->email}}</td>
-                <tr>
-               @endforeach
-        </table>
-    </div>
-
+      <div class="tabla-consulta">
+                 <td>{{$Users->id}}</td>
+                 <td>{{$Users->name}}</td>
      </div>
+
+
 </div>
 @endsection

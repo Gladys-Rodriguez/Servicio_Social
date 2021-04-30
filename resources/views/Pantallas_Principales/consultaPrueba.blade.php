@@ -26,7 +26,7 @@
             </tr>
                @foreach($Users as $User)
                <tr>
-                 <td>{{$User->id}}</td>
+                 <td><a href="{{url('showPrueba', $User->id)}}">{{$User->id}}</a></td>
                  <td>{{$User->name}}</td>
                  <td>{{$User->email}}</td>
                 <tr>
