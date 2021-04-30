@@ -14,15 +14,17 @@ class CreateCartasCompromisosTable extends Migration
     public function up()
     {
         Schema::create('cartas_compromisos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_cartas_compromisos')->unsigned()->notnull();
             $table->string('nombre_carta');
             $table->string('file');
             $table->boolean('estado');
             $table->text('observaciones');
-            $table->bigInteger('id_alumnos')->unsigned()->notnull();
+            $table->unsignedInteger('id_alumnos')->unsigned()->notnull();
+            $table->text('tipo_doc');
             $table->timestamps();
 
-            $table->foreign('id_alumnos')->references('id')->on('alumnos')->onDelete('cascade');
+
+            $table->foreign('id_alumnos')->references('id_alumnos')->on('alumnos')->onDelete('cascade');
         });
     }
 

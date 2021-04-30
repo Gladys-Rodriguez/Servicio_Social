@@ -29,6 +29,7 @@
                 <ul class="nav__list">
                     <li class="nav__item"><a href="{{url('/Admin_Practicas_Visitas_Index2')}}" class="nav__link active">HOME</a></li>
                     <li class="nav__item"><a href="{{url('/Validacion_Practicas_Visitas')}}" class="nav__link">VALIDACIÓN DE DOCUMENTOS</a></li>
+                    <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
 
                 </ul>
             </div>
@@ -69,7 +70,8 @@
         </script>
 
     <section class="section-main">
-      <h1>ADMINISTRACIÓN DE PRÁCTICAS Y VISITAS</h1>
+      <h1>ADMINISTRACIÓN DE PRÁCTICAS Y VISITAS
+      <br> Usuario con matricula: {{ Auth::user()->id}}</h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->

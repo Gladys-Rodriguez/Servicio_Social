@@ -24,9 +24,9 @@
                 </div>
 
                 <div>
-                    <span class="nav__name">Clay</span>
+                   <!-- <span class="nav__name">Clay</span>
                     <span class="nav__name">Mitchell</span>
-                </div>
+                </div> -->
             </a>
 
             <div class="nav__menu">
@@ -34,30 +34,32 @@
                     <li class="nav__item"><a href="#" class="nav__link active">Home</a></li>
 
                     <li class="nav__item dropdown">
-                        <a href="#" class="nav__link dropdown__link">About <i class='bx bx-chevron-down dropdown__icon'></i></a>
+                        <a href="#" class="nav__link dropdown__link">Servicio Social <i class='bx bx-chevron-down dropdown__icon'></i></a>
 
 
                         <ul class="dropdown__menu">
-                            <li class="dropdown__item"><a href="#" class="nav__link">About me</a></li>
-                            <li class="dropdown__item"><a href="#" class="nav__link">Location</a></li>
-                            <li class="dropdown__item"><a href="#" class="nav__link">Studies</a></li>
+                            <li class="dropdown__item"><a href="#" class="nav__link">Registro</a></li>
+                           <!-- <li class="dropdown__item"><a href="#" class="nav__link">Location</a></li>
+                            <li class="dropdown__item"><a href="#" class="nav__link">Studies</a></li> -->
                         </ul>
                     </li>
 
-                    <li class="nav__item"><a href="#" class="nav__link">Skills</a></li>
+                    <!--<li class="nav__item"><a href="#" class="nav__link">Skills</a></li>-->
 
                     <li class="nav__item dropdown">
-                        <a href="#" class="nav__link dropdown__link">Works <i class='bx bx-chevron-down dropdown__icon'></i></a>
+                        <a href="#" class="nav__link dropdown__link">Becas <i class='bx bx-chevron-down dropdown__icon'></i></a>
 
 
                         <ul class="dropdown__menu">
-                            <li class="dropdown__item"><a href="#" class="nav__link">Recent jobs</a></li>
-                            <li class="dropdown__item"><a href="#" class="nav__link">Better jobs</a></li>
-                            <li class="dropdown__item"><a href="#" class="nav__link">Work Awards</a></li>
+                            <li class="dropdown__item"><a href="#" class="nav__link">Convocatoria</a></li>
+                            <li class="dropdown__item"><a href="#" class="nav__link">Perfil</a></li>
+                            <li class="dropdown__item"><a href="#" class="nav__link">Registro</a></li>
                         </ul>
                     </li>
 
-                    <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
+                    <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
+
+                   <!-- <li class="nav__item"><a href="#" class="nav__link">Contact</a></li> -->
                 </ul>
             </div>
         </div>
@@ -97,7 +99,8 @@
         </script>
 
     <section class="section-main">
-      <h1>Bienvenido Alumno </h1>
+      <h1>Bienvenido Alumno
+      <br> Usuario con matricula: {{ Auth::user()->id}}</h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->

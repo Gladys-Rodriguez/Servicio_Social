@@ -14,14 +14,14 @@ class CreateDocsBecasTable extends Migration
     public function up()
     {
         Schema::create('docs_becas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_docs_becas')->unsigned()->notnull();
             $table->string('Nombre_doc');
             $table->string('file');
             $table->boolean('estado');
             $table->text('observaciones');
-            
+            $table->text('tipo_doc');
 
-            
+
             $table->timestamps();
         });
     }

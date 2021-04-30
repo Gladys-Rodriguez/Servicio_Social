@@ -14,17 +14,18 @@ class CreateDependenciasTable extends Migration
     public function up()
     {
         Schema::create('dependencias', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_dependencias')->unsigned()->notnull();
             $table->string('nombre_depen')->notnull();
             $table->string('nom_responsable',30)->notnull();
             $table->string('ap_responsable',30)->notnull();
             $table->string('am_responsable',30)->notnull();
             $table->string('telefono')->notnull();
             $table->string('email_responsable');
-            $table->bigInteger('id_direcciones')->unsigned()->notnull();
+            $table->unsignedInteger('id_direcciones')->unsigned()->notnull();
             $table->timestamps();
 
-            $table->foreign('id_direcciones')->references('id')->on('direccions')->onDelete('cascade');
+
+            $table->foreign('id_direcciones')->references('id_direccions')->on('direccions')->onDelete('cascade');
         });
     }
 
