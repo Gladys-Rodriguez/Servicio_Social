@@ -19,6 +19,7 @@ class CreateRolsTable extends Migration
             $table->timestamps();
 
             $table->primary('id_rol');
+
         });
     }
 

@@ -14,13 +14,13 @@ class CreateAdministradorsTable extends Migration
     public function up()
     {
         Schema::create('administradors', function (Blueprint $table) {
-            $table->bigInteger('id_administradors')->unsigned()->notnull();
+            $table->increments('id_administradors')->unsigned()->notnull();
             $table->string('descripcion')->notnull();
-            $table->bigInteger('id_datos')->unsigned()->notnull();
+            $table->unsignedInteger('id_datos')->unsigned()->notnull();
             $table->bigInteger('id_usuarios')->unsigned()->notnull();
             $table->timestamps();
 
-            $table->primary('id_administradors');
+
             $table->foreign('id_datos')->references('id_datos')->on('datos')->onDelete('cascade');
             $table->foreign('id_usuarios')->references('id_usuarios')->on('usuarios')->onDelete('cascade');
         });
