@@ -76,6 +76,9 @@ class editarController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $Users= User::findOrFail($id);
+        $Users->update($request->all());
+        return redirect("/consultaPrueba");
     }
 
     /**

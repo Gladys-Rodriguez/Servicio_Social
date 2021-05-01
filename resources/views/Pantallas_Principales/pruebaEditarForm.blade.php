@@ -53,11 +53,12 @@
 
     <!--Formulario-->
     <div class="login-box">
-    <form action="{{route('registros.store')}}" method="POST">
+    <form action="/pruebaEditarForm2/{{$Users->id}}" method="POST">
           @csrf
         <!-- MATRICULA INPUT -->
         <label>Matricula</label>
         <input type="text" name="id" value="{{$Users->id}}" placeholder="Ingresa valores númericos" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
+        <input type="hidden" name="_method" value="PUT">
         <!-- nombre INPUT -->
         <label>Nombre completo</label>
         <input type="text" name="name" value="{{$Users->name}}" placeholder="Ingresa tu nombre completo" required minlength="10" maxlength="60" onkeypress="return sololetras(event)">
