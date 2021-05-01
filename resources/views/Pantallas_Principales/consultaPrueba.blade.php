@@ -11,7 +11,7 @@
 <div class="container">
     <div class="informacion">
       <div class="contact-info">
-        <h3 class="title">"Datos generales"</h3>
+        <h3 class="title">"Todos los usuarios"</h3>
         <p class="text">
           Bienvenido
         </p>
@@ -20,13 +20,16 @@
     <div class="tabla-consulta">
          <table border="1">
              <tr>
+                 <td></td>
                  <td>Boleta</td>
                  <td>Nombre</td>
                  <td>Correo</td>
             </tr>
                @foreach($Users as $User)
                <tr>
-                 <td><a href="{{url('showPrueba', $User->id)}}">{{$User->id}}</a></td>
+                 <td>
+                 <a class="boton_personalizado" href="{{url('showPrueba', $User->id)}}">Ver</a>
+                 <td>{{$User->id}}</td>
                  <td>{{$User->name}}</td>
                  <td>{{$User->email}}</td>
                 <tr>

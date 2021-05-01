@@ -319,7 +319,9 @@ textarea.input {
 .tabla-consulta {
     padding: 2.3rem 2.2rem;
     position: relative;
+    font-family: 'Bitter', serif;
     margin: 0 auto;
+
   }
 
   .tabla-consulta .title {
@@ -501,3 +503,21 @@ textarea.input {
     padding: 0.45rem 1.2rem;
   }
 }
+
+.boton_personalizado{
+    font-family: 'Bitter', serif;
+    text-decoration: none;
+    padding: 5px;
+    font-weight: 300;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #CF6D1B;
+    border-radius: 1px;
+    border: 2px solid #CF6D1B;
+}
+
+
+  .boton_personalizado:hover{
+    color: #CF6D1B;
+    background-color: #ffffff;
+  }

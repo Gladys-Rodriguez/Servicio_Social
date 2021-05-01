@@ -17,10 +17,24 @@
         </p>
       </div>
 
-      <div class="tabla-consulta">
+  <div class="tabla-consulta">
+        <table border="1">
+             <tr>
+                 <td></td>
+                 <td>Boleta</td>
+                 <td>Nombre</td>
+                 <td>Correo</td>
+            </tr>
+               <tr>
+                 <td>
+                 <a class="boton_personalizado" href="/pruebaEditarForm/{{$Users->id}}">Editar</a>
                  <td>{{$Users->id}}</td>
                  <td>{{$Users->name}}</td>
-     </div>
+                 <td>{{$Users->email}}</td>
+
+                <tr>
+        </table>
+    </div>
 
 
 </div>
