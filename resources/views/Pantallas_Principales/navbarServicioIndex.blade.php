@@ -27,7 +27,7 @@
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="{{url('/Index_gnral')}}" class="nav__link">HOME</a></li>
+                    <li class="nav__item"><a href="{{url('/')}}" class="nav__link">HOME</a></li>
                     <li class="nav__item"><a href="{{url('/ServicioIndex')}}" class="nav__link active">SERVICIO</a></li>
                     <li class="nav__item"><a href="{{url('/BecasIndex')}}" class="nav__link">BECAS</a></li>
                     <li class="nav__item"><a href="{{url('/PracticasIndex')}}" class="nav__link">PRÁCTICAS</a></li>

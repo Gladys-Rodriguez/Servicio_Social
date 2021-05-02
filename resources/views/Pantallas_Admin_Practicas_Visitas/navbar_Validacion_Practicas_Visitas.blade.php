@@ -27,9 +27,10 @@
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="{{url('/Admin_Practicas_Visitas_Index')}}" class="nav__link">HOME</a></li>
+                    <li class="nav__item"><a href="{{url('/Admin_Practicas_Visitas_Index2')}}" class="nav__link">HOME</a></li>
                     <li class="nav__item"><a href="{{url('/Validacion_Practicas_Visitas')}}" class="nav__link active">VALIDACIÓN DE DOCUMENTOS</a></li>
-
+                    <li class="nav__item"><a href="{{url('/Clasificacion_Practicas_Visitas')}}" class="nav__link">LISTADO DE PRACTICAS Y VISITAS</a></li>
+                    <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
                 </ul>
             </div>
         </div>

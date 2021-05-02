@@ -1,33 +1,75 @@
 @extends('Pantallas_Principales.navbarRegisterForm')
 
-@section('title', 'Practicas Y Visitas Index')
+@section('title', 'Registro')
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantallas_Principales/RegisterForm.css')}}">
 @endsection
 
 @section('content')
+
+<script>
+    function solonumeros(e){
+        key=e.keyCode||e.wich;
+
+        teclado=String.fromCharCode(key);
+
+        numeros="0123456789";
+
+        especiales="8-37-38-46";
+
+        teclado_especial=false;
+
+        for(var i in especiales){
+            if(key==especiales[i]){
+                teclado_especial=true;
+            }
+        }
+
+        if(numeros.indexOf(teclado)==-1 && !teclado_especial){
+            return false;
+        }
+
+    }
+    </script>
+
 <br>
 <div class="container">
-    <div class="informacion">
+<div class="informacion">
       <div class="contact-info">
-        <h3 class="title">"REGISTRO"</h3>
+        <h3 class="title">"Registro"</h3>
+
+      <div class="errores">
+       @if($errors->any())
+        <ul>
+        @foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+        @endforeach
+        </ul>
+        @endif
       </div>
+
+      </div>
+
     <!--Formulario-->
     <div class="login-box">
-      <form method="post">
-      @csrf
+    <form action="{{route('registros.store')}}" method="POST">
+          @csrf
         <!-- USERNAME INPUT -->
-        <label for="matricula">Matricula</label>
-        <input type="text" placeholder="Matricula">
+        <label>Matricula</label>
+        <input type="text" name="id" placeholder="Ingresa valores númericos" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
         <!-- USERNAME INPUT -->
-        <label for="correo">Correo Institcuional</label>
-        <input type="text" placeholder="Correo Institucional">
+        <label>Correo Institucional</label>
+        <input type="email" name="email" placeholder="correo@hotmail.com" required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
         <!-- PASSWORD INPUT -->
-        <label for="contraseña">Contraseña</label>
-        <input type="password" placeholder="Contraseña">
-        <input type="submit" value="Registrar">
+        <label>Contraseña</label>
+        <input type="password" name="password" placeholder="Contraseña" required>
+        <button type="submit">Registrar</button>
+
+
+
       </form>
+
     </div>
 
 

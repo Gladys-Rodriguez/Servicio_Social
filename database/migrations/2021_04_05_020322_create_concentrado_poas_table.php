@@ -14,11 +14,12 @@ class CreateConcentradoPoasTable extends Migration
     public function up()
     {
         Schema::create('concentrado_poas', function (Blueprint $table) {
-            $table->id()->unique()->notnull();
+            $table->increments('id_concentrados_poas')->unsigned()->notnull();
             $table->string('nombre');
-            $table->unsignedBigInteger('usuario');
+            $table->unsignedBigInteger('user');
 
-            $table->foreign('usuario')->references('id')->on('usuarios')->onDelete('cascade');
+
+            $table->foreign('user')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

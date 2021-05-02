@@ -14,11 +14,11 @@ class CreateInformeTrimestralsTable extends Migration
     public function up()
     {
         Schema::create('informe_trimestrals', function (Blueprint $table) {
-            $table->id()->unique()->notnull();
+            $table->increments('id_informe_trimestrals')->unsigned()->notnull();
             $table->string('nombre');
-            $table->unsignedBigInteger('usuario');
+            $table->unsignedBigInteger('user');
 
-            $table->foreign('usuario')->references('id')->on('usuarios')->onDelete('cascade');
+            $table->foreign('user')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

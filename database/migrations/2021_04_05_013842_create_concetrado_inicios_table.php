@@ -14,12 +14,14 @@ class CreateConcetradoIniciosTable extends Migration
     public function up()
     {
         Schema::create('concetrado_inicios', function (Blueprint $table) {
-            $table->id()->unique()->notnull();
+            $table->increments('id_concentrados_inicios')->unsigned()->notnull();
             $table->string('nombre');
-            $table->unsignedBigInteger('usuario');
+            $table->unsignedBigInteger('user');
 
-            $table->foreign('usuario')->references('id')->on('usuarios')->onDelete('cascade');
+            $table->foreign('user')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
+
+
         });
     }
 

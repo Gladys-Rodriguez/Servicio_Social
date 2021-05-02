@@ -14,16 +14,17 @@ class CreateLiberacionsTable extends Migration
     public function up()
     {
         Schema::create('liberacions', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_liberacions')->unsigned()->notnull();
             $table->string('estado');
             $table->date('fecha_envio');
             $table->text('observaciones');
-            $table->bigInteger('id_alumnos')->unsigned()->notnull();
-            $table->bigInteger('id_servicios')->unsigned()->notnull();
+            $table->unsignedInteger('id_alumnos')->unsigned()->notnull();
+            $table->unsignedInteger('id_servicios')->unsigned()->notnull();
             $table->timestamps();
 
-            $table->foreign('id_alumnos')->references('id')->on('alumnos')->onDelete('cascade');
-            $table->foreign('id_servicios')->references('id')->on('servicios')->onDelete('cascade');
+
+            $table->foreign('id_alumnos')->references('id_alumnos')->on('alumnos')->onDelete('cascade');
+            $table->foreign('id_servicios')->references('id_servicios')->on('servicios')->onDelete('cascade');
         });
     }
 

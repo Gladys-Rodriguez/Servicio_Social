@@ -1,7 +1,7 @@
-@extends('Pantallas_Admin_Becas.navbar_Admin_Becas_Index')
+@extends('Pantallas_Admin_Becas.navbar_Tipo_Alumno_Becas')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Becas/estilo.css')}}">
+<link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Becas/estilo2.css')}}">
 @endsection
 
 @section('content')
@@ -9,12 +9,12 @@
         <div class="container">
             <div class="card">
                 <div class=imgBx>
-                    <img src="{{asset('img/becas/institucional.jpg')}}" alt="">
+                    <img src="{{asset('img/valbecas/acta.jpg')}}" alt="">
                     </div>
                     <div class="contentBx">
                         <div class="content">
-                        <h1> Beca Institucional </h1>
-                        <p><a href="{{asset('https://www.ipn.mx/daes/becas/institucional.html')}}" target="_blank">Ver Requisitos</a> </p>
+                        <h1> Acta de nacimiento </h1>
+                        <p> </p>
                     
                     </div>
                 </div>
@@ -22,26 +22,12 @@
 
             <div class="card">
                 <div class=imgBx>
-                    <img src="{{asset('img/becas/benito.jpg')}}" alt="">
+                    <img src="{{asset('img/valbecas/curp.jpg')}}" alt="">
                     </div>
                     <div class="contentBx">
                         <div class="content">
-                        <h1> Beca Benito Juárez </h1>
-                        <p><a href="{{asset('https://becasbenitojuarez.net/becas-benito-juarez-nivel-medio-superior/')}}" target="_blank">Ver Requisitos</a>  </p>
-                    
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="card">
-                <div class=imgBx>
-                    <img src="{{asset('img/becas/excelencia.jpg')}}" alt="">
-                    </div>
-                    <div class="contentBx">
-                        <div class="content">
-                        <h1>  Beca Excelencia </h1>
-                        <p> <a href="{{asset('https://www.ipn.mx/daes/becas/beca-excelencia.html')}}" target="_blank">Ver Requisitos</a> </p>
+                        <h1> CURP  </h1>
+                        <p>  </p>
                     
                     </div>
                 </div>
@@ -50,12 +36,12 @@
 
             <div class="card">
                 <div class=imgBx>
-                    <img src="{{asset('img/becas/transporte.jpg')}}" alt="">
+                    <img src="{{asset('img/valbecas/constancia.jpg')}}" alt="">
                     </div>
                     <div class="contentBx">
                         <div class="content">
-                        <h1>  Beca Transporte </h1>
-                        <p> <a href="{{asset('https://www.ipn.mx/daes/becas/beca-transporte-ipn.html')}}" target="_blank">Ver Requisitos</a> </p>
+                        <h1>  Constancia de estudios </h1>
+                        <p> </p>
                     
                     </div>
                 </div>
@@ -64,12 +50,26 @@
 
             <div class="card">
                 <div class=imgBx>
-                    <img src="{{asset('img/becas/becalos.png')}}" alt="">
+                    <img src="{{asset('img/valbecas/imss.jpg')}}" alt="">
                     </div>
                     <div class="contentBx">
                         <div class="content">
-                        <h1>  Bécalos </h1>
-                        <p> <a href="{{asset('https://www.ipn.mx/daes/becas/ipn-b%C3%A9calos.html')}}" target="_blank">Ver Requisitos</a> </p>
+                        <h1>  Comprobante IMSS </h1>
+                        <p>  </p>
+                    
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class=imgBx>
+                    <img src="{{asset('img/valbecas/estudio.jpg')}}" alt="">
+                    </div>
+                    <div class="contentBx">
+                        <div class="content">
+                        <h1>  Estudio socioeconómico </h1>
+                        <p>  </p>
                     
                     </div>
                 </div>
@@ -79,12 +79,12 @@
 
             <div class="card">
                 <div class=imgBx>
-                    <img src="{{asset('img/becas/sibec.jpg')}}" alt="">
+                    <img src="{{asset('img/valbecas/solicitud.jpg')}}" alt="">
                     </div>
                     <div class="contentBx">
                         <div class="content">
-                        <h1>  SIBEC </h1>
-                        <p> <a href="{{asset('https://www.sibec.ipn.mx/')}}" target="_blank">Ir a página oficial SIBEC</a> </p>
+                        <h1>  Solicitud de beca </h1>
+                        <p> </p>
                     
                     </div>
                 </div>

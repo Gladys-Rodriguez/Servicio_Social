@@ -77,7 +77,12 @@ textarea {
     margin-bottom: 20px;
   }
 
-  .login-box input[type="text"], .login-box input[type="password"] {
+  .login-box button {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .login-box input[type="text"], .login-box input[type="password"], .login-box input[type="email"], .login-box input[type="number"]  {
     border: none;
     border-bottom: 1px solid #fff;
     background: transparent;
@@ -87,17 +92,17 @@ textarea {
     font-size: 16px;
   }
 
-  .login-box input[type="submit"] {
+  .login-box button[type="submit"], .login-box button[type="reset"] {
     border: none;
     outline: none;
     height: 40px;
-    background: #CF6D1B;
+    background: #d48442;
     color: #fff;
     font-size: 18px;
     border-radius: 20px;
   }
 
-  .login-box input[type="submit"]:hover {
+  .login-box button[type="submit"]:hover, .login-box button[type="reset"]:hover {
     cursor: pointer;
     background: #ffc107;
     color: #000;
@@ -238,6 +243,7 @@ form {
   z-index: 10;
   overflow: hidden;
   position: relative;
+
 }
 
 .title {
@@ -379,9 +385,6 @@ textarea.input {
   opacity: 1;
 }
 
-
-
-
 .contact-info {
   padding: 2.3rem 2.2rem;
   position: relative;
@@ -392,8 +395,14 @@ textarea.input {
 }
 
 .text {
-  color: #333;
+  color: red;
   margin: 1.5rem 0 2rem 0;
+}
+
+.errores{
+    color: red;
+    margin: 1.5rem 0 2rem 0;
+    font: serif;
 }
 
 .information {

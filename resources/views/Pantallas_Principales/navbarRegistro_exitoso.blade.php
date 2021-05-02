@@ -27,9 +27,7 @@
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="{{url('/Admin_Practicas_Visitas_Index')}}" class="nav__link active">HOME</a></li>
-                    <li class="nav__item"><a href="{{url('/Validacion_Practicas_Visitas')}}" class="nav__link">VALIDACIÓN DE DOCUMENTOS</a></li>
-
+                    <li class="nav__item"><a href="{{url('/')}}" class="nav__link active">Regresar</a></li>
                 </ul>
             </div>
         </div>
@@ -69,13 +67,9 @@
         </script>
 
     <section class="section-main">
-      <h1>ADMINISTRACIÓN DE PRÁCTICAS Y VISITAS</h1>
+      <h1>REGISTRO EXITOSO</h1>
     </section>
-    <section class="section-two">
- <!-- AQUI EMPIEZA CONTENIDO; -->
-      @yield('content')
 
-    </section>
 
 
 
