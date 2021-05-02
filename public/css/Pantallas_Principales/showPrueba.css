@@ -317,14 +317,31 @@ textarea.input {
 }
 
 .tabla-consulta {
-    padding: 2.3rem 2.2rem;
+    padding: 0.4rem 0.4rem;
     position: relative;
+    font-family: 'Bitter', serif;
     margin: 0 auto;
+    /*border: green 2px solid;*/
+    WIDTH: 500px;
+    height:500px;
+
   }
 
-  .tabla-consulta .title {
-    color: #565656;
-  }
+  th {
+    text-align: center;
+    padding: 0.1em;
+
+ }
+
+ td{
+    text-align: center;
+    padding: 0.2em;
+    Padding: 0.2em;
+    background:  #000;
+    color: #fff;
+ }
+
+
 
 .text {
   color: black;

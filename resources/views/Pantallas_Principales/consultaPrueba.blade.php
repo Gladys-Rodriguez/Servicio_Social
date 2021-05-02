@@ -12,9 +12,6 @@
     <div class="informacion">
       <div class="contact-info">
         <h3 class="title">"Todos los usuarios"</h3>
-        <p class="text">
-          Bienvenido
-        </p>
       </div>
 
     <div class="tabla-consulta">
