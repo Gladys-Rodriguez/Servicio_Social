@@ -174,16 +174,27 @@ Route::get('/Validacion_Alumno_Becas', function () {
     return view('Pantallas_Admin_Becas.Validacion_Alumno_Becas');
 }) -> name('Validacion_Alumno_Becas');
 
+//Ruta Tipo_Alumno_Becas
+Route::get('/Tipo_Alumno_Becas', function () {
+    return view('Pantallas_Admin_Becas.Tipo_Alumno_Becas');
+}) -> name('Tipo_Alumno_Becas');
+
 //Ruta Admin Practicas y Visitas Index
 Route::get('/Admin_Practicas_Visitas_Index2', function () {
     return view('Pantallas_Admin_Practicas_Visitas.Admin_Practicas_Visitas_Index2');
 }) -> name('Admin_Practicas_Visitas_Index2');
 
 
-//Ruta Validacion Practicas y Visitas Index
+//Ruta Validacion Practicas y Visitas
 Route::get('/Validacion_Practicas_Visitas', function () {
     return view('Pantallas_Admin_Practicas_Visitas.Validacion_Practicas_Visitas');
 }) -> name('Validacion_Practicas_Visitas');
+
+//Ruta Clasificacion Practicas y Visitas
+Route::get('/Clasificacion_Practicas_Visitas', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.Clasificacion_Practicas_Visitas');
+}) -> name('Clasificacion_Practicas_Visitas');
+
 
 //------------------------FER TERMINO------------------------------------
 
