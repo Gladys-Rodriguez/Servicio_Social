@@ -1,4 +1,4 @@
-@extends('Pantallas_Docente_Practicas_Visitas.Layout.navbar')
+@extends('Pantallas_Docente_Practicas_Visitas.Layout.navbar2')
 
 @section('title')
 Prácticas y Visitas Escolares
@@ -14,13 +14,13 @@ Prácticas y Visitas Escolares
 
 
 <section class="section-main">
-    <h1>Seccion de Anuncios</h1>
+    <h1>Bienvenido a Prácticas y Visitas Escolares</h1>
 </section>
 
 <section class="section-dos">
     <h2>Calendario de Visitas</h2>
     <div class="content-wrapper">
-    
+    <img src="{{ asset('img/calendario.png')}}"/>
         
     </div>
 </section>
