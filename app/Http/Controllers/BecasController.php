@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class BecasController extends Controller
 {
@@ -20,7 +21,7 @@ class BecasController extends Controller
     public function index()
     {
         //
-        return view('/Admin_Becas_Index');
+        return view('/Admin_Becas_Index3');
     }
 
     /**
@@ -88,4 +89,13 @@ class BecasController extends Controller
     {
         //
     }
+
+    public function getLogout()
+    {
+        //
+        Auth::logout();
+        return redirect('/');
+    }
+
+
 }

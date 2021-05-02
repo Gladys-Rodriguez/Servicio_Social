@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class AlumnoLController extends Controller
 {
@@ -20,7 +21,7 @@ class AlumnoLController extends Controller
     public function index()
     {
         //
-        return view('/Index_gnral');
+        return view('/RegistroAlumno');
     }
 
     /**
@@ -88,4 +89,12 @@ class AlumnoLController extends Controller
     {
         //
     }
+
+    public function getLogout()
+    {
+        //
+        Auth::logout();
+        return redirect('/');
+    }
+
 }

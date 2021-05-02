@@ -57,6 +57,8 @@
                         </ul>
                     </li>
 
+                    <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
+
                    <!-- <li class="nav__item"><a href="#" class="nav__link">Contact</a></li> -->
                 </ul>
             </div>
@@ -97,7 +99,8 @@
         </script>
 
     <section class="section-main">
-      <h1>Bienvenido Alumno </h1>
+      <h1>Bienvenido Alumno
+      <br> Usuario con matricula: {{ Auth::user()->id}}</h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->

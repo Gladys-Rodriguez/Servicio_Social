@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class PracticasController extends Controller
 {
@@ -20,7 +21,7 @@ class PracticasController extends Controller
     public function index()
     {
         //
-        return view('/AdminPracticas');
+        return view('/Admin_Practicas_Visitas_Index2');
     }
 
     /**
@@ -87,5 +88,12 @@ class PracticasController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getLogout()
+    {
+        //
+        Auth::logout();
+        return redirect('/');
     }
 }

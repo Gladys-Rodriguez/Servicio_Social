@@ -17,7 +17,7 @@ class Practicas
      */
     public function handle(Request $request, Closure $next)
     {
-        switch(auth::user()->rol){
+        switch(auth::user()->id_rol){
             case ('1'):
                 return redirect('/SuperAdmin_Index');//si es super administrador continua al HOME
             break;
@@ -25,13 +25,13 @@ class Practicas
                 return redirect('AdminIndex');// si es un usuario de servicio social
 			break;
             case ('3'):
-                return redirect('/Admin_Becas_Index');//si es administrador de becas
+                return redirect('/Admin_Becas_Index3');//si es administrador de becas
             break;
             case ('4'):
                 return $next($request);//si es administrador de practicas
             break;
             case ('5'):
-                return redirect('/Index_gnral');//si es alumno
+                return redirect('/RegistroAlumno');//si es alumno
             break;
             case ('6'):
                 return redirect('/Docente_Index');//si es docente

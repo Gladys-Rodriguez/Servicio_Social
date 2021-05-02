@@ -14,12 +14,12 @@ class CreateInformePoasTable extends Migration
     public function up()
     {
         Schema::create('informe_poas', function (Blueprint $table) {
-            $table->bigInteger('id_informe_poas')->unsigned()->notnull();
+            $table->increments('id_informe_poas')->unsigned()->notnull();
             $table->string('nombre');
-            $table->unsignedBigInteger('usuario');
+            $table->unsignedBigInteger('user');
 
-            $table->primary('id_informe_poas');
-            $table->foreign('usuario')->references('id_usuarios')->on('usuarios')->onDelete('cascade');
+
+            $table->foreign('user')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

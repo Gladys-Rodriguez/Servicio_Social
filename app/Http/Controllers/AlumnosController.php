@@ -18,11 +18,12 @@ class AlumnosController extends Controller
     {
         //
         $datos = dato::all();
-        //$datad = array("lista_datos" => $datos);
-        $usuarios = Usuario::all();
+        $datad = array("lista_datos" => $datos);
+        //$usuarios = Usuario::all();
         //$datau = array("lista_usuarios" => $usuarios);
-        return response()->view('Pantallas_Alumno_Servicio/RegistroAlumno', compact('datos','usuarios'));
+        return response()->view('Pantallas_Alumno_Servicio/RegistroAlumno', compact('datos'));
         //return response()->view('Pantallas_Alumno_Servicio/RegistroAlumno', compact('usuarios'));
+        //return view('/Pantallas_Alumno_Servicio/RegistroAlumno');
     }
 
     /**
@@ -44,17 +45,17 @@ class AlumnosController extends Controller
     public function store(Request $request)
     {
         //
-        $alumno = new alumno();
+        //$alumno = new alumno();
 
-        $alumno->id_alumnos = $request->id_usuarios;;
-        $alumno->carrera = $request->carrera;
-        $alumno->semestre = $request->semestre;
-        $alumno->grupo = $request->grupo;
-        $alumno->turno = $request->turno;
-        $alumno->id_usuarios = $request->id_usuarios;
-        $alumno->id_datos = $request->id_datos;
+        //$alumno->id_alumnos = $request->id_usuarios;;
+        //$alumno->carrera = $request->carrera;
+        //$alumno->semestre = $request->semestre;
+        //$alumno->grupo = $request->grupo;
+        //$alumno->turno = $request->turno;
+        //$alumno->id_usuarios = $request->id_usuarios;
+        //$alumno->id_datos = $request->id_datos;
 
-        $alumno->save();
+        //$alumno->save();
 
        /* $alumno_id = $request->input("");
         $carrera = $request->input("carrera");

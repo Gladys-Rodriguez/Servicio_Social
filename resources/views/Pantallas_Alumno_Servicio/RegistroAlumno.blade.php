@@ -56,19 +56,15 @@
           <br>
           <div class="field">
             <div class="label">Datos</div>
-            <select name="id_datos">
+          <!--   <select name="id_datos">
                 @foreach($datos as $item)
                 <option value="{{ $item->id_datos }}"> {{$item->nombre}} </option>
                 @endforeach
-            </select>
+            </select> -->
          </div>
         <div class="field">
             <div class="label">Usuarios</div>
-            <select name="id_usuarios">
-                @foreach($usuarios as $usu)
-                <option value="{{ $usu->id_usuarios }}"> {{$usu->id_usuarios}} </option>
-                @endforeach
-            </select>
+          <!--  aqui iba lo de Gladys -->
         </div>
     <div class="field">
         <div class="label">Carrera</div>

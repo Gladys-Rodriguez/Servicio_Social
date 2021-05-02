@@ -14,7 +14,7 @@ class CreateDireccionsTable extends Migration
     public function up()
     {
         Schema::create('direccions', function (Blueprint $table) {
-            $table->bigInteger('id_direccions')->unsigned()->notnull();
+            $table->increments('id_direccions')->unsigned()->notnull();
             $table->string('ciudad',30)->notnull();
             $table->string('alcaldia',30)->notnull();
             $table->string('colonia',30)->notnull();
@@ -23,10 +23,10 @@ class CreateDireccionsTable extends Migration
             $table->string('num_int',30)->nullable();
             $table->integer('cp')->notnull();
             $table->timestamps();
-            $table->bigInteger('id_alumnos')->unsigned()->notnull();
-            $table->primary('id_direccions');
 
-            $table->foreign('id_alumnos')->references('id_alumnos')->on('alumnos')->onDelete('cascade');
+
+
+
         });
     }
 
