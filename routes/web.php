@@ -223,6 +223,15 @@ Route::get('/RegisterForm', function (){
     return view('Pantallas_Principales.RegisterForm');
 }) -> name('RegisterForm');
 
+//Pantalla Registro con roles
+Route::get('/RegisterFormRoles', function (){
+    return view('Pantallas_Principales.RegisterFormRoles');
+}) -> name('RegisterFormRoles');
+
+//Ruta para recibir los datos que enviamos para el registro
+Route::resource('Servicio','registro');
+Route::post('/registrosRoles/(id)', [App\Http\Controllers\registroRol::class, 'store'])->name('registrosRoles.store'); //aqui se edita la pantalla de alcance
+
 
 //Ruta para recibir los datos que enviamos para el registro
 Route::resource('Servicio','registro');
