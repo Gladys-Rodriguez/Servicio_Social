@@ -36,6 +36,9 @@ class Docente
             case ('6'):
                 return $next($request);//si es docente
             break;
+            case ('7'):
+                return redirect('/prueba');//si es prueba
+            break;
 
         }
     }

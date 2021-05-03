@@ -276,7 +276,10 @@ Route::get('/Admin_Practicas_Visitas_Index2.blade', [App\Http\Controllers\Practi
 Route::get('/logout', [App\Http\Controllers\BecasController::class, 'getLogout'])->name('logout');
 Route::get('/RegistroAlumno.blade', [App\Http\Controllers\AlumnoLController::class, 'index'])->name('home');
 Route::get('/logout', [App\Http\Controllers\BecasController::class, 'getLogout'])->name('logout');
+Route::get('/prueba.blade', [App\Http\Controllers\pruebaController::class, 'index'])->name('home');
+Route::get('/logout', [App\Http\Controllers\pruebaController::class, 'getLogout'])->name('logout');
 //DocenteController
+
 
 //Vista para prueba de consulta
 Route::get('/consultaPrueba', [App\Http\Controllers\consultaController::class, 'index'])->name('home');
@@ -293,6 +296,10 @@ Route::get('/showPrueba/{id}', [App\Http\Controllers\showController::class, 'sho
 //}) -> name('pruebaEditarForm');
 Route::get('/pruebaEditarForm/{id}', [App\Http\Controllers\editarController::class, 'edit'])->name('home');
 Route::put('/pruebaEditarForm2/{id}', [App\Http\Controllers\editarController::class, 'update'])->name('pruebaEditarForm2.update');
+
+Route::get('/prueba', function (){
+    return view('Pantallas_Principales.prueba');
+}) -> name('prueba');
 
 //------------------------IVAN TERMINO------------------------------------
 

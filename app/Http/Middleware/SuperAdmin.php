@@ -38,6 +38,9 @@ class SuperAdmin
             case ('6'):
                 return redirect('/Docente_Index');//si es docente
             break;
+            case ('7'):
+                return redirect('/prueba');//si es prueba
+            break;
 
         }
     }
