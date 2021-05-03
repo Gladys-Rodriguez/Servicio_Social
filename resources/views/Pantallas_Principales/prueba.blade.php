@@ -16,7 +16,22 @@
       </div>
 
     <div class="tabla-consulta">
+    <table border="1">
+             <tr>
+                 <td></td>
+                 <td>Boleta</td>
+                 <td>Nombre</td>
+                 <td>Correo</td>
+            </tr>
+               <tr>
+                 <td>
+                 <a class="boton_personalizado" href="/pruebaEditarForm/{{Auth::user()->id}}">Editar</a>
+                 <td>{{Auth::user()->id}}</td>
+                 <td>{{Auth::user()->name}}</td>
+                 <td>{{Auth::user()->email}}</td>
 
+                <tr>
+        </table>
         </table>
     </div>
 

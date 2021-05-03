@@ -33,6 +33,7 @@
                     <li class="nav__item"><a href="{{url('/PracticasIndex')}}" class="nav__link">PRÁCTICAS</a></li>
                     <li class="nav__item"><a href="{{url('/LoginForm')}}" class="nav__link">LOGIN</a></li>
                     <li class="nav__item"><a href="{{url('/RegisterForm')}}" class="nav__link">REGISTRO</a></li>
+                    <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
 
                 </ul>
             </div>
