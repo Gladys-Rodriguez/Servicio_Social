@@ -64,10 +64,10 @@
                 <p>Colonia: {{$dato->colonia}}</p> 
                 <P>C.P: {{$dato->cp}}</P>
                 <p>Delegación/Municipio: {{$dato->alcaldia}}</p>
-                <p>Estado: CDMX</p>                  
+                <p>Estado: {{$dato->ciudad}}</p>                  
            </article> 
            <article id="tab3">
-           @if($dato->id_direcciones=='2')
+           @if($dato->id_direccions=='2')
            <p>No tienes beca asignada</p>
            @else
                 <h1>Datos Beca</h1>
