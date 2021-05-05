@@ -103,7 +103,7 @@ Route::post('/upload', [App\Http\Controllers\FormatosAFilesController::class, 's
 Route::get('/RegistroAlumno', function (){
     return view('Pantallas_Alumno_Servicio.RegistroAlumno');
 }) -> name('RegistroAlumno');
-Route::get('/RegistroAlumno/Nuevo_Registro', function (){
+Route::get('/NuevoRegistro', function (){
     return view('Pantallas_Alumno_Servicio.Registros.NuevoRegistro');
 }) -> name('Nuevo Registro');
 
@@ -113,6 +113,7 @@ Route::get('/RegistroAlumno/Nuevo_Registro', function (){
 
 Route::get('RegistroAlumno', [App\Http\Controllers\AlumnosController::class, 'index'])->name('RegistroAlumno.index');
 Route::post('RegistroAlumno', [App\Http\Controllers\AlumnosController::class, 'store'])->name('RegistroAlumno.store');
+Route::post('NuevoRegistro', [App\Http\Controllers\ServiciosController::class, 'store'])->name('NuevoRegistro.store');
 Auth::routes();
 //Ruta de controlador para guardar datos de un formulario
 //Route::post('DatosAlumno', [App\Http\Controllers\AlumnoController::class, 'create'])->name('DatosAlumnno.create');

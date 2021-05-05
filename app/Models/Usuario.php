@@ -49,6 +49,8 @@ class Usuario extends Model
 
 
 
+
+
     //Relación Uno a Uno
 
     /**Prueba de roles
