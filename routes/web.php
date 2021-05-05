@@ -191,9 +191,9 @@ Route::get('/Validacion_Practicas_Visitas', function () {
 }) -> name('Validacion_Practicas_Visitas');
 
 //Ruta Clasificacion Practicas y Visitas
-Route::get('/Clasificacion_Practicas_Visitas', function () {
-    return view('Pantallas_Admin_Practicas_Visitas.Clasificacion_Practicas_Visitas');
-}) -> name('Clasificacion_Practicas_Visitas');
+Route::get('/Solicitudes_Practicas_Visitas', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.Solicitudes_Practicas_Visitas');
+}) -> name('Solicitudes_Practicas_Visitas');
 
 
 //------------------------FER TERMINO------------------------------------

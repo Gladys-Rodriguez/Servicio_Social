@@ -1,4 +1,4 @@
-@extends('Pantallas_Admin_Practicas_Visitas.navbar_Clasificacion_Practicas_Visitas')
+@extends('Pantallas_Admin_Practicas_Visitas.navbar_Solicitudes_Practicas_Visitas')
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantallas_Admin_PracticasVisitas/estilosSolicitudes.css')}}">
