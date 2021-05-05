@@ -29,7 +29,7 @@
                 <ul class="nav__list">
                     <li class="nav__item"><a href="{{url('/Admin_Practicas_Visitas_Index2')}}" class="nav__link">HOME</a></li>
                     <li class="nav__item"><a href="{{url('/Validacion_Practicas_Visitas')}}" class="nav__link">VALIDACIÓN DE DOCUMENTOS</a></li>
-                    <li class="nav__item"><a href="{{url('/Clasificacion_Practicas_Visitas')}}" class="nav__link active">LISTADO DE PRACTICAS Y VISITAS</a></li>
+                    <li class="nav__item"><a href="{{url('/Clasificacion_Practicas_Visitas')}}" class="nav__link active">SOLICITUDES DE PRÁCTICAS</a></li>
                     <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
                 </ul>
             </div>
@@ -70,7 +70,7 @@
         </script>
 
     <section class="section-main">
-      <h1>LISTADO DE PRACTICAS Y VISITAS</h1>
+      <h1>SOLICITUDES DE PRÁCTICAS</h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->

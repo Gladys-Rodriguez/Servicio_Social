@@ -290,6 +290,17 @@ Route::get('/showPrueba', function (){
 
 //------------------------IVAN TERMINO------------------------------------
 
+//-----------------------------------SANTOS INICIO-----------------------------------
+Route::get('/ConvocatoriaBecas', function (){
+    return view('Pantallas_Alumno_Becas.ConvocatoriaBecas');
+}) -> name('ConvocatoriaBecas');
+
+Route::get('/FormatosBeca', function (){
+    return view('Pantallas_Alumno_Becas.FormatosBeca');
+}) -> name('FormatosBeca');
+
+Route::get('/MiBeca','MiBecaDatosController@index');
+//-----------------------SANTOS TERMINO----------------------------------
 Auth::routes();
 
 
