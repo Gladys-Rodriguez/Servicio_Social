@@ -112,6 +112,7 @@ Route::get('/NuevoRegistro', function (){
 //Ruta para obtener los datos desde el controlador
 
 Route::get('RegistroAlumno', [App\Http\Controllers\AlumnosController::class, 'index'])->name('RegistroAlumno.index');
+Route::get('NuevoRegistro', [App\Http\Controllers\ServiciosController::class, 'index'])->name('NuevoRegistro.index');
 Route::post('RegistroAlumno', [App\Http\Controllers\AlumnosController::class, 'store'])->name('RegistroAlumno.store');
 Route::post('NuevoRegistro', [App\Http\Controllers\ServiciosController::class, 'store'])->name('NuevoRegistro.store');
 Auth::routes();
@@ -266,7 +267,7 @@ Route::get('/Admin_Becas_Index3.blade', [App\Http\Controllers\BecasController ::
 Route::get('/logout', [App\Http\Controllers\BecasController::class, 'getLogout'])->name('logout');
 Route::get('/Admin_Practicas_Visitas_Index2.blade', [App\Http\Controllers\PracticasController ::class, 'index'])->name('home');
 Route::get('/logout', [App\Http\Controllers\BecasController::class, 'getLogout'])->name('logout');
-Route::get('/RegistroAlumno.blade', [App\Http\Controllers\AlumnoLController::class, 'index'])->name('home');
+Route::get('/NuevoRegistro.blade', [App\Http\Controllers\AlumnoLController::class, 'index'])->name('home');
 Route::get('/logout', [App\Http\Controllers\BecasController::class, 'getLogout'])->name('logout');
 //DocenteController
 

@@ -100,7 +100,7 @@
 
     <section class="section-main">
       <h1>Bienvenido Alumno
-    <?php   /*<br> Usuario con matricula: {{ Auth::user()->id}}</h1> */?>
+    <br> Usuario con matricula: {{ Auth::user()->id}}</h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->

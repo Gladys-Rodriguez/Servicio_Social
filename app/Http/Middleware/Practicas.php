@@ -31,7 +31,7 @@ class Practicas
                 return $next($request);//si es administrador de practicas
             break;
             case ('5'):
-                return redirect('/RegistroAlumno');//si es alumno
+                return redirect('/NuevoRegistro');//si es alumno
             break;
             case ('6'):
                 return redirect('/Docente_Index');//si es docente
