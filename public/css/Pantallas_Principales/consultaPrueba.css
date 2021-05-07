@@ -320,7 +320,7 @@ textarea.input {
     padding: 0.4rem 0.4rem;
     position: relative;
     font-family: 'Bitter', serif;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
     /*border: green 2px solid;*/
     WIDTH: 500px;
     height:500px;

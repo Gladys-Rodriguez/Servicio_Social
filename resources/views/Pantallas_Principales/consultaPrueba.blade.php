@@ -21,6 +21,8 @@
                  <td>Boleta</td>
                  <td>Nombre</td>
                  <td>Correo</td>
+                 <td>Id_rol</td>
+                 <td>Tipo de Rol</td>
             </tr>
                @foreach($Users as $User)
                <tr>
@@ -29,6 +31,8 @@
                  <td>{{$User->id}}</td>
                  <td>{{$User->name}}</td>
                  <td>{{$User->email}}</td>
+                 <td>{{$User->id_rol}}</td>
+                 <td>{{$User->Tipo_rol}}</td>
                 <tr>
                @endforeach
         </table>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use DB;
 
 class consultaController extends Controller
 {
@@ -14,8 +15,13 @@ class consultaController extends Controller
      */
     public function index()
     {
-        //
-        $Users= User::all();
+        //lo comentado si funciona
+        //$Users= User::all();
+        //return view("Pantallas_Principales.consultaPrueba", compact("Users"));
+        $Users = DB::table('users')
+        ->join('rols','rols.id_rol', '=', 'users.id_rol')
+        ->select('users.id', 'users.name', 'users.email', 'users.id_rol', 'rols.Tipo_rol')
+        ->get();
         return view("Pantallas_Principales.consultaPrueba", compact("Users"));
 
     }
