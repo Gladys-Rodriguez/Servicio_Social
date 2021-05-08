@@ -12,6 +12,17 @@ class direccion extends Model
     protected $table = 'direccions';
     protected $primarykey = 'id_direccions';
 
+    protected $fillable = [
+        'id_direccions',
+        'ciudad',
+        'alcaldia',
+        'colonia',
+        'calle',
+        'num_ext',
+        'num_int',
+        'cp'
+    ];
+
     public function dependencia()
     {
         return $this->hasOne('App\Models\dependencia', 'id_direcciones', 'id_direccions');

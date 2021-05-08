@@ -11,6 +11,17 @@ class servicio extends Model
 
     protected $table = 'servicios';
     protected $primarykey = 'id_servicios';
+
+    protected $fillable = [
+        'No_registro',
+        'fecha_inicio',
+        'fecha_termino',
+        'fecha_inscripcion',
+        'id_dependencias',
+        'id_alumnos',
+
+        ];
+
     //Relacion con la tabla de alumnos
     public function alumnos()
     {

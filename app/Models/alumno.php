@@ -30,4 +30,11 @@ class alumno extends Model
         return $this->belongsTo('App\Models\dato', 'id_datos', 'id_datos');
     }
 
+    public function usuario()
+    {
+        return $this->belongsTo('App\Models\Usuario', 'id_usuarios', 'id');
+    }
+
+
+
 }

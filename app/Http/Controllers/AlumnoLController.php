@@ -21,7 +21,7 @@ class AlumnoLController extends Controller
     public function index()
     {
         //
-        return view('/RegistroAlumno');
+        return view('/NuevoRegistro');
     }
 
     /**
