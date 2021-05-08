@@ -48,7 +48,7 @@ class ServiciosController extends Controller
     {
         //
         $id_users = Auth::user()->id;
-        $id_alumnos=alumno::where('id_usuarios',$id_users)->take(1)->get();
+        $id_alumnos=alumno::where('id',$id_users)->take(1)->get();
 
 
 

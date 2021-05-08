@@ -20,7 +20,7 @@ class consultaController extends Controller
         //return view("Pantallas_Principales.consultaPrueba", compact("Users"));
         $Users = DB::table('users')
         ->join('rols','rols.id_rol', '=', 'users.id_rol')
-        ->select('users.id', 'users.name', 'users.email', 'users.id_rol', 'rols.Tipo_rol')
+        ->select('users.id', 'users.email', 'users.id_rol', 'rols.Tipo_rol')
         ->get();
         return view("Pantallas_Principales.consultaPrueba", compact("Users"));
 

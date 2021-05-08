@@ -19,7 +19,7 @@
              <tr>
                  <td></td>
                  <td>Boleta</td>
-                 <td>Nombre</td>
+
                  <td>Correo</td>
                  <td>Id_rol</td>
                  <td>Tipo de Rol</td>
@@ -29,7 +29,6 @@
                  <td>
                  <a class="boton_personalizado" href="{{url('showPrueba', $User->id)}}">Ver</a>
                  <td>{{$User->id}}</td>
-                 <td>{{$User->name}}</td>
                  <td>{{$User->email}}</td>
                  <td>{{$User->id_rol}}</td>
                  <td>{{$User->Tipo_rol}}</td>

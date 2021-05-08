@@ -47,7 +47,7 @@ class registroRol extends Controller
        ]);
 
       $registro->id=$request->id;
-      $registro->name=$request->name;
+      //$registro->name=$request->name;
       $registro->email=$request->email;
       $registro->password=bcrypt($request->password);
       //$registro->password=bcrypt($request->password);

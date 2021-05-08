@@ -84,9 +84,6 @@
         <!-- matricula INPUT -->
         <label>Matricula</label>
         <input type="text" name="id" placeholder="Ingresa valores númericos" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
-         <!-- nombre INPUT -->
-         <label>Nombre completo</label>
-        <input type="text" name="name" placeholder="Ingresa tu nombre completo" required minlength="10" maxlength="60" onkeypress="return sololetras(event)">
         <!-- correo INPUT -->
         <label>Correo Institucional</label>
         <input type="email" name="email" placeholder="correo@hotmail.com" required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
@@ -101,6 +98,8 @@
                  <option value="2"> Admin Servicio Social </option>
                  <option value="3"> Admin Becas </option>
                  <option value="4"> Admin Prácticas </option>
+                 <option value="7"> Pruebas </option>
+
              </select>
                  @error('id_rol')
                   <span class="invalid-feedback" role="alert">
