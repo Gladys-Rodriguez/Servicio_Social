@@ -15,7 +15,7 @@ textarea {
 
 .container {
   position: relative;
-  width: 1100px;
+  width: 1800px;
   min-height: 40vh;
   height: 400px;
   padding: 1rem;
@@ -30,7 +30,7 @@ textarea {
 
 .informacion {
   width: 100%;
-  max-width: 820px;
+  max-width: 1800px;
   height: 100%;
   background-color: #E6E7E9;
   border-radius: 10px;
@@ -320,7 +320,7 @@ textarea.input {
     padding: 0.4rem 0.4rem;
     position: relative;
     font-family: 'Bitter', serif;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
     /*border: green 2px solid;*/
     WIDTH: 500px;
     height:500px;
