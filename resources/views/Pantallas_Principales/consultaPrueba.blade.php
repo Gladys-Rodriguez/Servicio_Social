@@ -11,13 +11,13 @@
 <div class="container">
     <div class="informacion">
       <div class="contact-info">
-        <h3 class="title">"Todos los usuarios"</h3>
+        <h3 class="title">"Todos los alumnos"</h3>
       </div>
 
     <div class="tabla-consulta">
          <table border="1">
              <tr>
-
+                 <td></td>
                  <td>Matricula</td>
                  <td>Correo</td>
 

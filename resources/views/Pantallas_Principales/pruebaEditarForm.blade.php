@@ -35,7 +35,7 @@
 
 <br>
 <div class="container">
-<div class="informacion">
+<div class="informacion" >
       <div class="contact-info">
         <h3 class="title">"Editar datos"</h3>
 
@@ -66,8 +66,8 @@
         <label>Correo Institucional</label>
         <input type="email" name="email" value="{{$Users->email}}" placeholder="correo@hotmail.com" required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
         <!-- PASSWORD INPUT -->
-        <label>Contraseña</label>
-        <input type="password" name="password" value="{{$Users->password}}" placeholder="Contraseña" required>
+        <!--<label>Contraseña</label>
+        <input type="password" name="password" value="{{$Users->password}}" placeholder="Contraseña" required>-->
         <button type="submit">Actualizar</button>
 
 

@@ -3,17 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
-use DB;
+use App\Models\bannerServicioImagen;
+use DispatchesJobs, ValidatesRequests;
 
-use App\Models\dato;
-use App\Models\Usuario;
-use App\Models\alumno;
-use App\Models\servicio;
-use App\Models\dependencia;
-use App\Models\direccion;
-
-class showController extends Controller
+class RegistroBannerServicio extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -43,7 +36,29 @@ class showController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+      /*Primer forma
+      $registro= new bannerServicioImagen;
+
+      $registro->ruta=$request->ruta;
+      $registro->save();
+      return redirect('Registro_exitoso');*/
+
+     $request->validate(['ruta' => 'image']);
+
+        $entrada= $request->all();
+        if($archivo=$request->file('file')){
+            $nombre=$archivo->getClientOriginalName();
+            $archivo->move('img/carrusel', $nombre);
+            $entrada['ruta']=$nombre;
+        }
+
+        bannerServicioImagen::create($entrada);
+
+
+
+        return redirect('Registro_exitoso');
+
     }
 
     /**
@@ -55,19 +70,6 @@ class showController extends Controller
     public function show($id)
     {
         //
-        $Users= User::findOrFail($id);
-        //return view("Pantallas_Principales.showPrueba", compact("Users"));
-
-        //$Users = DB::table('alumnos')
-        //->join('users','users.id', '=', 'alumnos.id_usuarios')
-        //->join('datos', 'datos.id_datos', '=', 'alumnos.id_datos')
-        //->join('direccions', 'direccions.id_direccions', '=', 'alumnos.id_direccions')
-        //->select('users.id', 'users.email', 'datos.nombre', 'datos.ap_paterno', 'datos.ap_materno', 'datos.telefono', 'datos.celular', 'direccions.ciudad', 'direccions.alcaldia', 'direccions.colonia', 'direccions.calle', 'direccions.num_ext', 'direccions.num_int', 'direccions.cp', 'alumnos.carrera', 'alumnos.semestre', 'alumnos.grupo', 'alumnos.turno')
-        //->where('users.id', '=', $id)
-        //->get();
-
-        return view("Pantallas_Principales.showPrueba", compact("Users"));
-
     }
 
     /**

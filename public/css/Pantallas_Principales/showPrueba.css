@@ -15,7 +15,7 @@ textarea {
 
 .container {
   position: relative;
-  width: 1800px;
+  width: 1500px;
   min-height: 40vh;
   height: 400px;
   padding: 1rem;
@@ -26,11 +26,13 @@ textarea {
   justify-content: center;
   border: blue 2px solid;
   margin: 5px auto;
+  overflow-y: scroll;
+  overflow-x: scroll;
 }
 
 .informacion {
   width: 100%;
-  max-width: 1800px;
+  max-width: 1500px;
   height: 100%;
   background-color: #E6E7E9;
   border-radius: 10px;
