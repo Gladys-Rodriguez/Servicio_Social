@@ -299,6 +299,10 @@ Route::get('/consultaPrueba', [App\Http\Controllers\consultaController::class, '
 //Vista para consulta de imagenes de banner de servicio
 Route::get('/consultaBannerServicio', [App\Http\Controllers\consultaBannerServicioController::class, 'index'])->name('home');
 
+//Vista para consulta de todos los usuarios
+Route::get('/consultaUsuarios', [App\Http\Controllers\consultaUsuariosController::class, 'index'])->name('home');
+
+
 //Vista para editar y actualizar datos
 Route::get('/showPrueba/{id}', [App\Http\Controllers\showController::class, 'show'])->name('home');
 //Route::get('/showPrueba', function (){

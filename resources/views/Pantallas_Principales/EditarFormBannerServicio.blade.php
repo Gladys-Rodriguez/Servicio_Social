@@ -11,7 +11,7 @@
 <div class="container">
 <div class="informacion">
       <div class="contact-info">
-        <h3 class="title">"Subir imagen"</h3>
+        <h3 class="title">"Editar imagen"</h3>
 
       <div class="errores">
        @if($errors->any())
@@ -37,14 +37,14 @@
         @error('ruta')
             <small class="text-danger">{{$message}} </small>
         @enderror
-        <button type="submit">Editar imagen</button>
+        <button type="submit">Subir nueva imagen</button>
     </form>
 
     <form action="/EditarFormBannerServicio3/{{$bannerServicio->id}}" method="POST" enctype="multipart/form-data">
           @csrf
           <input type="hidden" name="_method" value="DELETE">
 
-          <button type="submit">Borrar</button>
+          <button type="submit">Eliminar definitivamente la imagen</button>
     </form>
 
     </div>
