@@ -37,8 +37,16 @@
         @error('ruta')
             <small class="text-danger">{{$message}} </small>
         @enderror
-        <button type="submit">Subir imagen</button>
+        <button type="submit">Editar imagen</button>
     </form>
+
+    <form action="/EditarFormBannerServicio3/{{$bannerServicio->id}}" method="POST" enctype="multipart/form-data">
+          @csrf
+          <input type="hidden" name="_method" value="DELETE">
+
+          <button type="submit">Borrar</button>
+    </form>
+
     </div>
 
 

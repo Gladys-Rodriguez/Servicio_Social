@@ -96,5 +96,10 @@ class editarBannerServicioController extends Controller
     public function destroy($id)
     {
         //
+        $bannerServicio= bannerServicioImagen::findOrFail($id);
+
+        $bannerServicio->delete();
+
+        return redirect("/consultaBannerServicio");
     }
 }

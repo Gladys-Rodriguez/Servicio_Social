@@ -314,6 +314,7 @@ Route::get('/showPrueba/{id}', [App\Http\Controllers\showController::class, 'sho
 Route::get('/pruebaEditarForm/{id}', [App\Http\Controllers\editarController::class, 'edit'])->name('home');
 Route::put('/pruebaEditarForm2/{id}', [App\Http\Controllers\editarController::class, 'update'])->name('pruebaEditarForm2.update');
 
+
 //Pantalla de editar de imagenes de servicio
 Route::get('/EditarFormBannerServicio', function (){
     return view('Pantallas_Principales.EditarFormBannerServicio');
@@ -321,7 +322,7 @@ Route::get('/EditarFormBannerServicio', function (){
 
 Route::get('/EditarFormBannerServicio/{id}', [App\Http\Controllers\editarBannerServicioController::class, 'edit'])->name('home');
 Route::put('/EditarFormBannerServicio2/{id}', [App\Http\Controllers\editarBannerServicioController::class, 'update'])->name('EditarFormBannerServicio2.update');
-
+Route::delete('/EditarFormBannerServicio3/{id}', [App\Http\Controllers\editarBannerServicioController::class, 'destroy'])->name('pruebaEditarForm3.update');
 
 
 Route::get('/prueba', function (){
