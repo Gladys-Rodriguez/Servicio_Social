@@ -47,7 +47,7 @@ class RegistroBannerServicio extends Controller
      $request->validate(['ruta' => 'image']);
 
         $entrada= $request->all();
-        if($archivo=$request->file('file')){
+        if($archivo=$request->file('ruta')){
             $nombre=$archivo->getClientOriginalName();
             $archivo->move('img/carrusel', $nombre);
             $entrada['ruta']=$nombre;
