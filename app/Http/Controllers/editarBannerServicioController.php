@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\bannerServicioImagen;
 
-class editarController extends Controller
+class editarBannerServicioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,7 @@ class editarController extends Controller
     public function index()
     {
         //
-        $Users= User::all();
-        return view("Pantallas_Principales.showPrueba", compact("Users"));
+
     }
 
     /**
@@ -49,8 +48,6 @@ class editarController extends Controller
     public function show($id)
     {
         //
-        $Users= User::findOrFail($id);
-        return view("Pantallas_Principales.showPrueba", compact("Users"));
     }
 
     /**
@@ -62,8 +59,9 @@ class editarController extends Controller
     public function edit($id)
     {
         //
-        $Users= User::findOrFail($id);
-        return view("Pantallas_Principales.pruebaEditarForm", compact("Users"));
+        $bannerServicio= bannerServicioImagen::findOrFail($id);
+        return view("Pantallas_Principales.EditarFormBannerServicio", compact("bannerServicio"));
+
     }
 
     /**
@@ -76,8 +74,16 @@ class editarController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $Users= User::findOrFail($id);
-        $Users->update($request->all());
+        $bannerServicio= bannerServicioImagen::findOrFail($id);
+
+        $entrada= $request->all();
+        if($archivo=$request->file('ruta')){
+            $nombre=$archivo->getClientOriginalName();
+            $archivo->move('img/carrusel', $nombre);
+            $entrada['ruta']=$nombre;
+        }
+
+        $bannerServicio->update($entrada);
         return redirect("/consultaBannerServicio");
     }
 

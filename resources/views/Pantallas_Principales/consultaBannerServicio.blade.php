@@ -26,8 +26,9 @@
                <tr>
                  <td>
                  <?php /*<a class="boton_personalizado" href="{{url('showPrueba', $bannerServicio->id)}}">Ver</a> */ ?>
+                 <a class="boton_personalizado" href="/EditarFormBannerServicio/{{$bannerServicioo->id}}">Editar</a>
                  <td>{{$bannerServicioo->id}}</td>
-                 <td><img src="img/carrusel/{{$bannerServicioo->ruta}}" width="170"/></td>
+                 <td><img src="img/carrusel/{{$bannerServicioo->ruta}}" width="150"/></td>
 
                 <tr>
                @endforeach
