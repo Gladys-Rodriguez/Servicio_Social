@@ -244,7 +244,7 @@ Route::get('/Registro_exitoso', function (){
     return view('Pantallas_Principales.Registro_exitoso');
 }) -> name('Registro_exitoso');
 
-//Ruta para el registro de imagenes
+//Ruta para el registro de imagenes de servicio
 Route::get('/RegisterBannerServicio', function (){
     return view('Pantallas_Principales.RegisterBannerServicio');
 }) -> name('RegisterBannerServicio');
@@ -252,6 +252,16 @@ Route::get('/RegisterBannerServicio', function (){
 //Ruta para recibir los datos que enviamos para el registro de imagenes de servicio
 Route::resource('Servicio','registro');
 Route::post('/registrosImagenesS/(id)', [App\Http\Controllers\RegistroBannerServicio::class, 'store'])->name('registrosImagenesS.store'); //aqui se edita la pantalla de alcance
+
+//Ruta para el registro de imagenes de becas
+Route::get('/RegisterBannerBecas', function (){
+    return view('Pantallas_Principales.RegisterBannerBecas');
+}) -> name('RegisterBannerServicio');
+
+//Ruta para recibir los datos que enviamos para el registro de imagenes de becas
+Route::resource('Becas','registro');
+Route::post('/registrosImagenesB/(id)', [App\Http\Controllers\RegistroBannerBecas::class, 'store'])->name('registrosImagenesB.store'); //aqui se edita la pantalla de alcance
+
 
 
 //RUTAS PARA EL LOGIN
