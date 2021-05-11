@@ -262,6 +262,15 @@ Route::get('/RegisterBannerBecas', function (){
 Route::resource('Becas','registro');
 Route::post('/registrosImagenesB/(id)', [App\Http\Controllers\RegistroBannerBecas::class, 'store'])->name('registrosImagenesB.store'); //aqui se edita la pantalla de alcance
 
+//Ruta para el registro de imagenes de practicas
+Route::get('/RegisterBannerPracticas', function (){
+    return view('Pantallas_Principales.RegisterBannerPracticas');
+}) -> name('RegisterBannerPracticas');
+
+//Ruta para recibir los datos que enviamos para el registro de imagenes de becas
+Route::resource('Practicas','registro');
+Route::post('/registrosImagenesP/(id)', [App\Http\Controllers\RegistroBannerPracticas::class, 'store'])->name('registrosImagenesP.store'); //aqui se edita la pantalla de alcance
+
 
 
 //RUTAS PARA EL LOGIN
@@ -312,6 +321,9 @@ Route::get('/consultaBannerServicio', [App\Http\Controllers\consultaBannerServic
 //Vista para consulta de imagenes de banner de becas
 Route::get('/consultaBannerBecas', [App\Http\Controllers\consultaBannerBecasController::class, 'index'])->name('home');
 
+//Vista para consulta de imagenes de banner de practicas
+Route::get('/consultaBannerPracticas', [App\Http\Controllers\consultaBannerPracticasController::class, 'index'])->name('home');
+
 
 //Vista para consulta de todos los usuarios
 Route::get('/consultaUsuarios', [App\Http\Controllers\consultaUsuariosController::class, 'index'])->name('home');
@@ -351,6 +363,15 @@ Route::get('/EditarFormBannerBecas', function (){
 Route::get('/EditarFormBannerBecas/{id}', [App\Http\Controllers\editarBannerBecasController::class, 'edit'])->name('home');
 Route::put('/EditarFormBannerBecas2/{id}', [App\Http\Controllers\editarBannerBecasController::class, 'update'])->name('EditarFormBannerServicio2.update');
 Route::delete('/EditarFormBannerBecas3/{id}', [App\Http\Controllers\editarBannerBecasController::class, 'destroy'])->name('pruebaEditarForm3.update');
+
+//Pantalla de editar de imagenes de practicas
+Route::get('/EditarFormBannerPracticas', function (){
+    return view('Pantallas_Principales.EditarFormBannerPracticas');
+}) -> name('EditarFormBannerPracticas');
+
+Route::get('/EditarFormBannerPracticas/{id}', [App\Http\Controllers\editarBannerPracticasController::class, 'edit'])->name('home');
+Route::put('/EditarFormBannerPracticas2/{id}', [App\Http\Controllers\editarBannerPracticasController::class, 'update'])->name('EditarFormBannerPracticas2.update');
+Route::delete('/EditarFormBannerPracticas3/{id}', [App\Http\Controllers\editarBannerPracticasController::class, 'destroy'])->name('pruebaEditarForm3.update');
 
 
 Route::get('/prueba', function (){
