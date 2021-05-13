@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\bannerServicioImagen;
+use App\Models\bannerBecasImagen;
 
-class consultaBannerServicioController extends Controller
+class indexBannerBecasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,8 @@ class consultaBannerServicioController extends Controller
     public function index()
     {
         //
-        $bannerServicio= bannerServicioImagen::all();
-        return view("Pantallas_Principales.consultaBannerServicio", compact("bannerServicio"));
-        //return view("Pantallas_Principales.servicioIndex2", compact("bannerServicio"));
+        $bannerBecas= bannerBecasImagen::all();
+        return view("Pantallas_Principales.BecasIndex", compact("bannerBecas"));
     }
 
     /**

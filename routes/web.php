@@ -216,7 +216,7 @@ Route::get('/ServicioIndex2', function (){
 }) -> name('ServicioIndex2');
 
 //Vista para consulta de imagenes de banner de servicio
-Route::get('/ServicioIndex2', [App\Http\Controllers\consultaBannerServicioController::class, 'index'])->name('home');
+Route::get('/ServicioIndex', [App\Http\Controllers\indexBannerServicioController::class, 'index'])->name('home');
 
 
 //Pantalla general de becas
@@ -224,10 +224,18 @@ Route::get('/BecasIndex', function (){
     return view('Pantallas_Principales.BecasIndex');
 }) -> name('BecasIndex');
 
+//Vista para consulta de imagenes de banner de servicio
+Route::get('/BecasIndex', [App\Http\Controllers\indexBannerBecasController::class, 'index'])->name('home');
+
+
 //Pantalla general de practicas
 Route::get('/PracticasIndex', function (){
     return view('Pantallas_Principales.PracticasIndex');
 }) -> name('PracticasIndex');
+
+//Vista para consulta de imagenes de banner de servicio
+Route::get('/PracticasIndex', [App\Http\Controllers\indexBannerPracticasController::class, 'index'])->name('home');
+
 
 //Pantalla Registro
 Route::get('/RegisterForm', function (){
