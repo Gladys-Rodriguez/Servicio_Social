@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use DB;
 
 class consultaController extends Controller
 {
@@ -14,8 +15,20 @@ class consultaController extends Controller
      */
     public function index()
     {
-        //
-        $Users= User::all();
+        //lo comentado si funciona
+        //$Users= User::all();
+        //return view("Pantallas_Principales.consultaPrueba", compact("Users"));
+        /*$Users = DB::table('users')
+        ->join('rols','rols.id_rol', '=', 'users.id_rol')
+        ->select('users.id', 'users.email', 'users.id_rol', 'rols.Tipo_rol')
+        ->get();
+        return view("Pantallas_Principales.consultaPrueba", compact("Users")); */
+        $Users = DB::table('alumnos')
+        ->join('users','users.id', '=', 'alumnos.id_usuarios')
+        ->join('datos', 'datos.id_datos', '=', 'alumnos.id_datos')
+        ->join('direccions', 'direccions.id_direccions', '=', 'alumnos.id_direccions')
+        ->select('users.id', 'users.email', 'datos.nombre', 'datos.ap_paterno', 'datos.ap_materno', 'datos.telefono', 'datos.celular', 'direccions.ciudad', 'direccions.alcaldia', 'direccions.colonia', 'direccions.calle', 'direccions.num_ext', 'direccions.num_int', 'direccions.cp', 'alumnos.carrera', 'alumnos.semestre', 'alumnos.grupo', 'alumnos.turno')
+        ->get();
         return view("Pantallas_Principales.consultaPrueba", compact("Users"));
 
     }

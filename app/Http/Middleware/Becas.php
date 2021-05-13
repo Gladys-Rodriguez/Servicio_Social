@@ -31,10 +31,13 @@ class Becas
                 return redirect('/Admin_Practicas_Visitas_Index2');//si es administrador de practicas
             break;
             case ('5'):
-                return redirect('/RegistroAlumno');//si es alumno
+                return redirect('/NuevoRegistro');//si es alumno
             break;
             case ('6'):
                 return redirect('/Docente_Index');//si es docente
+            break;
+            case ('7'):
+                return redirect('/prueba');//si es prueba
             break;
 
         }
