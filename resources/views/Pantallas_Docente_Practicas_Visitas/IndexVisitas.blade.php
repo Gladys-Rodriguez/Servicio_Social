@@ -32,6 +32,7 @@ Prácticas y Visitas Escolares
     <a href="">Requisitos_Yakult.pdf</a>
     <a href="">Requisitos_BBVA.pdf</a>
     <a href="">Requisitos_Bimbo.pdf</a>
+    <h2>hola</h2>
     </div>
 </section>
 
