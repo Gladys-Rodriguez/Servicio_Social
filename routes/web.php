@@ -210,6 +210,15 @@ Route::get('/ServicioIndex', function (){
     return view('Pantallas_Principales.ServicioIndex');
 }) -> name('ServicioIndex');
 
+//Pantalla general de servicio
+Route::get('/ServicioIndex2', function (){
+    return view('Pantallas_Principales.ServicioIndex2');
+}) -> name('ServicioIndex2');
+
+//Vista para consulta de imagenes de banner de servicio
+Route::get('/ServicioIndex2', [App\Http\Controllers\consultaBannerServicioController::class, 'index'])->name('home');
+
+
 //Pantalla general de becas
 Route::get('/BecasIndex', function (){
     return view('Pantallas_Principales.BecasIndex');

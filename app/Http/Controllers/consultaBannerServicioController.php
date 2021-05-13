@@ -16,8 +16,8 @@ class consultaBannerServicioController extends Controller
     {
         //
         $bannerServicio= bannerServicioImagen::all();
-        return view("Pantallas_Principales.consultaBannerServicio", compact("bannerServicio"));
-
+        //return view("Pantallas_Principales.consultaBannerServicio", compact("bannerServicio"));
+        return view("Pantallas_Principales.servicioIndex2", compact("bannerServicio"));
     }
 
     /**
