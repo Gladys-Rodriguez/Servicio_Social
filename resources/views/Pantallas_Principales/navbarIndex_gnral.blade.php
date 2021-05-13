@@ -73,7 +73,7 @@
         </script>
 
     <section class="section-main">
-      <h1>CECyT 13 "Ricardo Flores Magón </h1>
+      <h1>CECyT 13 "Ricardo Flores Magón" </h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->

@@ -16,4 +16,13 @@ class dato extends Model
     {
         return $this->hasOne('App\Models\alumno', 'id_datos', 'id_datos');
     }
+
+    protected $fillable = [
+        'nombre',
+        'ap_paterno',
+        'ap_materno',
+        'telefono',
+        'celular',
+
+    ];
 }
