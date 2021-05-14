@@ -3,154 +3,189 @@
 @section('title', 'Registro')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/Pantallas_Principales/RegisterForm.css')}}">
+
+<link rel="stylesheet" href="{{asset('css/Pantallas_Principales/RegisterForm_V2.css')}}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 @endsection
 
 @section('content')
 
-<script>
-    function solonumeros(e){
-        key=e.keyCode||e.wich;
-
-        teclado=String.fromCharCode(key);
-
-        numeros="0123456789";
-
-        especiales="8-37-38-46";
-
-        teclado_especial=false;
-
-        for(var i in especiales){
-            if(key==especiales[i]){
-                teclado_especial=true;
-            }
-        }
-
-        if(numeros.indexOf(teclado)==-1 && !teclado_especial){
-            return false;
-        }
-
-    }
-    </script>
-
-
-<script>
-    function sololetras(e){
-        key=e.keyCode||e.wich;
-
-        teclado=String.fromCharCode(key);
-
-        letras="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
-
-        especiales="8-37-38-46";
-
-        teclado_especial=false;
-
-        for(var i in especiales){
-            if(key==especiales[i]){
-                teclado_especial=true;
-            }
-        }
-
-        if(letras.indexOf(teclado)==-1 && !teclado_especial){
-            return false;
-        }
-
-    }
-    </script>
-
-<br>
+<!-- **************************** INICIO FORMULARIO STEP BY STEP **************************** -->
 <div class="container">
-<div class="informacion">
-      <div class="contact-info">
-        <h3 class="title">"Registro"</h3>
 
-      <div class="errores">
-       @if($errors->any())
-        <ul>
-        @foreach($errors->all() as $error)
-            <li>{{$error}}</li>
-        @endforeach
-        </ul>
-        @endif
-      </div>
-
-      </div>
-
-    <!--Formulario-->
-    <div class="login-box">
-    <form action="{{route('registros.store')}}" method="POST">
-          @csrf
-        <!-- matricula INPUT -->
-        <label>Matricula</label>
-        <input type="text" name="id" placeholder="Ingresa valores númericos" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
-         <!-- nombre INPUT -->
-         <!--<label>Nombre completo</label>
-        <input type="text" name="name" placeholder="Ingresa tu nombre completo" required minlength="10" maxlength="60" onkeypress="return sololetras(event)">-->
-        <!-- correo INPUT -->
-        <label>Correo Institucional</label>
-        <input type="email" name="email" placeholder="correo@hotmail.com" required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
-        <!-- PASSWORD INPUT -->
-        <label>Contraseña</label>
-        <input type="password" name="password" placeholder="Contraseña" required>
-        <!-- nombre INPUT -->
-        <label>Nombre completo</label>
-        <input type="text" name="nombre" placeholder="Ingresa tu nombre" required maxlength="60" onkeypress="return sololetras(event)">
-        <!-- Apellido patero input -->
-        <label>Apellido paterno</label>
-        <input type="text" name="ap_paterno" placeholder="Ingresa tu apellido paterno" required maxlength="60" onkeypress="return sololetras(event)">
-        <!-- Apellido materno input -->
-        <label>Apellido materno</label>
-        <input type="text" name="ap_materno" placeholder="Ingresa tu apellido paterno" required maxlength="60" onkeypress="return sololetras(event)">
-        <!-- telefono input -->
-        <label>Telefono</label>
-        <input type="text" name="telefono" placeholder="Ingresa tu telefono" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
-         <!-- telefono input -->
-        <label>Celular</label>
-        <input type="text" name="celular" placeholder="Ingresa tu celular" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
-         <!-- ciudad input -->
-         <label>Ciudad</label>
-         <input type="text" name="ciudad" placeholder="Ingresa tu ciudad" required maxlength="60" onkeypress="return sololetras(event)">
-         <!-- alcaldia input -->
-         <label>Alcaldia</label>
-         <input type="text" name="alcaldia" placeholder="Ingresa tu alcaldia" required maxlength="60" onkeypress="return sololetras(event)">
-         <!-- colonia input -->
-         <label>Colonia</label>
-         <input type="text" name="colonia" placeholder="Ingresa tu colonia" required maxlength="60" onkeypress="return sololetras(event)">
-         <!-- calle input -->
-         <label>Calle</label>
-         <input type="text" name="calle" placeholder="Ingresa tu calle" required maxlength="60">
-         <!-- numero exterior input -->
-         <label>Numero Exterior</label>
-         <input type="text" name="num_ext" placeholder="Ingresa tu numero exterior" required maxlength="10" onkeypress="return solonumeros(event)">
-          <!-- numero interior input -->
-          <label>Numero Interior</label>
-         <input type="text" name="num_int" placeholder="Ingresa tu numero interior" required maxlength="10" onkeypress="return solonumeros(event)">
-         <!-- Codigo postal input -->
-         <label>Codigo Postal</label>
-         <input type="text" name="cp" placeholder="Ingresa tu codigo postal" required maxlength="10" onkeypress="return solonumeros(event)">
-         <!-- Carrera input -->
-         <label>Carrera</label>
-         <input type="text" name="carrera" placeholder="Ingresa tu carrera" required maxlength="20" onkeypress="return sololetras(event)">
-         <!-- Semestre input -->
-         <label>Semestre</label>
-         <input type="text" name="semestre" placeholder="Ingresa tu semestre" required maxlength="10" onkeypress="return solonumeros(event)">
-         <!-- Grupo input -->
-         <label>Grupo</label>
-         <input type="text" name="grupo" placeholder="Ingresa tu grupo" required maxlength="5">
-         <!-- Grupo input -->
-         <label>Turno</label>
-         <input type="text" name="turno" placeholder="Ingresa tu turno" required maxlength="11" onkeypress="return sololetras(event)">
-
-        <button type="submit">Registrar</button>
-
-
-
-      </form>
-
+    <div class="progress-bar">
+        <div class="step">
+            <p>1</p>
+                <div class="bullet">
+                    <span></span>
+                </div>
+         <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+            <p>2</p>
+                <div class="bullet">
+                    <span></span>
+                </div>
+        <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+            <p>3</p>
+                <div class="bullet">
+                    <span></span>
+                </div>
+        <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+            <p>4</p>
+                <div class="bullet">
+                    <span></span>
+                </div>
+        <div class="check fas fa-check"></div>
+        </div>
     </div>
 
+<!-- ************************** INICIO DEL FORMULARIO ********************************** -->
+<div class="form-outer">
+    <div class="separa">
+        <form action="{{route('registros.store')}}" method="POST" autocomplete="off" id="registro">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
 
-     </div>
+
+            <div class="page slide-page">
+                <div class="title">Datos Personales:</div>
+                <br>
+                    <div class="field">
+                        <div class="label" for="nombre">Nombre(s):</div>
+                        <input type="text" name="nombre" id="nombre">
+                    </div>
+                    <div class="field">
+                        <div class="label" for="ap_paterno">Apellido Paterno:</div>
+                        <input type="text" name="ap_paterno" id="ap_paterno">
+                    </div>
+                    <div class="field">
+                        <div class="label" for="ap_materno">Apellido Materno:</div>
+                        <input type="text" name="ap_materno" id="ap_materno">
+                    </div>
+                    <div class="field">
+                        <div class="label" for="telefono">Telefono de Casa:</div>
+                        <input type="text" name="telefono" id="telefono">
+                    </div>
+                    <div class="field">
+                        <div class="label" for="celular">Telefono Celular:</div>
+                        <input type="text" name="celular" id="celular">
+                    </div>
+
+                    <div class="field">
+                        <button class="firstNext next">Next</button>
+                    </div>
+                </div>
+
+
+            <div class="page">
+                <div class="title">Domicilio:</div>
+                <br>
+
+                <div class="field">
+                    <div class="label" for="ciudad">Ciudad:</div>
+                    <input type="text" name="ciudad" id="ciudad">
+                </div>
+                <div class="field">
+                    <div class="label" for="alcaldia">Alcaldia o Municipio:</div>
+                    <input type="text" name="alcaldia" id="alcaldia">
+                </div>
+                <div class="field">
+                    <div class="label" for="colonia">Colonia:</div>
+                    <input type="text" name="colonia" id="colonia">
+                </div>
+                <div class="field">
+                    <div class="label" for="calle">Calle:</div>
+                    <input type="text" name="calle" id="calle">
+                </div>
+                <div class="field">
+                    <div class="label" for="num_ext">Numero Ext.:</div>
+                    <input type="text" name="num_ext" id="num_ext">
+                </div>
+                <div class="field">
+                    <div class="label" for="num_int">Numero Int.:</div>
+                    <input type="text" name="num_int" id="num_int">
+                </div>
+                <div class="field">
+                    <div class="label" for="cp">CP:</div>
+                    <input type="Number" name="cp" id="cp">
+                </div>
+
+                    <div class="field btns">
+                        <button class="prev-1 prev">Previous</button>
+                        <button class="next-1 next">Next</button>
+                    </div>
+            </div>
+
+
+            <div class="page">
+                <div class="title">Datos Escolares:</div>
+                <br>
+                <div class="field">
+                    <div class="label" for="carrera">Carrera:</div>
+                    <input type="text" name="carrera" id="carrera">
+                </div>
+                <div class="field">
+                    <div class="label" for="semestre">Semestre:</div>
+                    <input type="text" name="semestre" id="semestre">
+                </div>
+                <div class="field">
+                    <div class="label" for="grupo">Grupo:</div>
+                    <input type="text" name="grupo" id="grupo">
+                </div>
+                <div class="field">
+                    <div class="label" for="turno">Turno:</div>
+                    <input type="text" name="turno" id="turno">
+                </div>
+
+                    <div class="field btns">
+                        <button class="prev-2 prev">Previous</button>
+                        <button class="next-2 next">Next</button>
+                    </div>
+            </div>
+
+
+            <div class="page">
+                <div class="title">Datos de Usuario:</div>
+                <br>
+                     <div class="field">
+                        <div class="label" for="id">Matricula:</div>
+                        <input type="text" name="id" id="id">
+                    </div>
+                    <div class="field">
+                        <div class="label" for="email">E-mail:</div>
+                        <input type="text" name="email" id="email">
+                    </div>
+                    <div class="field">
+                        <div class="label" for="password">Password:</div>
+                        <input type="text" name="password" id="password">
+                    </div>
+
+                    <div class="field btns">
+                        <button class="prev-3 prev">Previous</button>
+                        <button class="submit">Submit</button>
+                    </div>
+            </div>
+
+
+        </form>
+    </div>
 </div>
+
+<!-- *******************  Fin del Container **********************************-->
+</div>
+
+
+
+
+
+@endsection
+
+@section('script')
+<script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"> </script>
+
+<script src="{{asset('js/Pantallas_Principales/RegisterForm_V2.js')}}"></script>
 @endsection
