@@ -343,6 +343,10 @@ Route::get('/logout', [App\Http\Controllers\pruebaController::class, 'getLogout'
 Route::get('/consultaPrueba', [App\Http\Controllers\consultaController::class, 'index'])->name('home');
 
 //Vista para consulta de imagenes de banner de servicio
+Route::get('/consultaBannerInicio', [App\Http\Controllers\consultaBannerInicioController::class, 'index'])->name('home');
+
+
+//Vista para consulta de imagenes de banner de servicio
 Route::get('/consultaBannerServicio', [App\Http\Controllers\consultaBannerServicioController::class, 'index'])->name('home');
 
 //Vista para consulta de imagenes de banner de becas
