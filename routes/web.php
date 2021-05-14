@@ -261,6 +261,16 @@ Route::get('/Registro_exitoso', function (){
     return view('Pantallas_Principales.Registro_exitoso');
 }) -> name('Registro_exitoso');
 
+//Ruta para el registro de imagenes del home
+Route::get('/RegisterBannerInicio', function (){
+    return view('Pantallas_Principales.RegisterBannerInicio');
+}) -> name('RegisterBannerInicio');
+
+//Ruta para recibir los datos que enviamos para el registro de imagenes de servicio
+Route::resource('Inicio','registro');
+Route::post('/registrosImagenesI/(id)', [App\Http\Controllers\RegistroBannerInicio::class, 'store'])->name('registrosImagenesI.store'); //aqui se edita la pantalla de alcance
+
+
 //Ruta para el registro de imagenes de servicio
 Route::get('/RegisterBannerServicio', function (){
     return view('Pantallas_Principales.RegisterBannerServicio');
