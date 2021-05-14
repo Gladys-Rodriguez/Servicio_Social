@@ -91,13 +91,12 @@ class CreateVisitasTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('visitas_tables');
-        Schema::dropIfExists('empresas');
-        Schema::dropIfExists('solicitudesVisitas');
-        Schema::dropIfExists('carreras');
-        Schema::dropIfExists('grupos');
-        Schema::dropIfExists('solicitudesVisitas_grupos');
-        Schema::dropIfExists('tipoDocumentos');
         Schema::dropIfExists('documentosVisitas');
+        Schema::dropIfExists('tipoDocumentos');
+        Schema::dropIfExists('solicitudesVisitas_grupos');
+        Schema::dropIfExists('solicitudesVisitas');
+        Schema::dropIfExists('empresas');
+        Schema::dropIfExists('grupos');
+        Schema::dropIfExists('carreras');
     }
 }
