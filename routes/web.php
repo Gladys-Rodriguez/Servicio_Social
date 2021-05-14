@@ -199,6 +199,12 @@ Route::get('/Index_gnral', function (){
     return view('Pantallas_Principales.Index_gnral');
 }) -> name('Index_gnral');
 
+//Vista para consulta de imagenes de banner de servicio
+Route::get('/Index_gnral', [App\Http\Controllers\indexBannerInicioController::class, 'index'])->name('home');
+
+//Vista para consulta de imagenes de banner de servicio
+Route::get('/', [App\Http\Controllers\indexBannerInicioController::class, 'index'])->name('home');
+
 
 //Pantalla general con segunda barra
 Route::get('/Index_gnral2', function (){
@@ -214,6 +220,7 @@ Route::get('/ServicioIndex', function (){
 Route::get('/ServicioIndex2', function (){
     return view('Pantallas_Principales.ServicioIndex2');
 }) -> name('ServicioIndex2');
+
 
 //Vista para consulta de imagenes de banner de servicio
 Route::get('/ServicioIndex', [App\Http\Controllers\indexBannerServicioController::class, 'index'])->name('home');
