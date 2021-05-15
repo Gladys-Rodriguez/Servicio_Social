@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="{{asset('css/Pantallas_Alumno_Servicio/Layout_Alumno/Layout_Alumno2.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -28,13 +27,13 @@
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="{{url('/')}}" class="nav__link active">HOME</a></li>
+                    <li class="nav__item"><a href="{{url('/')}}" class="nav__link">HOME</a></li>
                     <li class="nav__item"><a href="{{url('/ServicioIndex')}}" class="nav__link">SERVICIO</a></li>
                     <li class="nav__item"><a href="{{url('/BecasIndex')}}" class="nav__link">BECAS</a></li>
                     <li class="nav__item"><a href="{{url('/PracticasIndex')}}" class="nav__link">PRÁCTICAS</a></li>
                     <li class="nav__item"><a href="{{url('/LoginForm')}}" class="nav__link">LOGIN</a></li>
-                    <li class="nav__item"><a href="{{url('/RegisterForm')}}" class="nav__link">REGISTRO</a></li>
-
+                    <li class="nav__item"><a href="{{url('/RegisterForm')}}" class="nav__link active">REGISTRO</a></li>
+                    <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
                 </ul>
             </div>
         </div>
@@ -74,23 +73,10 @@
         </script>
 
     <section class="section-main">
-      <h1>CECyT 13 "Ricardo Flores Magón" </h1>
+      <h1>EDITAR IMAGEN DE BANNER DE HOME</h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->
       @yield('content')
 
     </section>
-
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-
-
-
-    @yield('script')
-
-  </body>
-</html>

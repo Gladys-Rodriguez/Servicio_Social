@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBannerPracticasImagensTable extends Migration
+class CreateBannerInicioImagensTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateBannerPracticasImagensTable extends Migration
      */
     public function up()
     {
-        Schema::create('banner_practicas_imagens', function (Blueprint $table) {
+        Schema::create('banner_inicio_imagens', function (Blueprint $table) {
             $table->id();
             $table->string('ruta');
             $table->boolean('estado');
@@ -28,6 +28,6 @@ class CreateBannerPracticasImagensTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('banner_practicas_imagens');
+        Schema::dropIfExists('banner_inicio_imagens');
     }
 }

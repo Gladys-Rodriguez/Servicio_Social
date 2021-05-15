@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class bannerServicioImagen extends Model
+class bannerInicioImagen extends Model
 {
     use HasFactory;
 
@@ -13,6 +13,5 @@ class bannerServicioImagen extends Model
         'id',
         'ruta',
         'estado',
-
     ];
 }

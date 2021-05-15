@@ -15,7 +15,7 @@ textarea {
 
 .container {
   position: relative;
-  width: 860px;
+  width: 600px;
   min-height: 30vh;
   padding: 1rem;
   /*background-color: #fafafa;*/
@@ -42,66 +42,84 @@ textarea {
 
 }
 
-.carousel-inner{
-    width: 820px;
-    height: 500px;
-   }
+.login-box {
+    background: #565656;
+    color: #fff;
+    border-radius: 10px;
 
-/*.carousel-control-prev{
-    color: red;
-    border: 2px solid red;
-    padding: 2px;
-}
+  }
 
-.carousel-control-next{
-    color: red;
-    border: 2px solid red;
-    padding: 2px;
-}
+  .login-box .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+  }
 
-.carousel-control-prev-icon{
-    border: 2px solid #40D3DC;
-} */
+  .login-box h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+  }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  height: 100px;
-  width: 100px;
-  outline: black;
-  background-size: 100%, 100%;
-  border-radius: 50%;
+  .login-box label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+  }
 
-  background-image: none;
-}
+  .login-box input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
-.carousel-control-next-icon:after
-{
-  content: '>';
-  font-size: 55px;
-  color: #40D3DC;
-}
+  .login-box button {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
-.carousel-control-prev-icon:after {
-  content: '<';
-  font-size: 55px;
-  color: #40D3DC;
-}
+  .login-box input[type="text"], .login-box input[type="file"], .login-box input[type="password"], .login-box input[type="email"], .login-box input[type="number"]  {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+  }
 
-.carousel-control-prev{
-    position:absolute;
-  	left:0px;
+  .login-box button[type="submit"], .login-box button[type="reset"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #d48442;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+  }
 
-}
+  .login-box button[type="submit"]:hover, .login-box button[type="reset"]:hover {
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+  }
 
-.carousel-control-next{
-    /*border: 2px solid #40D3DC;*/
-    position:absolute;
-  	left:790px;
+  .login-box a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+  }
 
+  .login-box a:hover {
+    color: #fff;
+  }
 
-}
-
-
+  */
 
 
 .slider{
@@ -225,6 +243,7 @@ form {
   z-index: 10;
   overflow: hidden;
   position: relative;
+
 }
 
 .title {
@@ -248,11 +267,11 @@ h3::after,h3:before{
 }
 
 h3::before{
-    left: 110px;
+    left: 25px;
 }
 
 h3::after{
-    right: 110px;
+    right: 25px;
 }
 
 .input-container {
@@ -366,9 +385,6 @@ textarea.input {
   opacity: 1;
 }
 
-
-
-
 .contact-info {
   padding: 2.3rem 2.2rem;
   position: relative;
@@ -379,8 +395,14 @@ textarea.input {
 }
 
 .text {
-  color: #333;
+  color: red;
   margin: 1.5rem 0 2rem 0;
+}
+
+.errores{
+    color: red;
+    margin: 1.5rem 0 2rem 0;
+    font: serif;
 }
 
 .information {

@@ -1,9 +1,9 @@
-@extends('Pantallas_Principales.navbarRegisterBannerServicio')
+@extends('Pantallas_Principales.navbarRegisterBannerInicio')
 
-@section('title', 'Imagenes Banner Servicio social')
+@section('title', 'Imagenes Banner Home')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/Pantallas_Principales/RegisterBannerServicio.css')}}">
+<link rel="stylesheet" href="{{asset('css/Pantallas_Principales/RegisterBannerInicio.css')}}">
 @endsection
 
 @section('content')
@@ -27,7 +27,7 @@
 
     <!--Formulario-->
     <div class="login-box">
-    <form action="{{route('registrosImagenesS.store')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('registrosImagenesI.store')}}" method="POST" enctype="multipart/form-data">
           @csrf
         <!-- Imagen INPUT -->
         <label>Imagen</label>

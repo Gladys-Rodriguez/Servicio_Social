@@ -202,6 +202,12 @@ Route::get('/Index_gnral', function (){
     return view('Pantallas_Principales.Index_gnral');
 }) -> name('Index_gnral');
 
+//Vista para consulta de imagenes de banner de servicio
+Route::get('/Index_gnral', [App\Http\Controllers\indexBannerInicioController::class, 'index'])->name('home');
+
+//Vista para consulta de imagenes de banner de servicio
+Route::get('/', [App\Http\Controllers\indexBannerInicioController::class, 'index'])->name('home');
+
 
 //Pantalla general con segunda barra
 Route::get('/Index_gnral2', function (){
@@ -217,6 +223,7 @@ Route::get('/ServicioIndex', function (){
 Route::get('/ServicioIndex2', function (){
     return view('Pantallas_Principales.ServicioIndex2');
 }) -> name('ServicioIndex2');
+
 
 //Vista para consulta de imagenes de banner de servicio
 Route::get('/ServicioIndex', [App\Http\Controllers\indexBannerServicioController::class, 'index'])->name('home');
@@ -263,6 +270,16 @@ Route::post('/registros/(id)', [App\Http\Controllers\registro::class, 'store'])-
 Route::get('/Registro_exitoso', function (){
     return view('Pantallas_Principales.Registro_exitoso');
 }) -> name('Registro_exitoso');
+
+//Ruta para el registro de imagenes del home
+Route::get('/RegisterBannerInicio', function (){
+    return view('Pantallas_Principales.RegisterBannerInicio');
+}) -> name('RegisterBannerInicio');
+
+//Ruta para recibir los datos que enviamos para el registro de imagenes de servicio
+Route::resource('Inicio','registro');
+Route::post('/registrosImagenesI/(id)', [App\Http\Controllers\RegistroBannerInicio::class, 'store'])->name('registrosImagenesI.store'); //aqui se edita la pantalla de alcance
+
 
 //Ruta para el registro de imagenes de servicio
 Route::get('/RegisterBannerServicio', function (){
@@ -336,6 +353,10 @@ Route::get('/logout', [App\Http\Controllers\pruebaController::class, 'getLogout'
 Route::get('/consultaPrueba', [App\Http\Controllers\consultaController::class, 'index'])->name('home');
 
 //Vista para consulta de imagenes de banner de servicio
+Route::get('/consultaBannerInicio', [App\Http\Controllers\consultaBannerInicioController::class, 'index'])->name('home');
+
+
+//Vista para consulta de imagenes de banner de servicio
 Route::get('/consultaBannerServicio', [App\Http\Controllers\consultaBannerServicioController::class, 'index'])->name('home');
 
 //Vista para consulta de imagenes de banner de becas
@@ -363,6 +384,15 @@ Route::get('/showPrueba/{id}', [App\Http\Controllers\showController::class, 'sho
 //editar prueba
 Route::get('/pruebaEditarForm/{id}', [App\Http\Controllers\editarController::class, 'edit'])->name('home');
 Route::put('/pruebaEditarForm2/{id}', [App\Http\Controllers\editarController::class, 'update'])->name('pruebaEditarForm2.update');
+
+//Pantalla de editar de imagenes de inicio
+Route::get('/EditarFormBannerInicio', function (){
+    return view('Pantallas_Principales.EditarFormBannerInicio');
+}) -> name('EditarFormBannerInicio');
+
+Route::get('/EditarFormBannerInicio/{id}', [App\Http\Controllers\editarBannerInicioController::class, 'edit'])->name('home');
+Route::put('/EditarFormBannerInicio2/{id}', [App\Http\Controllers\editarBannerInicioController::class, 'update'])->name('EditarFormBannerServicio2.update');
+Route::delete('/EditarFormBannerInicio3/{id}', [App\Http\Controllers\editarBannerInicioController::class, 'destroy'])->name('pruebaEditarForm3.update');
 
 
 //Pantalla de editar de imagenes de servicio
