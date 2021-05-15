@@ -20,7 +20,7 @@ class CreateAlumnosTable extends Migration
             $table->char('grupo', 5)->notnull();
             $table->string('turno', 10)->notnull();
             $table->unsignedInteger('id_datos')->notnull();
-            $table->bigInteger('id')->unsigned()->notnull();
+            $table->bigInteger('id_usuarios')->unsigned()->notnull();
             $table->unsignedInteger('id_direccions')->notnull();
 
             $table->timestamps();
@@ -28,7 +28,7 @@ class CreateAlumnosTable extends Migration
 
 
             $table->foreign('id_datos')->references('id_datos')->on('datos')->onDelete('cascade');
-            $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('id_usuarios')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('id_direccions')->references('id_direccions')->on('direccions')->onDelete('cascade');
         });
     }

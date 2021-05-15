@@ -1,4 +1,4 @@
-@extends('Pantallas_Docente_Practicas_Visitas.Layout.navbar')
+@extends('Pantallas_Docente_Practicas_Visitas.Layout.navbar2')
 
 @section('title')
 Mis Visitas Escolares
@@ -23,32 +23,35 @@ Mis Visitas Escolares
         <thead>
             <tr>
 		    <th>Id Solicitud</th>
-			<th>No Practica</th>
 			<th>Lugar</th>
             <th>Fecha de visita</th>
             <th>Status</th>
+            <th>Acciones</th>
 		</tr>
         </thead>
 		
 		<tr>
 			<td>210</td>
-			<td>rs-10</td>
 			<td>Bimbo</td>
             <td>15-Abril-2021</td>
             <td>Rechazada</td>
+            <td>Ver detalles</td>
 		</tr>
             <td>211</td>
-			<td>rs-15</td>
 			<td>BBVA</td>
             <td>10-Junio-2021</td>
             <td>En espera</td>
+            <td>Ver detalles</td>
 		</tr>
         </tr>
             <td>212</td>
-			<td>rs-16</td>
 			<td>Marinela</td>
             <td>29-Mayo-2021</td>
-            <td>Asignada</td>
+            <td>Aceptada</td>
+            <td>
+                Ver detalles <br/>
+                Subir Documentos
+            </td>
 		</tr>
 	</table>
 
@@ -56,15 +59,15 @@ Mis Visitas Escolares
             <div class="col-all">
                 <p>Documentos:</p>
                 <label>Informe de Prácticas</label>
-                <input type="file">
+                <input type="file" accept="application/pdf" >
                 <label>Listas Oficiales Firmadas</label>
-                <input type="file">
+                <input type="file" accept="application/pdf">
                 <label>Oficio Sellado</label>
-                <input type="file">
+                <input type="file" accept="application/pdf">
                 <label>Resumen</label>
-                <input type="file">
+                <input type="file"accept="application/pdf" >
                 <label>Calidad de Servicio</label>
-                <input type="file">
+                <input type="file"accept="application/pdf" >
             </div>
             <input type="submit" value="ENVIAR">
     </form>

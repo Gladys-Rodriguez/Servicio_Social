@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Unique;
 use App\Models\Usuario;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
+
+use App\Models\dato;
+use App\Models\alumno;
+use App\Models\direccion;
 
 class registro extends Controller
 {
@@ -38,7 +43,8 @@ class registro extends Controller
      */
     public function store(Request $request)
     {
-      //return $request->all();
+
+      /*return $request->all();
       $registro= new User;
 
       $validated = $request->validate([
@@ -46,13 +52,60 @@ class registro extends Controller
        ]);
 
       $registro->id=$request->id;
+      $registro->name=$request->name;
       $registro->email=$request->email;
       $registro->password=bcrypt($request->password);
       //$registro->password=bcrypt($request->password);
-      $registro->id_rol= 5;
+      $registro->id_rol= 7;
 
       $registro->save();
+      return redirect('Registro_exitoso'); */
+
+      //$id_rol = Rol::find(5);
+      //$id_rol = DB::table('users')->where('id_rol', 5);
+
+      DB::transaction(function () use ($request) {
+
+        $id_users = DB::table('users')->insertGetId([
+            'id' => $request->input('id'),
+            'email' => $request->input('email'),
+            'password' => bcrypt($request->input('password')),
+            'id_rol' => 5,
+        ]);
+
+        $id_datos = DB::table('datos')->insertGetId([
+            'nombre' => $request->input('nombre'),
+            'ap_paterno' => $request->input('ap_paterno'),
+            'ap_materno' => $request->input('ap_materno'),
+            'telefono' => $request->input('telefono'),
+            'celular' => $request->input('celular'),
+        ]);
+
+        $id_direccions = DB::table('direccions')->insertGetId([
+            'ciudad' => $request->input('ciudad'),
+            'alcaldia' => $request->input('alcaldia'),
+            'colonia' => $request->input('colonia'),
+            'calle' => $request ->input ('calle'),
+            'num_ext' => $request -> input ('num_ext'),
+            'num_int' => $request -> input ('num_int'),
+            'cp' => $request -> input ('cp'),
+        ]);
+
+        $id_alumno = DB::table('alumnos')->insertGetId([
+            'carrera' => $request->input('carrera'),
+            'semestre' => $request->input('semestre'),
+            'grupo' => $request->input('grupo'),
+            'turno' => $request ->input ('turno'),
+            'id_datos' => $id_datos,
+            'id_usuarios' => $id_users,
+            'id_direccions' => $id_direccions,
+        ]);
+
+      });
+
       return redirect('Registro_exitoso');
+
+
 
     }
 
