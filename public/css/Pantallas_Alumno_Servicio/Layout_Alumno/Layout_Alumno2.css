@@ -47,7 +47,7 @@ ul {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: url("/img/wallpaper/wall1.jpg")no-repeat;;
+  background: url("/img/wallpaper/wall1.jpg")no-repeat;
   background-size: cover;
   background-position: center;
   display: flex;
