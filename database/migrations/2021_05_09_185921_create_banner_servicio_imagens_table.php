@@ -16,6 +16,7 @@ class CreateBannerServicioImagensTable extends Migration
         Schema::create('banner_servicio_imagens', function (Blueprint $table) {
             $table->id();
             $table->string('ruta');
+            $table->boolean('estado');
             $table->timestamps();
         });
     }

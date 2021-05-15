@@ -12,6 +12,7 @@ class bannerServicioImagen extends Model
     protected $fillable = [
         'id',
         'ruta',
+        'estado',
 
     ];
 }
