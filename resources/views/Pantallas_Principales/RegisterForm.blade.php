@@ -66,28 +66,28 @@
 
     <div class="progress-bar">
         <div class="step">
-            <p>1</p>
+            <p>Personal</p>
                 <div class="bullet">
                     <span></span>
                 </div>
          <div class="check fas fa-check"></div>
         </div>
         <div class="step">
-            <p>2</p>
+            <p>Domicilio</p>
                 <div class="bullet">
                     <span></span>
                 </div>
         <div class="check fas fa-check"></div>
         </div>
         <div class="step">
-            <p>3</p>
+            <p>Escolares</p>
                 <div class="bullet">
                     <span></span>
                 </div>
         <div class="check fas fa-check"></div>
         </div>
         <div class="step">
-            <p>4</p>
+            <p>Usuario</p>
                 <div class="bullet">
                     <span></span>
                 </div>

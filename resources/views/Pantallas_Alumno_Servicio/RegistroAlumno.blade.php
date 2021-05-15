@@ -105,6 +105,7 @@
 <div class="page">
           <div class="title">Domicilio:</div>
           <br>
+          <br>
             <div class="field">
                 <div class="label">Ciudad o Estado:</div>
                 <input type="text">
