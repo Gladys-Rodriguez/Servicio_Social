@@ -121,7 +121,10 @@ Auth::routes();
 Route::resource('direcciones', "DireccionsController");
 Route::resource('alumnos', "AlumnosController");
 
-
+//Ruta oara pantalla de registro exitoso
+Route::get('/Index_Alumno', function (){
+    return view('Pantallas_Alumno_Servicio.Index_Alumno');
+}) -> name('Index_Alumno');
 
 
 // ************************************* FIN   RUTAS    DE    GLADYS    *******************************************
@@ -322,7 +325,7 @@ Route::get('/Admin_Becas_Index3.blade', [App\Http\Controllers\BecasController ::
 Route::get('/logout', [App\Http\Controllers\BecasController::class, 'getLogout'])->name('logout');
 Route::get('/Admin_Practicas_Visitas_Index2.blade', [App\Http\Controllers\PracticasController ::class, 'index'])->name('home');
 Route::get('/logout', [App\Http\Controllers\BecasController::class, 'getLogout'])->name('logout');
-Route::get('/NuevoRegistro.blade', [App\Http\Controllers\AlumnoLController::class, 'index'])->name('home');
+Route::get('/Index_Alumno.blade', [App\Http\Controllers\AlumnoLController::class, 'index'])->name('home');
 Route::get('/logout', [App\Http\Controllers\BecasController::class, 'getLogout'])->name('logout');
 Route::get('/prueba.blade', [App\Http\Controllers\pruebaController::class, 'index'])->name('home');
 Route::get('/logout', [App\Http\Controllers\pruebaController::class, 'getLogout'])->name('logout');
