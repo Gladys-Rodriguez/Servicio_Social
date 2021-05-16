@@ -361,9 +361,12 @@ Route::get('/consultaBannerInicio', [App\Http\Controllers\consultaBannerInicioCo
 //Vista para consulta de imagenes de banner de inicio inhabilitadas
 Route::get('/consultaBannerInicioInhabilitadas', [App\Http\Controllers\consultaBannerInicioInhabilitadasController::class, 'index'])->name('home');
 
-
 //Vista para consulta de imagenes de banner de servicio
 Route::get('/consultaBannerServicio', [App\Http\Controllers\consultaBannerServicioController::class, 'index'])->name('home');
+
+//Vista para consulta de imagenes inhabilitadas de banner de servicio
+Route::get('/consultaBannerServicioInhabilitadas', [App\Http\Controllers\consultaBannerServicioInhabilitadasController::class, 'index'])->name('home');
+
 
 //Vista para consulta de imagenes de banner de becas
 Route::get('/consultaBannerBecas', [App\Http\Controllers\consultaBannerBecasController::class, 'index'])->name('home');
