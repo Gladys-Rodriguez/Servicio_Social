@@ -1,4 +1,4 @@
-@extends('Pantallas_Principales.navbarconsultaBannerInicio')
+@extends('Pantallas_Principales.navbarconsultaBannerInicioInhabilitadas')
 
 @section('title', 'Consulta Banner Home Inhabilitadas')
 
