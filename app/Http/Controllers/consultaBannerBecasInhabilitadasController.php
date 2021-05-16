@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\bannerBecasImagen;
 use DB;
 
-class consultaBannerBecasController extends Controller
+class consultaBannerBecasInhabilitadasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,14 +16,11 @@ class consultaBannerBecasController extends Controller
     public function index()
     {
         //
-        /*$bannerBecas= bannerBecasImagen::all();
-        return view("Pantallas_Principales.consultaBannerBecas", compact("bannerBecas"));*/
-
         $bannerBecas = DB::table('banner_becas_imagens')
         ->select('*')
-        ->where('estado', 1)
+        ->where('estado', 0)
         ->get();
-        return view("Pantallas_Principales.consultaBannerBecas", compact("bannerBecas"));
+        return view("Pantallas_Principales.consultaBannerBecasInhabilitadas", compact("bannerBecas"));
     }
 
     /**
