@@ -103,6 +103,9 @@ Route::post('/upload', [App\Http\Controllers\FormatosAFilesController::class, 's
 Route::get('/RegistroAlumno', function (){
     return view('Pantallas_Alumno_Servicio.RegistroAlumno');
 }) -> name('RegistroAlumno');
+Route::get('/FormRegistro', function (){
+    return view('Pantallas_Alumno_Servicio.FormRegistro');
+}) -> name('FormRegistro');
 Route::get('/NuevoRegistro', function (){
     return view('Pantallas_Alumno_Servicio.Registros.NuevoRegistro');
 }) -> name('Nuevo Registro');

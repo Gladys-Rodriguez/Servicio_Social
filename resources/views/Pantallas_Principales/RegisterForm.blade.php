@@ -141,7 +141,7 @@
                     <input type="text" name="ciudad" id="ciudad" placeholder="Ingresa tu ciudad" required maxlength="60" onkeypress="return sololetras(event)">
                 </div>
                 <div class="field">
-                    <div class="label" for="alcaldia">Alcaldia o Municipio:</div>
+                    <div class="label" for="alcaldia">Alcaldia/Municipio:</div>
                     <input type="text" name="alcaldia" id="alcaldia" placeholder="Ingresa tu alcaldia o municipio" required maxlength="60" onkeypress="return sololetras(event)">
                 </div>
                 <div class="field">
