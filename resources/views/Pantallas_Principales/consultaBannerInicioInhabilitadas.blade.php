@@ -1,6 +1,6 @@
 @extends('Pantallas_Principales.navbarconsultaBannerInicio')
 
-@section('title', 'Consulta Banner Home')
+@section('title', 'Consulta Banner Home Inhabilitadas')
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantallas_Principales/consultaBannerInicio.css')}}">
@@ -11,7 +11,7 @@
 <div class="container">
     <div class="informacion">
       <div class="contact-info">
-        <h3 class="title">"Imagenes de home habilitadas"</h3>
+        <h3 class="title">"Imagenes de home inhabilitadas"</h3>
       </div>
 
     <div class="tabla-consulta">
