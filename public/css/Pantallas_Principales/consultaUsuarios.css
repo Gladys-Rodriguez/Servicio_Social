@@ -180,7 +180,7 @@ form {
 
 }
 
-h3::after,h3:before{
+/*h3::after,h3:before{
     content: "";
     position: absolute;
     width: 100px;
@@ -195,7 +195,7 @@ h3::before{
 
 h3::after{
     right: -5px;
-}
+} */
 
 .input-container {
   position: relative;
