@@ -60,6 +60,44 @@
     </div>
 </section>
 </main>
+
+<table class="table table-light">
+
+    <thead>
+        <tr>
+            <th>
+
+            </th>
+            <th>#</th>
+            <th>id_alumnos</th>
+            <th>carrera</th>
+            <th>semestre</th>
+            <th>grupo</th>
+            <th>turno</th>
+            <th>id_datos</th>
+            <th>id_usuarios</th>
+            <th>id_direccions</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody align-content="center">
+        @foreach ($alumnos as $alumno )
+        <tr>
+            <td>{{$loop->iteration}}</td>
+            <td>{{$alumno-> id_alumnos}}</td>
+            <td>{{$alumno-> carrera}}</td>
+            <td>{{$alumno-> semestre}}</td>
+            <td>{{$alumno-> grupo}}</td>
+            <td>{{$alumno-> turno}}</td>
+            <td>{{$alumno-> id_datos}}</td>
+            <td>{{$alumno-> id_usuarios}}</td>
+            <td>{{$alumno-> id_direccions}}</td>
+            <td>Editar | Borrar</td>
+        </tr>
+        @endforeach
+    </tbody>
+</table>
+
 @endsection
 
 @section('script')

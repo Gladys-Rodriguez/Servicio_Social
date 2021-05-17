@@ -9,6 +9,10 @@ use App\Models\Usuario;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
 use App\Models\dato;
 use App\Models\alumno;
 use App\Models\direccion;
@@ -23,6 +27,9 @@ class registro extends Controller
     public function index()
     {
         //
+        $id_users = Auth::user()->id;
+        $datos['alumnos']=alumno::where('id_usuarios',$id_users)->get();
+        return view('Pantallas_Alumno_Servicio.Index_Alumno', $datos);
     }
 
     /**

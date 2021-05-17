@@ -145,7 +145,7 @@
                     <br>
 
                         <div class="field">
-                            <div class="label" for="nombre_depen">Nombre de la Dependencia:</div>
+                            <div class="label" for="nombre_depen">Nombre de Dependencia:</div>
                             <input type="text" name="nombre_depen" id="nombre_depen" placeholder="Ingresa la dependencia" required maxlength="60" onkeypress="return sololetras(event)">
                         </div>
 
