@@ -450,9 +450,7 @@ Route::get('/FormatosBeca', function (){
 
 Route::get('/MiBeca','MiBecaDatosController@index');
 
-Route::get('/Index_Master', function (){
-    return view('Pantallas_Admin_Master.Index_Master');
-}) -> name('Index_Master');
+Route::get('/Index_Master','AdminMasterIndexController@index');
 //-----------------------SANTOS TERMINO----------------------------------
 Auth::routes();
 
