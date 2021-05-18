@@ -60,6 +60,57 @@
     </div>
 </section>
 </main>
+
+<table class="table table-light">
+
+    <thead>
+        <tr>
+
+            <th width=10%>#</th>
+            <th width=10%>id_alumnos</th>
+            <th width=10%>carrera</th>
+            <th width=10%>semestre</th>
+            <th width=10%>grupo</th>
+            <th width=10%>turno</th>
+            <th width=10%>id_datos</th>
+            <th width=10%>id_usuarios</th>
+            <th width=10%>id_direccions</th>
+            <th width=10%>Acciones</th>
+
+
+            <th width=10%>Matricula</th>
+            <th width=10%>email</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($alumnos as $alumno )
+        @foreach ($users as $user)
+        <tr>
+            <td align="center">{{$loop->iteration}}</td>
+            <td align="center">{{$alumno-> id_alumnos}}</td>
+            <td align="center">{{$alumno-> carrera}}</td>
+            <td align="center">{{$alumno-> semestre}}</td>
+            <td align="center">{{$alumno-> grupo}}</td>
+            <td align="center">{{$alumno-> turno}}</td>
+            <td align="center">{{$alumno-> id_datos}}</td>
+            <td align="center">{{$alumno-> id_usuarios}}</td>
+            <td align="center">{{$alumno-> id_direccions}}</td>
+            <td align="center">Editar | Borrar</td>
+            <td align="center">{{$user-> id}}</td>
+            <td align="center">{{$user-> email}}</td>
+        </tr>
+        @endforeach
+        @endforeach
+
+
+
+
+
+
+    </tbody>
+</table>
+
 @endsection
 
 @section('script')

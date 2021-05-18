@@ -99,8 +99,7 @@
         </script>
 
     <section class="section-main">
-      <h1>Bienvenido Alumno
-    <br> Usuario con matricula: {{ Auth::user()->id}}</h1>
+      <h1>Datos personales</h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->

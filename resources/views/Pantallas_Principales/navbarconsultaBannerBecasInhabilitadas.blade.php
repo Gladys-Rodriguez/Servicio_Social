@@ -20,46 +20,21 @@
         <div class="nav__content bd-grid">
             <a href="" class="nav__perfil">
                 <div class="nav__img">
-                    <img src="assets/img/perfil.jpg" alt="">
+                    <img src="{{asset('img/logo/logoSAE3.png')}}" alt="">
                 </div>
 
-                <div>
-                   <!-- <span class="nav__name">Clay</span>
-                    <span class="nav__name">Mitchell</span>
-                </div> -->
             </a>
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="#" class="nav__link active">Home</a></li>
-
-                    <li class="nav__item dropdown">
-                        <a href="/Index_Alumno" class="nav__link dropdown__link">Servicio Social <i class='bx bx-chevron-down dropdown__icon'></i></a>
-                        <ul class="dropdown__menu">
-                            <li class="dropdown__item"><a href="{{url('/NuevoRegistro')}}" class="nav__link">Nuevo Registro</a></li>
-                           <!-- <li class="dropdown__item"><a href="#" class="nav__link">Location</a></li>
-                            <li class="dropdown__item"><a href="#" class="nav__link">Studies</a></li> -->
-                        </ul>
-                    </li>
-
-                    <!--<li class="nav__item"><a href="#" class="nav__link">Skills</a></li>-->
-
-                    <li class="nav__item dropdown">
-                        <a href="#" class="nav__link dropdown__link">Becas <i class='bx bx-chevron-down dropdown__icon'></i></a>
-
-
-                        <ul class="dropdown__menu">
-                            <li class="dropdown__item"><a href="#" class="nav__link">Convocatoria</a></li>
-
-                            <li class="dropdown__item"><a href="#" class="nav__link">Registro</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav__item"><a href="{{ url('/datosPersonalesA')}}" class="nav__link active">Datos personales</a></li>
-
+                    <li class="nav__item"><a href="{{url('/')}}" class="nav__link active">HOME</a></li>
+                    <li class="nav__item"><a href="{{url('/ServicioIndex')}}" class="nav__link">SERVICIO</a></li>
+                    <li class="nav__item"><a href="{{url('/BecasIndex')}}" class="nav__link">BECAS</a></li>
+                    <li class="nav__item"><a href="{{url('/PracticasIndex')}}" class="nav__link">PRÁCTICAS</a></li>
+                    <li class="nav__item"><a href="{{url('/LoginForm')}}" class="nav__link">LOGIN</a></li>
+                    <li class="nav__item"><a href="{{url('/RegisterForm')}}" class="nav__link">REGISTRO</a></li>
                     <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
 
-                   <!-- <li class="nav__item"><a href="#" class="nav__link">Contact</a></li> -->
                 </ul>
             </div>
         </div>
@@ -99,8 +74,7 @@
         </script>
 
     <section class="section-main">
-      <h1>Bienvenido Alumno
-    <br> Usuario con matricula: {{ Auth::user()->id}}</h1>
+      <h1>Consulta de Imagenes Inhabilitadas del Banner de Becas </h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->
