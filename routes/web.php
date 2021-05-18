@@ -200,7 +200,17 @@ Route::get('/Clasificacion_Practicas_Visitas', function () {
     return view('Pantallas_Admin_Practicas_Visitas.Clasificacion_Practicas_Visitas');
 }) -> name('Clasificacion_Practicas_Visitas');
 
+Route::get('/RechazadasV', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.RechazadasV');
+}) -> name('RechazadasV');
 
+Route::get('/AceptadasV', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.AceptadasV');
+}) -> name('AceptadasV');
+
+Route::get('/ValidacionV2', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.ValidacionV2');
+}) -> name('ValidacionV2');
 //------------------------FER TERMINO------------------------------------
 
 

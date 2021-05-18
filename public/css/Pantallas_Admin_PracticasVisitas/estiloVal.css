@@ -1,18 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
-/*Còdigos universales de la pàgina*/
- *{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Open Sans', sans-serif;;
+h1{
+    color: seashell;
 }
-/*Còdigo opcional - Fondo de la pàgina*/
-body{
-	 background: url("https://travelandleisure.mx/wp-content/uploads/2018/10/marc-antoine-depelteau-268520-unsplash.jpg");
-    background-size: 100vw 100vh;
-    background-repeat: no-repeat;;
-}
-.container {
+.container{
     width: 100%;
     max-width: 1000px;
     margin: auto;
@@ -26,7 +15,9 @@ body{
     padding: 0;
     table-layout: fixed;
 }
-
+h3{
+    color: rgb(192, 192, 192);
+}
 .table caption {
     font-size: 28px;
     text-transform: uppercase;
@@ -189,7 +180,7 @@ body{
 }
 .label_c{
     text-decoration: none;
-    background: #FFD903;
+    background: red;
     width: auto;
     height: auto;
     border-radius: 4px;

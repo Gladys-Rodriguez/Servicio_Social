@@ -28,8 +28,10 @@
             <div class="nav__menu">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="{{url('/Admin_Practicas_Visitas_Index2')}}" class="nav__link active">HOME</a></li>
-                    <li class="nav__item"><a href="{{url('/Validacion_Practicas_Visitas')}}" class="nav__link">VALIDACIÓN DE DOCUMENTOS</a></li>
-                    <li class="nav__item"><a href="{{url('/Clasificacion_Practicas_Visitas')}}" class="nav__link">SOLICITUDES DE PRÁCTICAS</a></li>
+                    <li class="nav__item"><a href="{{url('/Validacion_Practicas_Visitas')}}" class="nav__link">Validación de documentos</a></li>
+                    <li class="nav__item"><a href="{{url('/Clasificacion_Practicas_Visitas')}}" class="nav__link">Solicitudes de prácticas</a></li>
+                    <li class="nav__item"><a href="{{url('/RechazadasV')}}" class="nav__link">Solicitudes rechazadas</a></li>
+                    <li class="nav__item"><a href="{{url('/AceptadasV')}}" class="nav__link">Solicitudes aceptadas</a></li>
                     <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
 
                 </ul>
