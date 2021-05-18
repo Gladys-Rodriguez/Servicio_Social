@@ -41,7 +41,7 @@
 
         teclado=String.fromCharCode(key);
 
-        letras="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+        letras="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZáéíóúÁÉÍÓÚ";
 
         especiales="8-37-38-46";
 
@@ -58,7 +58,32 @@
         }
 
     }
-    </script>
+</script>
+
+<script>
+    function sololetrasespacio(e){
+        key=e.keyCode||e.wich;
+
+        teclado=String.fromCharCode(key);
+
+        letras="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZáéíóúÁÉÍÓÚ ";
+
+        especiales="8-37-38-46";
+
+        teclado_especial=false;
+
+        for(var i in especiales){
+            if(key==especiales[i]){
+                teclado_especial=true;
+            }
+        }
+
+        if(letras.indexOf(teclado)==-1 && !teclado_especial){
+            return false;
+        }
+
+    }
+</script>
 
 
 <!-- **************************** INICIO FORMULARIO STEP BY STEP **************************** -->
@@ -107,7 +132,7 @@
                 <br>
                     <div class="field">
                         <div class="label" for="nombre">Nombre(s):</div>
-                        <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre completo" maxlength="60" onkeypress="return sololetras(event)">
+                        <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre completo" maxlength="60" onkeypress="return sololetrasespacio(event)">
                     </div>
                     <div class="field">
                         <div class="label" for="ap_paterno">Apellido Paterno:</div>
