@@ -61,7 +61,8 @@
 </section>
 </main>
 
-<table class="table table-light">
+<h3 style="color:rgb(218, 218, 218);">Tabla 1</h3>
+<table class="table table-light" style="color:rgb(218, 218, 218);">
 
     <thead>
         <tr>
@@ -81,12 +82,17 @@
             <th width=10%>Matricula</th>
             <th width=10%>email</th>
 
+            <th width=10%>nombre</th>
+            <th width=10%>AP_ Paterno</th>
+
         </tr>
     </thead>
     <tbody>
         @foreach ($alumnos as $alumno )
         @foreach ($users as $user)
+        @foreach ($datos as $dato )
         <tr>
+            <!-- Tabla Alumnos -->
             <td align="center">{{$loop->iteration}}</td>
             <td align="center">{{$alumno-> id_alumnos}}</td>
             <td align="center">{{$alumno-> carrera}}</td>
@@ -97,19 +103,44 @@
             <td align="center">{{$alumno-> id_usuarios}}</td>
             <td align="center">{{$alumno-> id_direccions}}</td>
             <td align="center">Editar | Borrar</td>
+
+            <!-- Tabla Users -->
             <td align="center">{{$user-> id}}</td>
             <td align="center">{{$user-> email}}</td>
+
+            <!-- Tabla Datos -->
+            <td align="center">{{$dato-> nombre}}</td>
+            <td align="center">{{$dato-> ap_paterno}}</td>
+
         </tr>
-        @endforeach
-        @endforeach
 
-
-
-
-
-
-    </tbody>
+@endforeach
+@endforeach
+@endforeach
+</tbody>
 </table>
+<br>
+<h3 style="color:rgb(218, 218, 218);"> Tabla 2 </h3>
+<table class="table table-light" style="color:rgb(218, 218, 218);">
+
+    <thead>
+        <tr>
+            <th width=10%>nombre</th>
+            <th width=10%>AP_ Paterno</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach ($datos as $dato )
+        <tr>
+            <td align="center">{{$dato-> nombre}}</td>
+            <td align="center">{{$dato-> ap_paterno}}</td>
+         </tr>
+
+@endforeach
+</tbody>
+</table>
+
 
 @endsection
 
