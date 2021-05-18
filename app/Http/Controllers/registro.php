@@ -29,7 +29,8 @@ class registro extends Controller
         //
         $id_users = Auth::user()->id;
         $datos['alumnos']=alumno::where('id_usuarios',$id_users)->get();
-        return view('Pantallas_Alumno_Servicio.Index_Alumno', $datos);
+        $users['users']=User::where('id',$id_users)->get();
+        return view('Pantallas_Alumno_Servicio.Index_Alumno', $datos,$users);
     }
 
     /**

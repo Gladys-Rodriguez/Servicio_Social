@@ -65,36 +65,49 @@
 
     <thead>
         <tr>
-            <th>
 
-            </th>
-            <th>#</th>
-            <th>id_alumnos</th>
-            <th>carrera</th>
-            <th>semestre</th>
-            <th>grupo</th>
-            <th>turno</th>
-            <th>id_datos</th>
-            <th>id_usuarios</th>
-            <th>id_direccions</th>
-            <th>Acciones</th>
+            <th width=10%>#</th>
+            <th width=10%>id_alumnos</th>
+            <th width=10%>carrera</th>
+            <th width=10%>semestre</th>
+            <th width=10%>grupo</th>
+            <th width=10%>turno</th>
+            <th width=10%>id_datos</th>
+            <th width=10%>id_usuarios</th>
+            <th width=10%>id_direccions</th>
+            <th width=10%>Acciones</th>
+
+
+            <th width=10%>Matricula</th>
+            <th width=10%>email</th>
+
         </tr>
     </thead>
-    <tbody align-content="center">
+    <tbody>
         @foreach ($alumnos as $alumno )
+        @foreach ($users as $user)
         <tr>
-            <td>{{$loop->iteration}}</td>
-            <td>{{$alumno-> id_alumnos}}</td>
-            <td>{{$alumno-> carrera}}</td>
-            <td>{{$alumno-> semestre}}</td>
-            <td>{{$alumno-> grupo}}</td>
-            <td>{{$alumno-> turno}}</td>
-            <td>{{$alumno-> id_datos}}</td>
-            <td>{{$alumno-> id_usuarios}}</td>
-            <td>{{$alumno-> id_direccions}}</td>
-            <td>Editar | Borrar</td>
+            <td align="center">{{$loop->iteration}}</td>
+            <td align="center">{{$alumno-> id_alumnos}}</td>
+            <td align="center">{{$alumno-> carrera}}</td>
+            <td align="center">{{$alumno-> semestre}}</td>
+            <td align="center">{{$alumno-> grupo}}</td>
+            <td align="center">{{$alumno-> turno}}</td>
+            <td align="center">{{$alumno-> id_datos}}</td>
+            <td align="center">{{$alumno-> id_usuarios}}</td>
+            <td align="center">{{$alumno-> id_direccions}}</td>
+            <td align="center">Editar | Borrar</td>
+            <td align="center">{{$user-> id}}</td>
+            <td align="center">{{$user-> email}}</td>
         </tr>
         @endforeach
+        @endforeach
+
+
+
+
+
+
     </tbody>
 </table>
 
