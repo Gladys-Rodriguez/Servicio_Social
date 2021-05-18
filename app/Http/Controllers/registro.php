@@ -28,6 +28,7 @@ class registro extends Controller
     public function index()
     {
         //
+<<<<<<< HEAD
         /*$id_users = Auth::user()->id;
         $datos['alumnos']=alumno::where('id_usuarios',$id_users)->get();
         $users['users']=User::where('id',$id_users)->get();
@@ -39,6 +40,20 @@ class registro extends Controller
         $datos['datos']=dato::where('id_datos',$id_users)->get();
         $direccions['direccions']=direccion::where('id_direccions',$id_users)->get();
         return view('Pantallas_Alumno_Servicio.datosPersonalesA', $alumnos,$users,$datos,$direccions);
+=======
+        $id_users = Auth::user()->id;
+        $alumnos=DB::table('alumnos')->where('id_usuarios',$id_users)->get();
+        $users=DB::table('users')->where('id',$id_users)->get();
+        $datos=DB::table('datos')
+        ->join('alumnos', 'datos.id_datos', 'alumnos.id_datos')
+        ->where('alumnos.id_usuarios',$id_users)
+        ->get();
+       // echo "<prev>";
+      //  print_r($datos);
+      //  $datos['datos']=alumno::join('datos','datos.id_datos', '=', 'alumnos.id_datos')->get();
+
+        return view('Pantallas_Alumno_Servicio.Index_Alumno', compact('alumnos', 'users', 'datos'));
+>>>>>>> 1f65c320a1b5eb67f35631494c701f27ad6d4571
     }
 
     /**
