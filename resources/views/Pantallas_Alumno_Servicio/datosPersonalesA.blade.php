@@ -34,8 +34,10 @@
                 <td width=10%>Correo</td>
             </tr>
 
-        @foreach ($alumnos as $alumno )
+        @foreach ($alumnos as $alumno)
         @foreach ($users as $user)
+
+
         <tr>
             <td align="center">{{$loop->iteration}}</td>
             <td align="center">{{$alumno-> id_alumnos}}</td>
@@ -48,7 +50,9 @@
             <td align="center">{{$alumno-> id_direccions}}</td>
             <td align="center">{{$user-> id}}</td>
             <td align="center">{{$user-> email}}</td>
+
         </tr>
+
         @endforeach
         @endforeach
 

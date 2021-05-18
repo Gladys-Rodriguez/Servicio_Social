@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Unique;
 use App\Models\Usuario;
 use App\Models\User;
+
 use Illuminate\Support\Facades\DB;
 
 
@@ -33,9 +34,11 @@ class registro extends Controller
         return view('Pantallas_Alumno_Servicio.Index_Alumno', $datos,$users);*/
 
         $id_users = Auth::user()->id;
-        $datos['alumnos']=alumno::where('id_usuarios',$id_users)->get();
+        $alumnos['alumnos']=alumno::where('id_usuarios',$id_users)->get();
         $users['users']=User::where('id',$id_users)->get();
-        return view('Pantallas_Alumno_Servicio.datosPersonalesA', $datos,$users);
+        $datos['datos']=dato::where('id_datos',$id_users)->get();
+        $direccions['direccions']=direccion::where('id_direccions',$id_users)->get();
+        return view('Pantallas_Alumno_Servicio.datosPersonalesA', $alumnos,$users,$datos,$direccions);
     }
 
     /**
