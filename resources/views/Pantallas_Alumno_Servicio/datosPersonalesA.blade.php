@@ -21,6 +21,7 @@
  <div class="tabla-consulta">
          <table border="1">
              <tr>
+             <td width=10%> </td>
                 <td width=10%>#</td>
                 <td width=10%>Nombre</td>
                 <td width=10%>Apellido Paterno</td>
@@ -47,6 +48,7 @@
         @foreach ($alumnos as $alumno)
         @foreach ($users as $user)
         <tr>
+            <td><a class="boton_personalizado" href="/EditarAlumnoForm/{{$user->id}}">Editar</a></td>
             <td align="center">{{$loop->iteration}}</td>
             <td align="center">{{$dato-> nombre}}</td>
             <td align="center">{{$dato-> ap_paterno}}</td>

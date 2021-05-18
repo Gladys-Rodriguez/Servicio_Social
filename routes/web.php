@@ -399,6 +399,11 @@ Route::get('/showPrueba/{id}', [App\Http\Controllers\showController::class, 'sho
 Route::get('/pruebaEditarForm/{id}', [App\Http\Controllers\editarController::class, 'edit'])->name('home');
 Route::put('/pruebaEditarForm2/{id}', [App\Http\Controllers\editarController::class, 'update'])->name('pruebaEditarForm2.update');
 
+//editar datos de alumno
+Route::get('/EditarAlumnoForm/{id}', [App\Http\Controllers\editarAlumnoController::class, 'edit'])->name('home');
+Route::put('/EditarAlumnoForm2/{id}', [App\Http\Controllers\editarAlumnoController::class, 'update'])->name('EditarAlumnoController.update');
+
+
 //Pantalla de editar de imagenes de inicio
 Route::get('/EditarFormBannerInicio', function (){
     return view('Pantallas_Principales.EditarFormBannerInicio');
