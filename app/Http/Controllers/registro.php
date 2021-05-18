@@ -27,10 +27,15 @@ class registro extends Controller
     public function index()
     {
         //
+        /*$id_users = Auth::user()->id;
+        $datos['alumnos']=alumno::where('id_usuarios',$id_users)->get();
+        $users['users']=User::where('id',$id_users)->get();
+        return view('Pantallas_Alumno_Servicio.Index_Alumno', $datos,$users);*/
+
         $id_users = Auth::user()->id;
         $datos['alumnos']=alumno::where('id_usuarios',$id_users)->get();
         $users['users']=User::where('id',$id_users)->get();
-        return view('Pantallas_Alumno_Servicio.Index_Alumno', $datos,$users);
+        return view('Pantallas_Alumno_Servicio.datosPersonalesA', $datos,$users);
     }
 
     /**

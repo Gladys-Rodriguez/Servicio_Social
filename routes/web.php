@@ -313,7 +313,6 @@ Route::resource('Practicas','registro');
 Route::post('/registrosImagenesP/(id)', [App\Http\Controllers\RegistroBannerPracticas::class, 'store'])->name('registrosImagenesP.store'); //aqui se edita la pantalla de alcance
 
 
-
 //RUTAS PARA EL LOGIN
 //Pantalla Login
 Route::get('/LoginForm', function (){
@@ -442,6 +441,8 @@ Route::delete('/EditarFormBannerPracticas3/{id}', [App\Http\Controllers\editarBa
 Route::get('/prueba', function (){
     return view('Pantallas_Principales.prueba');
 }) -> name('prueba');
+
+Route::get('/datosPersonalesA', [App\Http\Controllers\registro::class, 'index'])->name('datosPersonalesA.index');
 
 //------------------------IVAN TERMINO------------------------------------
 
