@@ -72,7 +72,7 @@
 
     <section class="section-main">
       <h1>ADMINISTRACIÓN DE PRÁCTICAS Y VISITAS
-      <?php /*<br> Usuario con matricula: {{ Auth::user()->id}}*/?>
+      <br> Usuario con matricula: {{ Auth::user()->id}}
       </h1>
     </section>
     <section class="section-two">
