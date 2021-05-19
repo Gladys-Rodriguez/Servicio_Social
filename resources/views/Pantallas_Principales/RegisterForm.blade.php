@@ -88,7 +88,6 @@
 
 <!-- **************************** INICIO FORMULARIO STEP BY STEP **************************** -->
 <div class="container">
-
     <div class="progress-bar">
         <div class="step">
             <p>Personal</p>
@@ -202,7 +201,21 @@
                 <br>
                 <div class="field">
                     <div class="label" for="carrera">Carrera:</div>
-                    <input type="text" name="carrera" id="carrera" placeholder="Ingresa tu carrera" required maxlength="20" onkeypress="return sololetras(event)">
+                    <div class="col-md-6" type="text">
+                        <select type="text" name="carrera" id="carrera">
+                        <!--<option value="1"> Superadmin </option>-->
+                        <option value="Técnico en informática"> Técnico en informática</option>
+                        <option value="Técnico en contaduría"> Técnico en contaduría  </option>
+                        <option value="Técnico en administración"> Técnico en administración  </option>
+                        <option value="Técnico en administración de empresas turísticas"> Técnico en administración de empresas turísticas</option>
+                        <option value="Técnico en gestión de la ciberseguridad"> Técnico en gestión de la ciberseguridad</option>
+                        </select>
+                        @error('carrera')
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                        </div>
                 </div>
                 <div class="field">
                     <div class="label" for="semestre">Semestre:</div>
@@ -222,12 +235,11 @@
                         </span>
                         @enderror
                         </div>
-
                 </div>
 
                 <div class="field">
                     <div class="label" for="grupo">Grupo:</div>
-                    <input type="text" name="grupo" id="grupo" placeholder="Ingresa tu grupo" required maxlength="6">
+                    <input type="text" name="grupo" id="grupo" placeholder="Ingresa tu grupo" required maxlength="5">
                 </div>
                 <div class="field">
                     <div class="label" for="turno">Turno:</div>

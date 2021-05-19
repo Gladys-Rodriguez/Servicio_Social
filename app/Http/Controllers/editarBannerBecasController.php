@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\bannerBecasImagen;
+use DispatchesJobs, ValidatesRequests;
 
 class editarBannerBecasController extends Controller
 {
@@ -73,6 +74,8 @@ class editarBannerBecasController extends Controller
     {
         //
         $bannerBecas= bannerBecasImagen::findOrFail($id);
+
+        $request->validate(['ruta' => 'image']);
 
         $entrada= $request->all();
         if($archivo=$request->file('ruta')){

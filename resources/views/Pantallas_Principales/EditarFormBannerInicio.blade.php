@@ -53,7 +53,7 @@
         </div>
         <br>
 
-        <button type="submit">Subir nueva imagen</button>
+        <button type="submit">Actualizar</button>
 
     </form>
 

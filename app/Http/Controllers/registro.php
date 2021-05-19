@@ -97,6 +97,8 @@ class registro extends Controller
       //$id_rol = Rol::find(5);
       //$id_rol = DB::table('users')->where('id_rol', 5);
 
+
+
       DB::transaction(function () use ($request) {
 
         $id_users = DB::table('users')->insertGetId([
@@ -133,7 +135,6 @@ class registro extends Controller
             'id_usuarios' => $id_users,
             'id_direccions' => $id_direccions,
         ]);
-
       });
 
       return redirect('Registro_exitoso');
