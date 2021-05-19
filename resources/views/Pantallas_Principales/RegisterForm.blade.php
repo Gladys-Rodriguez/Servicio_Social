@@ -123,7 +123,7 @@
 <div class="form-outer">
     <div class="separa">
         <form action="{{route('registros.store')}}" method="POST" autocomplete="off" id="registro">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+        @csrf
 
 
             <div class="page slide-page">

@@ -81,7 +81,22 @@
     <div class="login-box">
     <form action="{{route('registrosRoles.store')}}" method="POST">
           @csrf
-        <!-- matricula INPUT -->
+        <!-- Nombre INPUT -->
+        <label>Nombre</label>
+        <input type="text" name="nombre" placeholder="Ingresa el nombre" required maxlength="30" onkeypress="return sololetras(event)">
+        <!-- Apellido paterno INPUT -->
+        <label>Apellido paterno</label>
+        <input type="text" name="ap_paterno" placeholder="Ingresa el apellido paterno" required maxlength="30" onkeypress="return sololetras(event)">
+        <!-- Apellido materno INPUT -->
+        <label>Apellido materno</label>
+        <input type="text" name="ap_materno" placeholder="Ingresa el apellido materno" required maxlength="30" onkeypress="return sololetras(event)">
+         <!-- Telefono INPUT -->
+         <label>Telefono</label>
+         <input type="text" name="telefono" placeholder="Ingresa el telefono" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
+         <!-- Celular INPUT -->
+         <label>Celular</label>
+         <input type="text" name="celular" placeholder="Ingresa el celular" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
+         <!-- matricula INPUT -->
         <label>Matricula</label>
         <input type="text" name="id" placeholder="Ingresa valores númericos" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
         <!-- correo INPUT -->

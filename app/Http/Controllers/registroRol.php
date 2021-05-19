@@ -8,6 +8,16 @@ use Illuminate\Http\Unique;
 use App\Models\Usuario;
 use App\Models\User;
 
+use Illuminate\Support\Facades\DB;
+
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
+use App\Models\dato;
+use App\Models\alumno;
+use App\Models\direccion;
+
 class registroRol extends Controller
 {
     /**
@@ -40,9 +50,10 @@ class registroRol extends Controller
     {
 
         //return $request->all();
-      $registro= new User;
+     /* $registro= new User;
 
       $validated = $request->validate([
+        'id' => 'unique:users',
         'email' => 'unique:users',
        ]);
 
@@ -53,7 +64,26 @@ class registroRol extends Controller
       //$registro->password=bcrypt($request->password);
       $registro->id_rol=$request->id_rol;
 
-      $registro->save();
+      $registro->save(); */
+
+      DB::transaction(function () use ($request) {
+
+        $id_users = DB::table('users')->insertGetId([
+            'id' => $request->input('id'),
+            'email' => $request->input('email'),
+            'password' => bcrypt($request->input('password')),
+            'id_rol' => $request->input('id_rol'),
+        ]);
+
+        $id_datos = DB::table('datos')->insertGetId([
+            'nombre' => $request->input('nombre'),
+            'ap_paterno' => $request->input('ap_paterno'),
+            'ap_materno' => $request->input('ap_materno'),
+            'telefono' => $request->input('telefono'),
+            'celular' => $request->input('celular'),
+        ]);
+
+      });
       return redirect('Registro_exitoso');
     }
 
