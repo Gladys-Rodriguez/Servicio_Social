@@ -204,7 +204,17 @@ Route::get('/Solicitudes_Practicas_Visitas', function () {
     return view('Pantallas_Admin_Practicas_Visitas.Solicitudes_Practicas_Visitas');
 }) -> name('Solicitudes_Practicas_Visitas');
 
+Route::get('/RechazadasV', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.RechazadasV');
+}) -> name('RechazadasV');
 
+Route::get('/AceptadasV', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.AceptadasV');
+}) -> name('AceptadasV');
+
+Route::get('/ValidacionV2', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.ValidacionV2');
+}) -> name('ValidacionV2');
 //------------------------FER TERMINO------------------------------------
 
 
@@ -465,6 +475,8 @@ Route::get('/FormatosBeca', function (){
 }) -> name('FormatosBeca');
 
 Route::get('/MiBeca','MiBecaDatosController@index');
+
+Route::get('/Index_Master','AdminMasterIndexController@index');
 //-----------------------SANTOS TERMINO----------------------------------
 Auth::routes();
 

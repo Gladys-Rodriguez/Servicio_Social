@@ -27,12 +27,10 @@
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="{{url('/Admin_Practicas_Visitas_Index2')}}" class="nav__link active">HOME</a></li>
-                    <li class="nav__item"><a href="{{url('/Validacion_Practicas_Visitas')}}" class="nav__link">Validación de documentos</a></li>
-                    <li class="nav__item"><a href="{{url('/Clasificacion_Practicas_Visitas')}}" class="nav__link">Solicitudes de prácticas</a></li>
-                    <li class="nav__item"><a href="{{url('/RechazadasV')}}" class="nav__link">Solicitudes rechazadas</a></li>
-                    <li class="nav__item"><a href="{{url('/AceptadasV')}}" class="nav__link">Solicitudes aceptadas</a></li>
-                    <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link active">HOME</a></li>
+                    <li class="nav__item"><a href="{{url('/RegisterBecas')}}" class="nav__link">ADMIN BECAS</a></li>
+                    <li class="nav__item"><a href="{{url('/RegisterServicio')}}" class="nav__link">ADMIN SERVICIO</a></li>
+                    <li class="nav__item"><a href="{{url('/RegisterPracticas')}}" class="nav__link">ADMIN PRACTICAS</a></li>
 
                 </ul>
             </div>
@@ -73,9 +71,7 @@
         </script>
 
     <section class="section-main">
-      <h1>ADMINISTRACIÓN DE PRÁCTICAS Y VISITAS
-      <br> Usuario con matricula: {{ Auth::user()->id}}
-      </h1>
+      <h1>ADMINISTRADOR</h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->
