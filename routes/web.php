@@ -94,7 +94,10 @@ Route::get('/FormatosAdministrativosPA', [App\Http\Controllers\FormatosAControll
 Route::post('/upload', [App\Http\Controllers\FormatosAFilesController::class, 'store'])->name('user.files.store');
 
 // ************************************* RUTAS    DE    GLADYS    *******************************************
-
+//Prueba de Login
+Route::get('/LoginPruebaGla', function (){
+    return view('Pantallas_Alumno_Servicio.pantallaLogin');
+}) -> name('LoginPruebaGla');
 
 
 /*Route::get('/', [App\Http\Controllers\AlumnoController::class, 'muestra']);*/
