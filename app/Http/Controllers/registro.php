@@ -7,7 +7,12 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Unique;
 use App\Models\Usuario;
 use App\Models\User;
+
 use Illuminate\Support\Facades\DB;
+
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use App\Models\dato;
 use App\Models\alumno;
@@ -22,7 +27,35 @@ class registro extends Controller
      */
     public function index()
     {
-        //
+        /* codigo de Gladys
+        $id_users = Auth::user()->id;
+        $alumnos=DB::table('alumnos')->where('id_usuarios',$id_users)->get();
+        $users=DB::table('users')->where('id',$id_users)->get();
+        $datos=DB::table('datos')
+        ->join('alumnos', 'datos.id_datos', 'alumnos.id_datos')
+        ->where('alumnos.id_usuarios',$id_users)
+        ->get();
+       // echo "<prev>";
+      //  print_r($datos);
+      //  $datos['datos']=alumno::join('datos','datos.id_datos', '=', 'alumnos.id_datos')->get();
+
+        return view('Pantallas_Alumno_Servicio.Index_Alumno', compact('alumnos', 'users', 'datos')); */
+
+
+        $id_users = Auth::user()->id;
+        $alumnos=DB::table('alumnos')->where('id_usuarios',$id_users)->get();
+        $users=DB::table('users')->where('id',$id_users)->get();
+        $datos=DB::table('datos')
+        ->join('alumnos', 'datos.id_datos', 'alumnos.id_datos')
+        ->where('alumnos.id_usuarios',$id_users)
+        ->get();
+        $direccions=DB::table('direccions')
+        ->join('alumnos', 'direccions.id_direccions', 'alumnos.id_direccions')
+        ->where('alumnos.id_usuarios',$id_users)
+        ->get();
+
+        return view('Pantallas_Alumno_Servicio.datosPersonalesA', compact('alumnos', 'users', 'datos', 'direccions'));
+
     }
 
     /**
@@ -64,6 +97,8 @@ class registro extends Controller
       //$id_rol = Rol::find(5);
       //$id_rol = DB::table('users')->where('id_rol', 5);
 
+
+
       DB::transaction(function () use ($request) {
 
         $id_users = DB::table('users')->insertGetId([
@@ -100,7 +135,6 @@ class registro extends Controller
             'id_usuarios' => $id_users,
             'id_direccions' => $id_direccions,
         ]);
-
       });
 
       return redirect('Registro_exitoso');

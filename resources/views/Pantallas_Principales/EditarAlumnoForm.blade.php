@@ -1,16 +1,58 @@
+@extends('Pantallas_Principales.navbarEditarAlumnoForm')
 
-@extends('Pantallas_Alumno_Servicio.Layout_Alumno.Layout_Alumno2')
-
-<!-- comentario -->
-@section('title', 'Nuevo Registro')
+@section('title', 'Editar datos de alumno')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/Pantallas_Alumno_Servicio/Registros/NuevoRegistro.css')}}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-
+<link rel="stylesheet" href="{{asset('css/Pantallas_Principales/EditarAlumnoForm.css')}}">
 @endsection
 
 @section('content')
+<br>
+<div class="container">
+<div class="informacion" >
+      <div class="contact-info">
+        <h3 class="title">"Editar datos"</h3>
+
+      <div class="errores">
+       @if($errors->any())
+        <ul>
+        @foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+        @endforeach
+        </ul>
+        @endif
+      </div>
+
+      </div>
+
+    <!--Formulario-->
+    <div class="login-box">
+    <form action="/EditarAlumnoForm2/{{$Users->id}}" method="POST">
+          @csrf
+        <!-- MATRICULA INPUT -->
+        <label>Matricula</label>
+        <input type="text" name="id" value="{{$Users->id}}" placeholder="Ingresa valores númericos" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
+        <input type="hidden" name="_method" value="PUT">
+        <!-- nombre INPUT -->
+        <!--<label>Nombre completo</label>
+        <input type="text" name="name" value="{{$Users->name}}" placeholder="Ingresa tu nombre completo" required minlength="10" maxlength="60" onkeypress="return sololetras(event)">-->
+        <!-- CORREO INPUT -->
+        <label>Correo Institucional</label>
+        <input type="email" name="email" value="{{$Users->email}}" placeholder="correo@hotmail.com" required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
+        <!-- PASSWORD INPUT -->
+        <!--<label>Contraseña</label>
+        <input type="password" name="password" value="{{$Users->password}}" placeholder="Contraseña" required>-->
+        <button type="submit">Actualizar</button>
+      </form>
+
+    </div>
+
+
+     </div>
+</div>
+
+
+<!-- Aqui empieza lo de gladys -->
 <script>
     function solonumeros(e){
         key=e.keyCode||e.wich;
@@ -124,9 +166,8 @@
     <!-- ************************** INICIO DEL FORMULARIO ********************************** -->
     <div class="form-outer">
         <div class="separa">
-            <form action="{{route('NuevoRegistro.store')}}" method="POST" autocomplete="off" id="servicios">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
-
+            <form action="/EditarAlumnoForm2/{{$Users->id}}" method="POST" autocomplete="off" id="servicios">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
 
                 <div class="page slide-page">
                     <div class="title">Dirección de la Dependencia:</div>
@@ -232,7 +273,7 @@
                         </div>
                         <div class="field btns">
                             <button class="prev-3 prev">Previous</button>
-                            <button class="submit">Submit</button>
+                            <button class="submit">Actualizar</button>
                         </div>
                 </div>
 
@@ -243,10 +284,8 @@
 
 <!-- *******************  Fin del Container **********************************-->
 </div>
-@endsection
 
-@section('script')
-<script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"> </script>
 
-<script src="{{asset('js/Pantallas_Alumno_Servicio/Registros/NuevoRegistro.js')}}"></script>
+
+
 @endsection

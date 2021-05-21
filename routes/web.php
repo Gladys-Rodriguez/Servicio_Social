@@ -103,10 +103,14 @@ Route::post('/upload', [App\Http\Controllers\FormatosAFilesController::class, 's
 Route::get('/RegistroAlumno', function (){
     return view('Pantallas_Alumno_Servicio.RegistroAlumno');
 }) -> name('RegistroAlumno');
+Route::get('/FormRegistro', function (){
+    return view('Pantallas_Alumno_Servicio.FormRegistro');
+}) -> name('FormRegistro');
 Route::get('/NuevoRegistro', function (){
     return view('Pantallas_Alumno_Servicio.Registros.NuevoRegistro');
 }) -> name('Nuevo Registro');
 
+Route::get('Index_Alumno', [App\Http\Controllers\registro::class, 'index'])->name('Index_Alumno.index');
 
 
 //Ruta para obtener los datos desde el controlador
@@ -122,9 +126,9 @@ Route::resource('direcciones', "DireccionsController");
 Route::resource('alumnos', "AlumnosController");
 
 //Ruta oara pantalla de registro exitoso
-Route::get('/Index_Alumno', function (){
+/*Route::get('/Index_Alumno', function (){
     return view('Pantallas_Alumno_Servicio.Index_Alumno');
-}) -> name('Index_Alumno');
+}) -> name('Index_Alumno'); */
 
 
 // ************************************* FIN   RUTAS    DE    GLADYS    *******************************************
@@ -328,7 +332,6 @@ Route::resource('Practicas','registro');
 Route::post('/registrosImagenesP/(id)', [App\Http\Controllers\RegistroBannerPracticas::class, 'store'])->name('registrosImagenesP.store'); //aqui se edita la pantalla de alcance
 
 
-
 //RUTAS PARA EL LOGIN
 //Pantalla Login
 Route::get('/LoginForm', function (){
@@ -371,19 +374,30 @@ Route::get('/logout', [App\Http\Controllers\pruebaController::class, 'getLogout'
 //Vista para prueba de consulta
 Route::get('/consultaPrueba', [App\Http\Controllers\consultaController::class, 'index'])->name('home');
 
-//Vista para consulta de imagenes de banner de servicio
+//Vista para consulta de imagenes de banner de inicio
 Route::get('/consultaBannerInicio', [App\Http\Controllers\consultaBannerInicioController::class, 'index'])->name('home');
 
+//Vista para consulta de imagenes de banner de inicio inhabilitadas
+Route::get('/consultaBannerInicioInhabilitadas', [App\Http\Controllers\consultaBannerInicioInhabilitadasController::class, 'index'])->name('home');
 
 //Vista para consulta de imagenes de banner de servicio
 Route::get('/consultaBannerServicio', [App\Http\Controllers\consultaBannerServicioController::class, 'index'])->name('home');
 
+//Vista para consulta de imagenes inhabilitadas de banner de servicio
+Route::get('/consultaBannerServicioInhabilitadas', [App\Http\Controllers\consultaBannerServicioInhabilitadasController::class, 'index'])->name('home');
+
 //Vista para consulta de imagenes de banner de becas
 Route::get('/consultaBannerBecas', [App\Http\Controllers\consultaBannerBecasController::class, 'index'])->name('home');
+
+//Vista para consulta de imagenes inhabilitadas de banner de becas
+Route::get('/consultaBannerBecasInhabilitadas', [App\Http\Controllers\consultaBannerBecasInhabilitadasController::class, 'index'])->name('home');
+
 
 //Vista para consulta de imagenes de banner de practicas
 Route::get('/consultaBannerPracticas', [App\Http\Controllers\consultaBannerPracticasController::class, 'index'])->name('home');
 
+//Vista para consulta de imagenes inhabilitadas de banner de practicas
+Route::get('/consultaBannerPracticasInhabilitadas', [App\Http\Controllers\consultaBannerPracticasInhabilitadasController::class, 'index'])->name('home');
 
 //Vista para consulta de todos los usuarios
 Route::get('/consultaUsuarios', [App\Http\Controllers\consultaUsuariosController::class, 'index'])->name('home');
@@ -403,6 +417,11 @@ Route::get('/showPrueba/{id}', [App\Http\Controllers\showController::class, 'sho
 //editar prueba
 Route::get('/pruebaEditarForm/{id}', [App\Http\Controllers\editarController::class, 'edit'])->name('home');
 Route::put('/pruebaEditarForm2/{id}', [App\Http\Controllers\editarController::class, 'update'])->name('pruebaEditarForm2.update');
+
+//editar datos de alumno
+Route::get('/EditarAlumnoForm/{id}', [App\Http\Controllers\editarAlumnoController::class, 'edit'])->name('home');
+Route::put('/EditarAlumnoForm2/{id}', [App\Http\Controllers\editarAlumnoController::class, 'update'])->name('EditarAlumnoController.update');
+
 
 //Pantalla de editar de imagenes de inicio
 Route::get('/EditarFormBannerInicio', function (){
@@ -446,6 +465,8 @@ Route::delete('/EditarFormBannerPracticas3/{id}', [App\Http\Controllers\editarBa
 Route::get('/prueba', function (){
     return view('Pantallas_Principales.prueba');
 }) -> name('prueba');
+
+Route::get('/datosPersonalesA', [App\Http\Controllers\registro::class, 'index'])->name('datosPersonalesA.index');
 
 //------------------------IVAN TERMINO------------------------------------
 

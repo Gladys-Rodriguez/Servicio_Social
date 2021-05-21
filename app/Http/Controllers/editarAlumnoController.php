@@ -2,14 +2,10 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Http\Request;
-use Illuminate\Http\Unique;
-use App\Models\Usuario;
 use App\Models\User;
 
 use Illuminate\Support\Facades\DB;
-
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -18,7 +14,7 @@ use App\Models\dato;
 use App\Models\alumno;
 use App\Models\direccion;
 
-class registroRol extends Controller
+class editarAlumnoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -48,43 +44,7 @@ class registroRol extends Controller
      */
     public function store(Request $request)
     {
-
-        //return $request->all();
-     /* $registro= new User;
-
-      $validated = $request->validate([
-        'id' => 'unique:users',
-        'email' => 'unique:users',
-       ]);
-
-      $registro->id=$request->id;
-      //$registro->name=$request->name;
-      $registro->email=$request->email;
-      $registro->password=bcrypt($request->password);
-      //$registro->password=bcrypt($request->password);
-      $registro->id_rol=$request->id_rol;
-
-      $registro->save(); */
-
-      DB::transaction(function () use ($request) {
-
-        $id_users = DB::table('users')->insertGetId([
-            'id' => $request->input('id'),
-            'email' => $request->input('email'),
-            'password' => bcrypt($request->input('password')),
-            'id_rol' => $request->input('id_rol'),
-        ]);
-
-        $id_datos = DB::table('datos')->insertGetId([
-            'nombre' => $request->input('nombre'),
-            'ap_paterno' => $request->input('ap_paterno'),
-            'ap_materno' => $request->input('ap_materno'),
-            'telefono' => $request->input('telefono'),
-            'celular' => $request->input('celular'),
-        ]);
-
-      });
-      return redirect('Registro_exitoso');
+        //
     }
 
     /**
@@ -95,7 +55,22 @@ class registroRol extends Controller
      */
     public function show($id)
     {
-        //
+        /*$id_users = Auth::user()->id;
+        $alumnos=DB::table('alumnos')->where('id_usuarios',$id_users)->get();
+        $users=DB::table('users')->where('id',$id_users)->get();
+        $datos=DB::table('datos')
+        ->join('alumnos', 'datos.id_datos', 'alumnos.id_datos')
+        ->where('alumnos.id_usuarios',$id_users)
+        ->get();
+        $direccions=DB::table('direccions')
+        ->join('alumnos', 'direccions.id_direccions', 'alumnos.id_direccions')
+        ->where('alumnos.id_usuarios',$id_users)
+        ->get();
+
+        return view('Pantallas_Alumno_Servicio.datosPersonalesA', compact('alumnos', 'users', 'datos', 'direccions'));
+ */
+        $Users= User::findOrFail($id);
+        return view("Pantallas_Principales.showPrueba", compact("Users"));
     }
 
     /**
@@ -107,6 +82,8 @@ class registroRol extends Controller
     public function edit($id)
     {
         //
+        $Users= User::findOrFail($id);
+        return view("Pantallas_Principales.EditarAlumnoForm", compact("Users"));
     }
 
     /**
@@ -119,6 +96,9 @@ class registroRol extends Controller
     public function update(Request $request, $id)
     {
         //
+        $Users= User::findOrFail($id);
+        $Users->update($request->all());
+        return redirect("/datosPersonalesA");
     }
 
     /**

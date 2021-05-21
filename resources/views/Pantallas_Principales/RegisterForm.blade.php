@@ -41,7 +41,7 @@
 
         teclado=String.fromCharCode(key);
 
-        letras="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+        letras="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZáéíóúÁÉÍÓÚ";
 
         especiales="8-37-38-46";
 
@@ -58,12 +58,36 @@
         }
 
     }
-    </script>
+</script>
+
+<script>
+    function sololetrasespacio(e){
+        key=e.keyCode||e.wich;
+
+        teclado=String.fromCharCode(key);
+
+        letras="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZáéíóúÁÉÍÓÚ ";
+
+        especiales="8-37-38-46";
+
+        teclado_especial=false;
+
+        for(var i in especiales){
+            if(key==especiales[i]){
+                teclado_especial=true;
+            }
+        }
+
+        if(letras.indexOf(teclado)==-1 && !teclado_especial){
+            return false;
+        }
+
+    }
+</script>
 
 
 <!-- **************************** INICIO FORMULARIO STEP BY STEP **************************** -->
 <div class="container">
-
     <div class="progress-bar">
         <div class="step">
             <p>Personal</p>
@@ -99,7 +123,7 @@
 <div class="form-outer">
     <div class="separa">
         <form action="{{route('registros.store')}}" method="POST" autocomplete="off" id="registro">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+        @csrf
 
 
             <div class="page slide-page">
@@ -107,7 +131,7 @@
                 <br>
                     <div class="field">
                         <div class="label" for="nombre">Nombre(s):</div>
-                        <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre completo" maxlength="60" onkeypress="return sololetras(event)">
+                        <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre completo" maxlength="60" onkeypress="return sololetrasespacio(event)">
                     </div>
                     <div class="field">
                         <div class="label" for="ap_paterno">Apellido Paterno:</div>
@@ -141,7 +165,7 @@
                     <input type="text" name="ciudad" id="ciudad" placeholder="Ingresa tu ciudad" required maxlength="60" onkeypress="return sololetras(event)">
                 </div>
                 <div class="field">
-                    <div class="label" for="alcaldia">Alcaldia o Municipio:</div>
+                    <div class="label" for="alcaldia">Alcaldia/Municipio:</div>
                     <input type="text" name="alcaldia" id="alcaldia" placeholder="Ingresa tu alcaldia o municipio" required maxlength="60" onkeypress="return sololetras(event)">
                 </div>
                 <div class="field">
@@ -177,7 +201,21 @@
                 <br>
                 <div class="field">
                     <div class="label" for="carrera">Carrera:</div>
-                    <input type="text" name="carrera" id="carrera" placeholder="Ingresa tu carrera" required maxlength="20" onkeypress="return sololetras(event)">
+                    <div class="col-md-6" type="text">
+                        <select type="text" name="carrera" id="carrera">
+                        <!--<option value="1"> Superadmin </option>-->
+                        <option value="Técnico en informática"> Técnico en informática</option>
+                        <option value="Técnico en contaduría"> Técnico en contaduría  </option>
+                        <option value="Técnico en administración"> Técnico en administración  </option>
+                        <option value="Técnico en administración de empresas turísticas"> Técnico en administración de empresas turísticas</option>
+                        <option value="Técnico en gestión de la ciberseguridad"> Técnico en gestión de la ciberseguridad</option>
+                        </select>
+                        @error('carrera')
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                        </div>
                 </div>
                 <div class="field">
                     <div class="label" for="semestre">Semestre:</div>
@@ -197,12 +235,11 @@
                         </span>
                         @enderror
                         </div>
-
                 </div>
 
                 <div class="field">
                     <div class="label" for="grupo">Grupo:</div>
-                    <input type="text" name="grupo" id="grupo" placeholder="Ingresa tu grupo" required maxlength="6">
+                    <input type="text" name="grupo" id="grupo" placeholder="Ingresa tu grupo" required maxlength="5">
                 </div>
                 <div class="field">
                     <div class="label" for="turno">Turno:</div>

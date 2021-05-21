@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\bannerPracticasImagen;
+use App\Models\bannerInicioImagen;
 use DB;
 
-class consultaBannerPracticasController extends Controller
+class consultaBannerInicioInhabilitadasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,13 +16,11 @@ class consultaBannerPracticasController extends Controller
     public function index()
     {
         //
-        /*$bannerPracticas= bannerPracticasImagen::all();
-        return view("Pantallas_Principales.consultaBannerPracticas", compact("bannerPracticas"));*/
-        $bannerPracticas = DB::table('banner_practicas_imagens')
+        $bannerInicio = DB::table('banner_inicio_imagens')
         ->select('*')
-        ->where('estado', 1)
+        ->where('estado', 0)
         ->get();
-        return view("Pantallas_Principales.consultaBannerPracticas", compact("bannerPracticas"));
+        return view("Pantallas_Principales.consultaBannerInicioInhabilitadas", compact("bannerInicio"));
     }
 
     /**

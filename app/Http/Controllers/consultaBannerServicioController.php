@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\bannerServicioImagen;
+use DB;
 
 class consultaBannerServicioController extends Controller
 {
@@ -15,9 +16,15 @@ class consultaBannerServicioController extends Controller
     public function index()
     {
         //
-        $bannerServicio= bannerServicioImagen::all();
+        /*$bannerServicio= bannerServicioImagen::all();
+        return view("Pantallas_Principales.consultaBannerServicio", compact("bannerServicio"));*/
+
+
+        $bannerServicio = DB::table('banner_servicio_imagens')
+        ->select('*')
+        ->where('estado', 1)
+        ->get();
         return view("Pantallas_Principales.consultaBannerServicio", compact("bannerServicio"));
-        //return view("Pantallas_Principales.servicioIndex2", compact("bannerServicio"));
     }
 
     /**
