@@ -105,6 +105,9 @@
         <!-- PASSWORD INPUT -->
         <label>Contraseña</label>
         <input type="password" name="password" placeholder="Contraseña" required>
+        <!--DESCRIPCION INPUT-->
+        <label>Descripción</label>
+        <input type="text" name="descripcion" placeholder="Descripción" required>
 
         <label>Rol</label>
         <div class="col-md-6" type="text">
@@ -121,8 +124,8 @@
                   <strong>{{ $message }}</strong>
                   </span>
                  @enderror
-        </div>
-        <br>
+        </div> <br>
+        
 
         <button type="submit">Registrar</button>
 

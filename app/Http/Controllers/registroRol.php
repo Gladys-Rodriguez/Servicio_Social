@@ -83,6 +83,13 @@ class registroRol extends Controller
             'celular' => $request->input('celular'),
         ]);
 
+        $id_administradors= DB::table('administradors')->insertGetID([
+          'descripcion' => $request->input('descripcion'),
+          'id_datos'=>$id_datos,
+          'id'=>$id_users,
+
+        ]);
+
       });
       return redirect('Registro_exitoso');
     }
