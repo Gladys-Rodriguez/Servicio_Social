@@ -1,9 +1,9 @@
-@extends('Pantallas_Principales.navbarRegisterFormRoles')
+@extends('Pantallas_Admin_Master.navbarRegisterFormRoles')
 
 @section('title', 'Registro')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/Pantallas_Principales/RegisterFormRoles.css')}}">
+<link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Master/RegisterFormRoles.css')}}">
 @endsection
 
 @section('content')
@@ -124,8 +124,14 @@
                   <strong>{{ $message }}</strong>
                   </span>
                  @enderror
+        </div><br>
+        <label>Estado</label>
+        <div class="col-md-6" type="text">
+             <select name="Estado">
+                 <option value="1"> Activo </option>
+                 <option value="2"> Inactivo </option>
+             </select>
         </div> <br>
-        
 
         <button type="submit">Registrar</button>
 
@@ -137,5 +143,12 @@
 
 
      </div>
+     <script>
+    var msg = '{{Session::get('alert')}}';
+    var exist = '{{Session::has('alert')}}';
+    if(exist){
+      alert(msg);
+    }
+  </script>
 </div>
 @endsection

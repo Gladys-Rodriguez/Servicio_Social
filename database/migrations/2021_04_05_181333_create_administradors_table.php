@@ -18,6 +18,7 @@ class CreateAdministradorsTable extends Migration
             $table->string('descripcion')->notnull();
             $table->unsignedInteger('id_datos')->unsigned()->notnull();
             $table->bigInteger('id')->unsigned()->notnull();
+            $table->unsignedInteger('Estado')->notnull();
             $table->timestamps();
 
 

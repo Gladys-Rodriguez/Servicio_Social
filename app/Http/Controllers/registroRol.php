@@ -87,11 +87,12 @@ class registroRol extends Controller
           'descripcion' => $request->input('descripcion'),
           'id_datos'=>$id_datos,
           'id'=>$id_users,
+          'Estado' => $request->input('Estado'),
 
         ]);
 
       });
-      return redirect('Registro_exitoso');
+      return redirect()->back() ->with('alert', 'Registro Exitoso');
     }
 
     /**

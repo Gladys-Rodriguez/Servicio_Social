@@ -28,9 +28,10 @@
             <div class="nav__menu">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="#" class="nav__link active">HOME</a></li>
-                    <li class="nav__item"><a href="{{url('/RegisterBecas')}}" class="nav__link">ADMIN BECAS</a></li>
-                    <li class="nav__item"><a href="{{url('/RegisterServicio')}}" class="nav__link">ADMIN SERVICIO</a></li>
+                    <li class="nav__item"><a href="{{url('/RegisterFormRoles')}}" class="nav__link">NUEVO ADMIN</a></li>
+                    <li class="nav__item"><a href="{{url('/ActivarSusA')}}" class="nav__link">ACTIVAR/SUSPENDER ADMIN</a></li>
                     <li class="nav__item"><a href="{{url('/RegisterPracticas')}}" class="nav__link">ADMIN PRACTICAS</a></li>
+                    <li class="nav__item"><a href="{{url('/')}}" class="nav__link">CERRAR SESIÓN</a></li>
 
                 </ul>
             </div>

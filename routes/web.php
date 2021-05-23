@@ -275,10 +275,7 @@ Route::get('/RegisterForm', function (){
     return view('Pantallas_Principales.RegisterForm');
 }) -> name('RegisterForm');
 
-//Pantalla Registro con roles
-Route::get('/RegisterFormRoles', function (){
-    return view('Pantallas_Principales.RegisterFormRoles');
-}) -> name('RegisterFormRoles');
+
 
 //Ruta para recibir los datos que enviamos para el registro
 Route::resource('Servicio','registro');
@@ -482,6 +479,10 @@ Route::get('/FormatosBeca', function (){
 Route::get('/MiBeca','MiBecaDatosController@index');
 
 Route::get('/Index_Master','AdminMasterIndexController@index');
+//Pantalla Registro con roles
+Route::get('/RegisterFormRoles', function (){
+    return view('Pantallas_Admin_Master.RegisterFormRoles');
+}) -> name('RegisterFormRoles');
 //-----------------------SANTOS TERMINO----------------------------------
 Auth::routes();
 
