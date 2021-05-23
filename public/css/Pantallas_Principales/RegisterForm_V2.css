@@ -21,7 +21,72 @@
     grid-template-columns: repeat(2, 1fr);
 
   }
+  /**** ESTILOS EXTRA *****/
+ .formulario__grupo .formulario__input-error {
+	font-size: 16px;
+	margin-top: -1rem;
+    margin-left: -15rem;
+    color: #b86725;
+	display: none;
+}
+.formulario__grupo .formulario__input-error-activo {
+	display: block;
+}
 
+.formulario__validacion-estado {
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	z-index: 100;
+	font-size: 16px;
+	opacity: 0;
+}
+ .formulario__mensaje {
+    width:80%;
+    font-size: 12px;
+	height: 50px;
+	line-height: 45px;
+	background: #F66060;
+	padding-left: 1rem;
+	border-radius: 3px;
+	display: none;
+}
+
+.formulario__mensaje-activo {
+	display:flex;
+}
+.formulario__mensaje p {
+	margin: 0;
+
+}
+.formulario__mensaje-exito {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+}
+
+.formulario__mensaje-exito-activo {
+	display: block;
+}
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formulario__grupo-correcto .formulario__validacion-estado {
+	color: rgba(84, 183, 91);
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+	color: rgba(183, 84, 84);
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+	color: rgba(183, 84, 84);
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+	border: 3px solid rgba(183, 84, 84);
+}
+/***********/
   .progress-bar .step .check.active:selection{
         color: #fff;
         background: #d4ac3f;
