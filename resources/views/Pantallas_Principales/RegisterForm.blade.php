@@ -125,21 +125,20 @@
         <form action="{{route('registros.store')}}" method="POST" autocomplete="off" id="registro">
         @csrf
 
-
             <div class="page slide-page">
                 <div class="title">Datos Personales:</div>
                 <br>
                     <div class="field">
                         <div class="label" for="nombre">Nombre(s):</div>
-                        <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre completo" maxlength="60" onkeypress="return sololetrasespacio(event)">
+                        <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre completo" required maxlength="60" onkeypress="return sololetrasespacio(event)">
                     </div>
                     <div class="field">
                         <div class="label" for="ap_paterno">Apellido Paterno:</div>
-                        <input type="text" name="ap_paterno" id="ap_paterno" placeholder="Ingresa tu apellido paterno" maxlength="60" onkeypress="return sololetras(event)">
+                        <input type="text" name="ap_paterno" id="ap_paterno" placeholder="Ingresa tu apellido paterno" required maxlength="60" onkeypress="return sololetras(event)">
                     </div>
                     <div class="field">
                         <div class="label" for="ap_materno">Apellido Materno:</div>
-                        <input type="text" name="ap_materno" id="ap_materno" placeholder="Ingresa tu apellido materno" maxlength="60" onkeypress="return sololetras(event)">
+                        <input type="text" name="ap_materno" id="ap_materno" placeholder="Ingresa tu apellido materno" required maxlength="60" onkeypress="return sololetras(event)">
                     </div>
                     <div class="field">
                         <div class="label" for="telefono">Telefono de Casa:</div>
@@ -294,10 +293,6 @@
 
 <!-- *******************  Fin del Container **********************************-->
 </div>
-
-
-
-
 
 @endsection
 

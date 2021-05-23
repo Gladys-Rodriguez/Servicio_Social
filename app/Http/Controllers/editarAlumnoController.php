@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Unique;
+use App\Models\Usuario;
 use App\Models\User;
 
 use Illuminate\Support\Facades\DB;
+
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -79,11 +82,29 @@ class editarAlumnoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_alumnos,$id)
     {
         //
+
+
+        $alumno= alumno::findOrFail($id_alumnos);
         $Users= User::findOrFail($id);
-        return view("Pantallas_Principales.EditarAlumnoForm", compact("Users"));
+        return view("Pantallas_Principales.EditarAlumnoForm", compact("alumno","Users"));
+
+        /*$id_users = Auth::findOrFail($id);
+        $alumnos=DB::table('alumnos')->where('id_usuarios',$id_users)->get();
+        $Users=DB::table('users')->where('id',$id_users)->get();
+        $datos=DB::table('datos')
+        ->join('alumnos', 'datos.id_datos', 'alumnos.id_datos')
+        ->where('alumnos.id_usuarios',$id_users)
+        ->get();
+        $direccions=DB::table('direccions')
+        ->join('alumnos', 'direccions.id_direccions', 'alumnos.id_direccions')
+        ->where('alumnos.id_usuarios',$id_users)
+        ->get();
+
+        return view('Pantallas_Principales.EditarAlumnoForm', compact('alumnos', 'Users', 'datos', 'direccions'));*/
+
     }
 
     /**

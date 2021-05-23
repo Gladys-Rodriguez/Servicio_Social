@@ -97,7 +97,10 @@ class registro extends Controller
       //$id_rol = Rol::find(5);
       //$id_rol = DB::table('users')->where('id_rol', 5);
 
-
+      $validated = $request->validate([
+        'email' => 'unique:users',
+        'email' => 'unique:users',
+       ]);
 
       DB::transaction(function () use ($request) {
 

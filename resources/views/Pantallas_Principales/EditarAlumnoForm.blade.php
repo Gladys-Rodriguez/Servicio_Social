@@ -7,52 +7,6 @@
 @endsection
 
 @section('content')
-<br>
-<div class="container">
-<div class="informacion" >
-      <div class="contact-info">
-        <h3 class="title">"Editar datos"</h3>
-
-      <div class="errores">
-       @if($errors->any())
-        <ul>
-        @foreach($errors->all() as $error)
-            <li>{{$error}}</li>
-        @endforeach
-        </ul>
-        @endif
-      </div>
-
-      </div>
-
-    <!--Formulario-->
-    <div class="login-box">
-    <form action="/EditarAlumnoForm2/{{$Users->id}}" method="POST">
-          @csrf
-        <!-- MATRICULA INPUT -->
-        <label>Matricula</label>
-        <input type="text" name="id" value="{{$Users->id}}" placeholder="Ingresa valores númericos" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
-        <input type="hidden" name="_method" value="PUT">
-        <!-- nombre INPUT -->
-        <!--<label>Nombre completo</label>
-        <input type="text" name="name" value="{{$Users->name}}" placeholder="Ingresa tu nombre completo" required minlength="10" maxlength="60" onkeypress="return sololetras(event)">-->
-        <!-- CORREO INPUT -->
-        <label>Correo Institucional</label>
-        <input type="email" name="email" value="{{$Users->email}}" placeholder="correo@hotmail.com" required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
-        <!-- PASSWORD INPUT -->
-        <!--<label>Contraseña</label>
-        <input type="password" name="password" value="{{$Users->password}}" placeholder="Contraseña" required>-->
-        <button type="submit">Actualizar</button>
-      </form>
-
-    </div>
-
-
-     </div>
-</div>
-
-
-<!-- Aqui empieza lo de gladys -->
 <script>
     function solonumeros(e){
         key=e.keyCode||e.wich;
@@ -129,32 +83,33 @@
     }
 </script>
 
-<div class="container">
 
+<!-- **************************** INICIO FORMULARIO STEP BY STEP **************************** -->
+<div class="container">
     <div class="progress-bar">
         <div class="step">
-            <p>1</p>
+            <p>Personal</p>
                 <div class="bullet">
                     <span></span>
                 </div>
          <div class="check fas fa-check"></div>
         </div>
         <div class="step">
-            <p>2</p>
+            <p>Domicilio</p>
                 <div class="bullet">
                     <span></span>
                 </div>
         <div class="check fas fa-check"></div>
         </div>
         <div class="step">
-            <p>3</p>
+            <p>Escolares</p>
                 <div class="bullet">
                     <span></span>
                 </div>
         <div class="check fas fa-check"></div>
         </div>
         <div class="step">
-            <p>4</p>
+            <p>Usuario</p>
                 <div class="bullet">
                     <span></span>
                 </div>
@@ -162,130 +117,188 @@
         </div>
     </div>
 
-
-    <!-- ************************** INICIO DEL FORMULARIO ********************************** -->
-    <div class="form-outer">
-        <div class="separa">
-            <form action="/EditarAlumnoForm2/{{$Users->id}}" method="POST" autocomplete="off" id="servicios">
+<!-- ************************** INICIO DEL FORMULARIO ********************************** -->
+<div class="form-outer">
+    <div class="separa">
+            <form action="/EditarAlumnoForm2/{$alumno->id_alumnos}/{{$Users->id}}" method="POST" autocomplete="off" id="servicios">
             <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+            <input type="hidden" name="_method" value="PUT">
 
-                <div class="page slide-page">
-                    <div class="title">Dirección de la Dependencia:</div>
-                    <br>
-                        <div class="field">
-                            <div class="label" for="ciudad">Ciudad:</div>
-                            <input type="text" name="ciudad" id="ciudad" placeholder="Ingresa la ciudad" required maxlength="60" onkeypress="return sololetras(event)">
-                        </div>
-                        <div class="field">
-                            <div class="label" for="alcaldia">Alcaldia o Municipio:</div>
-                            <input type="text" name="alcaldia" id="alcaldia" placeholder="Ingresa la alcaldia o municipio" required maxlength="60" onkeypress="return sololetras(event)">
-                        </div>
-                        <div class="field">
-                            <div class="label" for="colonia">Colonia:</div>
-                            <input type="text" name="colonia" id="colonia" placeholder="Ingresa la colonia" required maxlength="60" onkeypress="return sololetras(event)">
-                        </div>
-                        <div class="field">
-                            <div class="label" for="calle">Calle:</div>
-                            <input type="text" name="calle" id="calle" placeholder="Ingresa la calle" required maxlength="60">
-                        </div>
-                        <div class="field">
-                            <div class="label" for="num_ext">Numero Ext.:</div>
-                            <input type="text" name="num_ext" id="num_ext" placeholder="Ingresa el numero exterior" required maxlength="5" onkeypress="return solonumeros(event)">
-                        </div>
-                        <div class="field">
-                            <div class="label" for="num_int">Numero Int.:</div>
-                            <input type="text" name="num_int" id="num_int" placeholder="Ingresa el numero interior" required maxlength="5" onkeypress="return solonumeros(event)">
-                        </div>
-                        <div class="field">
-                            <div class="label" for="cp">CP:</div>
-                            <input type="text" name="cp" id="cp" placeholder="Ingresa el codigo postal" required maxlength="5" onkeypress="return solonumeros(event)">
-                        </div>
-                        <div class="field">
-                            <button class="firstNext next">Next</button>
-                        </div>
+
+
+            <div class="page slide-page">
+                <div class="title">Datos Personales:</div>
+                <br>
+                    <div class="field">
+                        <div class="label" for="nombre">Nombre(s):</div>
+                        <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre completo" maxlength="60" onkeypress="return sololetrasespacio(event)">
+                    </div>
+                    <div class="field">
+                        <div class="label" for="ap_paterno">Apellido Paterno:</div>
+                        <input type="text" name="ap_paterno" id="ap_paterno" placeholder="Ingresa tu apellido paterno" maxlength="60" onkeypress="return sololetras(event)">
+                    </div>
+                    <div class="field">
+                        <div class="label" for="ap_materno">Apellido Materno:</div>
+                        <input type="text" name="ap_materno" id="ap_materno" placeholder="Ingresa tu apellido materno" maxlength="60" onkeypress="return sololetras(event)">
+                    </div>
+                    <div class="field">
+                        <div class="label" for="telefono">Telefono de Casa:</div>
+                        <input type="text" name="telefono" id="telefono" placeholder="Ingresa tu telefono" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
+                    </div>
+                    <div class="field">
+                        <div class="label" for="celular">Telefono Celular:</div>
+                        <input type="text" name="celular" id="celular" placeholder="Ingresa tu número de celular" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
                     </div>
 
-
-                <div class="page">
-                    <div class="title">Dependencia:</div>
-                    <br>
-
-                        <div class="field">
-                            <div class="label" for="nombre_depen">Nombre de Dependencia:</div>
-                            <input type="text" name="nombre_depen" id="nombre_depen" placeholder="Ingresa la dependencia" required maxlength="60" onkeypress="return sololetras(event)">
-                        </div>
-
-                        <div class="field btns">
-                            <button class="prev-1 prev">Previous</button>
-                            <button class="next-1 next">Next</button>
-                        </div>
+                    <div class="field">
+                        <button class="firstNext next">Next</button>
+                    </div>
                 </div>
 
 
-                <div class="page">
-                    <div class="title">Responsable Directo:</div>
-                    <br>
-                    <div class="field">
-                        <div class="label" for="nom_responsable">Nombre:</div>
-                        <input type="text" name="nom_responsable" id="nom_responsable" placeholder="Ingresa el nombre completo" maxlength="60" onkeypress="return sololetrasespacio(event)">
+            <div class="page">
+                <div class="title">Domicilio:</div>
+                <br>
+
+                <div class="field">
+                    <div class="label" for="ciudad">Ciudad:</div>
+                    <input type="text" name="ciudad" id="ciudad" placeholder="Ingresa tu ciudad" required maxlength="60" onkeypress="return sololetras(event)">
+                </div>
+                <div class="field">
+                    <div class="label" for="alcaldia">Alcaldia/Municipio:</div>
+                    <input type="text" name="alcaldia" id="alcaldia" placeholder="Ingresa tu alcaldia o municipio" required maxlength="60" onkeypress="return sololetras(event)">
+                </div>
+                <div class="field">
+                    <div class="label" for="colonia">Colonia:</div>
+                    <input type="text" name="colonia" id="colonia" placeholder="Ingresa tu colonia" required maxlength="60" onkeypress="return sololetras(event)">
+                </div>
+                <div class="field">
+                    <div class="label" for="calle">Calle:</div>
+                    <input type="text" name="calle" id="calle" placeholder="Ingresa tu calle" required maxlength="60">
+                </div>
+                <div class="field">
+                    <div class="label" for="num_ext">Numero Ext.:</div>
+                    <input type="text" name="num_ext" id="num_ext" placeholder="Ingresa tu numero exterior" required maxlength="5" onkeypress="return solonumeros(event)">
+                </div>
+                <div class="field">
+                    <div class="label" for="num_int">Numero Int.:</div>
+                    <input type="text" name="num_int" id="num_int" placeholder="Ingresa tu numero interior" required maxlength="5" onkeypress="return solonumeros(event)">
+                </div>
+                <div class="field">
+                    <div class="label" for="cp">CP:</div>
+                    <input type="text" name="cp" id="cp" placeholder="Ingresa tu codigo postal" required maxlength="5" onkeypress="return solonumeros(event)">
+                </div>
+
+                    <div class="field btns">
+                        <button class="prev-1 prev">Previous</button>
+                        <button class="next-1 next">Next</button>
                     </div>
-                    <div class="field">
-                        <div class="label" for="ap_responsable">Apellido Paterno:</div>
-                        <input type="text" name="ap_responsable" id="ap_responsable" placeholder="Ingresa el apellido paterno" maxlength="60" onkeypress="return sololetras(event)">
-                    </div>
-                    <div class="field">
-                        <div class="label" for="am_responsable">Apellido Materno:</div>
-                        <input type="text" name="am_responsable" id="am_responsable" placeholder="Ingresa el apellido materno" maxlength="60" onkeypress="return sololetras(event)">
-                    </div>
-                    <div class="field">
-                        <div class="label" for="telefono">Telefono:</div>
-                        <input type="text" name="telefono" id="telefono" placeholder="Ingresa el telefono" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
-                    </div>
-                    <div class="field">
-                        <div class="label" for="email_responsable">E-mail:</div>
-                        <input type="text" name="email_responsable" id="email_responsable" placeholder="Ingresa el correo electronico" required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
-                    </div>
-                        <div class="field btns">
-                            <button class="prev-2 prev">Previous</button>
-                            <button class="next-2 next">Next</button>
+            </div>
+
+
+            <div class="page">
+                <div class="title">Datos Escolares:</div>
+                <br>
+                <div class="field">
+                    <div class="label" for="carrera">Carrera:</div>
+                    <div class="col-md-6" type="text">
+                        <select type="text" name="carrera" id="carrera">
+                        <!--<option value="1"> Superadmin </option>-->
+                        <option value="Técnico en informática"> Técnico en informática</option>
+                        <option value="Técnico en contaduría"> Técnico en contaduría  </option>
+                        <option value="Técnico en administración"> Técnico en administración  </option>
+                        <option value="Técnico en administración de empresas turísticas"> Técnico en administración de empresas turísticas</option>
+                        <option value="Técnico en gestión de la ciberseguridad"> Técnico en gestión de la ciberseguridad</option>
+                        </select>
+                        @error('carrera')
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                        </div>
+                </div>
+                <div class="field">
+                    <div class="label" for="semestre">Semestre:</div>
+                    <div class="col-md-6" type="text">
+                        <select type="text" name="semestre" id="semestre">
+                        <!--<option value="1"> Superadmin </option>-->
+                        <option value="1"> 1 </option>
+                        <option value="2"> 2 </option>
+                        <option value="3"> 3 </option>
+                        <option value="4"> 4</option>
+                        <option value="5"> 5</option>
+                        <option value="6"> 6</option>
+                        </select>
+                        @error('semestre')
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                         </div>
                 </div>
 
-
-                <div class="page">
-                    <div class="title">Fechas:</div>
-                    <br>
-                         <div class="field">
-                            <div class="label" for="No_registro">No. de Registro:</div>
-                            <input type="No_registro" name="No_registro" id="No_registro" placeholder="Ingresa el numero de registro" required maxlength="20" onkeypress="return solonumeros(event)">
-                        </div>
-                        <div class="field">
-                            <div class="label" for="fecha_inicio">Fecha de Inicio:</div>
-                            <input type="date" value="2021-05-02" min="2020-01-01" max="2021-12-01" name="fecha_inicio" id="fecha_inicio">
-                        </div>
-                        <div class="field">
-                            <div class="label" for="fecha_termino">Fecha de Término:</div>
-                            <input type="date" value="2021-05-02" min="2020-01-01" max="2021-12-01" name="fecha_termino" id="fecha_termino">
-                        </div>
-                        <div class="field">
-                            <div class="label" for="fecha_inscripcion">Fecha de Inscripción:</div>
-                            <input type="date" value="2021-05-02" min="2020-01-01" max="2021-12-01" name="fecha_inscripcion" id="fecha_inscripcion">
-                        </div>
-                        <div class="field btns">
-                            <button class="prev-3 prev">Previous</button>
-                            <button class="submit">Actualizar</button>
+                <div class="field">
+                    <div class="label" for="grupo">Grupo:</div>
+                    <input type="text" name="grupo" id="grupo" placeholder="Ingresa tu grupo" required maxlength="5">
+                </div>
+                <div class="field">
+                    <div class="label" for="turno">Turno:</div>
+                    <div class="col-md-6" type="text">
+                        <select type="text" name="turno" id="turno">
+                        <!--<option value="1"> Superadmin </option>-->
+                        <option value="Matutino"> Matutino </option>
+                        <option value="Vespertino"> Vespertino </option>
+                        <option value="Mixto"> Mixto </option>
+                        </select>
+                        @error('turno')
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                         </div>
                 </div>
 
+                    <div class="field btns">
+                        <button class="prev-2 prev">Previous</button>
+                        <button class="next-2 next">Next</button>
+                    </div>
+            </div>
 
-            </form>
-        </div>
+
+            <div class="page">
+                <div class="title">Datos de Usuario:</div>
+                <br>
+                     <div class="field">
+                        <div class="label" for="id">Matricula:</div>
+                        <input type="text" name="id" id="id" value="{{$Users->id}}" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
+                    </div>
+                    <div class="field">
+                        <div class="label" for="email">E-mail:</div>
+                        <input type="text" name="email" id="email" value="{{$Users->email}}" required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
+                    </div>
+                    <div class="field">
+                        <div class="label" for="password">Password:</div>
+                        <input type="password" name="password" id="password" placeholder="Contraseña" required>
+                    </div>
+
+                    <div class="field btns">
+                        <button class="prev-3 prev">Previous</button>
+                        <button class="submit">Submit</button>
+                    </div>
+            </div>
+
+
+        </form>
     </div>
+</div>
 
 <!-- *******************  Fin del Container **********************************-->
 </div>
 
+@endsection
 
+@section('script')
+<script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"> </script>
 
-
+<script src="{{asset('js/Pantallas_Alumno_Servicio/Registros/NuevoRegistro.js')}}"></script>
 @endsection
