@@ -37,6 +37,23 @@
         @error('ruta')
             <small class="text-danger">{{$message}} </small>
         @enderror
+
+        <label>Estado</label>
+        <div class="col-md-6" type="text">
+             <select name="estado">
+                 <!--<option value="1"> Superadmin </option>-->
+                 <option value="1"> Publicar </option>
+                 <option value="0"> Ocultar </option>
+             </select>
+                 @error('estado')
+                  <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                  </span>
+                 @enderror
+        </div>
+        <br>
+
+
         <button type="submit">Subir nueva imagen</button>
     </form>
 

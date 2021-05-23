@@ -1,9 +1,9 @@
-@extends('Pantallas_Principales.navbarconsultaBannerInicio')
+@extends('Pantallas_Principales.navbarconsultaBannerBecasInhabilitadas')
 
-@section('title', 'Consulta Banner Home')
+@section('title', 'Consulta Banner Becas')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/Pantallas_Principales/consultaBannerInicio.css')}}">
+<link rel="stylesheet" href="{{asset('css/Pantallas_Principales/consultaBannerBecas.css')}}">
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
 <div class="container">
     <div class="informacion">
       <div class="contact-info">
-        <h3 class="title">"Imagenes de home habilitadas"</h3>
+        <h3 class="title">"Imagenes inhabilitadas de becas "</h3>
       </div>
 
     <div class="tabla-consulta">
@@ -22,13 +22,13 @@
                  <td>Imagen</td>
 
             </tr>
-               @foreach($bannerInicio as $bannerInicioo)
+               @foreach($bannerBecas as $bannerBecass)
                <tr>
                  <td>
                  <?php /*<a class="boton_personalizado" href="{{url('showPrueba', $bannerServicio->id)}}">Ver</a> */ ?>
-                 <a class="boton_personalizado" href="/EditarFormBannerInicio/{{$bannerInicioo->id}}">Editar</a>
-                 <td>{{$bannerInicioo->id}}</td>
-                 <td><img src="img/carrusel/{{$bannerInicioo->ruta}}" width="150"/></td>
+                 <a class="boton_personalizado" href="/EditarFormBannerBecas/{{$bannerBecass->id}}">Editar</a>
+                 <td>{{$bannerBecass->id}}</td>
+                 <td><img src="img/carrusel/{{$bannerBecass->ruta}}" width="150"/></td>
 
                 <tr>
                @endforeach

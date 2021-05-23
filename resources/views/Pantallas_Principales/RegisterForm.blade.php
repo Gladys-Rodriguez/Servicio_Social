@@ -1,387 +1,234 @@
-@extends('Pantallas_Principales.navbarRegisterForm')
+@extends('Pantallas_Alumno_Servicio.Layout_Alumno.Layout_Alumno2')
+
 
 @section('title', 'Registro')
 
 @section('css')
 
-<link rel="stylesheet" href="{{asset('css/Pantallas_Principales/RegisterForm_V2.css')}}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<link rel="stylesheet" href="{{asset('css/Pantallas_Alumno_Servicio/FormRegistro.css')}}">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+
 @endsection
 
 @section('content')
 
-<!-- **************************** INICIO FORMULARIO STEP BY STEP **************************** -->
-<div class="container">
+<!-- *********** PARTE DE DATOS DE DIRECCION **************** -->
 
-    <div class="progress-bar">
-        <div class="step">
-            <p>Personal</p>
-                <div class="bullet">
-                    <span></span>
-                </div>
-         <div class="check fas fa-check"></div>
+<br>
+
+ <form action="" class="formulario" id="formulario">
+
+    <div class="step step1">
+
+
+   <!-- <h3 class="title">Datos de Domicilio</h3>
+    <br> -->
+    <!-- Grupo: Ciudad -->
+<!--    <div class="formulario__grupo" id="grupo__ciudad">
+        <label for="ciudad" class="formulario__label">Ciudad</label>
+        <div class="formulario__grupo-input">
+            <input type="text" class="formulario__input" name="ciudad" id="ciudad" placeholder="CDMX / Edo. Mexico">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
-        <div class="step">
-            <p>Domicilio</p>
-                <div class="bullet">
-                    <span></span>
-                </div>
-        <div class="check fas fa-check"></div>
+        <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+    </div>
+-->
+    <!-- Grupo: Alcaldia -->
+<!--    <div class="formulario__grupo" id="grupo__alcaldia">
+        <label for="alcaldia" class="formulario__label">Alcaldia o Municipio</label>
+        <div class="formulario__grupo-input">
+            <input type="text" class="formulario__input" name="alcaldia" id="alcaldia" placeholder="">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
-        <div class="step">
-            <p>Escolares</p>
-                <div class="bullet">
-                    <span></span>
-                </div>
-        <div class="check fas fa-check"></div>
+        <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+    </div>
+-->
+    <!-- Grupo: Colonia -->
+<!--    <div class="formulario__grupo" id="grupo__colonia">
+        <label for="colonia" class="formulario__label">Colonia</label>
+        <div class="formulario__grupo-input">
+            <input type="colonia" class="formulario__input" name="colonia" id="colonia">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
-        <div class="step">
-            <p>Usuario</p>
-                <div class="bullet">
-                    <span></span>
-                </div>
-        <div class="check fas fa-check"></div>
+        <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+    </div>
+-->
+    <!-- Grupo:Calle -->
+<!--    <div class="formulario__grupo" id="grupo__calle">
+        <label for="calle" class="formulario__label">Calle</label>
+        <div class="formulario__grupo-input">
+            <input type="calle" class="formulario__input" name="calle" id="calle">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
+        <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+    </div>
+-->
+    <!-- Grupo:  Num_Ext -->
+<!--    <div class="formulario__grupo" id="grupo__num_ext">
+        <label for="num_ext" class="formulario__label">Num. Ext</label>
+        <div class="formulario__grupo-input">
+            <input type="num_ext" class="formulario__input" name="num_ext" id="num_ext" placeholder="">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+    </div>
+-->
+    <!-- Grupo: Num_Int -->
+<!--    <div class="formulario__grupo" id="grupo__num_int">
+        <label for="num_int" class="formulario__label">Num. Int</label>
+        <div class="formulario__grupo-input">
+            <input type="num_int" class="formulario__input" name="num_int" id="num_int" placeholder="">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+    </div>
+-->
+    <!-- Grupo: CP -->
+<!--    <div class="formulario__grupo" id="grupo__cp">
+        <label for="cp" class="formulario__label">C.P.</label>
+        <div class="formulario__grupo-input">
+            <input type="cp" class="formulario__input" name="cp" id="cp" placeholder="">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
     </div>
 
-<!-- ************************** INICIO DEL FORMULARIO ********************************** -->
-<div class="form-outer">
-    <div class="separa">
-        <form action="{{route('registros.store')}}" method="POST" autocomplete="off" id="formulario">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
 
-
-            <div class="page slide-page">
-                <div class="title">Datos Personales:</div>
-                <br>
-                <!-- Grupo: Nombre -->
-                <div class="formulario__grupo" id="grupo__nombre">
-                    <div class="field">
-                        <div class="label" for="nombre">Nombre(s):</div>
-                        <div class="formulario__grupo-input">
-                            <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Ingresa tu nombre completo">
-                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                        </div>
-
-                    </div>
-                    <p class="formulario__input-error">El nombre no puede contener caracteres especiales.</p>
-
-                </div>
-                <!-- Grupo: Apellido Paterno -->
-                <div class="formulario__grupo" id="grupo__ap_paterno">
-                    <div class="field">
-                        <div class="label" for="ap_paterno">Apellido Paterno:</div>
-                        <div class="formulario__grupo-input">
-                            <input type="text" class="formulario__input" name="ap_paterno" id="ap_paterno" placeholder="Ingresa tu apellido paterno">
-                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                        </div>
-                    </div>
-                    <p class="formulario__input-error">El Apellido Paterno no puede contener caracteres especiales.</p>
-                </div>
-                <!-- Grupo: Apellido Materno -->
-                <div class="formulario__grupo" id="grupo__ap_materno">
-                        <div class="field">
-                            <div class="label" for="ap_materno">Apellido Materno:</div>
-                            <div class="formulario__grupo-input">
-                                <input type="text" class="formulario__input" name="ap_materno" id="ap_materno" placeholder="Ingresa tu apellido materno">
-                                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                            </div>
-                        </div>
-                        <p class="formulario__input-error">El Apellido Materno no puede contener caracteres especiales.</p>
-                    </div>
-
-                <!-- Grupo: Telefono -->
-                <div class="formulario__grupo" id="grupo__telefono">
-                        <div class="field">
-                            <div class="label" for="telefono">Telefono Local:</div>
-                            <div class="formulario__grupo-input">
-                                <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="Ingresa tu telefono de casa">
-                                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                            </div>
-                        </div>
-                        <p class="formulario__input-error">El Telefono no puede contener caracteres especiales.</p>
-                    </div>
-                <!-- Grupo: Celular -->
-                <div class="formulario__grupo" id="grupo__celular">
-                        <div class="field">
-                            <div class="label" for="celular">Telefono Celular:</div>
-                            <div class="formulario__grupo-input">
-                                <input type="text" class="formulario__input" name="celular" id="celular" placeholder="Ingresa tu telefono celular">
-                                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                            </div>
-                        </div>
-                        <p class="formulario__input-error">El Telefono no puede contener caracteres especiales.</p>
-                    </div>
-
-                    <div class="field">
-                        <button class="firstNext next">Next</button>
-                    </div>
-                <!--    Mensaje para marcar que hay campos incorrectos en el formulario
-                    <div class="formulario__mensaje" id="formulario__mensaje">
-                        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
-                    </div> -->
-                </div>
-
-
-
-
-            <div class="page">
-                <div class="title">Domicilio:</div>
-                <br>
-                 <!-- Grupo: Ciudad -->
-                 <div class="formulario__grupo" id="grupo__ciudad">
-                    <div class="field">
-                        <div class="label" for="ciudad">Ciudad:</div>
-                        <div class="formulario__grupo-input">
-                            <input type="text" class="formulario__input" name="ciudad" id="ciudad" placeholder="Ingresa tu Ciudad">
-                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                        </div>
-                    </div>
-                    <p class="formulario__input-error">La ciudad no puede contener caracteres especiales.</p>
-                </div>
-
-                 <!-- Grupo: Alcaldia/Municipio -->
-                <div class="formulario__grupo" id="grupo__alcaldia">
-                    <div class="field">
-                        <div class="label" for="alcaldia">Alcaldia/Municipio:</div>
-                        <div class="formulario__grupo-input">
-                            <input type="text" class="formulario__input" name="alcaldia" id="alcaldia" placeholder="Ingresa tu Alcaldia o Municipio">
-                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                        </div>
-                    </div>
-                    <p class="formulario__input-error">Tu alcaldia no puede contener caracteres especiales.</p>
-                </div>
-                 <!-- Grupo: Colonia -->
-                 <div class="formulario__grupo" id="grupo__colonia">
-                    <div class="field">
-                        <div class="label" for="colonia">Colonia:</div>
-                        <div class="formulario__grupo-input">
-                            <input type="text" class="formulario__input" name="colonia" id="colonia" placeholder="Ingresa tu colonia">
-                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                        </div>
-                    </div>
-                    <p class="formulario__input-error">Tu colonia no puede contener caracteres especiales.</p>
-                </div>
-
-                 <!-- Grupo: Calle -->
-                 <div class="formulario__grupo" id="grupo__calle">
-                    <div class="field">
-                        <div class="label" for="calle">Calle:</div>
-                        <div class="formulario__grupo-input">
-                            <input type="text" class="formulario__input" name="calle" id="calle" placeholder="Ingresa tu Calle">
-                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                        </div>
-                    </div>
-                    <p class="formulario__input-error">Tu calle no puede contener caracteres especiales.</p>
-                </div>
-
-                 <!-- Grupo: Numero Ext. -->
-                 <div class="formulario__grupo" id="grupo__num_ext">
-                    <div class="field">
-                        <div class="label" for="ap_materno">Numero Ext.:</div>
-                        <div class="formulario__grupo-input">
-                            <input type="text" class="formulario__input" name="num_ext" id="num_ext" placeholder="Ingresa tu numero ext">
-                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                        </div>
-                    </div>
-                    <p class="formulario__input-error">No has ingresado ningún dato.</p>
-                </div>
-
-                 <!-- Grupo: Numero Int -->
-
-
-                <div class="field">
-                    <div class="label" for="num_int">Numero Int.:</div>
-                    <input type="text" name="num_int" id="num_int" placeholder="Ingresa tu numero interior" required maxlength="5" onkeypress="return solonumeros(event)">
-                </div>
-
-                 <!-- Grupo: CP -->
-                 <div class="formulario__grupo" id="grupo__cp">
-                    <div class="field">
-                        <div class="label" for="cp">CP:</div>
-                        <div class="formulario__grupo-input">
-                            <input type="text" class="formulario__input" name="cp" id="cp" placeholder="Ingresa tu codigo postal">
-                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                        </div>
-                    </div>
-                    <p class="formulario__input-error">Tu codigo postal no puede contener caracteres especiales.</p>
-                </div>
-
-
-
-                    <div class="field btns">
-                        <button class="prev-1 prev">Previous</button>
-                        <button class="next-1 next">Next</button>
-                    </div>
-
-                  <!--  Mensaje para marcar que hay campos incorrectos en el formulario
-                    <div class="formulario__mensaje" id="formulario__mensaje">
-                        <p><i class="fas fa-exclamation-triangle"></i>
-                            <b>Error:</b> Por favor rellena el formulario correctamente. </p>
-                    </div> -->
-            </div>
-
-
-            <div class="page">
-                <div class="title">Datos Escolares:</div>
-                <br>
-
-                <!-- Grupo: Carrera -->
-                <div class="field">
-                    <div class="label" for="carrera">Carrera:</div>
-                    <input type="text" name="carrera" id="carrera" placeholder="Ingresa tu carrera" required maxlength="20" onkeypress="return sololetras(event)">
-                </div>
-
-
-                <!-- Grupo: Semestre -->
-                <div class="field">
-                    <div class="label" for="semestre">Semestre:</div>
-                    <div class="col-md-6" type="text">
-                        <select type="text" name="semestre" id="semestre">
-                        <!--<option value="1"> Superadmin </option>-->
-                        <option value="1"> 1 </option>
-                        <option value="2"> 2 </option>
-                        <option value="3"> 3 </option>
-                        <option value="4"> 4</option>
-                        <option value="5"> 5</option>
-                        <option value="6"> 6</option>
-                        </select>
-                        @error('semestre')
-                        <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                        </div>
-
-                </div>
-
-                <!-- Grupo: Grupo -->
-                <div class="formulario__grupo" id="grupo__grupo">
-                    <div class="field">
-                        <div class="label" for="grupo">CP:</div>
-                        <div class="formulario__grupo-input">
-                            <input type="text" class="formulario__input" name="grupo" id="grupo" placeholder="Ingresa tu grupo">
-                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                        </div>
-                    </div>
-                    <p class="formulario__input-error">Tu grupo no puede contener caracteres especiales.</p>
-                </div>
-
-                <!-- Grupo: Turno -->
-                <div class="field">
-                    <div class="label" for="turno">Turno:</div>
-                    <div class="col-md-6" type="text">
-                        <select type="text" name="turno" id="turno">
-                        <!--<option value="1"> Superadmin </option>-->
-                        <option value="Matutino"> Matutino </option>
-                        <option value="Vespertino"> Vespertino </option>
-                        <option value="Mixto"> Mixto </option>
-                        </select>
-                        @error('turno')
-                        <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                        </div>
-                </div>
-
-                    <div class="field btns">
-                        <button class="prev-2 prev">Previous</button>
-                        <button class="next-2 next">Next</button>
-                    </div>
-            </div>
-
-
-            <div class="page">
-                <div class="title">Datos de Usuario:</div>
-                <br>
-
-                <!-- Grupo: Matricula. -->
-                    <div class="formulario__grupo" id="grupo__matricula">
-                        <div class="field">
-                            <div class="label" for="matricula">Matricula:</div>
-                            <div class="formulario__grupo-input">
-                                <input type="text" class="formulario__input" name="matricula" id="matricula" placeholder="Ingresa tu matricula">
-                                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                            </div>
-                        </div>
-                        <p class="formulario__input-error">Tu matricula no puede contener caracteres especiales.</p>
-                    </div>
-
-                <!-- Grupo: Email -->
-                <div class="formulario__grupo" id="grupo__email">
-                        <div class="field">
-                            <div class="label" for="email">CP:</div>
-                            <div class="formulario__grupo-input">
-                                <input type="text" class="formulario__input" name="email" id="email" placeholder="correo@hotmail.com">
-                                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                            </div>
-                        </div>
-                        <p class="formulario__input-error">Tu email es incorrecto.</p>
-                </div>
-
-                <!-- Grupo: Password -->
-                 <div class="formulario__grupo" id="grupo__password">
-                        <div class="field">
-                            <div class="label" for="password">Password:</div>
-                            <div class="formulario__grupo-input">
-                                <input type="password" class="formulario__input" name="password" id="password" placeholder="Contraseña">
-                                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                            </div>
-                        </div>
-                        <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
-                </div>
-
-                <!-- Grupo: Password2 -->
-                <div class="formulario__grupo" id="grupo__password2">
-                    <div class="field">
-                        <div class="label" for="password2">Repetir Contraseña:</div>
-                        <div class="formulario__grupo-input">
-                            <input type="password" class="formulario__input" name="password2" id="password2" placeholder="Contraseña">
-                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                        </div>
-                    </div>
-                    <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
-            </div>
-
-
-
-
-
-
-
-                <div class="formulario__mensaje" id="formulario__mensaje">
-                    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
-                </div>
-
-                    <div class="field btns">
-                        <button class="prev-3 prev">Previous</button>
-                        <button type="submit" class="submit" class="formulario__btn">Submit</button>
-
-
-                    </div>
-
-
-
-
-            </div>
-
-
-        </form>
+    <div class="formulario__mensaje" id="formulario__mensaje">
+        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
     </div>
-</div>
+-->
+    <!--  <div class="formulario__grupo formulario__grupo-btn-enviar">
+        <button type="submit" class="formulario__btn">Next</button>
+        <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
 
-<!-- *******************  Fin del Container **********************************-->
-</div>
+    </div> -->
+
+    <!--<div class="formulario__grupo formulario__grupo-btn-next">
+        <button type="button" class="next-btn">Next</button>
+    </div>-->
+<!--    <div class="button-group">
+
+        <button id="next" class="button">
+           next
+        </button>
+     </div>
+
+    </div>
+<br>
+-->
+<!-- *********** FIN DE DATOS DE DIRECCION **************** -->
+
+<!-- *********** PARTE DE DATOS PERSONALES **************** -->
+
+
+<!-- form action="" class="formulario" id="formulario"> -->
+    <div class="step step2 hidden" >
+    <h3 class="title">Datos Personales</h3>
+<br>
+    <!-- Grupo: Usuario -->
+    <div class="formulario__grupo" id="grupo__usuario">
+        <label for="usuario" class="formulario__label">Usuario</label>
+        <div class="formulario__grupo-input">
+            <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="john123">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+    </div>
+
+    <!-- Grupo: Nombre -->
+    <div class="formulario__grupo" id="grupo__nombre">
+        <label for="nombre" class="formulario__label">Nombre</label>
+        <div class="formulario__grupo-input">
+            <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="John Doe">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+    </div>
+
+    <!-- Grupo: Contraseña -->
+    <div class="formulario__grupo" id="grupo__password">
+        <label for="password" class="formulario__label">Contraseña</label>
+        <div class="formulario__grupo-input">
+            <input type="password" class="formulario__input" name="password" id="password">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+    </div>
+
+    <!-- Grupo: Contraseña 2 -->
+    <div class="formulario__grupo" id="grupo__password2">
+        <label for="password2" class="formulario__label">Repetir Contraseña</label>
+        <div class="formulario__grupo-input">
+            <input type="password" class="formulario__input" name="password2" id="password2">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
+    </div>
+
+    <!-- Grupo: Correo Electronico -->
+    <div class="formulario__grupo" id="grupo__correo">
+        <label for="correo" class="formulario__label">Correo Electrónico</label>
+        <div class="formulario__grupo-input">
+            <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+    </div>
+
+    <!-- Grupo: Teléfono -->
+    <div class="formulario__grupo" id="grupo__telefono">
+        <label for="telefono" class="formulario__label">Teléfono</label>
+        <div class="formulario__grupo-input">
+            <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="4491234567">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+    </div>
+
+    <!-- Grupo: Terminos y Condiciones -->
+<!-- <div class="formulario__grupo" id="grupo__terminos">
+        <label class="formulario__label">
+            <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+            Acepto los Terminos y Condiciones
+        </label>
+    </div>
+-->
+<!--    <div class="formulario__mensaje" id="formulario__mensaje">
+        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+    </div>
+-->
+    <div class="formulario__grupo formulario__grupo-btn-enviar">
+        <button type="submit" class="formulario__btn">Enviar</button>
+        <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+    </div>
+
+<div class="button-group">
+    <button id="previous" class="disabled button" disabled>
+       previous
+    </button>
+    <button id="next" class="button">
+       next
+    </button>
+ </div>
+    </div>
+
+
+</form>
 
 
 
+<!-- *********** FIN DE DATOS PERSONALES **************** -->
 
 
 @endsection
 
 @section('script')
-<script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"> </script>
+<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 
-<script src="{{asset('js/Pantallas_Principales/RegisterForm_V2.js')}}"></script>
+<script src="{{asset('js/Pantallas_Alumno_Servicio/FormRegistro.js')}}"></script>
+<script src="{{asset('js/Pantallas_Alumno_Servicio/steps.js')}}"></script>
+
 @endsection
+

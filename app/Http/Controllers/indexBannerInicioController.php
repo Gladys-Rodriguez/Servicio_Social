@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\bannerInicioImagen;
+use DB;
 
 class indexBannerInicioController extends Controller
 {
@@ -15,7 +16,12 @@ class indexBannerInicioController extends Controller
     public function index()
     {
         //
-        $bannerInicio= bannerInicioImagen::all();
+        /*$bannerInicio= bannerInicioImagen::all();
+        return view("Pantallas_Principales.Index_gnral", compact("bannerInicio")); */
+        $bannerInicio = DB::table('banner_inicio_imagens')
+        ->select('*')
+        ->where('estado', 1)
+        ->get();
         return view("Pantallas_Principales.Index_gnral", compact("bannerInicio"));
     }
 

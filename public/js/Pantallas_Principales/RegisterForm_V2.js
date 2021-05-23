@@ -60,7 +60,7 @@ submitBtn.addEventListener("click", function(){
   progressText[current - 1].classList.add("active");
   current += 1;
 
-  if(campos.nombre && campos.ap_paterno && campos.ap_materno && campos.telefono && campos.celular &&
+  /*if(campos.nombre && campos.ap_paterno && campos.ap_materno && campos.telefono && campos.celular &&
     campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext && campos.cp &&
     campos.grupo &&
     campos.matricula && campos.password && campos.email ){
@@ -72,7 +72,7 @@ submitBtn.addEventListener("click", function(){
   document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
     } else{
         document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
-    }
+    }*/
 });
 
 

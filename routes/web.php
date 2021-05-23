@@ -316,7 +316,6 @@ Route::resource('Practicas','registro');
 Route::post('/registrosImagenesP/(id)', [App\Http\Controllers\RegistroBannerPracticas::class, 'store'])->name('registrosImagenesP.store'); //aqui se edita la pantalla de alcance
 
 
-
 //RUTAS PARA EL LOGIN
 //Pantalla Login
 Route::get('/LoginForm', function (){
@@ -359,19 +358,30 @@ Route::get('/logout', [App\Http\Controllers\pruebaController::class, 'getLogout'
 //Vista para prueba de consulta
 Route::get('/consultaPrueba', [App\Http\Controllers\consultaController::class, 'index'])->name('home');
 
-//Vista para consulta de imagenes de banner de servicio
+//Vista para consulta de imagenes de banner de inicio
 Route::get('/consultaBannerInicio', [App\Http\Controllers\consultaBannerInicioController::class, 'index'])->name('home');
 
+//Vista para consulta de imagenes de banner de inicio inhabilitadas
+Route::get('/consultaBannerInicioInhabilitadas', [App\Http\Controllers\consultaBannerInicioInhabilitadasController::class, 'index'])->name('home');
 
 //Vista para consulta de imagenes de banner de servicio
 Route::get('/consultaBannerServicio', [App\Http\Controllers\consultaBannerServicioController::class, 'index'])->name('home');
 
+//Vista para consulta de imagenes inhabilitadas de banner de servicio
+Route::get('/consultaBannerServicioInhabilitadas', [App\Http\Controllers\consultaBannerServicioInhabilitadasController::class, 'index'])->name('home');
+
 //Vista para consulta de imagenes de banner de becas
 Route::get('/consultaBannerBecas', [App\Http\Controllers\consultaBannerBecasController::class, 'index'])->name('home');
+
+//Vista para consulta de imagenes inhabilitadas de banner de becas
+Route::get('/consultaBannerBecasInhabilitadas', [App\Http\Controllers\consultaBannerBecasInhabilitadasController::class, 'index'])->name('home');
+
 
 //Vista para consulta de imagenes de banner de practicas
 Route::get('/consultaBannerPracticas', [App\Http\Controllers\consultaBannerPracticasController::class, 'index'])->name('home');
 
+//Vista para consulta de imagenes inhabilitadas de banner de practicas
+Route::get('/consultaBannerPracticasInhabilitadas', [App\Http\Controllers\consultaBannerPracticasInhabilitadasController::class, 'index'])->name('home');
 
 //Vista para consulta de todos los usuarios
 Route::get('/consultaUsuarios', [App\Http\Controllers\consultaUsuariosController::class, 'index'])->name('home');
@@ -434,6 +444,8 @@ Route::delete('/EditarFormBannerPracticas3/{id}', [App\Http\Controllers\editarBa
 Route::get('/prueba', function (){
     return view('Pantallas_Principales.prueba');
 }) -> name('prueba');
+
+Route::get('/datosPersonalesA', [App\Http\Controllers\registro::class, 'index'])->name('datosPersonalesA.index');
 
 //------------------------IVAN TERMINO------------------------------------
 

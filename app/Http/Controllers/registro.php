@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Unique;
 use App\Models\Usuario;
 use App\Models\User;
+
 use Illuminate\Support\Facades\DB;
 
 
