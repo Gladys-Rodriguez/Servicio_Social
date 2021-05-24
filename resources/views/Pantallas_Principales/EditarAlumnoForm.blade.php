@@ -120,7 +120,7 @@
 <!-- ************************** INICIO DEL FORMULARIO ********************************** -->
 <div class="form-outer">
     <div class="separa">
-            <form action="/EditarAlumnoForm2/{$alumno->id_alumnos}/{{$Users->id}}" method="POST" autocomplete="off" id="servicios">
+            <form action="/EditarAlumnoForm2/{{$Users->id}}" method="POST" autocomplete="off" id="servicios">
             <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
             <input type="hidden" name="_method" value="PUT">
 

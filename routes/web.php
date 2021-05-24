@@ -403,8 +403,8 @@ Route::get('/pruebaEditarForm/{id}', [App\Http\Controllers\editarController::cla
 Route::put('/pruebaEditarForm2/{id}', [App\Http\Controllers\editarController::class, 'update'])->name('pruebaEditarForm2.update');
 
 //editar datos de alumno
-Route::get('/EditarAlumnoForm/{id_alumnos}/{id}', [App\Http\Controllers\editarAlumnoController::class, 'edit'])->name('home');
-Route::put('/EditarAlumnoForm2/{id_alumnos}/{id}', [App\Http\Controllers\editarAlumnoController::class, 'update'])->name('EditarAlumnoController.update');
+Route::get('/EditarAlumnoForm/{id}', [App\Http\Controllers\editarAlumnoController::class, 'edit'])->name('home');
+Route::put('/EditarAlumnoForm2/{id}', [App\Http\Controllers\editarAlumnoController::class, 'update'])->name('EditarAlumnoController.update');
 
 
 //Pantalla de editar de imagenes de inicio

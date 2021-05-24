@@ -82,18 +82,18 @@ class editarAlumnoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id_alumnos,$id)
+    public function edit($id)
     {
         //
 
 
-        $alumno= alumno::findOrFail($id_alumnos);
+       /* $alumno= alumno::findOrFail($id_alumnos);*/
         $Users= User::findOrFail($id);
-        return view("Pantallas_Principales.EditarAlumnoForm", compact("alumno","Users"));
+        return view("Pantallas_Principales.EditarAlumnoForm", compact("Users"));
 
-        /*$id_users = Auth::findOrFail($id);
+        /*$id_users = Auth::user()->$id;
         $alumnos=DB::table('alumnos')->where('id_usuarios',$id_users)->get();
-        $Users=DB::table('users')->where('id',$id_users)->get();
+        $users=DB::table('users')->where('id',$id_users)->get();
         $datos=DB::table('datos')
         ->join('alumnos', 'datos.id_datos', 'alumnos.id_datos')
         ->where('alumnos.id_usuarios',$id_users)
@@ -103,8 +103,7 @@ class editarAlumnoController extends Controller
         ->where('alumnos.id_usuarios',$id_users)
         ->get();
 
-        return view('Pantallas_Principales.EditarAlumnoForm', compact('alumnos', 'Users', 'datos', 'direccions'));*/
-
+        return view('Pantallas_Principales.EditarAlumnoForm', compact('alumnos', 'users', 'datos', 'direccions'));*/
     }
 
     /**

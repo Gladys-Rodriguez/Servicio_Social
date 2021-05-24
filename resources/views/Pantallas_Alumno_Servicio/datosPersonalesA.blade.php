@@ -48,7 +48,7 @@
         @foreach ($alumnos as $alumno)
         @foreach ($users as $user)
         <tr>
-            <td><a class="boton_personalizado" href="/EditarAlumnoForm/{{$alumno->id_alumnos}}/{{$user->id}}">Editar</a></td>
+            <td><a class="boton_personalizado" href="/EditarAlumnoForm/{{$user->id}}">Editar</a></td>
             <td align="center">{{$loop->iteration}}</td>
             <td align="center">{{$dato-> nombre}}</td>
             <td align="center">{{$dato-> ap_paterno}}</td>
