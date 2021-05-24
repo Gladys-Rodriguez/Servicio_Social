@@ -276,10 +276,7 @@
                         <div class="label" for="email">E-mail:</div>
                         <input type="text" name="email" id="email" value="{{$Users->email}}" required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
                     </div>
-                    <div class="field">
-                        <div class="label" for="password">Password:</div>
-                        <input type="password" name="password" id="password" placeholder="Contraseña" required>
-                    </div>
+
 
                     <div class="field btns">
                         <button class="prev-3 prev">Previous</button>
