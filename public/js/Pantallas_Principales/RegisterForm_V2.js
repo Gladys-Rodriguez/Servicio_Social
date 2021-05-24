@@ -11,6 +11,7 @@ const progressText = document.querySelectorAll(".step p");
 const progressCheck = document.querySelectorAll(".step .check");
 const bullet = document.querySelectorAll(".step .bullet");
 let current = 1;
+const form = document.getElementById('formulario');
 
 const formulario_mensaje = document.getElementById('formulario__mensaje');
 
@@ -42,8 +43,6 @@ nextBtnSec.addEventListener("click", function(event){
 
 });
 
-
-
 nextBtnThird.addEventListener("click", function(event){
   event.preventDefault();
   slidePage.style.marginLeft = "-75%";
@@ -54,25 +53,28 @@ nextBtnThird.addEventListener("click", function(event){
 });
 
 
-submitBtn.addEventListener("click", function(){
-  bullet[current - 1].classList.add("active");
-  progressCheck[current - 1].classList.add("active");
-  progressText[current - 1].classList.add("active");
-  current += 1;
+submitBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    bullet[current - 1].classList.add("active");
+    progressCheck[current - 1].classList.add("active");
+    progressText[current - 1].classList.add("active");
+    current += 1;
 
-  /*if(campos.nombre && campos.ap_paterno && campos.ap_materno && campos.telefono && campos.celular &&
-    campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext && campos.cp &&
+
+
+  if(campos.nombre && campos.ap_paterno && campos.ap_materno && campos.telefono && campos.celular &&
+    campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext && campos.num_int && campos.cp &&
     campos.grupo &&
     campos.matricula && campos.password && campos.email ){
-  setTimeout(function(){
-    alert("Your Form Successfully Signed up");
-    location.reload();
-  },800);
+        setTimeout(function(){
+            alert("Your Form Successfully Signed up");
+            location.reload();
+        },800);
 
-  document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
-    } else{
+        document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
+        } else{
         document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
-    }*/
+        }
 });
 
 
@@ -209,6 +211,9 @@ const validarFormulario = (e) => {
 		break;
         case "num_ext":
 			validarCampo(expresiones.num_ext, e.target, 'num_ext');
+		break;
+        case "num_int":
+			validarCampo(expresiones.num_int, e.target, 'num_int');
 		break;
         case "cp":
 			validarCampo(expresiones.cp, e.target, 'cp');
