@@ -27,9 +27,10 @@
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="{{url('/Admin_Becas_Index')}}" class="nav__link active">HOME</a></li>
-                    <li class="nav__item"><a href="{{url('/Validacion_Alumno_Becas')}}" class="nav__link">VALIDACIÓN DE DOCUMENTOS</a></li>
-
+                    <li class="nav__item"><a href="{{url('/Index_Master')}}" class="nav__link">INICIO</a></li>
+                    <li class="nav__item"><a href="{{url('/RegisterFormRoles')}}" class="nav__link active">NUEVO ADMIN</a></li>
+                    <li class="nav__item"><a href="{{url('/ActivarSusA')}}" class="nav__link">ACTIVAR/SUSPENDER ADMIN</a></li>
+                    <li class="nav__item"><a href="{{url('/')}}" class="nav__link">CERRAR SESIÓN</a></li>
                 </ul>
             </div>
         </div>
@@ -69,7 +70,7 @@
         </script>
 
     <section class="section-main">
-      <h1>ADMINISTRACIÓN DE BECAS</h1>
+      <h1>AGREGAR NUEVO ADMINISTRADOR</h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->

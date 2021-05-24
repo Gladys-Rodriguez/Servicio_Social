@@ -27,8 +27,10 @@
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="{{url('/Admin_Practicas_Visitas_Index')}}" class="nav__link active">HOME</a></li>
-                    <li class="nav__item"><a href="{{url('/Validacion_Practicas_Visitas')}}" class="nav__link">VALIDACIÓN DE DOCUMENTOS</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link active">HOME</a></li>
+                    <li class="nav__item"><a href="{{url('/ConvocatoriaBecas')}}" class="nav__link">CONVOCATORIAS</a></li>
+                    <li class="nav__item"><a href="{{url('/MiBeca')}}" class="nav__link">MI BECA</a></li>
+                    <li class="nav__item"><a href="{{url('/RegisterForm')}}" class="nav__link">REGISTRO</a></li>
 
                 </ul>
             </div>
@@ -69,7 +71,7 @@
         </script>
 
     <section class="section-main">
-      <h1>ADMINISTRACIÓN DE PRÁCTICAS Y VISITAS</h1>
+      <h1>FORMATOS DE BECAS</h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->
