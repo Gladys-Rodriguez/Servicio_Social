@@ -31,7 +31,7 @@
                     <li class="nav__item"><a href="{{url('/RegisterFormRoles')}}" class="nav__link">NUEVO ADMIN</a></li>
                     <li class="nav__item"><a href="{{url('/ActivarSusA')}}" class="nav__link">ACTIVAR/SUSPENDER ADMIN</a></li>
                     <li class="nav__item"><a href="{{url('/RegisterPracticas')}}" class="nav__link">ADMIN PRACTICAS</a></li>
-                    <li class="nav__item"><a href="{{url('/')}}" class="nav__link">CERRAR SESIÓN</a></li>
+                    <li class="nav__item"><a href="{{url('/logout')}}" class="nav__link"> CERRAR SESIÓN</a></li>
 
                 </ul>
             </div>

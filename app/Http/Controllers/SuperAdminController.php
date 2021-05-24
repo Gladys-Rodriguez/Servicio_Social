@@ -5,32 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 
-class BecasController extends Controller
+class SuperAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('becas',['only'=> ['index']]);
+        $this->middleware('adminmaster',['only'=> ['index']]);
     }
 
     public function index()
     {
         //
-        $datos = \DB::table('administradors')
-        ->select ('Estado')->where('Estado','=','1')->get();
-
-        if($datos == 1){
-            return view('/Admin_Becas_Index3');
-        }
-        else{
-            return view('/Registro_exitoso');
-        }
-
+        return view('/Index_Master');
     }
 
     /**
@@ -105,6 +97,4 @@ class BecasController extends Controller
         Auth::logout();
         return redirect('/');
     }
-
-
 }

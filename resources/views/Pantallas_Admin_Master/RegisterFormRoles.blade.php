@@ -112,7 +112,7 @@
         <label>Rol</label>
         <div class="col-md-6" type="text">
              <select name="id_rol">
-                 <!--<option value="1"> Superadmin </option>-->
+                 <option value="1"> Superadmin </option>
                  <option value="2"> Admin Servicio Social </option>
                  <option value="3"> Admin Becas </option>
                  <option value="4"> Admin Prácticas </option>

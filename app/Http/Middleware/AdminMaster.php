@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class Alumno
+class AdminMaster
 {
     /**
      * Handle an incoming request.
@@ -22,7 +22,7 @@ class Alumno
                 return redirect('/Index_Master');//si es super administrador continua al HOME
             break;
 			case('2'):
-                return redirect('/AdminIndex');// si es un usuario de servicio social
+                return redirect('AdminIndex');// si es un usuario de servicio social
 			break;
             case ('3'):
                 return redirect('/Admin_Becas_Index3');//si es administrador de becas
@@ -31,7 +31,7 @@ class Alumno
                 return redirect('/Admin_Practicas_Visitas_Index2');//si es administrador de practicas
             break;
             case ('5'):
-                return $next($request);//si es alumno
+                return redirect('/Index_Alumno');//si es alumno
             break;
             case ('6'):
                 return redirect('/Docente_Index');//si es docente
@@ -40,9 +40,8 @@ class Alumno
                 return redirect('/prueba');//si es prueba
             break;
             case ('8'):
-                return redirect('/Index_Master');//si es prueba
+                return $next($request);//si es prueba
             break;
-
 
         }
     }
