@@ -11,81 +11,7 @@
 @endsection
 
 @section('content')
-<script>
-    function solonumeros(e){
-        key=e.keyCode||e.wich;
 
-        teclado=String.fromCharCode(key);
-
-        numeros="0123456789";
-
-        especiales="8-37-38-46";
-
-        teclado_especial=false;
-
-        for(var i in especiales){
-            if(key==especiales[i]){
-                teclado_especial=true;
-            }
-        }
-
-        if(numeros.indexOf(teclado)==-1 && !teclado_especial){
-            return false;
-        }
-
-    }
-    </script>
-
-
-<script>
-    function sololetras(e){
-        key=e.keyCode||e.wich;
-
-        teclado=String.fromCharCode(key);
-
-        letras="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZáéíóúÁÉÍÓÚ";
-
-        especiales="8-37-38-46";
-
-        teclado_especial=false;
-
-        for(var i in especiales){
-            if(key==especiales[i]){
-                teclado_especial=true;
-            }
-        }
-
-        if(letras.indexOf(teclado)==-1 && !teclado_especial){
-            return false;
-        }
-
-    }
-</script>
-
-<script>
-    function sololetrasespacio(e){
-        key=e.keyCode||e.wich;
-
-        teclado=String.fromCharCode(key);
-
-        letras="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZáéíóúÁÉÍÓÚ ";
-
-        especiales="8-37-38-46";
-
-        teclado_especial=false;
-
-        for(var i in especiales){
-            if(key==especiales[i]){
-                teclado_especial=true;
-            }
-        }
-
-        if(letras.indexOf(teclado)==-1 && !teclado_especial){
-            return false;
-        }
-
-    }
-</script>
 
 <div class="container">
 
@@ -127,6 +53,7 @@
             <form action="{{route('NuevoRegistro.store')}}" method="POST" autocomplete="off" id="servicios">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
 
+                {{ $errors }}
 
                 <div class="page slide-page">
                     <div class="title">Dirección de la Dependencia:</div>
@@ -134,6 +61,11 @@
                         <div class="field">
                             <div class="label" for="ciudad">Ciudad:</div>
                             <input type="text" name="ciudad" id="ciudad" placeholder="Ingresa la ciudad" required maxlength="60" onkeypress="return sololetras(event)">
+                            @error('ciudad')
+                                <br>
+                                <small>*{{message}}</small>
+                                <br>
+                            @enderror
                         </div>
                         <div class="field">
                             <div class="label" for="alcaldia">Alcaldia o Municipio:</div>
@@ -216,8 +148,13 @@
                     <br>
                          <div class="field">
                             <div class="label" for="No_registro">No. de Registro:</div>
-                            <input type="No_registro" name="No_registro" id="No_registro" placeholder="Ingresa el numero de registro" required maxlength="20" onkeypress="return solonumeros(event)">
+                            <input type="No_registro" name="No_registro" id="No_registro" placeholder="Ingresa el numero de registro">
+
+
+
+
                         </div>
+
                         <div class="field">
                             <div class="label" for="fecha_inicio">Fecha de Inicio:</div>
                             <input type="date" value="2021-05-02" min="2020-01-01" max="2021-12-01" name="fecha_inicio" id="fecha_inicio">
@@ -232,7 +169,7 @@
                         </div>
                         <div class="field btns">
                             <button class="prev-3 prev">Previous</button>
-                            <button class="submit">Submit</button>
+                            <button  class="submit">Submit</button>
                         </div>
                 </div>
 
@@ -246,7 +183,87 @@
 @endsection
 
 @section('script')
-<script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"> </script>
+<script>
 
-<script src="{{asset('js/Pantallas_Alumno_Servicio/Registros/NuevoRegistro.js')}}"></script>
+    function solonumeros(e){
+        key=e.keyCode||e.wich;
+
+        teclado=String.fromCharCode(key);
+
+        numeros="0123456789";
+
+        especiales="8-37-38-46";
+
+        teclado_especial=false;
+
+        for(var i in especiales){
+            if(key==especiales[i]){
+                teclado_especial=true;
+            }
+        }
+
+        if(numeros.indexOf(teclado)==-1 && !teclado_especial){
+            return false;
+        }
+
+    }
+    </script>
+
+
+<script>
+
+    function sololetras(e){
+        key=e.keyCode||e.wich;
+
+        teclado=String.fromCharCode(key);
+
+        letras="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZáéíóúÁÉÍÓÚ";
+
+        especiales="8-37-38-46";
+
+        teclado_especial=false;
+
+        for(var i in especiales){
+            if(key==especiales[i]){
+                teclado_especial=true;
+            }
+        }
+
+        if(letras.indexOf(teclado)==-1 && !teclado_especial){
+            return false;
+        }
+
+    }
+</script>
+
+<script>
+
+    function sololetrasespacio(e){
+        key=e.keyCode||e.wich;
+
+        teclado=String.fromCharCode(key);
+
+        letras="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZáéíóúÁÉÍÓÚ ";
+
+        especiales="8-37-38-46";
+
+        teclado_especial=false;
+
+        for(var i in especiales){
+            if(key==especiales[i]){
+                teclado_especial=true;
+            }
+        }
+
+        if(letras.indexOf(teclado)==-1 && !teclado_especial){
+            return false;
+        }
+
+    }
+</script>
+
+<script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"> </script>
+<!--<script src="{{asset('js/Pantallas_Alumno_Servicio/Registros/NuevoRegistro.js')}}"></script> -->
+
+
 @endsection

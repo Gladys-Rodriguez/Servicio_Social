@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Validation\Validator;
 
 use App\Models\dato;
 use App\Models\Usuario;
@@ -46,9 +47,37 @@ class ServiciosController extends Controller
      */
     public function store(Request $request)
     {
+        //Validacion
+       $request->validate([
+            'ciudad' => 'required',
+            'alcaldia' => 'required',
+            'colonia' => 'required',
+            'calle' => 'required',
+            'num_ext' => 'required',
+            'num_int' => 'required',
+            'cp' => 'required',
+
+            'nombre_depen' => 'required',
+            'nom_responsable' => 'required',
+            'ap_responsable' => 'required',
+            'am_responsable' => 'required',
+            'telefono' => 'required',
+            'email_responsable' => 'required',
+
+            'No_registro' => 'required',
+            'fecha_inicio' => 'required',
+            'fecha_termino' => 'required',
+            'fecha_inscripcion' => 'required'
+        ]);
+
+
+
+
         //
         $id_users = Auth::user()->id;
         $id_alumnos=alumno::where('id_usuarios',$id_users)->take(1)->get();
+
+
 
 
         DB::transaction(function () use ($request, $id_alumnos) {

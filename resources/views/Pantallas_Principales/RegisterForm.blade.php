@@ -282,7 +282,7 @@
 
                     <div class="field btns">
                         <button class="prev-3 prev">Previous</button>
-                        <button class="submit">Submit</button>
+                        <button class="submit" type="submit">Submit</button>
                     </div>
             </div>
 
