@@ -13,119 +13,120 @@ const bullet = document.querySelectorAll(".step .bullet");
 let current = 1;
 const form = document.getElementById('formulario');
 
-const formulario_mensaje = document.getElementById('formulario__mensaje');
+const formulario_mensaje = document.getElementById('formulario__mensaje')
 
-// **************** PRIMER BOTON NEXT *************************
+
+ // **************** PRIMER BOTON NEXT *************************
 nextBtnFirst.addEventListener("click", function(event){
-  event.preventDefault();
-
-  if(campos.nombre && campos.ap_paterno && campos.ap_materno && campos.telefono && campos.celular){
-
-  slidePage.style.marginLeft = "-25%";
-  bullet[current - 1].classList.add("active");
-  progressCheck[current - 1].classList.add("active");
-  progressText[current - 1].classList.add("active");
-  current += 1;
-  document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
-} else{
-document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
-}
-
-});
-
-// ********************* SEGUNDO BOTON NEXT **************************
-nextBtnSec.addEventListener("click", function(event){
-  event.preventDefault();
-
-if (campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext && campos.num_int && campos.cp){
-
-
-  slidePage.style.marginLeft = "-50%";
-  bullet[current - 1].classList.add("active");
-  progressCheck[current - 1].classList.add("active");
-  progressText[current - 1].classList.add("active");
-  current += 1;
-
-  document.getElementById('formulario__mensaje2').classList.remove('formulario__mensaje-activo');
-} else{
-document.getElementById('formulario__mensaje2').classList.add('formulario__mensaje-activo');
-}
-
-});
-
-//******************** TERCER BOTON NEXT ************************** */
-
-nextBtnThird.addEventListener("click", function(event){
-  if(campos.grupo)  {
-
-
-  event.preventDefault();
-  slidePage.style.marginLeft = "-75%";
-  bullet[current - 1].classList.add("active");
-  progressCheck[current - 1].classList.add("active");
-  progressText[current - 1].classList.add("active");
-  current += 1;
-  document.getElementById('formulario__mensaje3').classList.remove('formulario__mensaje-activo');
-} else{
-document.getElementById('formulario__mensaje3').classList.add('formulario__mensaje-activo');
-}
-});
-
-
-submitBtn.addEventListener("click", function(event){
     event.preventDefault();
 
+    if(campos.nombre && campos.ap_paterno && campos.ap_materno && campos.telefono && campos.celular){
+
+    slidePage.style.marginLeft = "-25%";
+    bullet[current - 1].classList.add("active");
+    progressCheck[current - 1].classList.add("active");
+    progressText[current - 1].classList.add("active");
+    current += 1;
+    document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
+  } else{
+  document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+  }
+
+  });
+
+  // ********************* SEGUNDO BOTON NEXT **************************
+  nextBtnSec.addEventListener("click", function(event){
+    event.preventDefault();
+
+  if (campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext && campos.num_int && campos.cp){
+
+
+    slidePage.style.marginLeft = "-50%";
+    bullet[current - 1].classList.add("active");
+    progressCheck[current - 1].classList.add("active");
+    progressText[current - 1].classList.add("active");
+    current += 1;
+
+    document.getElementById('formulario__mensaje2').classList.remove('formulario__mensaje-activo');
+  } else{
+  document.getElementById('formulario__mensaje2').classList.add('formulario__mensaje-activo');
+  }
+
+  });
+
+  //******************** TERCER BOTON NEXT ************************** */
+
+  nextBtnThird.addEventListener("click", function(event){
+    if(campos.grupo)  {
+
+
+    event.preventDefault();
+    slidePage.style.marginLeft = "-75%";
+    bullet[current - 1].classList.add("active");
+    progressCheck[current - 1].classList.add("active");
+    progressText[current - 1].classList.add("active");
+    current += 1;
+    document.getElementById('formulario__mensaje3').classList.remove('formulario__mensaje-activo');
+  } else{
+  document.getElementById('formulario__mensaje3').classList.add('formulario__mensaje-activo');
+  }
+  });
+
+
+  submitBtn.addEventListener("click", function(event){
+      event.preventDefault();
 
 
 
-  if(campos.nombre && campos.ap_paterno && campos.ap_materno && campos.telefono && campos.celular &&
-    campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext && campos.num_int && campos.cp &&
-    campos.grupo &&
-    campos.matricula && campos.password && campos.email ){
-        bullet[current - 1].classList.add("active");
-        progressCheck[current - 1].classList.add("active");
-        progressText[current - 1].classList.add("active");
-        current += 1;
 
-        form.submit();
-        /*setTimeout(function(){
+    if(campos.nombre && campos.ap_paterno && campos.ap_materno && campos.telefono && campos.celular &&
+      campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext && campos.num_int && campos.cp &&
+      campos.grupo &&
+      campos.id && campos.password && campos.email ){
+          bullet[current - 1].classList.add("active");
+          progressCheck[current - 1].classList.add("active");
+          progressText[current - 1].classList.add("active");
+          current += 1;
 
-            location.reload();
-        },800);*/
+          form.submit();
+          /*setTimeout(function(){
 
-        document.getElementById('formulario__mensaje4').classList.remove('formulario__mensaje-activo');
-        } else{
-        document.getElementById('formulario__mensaje4').classList.add('formulario__mensaje-activo');
-        }
-});
+              location.reload();
+          },800);*/
+
+          document.getElementById('formulario__mensaje4').classList.remove('formulario__mensaje-activo');
+          } else{
+          document.getElementById('formulario__mensaje4').classList.add('formulario__mensaje-activo');
+          }
+  });
 
 
 
 
-prevBtnSec.addEventListener("click", function(event){
-  event.preventDefault();
-  slidePage.style.marginLeft = "0%";
-  bullet[current - 2].classList.remove("active");
-  progressCheck[current - 2].classList.remove("active");
-  progressText[current - 2].classList.remove("active");
-  current -= 1;
-});
-prevBtnThird.addEventListener("click", function(event){
-  event.preventDefault();
-  slidePage.style.marginLeft = "-25%";
-  bullet[current - 2].classList.remove("active");
-  progressCheck[current - 2].classList.remove("active");
-  progressText[current - 2].classList.remove("active");
-  current -= 1;
-});
-prevBtnFourth.addEventListener("click", function(event){
-  event.preventDefault();
-  slidePage.style.marginLeft = "-50%";
-  bullet[current - 2].classList.remove("active");
-  progressCheck[current - 2].classList.remove("active");
-  progressText[current - 2].classList.remove("active");
-  current -= 1;
-});
+  prevBtnSec.addEventListener("click", function(event){
+    event.preventDefault();
+    slidePage.style.marginLeft = "0%";
+    bullet[current - 2].classList.remove("active");
+    progressCheck[current - 2].classList.remove("active");
+    progressText[current - 2].classList.remove("active");
+    current -= 1;
+  });
+  prevBtnThird.addEventListener("click", function(event){
+    event.preventDefault();
+    slidePage.style.marginLeft = "-25%";
+    bullet[current - 2].classList.remove("active");
+    progressCheck[current - 2].classList.remove("active");
+    progressText[current - 2].classList.remove("active");
+    current -= 1;
+  });
+  prevBtnFourth.addEventListener("click", function(event){
+    event.preventDefault();
+    slidePage.style.marginLeft = "-50%";
+    bullet[current - 2].classList.remove("active");
+    progressCheck[current - 2].classList.remove("active");
+    progressText[current - 2].classList.remove("active");
+    current -= 1;
+  });
 
 /********************************** VALIDACION *****************************************/
 
@@ -157,7 +158,7 @@ const expresiones = {
     grupo: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 
     //campos de usuario
-    matricula: /^\d{10}$/, // 7 a 14 numeros.
+    id: /^\d{10}$/, // 7 a 14 numeros.
     password: /^.{4,12}$/, // 4 a 12 digitos.
 	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
 
@@ -187,7 +188,7 @@ const campos = {
     grupo: false,
 
     //campos de usuario
-    matricula: false,
+    id: false,
     email: false,
     password: false
 
@@ -247,8 +248,8 @@ const validarFormulario = (e) => {
 		break;
 
         //case para usuarios
-        case "matricula":
-			validarCampo(expresiones.matricula, e.target, 'matricula');
+        case "id":
+			validarCampo(expresiones.id, e.target, 'id');
 		break;
         case "email":
 			validarCampo(expresiones.email, e.target, 'email');
@@ -307,29 +308,8 @@ inputs.forEach((input) => {
 	input.addEventListener('blur', validarFormulario);
 });
 
-formulario.addEventListener('submit', (e) => {
-	e.preventDefault();
 
-
-
-
-    /*
-	const terminos = document.getElementById('terminos');
-	if(campos.usuario && campos.nombre && campos.password && campos.correo && campos.telefono && terminos.checked ){
-		formulario.reset();
-
-		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
-		setTimeout(() => {
-			document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-		}, 5000);
-
-		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
-			icono.classList.remove('formulario__grupo-correcto');
-		});
-	} else {
-		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
-	}*/
-});
 
 
 // ****************************************************************************
+

@@ -307,11 +307,11 @@
                 <br>
 
                 <!-- Grupo: Matricula. -->
-                    <div class="formulario__grupo" id="grupo__matricula">
+                    <div class="formulario__grupo" id="grupo__id">
                         <div class="field">
-                            <div class="label" for="matricula">Matricula:</div>
+                            <div class="label" for="id">Matricula:</div>
                             <div class="formulario__grupo-input">
-                                <input type="text" class="formulario__input" name="matricula" id="matricula" placeholder="Ingresa tu matricula">
+                                <input type="text" class="formulario__input" name="id" id="id" placeholder="Ingresa tu matricula">
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                         </div>
