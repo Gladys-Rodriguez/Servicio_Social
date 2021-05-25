@@ -120,18 +120,18 @@
 <!-- ************************** INICIO DEL FORMULARIO ********************************** -->
 <div class="form-outer">
     <div class="separa">
-            <form action="/EditarAlumnoForm2/{{$Users->id}}" method="POST" autocomplete="off" id="servicios">
+
+
+            <form action="/EditarAlumnoForm2/$Users->id" method="POST" autocomplete="off" id="servicios">
             <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
             <input type="hidden" name="_method" value="PUT">
-
-
 
             <div class="page slide-page">
                 <div class="title">Datos Personales:</div>
                 <br>
                     <div class="field">
                         <div class="label" for="nombre">Nombre(s):</div>
-                        <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre completo" maxlength="60" onkeypress="return sololetrasespacio(event)">
+                        <input type="text" name="nombre" id="nombre" value="{{$Users->id}}" maxlength="60" onkeypress="return sololetrasespacio(event)">
                     </div>
                     <div class="field">
                         <div class="label" for="ap_paterno">Apellido Paterno:</div>
@@ -286,6 +286,7 @@
 
 
         </form>
+
     </div>
 </div>
 
