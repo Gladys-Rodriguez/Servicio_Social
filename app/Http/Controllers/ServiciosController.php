@@ -51,6 +51,8 @@ class ServiciosController extends Controller
         $id_alumnos=alumno::where('id_usuarios',$id_users)->take(1)->get();
 
 
+
+
         DB::transaction(function () use ($request, $id_alumnos) {
 
         $id_direccions = DB::table('direccions')->insertGetId([
@@ -84,8 +86,10 @@ class ServiciosController extends Controller
             'fecha_inscripcion' => $request->input('fecha_inscripcion')
         ]);
 
+
     });
 
+    return redirect('Registro_exitoso');
     /* DB::transaction(function () use ($request) {
             $direccions = direccion::create([
                 'ciudad' => $request->input('ciudad'),
