@@ -15,23 +15,29 @@ const form = document.getElementById('formulario');
 
 const formulario_mensaje = document.getElementById('formulario__mensaje');
 
+// **************** PRIMER BOTON NEXT *************************
 nextBtnFirst.addEventListener("click", function(event){
   event.preventDefault();
 
+  if(campos.nombre && campos.ap_paterno && campos.ap_materno && campos.telefono && campos.celular){
 
   slidePage.style.marginLeft = "-25%";
   bullet[current - 1].classList.add("active");
   progressCheck[current - 1].classList.add("active");
   progressText[current - 1].classList.add("active");
   current += 1;
-
-
+  document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
+} else{
+document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+}
 
 });
 
-
+// ********************* SEGUNDO BOTON NEXT **************************
 nextBtnSec.addEventListener("click", function(event){
   event.preventDefault();
+
+if (campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext && campos.num_int && campos.cp){
 
 
   slidePage.style.marginLeft = "-50%";
@@ -40,25 +46,35 @@ nextBtnSec.addEventListener("click", function(event){
   progressText[current - 1].classList.add("active");
   current += 1;
 
+  document.getElementById('formulario__mensaje2').classList.remove('formulario__mensaje-activo');
+} else{
+document.getElementById('formulario__mensaje2').classList.add('formulario__mensaje-activo');
+}
 
 });
 
+//******************** TERCER BOTON NEXT ************************** */
+
 nextBtnThird.addEventListener("click", function(event){
+  if(campos.grupo)  {
+
+
   event.preventDefault();
   slidePage.style.marginLeft = "-75%";
   bullet[current - 1].classList.add("active");
   progressCheck[current - 1].classList.add("active");
   progressText[current - 1].classList.add("active");
   current += 1;
+  document.getElementById('formulario__mensaje3').classList.remove('formulario__mensaje-activo');
+} else{
+document.getElementById('formulario__mensaje3').classList.add('formulario__mensaje-activo');
+}
 });
 
 
 submitBtn.addEventListener("click", function(event){
     event.preventDefault();
-    bullet[current - 1].classList.add("active");
-    progressCheck[current - 1].classList.add("active");
-    progressText[current - 1].classList.add("active");
-    current += 1;
+
 
 
 
@@ -66,14 +82,20 @@ submitBtn.addEventListener("click", function(event){
     campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext && campos.num_int && campos.cp &&
     campos.grupo &&
     campos.matricula && campos.password && campos.email ){
-        setTimeout(function(){
-            alert("Your Form Successfully Signed up");
-            location.reload();
-        },800);
+        bullet[current - 1].classList.add("active");
+        progressCheck[current - 1].classList.add("active");
+        progressText[current - 1].classList.add("active");
+        current += 1;
 
-        document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
+        form.submit();
+        /*setTimeout(function(){
+
+            location.reload();
+        },800);*/
+
+        document.getElementById('formulario__mensaje4').classList.remove('formulario__mensaje-activo');
         } else{
-        document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+        document.getElementById('formulario__mensaje4').classList.add('formulario__mensaje-activo');
         }
 });
 
@@ -128,11 +150,11 @@ const expresiones = {
     colonia: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
     calle: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
     num_ext: /^\d{1,3}$/, // 7 a 3 numeros.
-    num_int: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+    num_int: /^\d{1,3}$/, // 7 a 3 numeros.
     cp: /^\d{5}$/, //5 numeros
 
     //campos de alumno
-    grupo: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos
+    grupo: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 
     //campos de usuario
     matricula: /^\d{7,14}$/, // 7 a 14 numeros.

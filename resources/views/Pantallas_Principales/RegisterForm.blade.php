@@ -50,7 +50,7 @@
         <form action="{{route('registros.store')}}" method="POST" autocomplete="off" id="formulario">
             <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
 
-
+<!--     **************************   PRIMER STEP  **************************** -->
             <div class="page slide-page">
                 <div class="title">Datos Personales:</div>
                 <br>
@@ -116,15 +116,15 @@
                     <div class="field">
                         <button class="firstNext next">Next</button>
                     </div>
-                <!--    Mensaje para marcar que hay campos incorrectos en el formulario
+                <!--    Mensaje para marcar que hay campos incorrectos en el formulario -->
                     <div class="formulario__mensaje" id="formulario__mensaje">
                         <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
-                    </div> -->
+                    </div>
                 </div>
 
+<!--     **************************  FIN PRIMER STEP  **************************** -->
 
-
-
+<!--     **************************   SEGUNDO STEP  **************************** -->
             <div class="page">
                 <div class="title">Domicilio:</div>
                 <br>
@@ -218,14 +218,14 @@
                         <button class="next-1 next">Next</button>
                     </div>
 
-                  <!--  Mensaje para marcar que hay campos incorrectos en el formulario
-                    <div class="formulario__mensaje" id="formulario__mensaje">
+                  <!--  Mensaje para marcar que hay campos incorrectos en el formulario -->
+                    <div class="formulario__mensaje" id="formulario__mensaje2">
                         <p><i class="fas fa-exclamation-triangle"></i>
                             <b>Error:</b> Por favor rellena el formulario correctamente. </p>
-                    </div> -->
+                    </div>
             </div>
-
-
+<!--     ************************** FIN SEGUNDO STEP  **************************** -->
+<!--     **************************   TERCER STEP  **************************** -->
             <div class="page">
                 <div class="title">Datos Escolares:</div>
                 <br>
@@ -293,9 +293,15 @@
                         <button class="prev-2 prev">Previous</button>
                         <button class="next-2 next">Next</button>
                     </div>
+
+                    <!--  Mensaje para marcar que hay campos incorrectos en el formulario -->
+                    <div class="formulario__mensaje" id="formulario__mensaje3">
+                        <p><i class="fas fa-exclamation-triangle"></i>
+                            <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+                    </div>
             </div>
-
-
+<!--     **************************   FIN TERCER STEP  **************************** -->
+<!--     **************************   CUARTO STEP  **************************** -->
             <div class="page">
                 <div class="title">Datos de Usuario:</div>
                 <br>
@@ -348,13 +354,7 @@
                     <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
             </div>
 
-
-
-
-
-
-
-                <div class="formulario__mensaje" id="formulario__mensaje">
+                <div class="formulario__mensaje" id="formulario__mensaje4">
                     <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
                 </div>
 
@@ -364,12 +364,8 @@
 
 
                     </div>
-
-
-
-
-            </div>
-
+             </div>
+<!--     **************************   FIN CUARTO STEP  **************************** -->
 
         </form>
     </div>
