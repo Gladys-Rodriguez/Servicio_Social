@@ -262,7 +262,7 @@
                 <!-- Grupo: Grupo -->
                 <div class="formulario__grupo" id="grupo__grupo">
                     <div class="field">
-                        <div class="label" for="grupo">CP:</div>
+                        <div class="label" for="grupo">Grupo:</div>
                         <div class="formulario__grupo-input">
                             <input type="text" class="formulario__input" name="grupo" id="grupo" placeholder="Ingresa tu grupo">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
@@ -321,7 +321,7 @@
                 <!-- Grupo: Email -->
                 <div class="formulario__grupo" id="grupo__email">
                         <div class="field">
-                            <div class="label" for="email">CP:</div>
+                            <div class="label" for="email">E-mail:</div>
                             <div class="formulario__grupo-input">
                                 <input type="text" class="formulario__input" name="email" id="email" placeholder="correo@hotmail.com">
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>

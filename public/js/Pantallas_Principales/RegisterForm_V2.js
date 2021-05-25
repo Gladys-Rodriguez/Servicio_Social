@@ -157,7 +157,7 @@ const expresiones = {
     grupo: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 
     //campos de usuario
-    matricula: /^\d{7,14}$/, // 7 a 14 numeros.
+    matricula: /^\d{10}$/, // 7 a 14 numeros.
     password: /^.{4,12}$/, // 4 a 12 digitos.
 	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
 
