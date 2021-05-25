@@ -17,6 +17,8 @@ class Practicas
      */
     public function handle(Request $request, Closure $next)
     {
+
+
         switch(auth::user()->id_rol){
             case ('1'):
                 return redirect('/Index_Master');//si es super administrador continua al HOME

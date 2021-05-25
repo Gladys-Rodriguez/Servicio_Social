@@ -133,6 +133,14 @@
              </select>
         </div> <br>
 
+        <label>Estado de tabla usuarios</label>
+        <div class="col-md-6" type="text">
+             <select name="estado">
+                 <option value="1"> Activo </option>
+                 <option value="0"> Inactivo </option>
+             </select>
+        </div> <br>
+
         <button type="submit">Registrar</button>
 
 

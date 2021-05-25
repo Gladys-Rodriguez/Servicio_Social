@@ -109,6 +109,7 @@ class registro extends Controller
             'email' => $request->input('email'),
             'password' => bcrypt($request->input('password')),
             'id_rol' => 5,
+            'estado' => 1,
         ]);
 
         $id_datos = DB::table('datos')->insertGetId([

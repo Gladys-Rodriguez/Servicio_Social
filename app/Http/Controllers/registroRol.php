@@ -73,6 +73,7 @@ class registroRol extends Controller
             'email' => $request->input('email'),
             'password' => bcrypt($request->input('password')),
             'id_rol' => $request->input('id_rol'),
+            'estado' => $request->input('estado'),
         ]);
 
         $id_datos = DB::table('datos')->insertGetId([
