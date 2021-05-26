@@ -78,13 +78,11 @@ class registro extends Controller
     {
 
       /*return $request->all();
-      $registro= new User;
+      $registro= new User;*/
 
-      $validated = $request->validate([
-        'email' => 'unique:users',
-       ]);
 
-      $registro->id=$request->id;
+
+      /*$registro->id=$request->id;
       $registro->name=$request->name;
       $registro->email=$request->email;
       $registro->password=bcrypt($request->password);
@@ -99,7 +97,7 @@ class registro extends Controller
 
       $validated = $request->validate([
         'email' => 'unique:users',
-        'email' => 'unique:users',
+        'id' => 'unique:users',
        ]);
 
       DB::transaction(function () use ($request) {

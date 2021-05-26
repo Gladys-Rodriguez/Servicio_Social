@@ -18,43 +18,7 @@ const formulario_mensaje = document.getElementById('formulario__mensaje')
 
  // **************** PRIMER BOTON NEXT *************************
 nextBtnFirst.addEventListener("click", function(event){
-<<<<<<< HEAD
-  event.preventDefault();
-  slidePage.style.marginLeft = "-25%";
-  bullet[current - 1].classList.add("active");
-  progressCheck[current - 1].classList.add("active");
-  progressText[current - 1].classList.add("active");
-  current += 1;
-});
-nextBtnSec.addEventListener("click", function(event){
-  event.preventDefault();
-  slidePage.style.marginLeft = "-50%";
-  bullet[current - 1].classList.add("active");
-  progressCheck[current - 1].classList.add("active");
-  progressText[current - 1].classList.add("active");
-  current += 1;
-});
-nextBtnThird.addEventListener("click", function(event){
-  event.preventDefault();
-  slidePage.style.marginLeft = "-75%";
-  bullet[current - 1].classList.add("active");
-  progressCheck[current - 1].classList.add("active");
-  progressText[current - 1].classList.add("active");
-  current += 1;
-});
-submitBtn.addEventListener("click", function(){
-  bullet[current - 1].classList.add("active");
-  progressCheck[current - 1].classList.add("active");
-  progressText[current - 1].classList.add("active");
-  current += 1;
-  /*setTimeout(function(){
-    //alert("Your Form Successfully Signed up");
-    location.reload();
-  },800);*/
-});
-=======
     event.preventDefault();
->>>>>>> 97beebf2657cd72020511961354afc239781c6a1
 
     if(campos.nombre && campos.ap_paterno && campos.ap_materno && campos.telefono && campos.celular){
 
