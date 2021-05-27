@@ -86,9 +86,9 @@ class editarAlumnoController extends Controller
     {
         //
 
-        $Users= User::findOrFail($id);
-        $alumnos=DB::table('alumnos')->where('id_usuarios',$Users)->get();
-        /*$alumnos = alumno::where('id_usuarios', $Users)->get();*/
+        /*$Users= User::findOrFail($id);
+        $alumnos=DB::table('alumnos')->where('id_usuarios',$Users)->get();*/
+        $alumnos= alumno::with('user')->findOrFail($id);
         return view("Pantallas_Principales.EditarAlumnoForm", compact('Users','alumnos'));
 
        /* $id_users = Auth::user()->$id;
