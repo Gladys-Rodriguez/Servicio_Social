@@ -73,6 +73,8 @@ class editarAlumnoController extends Controller
         return view('Pantallas_Alumno_Servicio.datosPersonalesA', compact('alumnos', 'users', 'datos', 'direccions'));
  */
         $Users= User::findOrFail($id);
+
+
         return view("Pantallas_Principales.showPrueba", compact("Users"));
     }
 
@@ -82,14 +84,26 @@ class editarAlumnoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
     public function edit($id)
     {
         //
 
-        /*$Users= User::findOrFail($id);
-        $alumnos=DB::table('alumnos')->where('id_usuarios',$Users)->get();*/
-        $alumnos= alumno::with('user')->findOrFail($id);
+        $Users= User::with('alumnos')->findOrFail($id);
+        var_dump($id);
+
+         $alumnos=DB::table('alumnos')
+        ->join('direccions', 'alumnos.id_direccions', 'direccions.id_direccions')
+        ->join('datos', 'alumnos.id_datos', 'datos.id_datos')
+        ->where('alumnos.id_usuarios',$id)
+        ->get();
+        //var_dump($alumnos);
+
         return view("Pantallas_Principales.EditarAlumnoForm", compact('Users','alumnos'));
+
+
+        /*$alumnos = alumno::where('id_usuarios', $Users)->get();*/
 
        /* $id_users = Auth::user()->$id;
         $alumnos=DB::table('alumnos')->where('id_usuarios',$id_users)->get();
@@ -118,6 +132,18 @@ class editarAlumnoController extends Controller
         ->get();
 
         return view('Pantallas_Principales.EditarAlumnoForm', compact('alumnos', 'users', 'datos', 'direccions'));*/
+
+        /*$alumnos = DB::table('alumnos')->where('alumnos.id_usuarios',$id);
+        var_dump($alumnos);*/
+
+
+        //$alumno = alumno::with('direcciones')->get();
+
+       //$alumnos=DB::table('alumnos')->where('id_usuarios',$id)->get();
+      /*$alumno= alumno::with('direcciones')->where('id_alumnos',$id)->get();
+        var_dump($alumno);*/
+        /*$direcciones= direccion::with('alumnos')->where('id_direccions','alumnos.id_direccions');
+        var_dump($direcciones);*/
     }
 
     /**

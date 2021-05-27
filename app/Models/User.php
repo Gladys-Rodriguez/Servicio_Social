@@ -45,6 +45,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function alumnos()
+    {
+        return $this->hasOne('App\Models\alumno', 'id_usuarios', 'id');
+    }
 
     //Relación Uno a Uno
 
@@ -52,6 +56,7 @@ class User extends Authenticatable
     public function role(){
         return $this->belongsTo('App\Role');
     }
+
 
     public function esAdmin(){
 

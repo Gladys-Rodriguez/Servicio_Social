@@ -18,7 +18,7 @@ const formulario_mensaje = document.getElementById('formulario__mensaje');
 // **************** PRIMER BOTON NEXT *************************
 nextBtnFirst.addEventListener("click", function(event){
   event.preventDefault();
-  if(campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext && campos.num_int && campos.cp){
+  if(campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext /*&& campos.num_int*/ && campos.cp){
 
     slidePage.style.marginLeft = "-25%";
     bullet[current - 1].classList.add("active");
@@ -72,7 +72,7 @@ nextBtnThird.addEventListener("click", function(event){
 submitBtn.addEventListener("click", function(event){
     event.preventDefault();
 
-    if(campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext && campos.num_int && campos.cp &&
+    if(campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext /*&& campos.num_int*/ && campos.cp &&
         campos.nombre_depen &&
         campos.nom_responsable && campos.ap_responsable && campos.am_responsable && campos.telefono && campos.email_responsable &&
         campos.No_registro ){
@@ -129,24 +129,24 @@ const expresiones = {
 
 
     //campos de direccion
-    ciudad: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-    alcaldia: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-    colonia: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+    ciudad: /^[a-zA-ZÀ-ÿ\s]{1,30}$/, // Letras y espacios, pueden llevar acentos.
+    alcaldia: /^[a-zA-ZÀ-ÿ\s]{1,30}$/, // Letras y espacios, pueden llevar acentos.
+    colonia: /^[a-zA-ZÀ-ÿ\s]{1,30}$/, // Letras y espacios, pueden llevar acentos.
     calle: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-    num_ext: /^\d{1,3}$/, // 7 a 3 numeros.
-    num_int: /^\d{1,3}$/, // 7 a 3 numeros.
+    num_ext: /^[a-zA-Z0-9]{1,10}$/, // 1 a 4 caracteres.
+    /*num_int: /^[a-zA-Z0-9]|[^a-zA-Z0-9]{0,10}$/, // 0 a 4 caracteres.*/
     cp: /^\d{5}$/, //5 numeros
 
     //campos de dependencias
-    nombre_depen: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-    nom_responsable:  /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-    ap_responsable:  /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-    am_responsable:  /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+    nombre_depen: /^[a-zA-ZÀ-ÿ\s]{1,255}$/, // Letras y espacios, pueden llevar acentos.
+    nom_responsable:  /^[a-zA-ZÀ-ÿ\s]{1,30}$/, // Letras y espacios, pueden llevar acentos.
+    ap_responsable:  /^[a-zA-ZÀ-ÿ\s]{1,30}$/, // Letras y espacios, pueden llevar acentos.
+    am_responsable:  /^[a-zA-ZÀ-ÿ\s]{1,30}$/, // Letras y espacios, pueden llevar acentos.
     telefono: /^\d{10}$/, // 10 numeros.
     email_responsable: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 
     //campos de usuario
-    No_registro: /^\d{7,14}$/, // 7 a 14 numeros.
+    No_registro: /^\d{1,20}$/, // 7 a 14 numeros.
 
 
 }
@@ -158,7 +158,7 @@ const campos = {
     colonia: false,
     calle: false,
     num_ext: false,
-    num_int: false,
+    /*num_int: false,*/
     cp: false,
 
     //campos de dependencias
@@ -176,10 +176,11 @@ const campos = {
 }
 
 const validarFormulario = (e) => {
+
 	switch (e.target.name) {
 		 // case para direcciones
         case "ciudad":
-			validarCampo(expresiones.ciudad, e.target, 'ciudad');
+            validarCampo(expresiones.ciudad, e.target, 'ciudad');
 		break;
         case "alcaldia":
 			validarCampo(expresiones.alcaldia, e.target, 'alcaldia');
@@ -193,9 +194,9 @@ const validarFormulario = (e) => {
         case "num_ext":
 			validarCampo(expresiones.num_ext, e.target, 'num_ext');
 		break;
-        case "num_int":
+        /*case "num_int":
 			validarCampo(expresiones.num_int, e.target, 'num_int');
-		break;
+		break;*/
         case "cp":
 			validarCampo(expresiones.cp, e.target, 'cp');
 		break;
@@ -229,7 +230,8 @@ const validarFormulario = (e) => {
 }
 
 const validarCampo = (expresion, input, campo) => {
-	if(expresion.test(input.value)){
+
+    if(expresion.test(input.value)){
 		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
 		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
 		document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
@@ -245,6 +247,8 @@ const validarCampo = (expresion, input, campo) => {
 		campos[campo] = false;
 	}
 }
+
+
 
 /*const validarPassword2 = () => {
 	const inputPassword1 = document.getElementById('password');
