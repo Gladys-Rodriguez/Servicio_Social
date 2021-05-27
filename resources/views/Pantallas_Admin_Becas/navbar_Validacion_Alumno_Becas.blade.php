@@ -29,7 +29,8 @@
                 <ul class="nav__list">
                     <li class="nav__item"><a href="{{url('/Admin_Becas_Index3')}}" class="nav__link ">HOME</a></li>
                     <li class="nav__item"><a href="{{url('/Validacion_Alumno_Becas')}}" class="nav__link active">VALIDACIÓN DE DOCUMENTOS</a></li>
-
+                    <li class="nav__item"><a href="{{url('/Tipo_Alumno_Becas')}}" class="nav__link ">TIPOS DE BECAS</a></li>
+                    <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
                 </ul>
             </div>
         </div>

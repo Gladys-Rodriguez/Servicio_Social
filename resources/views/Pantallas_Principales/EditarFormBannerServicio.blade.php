@@ -55,7 +55,7 @@
 
 
 
-        <button type="submit">Subir nueva imagen</button>
+        <button type="submit">Actualizar</button>
     </form>
 
     <form action="/EditarFormBannerServicio3/{{$bannerServicio->id}}" method="POST" enctype="multipart/form-data">

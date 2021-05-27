@@ -12,10 +12,26 @@ class Authenticate extends Middleware
      * @param  \Illuminate\Http\Request  $request
      * @return string|null
      */
+
+    /* public function login(Request $request)
+    {
+        $credentials = array('email' => $request->email, 'password' => $request->password, "estado" => 1);
+        if (Auth::attempt($credentials, false)) {
+
+            return redirect()->intended('/');
+        } else {
+            //when echoing something here it is always displayed thus admin login is just refreshed.
+            return redirect('/')->withInput()->with('message', 'Login Failed o cuenta desactivada');
+        }
+    }*/
+
+
     protected function redirectTo($request)
     {
         if (! $request->expectsJson()) {
             return route('login');
         }
     }
+
+
 }

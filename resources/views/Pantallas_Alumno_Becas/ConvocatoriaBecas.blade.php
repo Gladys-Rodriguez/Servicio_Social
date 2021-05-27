@@ -1,7 +1,7 @@
-@extends('Pantallas_Admin_Becas.navbar_Admin_Becas_Index')
+@extends('Pantallas_Alumno_Becas.navbar_Alumnos_Becas')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Becas/estilo.css')}}">
+<link rel="stylesheet" href="{{asset('css/Pantalla_Alumno_Becas/estiloConvocatoria.css')}}">
 @endsection
 
 @section('content')

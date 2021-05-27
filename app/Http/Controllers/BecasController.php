@@ -21,7 +21,16 @@ class BecasController extends Controller
     public function index()
     {
         //
-        return view('/Admin_Becas_Index3');
+        $datos = \DB::table('administradors')
+        ->select ('Estado')->where('Estado','=','1')->get();
+
+        if($datos == 1){
+            return view('/Admin_Becas_Index3');
+        }
+        else{
+            return view('/Registro_exitoso');
+        }
+
     }
 
     /**

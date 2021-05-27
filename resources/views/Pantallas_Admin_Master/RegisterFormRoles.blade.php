@@ -1,9 +1,9 @@
-@extends('Pantallas_Principales.navbarRegisterFormRoles')
+@extends('Pantallas_Admin_Master.navbarRegisterFormRoles')
 
 @section('title', 'Registro')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/Pantallas_Principales/RegisterFormRoles.css')}}">
+<link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Master/RegisterFormRoles.css')}}">
 @endsection
 
 @section('content')
@@ -81,7 +81,22 @@
     <div class="login-box">
     <form action="{{route('registrosRoles.store')}}" method="POST">
           @csrf
-        <!-- matricula INPUT -->
+        <!-- Nombre INPUT -->
+        <label>Nombre</label>
+        <input type="text" name="nombre" placeholder="Ingresa el nombre" required maxlength="30" onkeypress="return sololetras(event)">
+        <!-- Apellido paterno INPUT -->
+        <label>Apellido paterno</label>
+        <input type="text" name="ap_paterno" placeholder="Ingresa el apellido paterno" required maxlength="30" onkeypress="return sololetras(event)">
+        <!-- Apellido materno INPUT -->
+        <label>Apellido materno</label>
+        <input type="text" name="ap_materno" placeholder="Ingresa el apellido materno" required maxlength="30" onkeypress="return sololetras(event)">
+         <!-- Telefono INPUT -->
+         <label>Telefono</label>
+         <input type="text" name="telefono" placeholder="Ingresa el telefono" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
+         <!-- Celular INPUT -->
+         <label>Celular</label>
+         <input type="text" name="celular" placeholder="Ingresa el celular" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
+         <!-- matricula INPUT -->
         <label>Matricula</label>
         <input type="text" name="id" placeholder="Ingresa valores númericos" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
         <!-- correo INPUT -->
@@ -90,11 +105,14 @@
         <!-- PASSWORD INPUT -->
         <label>Contraseña</label>
         <input type="password" name="password" placeholder="Contraseña" required>
+        <!--DESCRIPCION INPUT-->
+        <label>Descripción</label>
+        <input type="text" name="descripcion" placeholder="Descripción" required>
 
         <label>Rol</label>
         <div class="col-md-6" type="text">
              <select name="id_rol">
-                 <!--<option value="1"> Superadmin </option>-->
+                 <option value="1"> Superadmin </option>
                  <option value="2"> Admin Servicio Social </option>
                  <option value="3"> Admin Becas </option>
                  <option value="4"> Admin Prácticas </option>
@@ -106,8 +124,22 @@
                   <strong>{{ $message }}</strong>
                   </span>
                  @enderror
-        </div>
-        <br>
+        </div><br>
+        <label>Estado</label>
+        <div class="col-md-6" type="text">
+             <select name="Estado">
+                 <option value="1"> Activo </option>
+                 <option value="2"> Inactivo </option>
+             </select>
+        </div> <br>
+
+        <label>Estado de tabla usuarios</label>
+        <div class="col-md-6" type="text">
+             <select name="estado">
+                 <option value="1"> Activo </option>
+                 <option value="0"> Inactivo </option>
+             </select>
+        </div> <br>
 
         <button type="submit">Registrar</button>
 
@@ -119,5 +151,12 @@
 
 
      </div>
+     <script>
+    var msg = '{{Session::get('alert')}}';
+    var exist = '{{Session::has('alert')}}';
+    if(exist){
+      alert(msg);
+    }
+  </script>
 </div>
 @endsection

@@ -53,7 +53,7 @@
         </div>
         <br>
 
-        <button type="submit">Subir nueva imagen</button>
+        <button type="submit">Actualizar</button>
     </form>
 
     <form action="/EditarFormBannerBecas3/{{$bannerBecas->id}}" method="POST" enctype="multipart/form-data">

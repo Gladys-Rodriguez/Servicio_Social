@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, initial-scale=1.0, minimum-scale=1.0">
     <title>@yield('title')</title>
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="{{asset('css/Pantallas_Alumno_Servicio/Layout_Alumno/Layout_Alumno2.css')}}">
@@ -27,8 +27,10 @@
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="{{url('/Admin_Becas_Index2')}}" class="nav__link active">HOME</a></li>
-                    <li class="nav__item"><a href="{{url('/Validacion_Alumno_Becas')}}" class="nav__link">VALIDACIÓN DE DOCUMENTOS</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link active">HOME</a></li>
+                    <li class="nav__item"><a href="{{url('/ConvocatoriaBecas')}}" class="nav__link">CONVOCATORIAS</a></li>
+                    <li class="nav__item"><a href="{{url('/FormatosBeca')}}" class="nav__link">DESCARGA FORMATOS</a></li>
+                    <li class="nav__item"><a href="{{url('/RegisterForm')}}" class="nav__link">REGISTRO</a></li>
 
                 </ul>
             </div>
@@ -69,7 +71,7 @@
         </script>
 
     <section class="section-main">
-      <h1>ADMINISTRACIÓN DE BECAS</h1>
+      <h1>MI BECA</h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->
@@ -80,7 +82,8 @@
 
 
 
-
+      
+    
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
 

@@ -27,7 +27,7 @@ class registro extends Controller
      */
     public function index()
     {
-        //
+        /* codigo de Gladys
         $id_users = Auth::user()->id;
         $alumnos=DB::table('alumnos')->where('id_usuarios',$id_users)->get();
         $users=DB::table('users')->where('id',$id_users)->get();
@@ -39,7 +39,23 @@ class registro extends Controller
       //  print_r($datos);
       //  $datos['datos']=alumno::join('datos','datos.id_datos', '=', 'alumnos.id_datos')->get();
 
-        return view('Pantallas_Alumno_Servicio.Index_Alumno', compact('alumnos', 'users', 'datos'));
+        return view('Pantallas_Alumno_Servicio.Index_Alumno', compact('alumnos', 'users', 'datos')); */
+
+
+        $id_users = Auth::user()->id;
+        $alumnos=DB::table('alumnos')->where('id_usuarios',$id_users)->get();
+        $users=DB::table('users')->where('id',$id_users)->get();
+        $datos=DB::table('datos')
+        ->join('alumnos', 'datos.id_datos', 'alumnos.id_datos')
+        ->where('alumnos.id_usuarios',$id_users)
+        ->get();
+        $direccions=DB::table('direccions')
+        ->join('alumnos', 'direccions.id_direccions', 'alumnos.id_direccions')
+        ->where('alumnos.id_usuarios',$id_users)
+        ->get();
+
+        return view('Pantallas_Alumno_Servicio.datosPersonalesA', compact('alumnos', 'users', 'datos', 'direccions'));
+
     }
 
     /**
@@ -62,13 +78,11 @@ class registro extends Controller
     {
 
       /*return $request->all();
-      $registro= new User;
+      $registro= new User;*/
 
-      $validated = $request->validate([
-        'email' => 'unique:users',
-       ]);
 
-      $registro->id=$request->id;
+
+      /*$registro->id=$request->id;
       $registro->name=$request->name;
       $registro->email=$request->email;
       $registro->password=bcrypt($request->password);
@@ -81,6 +95,11 @@ class registro extends Controller
       //$id_rol = Rol::find(5);
       //$id_rol = DB::table('users')->where('id_rol', 5);
 
+      $validated = $request->validate([
+        'email' => 'unique:users',
+        'id' => 'unique:users',
+       ]);
+
       DB::transaction(function () use ($request) {
 
         $id_users = DB::table('users')->insertGetId([
@@ -88,6 +107,7 @@ class registro extends Controller
             'email' => $request->input('email'),
             'password' => bcrypt($request->input('password')),
             'id_rol' => 5,
+            'estado' => 1,
         ]);
 
         $id_datos = DB::table('datos')->insertGetId([
@@ -117,7 +137,6 @@ class registro extends Controller
             'id_usuarios' => $id_users,
             'id_direccions' => $id_direccions,
         ]);
-
       });
 
       return redirect('Registro_exitoso');

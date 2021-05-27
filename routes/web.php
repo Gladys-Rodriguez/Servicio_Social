@@ -176,7 +176,6 @@ Route::get('/validacionReportes', function () {
 
 //------------------------FER INICIO------------------------------------
 
-
 //Ruta Admin Becas Index3
 Route::get('/Admin_Becas_Index3', function () {
     return view('Pantallas_Admin_Becas.Admin_Becas_Index3');
@@ -187,6 +186,10 @@ Route::get('/Validacion_Alumno_Becas', function () {
     return view('Pantallas_Admin_Becas.Validacion_Alumno_Becas');
 }) -> name('Validacion_Alumno_Becas');
 
+//Ruta Tipo_Alumno_Becas
+Route::get('/Tipo_Alumno_Becas', function () {
+    return view('Pantallas_Admin_Becas.Tipo_Alumno_Becas');
+}) -> name('Tipo_Alumno_Becas');
 
 //Ruta Admin Practicas y Visitas Index
 Route::get('/Admin_Practicas_Visitas_Index2', function () {
@@ -194,11 +197,27 @@ Route::get('/Admin_Practicas_Visitas_Index2', function () {
 }) -> name('Admin_Practicas_Visitas_Index2');
 
 
-//Ruta Validacion Practicas y Visitas Index
+//Ruta Validacion Practicas y Visitas
 Route::get('/Validacion_Practicas_Visitas', function () {
     return view('Pantallas_Admin_Practicas_Visitas.Validacion_Practicas_Visitas');
 }) -> name('Validacion_Practicas_Visitas');
 
+//Ruta Clasificacion Practicas y Visitas
+Route::get('/Clasificacion_Practicas_Visitas', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.Clasificacion_Practicas_Visitas');
+}) -> name('Clasificacion_Practicas_Visitas');
+
+Route::get('/RechazadasV', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.RechazadasV');
+}) -> name('RechazadasV');
+
+Route::get('/AceptadasV', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.AceptadasV');
+}) -> name('AceptadasV');
+
+Route::get('/ValidacionV2', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.ValidacionV2');
+}) -> name('ValidacionV2');
 //------------------------FER TERMINO------------------------------------
 
 
@@ -259,10 +278,7 @@ Route::get('/RegisterForm', function (){
     return view('Pantallas_Principales.RegisterForm');
 }) -> name('RegisterForm');
 
-//Pantalla Registro con roles
-Route::get('/RegisterFormRoles', function (){
-    return view('Pantallas_Principales.RegisterFormRoles');
-}) -> name('RegisterFormRoles');
+
 
 //Ruta para recibir los datos que enviamos para el registro
 Route::resource('Servicio','registro');
@@ -352,6 +368,8 @@ Route::get('/Index_Alumno.blade', [App\Http\Controllers\AlumnoLController::class
 Route::get('/logout', [App\Http\Controllers\BecasController::class, 'getLogout'])->name('logout');
 Route::get('/prueba.blade', [App\Http\Controllers\pruebaController::class, 'index'])->name('home');
 Route::get('/logout', [App\Http\Controllers\pruebaController::class, 'getLogout'])->name('logout');
+Route::get('/Index_Master.blade', [App\Http\Controllers\AdminMasterController::class, 'index'])->name('home');
+Route::get('/logout', [App\Http\Controllers\AdminMasterController::class, 'getLogout'])->name('logout');
 //DocenteController
 
 
@@ -402,6 +420,11 @@ Route::get('/showPrueba/{id}', [App\Http\Controllers\showController::class, 'sho
 Route::get('/pruebaEditarForm/{id}', [App\Http\Controllers\editarController::class, 'edit'])->name('home');
 Route::put('/pruebaEditarForm2/{id}', [App\Http\Controllers\editarController::class, 'update'])->name('pruebaEditarForm2.update');
 
+//editar datos de alumno
+Route::get('/EditarAlumnoForm/{id}', [App\Http\Controllers\editarAlumnoController::class, 'edit'])->name('home');
+Route::put('/EditarAlumnoForm2/{id}', [App\Http\Controllers\editarAlumnoController::class, 'update'])->name('EditarAlumnoController.update');
+
+
 //Pantalla de editar de imagenes de inicio
 Route::get('/EditarFormBannerInicio', function (){
     return view('Pantallas_Principales.EditarFormBannerInicio');
@@ -449,6 +472,23 @@ Route::get('/datosPersonalesA', [App\Http\Controllers\registro::class, 'index'])
 
 //------------------------IVAN TERMINO------------------------------------
 
+//-----------------------------------SANTOS INICIO-----------------------------------
+Route::get('/ConvocatoriaBecas', function (){
+    return view('Pantallas_Alumno_Becas.ConvocatoriaBecas');
+}) -> name('ConvocatoriaBecas');
+
+Route::get('/FormatosBeca', function (){
+    return view('Pantallas_Alumno_Becas.FormatosBeca');
+}) -> name('FormatosBeca');
+
+Route::get('/MiBeca','MiBecaDatosController@index');
+
+Route::get('/Index_Master','AdminMasterIndexController@index');
+//Pantalla Registro con roles
+Route::get('/RegisterFormRoles', function (){
+    return view('Pantallas_Admin_Master.RegisterFormRoles');
+}) -> name('RegisterFormRoles');
+//-----------------------SANTOS TERMINO----------------------------------
 Auth::routes();
 
 

@@ -17,9 +17,10 @@ class Prueba
      */
     public function handle(Request $request, Closure $next)
     {
+
         switch(auth::user()->id_rol){
             case ('1'):
-                return redirect('/SuperAdmin_Index');//si es super administrador continua al HOME
+                return redirect('/Index_Master');//si es super administrador continua al HOME
             break;
 			case('2'):
                 return redirect('AdminIndex');// si es un usuario de servicio social
@@ -38,6 +39,9 @@ class Prueba
             break;
             case ('7'):
                 return $next($request);//si es prueba
+            break;
+            case ('8'):
+                return redirect('/Index_Master');//si es prueba
             break;
 
         }
