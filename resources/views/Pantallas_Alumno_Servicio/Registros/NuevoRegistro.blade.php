@@ -66,7 +66,8 @@
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
             </div>
-            <p class="formulario__input-error">La ciudad no puede contener caracteres especiales.</p>
+
+            <p class="formulario__input-error">Error, por favor ingresa una ciudad válida. </p>
         </div>
 
          <!-- Grupo: Alcaldia/Municipio -->
@@ -78,7 +79,7 @@
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
             </div>
-            <p class="formulario__input-error">Tu alcaldia no puede contener caracteres especiales.</p>
+            <p class="formulario__input-error">Error, por favor ingresa una alcaldia o municipio válido. </p>
         </div>
          <!-- Grupo: Colonia -->
          <div class="formulario__grupo" id="grupo__colonia">
@@ -89,7 +90,7 @@
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
             </div>
-            <p class="formulario__input-error">Tu colonia no puede contener caracteres especiales.</p>
+            <p class="formulario__input-error">Error, por favor ingresa una colonia válida. </p>
         </div>
 
          <!-- Grupo: Calle -->
@@ -101,7 +102,7 @@
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
             </div>
-            <p class="formulario__input-error">Tu calle no puede contener caracteres especiales.</p>
+            <p class="formulario__input-error">Error, por favor ingresa una calle valida. </p>
         </div>
 
          <!-- Grupo: Numero Ext. -->
@@ -113,7 +114,7 @@
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
             </div>
-            <p class="formulario__input-error">No has ingresado ningún dato.</p>
+            <p class="formulario__input-error">Error, por favor ingresa un dato válido.</p>
         </div>
 
          <!-- Grupo: Numero Int -->
@@ -125,7 +126,9 @@
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
             </div>
-            <p class="formulario__input-error">Tu numero interior no puede contener caracteres especiales.</p>
+            <p class="formulario__input-error">Error, por favor ingresa un dato válido.</p>
+            <p class="formulario__input-mensaje">Complete el campo en caso de existir</p>
+
         </div>
 
          <!-- Grupo: CP -->
@@ -137,7 +140,7 @@
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
             </div>
-            <p class="formulario__input-error">Tu codigo postal no puede contener caracteres especiales.</p>
+            <p class="formulario__input-error">Error, por favor ingresa un CP válido de 5 digitos.</p>
         </div>
 
 
@@ -168,7 +171,7 @@
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                         </div>
-                        <p class="formulario__input-error">Formato Incorrecto</p>
+                        <p class="formulario__input-error">Error, por favor ingresa una dependencia válida. </p>
                     </div>
 
                     <div class="field btns">
@@ -199,7 +202,7 @@
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                         </div>
-                        <p class="formulario__input-error">Formato Incorrecto</p>
+                        <p class="formulario__input-error">Error, por favor ingresa un nombre válido. </p>
                     </div>
 
                     <!-- Grupo: AP PAterno -->
@@ -211,7 +214,7 @@
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                         </div>
-                        <p class="formulario__input-error">Formato Incorrecto</p>
+                        <p class="formulario__input-error">Error, por favor ingresa un apellido válido.</p>
                     </div>
 
                     <!-- Grupo: Apellido Materno -->
@@ -223,7 +226,7 @@
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                         </div>
-                        <p class="formulario__input-error">Formato Incorrecto</p>
+                        <p class="formulario__input-error">Error, por favor ingresa un apellido válido.</p>
                     </div>
 
                     <!-- Grupo:Telefono -->
@@ -235,18 +238,18 @@
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                         </div>
-                        <p class="formulario__input-error">Formato Incorrecto</p>
+                        <p class="formulario__input-error">Error, por favor ingresa un teléfono de 10 números.</p>
                     </div>
                     <!-- Grupo: Email -->
                     <div class="formulario__grupo" id="grupo__email_responsable">
                         <div class="field">
                             <div class="label" for="email_responsable">E-mail:</div>
                             <div class="formulario__grupo-input">
-                                <input type="text" class="formulario__input" name="email_responsable" id="email_responsable" placeholder="correo@hotmail.com">
+                                <input type="text" class="formulario__input" name="email_responsable" id="email_responsable" placeholder="correo@correo.com">
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                         </div>
-                        <p class="formulario__input-error">Tu email es incorrecto.</p>
+                        <p class="formulario__input-error">Error, por favor ingresa una dirección válida.</p>
                 </div>
                         <div class="field btns">
                             <button class="prev-2 prev">Previous</button>
@@ -274,7 +277,7 @@
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                         </div>
-                        <p class="formulario__input-error">Formato Incorrecto</p>
+                        <p class="formulario__input-error">Error, formato incorrecto.</p>
                     </div>
 
                         <!-- Grupo: Fecha de Inicio -->
