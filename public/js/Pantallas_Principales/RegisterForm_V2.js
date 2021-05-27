@@ -83,20 +83,22 @@ nextBtnFirst.addEventListener("click", function(event){
       campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext && campos.num_int && campos.cp &&
       campos.grupo &&
       campos.id && campos.password && campos.email ){
+
           bullet[current - 1].classList.add("active");
           progressCheck[current - 1].classList.add("active");
           progressText[current - 1].classList.add("active");
           current += 1;
 
           form.submit();
-          /*setTimeout(function(){
 
-              location.reload();
-          },800);*/
 
           document.getElementById('formulario__mensaje4').classList.remove('formulario__mensaje-activo');
+
           } else{
           document.getElementById('formulario__mensaje4').classList.add('formulario__mensaje-activo');
+
+
+
           }
   });
 
