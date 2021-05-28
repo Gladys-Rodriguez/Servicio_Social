@@ -14,7 +14,7 @@ class CreateVisitasTable extends Migration
     public function up()
     {
         Schema::create('visitas', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->unsignedInteger('docente_id')->index('docente_id');
             $table->unsignedBigInteger('empresa_id')->index('empresa_id');
             $table->dateTime('fecha_visita')->nullable();

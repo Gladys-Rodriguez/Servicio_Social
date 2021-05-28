@@ -14,7 +14,7 @@ class CreateGruposVisitasTable extends Migration
     public function up()
     {
         Schema::create('grupos_visitas', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('visita_id')->index('visita_id');
             $table->unsignedBigInteger('grupo_id')->index('grupo_id');
             $table->smallInteger('cantidad_alumnos')->nullable();

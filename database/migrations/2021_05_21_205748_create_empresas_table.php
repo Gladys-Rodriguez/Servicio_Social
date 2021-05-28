@@ -14,12 +14,12 @@ class CreateEmpresasTable extends Migration
     public function up()
     {
         Schema::create('empresas', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('nombre',40);
-            $table->unsignedInteger('direccions_id')->index('direccions_id');
+            $table->unsignedInteger('direccion_id')->index('direccion_id');
             $table->timestamps();
 
-            $table->foreign('direccions_id')->references('id_direccions')->on('direccions')->onDelete('cascade');
+            $table->foreign('direccion_id')->references('id_direccions')->on('direccions')->onDelete('cascade');
         });
     }
 

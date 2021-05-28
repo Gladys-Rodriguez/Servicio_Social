@@ -14,7 +14,7 @@ class CreateVisitaDocumentosTable extends Migration
     public function up()
     {
         Schema::create('visita_documentos', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('visita_id')->index('visita_id');
             $table->unsignedBigInteger('tipo_documento_id')->index('tipo_documento_id');
             $table->longText('ruta')->notnull();
