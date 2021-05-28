@@ -155,9 +155,17 @@ class editarAlumnoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        $Users= User::findOrFail($id);
+        $Users= User::with('alumnos')->findOrFail($id);
+        var_dump($id);
+
+         $alumnos=DB::table('alumnos')
+        ->join('direccions', 'alumnos.id_direccions', 'direccions.id_direccions')
+        ->join('datos', 'alumnos.id_datos', 'datos.id_datos')
+        ->where('alumnos.id_usuarios',$id)
+        ->save();
+
         $Users->update($request->all());
+
         return redirect("/datosPersonalesA");
     }
 
