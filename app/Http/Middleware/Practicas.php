@@ -17,8 +17,10 @@ class Practicas
      */
     public function handle(Request $request, Closure $next)
     {
-
-
+        if ($request->user()->estado = 0) {
+            return redirect('Registro_exitoso');
+        }
+        else {
         switch(auth::user()->id_rol){
             case ('1'):
                 return redirect('/Index_Master');//si es super administrador continua al HOME
@@ -46,5 +48,6 @@ class Practicas
             break;
 
         }
+    }
     }
 }

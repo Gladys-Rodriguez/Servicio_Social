@@ -14,8 +14,8 @@
         <h3 class="title">"Datos personales"</h3>
       </div>
 
-      <form action="/EditarAlumnoForm2/$Users->id" method="POST" autocomplete="off" id="servicios">
-      <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+      <form action="/EditarAlumnoForm2/{{$Users->id}}" method="POST" autocomplete="off" id="servicios">
+      @csrf
       <input type="hidden" name="_method" value="PUT">
 <div class="tabla-consulta">
           <table border="1">
@@ -87,7 +87,7 @@
                         <option value="Técnico en informática"> Técnico en informática</option>
                         <option value="Técnico en contaduría"> Técnico en contaduría  </option>
                         <option value="Técnico en administración"> Técnico en administración  </option>
-                        <option value="Técnico en administración de empresas turísticas">   </option>
+                        <option value="Técnico en administración de empresas turísticas">Técnico en administración de empresas turísticas   </option>
                         <option value="Técnico en gestión de la ciberseguridad"> Técnico en gestión de la ciberseguridad</option>
                         </select>
                         @error('carrera')
@@ -154,26 +154,14 @@
              </tr>
 
 
-
-
-
-
-
-
         <tr>
 
-
-
-
-
-
-
-
-
-
         </tr>
+
         </table>
+        <button type="submit">Actualizar</button>
         </div>
+
         </form>
 
 
