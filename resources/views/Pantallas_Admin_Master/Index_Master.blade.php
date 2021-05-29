@@ -30,7 +30,7 @@
 					<td data-label="Apellido Materno">{{$dato->ap_materno}}</td>
 					<td data-label="Email">{{$dato->email}}</td>
 					<td data-label="Telefono">{{$dato->telefono}}</td>
-					<td data-label="Estado">@if($dato->Estado==1) Activo @else Inactivo @endif</td>
+					<td data-label="Estado">@if($dato->estado==1) Activo @else Inactivo @endif</td>
 		    	</tr>
 				@endforeach
                <!-- <tr>

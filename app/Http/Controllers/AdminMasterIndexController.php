@@ -12,7 +12,7 @@ class AdminMasterIndexController extends Controller
         ->join('datos','administradors.id_datos','=','datos.id_datos')
         ->join('users','administradors.id','=','users.id')
         ->join('rols','users.id_rol','=','rols.id_rol')
-        ->select('datos.nombre','datos.ap_paterno','datos.ap_materno','datos.telefono','users.email','rols.Tipo_rol','administradors.Estado')->orderBy('rols.id_rol','DESC')->get();
+        ->select('datos.nombre','datos.ap_paterno','datos.ap_materno','datos.telefono','users.email','rols.Tipo_rol','users.estado')->orderBy('rols.id_rol','DESC')->get();
         return view('Pantallas_Admin_Master.Index_Master',compact('datos'));
     }
 }

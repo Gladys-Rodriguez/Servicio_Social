@@ -105,14 +105,11 @@
         <!-- PASSWORD INPUT -->
         <label>Contraseña</label>
         <input type="password" name="password" placeholder="Contraseña" required>
-        <!--DESCRIPCION INPUT-->
-        <label>Descripción</label>
-        <input type="text" name="descripcion" placeholder="Descripción" required>
-
+        <!--ROL INPUT-->
         <label>Rol</label>
         <div class="col-md-6" type="text">
              <select name="id_rol">
-                 <option value="1"> Superadmin </option>
+                <!-- <option value="1"> Superadmin </option> -->
                  <option value="2"> Admin Servicio Social </option>
                  <option value="3"> Admin Becas </option>
                  <option value="4"> Admin Prácticas </option>
@@ -125,15 +122,8 @@
                   </span>
                  @enderror
         </div><br>
-        <label>Estado</label>
-        <div class="col-md-6" type="text">
-             <select name="Estado">
-                 <option value="1"> Activo </option>
-                 <option value="2"> Inactivo </option>
-             </select>
-        </div> <br>
 
-        <label>Estado de tabla usuarios</label>
+        <label>Estado</label>
         <div class="col-md-6" type="text">
              <select name="estado">
                  <option value="1"> Activo </option>

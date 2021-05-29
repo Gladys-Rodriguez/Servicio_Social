@@ -85,11 +85,8 @@ class registroRol extends Controller
         ]);
 
         $id_administradors= DB::table('administradors')->insertGetID([
-          'descripcion' => $request->input('descripcion'),
           'id_datos'=>$id_datos,
           'id'=>$id_users,
-          'Estado' => $request->input('Estado'),
-
         ]);
 
       });
