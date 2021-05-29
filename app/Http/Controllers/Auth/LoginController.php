@@ -66,11 +66,11 @@ class LoginController extends Controller
         }
 
 
-        if ( !User::where('email', $request->email)->where('password', bcrypt($request->password))->where('estado', 1)->first() ) {
+        if ( !User::where('estado', 1)->first() ) {
             return redirect()->back()
                 ->withInput($request->only($this->username(), 'remember'))
                 ->withErrors([
-                    'password' => 'Usuario desactivado o usuario inhabilitado',
+                    'estado' => 'Usuario desactivado o usuario inhabilitado',
                 ]);
         }
 
