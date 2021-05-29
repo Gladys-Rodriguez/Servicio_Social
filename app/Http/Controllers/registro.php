@@ -77,28 +77,18 @@ class registro extends Controller
     public function store(Request $request)
     {
 
-      /*return $request->all();
-      $registro= new User;*/
-
-
-
-      /*$registro->id=$request->id;
-      $registro->name=$request->name;
-      $registro->email=$request->email;
-      $registro->password=bcrypt($request->password);
-      //$registro->password=bcrypt($request->password);
-      $registro->id_rol= 7;
-
-      $registro->save();
-      return redirect('Registro_exitoso'); */
-
-      //$id_rol = Rol::find(5);
-      //$id_rol = DB::table('users')->where('id_rol', 5);
-
       $validated = $request->validate([
         'email' => 'unique:users',
         'id' => 'unique:users',
        ]);
+       /*$validator = Validator::make($request->all(), [
+        'email' => 'unique:users',
+        'id' => 'unique:users',
+        ]);*/
+
+
+
+
 
       DB::transaction(function () use ($request) {
 

@@ -91,7 +91,7 @@ class editarAlumnoController extends Controller
         //
 
         $Users= User::with('alumnos')->findOrFail($id);
-        var_dump($id);
+        //var_dump($id);
 
          $alumnos=DB::table('alumnos')
         ->join('direccions', 'alumnos.id_direccions', 'direccions.id_direccions')

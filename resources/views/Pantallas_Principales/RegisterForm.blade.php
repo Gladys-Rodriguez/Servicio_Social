@@ -6,6 +6,7 @@
 
 <link rel="stylesheet" href="{{asset('css/Pantallas_Principales/RegisterForm_V2.css')}}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<script src="sweetalert2.all.min.js"></script>
 @endsection
 
 @section('content')
@@ -14,15 +15,15 @@
 <div class="container">
 
 <!-- Arroja los mensajes de error de laravel -->
-<div class="errores">
-       @if($errors->any())
-        <ul>
-        @foreach($errors->all() as $error)
-            <li>{{$error}}</li>
-        @endforeach
-        </ul>
-        @endif
-</div>
+                    <div class="mensajes">
+                        @if($errors->any())
+                         <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{$error}}</li>
+                            @endforeach
+                        </ul>
+                        @endif
+                    </div>
 <!-- Cierre  los mensajes de error de laravel -->
 
 
@@ -390,10 +391,15 @@
 
 
                     </div>
+
+
+
+
              </div>
 <!--     **************************   FIN CUARTO STEP  **************************** -->
 
         </form>
+
     </div>
 </div>
 
@@ -406,4 +412,7 @@
 <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"> </script>
 
 <script src="{{asset('js/Pantallas_Principales/RegisterForm_V2.js')}}"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 @endsection
