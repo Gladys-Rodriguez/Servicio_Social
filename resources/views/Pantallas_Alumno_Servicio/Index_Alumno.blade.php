@@ -33,6 +33,7 @@
                     y fomenta una conciencia de solidaridad con la sociedad.
                     Es de carácter temporal y obligatorio además de ser un requisito
                     indispensable para la titulación, que te permite obtener competencia laboral.
+                    ..
                     </p>
 
                 </div>
