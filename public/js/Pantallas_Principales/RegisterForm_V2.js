@@ -84,6 +84,8 @@ nextBtnFirst.addEventListener("click", function(event){
       campos.grupo &&
       campos.id && campos.password && campos.email ){
 
+
+
           bullet[current - 1].classList.add("active");
           progressCheck[current - 1].classList.add("active");
           progressText[current - 1].classList.add("active");
@@ -92,9 +94,11 @@ nextBtnFirst.addEventListener("click", function(event){
           form.submit();
 
 
+
           document.getElementById('formulario__mensaje4').classList.remove('formulario__mensaje-activo');
 
           } else{
+
           document.getElementById('formulario__mensaje4').classList.add('formulario__mensaje-activo');
 
 
