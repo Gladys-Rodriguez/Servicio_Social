@@ -158,13 +158,13 @@ body{
 	display: none;
 }
 .lbl-modal{
-	background: #5EF82E;
+	background: #179c6b;
 	padding: 0px 10px;
 	border-radius: 4px;
 	cursor: pointer;
 }
 .lbl-modal2{
-	background: red;
+	background:#D67040;
 	padding: 0px 10px;
 	border-radius: 4px;
 	cursor: pointer;
@@ -181,7 +181,7 @@ body{
 }
 .label_b{
     text-decoration: none;
-    background: #5EF82E;
+    background: #179c6b;
     width: auto;
     height: auto;
     border-radius: 4px;
@@ -189,7 +189,7 @@ body{
 }
 .label_c{
     text-decoration: none;
-    background: #FFD903;
+    background: #D67040;
     width: auto;
     height: auto;
     border-radius: 4px;

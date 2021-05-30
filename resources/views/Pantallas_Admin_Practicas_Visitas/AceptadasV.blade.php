@@ -15,6 +15,7 @@
 									<th>Empresa</th>
 									<th>Grupo</th>
 									<th>Fecha de visita</th>
+									<th>Observaciones</th>
 									<th></th>
 							</tr>
 					</thead>
@@ -25,6 +26,7 @@
 									<td data-label="Empresa">MitLife</td>
 									<td data-label="Grupo">5CV52</td>
 									<td data-label="Fecha de visita">03/03/2021</td>
+									<td data-label="Observaciones">Documentación completa</td>
 									<td><label for="btn-modal" class="lbl-modal2">Rechazar</label></td>
 							</tr>
                             <tr>
@@ -33,6 +35,7 @@
 									<td data-label="Empresa">Coca Cola</td>
 									<td data-label="Grupo">6AV50</td>
 									<td data-label="Fecha de visita">05/10/2021</td>
+									<td data-label="Observaciones">Documentación completa</td>
 									<td><label for="btn-modal" class="lbl-modal2">Rechazar</label></td>
 							</tr>
 					</tbody>
