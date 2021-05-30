@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="{{asset('css/Pantallas_Principales/RegisterForm_V2.css')}}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 <script src="sweetalert2.all.min.js"></script>
+
 @endsection
 
 @section('content')
@@ -15,15 +16,18 @@
 <div class="container">
 
 <!-- Arroja los mensajes de error de laravel -->
-                    <div class="mensajes">
+            <!--      <div class="mensajes">
                         @if($errors->any())
                          <ul>
                             @foreach($errors->all() as $error)
-                                <li>{{$error}}</li>
+                               <li>{{$error}}</li>
+
+
                             @endforeach
                         </ul>
                         @endif
-                    </div>
+
+                    </div>-->
 <!-- Cierre  los mensajes de error de laravel -->
 
 
@@ -414,5 +418,34 @@
 <script src="{{asset('js/Pantallas_Principales/RegisterForm_V2.js')}}"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+<script>
 
+    Swal.fire({
+        title: '<strong>Registro de Alumno </strong>',
+        icon: 'info',
+        html:
+
+
+                           ' @if($errors->any()) ' +
+                            ' <ul> ' +
+                               ' @foreach($errors->all() as $error) ' +
+                                '    <li>{{$error}}</li> ' +
+                             '   @endforeach ' +
+                           ' </ul> ' +
+                           '<ul>Rectifica tus campos nuevamente</ul>'+
+                           ' @endif ' ,
+
+
+        showCloseButton: true,
+       /* showCancelButton: true,
+        focusConfirm: false,*/
+        /*confirmButtonText:
+          '<i class="fa fa-thumbs-up"></i> Great!',*/
+        confirmButtonAriaLabel: 'Thumbs up, great!',
+        /*cancelButtonText:
+          '<i class="fa fa-thumbs-down"></i>',*/
+        cancelButtonAriaLabel: 'Thumbs down'
+      })
+
+  </script>
 @endsection

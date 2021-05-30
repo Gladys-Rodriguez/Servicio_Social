@@ -174,6 +174,7 @@ Route::get('/validacionReportes', function () {
     return view('Pantallas_Admin_Servicio.validacionReportes');
 }) -> name('validacionReportes');
 
+
 //------------------------FER INICIO------------------------------------
 
 //Ruta Admin Becas Index3
