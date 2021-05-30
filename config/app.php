@@ -1,4 +1,5 @@
 <?php
+Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class;
 
 return [
 
