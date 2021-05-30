@@ -14,6 +14,7 @@
 				<strong>Empresa:</strong> Yakult <br>
 				<strong>Dirección:</strong>  Av. División del Nte. No 1419, Sta Cruz Atoyac, Benito Juárez, 03310 Ciudad de México, CDMX <br>
 				<strong>Fecha de visita:</strong> 21/04/2021 <br>
+                <strong>Observaciones:</strong> En revisión <br>
 
 </p>
 <h1>DOCUMENTOS COMPROBATORIOS</h1>
