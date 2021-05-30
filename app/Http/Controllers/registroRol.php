@@ -66,6 +66,11 @@ class registroRol extends Controller
 
       $registro->save(); */
 
+      $validated = $request->validate([
+        'email' => 'unique:users',
+        'id' => 'unique:users',
+       ]);
+
       DB::transaction(function () use ($request) {
 
         $id_users = DB::table('users')->insertGetId([

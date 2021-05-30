@@ -424,6 +424,10 @@ Route::put('/pruebaEditarForm2/{id}', [App\Http\Controllers\editarController::cl
 Route::get('/EditarAlumnoForm/{id}', [App\Http\Controllers\editarAlumnoController::class, 'edit'])->name('home');
 Route::put('/EditarAlumnoForm2/{id}', [App\Http\Controllers\editarAlumnoController::class, 'update'])->name('EditarAlumnoController.update');
 
+//editar estado del alumno
+Route::get('/EditarAdminForm/{id}', [App\Http\Controllers\AdminMasterIndexController::class, 'edit'])->name('home');
+Route::put('/EditarAdminForm2/{id}', [App\Http\Controllers\AdminMasterIndexController::class, 'update'])->name('EditarAlumnoController.update');
+
 
 //Pantalla de editar de imagenes de inicio
 Route::get('/EditarFormBannerInicio', function (){
