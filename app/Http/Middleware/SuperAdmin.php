@@ -19,6 +19,11 @@ class SuperAdmin
 
  public function handle(Request $request, Closure $next)
     {
+        if ($request->user()->estado = 0) {
+            return redirect('Registro_exitoso');
+        }
+        else {
+
         switch(auth::user()->id_rol){
             case ('1'):
                 return $next($request);//si es super administrador continua al HOME
@@ -41,7 +46,11 @@ class SuperAdmin
             case ('7'):
                 return redirect('/prueba');//si es prueba
             break;
+            case ('8'):
+                return redirect('/Index_Master');//si es prueba
+            break;
 
         }
+    }
     }
 }

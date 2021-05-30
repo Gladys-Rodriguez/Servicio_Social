@@ -73,6 +73,7 @@
         </script>
 
     <section class="section-main">
+
       <h1>INICIO DE SESIÓN</h1>
     </section>
     <section class="section-two">

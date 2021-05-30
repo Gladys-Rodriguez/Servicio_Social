@@ -108,7 +108,7 @@
         </script>
 
     <section class="section-main">
-      <h1>EDITAR IMAGEN DE BANNER DE BECAS</h1>
+      <h1>AGREGAR NUEVO ADMINISTRADOR</h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->

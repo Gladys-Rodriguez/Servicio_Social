@@ -94,7 +94,10 @@ Route::get('/FormatosAdministrativosPA', [App\Http\Controllers\FormatosAControll
 Route::post('/upload', [App\Http\Controllers\FormatosAFilesController::class, 'store'])->name('user.files.store');
 
 // ************************************* RUTAS    DE    GLADYS    *******************************************
-
+//Prueba de Login
+Route::get('/LoginPruebaGla', function (){
+    return view('Pantallas_Alumno_Servicio.pantallaLogin');
+}) -> name('LoginPruebaGla');
 
 
 /*Route::get('/', [App\Http\Controllers\AlumnoController::class, 'muestra']);*/
@@ -170,6 +173,7 @@ Route::get('/validacionAlumno', function () {
 Route::get('/validacionReportes', function () {
     return view('Pantallas_Admin_Servicio.validacionReportes');
 }) -> name('validacionReportes');
+
 
 //------------------------FER INICIO------------------------------------
 
@@ -275,10 +279,7 @@ Route::get('/RegisterForm', function (){
     return view('Pantallas_Principales.RegisterForm');
 }) -> name('RegisterForm');
 
-//Pantalla Registro con roles
-Route::get('/RegisterFormRoles', function (){
-    return view('Pantallas_Principales.RegisterFormRoles');
-}) -> name('RegisterFormRoles');
+
 
 //Ruta para recibir los datos que enviamos para el registro
 Route::resource('Servicio','registro');
@@ -368,6 +369,8 @@ Route::get('/Index_Alumno.blade', [App\Http\Controllers\AlumnoLController::class
 Route::get('/logout', [App\Http\Controllers\BecasController::class, 'getLogout'])->name('logout');
 Route::get('/prueba.blade', [App\Http\Controllers\pruebaController::class, 'index'])->name('home');
 Route::get('/logout', [App\Http\Controllers\pruebaController::class, 'getLogout'])->name('logout');
+Route::get('/Index_Master.blade', [App\Http\Controllers\AdminMasterController::class, 'index'])->name('home');
+Route::get('/logout', [App\Http\Controllers\AdminMasterController::class, 'getLogout'])->name('logout');
 //DocenteController
 
 
@@ -417,6 +420,11 @@ Route::get('/showPrueba/{id}', [App\Http\Controllers\showController::class, 'sho
 //editar prueba
 Route::get('/pruebaEditarForm/{id}', [App\Http\Controllers\editarController::class, 'edit'])->name('home');
 Route::put('/pruebaEditarForm2/{id}', [App\Http\Controllers\editarController::class, 'update'])->name('pruebaEditarForm2.update');
+
+//editar datos de alumno
+Route::get('/EditarAlumnoForm/{id}', [App\Http\Controllers\editarAlumnoController::class, 'edit'])->name('home');
+Route::put('/EditarAlumnoForm2/{id}', [App\Http\Controllers\editarAlumnoController::class, 'update'])->name('EditarAlumnoController.update');
+
 
 //Pantalla de editar de imagenes de inicio
 Route::get('/EditarFormBannerInicio', function (){
@@ -477,6 +485,10 @@ Route::get('/FormatosBeca', function (){
 Route::get('/MiBeca','MiBecaDatosController@index');
 
 Route::get('/Index_Master','AdminMasterIndexController@index');
+//Pantalla Registro con roles
+Route::get('/RegisterFormRoles', function (){
+    return view('Pantallas_Admin_Master.RegisterFormRoles');
+}) -> name('RegisterFormRoles');
 //-----------------------SANTOS TERMINO----------------------------------
 Auth::routes();
 

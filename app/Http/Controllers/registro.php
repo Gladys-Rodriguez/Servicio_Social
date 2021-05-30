@@ -27,18 +27,35 @@ class registro extends Controller
      */
     public function index()
     {
-        //
-        /*$id_users = Auth::user()->id;
-        $datos['alumnos']=alumno::where('id_usuarios',$id_users)->get();
-        $users['users']=User::where('id',$id_users)->get();
-        return view('Pantallas_Alumno_Servicio.Index_Alumno', $datos,$users);*/
+        /* codigo de Gladys
+        $id_users = Auth::user()->id;
+        $alumnos=DB::table('alumnos')->where('id_usuarios',$id_users)->get();
+        $users=DB::table('users')->where('id',$id_users)->get();
+        $datos=DB::table('datos')
+        ->join('alumnos', 'datos.id_datos', 'alumnos.id_datos')
+        ->where('alumnos.id_usuarios',$id_users)
+        ->get();
+       // echo "<prev>";
+      //  print_r($datos);
+      //  $datos['datos']=alumno::join('datos','datos.id_datos', '=', 'alumnos.id_datos')->get();
+
+        return view('Pantallas_Alumno_Servicio.Index_Alumno', compact('alumnos', 'users', 'datos')); */
+
 
         $id_users = Auth::user()->id;
-        $alumnos['alumnos']=alumno::where('id_usuarios',$id_users)->get();
-        $users['users']=User::where('id',$id_users)->get();
-        $datos['datos']=dato::where('id_datos',$id_users)->get();
-        $direccions['direccions']=direccion::where('id_direccions',$id_users)->get();
-        return view('Pantallas_Alumno_Servicio.datosPersonalesA', $alumnos,$users,$datos,$direccions);
+        $alumnos=DB::table('alumnos')->where('id_usuarios',$id_users)->get();
+        $users=DB::table('users')->where('id',$id_users)->get();
+        $datos=DB::table('datos')
+        ->join('alumnos', 'datos.id_datos', 'alumnos.id_datos')
+        ->where('alumnos.id_usuarios',$id_users)
+        ->get();
+        $direccions=DB::table('direccions')
+        ->join('alumnos', 'direccions.id_direccions', 'alumnos.id_direccions')
+        ->where('alumnos.id_usuarios',$id_users)
+        ->get();
+
+        return view('Pantallas_Alumno_Servicio.datosPersonalesA', compact('alumnos', 'users', 'datos', 'direccions'));
+
     }
 
     /**
@@ -60,25 +77,18 @@ class registro extends Controller
     public function store(Request $request)
     {
 
-      /*return $request->all();
-      $registro= new User;
-
       $validated = $request->validate([
         'email' => 'unique:users',
+        'id' => 'unique:users',
        ]);
+       /*$validator = Validator::make($request->all(), [
+        'email' => 'unique:users',
+        'id' => 'unique:users',
+        ]);*/
 
-      $registro->id=$request->id;
-      $registro->name=$request->name;
-      $registro->email=$request->email;
-      $registro->password=bcrypt($request->password);
-      //$registro->password=bcrypt($request->password);
-      $registro->id_rol= 7;
 
-      $registro->save();
-      return redirect('Registro_exitoso'); */
 
-      //$id_rol = Rol::find(5);
-      //$id_rol = DB::table('users')->where('id_rol', 5);
+
 
       DB::transaction(function () use ($request) {
 
@@ -87,6 +97,7 @@ class registro extends Controller
             'email' => $request->input('email'),
             'password' => bcrypt($request->input('password')),
             'id_rol' => 5,
+            'estado' => 1,
         ]);
 
         $id_datos = DB::table('datos')->insertGetId([
@@ -116,7 +127,6 @@ class registro extends Controller
             'id_usuarios' => $id_users,
             'id_direccions' => $id_direccions,
         ]);
-
       });
 
       return redirect('Registro_exitoso');

@@ -21,6 +21,9 @@ class AlumnoLController extends Controller
     public function index()
     {
         //
+        if (auth::user()->estado = 0) {
+            return redirect('Registro_exitoso');
+        }
         return view('/Index_Alumno');
     }
 

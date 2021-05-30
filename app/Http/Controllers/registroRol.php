@@ -8,6 +8,16 @@ use Illuminate\Http\Unique;
 use App\Models\Usuario;
 use App\Models\User;
 
+use Illuminate\Support\Facades\DB;
+
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
+use App\Models\dato;
+use App\Models\alumno;
+use App\Models\direccion;
+
 class registroRol extends Controller
 {
     /**
@@ -40,9 +50,10 @@ class registroRol extends Controller
     {
 
         //return $request->all();
-      $registro= new User;
+     /* $registro= new User;
 
       $validated = $request->validate([
+        'id' => 'unique:users',
         'email' => 'unique:users',
        ]);
 
@@ -53,8 +64,36 @@ class registroRol extends Controller
       //$registro->password=bcrypt($request->password);
       $registro->id_rol=$request->id_rol;
 
-      $registro->save();
-      return redirect('Registro_exitoso');
+      $registro->save(); */
+
+      DB::transaction(function () use ($request) {
+
+        $id_users = DB::table('users')->insertGetId([
+            'id' => $request->input('id'),
+            'email' => $request->input('email'),
+            'password' => bcrypt($request->input('password')),
+            'id_rol' => $request->input('id_rol'),
+            'estado' => $request->input('estado'),
+        ]);
+
+        $id_datos = DB::table('datos')->insertGetId([
+            'nombre' => $request->input('nombre'),
+            'ap_paterno' => $request->input('ap_paterno'),
+            'ap_materno' => $request->input('ap_materno'),
+            'telefono' => $request->input('telefono'),
+            'celular' => $request->input('celular'),
+        ]);
+
+        $id_administradors= DB::table('administradors')->insertGetID([
+          'descripcion' => $request->input('descripcion'),
+          'id_datos'=>$id_datos,
+          'id'=>$id_users,
+          'Estado' => $request->input('Estado'),
+
+        ]);
+
+      });
+      return redirect()->back() ->with('alert', 'Registro Exitoso');
     }
 
     /**
