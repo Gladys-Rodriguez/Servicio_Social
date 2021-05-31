@@ -16,7 +16,6 @@
 									<th>Empresa</th>
 									<th>Grupo</th>
 									<th>Fecha de visita</th>
-									<th>Observaciones</th>
 									<th></th>
 							</tr>
 					</thead>
@@ -27,7 +26,6 @@
 									<td data-label="Empresa">Bimbo</td>
 									<td data-label="Grupo">2CM20</td>
 									<td data-label="Fecha de visita">19/05/2021</td>
-									<td data-label="Observaciones">En revisión</td>
 									<td><label for="btn-modal" class="lbl-modal">Ver Más</label></td>
 							</tr>
 					</tbody>
@@ -46,10 +44,10 @@
 				<strong>Empresa:</strong> Bimbo <br>
 				<strong>Dirección:</strong> Malacates No. 15 Col Sta. María Insurgentes Delegación Cuauhtémoc, C.P. 06430 Ciudad de México <br>
 				<strong>Fecha de visita:</strong> 19/05/2021 <br>
-				<strong>Observaciones:</strong> En revisión<br>
 				<strong>Documentos: </strong></p>
 				<a href="#" class="label_a">Solicitud de Visita</a>
-				<hr><hr><hr><br><br><br>
+				<hr><hr><hr>
+				<textarea name="" placeholder="Observaciones:" id="" cols="50" rows="10"></textarea>
 				<a href="#" class="label_c">Rechazar</a> <a href="#" class="label_b">Aceptar</a> <br>
 			</div>
 		</div>
