@@ -29,8 +29,7 @@
                 <ul class="nav__list">
                     <li class="nav__item"><a href="#" class="nav__link active">HOME</a></li>
                     <li class="nav__item"><a href="{{url('/RegisterFormRoles')}}" class="nav__link">Nuevo Admin</a></li>
-                    <li class="nav__item"><a href="{{url('/ActivarSusA')}}" class="nav__link">Activar/Suspender Admin</a></li>
-                                        
+                                                          
                     <li class="nav__item dropdown">
                         <a href="#" class="nav__link dropdown__link">Consulta Admin<i class='bx bx-chevron-down dropdown__icon'></i></a>
                         <ul class="dropdown__menu">
@@ -44,7 +43,7 @@
 
 
                     <li class="nav__item dropdown">
-                        <a href="#" class="nav__link dropdown__link">Registro de Banners <i class='bx bx-chevron-down dropdown__icon'></i></a>
+                        <a href="#" class="nav__link dropdown__link">Nuevo Banner <i class='bx bx-chevron-down dropdown__icon'></i></a>
                         <ul class="dropdown__menu">
                             <li class="dropdown__item"><a href="{{url('/RegisterBannerInicio')}}" class="nav__link">Banner de home</a></li>
 
@@ -56,7 +55,7 @@
                         </ul>
                     </li>
                     <li class="nav__item dropdown">
-                        <a href="#" class="nav__link dropdown__link">Imagenes de Banner habilitadas <i class='bx bx-chevron-down dropdown__icon'></i></a>
+                        <a href="#" class="nav__link dropdown__link">Banners Habilitados <i class='bx bx-chevron-down dropdown__icon'></i></a>
                         <ul class="dropdown__menu">
                             <li class="dropdown__item"><a href="{{url('/consultaBannerInicio')}}" class="nav__link">Banner de home</a></li>
 
@@ -68,7 +67,7 @@
                         </ul>
                     </li>
                     <li class="nav__item dropdown">
-                        <a href="#" class="nav__link dropdown__link">Imagenes de Banner deshabilitadas <i class='bx bx-chevron-down dropdown__icon'></i></a>
+                        <a href="#" class="nav__link dropdown__link">Banners Deshabilitadas <i class='bx bx-chevron-down dropdown__icon'></i></a>
                         <ul class="dropdown__menu">
                             <li class="dropdown__item"><a href="{{url('/consultaBannerInicioInhabilitadas')}}" class="nav__link">Banner de home</a></li>
 

@@ -32,25 +32,9 @@
 					<td data-label="Email">{{$dato->email}}</td>
 					<td data-label="Telefono">{{$dato->telefono}}</td>
 					<td data-label="Estado">@if($dato->estado==1) Activo @else Inactivo @endif</td>
-                    <td><a class="boton_personalizado" href="/EditarAdminForm/{{$dato->id}}">Habilitar/deshabilitar</a></td>
+                    <td><a class="boton_personalizado" href="/EditarAdminForm/{{$dato->id}}">Habilitar/Deshabilitar</a></td>
 		    	</tr>
 				@endforeach
-               <!-- <tr>
-		    		<td data-label="Administrador">Servicio</td>
-		    		<td data-label="Nombre">Julio</td>
-					<td data-label="Apellido">Salas</td>
-					<td data-label="Email">julio@ipn.mx</td>
-					<td data-label="Telefono">5587863254</td>
-                    <td><a href="#" class="label_b">Borrar</a></td>
-		    	</tr>
-                <tr>
-		    		<td data-label="Administrador">Becas</td>
-		    		<td data-label="Nombre">Beatriz</td>
-					<td data-label="Apellido">Guerrero</td>
-					<td data-label="Email">betty@ipn.mx</td>
-					<td data-label="Telefono">5531548790</td>
-                    <td><a href="#" class="label_b">Borrar</a></td>
-		    	</tr> -->
 		    </tbody>
 	    </table>
         @endsection
