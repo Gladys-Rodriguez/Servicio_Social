@@ -40,7 +40,32 @@
 
         teclado=String.fromCharCode(key);
 
-        letras="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+        letras="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚáéíóú";
+
+        especiales="8-37-38-46";
+
+        teclado_especial=false;
+
+        for(var i in especiales){
+            if(key==especiales[i]){
+                teclado_especial=true;
+            }
+        }
+
+        if(letras.indexOf(teclado)==-1 && !teclado_especial){
+            return false;
+        }
+
+    }
+    </script>
+
+<script>
+    function sololetrasespacio(e){
+        key=e.keyCode||e.wich;
+
+        teclado=String.fromCharCode(key);
+
+        letras="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚáéíóú ";
 
         especiales="8-37-38-46";
 
@@ -83,7 +108,7 @@
           @csrf
         <!-- Nombre INPUT -->
         <label>Nombre</label>
-        <input type="text" name="nombre" placeholder="Ingresa el nombre" required maxlength="30" onkeypress="return sololetras(event)">
+        <input type="text" name="nombre" placeholder="Ingresa el nombre" required maxlength="30" onkeypress="return sololetrasespacio(event)">
         <!-- Apellido paterno INPUT -->
         <label>Apellido paterno</label>
         <input type="text" name="ap_paterno" placeholder="Ingresa el apellido paterno" required maxlength="30" onkeypress="return sololetras(event)">
@@ -105,18 +130,15 @@
         <!-- PASSWORD INPUT -->
         <label>Contraseña</label>
         <input type="password" name="password" placeholder="Contraseña" required>
-        <!--DESCRIPCION INPUT-->
-        <label>Descripción</label>
-        <input type="text" name="descripcion" placeholder="Descripción" required>
-
+        <!--ROL INPUT-->
         <label>Rol</label>
         <div class="col-md-6" type="text">
              <select name="id_rol">
-                 <option value="1"> Superadmin </option>
                  <option value="2"> Admin Servicio Social </option>
                  <option value="3"> Admin Becas </option>
                  <option value="4"> Admin Prácticas </option>
                  <option value="7"> Pruebas </option>
+                 <option value="8"> Superadmin </option>
 
              </select>
                  @error('id_rol')
@@ -125,15 +147,8 @@
                   </span>
                  @enderror
         </div><br>
-        <label>Estado</label>
-        <div class="col-md-6" type="text">
-             <select name="Estado">
-                 <option value="1"> Activo </option>
-                 <option value="2"> Inactivo </option>
-             </select>
-        </div> <br>
 
-        <label>Estado de tabla usuarios</label>
+        <label>Estado</label>
         <div class="col-md-6" type="text">
              <select name="estado">
                  <option value="1"> Activo </option>

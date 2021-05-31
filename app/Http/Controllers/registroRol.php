@@ -66,6 +66,11 @@ class registroRol extends Controller
 
       $registro->save(); */
 
+      $validated = $request->validate([
+        'email' => 'unique:users',
+        'id' => 'unique:users',
+       ]);
+
       DB::transaction(function () use ($request) {
 
         $id_users = DB::table('users')->insertGetId([
@@ -85,11 +90,8 @@ class registroRol extends Controller
         ]);
 
         $id_administradors= DB::table('administradors')->insertGetID([
-          'descripcion' => $request->input('descripcion'),
           'id_datos'=>$id_datos,
           'id'=>$id_users,
-          'Estado' => $request->input('Estado'),
-
         ]);
 
       });
