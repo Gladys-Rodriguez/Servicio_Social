@@ -174,6 +174,7 @@ Route::get('/validacionReportes', function () {
     return view('Pantallas_Admin_Servicio.validacionReportes');
 }) -> name('validacionReportes');
 
+
 //------------------------FER INICIO------------------------------------
 
 //Ruta Admin Becas Index3
@@ -203,9 +204,9 @@ Route::get('/Validacion_Practicas_Visitas', function () {
 }) -> name('Validacion_Practicas_Visitas');
 
 //Ruta Clasificacion Practicas y Visitas
-Route::get('/Clasificacion_Practicas_Visitas', function () {
-    return view('Pantallas_Admin_Practicas_Visitas.Clasificacion_Practicas_Visitas');
-}) -> name('Clasificacion_Practicas_Visitas');
+Route::get('/Solicitudes_Practicas_Visitas', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.Solicitudes_Practicas_Visitas');
+}) -> name('Solicitudes_Practicas_Visitas');
 
 Route::get('/RechazadasV', function () {
     return view('Pantallas_Admin_Practicas_Visitas.RechazadasV');
@@ -423,6 +424,10 @@ Route::put('/pruebaEditarForm2/{id}', [App\Http\Controllers\editarController::cl
 //editar datos de alumno
 Route::get('/EditarAlumnoForm/{id}', [App\Http\Controllers\editarAlumnoController::class, 'edit'])->name('home');
 Route::put('/EditarAlumnoForm2/{id}', [App\Http\Controllers\editarAlumnoController::class, 'update'])->name('EditarAlumnoController.update');
+
+//editar estado del alumno
+Route::get('/EditarAdminForm/{id}', [App\Http\Controllers\AdminMasterIndexController::class, 'edit'])->name('home');
+Route::put('/EditarAdminForm2/{id}', [App\Http\Controllers\AdminMasterIndexController::class, 'update'])->name('EditarAlumnoController.update');
 
 
 //Pantalla de editar de imagenes de inicio

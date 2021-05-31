@@ -15,7 +15,7 @@ textarea {
 
 .container {
   position: relative;
-  width: 860px;
+  width: 600px;
   min-height: 30vh;
   padding: 1rem;
   /*background-color: #fafafa;*/
@@ -34,13 +34,93 @@ textarea {
   background-color: #E6E7E9;
   border-radius: 10px;
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
-  z-index: 1;
+  z-index: 1000;
   overflow: hidden;
   display: grid;
   grid-template-rows: 150px;
   /*border: red 2px solid;*/
 
 }
+
+.login-box {
+    background: #565656;
+    color: #fff;
+    border-radius: 10px;
+
+  }
+
+  .login-box .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+  }
+
+  .login-box h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .login-box label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+  }
+
+  .login-box input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .login-box button {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .login-box input[type="text"], .login-box input[type="password"], .login-box input[type="email"], .login-box input[type="number"]  {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  .login-box button[type="submit"], .login-box button[type="reset"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #d48442;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+  }
+
+  .login-box button[type="submit"]:hover, .login-box button[type="reset"]:hover {
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+  }
+
+  .login-box a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+  }
+
+  .login-box a:hover {
+    color: #fff;
+  }
+
+  */
+
 
 .slider{
     width: 820px;
@@ -49,7 +129,6 @@ textarea {
     overflow: hidden;
 
   }
-
 
   .slides{
     width: 500%;
@@ -164,6 +243,7 @@ form {
   z-index: 10;
   overflow: hidden;
   position: relative;
+
 }
 
 .title {
@@ -180,19 +260,19 @@ form {
 /*h3::after,h3:before{
     content: "";
     position: absolute;
-    width: 100px;
+    width: 120px;
     height: 3px;
     background-color: rgba(29, 15, 45, .7);
     top:0.6em;
 }
 
 h3::before{
-    left: -5px;
+    left: 25px;
 }
 
 h3::after{
-    right: -5px;
-}*/
+    right: 25px;
+} */
 
 .input-container {
   position: relative;
@@ -305,9 +385,6 @@ textarea.input {
   opacity: 1;
 }
 
-
-
-
 .contact-info {
   padding: 2.3rem 2.2rem;
   position: relative;
@@ -318,8 +395,14 @@ textarea.input {
 }
 
 .text {
-  color: black;
+  color: red;
   margin: 1.5rem 0 2rem 0;
+}
+
+.errores{
+    color: red;
+    margin: 1.5rem 0 2rem 0;
+    font: serif;
 }
 
 .information {

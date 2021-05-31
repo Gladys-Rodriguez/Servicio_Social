@@ -15,6 +15,7 @@
 									<th>Empresa</th>
 									<th>Grupo</th>
 									<th>Fecha de visita</th>
+									<th>Observaciones</th>
 									<th></th>
 							</tr>
 					</thead>
@@ -25,6 +26,7 @@
 									<td data-label="Empresa">Marinela</td>
 									<td data-label="Grupo">3CM35</td>
 									<td data-label="Fecha de visita">20/05/2021</td>
+									<td data-label="Observaciones">La fecha de la solicitud no es válida</td>
 									<td><label for="btn-modal" class="lbl-modal">Aceptar</label></td>
 							</tr>
                             <tr>
@@ -33,6 +35,7 @@
 									<td data-label="Empresa">Bancomer</td>
 									<td data-label="Grupo">4AM40</td>
 									<td data-label="Fecha de visita">10/06/2021</td>
+									<td data-label="Observaciones">Documentos incompletos</td>
 									<td><label for="btn-modal" class="lbl-modal">Aceptar</label></td>
 							</tr>
 					</tbody>

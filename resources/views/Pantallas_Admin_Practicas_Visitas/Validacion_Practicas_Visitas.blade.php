@@ -15,6 +15,7 @@
 									<th>Empresa</th>
 									<th>Grupo</th>
 									<th>Fecha de visita</th>
+									<th>Observaciones</th>
 									<th></th>
 							</tr>
 					</thead>
@@ -25,7 +26,8 @@
 									<td data-label="Empresa">Yakult</td>
 									<td data-label="Grupo">2AM24</td>
 									<td data-label="Fecha de visita">21/04/2021</td>
-									<td> <a href="{{url('/ValidacionV2')}}"" class="lbl-modal">Documentación</a></td>
+									<td data-label="Observaciones">En revisión</td>
+									<td> <a href="{{url('/ValidacionV2')}}"" class="lbl-modal">Documentos</a></td>
 							</tr>
                            
 					</tbody>

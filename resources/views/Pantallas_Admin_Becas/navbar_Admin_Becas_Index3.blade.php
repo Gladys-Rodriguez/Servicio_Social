@@ -29,7 +29,7 @@
                 <ul class="nav__list">
                     <li class="nav__item"><a href="{{url('/Admin_Becas_Index3')}}" class="nav__link active">HOME</a></li>
                     <li class="nav__item"><a href="{{url('/Validacion_Alumno_Becas')}}" class="nav__link">VALIDACIÓN DE DOCUMENTOS</a></li>
-                    <li class="nav__item"><a href="{{url('/Tipo_Alumno_Becas')}}" class="nav__link">TIPOS DE BECAS</a></li>
+                    <li class="nav__item"><a href="{{url('/Tipo_Alumno_Becas')}}" class="nav__link">LISTAS DE ALUMNOS POR TIPO DE BECA</a></li>
                     <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
 
                 </ul>
@@ -72,7 +72,7 @@
 
     <section class="section-main">
       <h1>ADMINISTRACIÓN DE BECAS
-      <?php /*<br> Usuario con matricula: {{ Auth::user()->id}} */?>
+      <br> Usuario con matricula: {{ Auth::user()->id}}
     </h1>
 
 

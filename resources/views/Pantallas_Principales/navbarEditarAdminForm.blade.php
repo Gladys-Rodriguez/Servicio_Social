@@ -107,7 +107,7 @@
         </script>
 
     <section class="section-main">
-      <h1>Subida de imagenes para Servicio Social</h1>
+      <h1>EDITAR ESTADO DEL USUARIO</h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->
