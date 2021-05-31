@@ -11,4 +11,15 @@ class Grupo extends Model
     protected $table = 'grupos';
     protected $primaryKey = 'id';
     public $timestamp = true;
+
+
+    public function carrera()
+    {
+        return $this->belongsTo(Carrera::class, 'carrera_id', 'id' );
+    }
+
+    public function visitas()
+    {
+        return $this->belongsToMany(Visita::class, 'grupos_visitas', 'grupo_id', 'visita_id')->withTimestamps();
+    }
 }

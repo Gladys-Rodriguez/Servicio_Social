@@ -12,4 +12,15 @@ class VisitaDocumento extends Model
     protected $table = 'visita_documentos';
     protected $primaryKey = 'id';
     public $timestamp = true;
+
+
+    public function tipo_documento()
+    {
+        return $this->belongsTo(tipoDocumento::class, 'tipo_documento_id', 'id');
+    }
+    
+    public function visita()
+    {
+        return $this->belongsTo(Visita::class, 'visita_id', 'id');
+    }
 }

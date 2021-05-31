@@ -11,4 +11,10 @@ class Carrera extends Model
     protected $table = 'carreras';
     protected $primaryKey = 'id';
     public $timestamp = true;
+
+
+    public function grupos()
+    {
+        return $this->hasMany(Grupo::class, 'carrera_id', 'id');
+    }
 }

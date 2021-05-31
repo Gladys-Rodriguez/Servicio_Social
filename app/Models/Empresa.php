@@ -11,4 +11,16 @@ class Empresa extends Model
     protected $table = 'empresas';
     protected $primaryKey = 'id';
     public $timestamp = true;
+
+
+    public function direccion()
+    {
+        return $this->belongsTo(direccion::class, 'direccion_id', 'id_direccions');
+    }
+
+
+    public function visitas()
+    {
+        return $this->hasMany(Visita::class, 'empresa_id', 'id');
+    }
 }

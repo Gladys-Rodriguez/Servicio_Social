@@ -32,4 +32,9 @@ class direccion extends Model
     {
         return $this->hasOne('App\Models\alumno', 'id_direccions', 'id_direccions');
     }
+
+    public function empresa()
+    {
+        return $this->hasOne(Empresa::class,'direccion_id','id_direccions');
+    }
 }
