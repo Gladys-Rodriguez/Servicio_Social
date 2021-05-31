@@ -18,12 +18,13 @@
 		    		<th>Email</th>
 		    		<th>Teléfono</th>
 					<TH>Estado</TH>
+					<th></th>
                     
 		    	</tr>
 		    </thead>
 		    <tbody>
 			@foreach ($datos as $dato)
-		    	<tr>
+		    	<tr> 
 		    		<td data-label="Administrador">{{$dato->Tipo_rol}}</td>
 		    		<td data-label="Nombre">{{$dato->nombre}}</td>
 					<td data-label="Apellido Paterno">{{$dato->ap_paterno}}</td>
@@ -31,7 +32,8 @@
 					<td data-label="Email">{{$dato->email}}</td>
 					<td data-label="Telefono">{{$dato->telefono}}</td>
 					<td data-label="Estado">@if($dato->estado==1) Activo @else Inactivo @endif</td>
-		    	</tr>
+					<td data-label=""><a href="/EditarFormBannerPracticas/{{$dato->id}}">Editar</a></td>
+		    	</tr></a>
 				@endforeach
                <!-- <tr>
 		    		<td data-label="Administrador">Servicio</td>
