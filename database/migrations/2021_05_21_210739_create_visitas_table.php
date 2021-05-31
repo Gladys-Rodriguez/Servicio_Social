@@ -15,13 +15,13 @@ class CreateVisitasTable extends Migration
     {
         Schema::create('visitas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('docente_id')->index('docente_id');
+            $table->unsignedBigInteger('docente_id')->index('docente_id');
             $table->unsignedBigInteger('empresa_id')->index('empresa_id');
             $table->dateTime('fecha_visita')->nullable();
             $table->boolean('validacion')->nullable();
             $table->timestamps();
 
-            $table->foreign('docente_id')->references('id_docentes')->on('docentes')->onDelete('cascade');
+            $table->foreign('docente_id')->references('id')->on('docentes')->onDelete('cascade');
             $table->foreign('empresa_id')->references('id')->on('empresas')->onDelete('cascade');
         });
     }

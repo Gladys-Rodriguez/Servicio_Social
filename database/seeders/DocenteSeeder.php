@@ -17,14 +17,14 @@ class DocenteSeeder extends Seeder
     {
         docente::create([
             'academia' => 'informatica',
-            'id_datos' => 1,
-            'id' => 1,
+            'dato_id' => 1,
+            'user_id' => 1,
         ]);
 
         docente::create([
             'academia' => 'informatica',
-            'id_datos' => 2,
-            'id' => 2,
+            'dato_id' => 2,
+            'user_id' => 2,
         ]);
     }
 }
