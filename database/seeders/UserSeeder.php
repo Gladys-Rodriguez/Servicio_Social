@@ -18,15 +18,15 @@ class UserSeeder extends Seeder
         User::create([
             'email' => 'moises@hotmail.com',
             'password' => bcrypt('moises@hotmail.com'),
-            'estado' -> true,
-            'id_rol' => '2',
+            'estado' => true,
+            'id_rol' => '6',
         ]);
 
         User::create([
             'email' => 'fernando@gmail.com',
             'password' => bcrypt('fernando@gmail.com'),
-            'estado' -> true,
-            'id_rol' => '2',
+            'estado' => true,
+            'id_rol' => '6',
         ]);
     }
 }
