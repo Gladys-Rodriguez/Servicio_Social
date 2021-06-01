@@ -17,13 +17,42 @@ class RolSeeder extends Seeder
     {
         Rol::create([
             'id_rol' => 1,
-            'Tipo_rol' => 'Alumno',
+            'Tipo_rol' => 'Laravel',
         ]);
 
         Rol::create([
             'id_rol' => 2,
-            'Tipo_rol' => 'Docente',
+            'Tipo_rol' => 'Admnistrador de Servcio',
         ]);
 
+        Rol::create([
+            'id_rol' => 3,
+            'Tipo_rol' => 'Admnistrador de Becas',
+        ]);
+
+        Rol::create([
+            'id_rol' => 4,
+            'Tipo_rol' => 'Admnistrador de Practicas',
+        ]);
+
+        Rol::create([
+            'id_rol' => 5,
+            'Tipo_rol' => 'Alumno',
+        ]);
+
+        Rol::create([
+            'id_rol' => 6,
+            'Tipo_rol' => 'Docente',
+        ]);   
+
+        Rol::create([
+            'id_rol' => 7,
+            'Tipo_rol' => 'Prueba',
+        ]);
+
+        Rol::create([
+            'id_rol' => 8,
+            'Tipo_rol' => 'Admin Master',
+        ]);   
     }
 }
