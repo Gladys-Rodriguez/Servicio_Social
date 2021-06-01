@@ -68,7 +68,7 @@ class DocenteVisitaController extends Controller
     {
         $visita = Visita::findOrFail($id);
         $documentos =VisitaDocumento::where('visita_id', $visita->id)->get();
-        //dd($documentos);
+        
 
         return view('Pantallas_Docente_Practicas_Visitas.show')
             ->with('visita', $visita)
