@@ -21,8 +21,11 @@ Solicitar Visita Escolar
 <section class="section-dos">
     <h2>Solicitud de Visita o Práctica Escolar</h2>
 
-    <form class="form">
+    <form class="form" action="{{ route('DocenteVisitas.store') }}" method="POST" enctype="multipart/form-data">
         <div class="col">
+            <label for="docente_id">ID DOCENTE: </label>
+            <input type="text" name="docente_id" id="docente_id" value="1">
+
             <label>Profesor:</label>
             <input type="text" value="RODRIGUEZ PEREZ MANUEL" readonly>
 
@@ -39,57 +42,25 @@ Solicitar Visita Escolar
                 <option value="turismo">1TV12</option>
             </select>
 
-            <label>Fecha de Visita:</label>
-            <input type="date">
+            <label for="fecha_visita">FECHA VISITA: </label>
+            <input type="date" name="fecha_visita" id="fecha_visita">
         </div>
         
         
         
         <div class="col">
-            <label>Nombre Empresa:</label>
-            <input type="text"/>
-
-            <label>Estado:</label>
-            <select name="carrera" id="Carrera">
-                <option value="CMDX">CDMX</option>
-                <option value="EDOMEX">Estado de México</option>
+            <label for="empresa_id">ID EMPRESA:</label>
+            <select name="empresa_id" id="empresa_id" required>
+                @foreach ($empresas as $id => $display)
+                <option value=" {{ $id }} "> {{ $display }} </option>
+                @endforeach
             </select>
-
-            <label>Alcaldía/Municipio:</label>
-            <input type="text"/>
-
-            <label>Calle:</label>
-            <input type="text"/>
-
-            <label>Num Exterior:</label>
-            <input type="text"/>
-
-            <label>Num Interior:</label>
-            <input type="text"/>
-
-            <label>Código Postal:</label>
-            <input type="text"/>
-        </div>
-            <!--
-            <div class="col">
-                <label></label>
-                <input type="text">
-
-                <label>Organizacion</label>
-                <input type="text">
-
-                <label>Fecha de Visita</label>
-                <input type="date">
-            </div>
-        -->
 
 
             <div class="col-all">
                 <p>Documentos:</p>
-                <label>Permiso</label>
-                <input type="file" accept="application/pdf">
-                <label>Informe Visita</label>
-                <input type="file" accept="application/pdf">
+                <label  for="ruta">Solicitud de Visita</label>
+                <input name="ruta" type="file" accept="application/pdf">
             </div>
             <input type="submit" value="ENVIAR">
     </form>
