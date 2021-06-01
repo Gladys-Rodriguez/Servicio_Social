@@ -9,7 +9,7 @@ class informe_trimestral extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name',
-        'usuario'    
+        'nombre',
+        'user'  
     ];
 }

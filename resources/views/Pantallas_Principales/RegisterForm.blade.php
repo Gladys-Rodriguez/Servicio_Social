@@ -93,6 +93,8 @@
         <!-- PASSWORD INPUT -->
         <label>Contraseña</label>
         <input type="password" name="password" placeholder="Contraseña" required>
+        <div class="form-group row">
+                    
         <button type="submit">Registrar</button>
 
 

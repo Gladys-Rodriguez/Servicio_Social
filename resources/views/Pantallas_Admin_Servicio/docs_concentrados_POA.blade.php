@@ -8,7 +8,7 @@
 <body>
 
 <div class="container" id="tabla">
-  <h2>Archivos concentrado de inicios</h2>          
+  <h2>Archivos concentrado POA</h2>          
   <div class="table-responsive">
   <table class="table">
   <thead>
@@ -22,7 +22,7 @@
   <tbody>
     @foreach($files as $file)
     <tr>
-      <th scope="row"></th>
+      <th scope="row">{{ $file->id_concentrados_poas }}</th>
       <td>{{ $file->nombre }}</td>
       <td>
         <a target="_blank" href="storage/public/{{ Auth::id() }}/{{ $file->nombre }}" class="btn  "> Ver</a>

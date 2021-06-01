@@ -11,20 +11,21 @@
        
     
     <h2> Concentrado de Inicios </h2>
-    <form method="" action="" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('uploadConcentradoInicios.store') }}" enctype="multipart/form-data">
+    @csrf
      <div class="container" >
-        <input type="file" class="upload-box" name="files[]"  multiple>
+        <input type="file" class="upload-box" name="files[]"  multiple required="required">
         
         <button type="submit" class="btn btn1" > subir</button>
         
         </div>
     </form>
-    <form action="{{url('/docs_concentrados')}}">
-        <button type="submit" class="btn btn1"> Ver Documentos concentrado de inicios </button>
-    </form>
+    <button type="button" class="btn btn1"><a href="{{ route('docsConcentradoInicios.index') }}"> Ver Archivos Concentrado de Inicios</a></button>
+    
 
     <h2> Concentrado de Liberaciones Solicitadas  </h2>
-    <form method="" action="" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('uploadConcentradoLiberaciones.store') }}" enctype="multipart/form-data">
+    @csrf
      <div class="container" >
         <input type="file" class="upload-box" name="files[]"  multiple>
         
@@ -32,25 +33,18 @@
         </div>
     </form>
 
-    <form action="{{url('/docs_liberaciones')}}">
-        <button type="submit" class="btn btn1"> Ver Documentos concentrado de liberaciones solicitadas </button>
-    </form>
+    <button type="button" class="btn btn1"><a href="{{ route('docsConcentradoLiberaciones.index') }}"> Ver Archivos Concentrado de Liberaciones</a></button>
 
 
     <h2> Informes POA  </h2>
-    <form method="" action="" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('uploadConcentradoPOA.store') }}" enctype="multipart/form-data">
+    @csrf
      <div class="container" >
         <input type="file" class="upload-box" name="files[]"  multiple>
         <button type="submit" class="btn btn1" > subir</button>
         </div>
-
-        <form action="{{url('/docs_concentrado_poa')}}">
-        <button type="submit" class="btn btn1"> Ver Documentos Informes POA </button>
-        </form>
-
-
-
-
+        
+        <button type="button" class="btn btn1"><a href="{{ route('docsConcentradoPOA.index') }}"> Ver Archivos Concentrado POA </a></button>
 
     </body>
     </html>
