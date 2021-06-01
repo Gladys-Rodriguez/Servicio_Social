@@ -34,11 +34,9 @@
                     <li class="nav__item"><a href="#" class="nav__link active">Home</a></li>
 
                     <li class="nav__item dropdown">
-                        <a href="#" class="nav__link dropdown__link">Servicio Social <i class='bx bx-chevron-down dropdown__icon'></i></a>
-
-
+                        <a href="/Index_Alumno" class="nav__link dropdown__link">Servicio Social <i class='bx bx-chevron-down dropdown__icon'></i></a>
                         <ul class="dropdown__menu">
-                            <li class="dropdown__item"><a href="#" class="nav__link">Registro</a></li>
+                            <li class="dropdown__item"><a href="{{url('/NuevoRegistro')}}" class="nav__link">Nuevo Registro</a></li>
                            <!-- <li class="dropdown__item"><a href="#" class="nav__link">Location</a></li>
                             <li class="dropdown__item"><a href="#" class="nav__link">Studies</a></li> -->
                         </ul>
@@ -52,10 +50,12 @@
 
                         <ul class="dropdown__menu">
                             <li class="dropdown__item"><a href="#" class="nav__link">Convocatoria</a></li>
-                            <li class="dropdown__item"><a href="#" class="nav__link">Perfil</a></li>
+
                             <li class="dropdown__item"><a href="#" class="nav__link">Registro</a></li>
                         </ul>
                     </li>
+
+                    <li class="nav__item"><a href="{{ url('/datosPersonalesA')}}" class="nav__link active">Datos personales</a></li>
 
                     <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
 

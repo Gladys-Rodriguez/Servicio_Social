@@ -15,7 +15,6 @@ class CreateAdministradorsTable extends Migration
     {
         Schema::create('administradors', function (Blueprint $table) {
             $table->increments('id_administradors')->unsigned()->notnull();
-            $table->string('descripcion')->notnull();
             $table->unsignedInteger('id_datos')->unsigned()->notnull();
             $table->bigInteger('id')->unsigned()->notnull();
             $table->timestamps();

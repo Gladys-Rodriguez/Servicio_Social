@@ -49,7 +49,7 @@
         </div>
 <div class="form-outer">
     <div class="separa">
-      <form action="{{route('RegistroAlumno.store')}}" method="POST" autocomplete="off" id="datos">
+      <form action="{{route('RegistroAlumno.store')}}" method="POST" autocomplete="off" id="formulario">
         <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
         <div class="page slide-page">
           <div class="title">Datos Personales:</div>
@@ -105,6 +105,7 @@
 <div class="page">
           <div class="title">Domicilio:</div>
           <br>
+          <br>
             <div class="field">
                 <div class="label">Ciudad o Estado:</div>
                 <input type="text">
@@ -156,4 +157,5 @@
 <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"> </script>
 
 <script src="{{asset('js/Pantallas_Alumno_Servicio/FormularioAlumno.js')}}"></script>
+<script src="{{asset('js/Pantallas_Alumno_Servicio/FormRegistro.js')}}"></script>
 @endsection

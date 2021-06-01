@@ -1,6 +1,6 @@
 @extends('Pantallas_Principales.navbarconsultaBannerPracticas')
 
-@section('title', 'Consulta Banner Servicio')
+@section('title', 'Consulta Banner Prácticas')
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantallas_Principales/consultaBannerPracticas.css')}}">
@@ -11,7 +11,7 @@
 <div class="container">
     <div class="informacion">
       <div class="contact-info">
-        <h3 class="title">"Imagenes de servicio"</h3>
+        <h3 class="title">"Imagenes de prácticas"</h3>
       </div>
 
     <div class="tabla-consulta">

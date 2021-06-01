@@ -34,13 +34,75 @@ textarea {
   background-color: #E6E7E9;
   border-radius: 10px;
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
-  z-index: 1;
+  z-index: 1000;
   overflow: hidden;
   display: grid;
   grid-template-rows: 150px;
   /*border: red 2px solid;*/
 
 }
+
+.carousel-inner{
+    width: 820px;
+    height: 500px;
+   }
+
+/*.carousel-control-prev{
+    color: red;
+    border: 2px solid red;
+    padding: 2px;
+}
+
+.carousel-control-next{
+    color: red;
+    border: 2px solid red;
+    padding: 2px;
+}
+
+.carousel-control-prev-icon{
+    border: 2px solid #40D3DC;
+} */
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: #40D3DC;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: #40D3DC;
+}
+
+.carousel-control-prev{
+    position:absolute;
+  	left:0px;
+
+}
+
+.carousel-control-next{
+    /*border: 2px solid #40D3DC;*/
+    position:absolute;
+  	left:790px;
+
+
+}
+
+
+
 
 .slider{
     width: 820px;
@@ -49,7 +111,6 @@ textarea {
     overflow: hidden;
 
   }
-
 
   .slides{
     width: 500%;
@@ -177,22 +238,22 @@ form {
 
 }
 
-h3::after,h3:before{
+/*h3::after,h3:before{
     content: "";
     position: absolute;
-    width: 100px;
+    width: 120px;
     height: 3px;
     background-color: rgba(29, 15, 45, .7);
     top:0.6em;
 }
 
 h3::before{
-    left: -5px;
+    left: 110px;
 }
 
 h3::after{
-    right: -5px;
-}
+    right: 110px;
+} */
 
 .input-container {
   position: relative;
@@ -318,7 +379,7 @@ textarea.input {
 }
 
 .text {
-  color: black;
+  color: #333;
   margin: 1.5rem 0 2rem 0;
 }
 

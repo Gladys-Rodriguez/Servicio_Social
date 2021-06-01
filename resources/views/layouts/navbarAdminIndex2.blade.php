@@ -85,7 +85,8 @@
 
     <section class="section-main">
       <h1>Bienvenido Administrador de servicio social:
-      <br> Usuario con matricula: {{ Auth::user()->id}} </h1>
+      <?php /*<br> Usuario con matricula: {{ Auth::user()->id}} */?>
+      </h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->

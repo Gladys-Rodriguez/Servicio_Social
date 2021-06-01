@@ -17,9 +17,13 @@ class Practicas
      */
     public function handle(Request $request, Closure $next)
     {
+        if ($request->user()->estado = 0) {
+            return redirect('Registro_exitoso');
+        }
+        else {
         switch(auth::user()->id_rol){
             case ('1'):
-                return redirect('/SuperAdmin_Index');//si es super administrador continua al HOME
+                return redirect('/Index_Master');//si es super administrador continua al HOME
             break;
 			case('2'):
                 return redirect('AdminIndex');// si es un usuario de servicio social
@@ -31,7 +35,7 @@ class Practicas
                 return $next($request);//si es administrador de practicas
             break;
             case ('5'):
-                return redirect('/NuevoRegistro');//si es alumno
+                return redirect('/Index_Alumno');//si es alumno
             break;
             case ('6'):
                 return redirect('/Docente_Index');//si es docente
@@ -39,7 +43,11 @@ class Practicas
             case ('7'):
                 return redirect('/prueba');//si es prueba
             break;
+            case ('8'):
+                return redirect('/Index_Master');//si es prueba
+            break;
 
         }
+    }
     }
 }

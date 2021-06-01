@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->index();
             $table->string('password')->index();
             $table->bigInteger('id_rol')->unsigned()->notnull();
+            $table->boolean('estado');
             $table->timestamps();
 
 

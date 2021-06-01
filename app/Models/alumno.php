@@ -34,6 +34,10 @@ class alumno extends Model
     {
         return $this->belongsTo('App\Models\Usuario', 'id_usuarios', 'id');
     }
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User', 'id_usuarios', 'id');
+    }
 
     protected $fillable = [
         'carrera',
