@@ -371,6 +371,9 @@ Route::get('/prueba.blade', [App\Http\Controllers\pruebaController::class, 'inde
 Route::get('/logout', [App\Http\Controllers\pruebaController::class, 'getLogout'])->name('logout');
 Route::get('/Index_Master.blade', [App\Http\Controllers\AdminMasterController::class, 'index'])->name('home');
 Route::get('/logout', [App\Http\Controllers\AdminMasterController::class, 'getLogout'])->name('logout');
+Route::get('/index.blade', [App\Http\Controllers\DocenteController::class, 'index'])->name('home');
+Route::get('/logout', [App\Http\Controllers\DocenteController::class, 'getLogout'])->name('logout');
+
 //DocenteController
 
 
