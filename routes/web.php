@@ -532,7 +532,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// ************************************* RUTAS    DE    MOY    *******************************************
 //Rutas Practicas-y-Vistas Docente
 Route::get('/VisitasEscolares/Index','DocenteIndexController');
 Route::get('/VisitasEscolares/SolicitarVisita','DocenteSolicitarVisitaController');
 Route::get('/VisitasEscolares/MisVisitas','DocenteMisVisitasController');
+Route::resource('Visitas', 'VisitaController');
+Route::resource('DocenteVisitas', 'DocenteVisitaController');

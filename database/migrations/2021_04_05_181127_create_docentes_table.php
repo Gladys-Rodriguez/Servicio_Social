@@ -14,15 +14,15 @@ class CreateDocentesTable extends Migration
     public function up()
     {
         Schema::create('docentes', function (Blueprint $table) {
-            $table->increments('id_docentes')->unsigned()->notnull();
+            $table->bigIncrements('id');
             $table->string('academia');
-            $table->unsignedInteger('id_datos')->unsigned()->notnull();
-            $table->bigInteger('id')->unsigned()->notnull();
+            $table->unsignedInteger('dato_id')->index('dato_id');
+            $table->unsignedBigInteger('user_id')->index('user_id');
             $table->timestamps();
 
 
-            $table->foreign('id_datos')->references('id_datos')->on('datos')->onDelete('cascade');
-            $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('dato_id')->references('id_datos')->on('datos')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

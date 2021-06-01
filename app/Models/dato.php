@@ -17,6 +17,11 @@ class dato extends Model
         return $this->hasOne('App\Models\alumno', 'id_datos', 'id_datos');
     }
 
+    public function docente()
+    {
+        return $this->hasOne(Docente::class,'dato_id','id_datos');
+    }
+
     protected $fillable = [
         'nombre',
         'ap_paterno',
