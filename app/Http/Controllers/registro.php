@@ -27,19 +27,7 @@ class registro extends Controller
      */
     public function index()
     {
-        /* codigo de Gladys
-        $id_users = Auth::user()->id;
-        $alumnos=DB::table('alumnos')->where('id_usuarios',$id_users)->get();
-        $users=DB::table('users')->where('id',$id_users)->get();
-        $datos=DB::table('datos')
-        ->join('alumnos', 'datos.id_datos', 'alumnos.id_datos')
-        ->where('alumnos.id_usuarios',$id_users)
-        ->get();
-       // echo "<prev>";
-      //  print_r($datos);
-      //  $datos['datos']=alumno::join('datos','datos.id_datos', '=', 'alumnos.id_datos')->get();
 
-        return view('Pantallas_Alumno_Servicio.Index_Alumno', compact('alumnos', 'users', 'datos')); */
 
 
         $id_users = Auth::user()->id;

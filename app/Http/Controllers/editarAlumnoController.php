@@ -100,50 +100,12 @@ class editarAlumnoController extends Controller
         ->get();
         //var_dump($alumnos);
 
+
+
         return view("Pantallas_Principales.EditarAlumnoForm", compact('Users','alumnos'));
 
 
-        /*$alumnos = alumno::where('id_usuarios', $Users)->get();*/
 
-       /* $id_users = Auth::user()->$id;
-        $alumnos=DB::table('alumnos')->where('id_usuarios',$id_users)->get();
-        $Users=DB::table('users')->where('id',$id_users)->get();
-        $datos=DB::table('datos')
-        ->join('alumnos', 'datos.id_datos', 'alumnos.id_datos')
-        ->where('alumnos.id_usuarios',$id_users)
-        ->get();
-        $direccions=DB::table('direccions')
-        ->join('alumnos', 'direccions.id_direccions', 'alumnos.id_direccions')
-        ->where('alumnos.id_usuarios',$id_users)
-        ->get();
-        return view("Pantallas_Principales.EditarAlumnoForm", compact("Users", "alumnos", "datos", "direccions"));*/
-
-
-        /*$id_users = Auth::user()->$id;
-        $alumnos=DB::table('alumnos')->where('id_usuarios',$id_users)->get();
-        $users=DB::table('users')->where('id',$id_users)->get();
-        $datos=DB::table('datos')
-        ->join('alumnos', 'datos.id_datos', 'alumnos.id_datos')
-        ->where('alumnos.id_usuarios',$id_users)
-        ->get();
-        $direccions=DB::table('direccions')
-        ->join('alumnos', 'direccions.id_direccions', 'alumnos.id_direccions')
-        ->where('alumnos.id_usuarios',$id_users)
-        ->get();
-
-        return view('Pantallas_Principales.EditarAlumnoForm', compact('alumnos', 'users', 'datos', 'direccions'));*/
-
-        /*$alumnos = DB::table('alumnos')->where('alumnos.id_usuarios',$id);
-        var_dump($alumnos);*/
-
-
-        //$alumno = alumno::with('direcciones')->get();
-
-       //$alumnos=DB::table('alumnos')->where('id_usuarios',$id)->get();
-      /*$alumno= alumno::with('direcciones')->where('id_alumnos',$id)->get();
-        var_dump($alumno);*/
-        /*$direcciones= direccion::with('alumnos')->where('id_direccions','alumnos.id_direccions');
-        var_dump($direcciones);*/
     }
 
     /**
@@ -156,17 +118,47 @@ class editarAlumnoController extends Controller
     public function update(Request $request, $id)
     {
         $Users= User::with('alumnos')->findOrFail($id);
-        var_dump($id);
+        $Users -> email = $request->input('email');
+
+        //var_dump($id);
+        $Users->save();
 
          $alumnos=DB::table('alumnos')
         ->join('direccions', 'alumnos.id_direccions', 'direccions.id_direccions')
         ->join('datos', 'alumnos.id_datos', 'datos.id_datos')
         ->where('alumnos.id_usuarios',$id)
-        ->save();
+        ->update([
+            'alumnos.carrera' => $request->get('carrera'),
+            'alumnos.semestre' => $request->get('semestre'),
+            'alumnos.grupo' => $request->input('grupo'),
+            'alumnos.turno' => $request->get('turno'),
 
-        $Users->update($request->all());
+            'direccions.ciudad' => $request->input('ciudad'),
+            'direccions.alcaldia' => $request->input('alcaldia'),
+            'direccions.colonia' => $request->input('colonia'),
+            'direccions.calle' => $request->input('calle'),
+            'direccions.num_ext' => $request->input('num_ext'),
+            'direccions.num_int' => $request->input('num_int'),
+            'direccions.cp' => $request->input('cp'),
 
-        return redirect("/datosPersonalesA");
+            'datos.nombre' => $request->input('nombre'),
+            'datos.ap_paterno' => $request->input('ap_paterno'),
+            'datos.ap_materno' => $request->input('ap_materno'),
+            'datos.telefono' => $request->input('telefono'),
+            'datos.celular' => $request->input('celular'),
+
+
+
+        ]);
+
+       // $alumnos->grupo = $request->input('grupo');
+
+
+
+        //$alumnos->save();
+        //var_dump($alumnos);
+
+
     }
 
     /**
