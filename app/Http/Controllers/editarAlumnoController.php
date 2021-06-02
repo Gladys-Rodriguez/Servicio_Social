@@ -146,10 +146,10 @@ class editarAlumnoController extends Controller
             'datos.ap_materno' => $request->input('ap_materno'),
             'datos.telefono' => $request->input('telefono'),
             'datos.celular' => $request->input('celular'),
-
-
-
         ]);
+
+        return view("Pantallas_Alumno_Servicio.Index_Alumno");
+
 
        // $alumnos->grupo = $request->input('grupo');
 

@@ -113,7 +113,7 @@ Route::get('/NuevoRegistro', function (){
     return view('Pantallas_Alumno_Servicio.Registros.NuevoRegistro');
 }) -> name('Nuevo Registro');
 
-Route::get('Index_Alumno', [App\Http\Controllers\registro::class, 'index'])->name('Index_Alumno.index');
+//Route::get('Index_Alumno', [App\Http\Controllers\registro::class, 'index'])->name('Index_Alumno.index');
 
 
 //Ruta para obtener los datos desde el controlador
@@ -129,9 +129,9 @@ Route::resource('direcciones', "DireccionsController");
 Route::resource('alumnos', "AlumnosController");
 
 //Ruta oara pantalla de registro exitoso
-/*Route::get('/Index_Alumno', function (){
+Route::get('/Index_Alumno', function (){
     return view('Pantallas_Alumno_Servicio.Index_Alumno');
-}) -> name('Index_Alumno'); */
+}) -> name('Index_Alumno');
 
 
 // ************************************* FIN   RUTAS    DE    GLADYS    *******************************************
