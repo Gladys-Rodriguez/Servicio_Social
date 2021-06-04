@@ -16,7 +16,7 @@
       <a href="#" class="brand">APOYOS EDUCATIVOS</a>
       <a href="#" class="header__logo"></a>
         <i class='bx bx-menu header__toggle' id="header-toggle"></i>
-      <nav class="nav" id="nav-menu">
+      <nav class="nav-nav" id="nav-menu">
         <div class="nav__content bd-grid">
             <a href="" class="nav__perfil">
                 <div class="nav__img">

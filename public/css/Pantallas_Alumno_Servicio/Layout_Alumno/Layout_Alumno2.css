@@ -129,7 +129,7 @@ header .brand{
     header {
         width: 100%;
     }
-    header .nav {
+    header .nav-nav {
         position: fixed;
         background: rgba(60, 60, 60, .8);
         flex-direction: column;

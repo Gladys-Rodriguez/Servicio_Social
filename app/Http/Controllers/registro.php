@@ -42,7 +42,8 @@ class registro extends Controller
         ->where('alumnos.id_usuarios',$id_users)
         ->get();
 
-        return view('Pantallas_Alumno_Servicio.datosPersonalesA', compact('alumnos', 'users', 'datos', 'direccions'));
+        //return view('Pantallas_Alumno_Servicio.datosPersonalesA', compact('alumnos', 'users', 'datos', 'direccions'));
+        return view('Pantallas_Alumno_Servicio.DatosPersonales', compact('alumnos', 'users', 'datos', 'direccions'));
 
     }
 

@@ -128,10 +128,16 @@ Auth::routes();
 Route::resource('direcciones', "DireccionsController");
 Route::resource('alumnos', "AlumnosController");
 
-//Ruta oara pantalla de registro exitoso
+//Ruta oara pantalla Index Alumno
 Route::get('/Index_Alumno', function (){
     return view('Pantallas_Alumno_Servicio.Index_Alumno');
 }) -> name('Index_Alumno');
+
+
+//Ruta oara pantalla Prueba de datos Personales
+Route::get('/DatosPersonales', function (){
+    return view('Pantallas_Alumno_Servicio.DatosPersonales');
+}) -> name('DatosPersonales');
 
 
 // ************************************* FIN   RUTAS    DE    GLADYS    *******************************************
@@ -476,7 +482,8 @@ Route::get('/prueba', function (){
     return view('Pantallas_Principales.prueba');
 }) -> name('prueba');
 
-Route::get('/datosPersonalesA', [App\Http\Controllers\registro::class, 'index'])->name('datosPersonalesA.index');
+//Route::get('/datosPersonalesA', [App\Http\Controllers\registro::class, 'index'])->name('datosPersonalesA.index');
+Route::get('/DatosPersonales', [App\Http\Controllers\registro::class, 'index'])->name('DatosPersonales.index');
 
 //------------------------IVAN TERMINO------------------------------------
 
