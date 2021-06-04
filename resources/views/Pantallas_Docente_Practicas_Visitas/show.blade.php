@@ -25,7 +25,7 @@ Solicitar Visita Escolar
     <dd> {{ $visita->fecha_visita }} </dd>
 
     <dt>Validacion</dt>
-    <dd> {{ $visita->validacion }} </dd>
+    <dd> {{ $visita->validacion ? 'Aceptada' : 'Sin validar'}} </dd>
 
     <dt>Fecha de Solicitud</dt>
     <dd> {{ $visita->created_at }} </dd>
@@ -92,14 +92,13 @@ Solicitar Visita Escolar
             <tr>
                 <td> {{ $documento->visita_id }} </td>
                 <td> {{ $documento->tipo_documento->nombre }} </td>
-                <td> {{ $documento->validacion }} </td>
+                <td> {{ $documento->validacion ? 'Aceptada' : 'Sin validar' }} </td>
                 <td> {{ $documento->observaciones }} </td>
                 <td> 
                     <a href=" @php echo \Illuminate\Support\Facades\Storage::url($documento->ruta) @endphp"
                         style="color: blue">
                         Ver
                     </a>
-                    Editar
                 </td>
             </tr>
             @empty

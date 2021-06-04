@@ -15,7 +15,7 @@ Visitas Docentes
 </section>
 
 <section class="section-dos">
-    <table class="table">
+    <table>
         <thead>
             <tr>
                 <th>ID</th>

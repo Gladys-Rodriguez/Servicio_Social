@@ -18,7 +18,7 @@ class CreateVisitaDocumentosTable extends Migration
             $table->unsignedBigInteger('visita_id')->index('visita_id');
             $table->unsignedBigInteger('tipo_documento_id')->index('tipo_documento_id');
             $table->longText('ruta')->notnull();
-            $table->boolean('validacion')->nullable();
+            $table->boolean('validacion')->default(false);
             $table->text('observaciones')->nullable();
             $table->timestamps();
 
