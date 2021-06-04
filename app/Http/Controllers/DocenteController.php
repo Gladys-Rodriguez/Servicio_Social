@@ -21,7 +21,8 @@ class DocenteController extends Controller
     public function index()
     {
         //
-        return 'Bienvenido docente';
+        return view('/DocenteVisitas');
+
     }
 
     /**
@@ -88,5 +89,12 @@ class DocenteController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getLogout()
+    {
+        //
+        Auth::logout();
+        return redirect('/');
     }
 }

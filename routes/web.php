@@ -371,6 +371,9 @@ Route::get('/prueba.blade', [App\Http\Controllers\pruebaController::class, 'inde
 Route::get('/logout', [App\Http\Controllers\pruebaController::class, 'getLogout'])->name('logout');
 Route::get('/Index_Master.blade', [App\Http\Controllers\AdminMasterController::class, 'index'])->name('home');
 Route::get('/logout', [App\Http\Controllers\AdminMasterController::class, 'getLogout'])->name('logout');
+Route::get('/index.blade', [App\Http\Controllers\DocenteController::class, 'index'])->name('home');
+Route::get('/logout', [App\Http\Controllers\DocenteController::class, 'getLogout'])->name('logout');
+
 //DocenteController
 
 
@@ -424,6 +427,10 @@ Route::put('/pruebaEditarForm2/{id}', [App\Http\Controllers\editarController::cl
 //editar datos de alumno
 Route::get('/EditarAlumnoForm/{id}', [App\Http\Controllers\editarAlumnoController::class, 'edit'])->name('home');
 Route::put('/EditarAlumnoForm2/{id}', [App\Http\Controllers\editarAlumnoController::class, 'update'])->name('EditarAlumnoController.update');
+
+//editar estado del alumno
+Route::get('/EditarAdminForm/{id}', [App\Http\Controllers\AdminMasterIndexController::class, 'edit'])->name('home');
+Route::put('/EditarAdminForm2/{id}', [App\Http\Controllers\AdminMasterIndexController::class, 'update'])->name('EditarAlumnoController.update');
 
 
 //Pantalla de editar de imagenes de inicio
@@ -528,7 +535,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// ************************************* RUTAS    DE    MOY    *******************************************
 //Rutas Practicas-y-Vistas Docente
 Route::get('/VisitasEscolares/Index','DocenteIndexController');
 Route::get('/VisitasEscolares/SolicitarVisita','DocenteSolicitarVisitaController');
 Route::get('/VisitasEscolares/MisVisitas','DocenteMisVisitasController');
+Route::resource('Visitas', 'VisitaController');
+Route::resource('DocenteVisitas', 'DocenteVisitaController');
