@@ -225,8 +225,12 @@ Route::get('/docexpediente', function () {
 // Subir Archivos alumnos store
 Route::post('/uploaddocexpediente', [App\Http\Controllers\docsExpediente::class, 'store'])->name('uploaddocexpediente.store');
 
-
+//Ruta para ver la solicitud del alumno
 Route::get('/docsSolicitudAlumno', [App\Http\Controllers\docsExpediente::class, 'index'])->name('uploaddocexpediente.index');
+
+//Ruta para ver el listado de alumnos 
+Route::get('/concentradosInfo', [App\Http\Controllers\AlumnoController::class, 'lista'])->name('alumno.lista');
+
 
 
 Route::get('/storagelink', function() {
@@ -453,6 +457,10 @@ Route::get('/logout', [App\Http\Controllers\DocenteController::class, 'getLogout
 
 //Vista para prueba de consulta
 Route::get('/consultaPrueba', [App\Http\Controllers\consultaController::class, 'index'])->name('home');
+
+//Vista para consulta de alumnos para el super administrador
+Route::get('/consultaAlumnoM', [App\Http\Controllers\consultaAlumnoMController::class, 'index'])->name('home');
+
 
 //Vista para consulta de imagenes de banner de inicio
 Route::get('/consultaBannerInicio', [App\Http\Controllers\consultaBannerInicioController::class, 'index'])->name('home');

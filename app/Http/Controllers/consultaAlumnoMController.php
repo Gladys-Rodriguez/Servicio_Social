@@ -2,19 +2,11 @@
 
 namespace App\Http\Controllers;
 
-
-
-use App\Models\docs_expedientePrueba;
-use App\Models\dato;
-
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use DB;
 
-use RealRashid\SweetAlert\Facades\Alert;
-
-
-
-class docsExpediente extends Controller
+class consultaAlumnoMController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,8 +16,13 @@ class docsExpediente extends Controller
     public function index()
     {
         //
-        $files = docs_expedientePrueba::where('user', Auth::id())->get();
-        return view('Pantallas_Alumno_Servicio.docs_Seguimiento', compact('files'));
+        $datos = DB::table('alumnos')
+        ->join('users','users.id', '=', 'alumnos.id_usuarios')
+        ->join('datos', 'datos.id_datos', '=', 'alumnos.id_datos')
+        ->join('direccions', 'direccions.id_direccions', '=', 'alumnos.id_direccions')
+        ->select('users.id','datos.nombre', 'datos.ap_paterno', 'datos.ap_materno','users.email', 'datos.telefono', 'datos.celular','users.estado')
+        ->get();
+        return view("Pantallas_Admin_Master.consultaAlumnoM", compact("datos"));
     }
 
     /**
@@ -47,29 +44,6 @@ class docsExpediente extends Controller
     public function store(Request $request)
     {
         //
-        $max_size = (int)ini_get('upload_max_size') * 10048;
-        $files = $request->file('files');
-        $user_id = Auth::id();
-        $tipo = $request->input('documento');
-
-
-        foreach ($files as $file){
-                    docs_expedientePrueba::create([
-                        'nombre_doc' => $file->getClientOriginalName(),
-                        'user' => $user_id,
-                        'tipo_doc' => $tipo
-
-
-                ]);
-
-            }
-
-            return "Archivo subido";
-          /* return Alert::success('¡Éxito! 📦📦📦 ', 'Se subio satisfactoriamente el archivo. ');
-           return back(); */
-
-
-
     }
 
     /**

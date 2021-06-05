@@ -54,11 +54,14 @@
                                 @enderror
 
                         </div>
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> 741f28c7a66090a86128c4c06184ae1cc36e7827
 
 
 
@@ -68,9 +71,7 @@
                                 @if (Route::has('password.request'))
                                     <div class="hr"></div>
 				                    <div class="foot-lnk">
-					                    <a href="{{ route('password.request') }}">¿Olvidaste tu contraseña?</a>
-                                        <!-- commit de Omar -->
-                                        <a href="{{ url('/recover') }}"> Recuperar Contraseña </a>
+					                    <a href="{{ route('recover') }}">¿Olvidaste tu contraseña?</a>
                                     </div>
                                  @endif
 
