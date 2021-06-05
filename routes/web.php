@@ -386,6 +386,10 @@ Route::get('/logout', [App\Http\Controllers\DocenteController::class, 'getLogout
 //Vista para prueba de consulta
 Route::get('/consultaPrueba', [App\Http\Controllers\consultaController::class, 'index'])->name('home');
 
+//Vista para consulta de alumnos para el super administrador
+Route::get('/consultaAlumnoM', [App\Http\Controllers\consultaAlumnoMController::class, 'index'])->name('home');
+
+
 //Vista para consulta de imagenes de banner de inicio
 Route::get('/consultaBannerInicio', [App\Http\Controllers\consultaBannerInicioController::class, 'index'])->name('home');
 

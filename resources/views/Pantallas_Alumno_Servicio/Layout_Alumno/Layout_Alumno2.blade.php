@@ -55,7 +55,7 @@
                         </ul>
                     </li>
 
-                    <li class="nav__item"><a href="{{ url('/DatosPersonales')}}">Datos personales</a></li>
+                    <li class="nav__item"><a href="{{ url('/DatosPersonales')}}" class="nav__link">Datos personales</a></li>
 
                     <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
 
