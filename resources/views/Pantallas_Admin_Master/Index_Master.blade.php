@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-
 <h1>REGISTRO DE ADMINISTRADORES</h1>
 <hr><br>
 <table>
