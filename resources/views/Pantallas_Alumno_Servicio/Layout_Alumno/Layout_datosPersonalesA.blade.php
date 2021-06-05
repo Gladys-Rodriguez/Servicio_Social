@@ -98,9 +98,9 @@
 
         </script>
 
-    <section class="section-main">
+<!--    <section class="section-main">
       <h1>Datos personales</h1>
-    </section>
+    </section>-->
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->
       @yield('content')

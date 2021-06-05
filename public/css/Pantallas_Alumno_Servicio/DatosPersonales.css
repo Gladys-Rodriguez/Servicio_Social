@@ -5,9 +5,15 @@
 --green: #7ED386;
 --aqua: #3FB6A8;
 --white: #FFFFFF;
+--plata:#d3d1d1fd;
+--guinda: #7A2A40;
+--verde: #73a889c0;
 --hulu: 'Nunito Sans', sans-serif;
 --heading: 'Montserrat', sans-serif;
 --body: 'Roboto', sans-serif;
+--Raleway :'Raleway', sans-serif;
+--Signika : 'Signika Negative', sans-serif;
+--Yanone : 'Yanone Kaffeesatz', sans-serif;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,900|Montserrat|Roboto');
@@ -19,14 +25,14 @@
 .container {
   background: var(--whit);
   width: 1000px;
-  height: 1200px;
+  height: 1090px;
   margin: 0 auto;
   position: relative;
   margin-top: 10%;
   box-shadow: 2px 5px 20px  var(--gray);
 }
 
-.logo {
+/*.logo {
   float: right;
   margin-right: 12px;
   margin-top: 12px;
@@ -35,6 +41,21 @@
   font-weight: 900;
   font-size: 1.5em;
   letter-spacing: 1px;
+}*/
+.container .logo{
+    background-color: var(--plata);
+    background-size: 100%;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    float: right;
+    margin-left: 2rem;
+    margin-bottom: 3rem;
+    padding-right: -1rem;
+}
+.container .logo img{
+    width: 100px;
+    height: 100px;
 }
 
 .CTA {
@@ -66,11 +87,11 @@
 
 .leftbox {
   float: left;
-  top: -5%;
+  top: -1%;
   left: 5%;
   position: absolute;
   width: 15%;
-  height: 106%;
+  height: 102%;
   background: var(--green);
   box-shadow: 3px 3px 10px var(--gray);
 
@@ -78,22 +99,48 @@
 
 .btn_editar{
     background-color:transparent;
-
-    height: 2px;
-    margin-left: 5rem;
+    width: 125px;
+    height: 40px;
+    margin-left: 4rem;
     margin-top: 28rem;
     position: -webkit-sticky;
-    padding-bottom: 20rem;
     z-index: 100;
     position: absolute;
+    line-height: 2.3;
+    background: var(--verde);
+	color: rgba(202, 202, 208);
+	font-weight: bold;
+	border: 2px solid rgba(202, 202, 208);
+	border-radius: 25px;
+	cursor: pointer;
+	transition: 0.3s;
+
+
+
+}
+.btn_editar a{
+    font-family: var(--Yanone);
+    font-size: 1rem;
+    color: var(--plata)
 
 }
 
+.boton_personalizado {
+    margin-left:.7rem ;
+
+}
+
+.btn_editar:hover{
+    /*background: #000;*/
+    background-color: var(--aqua);
+    color: rgba(202, 202, 208);
+  }
 .nav-form a {
   list-style: none;
-  padding: 35px;
+  padding: 40px;
+  margin-left: .8rem;
   color: var(--white);
-  font-size: 1.1em;
+  font-size: 1.2rem;
   display: block;
   transition: all .3s ease-in-out;
 }
@@ -112,6 +159,7 @@
 }
 
 .rightbox {
+    /*margin-left: 18rem;*/
   float: right;
   width: 60%;
   height: 100%;
@@ -128,17 +176,18 @@
 h1 {
   font-family: var(--heading);
   color: var(--green);
-  font-size: 1em;
+  font-size: 20px;
   margin-top: 40px;
   margin-bottom: 35px;
 }
 
-h2 {
-  color: var(--gray);
+.rightbox  h2 {
+  color: var(--plata);
   font-family: var(--body);
-  width: 80%;
+  width: 50%;
+  font-size: 30px;
   text-transform: uppercase;
-  font-size: 8px;
+
   letter-spacing: 1px;
   margin-left: 2px;
 }
