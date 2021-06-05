@@ -35,10 +35,13 @@
 
                     <li class="nav__item dropdown">
                         <a href="#" class="nav__link dropdown__link">Servicio Social <i class='bx bx-chevron-down dropdown__icon'></i></a>
+                        
 
 
                         <ul class="dropdown__menu">
-                            <li class="dropdown__item"><a href="#" class="nav__link">Registro</a></li>
+                            <li class="dropdown__item"><a href="{{url('/RegistroAlumno')}}" class="nav__link">Registro</a></li>
+                            <li class="dropdown__item"><a href="{{url('/docexpediente')}}" class="nav__link">Subir Documentos</a></li>
+                            <li class="dropdown__item"><a href="{{url('/docsSolicitudAlumno')}}" class="nav__link">Ver el estado Solicitud</a></li>
                            <!-- <li class="dropdown__item"><a href="#" class="nav__link">Location</a></li>
                             <li class="dropdown__item"><a href="#" class="nav__link">Studies</a></li> -->
                         </ul>

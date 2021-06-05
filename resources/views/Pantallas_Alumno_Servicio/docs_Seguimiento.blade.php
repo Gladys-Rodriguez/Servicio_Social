@@ -33,7 +33,7 @@
     <tr>
       <th scope="row">{{ $file->id_doc_expedientesP }}</th>
       <td>{{ $file->nombre_doc }}</td>
-      <td>{{ $file->estado}}</td>
+      <td>{{ $file->estado ? 'Aceptado': 'Sin Validar'}}</td>
       <td>{{ $file->tipo_doc}}</td>
       <td>{{ $file->observaciones}}</td>
 

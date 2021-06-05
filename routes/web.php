@@ -207,8 +207,12 @@ Route::get('/docexpediente', function () {
 // Subir Archivos alumnos store
 Route::post('/uploaddocexpediente', [App\Http\Controllers\docsExpediente::class, 'store'])->name('uploaddocexpediente.store');
 
-
+//Ruta para ver la solicitud del alumno
 Route::get('/docsSolicitudAlumno', [App\Http\Controllers\docsExpediente::class, 'index'])->name('uploaddocexpediente.index');
+
+//Ruta para ver el listado de alumnos 
+Route::get('/concentradosInfo', [App\Http\Controllers\AlumnoController::class, 'lista'])->name('alumno.lista');
+
 
 
 Route::get('/storagelink', function() {
