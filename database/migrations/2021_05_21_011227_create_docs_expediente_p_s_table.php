@@ -19,13 +19,13 @@ class CreateDocsExpedientePSTable extends Migration
             $table->boolean('estado');
             $table->text('observaciones');
             $table->unsignedBigInteger('user');
-            $table->unsignedBigInteger('name');
+
 
             $table->text('tipo_doc');
-            
-        
+
+
             $table->foreign('user')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('name')->references('name')->on('users')->onDelete('cascade');
+
 
 
             $table->timestamps();
