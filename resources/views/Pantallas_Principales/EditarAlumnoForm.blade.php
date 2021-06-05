@@ -1,14 +1,16 @@
-@extends('Pantallas_Principales.navbarEditarAlumnoForm')
+@extends('Pantallas_Alumno_Servicio.Layout_Alumno.Layout_datosPersonalesA')
 
 @section('title', 'Editar datos de alumno')
 
 @section('css')
-<!--<link rel="stylesheet" href="{{asset('css/Pantallas_Principales/EditarAlumnoForm.css')}}"> -->
 <link rel="stylesheet" href="{{asset('css/Pantallas_Principales/EditarAlumnoV2.css')}}">
 @endsection
 
 @section('content')
 <!-- **************************** INICIO FORMULARIO STEP BY STEP **************************** -->
+<br>
+<div class="espacio"> </div>
+<h2>Recorra cada uno de sus datos para poder avanzar en la edición.</h2>
 <div class="container">
 <div class="progress-bar">
     <div class="step">

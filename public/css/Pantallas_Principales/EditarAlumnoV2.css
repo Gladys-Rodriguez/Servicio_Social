@@ -21,6 +21,12 @@
     grid-template-columns: repeat(2, 1fr);
 
   }
+
+  .espacio{
+      background-color: transparent;
+      width: 100%;
+      height: 180px;
+  }
   /**** ESTILOS EXTRA *****/
  .formulario__grupo .formulario__input-error {
 	font-size: 16px;
@@ -97,7 +103,8 @@
       .container{
         width:auto;
         height: auto;
-        background: url("/img/wallpaper/wall20.jpg");
+        background: url("/img/wallpaper/wall23.jpg");
+        /*background-color: #5A8584;*/
         text-align: center;
         border-radius: 5px;
         padding: 20px 35px 10px 35px;
@@ -109,7 +116,7 @@
       }
       .container .form-outer{
         border-radius: 5px;
-        background: rgba(0, 0, 0, 0.712);
+        background: rgba(0, 0, 0, 0.473);
         background-position: 0px -150px;
         width: 100%;
         overflow: hidden;
