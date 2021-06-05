@@ -55,10 +55,9 @@
 
                         </div>
 
-                        <!-- commit de Omar -->
-                        <a href="{{ url('/recover') }}"> Recuperar Contraseña </a>
 
-                        </div>
+
+
 
 
 
@@ -70,6 +69,8 @@
                                     <div class="hr"></div>
 				                    <div class="foot-lnk">
 					                    <a href="{{ route('password.request') }}">¿Olvidaste tu contraseña?</a>
+                                        <!-- commit de Omar -->
+                                        <a href="{{ url('/recover') }}"> Recuperar Contraseña </a>
                                     </div>
                                  @endif
 
