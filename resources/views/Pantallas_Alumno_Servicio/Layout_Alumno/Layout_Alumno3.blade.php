@@ -100,7 +100,7 @@
 
     <section class="section-main">
       <h1>Bienvenido Alumno
-      
+
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->
