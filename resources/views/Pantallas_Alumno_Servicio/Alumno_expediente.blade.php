@@ -176,20 +176,5 @@
 
 
 
-
-<h2> Informe Mensual </h2>
-    <form method="POST" action="{{ route('uploadEstadisticaMensual.store') }}" enctype="multipart/form-data">
-    @csrf
-     <div class="container" >
-        <input type="file" class="upload-box" name="files[]"  multiple>
-        
-        <button type="submit" class="btn btn1" > subir</button>
-        </div>
-    </form>
-
-
-
-
-
 @endsection
 
