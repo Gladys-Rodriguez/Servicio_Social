@@ -165,10 +165,74 @@ Route::get('/concentrados', function () {
     return view('Pantallas_Admin_Servicio.concentrados');
 }) -> name('concentrados');
 
+//Ruta para subir archivos concentrado inicios
+
+Route::post('/uploadConcentradoInicios', [App\Http\Controllers\concentradoIniciosController::class, 'store'])->name('uploadConcentradoInicios.store');
+
+//Ruta para ver archivos de concentrado inicios
+Route::get('/docsConcentradoInicios', [App\Http\Controllers\concentradoIniciosController::class, 'index'])->name('docsConcentradoInicios.index');
+
+//Ruta de archivos pdf
+Route::get('/docsConcentradoInicios/{file}', [App\Http\Controllers\concentradoIniciosController::class, 'show'])->name('docsConcentradoInicios.show');
+
+//Ruta para ver archivos de concentrado liberaciones
+Route::get('/docsConcentradoLiberaciones', [App\Http\Controllers\concentradoLiberacionesController::class, 'index'])->name('docsConcentradoLiberaciones.index');
+
+//Ruta para subir archivos de liberaciones
+Route::post('/uploadConcentradoLiberaciones', [App\Http\Controllers\concentradoLiberacionesController::class, 'store'])->name('uploadConcentradoLiberaciones.store');
+
+//Ruta de archivos pdf
+Route::get('/docsConcentradoLiberaciones/{file}', [App\Http\Controllers\concentradoLiberacionesController::class, 'show'])->name('docsConcentradoLiberaciones.show');
+
+//Ruta para ver archivos de concentrado Informes POA
+Route::get('/docsConcentradoPOA', [App\Http\Controllers\concentradoPOAController::class, 'index'])->name('docsConcentradoPOA.index');
+
+//Ruta para subir archivos de Informes POA
+Route::post('/uploadConcentradoPOA', [App\Http\Controllers\concentradoPOAController::class, 'store'])->name('uploadConcentradoPOA.store');
+
+//Ruta de archivos pdf Informes POA 
+Route::get('/docsConcentradoPOA/{file}', [App\Http\Controllers\concentradoPOAController::class, 'show'])->name('docsConcentradoPOA.show');
+
+
 //Ruta Estadisicas de informacion
 Route::get('/estadistica', function () {
     return view('Pantallas_Admin_Servicio.estadistica');
 }) -> name('estadistica');
+
+//Ruta para ver archivos de Estadistica mensual
+Route::get('/docsEstadisticaMensual', [App\Http\Controllers\estadisticaMensualController::class, 'index'])->name('docsEstadisticaMensual.index');
+
+//Ruta para subir archivos de Estadistica mensual
+Route::post('/uploadEstadisticaMensual', [App\Http\Controllers\estadisticaMensualController::class, 'store'])->name('uploadEstadisticaMensual.store');
+
+//Ruta de archivos pdf Estadistica Mensual
+Route::get('/docsEstadisticaMensual/{file}', [App\Http\Controllers\estadisticaMensualController::class, 'show'])->name('docsEstadisticaMensual.show');
+
+//Ruta para ver archivos de Estadistica trimestral
+Route::get('/docsEstadisticaTrimestral', [App\Http\Controllers\estadisticaTrimestral::class, 'index'])->name('docsEstadisticaTrimestral.index');
+
+//Ruta para subir archivos de Estadistica trimestral
+Route::post('/uploadEstadisticaTrimestral', [App\Http\Controllers\estadisticaTrimestral::class, 'store'])->name('uploadEstadisticaTrimestral.store');
+
+//Ruta de archivos pdf Estadistica trimestral
+Route::get('/docsEstadisticaTrimestral/{file}', [App\Http\Controllers\estadisticaTrimestral::class, 'show'])->name('docsEstadisticaTrimestral.show');
+
+// Ruta Alumno subida de archivos
+Route::get('/docexpediente', function () {
+    return view('Pantallas_Alumno_Servicio.Alumno_expediente');
+}) -> name('docexpediente');
+
+// Subir Archivos alumnos store
+Route::post('/uploaddocexpediente', [App\Http\Controllers\docsExpediente::class, 'store'])->name('uploaddocexpediente.store');
+
+
+Route::get('/docsSolicitudAlumno', [App\Http\Controllers\docsExpediente::class, 'index'])->name('uploaddocexpediente.index');
+
+
+Route::get('/storagelink', function() {
+    Artisan::call('storage:link');
+    return 'Done';
+});
 
 //Ruta validación Documentos Alumno
 Route::get('/validacionAlumno', function () {
@@ -344,6 +408,10 @@ Route::post('/registrosImagenesP/(id)', [App\Http\Controllers\RegistroBannerPrac
 Route::get('/LoginForm', function (){
     return view('Pantallas_Principales.LoginForm');
 }) -> name('LoginForm');
+
+Route::get('/recover', [App\Http\Controllers\login::class, 'getRecover'] )->name('recover');
+Route::post('/recover', [App\Http\Controllers\login::class, 'postRecover'] )->name('recover');
+
 
 Route::post('/login/(id)', [App\Http\Controllers\login::class, 'store'])->name('login.store'); //aqui se edita la pantalla de alcance
 

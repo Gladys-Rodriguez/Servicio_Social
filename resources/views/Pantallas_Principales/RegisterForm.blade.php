@@ -193,6 +193,7 @@
                     <p class="formulario__input-error">Tu calle no puede contener caracteres especiales.</p>
                 </div>
 
+<<<<<<< HEAD
                  <!-- Grupo: Numero Ext. -->
                  <div class="formulario__grupo" id="grupo__num_ext">
                     <div class="field">
@@ -204,6 +205,49 @@
                     </div>
                     <p class="formulario__input-error">No has ingresado ningún dato.</p>
                 </div>
+=======
+<br>
+<div class="container">
+<div class="informacion">
+      <div class="contact-info">
+        <h3 class="title">"Registro"</h3>
+
+      <div class="errores">
+       @if($errors->any())
+        <ul>
+        @foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+        @endforeach
+        </ul>
+        @endif
+      </div>
+
+      </div>
+
+    <!--Formulario-->
+    <div class="login-box">
+    <form action="{{route('registros.store')}}" method="POST">
+          @csrf
+        <!-- matricula INPUT -->
+        <label>Matricula</label>
+        <input type="text" name="id" placeholder="Ingresa valores númericos" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
+         <!-- nombre INPUT -->
+         <label>Nombre completo</label>
+        <input type="text" name="name" placeholder="Ingresa tu nombre completo" required minlength="10" maxlength="60" onkeypress="return sololetras(event)">
+        <!-- correo INPUT -->
+        <label>Correo Institucional</label>
+        <input type="email" name="email" placeholder="correo@hotmail.com" required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
+        <!-- PASSWORD INPUT -->
+        <label>Contraseña</label>
+        <input type="password" name="password" placeholder="Contraseña" required>
+        <div class="form-group row">
+                    
+        <button type="submit">Registrar</button>
+
+
+
+      </form>
+>>>>>>> 1a6fd9ca4f5691b8b47e4d868b07bfe622875d91
 
                  <!-- Grupo: Numero Int -->
                 <div class="formulario__grupo" id="grupo__num_int">

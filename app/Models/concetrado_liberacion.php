@@ -9,7 +9,7 @@ class concetrado_liberacion extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name',
-        'usuario'    
+        'nombre',
+        'user'    
     ];
 }

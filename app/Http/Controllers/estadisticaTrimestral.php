@@ -1,18 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User;
-use App\Mail\UserSendRecover;
+
+use App\Models\informe_trimestral;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Mail;
-//use Validator, Hash, Auth;
+use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
-class login extends Controller
+class estadisticaTrimestral extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -21,6 +19,8 @@ class login extends Controller
     public function index()
     {
         //
+        $files = informe_trimestral::where('user', Auth::id())->get();
+        return view('Pantallas_Admin_Servicio.docs_concentrados_trimestral', compact('files'));
     }
 
     /**
@@ -41,12 +41,26 @@ class login extends Controller
      */
     public function store(Request $request)
     {
-        $credentials=request()->only('email','password');
-        if(Auth::attempt($credentials)){
-            return 'No estas logueado';
-        }
+        //
+        $max_size = (int)ini_get('upload_max_size') * 10048;
+        $files = $request->file('files');
+        $user_id = Auth::id();
+        
+        
+        
+        foreach ($files as $file){
+            if(Storage::putFileAs('/public/'.$user_id.'/', $file, $file->getClientOriginalName())){
 
-        return 'No estas logueado';
+                informe_trimestral::create([
+                    'nombre' => $file->getClientOriginalName(),
+                    'user' => $user_id
+                ]);
+
+            }
+
+        }
+        Alert::success('¡Éxito! 📦📦📦 ', 'Se subio satisfactoriamente el archivo. ');
+        return back();
     }
 
     /**
@@ -58,6 +72,16 @@ class login extends Controller
     public function show($id)
     {
         //
+        $file = informe_trimestral::whereid_informe_trimestrals($id_informe_trimestrals)->firstOrFail();
+        $user_id = Auth::id();
+
+        if ($file->user == $user_id) {
+            return redirect('/storage'.'/'.$user_id.'/'.$file->nombre);
+            # code...
+        } else {
+            Alert::error('¡Error! 📢📢📢 ', 'No tienes permisos para ver el archivo.');
+            return back();
+        }
     }
 
     /**
@@ -93,23 +117,4 @@ class login extends Controller
     {
         //
     }
-    public function getRecover(){
-        return view('Pantallas_Principales.recover');
-    }
-
-   public function  postRecover(Request $request){
-    $user = User::where('email', $request->input('email'))->count();
-    if($user == "1"):
-        $user = User::where('email', $request->input('email'))->first();
-        $code = rand(100000000, 999999999);
-        $data = ['name' => $user->name, 'email' => $user->email, 'id' => $user->id, 'code' => $code];
-         Mail::to($user->email)->send(new UserSendRecover($data));
-        //return view('emails.recover', $data);
-        
-    else:
-        return back()->with('Este correo electronico no existe');
-    endif;
-    
-
-   }
 }

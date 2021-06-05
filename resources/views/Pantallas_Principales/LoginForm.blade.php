@@ -53,7 +53,16 @@
                                     </span>
                                 @enderror
 
+<<<<<<< HEAD
                         </div>
+=======
+                       
+
+                        <a href="{{ url('/recover') }}"> Recuperar Contraseña </a>
+
+                        </div>
+
+>>>>>>> 1a6fd9ca4f5691b8b47e4d868b07bfe622875d91
 
 
 

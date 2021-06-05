@@ -8,7 +8,7 @@
 <body>
 
 <div class="container" id="tabla">
-  <h2>Archivos concentrado de inicios</h2>          
+  <h2>Archivos concentrado de Liberaciones</h2>          
   <div class="table-responsive">
   <table class="table">
   <thead>

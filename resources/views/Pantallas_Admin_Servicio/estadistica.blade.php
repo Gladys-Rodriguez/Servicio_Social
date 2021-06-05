@@ -10,8 +10,23 @@
     <body>
        
     
+    
+    <h2> Acta de Nacimiento </h2>
+    <form method="POST" action="{{ route('uploadEstadisticaMensual.store') }}" enctype="multipart/form-data">
+    @csrf
+     <div class="container" >
+
+        <input type="file" class="upload-box" name="files[]"  multiple>
+      
+        <button type="submit" class="btn btn1" > subir</button>
+        </div>
+    </form>
+
+
+    
     <h2> Informe Mensual </h2>
-    <form method="" action="" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('uploadEstadisticaMensual.store') }}" enctype="multipart/form-data">
+    @csrf
      <div class="container" >
         <input type="file" class="upload-box" name="files[]"  multiple>
         
@@ -19,22 +34,18 @@
         </div>
     </form>
 
-    <form action="{{url('/docs_informe_mensual')}}">
-        <button type="submit" class="btn btn1"> Ver documentos informe mensual </button>
-        </form>
+    <button type="button" class="btn btn1"><a href="{{ route('docsEstadisticaMensual.index') }}"> Ver Estadistica Informe Mensual</a></button>
 
     <h2> Informe Trimestral  </h2>
-    <form method="" action="" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('uploadEstadisticaTrimestral.store') }}" enctype="multipart/form-data">
+    @csrf
      <div class="container" >
         <input type="file" class="upload-box" name="files[]"  multiple>
         
         <button type="submit" class="btn btn1" > subir</button>
         </div>
     </form>
-    
-    <form action="{{url('/docs_informe_trimestral')}}">
-        <button type="submit" class="btn btn1"> Ver Documentos informe trimestral </button>
-        </form>
+    <button type="button" class="btn btn1"><a href="{{ route('docsEstadisticaTrimestral.index') }}"> Ver Estadistica Informe Mensual</a></button>
 
 
     <h2> Informes POA  </h2>

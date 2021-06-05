@@ -5,11 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class concentrado_poa extends Model
+class docs_expedientePrueba extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'nombre_doc',
+            'estado',
+            'observaciones',
+            'user',
         'nombre',
-        'user'   
-    ];
+            'tipo_doc'
+        ];
+
+    
 }
