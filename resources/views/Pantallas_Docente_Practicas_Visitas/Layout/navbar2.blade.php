@@ -49,6 +49,8 @@
                             </ul>
                         </li>
 
+                        <li class="nav__item"><a href="{{url('/logout')}}" class="nav__link"> CERRAR SESIÓN</a></li>
+
                     </ul>
                 </div>
             </div>

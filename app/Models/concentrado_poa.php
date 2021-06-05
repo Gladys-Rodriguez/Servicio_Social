@@ -9,7 +9,7 @@ class concentrado_poa extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name',
-        'usuario'    
+        'nombre',
+        'user'   
     ];
 }

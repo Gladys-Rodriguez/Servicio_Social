@@ -16,7 +16,7 @@
       <a href="#" class="brand">APOYOS EDUCATIVOS</a>
       <a href="#" class="header__logo"></a>
         <i class='bx bx-menu header__toggle' id="header-toggle"></i>
-      <nav class="nav" id="nav-menu">
+      <nav class="nav-nav" id="nav-menu">
         <div class="nav__content bd-grid">
             <a href="" class="nav__perfil">
                 <div class="nav__img">
@@ -31,7 +31,7 @@
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="#" class="nav__link active">Home</a></li>
+                    <li class="nav__item"><a href="{{ url('/Index_Alumno')}}" class="nav__link active">Home</a></li>
 
                     <li class="nav__item dropdown">
                         <a href="/Index_Alumno" class="nav__link dropdown__link">Servicio Social <i class='bx bx-chevron-down dropdown__icon'></i></a>
@@ -55,7 +55,7 @@
                         </ul>
                     </li>
 
-                    <li class="nav__item"><a href="{{ url('/datosPersonalesA')}}" class="nav__link active">Datos personales</a></li>
+                    <li class="nav__item"><a href="{{ url('/DatosPersonales')}}" class="nav__link active">Datos personales</a></li>
 
                     <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
 
@@ -98,9 +98,9 @@
 
         </script>
 
-    <section class="section-main">
+<!--    <section class="section-main">
       <h1>Datos personales</h1>
-    </section>
+    </section>-->
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->
       @yield('content')

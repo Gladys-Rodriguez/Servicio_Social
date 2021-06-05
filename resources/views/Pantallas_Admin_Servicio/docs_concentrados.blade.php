@@ -9,85 +9,32 @@
 
 <div class="container" id="tabla">
   <h2>Archivos concentrado de inicios</h2>          
-  <table class="table table-condensed">
-    <thead>
-      <tr>
-        <th>Nombre del archivo</th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Archivo de prueba 5</td>
-        <td>
-            <a href="{{asset('documents/admon.pdf')}}" target="_blank" class="btn btn-sm btn-outline-secondary" id="ver">
-                Ver
-            </a>
-        </td>
-        <td>
-            <a href="" class="btn btn-sm btn-outline-danger" id="eliminar">
-                Eliminar
-            </a>
-        </td>
-      </tr>
-      <tr>
-        <td>Archivo de prueba 4</td>
-        <td>
-            <a href="{{asset('documents/admon.pdf')}}" target="_blank" class="btn btn-sm btn-outline-secondary" id="ver">
-                Ver
-            </a>
-        </td>
-        <td>
-            <a href="" class="btn btn-sm btn-outline-danger" id="eliminar">
-                Eliminar
-            </a>
-        </td>
-      </tr>
-
-      <tr>
-        <td>Archivo de prueba 3</td>
-        <td>
-            <a href="{{asset('documents/admon.pdf')}}" target="_blank" class="btn btn-sm btn-outline-secondary" id="ver">
-                Ver
-            </a>
-        </td>
-        <td>
-            <a href="" class="btn btn-sm btn-outline-danger" id="eliminar">
-                Eliminar
-            </a>
-        </td>
-      </tr>
-
-      <tr>
-        <td>Archivo de prueba 2</td>
-        <td>
-            <a href="{{asset('documents/admon.pdf')}}" target="_blank" class="btn btn-sm btn-outline-secondary" id="ver">
-                Ver
-            </a>
-        </td>
-        <td>
-            <a href="" class="btn btn-sm btn-outline-danger" id="eliminar">
-                Eliminar
-            </a>
-        </td>
-      </tr>
-
-      <tr>
-        <td>Archivo de prueba 1</td>
-        <td>
-            <a href="{{asset('documents/admon.pdf')}}" target="_blank" class="btn btn-sm btn-outline-secondary" id="ver">
-                Ver
-            </a>
-        </td>
-        <td>
-            <a href="" class="btn btn-sm btn-outline-danger" id="eliminar">
-                Eliminar
-            </a>
-        </td>
-      </tr>
-    </tbody>
+  <div class="table-responsive">
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre del archivo</th>
+      <th scope="col">Ver</th>
+      <th scope="col">Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach($files as $file)
+    <tr>
+      <th scope="row"></th>
+      <td>{{ $file->nombre }}</td>
+      <td>
+        <a target="_blank" href="storage/public/{{ Auth::id() }}/{{ $file->nombre }}" class="btn  "> Ver</a>
+      </td>
+      <td>
+      <a href="storage/app/public/{{ $file->nombre }}" class="btn btn-sm btn-outline-danger"> Eliminar </a>
+      </td>
+    </tr>
+    @endforeach
+  </tbody>
   </table>
+</div>
 </div>
 
 
