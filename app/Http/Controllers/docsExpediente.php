@@ -10,6 +10,10 @@ use App\Models\dato;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use RealRashid\SweetAlert\Facades\Alert;
+
+
+
 class docsExpediente extends Controller
 {
     /**
@@ -47,22 +51,25 @@ class docsExpediente extends Controller
         $files = $request->file('files');
         $user_id = Auth::id();
         $tipo = $request->input('documento');
-        
-        
+
+
         foreach ($files as $file){
                     docs_expedientePrueba::create([
                         'nombre_doc' => $file->getClientOriginalName(),
                         'user' => $user_id,
                         'tipo_doc' => $tipo
 
-                        
+
                 ]);
 
             }
 
             return "Archivo subido";
-       
-        
+          /* return Alert::success('¡Éxito! 📦📦📦 ', 'Se subio satisfactoriamente el archivo. ');
+           return back(); */
+
+
+
     }
 
     /**

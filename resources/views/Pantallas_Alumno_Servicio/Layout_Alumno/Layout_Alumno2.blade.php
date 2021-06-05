@@ -110,6 +110,7 @@
  <!-- AQUI EMPIEZA CONTENIDO; -->
       @yield('content')
 
+
     </section>
 
 
