@@ -22,7 +22,7 @@
   <tbody>
     @foreach($files as $file)
     <tr>
-      <th scope="row"></th>
+    <th scope="row"></th>
       <td>{{ $file->nombre }}</td>
       <td>
         <a target="_blank" href="storage/public/{{ Auth::id() }}/{{ $file->nombre }}" class="btn  "> Ver</a>

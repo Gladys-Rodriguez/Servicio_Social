@@ -39,7 +39,7 @@
                             </div>
                         </div>
 
-
+                        
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
@@ -54,6 +54,25 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="id_rol" class="col-md-4 col-form-label text-md-right">{{ __('Rol') }}</label>
+                        <div class="col-md-6">
+                                <select name="id_rol">
+                                    <option value="1"> superadmin </option>
+                                    <option value="2"> Admin Servicio social </option>
+                                    <option value="3"> Admin Becas </option>
+                                    <option value="4"> Admin practicas </option>
+                                    <option value="5"> Alumno </option>
+                                </select>
+                                @error('tipo')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            </div>
+
+                        
 
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>

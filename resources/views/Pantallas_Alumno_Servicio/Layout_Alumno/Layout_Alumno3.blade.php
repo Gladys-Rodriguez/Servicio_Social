@@ -7,7 +7,6 @@
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="{{asset('css/Pantallas_Alumno_Servicio/Layout_Alumno/Layout_Alumno2.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-
     @yield('css')
 
   </head>
@@ -25,30 +24,46 @@
                 </div>
 
                 <div>
-                    <span class="nav__name"></span>
-                    <span class="nav__name"></span>
-                </div>
+                   <!-- <span class="nav__name">Clay</span>
+                    <span class="nav__name">Mitchell</span>
+                </div> -->
             </a>
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="{{url('/AdminIndex')}}" class="nav__link active">Inicio</a></li>
-                    <li class="nav__item"><a href="{{url('/concentrados')}}" class="nav__link active">Concentrados </a></li>
+                    <li class="nav__item"><a href="#" class="nav__link active">Home</a></li>
+
+                    <li class="nav__item dropdown">
+                        <a href="#" class="nav__link dropdown__link">Servicio Social <i class='bx bx-chevron-down dropdown__icon'></i></a>
 
 
-                    <li class="nav__item"><a href="{{url('/estadistica')}}" class="nav__link">Estadística</a></li>
-                    <li class="nav__item"><a href="{{url('/validacionAlumno')}}" class="nav__link">Validación Alumno</a></li>
+                        <ul class="dropdown__menu">
+                            <li class="dropdown__item"><a href="#" class="nav__link">Registro</a></li>
+                           <!-- <li class="dropdown__item"><a href="#" class="nav__link">Location</a></li>
+                            <li class="dropdown__item"><a href="#" class="nav__link">Studies</a></li> -->
+                        </ul>
+                    </li>
+
+                    <!--<li class="nav__item"><a href="#" class="nav__link">Skills</a></li>-->
+
+                    <li class="nav__item dropdown">
+                        <a href="#" class="nav__link dropdown__link">Becas <i class='bx bx-chevron-down dropdown__icon'></i></a>
 
 
-                    <li class="nav__item"><a href="{{url('/validacionReportes')}}" class="nav__link">Validación Reportes</a></li>
+                        <ul class="dropdown__menu">
+                            <li class="dropdown__item"><a href="#" class="nav__link">Convocatoria</a></li>
+                            <li class="dropdown__item"><a href="#" class="nav__link">Perfil</a></li>
+                            <li class="dropdown__item"><a href="#" class="nav__link">Registro</a></li>
+                        </ul>
+                    </li>
+
                     <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
 
-
+                   <!-- <li class="nav__item"><a href="#" class="nav__link">Contact</a></li> -->
                 </ul>
             </div>
         </div>
     </nav>
-
 
     </header>
     <script src="{{asset('js/Pantallas_Alumno_Servicio/Layout_Alumno.js')}}"></script>
@@ -84,14 +99,12 @@
         </script>
 
     <section class="section-main">
-      <h1>Bienvenido Administrador de servicio social:
-      <?php /*<br> Usuario con matricula: {{ Auth::user()->id}} */?>
-      </h1>
+      <h1>Bienvenido Alumno
+      
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->
       @yield('content')
-      @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
 
     </section>
 

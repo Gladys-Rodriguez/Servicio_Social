@@ -55,6 +55,12 @@
 
                         </div>
 
+                        <!-- commit de Omar -->
+                        <a href="{{ url('/recover') }}"> Recuperar Contraseña </a>
+
+                        </div>
+
+
 
 
                         <div class="group">

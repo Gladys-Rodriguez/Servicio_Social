@@ -1,18 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User;
-use App\Mail\UserSendRecover;
+
+
+
+use App\Models\docs_expedientePrueba;
+use App\Models\dato;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Mail;
-//use Validator, Hash, Auth;
 
-
-class login extends Controller
+class docsExpediente extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -21,6 +20,8 @@ class login extends Controller
     public function index()
     {
         //
+        $files = docs_expedientePrueba::where('user', Auth::id())->get();
+        return view('Pantallas_Alumno_Servicio.docs_Seguimiento', compact('files'));
     }
 
     /**
@@ -41,12 +42,27 @@ class login extends Controller
      */
     public function store(Request $request)
     {
-        $credentials=request()->only('email','password');
-        if(Auth::attempt($credentials)){
-            return 'No estas logueado';
-        }
+        //
+        $max_size = (int)ini_get('upload_max_size') * 10048;
+        $files = $request->file('files');
+        $user_id = Auth::id();
+        $tipo = $request->input('documento');
+        
+        
+        foreach ($files as $file){
+                    docs_expedientePrueba::create([
+                        'nombre_doc' => $file->getClientOriginalName(),
+                        'user' => $user_id,
+                        'tipo_doc' => $tipo
 
-        return 'No estas logueado';
+                        
+                ]);
+
+            }
+
+            return "Archivo subido";
+       
+        
     }
 
     /**
@@ -93,23 +109,4 @@ class login extends Controller
     {
         //
     }
-    public function getRecover(){
-        return view('Pantallas_Principales.recover');
-    }
-
-   public function  postRecover(Request $request){
-    $user = User::where('email', $request->input('email'))->count();
-    if($user == "1"):
-        $user = User::where('email', $request->input('email'))->first();
-        $code = rand(100000000, 999999999);
-        $data = ['name' => $user->name, 'email' => $user->email, 'id' => $user->id, 'code' => $code];
-         Mail::to($user->email)->send(new UserSendRecover($data));
-        //return view('emails.recover', $data);
-        
-    else:
-        return back()->with('Este correo electronico no existe');
-    endif;
-    
-
-   }
 }
