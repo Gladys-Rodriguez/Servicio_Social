@@ -20,24 +20,26 @@
 							</tr>
 					</thead>
 					<tbody>
+					@foreach ($datos as $dato)
 							<tr>
-									<td data-label="Id Solicitante">1</td>
-									<td data-label="Solicitante">Regina Alejandre Sánchez</td>
-									<td data-label="Empresa">Bimbo</td>
-									<td data-label="Grupo">2CM20</td>
-									<td data-label="Fecha de visita">19/05/2021</td>
-									<td><label for="btn-modal" class="lbl-modal">Ver Más</label></td>
+									<td data-label="Id Solicitante">{{$dato->id_solicitud}}</td>
+									<td data-label="Solicitante">{{$dato->nombre}}</td>
+									<td data-label="Empresa">{{$dato->empresaN}}</td>
+									<td data-label="Grupo">{{$dato->email}}</td>
+									<td data-label="Fecha de visita">{{$dato->fechaVisita}}</td>
+									<td><label for="btn-modal" class="lbl-modal">	Ver Más</label></td>
 							</tr>
+							@endforeach
 					</tbody>
 			</table>
 	</div>
-
+@foreach($datos as $dato)
 	<div class="modal">
 		<div class="contenedor">
 			<header>Solicitud</header>
 			<label for="btn-modal">X</label>
 			<div class="contenido">
-				<h3>Solicitud No:1</h3>
+				<h3>Solicitud No:{{$dato->empresaN}}</h3>
 				<p><strong>Solicitante:</strong>  Regina Alejandre Sánchez <br>
 				<strong>Grupo:</strong> 2CM20 <br>
 				<strong>Número de alumnos:</strong> 50 <br>
@@ -50,7 +52,8 @@
 				<textarea name="" placeholder="Observaciones:" id="" cols="50" rows="10"></textarea>
 				<a href="#" class="label_c">Rechazar</a> <a href="#" class="label_b">Aceptar</a> <br>
 			</div>
+
 		</div>
 	</div>
-
+@endforeach
         @endsection

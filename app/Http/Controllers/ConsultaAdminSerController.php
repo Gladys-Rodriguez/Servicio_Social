@@ -6,18 +6,18 @@ use Illuminate\Http\Request;
 //use App\Http\Models\MiBecaDato;
 use App\Models\User;
 
-class AdminMasterIndexController extends Controller
+class ConsultaAdminSerController extends Controller
 {
     public function index(){
         $datos = \DB::table('administradors')
         ->join('datos','administradors.id_datos','=','datos.id_datos')
         ->join('users','administradors.id','=','users.id')
         ->join('rols','users.id_rol','=','rols.id_rol')
-        ->select('datos.nombre','datos.ap_paterno','datos.ap_materno','datos.telefono','users.email','rols.Tipo_rol','users.estado', 'users.id')->orderBy('rols.id_rol','DESC')->get();
-        return view('Pantallas_Admin_Master.Index_Master',compact('datos'));
+        ->select(\DB::raw('CONCAT(datos.nombre," ",datos.ap_paterno," ",datos.ap_materno) as fullname'),'datos.telefono','users.email','rols.Tipo_rol','users.estado', 'users.id')->where('rols.id_rol','=','2')->get();
+        return view('Pantallas_Admin_Master.ConsultaAdminSer',compact('datos'));
     }
 
-    public function edit($id)
+    /*public function edit($id)
     {
         //
         $datos= User::findOrFail($id);
@@ -31,5 +31,5 @@ class AdminMasterIndexController extends Controller
         $datos= User::findOrFail($id);
         $datos->update($request->all());
         return redirect("/Index_Master");
-    }
+    }*/
 }

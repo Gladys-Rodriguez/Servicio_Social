@@ -278,9 +278,8 @@ Route::get('/Validacion_Practicas_Visitas', function () {
 }) -> name('Validacion_Practicas_Visitas');
 
 //Ruta Clasificacion Practicas y Visitas
-Route::get('/Solicitudes_Practicas_Visitas', function () {
-    return view('Pantallas_Admin_Practicas_Visitas.Solicitudes_Practicas_Visitas');
-}) -> name('Solicitudes_Practicas_Visitas');
+Route::get('/Solicitudes_Practicas_Visitas','AdminPracSolicitudesController@index');
+
 
 Route::get('/RechazadasV', function () {
     return view('Pantallas_Admin_Practicas_Visitas.RechazadasV');
@@ -572,6 +571,12 @@ Route::get('/FormatosBeca', function (){
 Route::get('/MiBeca','MiBecaDatosController@index');
 
 Route::get('/Index_Master','AdminMasterIndexController@index');
+
+Route::get('/ConsultaAdminSer','ConsultaAdminSerController@index');
+
+Route::get('/ConsultaAdminPra','ConsultaAdminPraController@index');
+
+Route::get('/ConsultaAdminBe','ConsultaAdminBeController@index');
 //Pantalla Registro con roles
 Route::get('/RegisterFormRoles', function (){
     return view('Pantallas_Admin_Master.RegisterFormRoles');
