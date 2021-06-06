@@ -190,7 +190,7 @@ Route::get('/docsConcentradoPOA', [App\Http\Controllers\concentradoPOAController
 //Ruta para subir archivos de Informes POA
 Route::post('/uploadConcentradoPOA', [App\Http\Controllers\concentradoPOAController::class, 'store'])->name('uploadConcentradoPOA.store');
 
-//Ruta de archivos pdf Informes POA 
+//Ruta de archivos pdf Informes POA
 Route::get('/docsConcentradoPOA/{file}', [App\Http\Controllers\concentradoPOAController::class, 'show'])->name('docsConcentradoPOA.show');
 
 
@@ -228,7 +228,7 @@ Route::post('/uploaddocexpediente', [App\Http\Controllers\docsExpediente::class,
 //Ruta para ver la solicitud del alumno
 Route::get('/docsSolicitudAlumno', [App\Http\Controllers\docsExpediente::class, 'index'])->name('uploaddocexpediente.index');
 
-//Ruta para ver el listado de alumnos 
+//Ruta para ver el listado de alumnos
 Route::get('/concentradosInfo', [App\Http\Controllers\AlumnoController::class, 'lista'])->name('alumno.lista');
 
 
