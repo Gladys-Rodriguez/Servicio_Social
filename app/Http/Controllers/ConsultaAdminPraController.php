@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 //use App\Http\Models\MiBecaDato;
 use App\Models\User;
+use App\Models\ConsultaAdminPra;
 
 class ConsultaAdminPraController extends Controller
 {
@@ -32,4 +33,12 @@ class ConsultaAdminPraController extends Controller
         $datos->update($request->all());
         return redirect("/Index_Master");
     }*/
+    public function destroy($id)
+    {
+        //
+        $dato= User::findOrFail($id);
+
+        $dato->delete();
+        return redirect()->back()->with('alert', 'El registro se ha eliminado');
+   }
 }

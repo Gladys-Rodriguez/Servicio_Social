@@ -137,8 +137,8 @@
                  <option value="2"> Admin Servicio Social </option>
                  <option value="3"> Admin Becas </option>
                  <option value="4"> Admin Prácticas </option>
-                 <option value="7"> Pruebas </option>
-                 <option value="8"> Superadmin </option>
+                <!-- <option value="7"> Pruebas </option>
+                 <option value="8"> Superadmin </option>-->
 
              </select>
                  @error('id_rol')

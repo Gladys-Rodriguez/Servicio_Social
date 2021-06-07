@@ -32,4 +32,12 @@ class ConsultaAdminSerController extends Controller
         $datos->update($request->all());
         return redirect("/Index_Master");
     }*/
+    public function destroy($id)
+    {
+        //
+        $dato= User::findOrFail($id);
+
+        $dato->delete();
+        return redirect()->back()->with('alert', 'El registro se ha eliminado');
+   }
 }

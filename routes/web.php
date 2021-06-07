@@ -573,10 +573,16 @@ Route::get('/MiBeca','MiBecaDatosController@index');
 Route::get('/Index_Master','AdminMasterIndexController@index');
 
 Route::get('/ConsultaAdminSer','ConsultaAdminSerController@index');
+Route::delete('/BorraUserSer/{id}', [App\Http\Controllers\ConsultaAdminSerController::class, 'destroy'])->name('pruebaEditarForm3.update');
+
 
 Route::get('/ConsultaAdminPra','ConsultaAdminPraController@index');
+Route::delete('/BorraUserPra/{id}', [App\Http\Controllers\ConsultaAdminPraController::class, 'destroy'])->name('pruebaEditarForm3.update');
+
 
 Route::get('/ConsultaAdminBe','ConsultaAdminBeController@index');
+Route::delete('/BorraUserBe/{id}', [App\Http\Controllers\ConsultaAdminBeController::class, 'destroy'])->name('pruebaEditarForm3.update');
+
 //Pantalla Registro con roles
 Route::get('/RegisterFormRoles', function (){
     return view('Pantallas_Admin_Master.RegisterFormRoles');
