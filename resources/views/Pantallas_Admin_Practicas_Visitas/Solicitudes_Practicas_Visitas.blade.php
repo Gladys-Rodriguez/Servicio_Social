@@ -33,13 +33,12 @@
 					</tbody>
 			</table>
 	</div>
-@foreach($datos as $dato)
 	<div class="modal">
 		<div class="contenedor">
 			<header>Solicitud</header>
 			<label for="btn-modal">X</label>
 			<div class="contenido">
-				<h3>Solicitud No:{{$dato->empresaN}}</h3>
+				<h3>Solicitud No: <!--{{$dato->empresaN}}--></h3>
 				<p><strong>Solicitante:</strong>  Regina Alejandre Sánchez <br>
 				<strong>Grupo:</strong> 2CM20 <br>
 				<strong>Número de alumnos:</strong> 50 <br>
@@ -55,5 +54,6 @@
 
 		</div>
 	</div>
-@endforeach
+
+	
         @endsection
