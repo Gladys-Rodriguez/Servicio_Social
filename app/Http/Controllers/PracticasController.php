@@ -21,7 +21,8 @@ class PracticasController extends Controller
     public function index()
     {
         //
-        return view('/Admin_Practicas_Visitas_Index2');
+       // return view('/Admin_Practicas_Visitas_Index2');
+       return view('/Solicitudes_Practicas_Visitas');
     }
 
     /**
