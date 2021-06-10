@@ -2,12 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Alum_Datos;
+use App\Models\Alum_Datos, App\Models\alumno ;
 use Illuminate\Http\Request;
+
+
 
 class AlumnoController extends Controller
 {
     //
+    public function lista(){
+
+        $alumnos = alumno::all();
+
+        return view('Pantallas_Admin_Servicio.ConcentradoInfo', compact('alumnos'));
+
+    }
     public function muestra()
     {
         return view('Alumno.Registro_Alumno');

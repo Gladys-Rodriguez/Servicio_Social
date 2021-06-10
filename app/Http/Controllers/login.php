@@ -1,12 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
+use App\Mail\UserSendRecover;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Mail;
 //use Validator, Hash, Auth;
-use App\User;
+
 
 class login extends Controller
 {
@@ -91,4 +93,23 @@ class login extends Controller
     {
         //
     }
+    public function getRecover(){
+        return view('Pantallas_Principales.recover');
+    }
+
+   public function  postRecover(Request $request){
+    $user = User::where('email', $request->input('email'))->count();
+    if($user == "1"):
+        $user = User::where('email', $request->input('email'))->first();
+        $code = rand(100000000, 999999999);
+        $data = ['name' => $user->name, 'email' => $user->email, 'id' => $user->id, 'code' => $code];
+         Mail::to($user->email)->send(new UserSendRecover($data));
+        //return view('emails.recover', $data);
+        
+    else:
+        return back()->with('Este correo electronico no existe');
+    endif;
+    
+
+   }
 }

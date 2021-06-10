@@ -33,6 +33,7 @@
                     y fomenta una conciencia de solidaridad con la sociedad.
                     Es de carácter temporal y obligatorio además de ser un requisito
                     indispensable para la titulación, que te permite obtener competencia laboral.
+                    .. Prueba para commit
                     </p>
 
                 </div>
@@ -60,86 +61,6 @@
     </div>
 </section>
 </main>
-
-<h3 style="color:rgb(218, 218, 218);">Tabla 1</h3>
-<table class="table table-light" style="color:rgb(218, 218, 218);">
-
-    <thead>
-        <tr>
-
-            <th width=10%>#</th>
-            <th width=10%>id_alumnos</th>
-            <th width=10%>carrera</th>
-            <th width=10%>semestre</th>
-            <th width=10%>grupo</th>
-            <th width=10%>turno</th>
-            <th width=10%>id_datos</th>
-            <th width=10%>id_usuarios</th>
-            <th width=10%>id_direccions</th>
-            <th width=10%>Acciones</th>
-
-
-            <th width=10%>Matricula</th>
-            <th width=10%>email</th>
-
-            <th width=10%>nombre</th>
-            <th width=10%>AP_ Paterno</th>
-
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($alumnos as $alumno )
-        @foreach ($users as $user)
-        @foreach ($datos as $dato )
-        <tr>
-            <!-- Tabla Alumnos -->
-            <td align="center">{{$loop->iteration}}</td>
-            <td align="center">{{$alumno-> id_alumnos}}</td>
-            <td align="center">{{$alumno-> carrera}}</td>
-            <td align="center">{{$alumno-> semestre}}</td>
-            <td align="center">{{$alumno-> grupo}}</td>
-            <td align="center">{{$alumno-> turno}}</td>
-            <td align="center">{{$alumno-> id_datos}}</td>
-            <td align="center">{{$alumno-> id_usuarios}}</td>
-            <td align="center">{{$alumno-> id_direccions}}</td>
-            <td align="center">Editar | Borrar</td>
-
-            <!-- Tabla Users -->
-            <td align="center">{{$user-> id}}</td>
-            <td align="center">{{$user-> email}}</td>
-
-            <!-- Tabla Datos -->
-            <td align="center">{{$dato-> nombre}}</td>
-            <td align="center">{{$dato-> ap_paterno}}</td>
-
-        </tr>
-
-@endforeach
-@endforeach
-@endforeach
-</tbody>
-</table>
-<br>
-<h3 style="color:rgb(218, 218, 218);"> Tabla 2 </h3>
-<table class="table table-light" style="color:rgb(218, 218, 218);">
-
-    <thead>
-        <tr>
-            <th width=10%>nombre</th>
-            <th width=10%>AP_ Paterno</th>
-        </tr>
-
-    </thead>
-    <tbody>
-        @foreach ($datos as $dato )
-        <tr>
-            <td align="center">{{$dato-> nombre}}</td>
-            <td align="center">{{$dato-> ap_paterno}}</td>
-         </tr>
-
-@endforeach
-</tbody>
-</table>
 
 
 @endsection

@@ -10,6 +10,6 @@ class informe_poa extends Model
     use HasFactory;
     protected $fillable = [
         'name',
-        'usuario'    
+        'user'    
     ];
 }

@@ -21,6 +21,7 @@ class AdminMasterIndexController extends Controller
     {
         //
         $datos= User::findOrFail($id);
+
         return view("Pantallas_Principales.EditarAdminForm", compact("datos"));
     }
 

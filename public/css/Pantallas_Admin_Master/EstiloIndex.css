@@ -92,3 +92,37 @@ table th {
     color: #CF6D1B;
     background-color: #ffffff;
   }
+  .boton_personalizado1{
+    font-family: 'Bitter', serif;
+    text-decoration: none;
+    padding: 5px;
+    font-weight: 300;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #099242;
+    border-radius: 1px;
+    border: 2px solid #099242;
+}
+
+
+  .boton_personalizado1:hover{
+    color: #099242;
+    background-color: #ffffff;
+  }
+  .boton_personalizado2{
+    font-family: 'Bitter', serif;
+    text-decoration: none;
+    padding: 5px;
+    font-weight: 300;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #920909;
+    border-radius: 1px;
+    border: 2px solid #920909;
+}
+
+
+  .boton_personalizado2:hover{
+    color: #920909;
+    background-color: #ffffff;
+  }

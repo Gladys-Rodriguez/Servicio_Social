@@ -24,30 +24,35 @@
 					<thead>
 							<tr>    
 									<th>Documento</th>
-									<th></th>
+									<th>Observaciones</th>
+                                    <th></th>
 									<th></th>
 							</tr>
 					</thead>
                     <tbody>
                         <tr>
                             <td><a href="{{url('/Alumnos.pdf')}}" target="_blank">Lista de alumnos</td>
+                            <td><textarea name="" id="" placeholder="Ingresa tus observaciones:" cols="35" rows="2"></textarea></td>
                             <td><label for="" class="label_b">Aprobar</label></td>
-                            <td><label for="" class="label_c">Anular</label></td>
+                            <td><label for="" class="label_c">Rechazar</label></td>
                         </tr>
                         <tr>
                             <td><a href="{{url('/Requerimientos.pdf')}}" target="_blank">Requerimientos de empresa</td>
+                            <td><textarea name="" id="" placeholder="Ingresa tus observaciones:" cols="35" rows="2"></textarea></td>
                             <td><label for="" class="label_b">Aprobar</label></td>
-                            <td><label for="" class="label_c">Anular</label></td>
+                            <td><label for="" class="label_c">Rechazar</label></td>
                         </tr>
                         <tr>
                             <td><a href="{{url('/InformeVisita.pdf')}}" target="_blank">Informe Visita</a></td>
+                            <td><textarea name="" id="" placeholder="Ingresa tus observaciones:" cols="35" rows="2"></textarea></td>
                             <td><label for="" class="label_b">Aprobar</label></td>
-                            <td><label for="" class="label_c">Anular</label></td>
+                            <td><label for="" class="label_c">Rechazar</label></td>
                         </tr>
                         <tr>
                             <td><a href="{{url('/Informe1.pdf')}}" target="_blank">Informe de visita concluida</a></td>
+                            <td><textarea name="" id="" placeholder="Ingresa tus observaciones:" cols="35" rows="2"></textarea></td>
                             <td><label for="" class="label_b">Aprobar</label></td>
-                            <td><label for="" class="label_c">Anular</label></td>
+                            <td><label for="" class="label_c">Rechazar</label></td>
                         </tr>
                     </tbody>
 
