@@ -23,9 +23,9 @@
 					@foreach ($datos as $dato)
 							<tr>
 									<td data-label="Id Solicitante">{{$dato->id_solicitud}}</td>
-									<td data-label="Solicitante">{{$dato->nombre}}</td>
+									<td data-label="Solicitante">{{$dato->fullname}}</td>
 									<td data-label="Empresa">{{$dato->empresaN}}</td>
-									<td data-label="Grupo">{{$dato->email}}</td>
+									<td data-label="Grupo">{{$dato->grupo}}</td>
 									<td data-label="Fecha de visita">{{$dato->fechaVisita}}</td>
 									<td><label for="btn-modal" class="lbl-modal">	Ver Más</label></td>
 							</tr>
