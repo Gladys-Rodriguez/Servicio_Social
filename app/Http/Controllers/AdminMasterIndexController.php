@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 
 class AdminMasterIndexController extends Controller
-{
+{ 
     public function index(){
         $datos = \DB::table('administradors')
         ->join('datos','administradors.id_datos','=','datos.id_datos')
@@ -20,9 +20,17 @@ class AdminMasterIndexController extends Controller
     public function edit($id)
     {
         //
-        $datos= User::findOrFail($id);
+        //$datos= User::findOrFail($id);
+        $datos= User::with('administradors')->findOrFail($id);
+        $nuevo= \DB::table('administradors')
+        ->join('datos', 'administradors.id_datos', 'datos.id_datos')
+        ->join('users', 'administradors.id','users.id')
+        ->join('rols','users.id_rol','rols.id_rol')
+        ->select(\DB::raw('CONCAT(datos.nombre," ",datos.ap_paterno," ",datos.ap_materno) as fullname'),'datos.telefono','users.email','rols.Tipo_rol','users.id')
+        ->where('administradors.id',$id)
+        ->get();
 
-        return view("Pantallas_Principales.EditarAdminForm", compact("datos"));
+        return view("Pantallas_Principales.EditarAdminForm", compact('datos','nuevo'));
     }
 
     public function update(Request $request, $id)

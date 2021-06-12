@@ -49,6 +49,10 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Models\alumno', 'id_usuarios', 'id');
     }
+    public function administradors()
+    {
+        return $this->hasOne('App\Models\administrador', 'id', 'id');
+    }
 
     //Relación Uno a Uno
 
