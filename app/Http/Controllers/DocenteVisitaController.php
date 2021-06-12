@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Visita;
 use App\Models\VisitaDocumento;
+use App\Models\Grupo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -30,8 +31,10 @@ class DocenteVisitaController extends Controller
     public function create()
     {
         $empresas = DB::table('empresas')->get()->pluck('nombre','id');
+        $grupos = DB::table('grupos')->get()->pluck('secuencia','id');
         return view('Pantallas_Docente_Practicas_Visitas.create')
-            ->with('empresas', $empresas);
+            ->with('empresas', $empresas)
+            ->with('grupos', $grupos);
     }
 
     /**
@@ -49,7 +52,7 @@ class DocenteVisitaController extends Controller
             'tipo_documento_id' => 1,
             'ruta' => '',
             'validacion' => false,
-            'observaciones' => 'Hola2',
+            'observaciones' => '',
         ]);
 
         $visita_documento->ruta = $request->file('ruta')->store('public/DocumentosVisitas');
@@ -68,7 +71,7 @@ class DocenteVisitaController extends Controller
     {
         $visita = Visita::findOrFail($id);
         $documentos =VisitaDocumento::where('visita_id', $visita->id)->get();
-        //dd($documentos);
+        
 
         return view('Pantallas_Docente_Practicas_Visitas.show')
             ->with('visita', $visita)

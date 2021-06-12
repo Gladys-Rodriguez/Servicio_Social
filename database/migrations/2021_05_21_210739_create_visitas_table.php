@@ -18,7 +18,7 @@ class CreateVisitasTable extends Migration
             $table->unsignedBigInteger('docente_id')->index('docente_id');
             $table->unsignedBigInteger('empresa_id')->index('empresa_id');
             $table->dateTime('fecha_visita')->nullable();
-            $table->boolean('validacion')->nullable();
+            $table->boolean('validacion')->default(false);
             $table->timestamps();
 
             $table->foreign('docente_id')->references('id')->on('docentes')->onDelete('cascade');
