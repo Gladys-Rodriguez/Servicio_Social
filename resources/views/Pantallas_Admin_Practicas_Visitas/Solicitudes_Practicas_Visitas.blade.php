@@ -33,27 +33,7 @@
 					</tbody>
 			</table>
 	</div>
-	<!--<div class="modal">
-		<div class="contenedor">
-			<header>Solicitud</header>
-			<label for="btn-modal">X</label>
-			<div class="contenido">
-				<h3>Solicitud No:</h3>
-				<p><strong>Solicitante:</strong>  Regina Alejandre Sánchez <br>
-				<strong>Grupo:</strong> 2CM20 <br>
-				<strong>Número de alumnos:</strong> 50 <br>
-				<strong>Empresa:</strong> Bimbo <br>
-				<strong>Dirección:</strong> Malacates No. 15 Col Sta. María Insurgentes Delegación Cuauhtémoc, C.P. 06430 Ciudad de México <br>
-				<strong>Fecha de visita:</strong> 19/05/2021 <br>
-				<strong>Documentos: </strong></p>
-				<a href="#" class="label_a">Solicitud de Visita</a>
-				<hr><hr><hr>
-				<textarea name="" placeholder="Observaciones:" id="" cols="50" rows="10"></textarea>
-				<a href="#" class="label_c">Rechazar</a> <a href="#" class="label_b">Aceptar</a> <br>
-			</div>
-
-		</div>
-	</div>-->
+	
 
 	
         @endsection
