@@ -48,6 +48,7 @@
 
                     <!--<li class="nav__item"><a href="#" class="nav__link">Skills</a></li>-->
 
+
                     <li class="nav__item dropdown">
                         <a href="#" class="nav__link dropdown__link">Becas <i class='bx bx-chevron-down dropdown__icon'></i></a>
 

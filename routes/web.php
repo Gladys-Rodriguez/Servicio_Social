@@ -140,6 +140,12 @@ Route::get('/DatosPersonales', function (){
 }) -> name('DatosPersonales');
 
 
+Route::get('/ListaDeAlumnos', function (){
+    return view('Pantallas_Admin_Servicio.ListaAlumnos');
+}) -> name('ListaDeAlummos');
+
+Route::get('/ListaDeAlumnos', [App\Http\Controllers\ListadoAlumnosController::class, 'index'])->name('ListaDeAlumnos.index');
+
 // ************************************* FIN   RUTAS    DE    GLADYS    *******************************************
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

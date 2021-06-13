@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="{{asset('css/Pantallas_Alumno_Servicio/Registros/NuevoRegistro.css')}}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 
+
 @endsection
 
 @section('content')
@@ -49,12 +50,13 @@
     <!-- ************************** INICIO DEL FORMULARIO ********************************** -->
     <div class="form-outer">
         <div class="separa">
-            <form action="{{route('NuevoRegistro.store')}}" method="POST" autocomplete="off" id="formulario">
+            <form action="{{route('NuevoRegistro.store')}}" method="POST" autocomplete="off" id="formulario" >
                 <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
 
                 <!--     **************************   PRIMER STEP  **************************** -->
 
                 <div class="page slide-page">
+
                     <div class="title">Dirección de la Dependencia:</div>
                     <br>
            <!-- Grupo: Ciudad -->
@@ -154,6 +156,7 @@
                 <p><i class="fas fa-exclamation-triangle"></i>
                     <b>Error:</b> Por favor rellena el formulario correctamente. </p>
             </div>
+
     </div>
 <!--     ************************** FIN PRIMER STEP  **************************** -->
 
@@ -321,4 +324,7 @@
 <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"> </script>
 
 <script src="{{asset('js/Pantallas_Alumno_Servicio/Registros/NuevoRegistro.js')}}"></script>
+
+
+
 @endsection

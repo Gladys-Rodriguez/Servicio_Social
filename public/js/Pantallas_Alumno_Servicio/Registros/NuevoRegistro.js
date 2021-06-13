@@ -13,12 +13,19 @@ const bullet = document.querySelectorAll(".step .bullet");
 let current = 1;
 const form = document.getElementById('formulario');
 
+
 const formulario_mensaje = document.getElementById('formulario__mensaje');
+
+
+
+
 
 // **************** PRIMER BOTON NEXT *************************
 nextBtnFirst.addEventListener("click", function(event){
   event.preventDefault();
-  if(campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext /*&& campos.num_int*/ && campos.cp){
+
+
+if(campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext /*&& campos.num_int*/ && campos.cp){
 
     slidePage.style.marginLeft = "-25%";
     bullet[current - 1].classList.add("active");
