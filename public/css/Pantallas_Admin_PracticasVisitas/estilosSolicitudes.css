@@ -196,6 +196,23 @@ body{
     border-radius: 4px;
     padding: 0px 60px;
 }
+.boton_personalizado1{
+    font-family: 'Bitter', serif;
+    text-decoration: none;
+    padding: 5px;
+    font-weight: 300;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #099242;
+    border-radius: 1px;
+    border: 2px solid #099242;
+}
+
+
+  .boton_personalizado1:hover{
+    color: #099242;
+    background-color: #ffffff;
+  }
 @media only screen and (min-width:320px) and (max-width:768px){
 	.contenedor{
 		width: 95%;

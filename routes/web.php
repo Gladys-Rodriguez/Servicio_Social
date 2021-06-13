@@ -592,6 +592,10 @@ Route::get('/RegisterFormRoles', function (){
 Route::get('/EditarAdminForm/{id}', [App\Http\Controllers\AdminMasterIndexController::class, 'edit'])->name('home');
 Route::put('/EditarAdminForm2/{id}', [App\Http\Controllers\AdminMasterIndexController::class, 'update'])->name('EditarAlumnoController.update');
 
+Route::get('/SolicitudesPra/{id}', [App\Http\Controllers\AdminPracSolicitudesController::class, 'edit'])->name('home');
+Route::put('/SolicitudesPra/{id}', [App\Http\Controllers\AdminPracSolicitudesController::class, 'update'])->name('EditarAlumnoController.update');
+
+
 //-----------------------SANTOS TERMINO----------------------------------
 Auth::routes();
 

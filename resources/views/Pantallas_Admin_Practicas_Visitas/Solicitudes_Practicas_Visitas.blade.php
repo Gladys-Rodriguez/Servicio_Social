@@ -22,23 +22,23 @@
 					<tbody>
 					@foreach ($datos as $dato)
 							<tr>
-									<td data-label="Id Solicitante">{{$dato->id_solicitud}}</td>
+									<td data-label="Id Solicitante">{{$dato->id}}</td>
 									<td data-label="Solicitante">{{$dato->fullname}}</td>
 									<td data-label="Empresa">{{$dato->empresaN}}</td>
-									<td data-label="Grupo">{{$dato->grupo}}</td>
-									<td data-label="Fecha de visita">{{$dato->fechaVisita}}</td>
-									<td><label for="btn-modal" class="lbl-modal">	Ver Más</label></td>
+									<td data-label="Secuencia">{{$dato->secuencia}}</td>
+									<td data-label="Fecha de visita">{{$dato->fecha_visita}}</td>
+									<td><a class="boton_personalizado1" href="/SolicitudesPra/{{$dato->id}}">Ver</a></td>
 							</tr>
 							@endforeach
 					</tbody>
 			</table>
 	</div>
-	<div class="modal">
+	<!--<div class="modal">
 		<div class="contenedor">
 			<header>Solicitud</header>
 			<label for="btn-modal">X</label>
 			<div class="contenido">
-				<h3>Solicitud No: <!--{{$dato->empresaN}}--></h3>
+				<h3>Solicitud No:</h3>
 				<p><strong>Solicitante:</strong>  Regina Alejandre Sánchez <br>
 				<strong>Grupo:</strong> 2CM20 <br>
 				<strong>Número de alumnos:</strong> 50 <br>
@@ -53,7 +53,7 @@
 			</div>
 
 		</div>
-	</div>
+	</div>-->
 
 	
         @endsection
