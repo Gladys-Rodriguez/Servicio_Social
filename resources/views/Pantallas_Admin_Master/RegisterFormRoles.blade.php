@@ -1,6 +1,6 @@
 @extends('Pantallas_Admin_Master.navbarRegisterFormRoles')
 
-@section('title', 'Registro')
+@section('title', 'Confirmación')
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Master/RegisterFormRoles.css')}}">
