@@ -26,9 +26,9 @@ class VerificationController extends Controller
      *
      * @var string
      */
-    //protected $redirectTo = RouteServiceProvider::HOME;
+    //protected $redirectTo = RouteServiceProvider::LoginForm;
 
-    protected $redirectTo = '/LoginForm';
+   protected $redirectTo = '/LoginForm';
 
     /**
      * Create a new controller instance.
