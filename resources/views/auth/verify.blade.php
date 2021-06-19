@@ -28,7 +28,7 @@
     <div class="login-box">
                     @if (session('resent'))
                         <div class="alert alert-success" role="alert">
-                        <label>'Un link de verificación ha sido enviado a tu correo electronico'</label>
+                        <label class="especial">'Un nuevo link de verificación ha sido enviado a tu correo electronico'</label>
                         </div>
                         <br>
                     @endif
@@ -36,7 +36,7 @@
 
                     <label>Antes de proceder, revisa tu correo ya que se te envio un link de verificación.</label>
                     <br>
-                    <label>Si tu no recibiste el email:</label>
+                    <label>Si tu no recibiste el email, entonces:</label>
                     <br>
 
                     <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
