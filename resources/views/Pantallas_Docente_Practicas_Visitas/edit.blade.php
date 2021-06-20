@@ -1,4 +1,4 @@
-<h2>Solicitud de Visita</h2>
+<h2>Editar Solicitud de Visita</h2>
 
 <form action=" {{ route('docente.guardarVisita') }} " method="POST" enctype="multipart/form-data">
 

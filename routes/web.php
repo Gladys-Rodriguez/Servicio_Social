@@ -537,8 +537,22 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // ************************************* RUTAS    DE    MOY    *******************************************
 //Rutas Practicas-y-Vistas Docente
-Route::get('/VisitasEscolares/Index','DocenteIndexController');
-Route::get('/VisitasEscolares/SolicitarVisita','DocenteSolicitarVisitaController');
-Route::get('/VisitasEscolares/MisVisitas','DocenteMisVisitasController');
-Route::resource('Visitas', 'VisitaController');
-Route::resource('DocenteVisitas', 'DocenteVisitaController');
+
+
+Route::get('/VisitasEscolares', 'VisitaController@index')     //Método Index()
+    ->name('docente.index');
+
+Route::get('/VisitasEscolares/solicitar','VisitaController@crear')  //Método create()
+    ->name('docente.solicitarVisita');
+
+Route::post('/VisitasEscolares', 'VisitaController@guardar')    //Método store()
+    ->name('docente.guardarVisita');;
+
+Route::get('/VisitasEscolares/{visita}','VisitaController@ver') //Método show()
+    ->name('docente.verVisita');
+
+Route::get('/VisitasEscolares/{visita}/editar','VisitaController@editar') //Método edit()
+    ->name('docente.editarVisita');
+
+
+
