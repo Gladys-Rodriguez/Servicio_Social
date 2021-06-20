@@ -1,0 +1,170 @@
+.form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+body{
+    align-items: center;
+}
+
+
+
+.container{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+ 
+  
+  .upload-box{
+    font-size: 14px;
+    background: white;
+    border-radius: 50px;
+    box-shadow: 5px 5px 10px  black;
+    width: 250px;
+    outline: none;
+   
+ }
+
+ .select{
+     font-size: 14px;
+     border-radius: 50px;
+     color: whitesmoke;
+     width: 250px;
+     height: 50px;
+     background-color: teal;
+ }
+
+ .upload-box1{
+    font-size: 14px;
+    background: white;
+    border-radius: 50px;
+    box-shadow: 5px 5px 10px  black;
+    width: 390px;
+    outline: none;
+   
+ }
+ 
+
+ ::-webkit-file-upload-button{
+     color:white;
+     background: teal;
+     padding: 20px;
+     border: none;
+     border-radius: 3px;
+     box-shadow: 1px 0 1px 1px black;
+     outline: none; 
+ }
+
+::-webkit-file-upload-button:hover{
+    background:seagreen;
+    cursor: pointer;
+
+} 
+
+.btn{
+    text-align: center;
+    margin-left: 15px;
+    align-items: left;
+}
+
+.btn{
+    border: 1px solid black;
+    background:teal;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-family: 'Bitter', 'serif';
+    cursor: pointer;
+    transition: 0.7s;
+    
+    
+
+}
+.btn1{
+    color: white;
+}
+.btn1:hover{
+    background:seagreen;
+}
+
+.btn1 a{
+    text-transform: none;
+    text-decoration: none;
+    color: whitesmoke;
+    
+}
+
+
+
+
+h2{
+    color: white;
+    font-family: 'Bitter', serif;;
+    font-size: 19px;
+    text-align: left;
+}
+
+#tabla{
+    color: cornsilk;
+    margin-top: 70px;
+    
+    
+}
+
+#ver{
+    color: cornsilk;
+    align-items: center;
+    text-align: center;
+}
+
+#eliminar{
+    color: cornsilk;
+}
+
+a{
+    color: white;
+}
+
+.buscar{
+    position: absolute;
+    padding: 5px;
+}
+
+.buscar input{
+    width: 240px;
+    height: 55x;
+    padding: 0 20px;
+    font-size: 18px;
+    color: black;
+    outline: none;
+    border: 1px solid silver;
+    border-radius: 30px;
+
+}
+
+#buscador{
+    position:absolute;
+    top: -10px;
+    right: 0px;
+    background: teal;
+    width: 65px;
+    height: 65px;
+    line-height: 55px;
+    text-align: center;
+    color: whitesmoke;
+    font-size: 20px;
+    border-radius: 50%;
+
+}
+

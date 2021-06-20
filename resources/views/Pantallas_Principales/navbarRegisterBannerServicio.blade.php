@@ -27,46 +27,28 @@
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                <li class="nav__item"><a href="{{url('/Index_Master')}}" class="nav__link active">HOME</a></li>
-                    <li class="nav__item"><a href="{{url('/RegisterFormRoles')}}" class="nav__link">NUEVO ADMIN</a></li>
-                    <li class="nav__item"><a href="{{url('/RegisterPracticas')}}" class="nav__link">ADMIN PRACTICAS</a></li>
+                    <li class="nav__item"><a href="{{url('/AdminIndex')}}" class="nav__link active">Inicio</a></li>
+                    <li class="nav__item"><a href="{{url('/concentrados')}}" class="nav__link active">Concentrados </a></li>
+
+
+                    <li class="nav__item"><a href="{{url('/estadistica')}}" class="nav__link">Estadística</a></li>
+                    <li class="nav__item"><a href="{{url('/validacionAlumno')}}" class="nav__link">Validación Alumno</a></li>
+
+
+                    <li class="nav__item"><a href="{{url('/validacionReportes')}}" class="nav__link">Validación Reportes</a></li>
+
                     <li class="nav__item dropdown">
-                        <a href="#" class="nav__link dropdown__link">Registro de Banners <i class='bx bx-chevron-down dropdown__icon'></i></a>
+                        <a href="#" class="nav__link dropdown__link">Gestion de Banners <i class='bx bx-chevron-down dropdown__icon'></i></a>
                         <ul class="dropdown__menu">
-                            <li class="dropdown__item"><a href="{{url('/RegisterBannerInicio')}}" class="nav__link">Banner de home</a></li>
+                            <li class="dropdown__item"><a href="{{url('/RegisterBannerServicio')}}" class="nav__link">Registro de imagenes de servicios</a></li>
+                            <li class="dropdown__item"><a href="{{url('/consultaBannerServicio')}}" class="nav__link">Consulta de imagenes habilitadas de servicio</a></li>
+                            <li class="dropdown__item"><a href="{{url('/consultaBannerServicioInhabilitadas')}}" class="nav__link">Consulta de imagenes inhabilitadas de servicio</a></li>
 
-                            <li class="dropdown__item"><a href="{{url('/RegisterBannerServicio')}}" class="nav__link">Banner de servicios</a></li>
-
-                            <li class="dropdown__item"><a href="{{url('/RegisterBannerBecas')}}" class="nav__link">Banner de becas</a></li>
-
-                            <li class="dropdown__item"><a href="{{url('/RegisterBannerPracticas')}}" class="nav__link">Banner de practicas</a></li>
-                        </ul>
+                             </ul>
                     </li>
-                    <li class="nav__item dropdown">
-                        <a href="#" class="nav__link dropdown__link">Imagenes de Banner habilitadas <i class='bx bx-chevron-down dropdown__icon'></i></a>
-                        <ul class="dropdown__menu">
-                            <li class="dropdown__item"><a href="{{url('/consultaBannerInicio')}}" class="nav__link">Banner de home</a></li>
 
-                            <li class="dropdown__item"><a href="{{url('/consultaBannerServicio')}}" class="nav__link">Banner de servicios</a></li>
+                    <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
 
-                            <li class="dropdown__item"><a href="{{url('/consultaBannerBecas')}}" class="nav__link">Banner de becas</a></li>
-
-                            <li class="dropdown__item"><a href="{{url('/consultaBannerPracticas')}}" class="nav__link">Banner de practicas</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav__item dropdown">
-                        <a href="#" class="nav__link dropdown__link">Imagenes de Banner deshabilitadas <i class='bx bx-chevron-down dropdown__icon'></i></a>
-                        <ul class="dropdown__menu">
-                            <li class="dropdown__item"><a href="{{url('/consultaBannerInicioInhabilitadas')}}" class="nav__link">Banner de home</a></li>
-
-                            <li class="dropdown__item"><a href="{{url('/consultaBannerServicioInhabilitadas')}}" class="nav__link">Banner de servicios</a></li>
-
-                            <li class="dropdown__item"><a href="{{url('/consultaBannerBecasInhabilitadas')}}" class="nav__link">Banner de becas</a></li>
-
-                            <li class="dropdown__item"><a href="{{url('/consultaBannerBecasInhabilitadas')}}" class="nav__link">Banner de practicas</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav__item"><a href="{{url('/logout')}}" class="nav__link"> CERRAR SESIÓN</a></li>
 
                 </ul>
             </div>
