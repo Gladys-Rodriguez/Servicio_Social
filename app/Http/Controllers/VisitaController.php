@@ -6,10 +6,18 @@ use App\Models\Visita;
 use App\Models\Docente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Auth;
 
 
 class VisitaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('verified');
+        $this->middleware('docente',['only'=> ['index']]);
+    }
+
     public function index(){
         $visitas = Visita::all();
         return view('Pantallas_Docente_Practicas_Visitas.index')
@@ -46,5 +54,12 @@ class VisitaController extends Controller
 
     public function actualizar(Request $request, Visita $visita){
 
-    } 
+    }
+
+    public function getLogout()
+    {
+        //
+        Auth::logout();
+        return redirect('/');
+    }
 }
