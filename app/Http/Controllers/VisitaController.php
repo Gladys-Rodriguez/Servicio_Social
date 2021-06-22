@@ -25,7 +25,8 @@ class VisitaController extends Controller
             ->with('visitas', $visitas) ;
     }
 
-    public function crear(){
+    public function crear(Empresa $empresa){
+        dd($empresa);
         $empresas = DB::table('empresas')->get()->pluck('nombre','id');
         $grupos = DB::table('grupos')->get()->pluck('secuencia','id');
 
@@ -58,10 +59,15 @@ class VisitaController extends Controller
     }
 
     public function mostrarEmpresas(){
-        $empresas = Empresa::paginate(1);
+        $empresas = Empresa::orderBy('nombre')->paginate(2);
         
         return view('Pantallas_Docente_Practicas_Visitas.empresas')
             ->with('empresas', $empresas);
+    }
+
+    public function registrarEmpresa(){
+
+        echo "hola";
     }
 
     public function getLogout()

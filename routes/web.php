@@ -601,11 +601,11 @@ Route::get('/RegisterFormRoles', function (){
 Route::get('/VisitasEscolares', 'VisitaController@index')     //Método Index()
     ->name('docente.index');
 
-Route::get('/VisitasEscolares/solicitar','VisitaController@crear')  //Método create()
+Route::get('/VisitasEscolares/{empresa}','VisitaController@crear')  //Método create()
     ->name('docente.solicitarVisita');
 
 Route::post('/VisitasEscolares', 'VisitaController@guardar')    //Método store()
-    ->name('docente.guardarVisita');;
+    ->name('docente.guardarVisita');
 
 Route::get('/VisitasEscolares/{visita}','VisitaController@ver') //Método show()
     ->name('docente.verVisita');
@@ -613,8 +613,10 @@ Route::get('/VisitasEscolares/{visita}','VisitaController@ver') //Método show()
 Route::get('/VisitasEscolares/{visita}/editar','VisitaController@editar') //Método edit()
     ->name('docente.editarVisita');
 
-Route::get('/VisitasEscolares/Solicitud/SeleccionarEmpresa','VisitaController@mostrarEmpresas') //Método edit()
-->name('docente.mostrarEmpresas');
 
+Route::get('/VisitasEscolares/Solicitud/SeleccionarEmpresa','VisitaController@mostrarEmpresas') //Método edit()
+    ->name('docente.mostrarEmpresas');
+
+Route::get('/VisitasEscolares/RegistrarEmpresa', [App\Http\Controllers\VisitaController::class, 'index'])->name('docente.registrarEmpresa');
 
 

@@ -1,4 +1,8 @@
 <h2>Seleccione su empresa</h2>
+
+¿Su empresa no se encuentra en la lista?
+<a href=" {{ route('docente.registrarEmpresa') }}  ">Registrela Aquí </a>
+
 <table>
     <thead>
         <tr>
@@ -25,7 +29,9 @@
                 <td> {{ $empresa->direccion->num_int }}  </td>
                 <td> {{ $empresa->direccion->cp }}  </td>
                 <td>
-                    <a href="">Seleccionar</a>
+                    <a href=" {{ route('docente.solicitarVisita',['empresa'=>$empresa->id]) }} ">
+                        Seleccionar
+                    </a>
                 </td>
             </tr>
         @empty
