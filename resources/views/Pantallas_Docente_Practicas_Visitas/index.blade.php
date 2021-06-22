@@ -15,7 +15,7 @@
 
 <h2>Pagina Index</h2>
 
-<a href=" {{ route('docente.solicitarVisita')}} "> Realizar una nueva Solicitud </a>
+<a href=" {{ route('docente.mostrarEmpresas')}} "> Realizar una nueva Solicitud </a>
 <br /><br />
 
 <table>

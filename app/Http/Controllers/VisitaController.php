@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Visita;
 use App\Models\Docente;
+use App\Models\Empresa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Auth;
@@ -54,6 +55,13 @@ class VisitaController extends Controller
 
     public function actualizar(Request $request, Visita $visita){
 
+    }
+
+    public function mostrarEmpresas(){
+        $empresas = Empresa::paginate(1);
+        
+        return view('Pantallas_Docente_Practicas_Visitas.empresas')
+            ->with('empresas', $empresas);
     }
 
     public function getLogout()

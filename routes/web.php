@@ -603,5 +603,8 @@ Route::get('/VisitasEscolares/{visita}','VisitaController@ver') //Método show()
 Route::get('/VisitasEscolares/{visita}/editar','VisitaController@editar') //Método edit()
     ->name('docente.editarVisita');
 
+Route::get('/VisitasEscolares/Solicitud/SeleccionarEmpresa','VisitaController@mostrarEmpresas') //Método edit()
+->name('docente.mostrarEmpresas');
+
 
 
