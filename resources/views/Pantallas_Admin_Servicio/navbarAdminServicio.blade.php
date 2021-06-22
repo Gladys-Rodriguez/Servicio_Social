@@ -94,12 +94,14 @@
 
         </script>
 
-    <section class="section-main">
+   <!--<section class="section-main">
       <h1>Bienvenido Administrador de servicio social:
       <?php /*<br> Usuario con matricula: {{ Auth::user()->id}} */?>
       </h1>
-    </section>
+    </section>-->
     <section class="section-two">
+        <br>
+        <br>
  <!-- AQUI EMPIEZA CONTENIDO; -->
       @yield('content')
       @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])

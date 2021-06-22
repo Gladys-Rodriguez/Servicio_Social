@@ -1,15 +1,31 @@
-@extends('layouts.navbarAdminIndex2')
+@extends('Pantallas_Admin_Servicio.navbarAdminServicio')
 
 @section('title', 'LOGIN')
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Servicio/ListaAlumnos.css')}}">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 @endsection
 
 @section('content')
-<h1><span class="blue"></span><span class="blue"></span> <span class="yellow"></span></h1>
-    <h2>Listado <a href="https://github.com/pablorgarcia" target="_blank">de Alumnos</a></h2>
 
+<h1><span class="blue"></span><span class="blue"></span> <span class="yellow"></span></h1>
+    <h2>Listado <a  target="_blank">de Alumnos</a> <br>
+    Inscritos al <a  target="_blank">Servicio Social</a></h2>
+
+    <div class="box">
+        <div class="container-1">
+            <form action="{{route('ListaDeAlumnos.index')}}" method="GET">
+            <span class="icon" ><i class="fa fa-search"></i></span>
+            <input type="search" id="search" placeholder="Search..." name="search" value="{{$search}}"/>
+           <!-- <input type="submit" value="Buscar">-->
+            </form>
+        </div>
+      </div>
+
+      <br>
+      <br>
+      <br>
     <table class="container">
         <thead>
             <tr>
@@ -22,56 +38,15 @@
             </tr>
         </thead>
         <tbody>
-           <!-- <tr>
-                <td>Google</td>
-                <td>9518</td>
-                <td>6369</td>
-                <td>01:32:50</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Twitter</td>
-                <td>7326</td>
-                <td>10437</td>
-                <td>00:51:22</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Amazon</td>
-                <td>4162</td>
-                <td>5327</td>
-                <td>00:24:34</td>
-                <td></td>
-            </tr>
-        <tr>
-                <td>LinkedIn</td>
-                <td>3654</td>
-                <td>2961</td>
-                <td>00:12:10</td>
-                <td></td>
-            </tr>
-        <tr>
-                <td>CodePen</td>
-                <td>2002</td>
-                <td>4135</td>
-                <td>00:46:19</td>
-                <td></td>
-            </tr>
-        <tr>
-                <td>GitHub</td>
-                <td>4623</td>
-                <td>3486</td>
-                <td>00:31:52</td>
-                <td></td>
-            </tr>
-        -->
-        @foreach ($servicios as $servicio )
+
+        @foreach ($busqueda as $busque )
                             <tr>
-                                <td>{{$servicio->id_usuarios}}</td>
-                                <td>{{$servicio->nombre}}</td>
-                                <td>{{$servicio->ap_paterno}}</td>
-                                <td>{{$servicio->ap_materno}}</td>
-                                <td>{{$servicio->carrera}}</td>
+                                <td class="matricula">{{$busque->id_usuarios}}</td>
+                                <td>{{$busque->nombre}}</td>
+                                <td>{{$busque->ap_paterno}}</td>
+                                <td>{{$busque->ap_materno}}</td>
+                                <td>{{$busque->carrera}}</td>
+                                <td>---------</td>
                             </tr>
         @endforeach
 

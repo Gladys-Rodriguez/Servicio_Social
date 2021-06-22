@@ -14,24 +14,37 @@ class ListadoAlumnosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    const PAGINACION=10;
+    public function index(Request $request)
     {
+        $search=$request->get('search');
 
 
-
-        $servicios=DB::table('servicios')
+        /*$servicios=DB::table('servicios')
         ->join('alumnos', 'servicios.id_alumnos', 'alumnos.id_alumnos')
         ->join('users', 'alumnos.id_usuarios', 'users.id')
         ->join('datos', 'alumnos.id_datos', 'datos.id_datos')
-        ->get();
+        ->where('alumnos.id_usuarios', 'LIKE', '%'.$search.'%')
+        ->get();*/
 
+        $busqueda=DB::table('servicios')
+        ->join('alumnos', 'servicios.id_alumnos', 'alumnos.id_alumnos')
+        ->join('users', 'alumnos.id_usuarios', 'users.id')
+        ->join('datos', 'alumnos.id_datos', 'datos.id_datos')
+        ->where('alumnos.id_usuarios', 'LIKE', '%'.$search.'%')
+        ->paginate($this::PAGINACION);
 
-        return view("Pantallas_Admin_Servicio.ListaAlumnos", compact("servicios"));
+        return view("Pantallas_Admin_Servicio.ListaAlumnos", compact("search","busqueda"));
 
     }
         //$alumnos = alumno::all();
 
+    public function consultar()
+    {
 
+
+
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -60,9 +73,9 @@ class ListadoAlumnosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+
     }
 
     /**
