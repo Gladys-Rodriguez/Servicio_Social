@@ -110,11 +110,11 @@ class login extends Controller
          return redirect('/reset?email='.$user->email);
         //return view('emails.recover', $data);
         endif;
-        
+
     else:
         return back()->with('Este correo electronico no existe');
     endif;
-    
+
 
    }
    public function getReset(Request $request){
@@ -132,7 +132,7 @@ class login extends Controller
         if($user->save()):
             $data = [ 'email' => $user->email, 'id' => $user->id,  'password' => $new_password];
             Mail::to($user->email)->send(new UserSendNewPassword($data));
-            return redirect('/login');
+            return redirect('/LoginForm');
         endif;
     else:
         return back();
