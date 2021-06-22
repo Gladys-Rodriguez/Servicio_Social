@@ -1,21 +1,3 @@
-@extends('Pantallas_Docente_Practicas_Visitas.Layout.navbar2')
-
-@section('title')
-Solicitar Visita Escolar
-@endsection
-
-@section('css')
-<link rel="stylesheet" href="{{asset('css/Pantalla_Docente_PracticasVisitas/estilosVisitasEscolares.css')}}">
-@endsection
-
-@section('content')
-
-<section class="section-main">
-    <h1>Solicitar Visita</h1>
-</section>
-
-
-<section class="section-dos" style="color:white">
 <h2>Datos Visita</h2>
 <dl>
     <dt>ID Solicitud</dt>
@@ -25,7 +7,7 @@ Solicitar Visita Escolar
     <dd> {{ $visita->fecha_visita }} </dd>
 
     <dt>Validacion</dt>
-    <dd> {{ $visita->validacion }} </dd>
+    <dd> {{ $visita->validacion ? 'Aceptada' : 'Sin validar'}} </dd>
 
     <dt>Fecha de Solicitud</dt>
     <dd> {{ $visita->created_at }} </dd>
@@ -49,7 +31,6 @@ Solicitar Visita Escolar
 </dl>
 
 <h2>Datos Empresa</h2>
-
 <dt>
     <dt>Empresa</dt>
     <dd> {{ $visita->empresa->nombre }} </dd>
@@ -74,42 +55,4 @@ Solicitar Visita Escolar
 
     <dt>Codigo Postal</dt>
     <dd> {{ $visita->empresa->direccion->cp }} </dd>
-
 </dl>
-
-<h2>Datos Documentos</h2>
-<dl>
-    <table>
-        <thead>
-            <th>ID SOLICITUD</th>
-            <th>TIPO DOCUMENTO</th>
-            <th>ESTADO</th>
-            <th>OBSERVACIONES</th>
-            <th>ACCIONES</th>
-        </thead>
-        <tbody style="color:black">
-            @forelse ($documentos as $documento)
-            <tr>
-                <td> {{ $documento->visita_id }} </td>
-                <td> {{ $documento->tipo_documento->nombre }} </td>
-                <td> {{ $documento->validacion }} </td>
-                <td> {{ $documento->observaciones }} </td>
-                <td> 
-                    <a href=" @php echo \Illuminate\Support\Facades\Storage::url($documento->ruta) @endphp"
-                        style="color: blue">
-                        Ver
-                    </a>
-                    Editar
-                </td>
-            </tr>
-            @empty
-                
-            @endforelse
-        </tbody>
-    </table>
-</dl>
-
-</section>
-
-@endsection
-

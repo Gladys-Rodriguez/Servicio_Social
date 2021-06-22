@@ -1,6 +1,6 @@
 @extends('Pantallas_Admin_Master.navbarRegisterFormRoles')
 
-@section('title', 'Registro')
+@section('title', 'Registro administradores')
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Master/RegisterFormRoles.css')}}">
@@ -137,6 +137,7 @@
                  <option value="2"> Admin Servicio Social </option>
                  <option value="3"> Admin Becas </option>
                  <option value="4"> Admin Prácticas </option>
+                 <option value="6"> Docente </option>
                  <option value="7"> Pruebas </option>
                  <option value="8"> Superadmin </option>
 

@@ -31,7 +31,7 @@ Route::get('/Servicio', function (){
     return view('Servicio');
 }) -> name('Servicio');*/
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 //Route::get('/Servicio', [App\Http\Controllers\Datos::class, 'create'])->name('Servicio');
 
@@ -122,7 +122,7 @@ Route::get('RegistroAlumno', [App\Http\Controllers\AlumnosController::class, 'in
 Route::get('NuevoRegistro', [App\Http\Controllers\ServiciosController::class, 'index'])->name('NuevoRegistro.index');
 Route::post('RegistroAlumno', [App\Http\Controllers\AlumnosController::class, 'store'])->name('RegistroAlumno.store');
 Route::post('NuevoRegistro', [App\Http\Controllers\ServiciosController::class, 'store'])->name('NuevoRegistro.store');
-Auth::routes();
+//Auth::routes();
 //Ruta de controlador para guardar datos de un formulario
 //Route::post('DatosAlumno', [App\Http\Controllers\AlumnoController::class, 'create'])->name('DatosAlumnno.create');
 Route::resource('direcciones', "DireccionsController");
@@ -155,11 +155,11 @@ Route::get('/ListaDeAlumnos', [App\Http\Controllers\ListadoAlumnosController::cl
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/files', [App\Http\Controllers\FilesController::class, 'index'])->name('index');
@@ -206,9 +206,8 @@ Route::get('/docsConcentradoPOA/{file}', [App\Http\Controllers\concentradoPOACon
 
 
 //Ruta Estadisicas de informacion
-Route::get('/estadistica', function () {
-    return view('Pantallas_Admin_Servicio.estadistica');
-}) -> name('estadistica');
+Route::get('/estadisticas', [App\Http\Controllers\AlumnoController::class, 'dashboard'])->name('estadisticas.dashboard');
+
 
 //Ruta para ver archivos de Estadistica mensual
 Route::get('/docsEstadisticaMensual', [App\Http\Controllers\estadisticaMensualController::class, 'index'])->name('docsEstadisticaMensual.index');
@@ -236,11 +235,19 @@ Route::get('/docexpediente', function () {
 // Subir Archivos alumnos store
 Route::post('/uploaddocexpediente', [App\Http\Controllers\docsExpediente::class, 'store'])->name('uploaddocexpediente.store');
 
+
+
 //Ruta para ver la solicitud del alumno
 Route::get('/docsSolicitudAlumno', [App\Http\Controllers\docsExpediente::class, 'index'])->name('uploaddocexpediente.index');
 
 //Ruta para ver el listado de alumnos
 Route::get('/concentradosInfo', [App\Http\Controllers\AlumnoController::class, 'lista'])->name('alumno.lista');
+
+//Ruta para ver Buscar los alumnos 
+Route::get('/buscarAlumnos', [App\Http\Controllers\AlumnoController::class, 'buscar'])->name('alumno.buscar');
+
+//Ruta para validar documentos por parte del admin
+Route::get('/docsvalidardocalumno', [App\Http\Controllers\docsExpediente::class, 'edit'])->name('uploaddocexpediente.edit');
 
 
 
@@ -427,6 +434,9 @@ Route::get('/LoginForm', function (){
 Route::get('/recover', [App\Http\Controllers\login::class, 'getRecover'] )->name('recover');
 Route::post('/recover', [App\Http\Controllers\login::class, 'postRecover'] )->name('recover');
 
+Route::get('/reset', [App\Http\Controllers\login::class, 'getReset'] )->name('reset');
+Route::post('/reset', [App\Http\Controllers\login::class, 'postReset'] )->name('reset');
+
 
 Route::post('/login/(id)', [App\Http\Controllers\login::class, 'store'])->name('login.store'); //aqui se edita la pantalla de alcance
 
@@ -591,48 +601,28 @@ Route::get('/RegisterFormRoles', function (){
     return view('Pantallas_Admin_Master.RegisterFormRoles');
 }) -> name('RegisterFormRoles');
 //-----------------------SANTOS TERMINO----------------------------------
-Auth::routes();
+//Auth::routes();
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // ************************************* RUTAS    DE    MOY    *******************************************
 //Rutas Practicas-y-Vistas Docente
-Route::get('/VisitasEscolares/Index','DocenteIndexController');
-Route::get('/VisitasEscolares/SolicitarVisita','DocenteSolicitarVisitaController');
-Route::get('/VisitasEscolares/MisVisitas','DocenteMisVisitasController');
-Route::resource('Visitas', 'VisitaController');
-Route::resource('DocenteVisitas', 'DocenteVisitaController');
+
+
+Route::get('/VisitasEscolares', 'VisitaController@index')     //Método Index()
+    ->name('docente.index');
+
+Route::get('/VisitasEscolares/solicitar','VisitaController@crear')  //Método create()
+    ->name('docente.solicitarVisita');
+
+Route::post('/VisitasEscolares', 'VisitaController@guardar')    //Método store()
+    ->name('docente.guardarVisita');;
+
+Route::get('/VisitasEscolares/{visita}','VisitaController@ver') //Método show()
+    ->name('docente.verVisita');
+
+Route::get('/VisitasEscolares/{visita}/editar','VisitaController@editar') //Método edit()
+    ->name('docente.editarVisita');
+
+
+

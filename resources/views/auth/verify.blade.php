@@ -1,28 +1,49 @@
-@extends('layouts.app')
+@extends('Pantallas_Principales.navbarConfirmar')
+
+
+@section('css')
+<link rel="stylesheet" href="{{asset('css/Pantallas_Principales/confirmar.css')}}">
 
 @section('content')
+<br>
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+<div class="informacion">
+      <div class="contact-info">
+      <h3 class="title">"Verificar correo"</h3>
 
-                <div class="card-body">
+
+      <div class="errores">
+       @if($errors->any())
+        <ul>
+        @foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+        @endforeach
+        </ul>
+        @endif
+      </div>
+
+      </div>
+
+    <!--Formulario-->
+    <div class="login-box">
                     @if (session('resent'))
                         <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
+                        <label class="especial">'Un nuevo link de verificación ha sido enviado a tu correo electronico'</label>
                         </div>
+                        <br>
                     @endif
 
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }},
+
+                    <label>Antes de proceder, revisa tu correo ya que se te envio un link de verificación.</label>
+                    <br>
+                    <label>Si tu no recibiste el email, entonces:</label>
+                    <br>
+
                     <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                         @csrf
-                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
+                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click aqui para recibir uno nuevo') }}</button>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
+     </div>
+     </div>
 </div>
 @endsection
