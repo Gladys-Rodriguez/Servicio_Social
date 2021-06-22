@@ -177,9 +177,8 @@ Route::get('/docsConcentradoPOA/{file}', [App\Http\Controllers\concentradoPOACon
 
 
 //Ruta Estadisicas de informacion
-Route::get('/estadistica', function () {
-    return view('Pantallas_Admin_Servicio.estadistica');
-}) -> name('estadistica');
+Route::get('/estadisticas', [App\Http\Controllers\AlumnoController::class, 'dashboard'])->name('estadisticas.dashboard');
+
 
 //Ruta para ver archivos de Estadistica mensual
 Route::get('/docsEstadisticaMensual', [App\Http\Controllers\estadisticaMensualController::class, 'index'])->name('docsEstadisticaMensual.index');
@@ -207,11 +206,19 @@ Route::get('/docexpediente', function () {
 // Subir Archivos alumnos store
 Route::post('/uploaddocexpediente', [App\Http\Controllers\docsExpediente::class, 'store'])->name('uploaddocexpediente.store');
 
+
+
 //Ruta para ver la solicitud del alumno
 Route::get('/docsSolicitudAlumno', [App\Http\Controllers\docsExpediente::class, 'index'])->name('uploaddocexpediente.index');
 
 //Ruta para ver el listado de alumnos 
 Route::get('/concentradosInfo', [App\Http\Controllers\AlumnoController::class, 'lista'])->name('alumno.lista');
+
+//Ruta para ver Buscar los alumnos 
+Route::get('/buscarAlumnos', [App\Http\Controllers\AlumnoController::class, 'buscar'])->name('alumno.buscar');
+
+//Ruta para validar documentos por parte del admin
+Route::get('/docsvalidardocalumno', [App\Http\Controllers\docsExpediente::class, 'edit'])->name('uploaddocexpediente.edit');
 
 
 
@@ -309,6 +316,9 @@ Route::get('/LoginForm', function (){
 
 Route::get('/recover', [App\Http\Controllers\login::class, 'getRecover'] )->name('recover');
 Route::post('/recover', [App\Http\Controllers\login::class, 'postRecover'] )->name('recover');
+
+Route::get('/reset', [App\Http\Controllers\login::class, 'getReset'] )->name('reset');
+Route::post('/reset', [App\Http\Controllers\login::class, 'postReset'] )->name('reset');
 
 
 Route::post('/login/(id)', [App\Http\Controllers\login::class, 'store'])->name('login.store'); //aqui se edita la pantalla de alcance
