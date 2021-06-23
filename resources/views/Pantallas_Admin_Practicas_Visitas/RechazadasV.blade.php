@@ -20,24 +20,17 @@
 							</tr>
 					</thead>
 					<tbody>
+					@foreach ($datos as $dato)
 							<tr>
-									<td data-label="Id Solicitante">4</td>
-									<td data-label="Solicitante">Juan Perez Torres</td>
-									<td data-label="Empresa">Marinela</td>
-									<td data-label="Grupo">3CM35</td>
-									<td data-label="Fecha de visita">20/05/2021</td>
-									<td data-label="Observaciones">La fecha de la solicitud no es válida</td>
-									<td><label for="btn-modal" class="lbl-modal">Aceptar</label></td>
+									<td data-label="Id Solicitante">{{$dato->id}}</td>
+									<td data-label="Solicitante">{{$dato->fullname}}</td>
+									<td data-label="Empresa">{{$dato->empresaN}}</td>
+									<td data-label="Secuencia">{{$dato->secuencia}}</td>
+									<td data-label="Fecha de visita">{{$dato->fecha_visita}}</td>
+									<td data-label="Observaciones"></td>
+									<td><a class="boton_personalizado1" href="/SolicitudesPra/{{$dato->id}}">Ver</a></td>
 							</tr>
-                            <tr>
-									<td data-label="Id Solicitante">10</td>
-									<td data-label="Solicitante">Sergio Chávez Villa</td>
-									<td data-label="Empresa">Bancomer</td>
-									<td data-label="Grupo">4AM40</td>
-									<td data-label="Fecha de visita">10/06/2021</td>
-									<td data-label="Observaciones">Documentos incompletos</td>
-									<td><label for="btn-modal" class="lbl-modal">Aceptar</label></td>
-							</tr>
+							@endforeach
 					</tbody>
 			</table>
 	</div>

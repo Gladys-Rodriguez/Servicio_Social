@@ -279,15 +279,14 @@ Route::get('/Validacion_Practicas_Visitas', function () {
 
 //Ruta Clasificacion Practicas y Visitas
 Route::get('/Solicitudes_Practicas_Visitas','AdminPracSolicitudesController@index');
+Route::get('/AceptadasV','PracticasAceptadasController@index');
+Route::get('/RechazadasV','PracticasRechazadasController@index');
 
 
-Route::get('/RechazadasV', function () {
-    return view('Pantallas_Admin_Practicas_Visitas.RechazadasV');
-}) -> name('RechazadasV');
+Route::get('/SolicitudesPra/{id}', [App\Http\Controllers\AdminPracSolicitudesController::class, 'edit'])->name('home');
+Route::put('/SolicitudesPra1/{id}', [App\Http\Controllers\AdminPracSolicitudesController::class, 'update'])->name('SolicitudesPra1.update');
 
-Route::get('/AceptadasV', function () {
-    return view('Pantallas_Admin_Practicas_Visitas.AceptadasV');
-}) -> name('AceptadasV');
+
 
 Route::get('/ValidacionV2', function () {
     return view('Pantallas_Admin_Practicas_Visitas.ValidacionV2');
@@ -591,6 +590,8 @@ Route::get('/RegisterFormRoles', function (){
 //editar estado del alumno
 Route::get('/EditarAdminForm/{id}', [App\Http\Controllers\AdminMasterIndexController::class, 'edit'])->name('home');
 Route::put('/EditarAdminForm2/{id}', [App\Http\Controllers\AdminMasterIndexController::class, 'update'])->name('EditarAlumnoController.update');
+
+
 
 //-----------------------SANTOS TERMINO----------------------------------
 Auth::routes();
