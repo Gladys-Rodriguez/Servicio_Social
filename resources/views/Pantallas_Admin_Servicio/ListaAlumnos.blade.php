@@ -1,4 +1,4 @@
-@extends('Pantallas_Admin_Servicio.navbarAdminServicio')
+<!--@extends('Pantallas_Admin_Servicio.navbarAdminServicio') -->
 
 @section('title', 'LOGIN')
 
