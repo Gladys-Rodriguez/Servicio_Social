@@ -15,7 +15,7 @@ class CreateServiciosTable extends Migration
     {
         Schema::create('servicios', function (Blueprint $table) {
             $table->increments('id_servicios')->unsigned()->notnull();
-            $table->bigInteger('No_registro')->unsigned();
+            $table->bigInteger('No_registro')->unsigned()->nullable();
             $table->date('fecha_inicio');
             $table->date('fecha_termino');
             $table->date('fecha_inscripcion');
