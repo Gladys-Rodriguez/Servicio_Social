@@ -1,4 +1,4 @@
-<!--@extends('Pantallas_Admin_Servicio.navbarAdminServicio') -->
+@extends('Pantallas_Admin_Servicio.navbarAdminServicio')
 
 @section('title', 'LOGIN')
 
@@ -46,7 +46,7 @@
                                 <td>{{$busque->ap_paterno}}</td>
                                 <td>{{$busque->ap_materno}}</td>
                                 <td>{{$busque->carrera}}</td>
-                                <td>---------</td>
+                                <td>{{$busque->status_ss}}</td>
                             </tr>
         @endforeach
 

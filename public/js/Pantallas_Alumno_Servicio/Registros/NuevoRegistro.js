@@ -81,8 +81,8 @@ submitBtn.addEventListener("click", function(event){
 
     if(campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext /*&& campos.num_int*/ && campos.cp &&
         campos.nombre_depen &&
-        campos.nom_responsable && campos.ap_responsable && campos.am_responsable && campos.telefono && campos.email_responsable &&
-        campos.No_registro ){
+        campos.nom_responsable && campos.ap_responsable && campos.am_responsable && campos.telefono && campos.email_responsable ){/* &&
+        campos.No_registro */
             bullet[current - 1].classList.add("active");
             progressCheck[current - 1].classList.add("active");
             progressText[current - 1].classList.add("active");
@@ -153,7 +153,7 @@ const expresiones = {
     email_responsable: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 
     //campos de usuario
-    No_registro: /^\d{1,20}$/, // 7 a 14 numeros.
+    //No_registro: /^\d{1,20}$/, // 7 a 14 numeros.
 
 
 }
@@ -177,7 +177,7 @@ const campos = {
     email_responsable: false,
 
     //campos de servicios
-    No_registro: false,
+   // No_registro: false,
 
 
 }
@@ -229,9 +229,9 @@ const validarFormulario = (e) => {
 		break;
 
         //case para servicios
-        case "No_registro":
+       /* case "No_registro":
 			validarCampo(expresiones.No_registro, e.target, 'No_registro');
-		break;
+		break;*/
 
 	}
 }

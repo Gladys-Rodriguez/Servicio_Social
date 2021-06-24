@@ -49,6 +49,7 @@ class ServiciosController extends Controller
         //
         $id_users = Auth::user()->id;
         $id_alumnos=alumno::where('id_usuarios',$id_users)->take(1)->get();
+        //$id_ser = servicio::select('id_servicios')->take(1)->get();
 
 
 
@@ -77,13 +78,21 @@ class ServiciosController extends Controller
 
 
 
-        $id_servicios = DB::table('servicios')->insert([
+        $id_servicios = DB::table('servicios')->insertGetId([
             'id_dependencias' => $id_dependencias,
             'id_alumnos' => $id_alumnos->first()->id_alumnos,
             'No_registro' => $request->input('No_registro'),
             'fecha_inicio' => $request->input('fecha_inicio'),
             'fecha_termino' => $request->input('fecha_termino'),
             'fecha_inscripcion' => $request->input('fecha_inscripcion')
+        ]);
+
+        $id_registros = DB::table('registros')->insert([
+            'status_ss' => $request->input('status_ss'),
+            'fecha_envio' => $request->input('fecha_envio'),
+            'observaciones' => $request->input('observaciones'),
+            'id_alumnos' => $id_alumnos->first()->id_alumnos,
+            'id_servicios' => $id_servicios
         ]);
 
 

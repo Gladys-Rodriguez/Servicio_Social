@@ -243,7 +243,7 @@ Route::get('/docsSolicitudAlumno', [App\Http\Controllers\docsExpediente::class, 
 //Ruta para ver el listado de alumnos
 Route::get('/concentradosInfo', [App\Http\Controllers\AlumnoController::class, 'lista'])->name('alumno.lista');
 
-//Ruta para ver Buscar los alumnos 
+//Ruta para ver Buscar los alumnos
 Route::get('/buscarAlumnos', [App\Http\Controllers\AlumnoController::class, 'buscar'])->name('alumno.buscar');
 
 //Ruta para validar documentos por parte del admin
