@@ -6,6 +6,8 @@ namespace App\Http\Controllers;
 
 use App\Models\docs_expedientePrueba;
 use App\Models\dato;
+// use App\Models\User;
+// use App\Models\Alum_Datos, App\Models\alumno ;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -73,7 +75,8 @@ class docsExpediente extends Controller
      */
     public function show($id)
     {
-        //
+
+        
     }
 
     /**
@@ -82,9 +85,18 @@ class docsExpediente extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function lista(Request $request){
+        $files = docs_expedientePrueba::all();
+        return view('Pantallas_Admin_Servicio.validacionAlumno',  compact('files'));
+
+    }
+    public function edit( $id){
+        $files = docs_expedientePrueba::findOrFail($id);
+
+        
+        return view('Pantallas_Admin_Servicio.editDocsAlumno',  compact('files'));
+        
+
     }
 
     /**
@@ -96,7 +108,11 @@ class docsExpediente extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $files=docs_expedientePrueba::findOrFail($id);
+        $files->estado=$request->input('estado');
+        $files->observaciones=$request->input('observaciones');
+        $files->save();
+        return redirect()->route('lista.edit');
     }
 
     /**

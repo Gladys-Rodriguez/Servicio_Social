@@ -218,7 +218,15 @@ Route::get('/concentradosInfo', [App\Http\Controllers\AlumnoController::class, '
 Route::get('/buscarAlumnos', [App\Http\Controllers\AlumnoController::class, 'buscar'])->name('alumno.buscar');
 
 //Ruta para validar documentos por parte del admin
-Route::get('/docsvalidardocalumno', [App\Http\Controllers\docsExpediente::class, 'edit'])->name('uploaddocexpediente.edit');
+Route::get('/docsvalidardocalumno', [App\Http\Controllers\docsExpediente::class, 'lista'])->name('lista.edit');
+
+//Ruta editar documentos del usuario
+Route::get('/docseditardocalumno/{id}', [App\Http\Controllers\docsExpediente::class, 'edit'])->name('uploaddocexpediente.edit');
+
+//Ruta update documentos del usuario alumno
+Route::post('/docsupdatedocalumno/{id}', [App\Http\Controllers\docsExpediente::class, 'update'])->name('uploaddocexpediente.update');
+
+
 
 
 
@@ -228,14 +236,14 @@ Route::get('/storagelink', function() {
 });
 
 //Ruta validación Documentos Alumno
-Route::get('/validacionAlumno', function () {
-    return view('Pantallas_Admin_Servicio.validacionAlumno');
-}) -> name('validacionAlumno');
+//Route::get('/validacionAlumno', function () {
+  //  return view('Pantallas_Admin_Servicio.validacionAlumno');
+// }) -> name('validacionAlumno');
 
 //Ruta validacion Reportes
-Route::get('/validacionReportes', function () {
-    return view('Pantallas_Admin_Servicio.validacionReportes');
-}) -> name('validacionReportes');
+// Route::get('/validacionReportes', function () {
+   // return view('Pantallas_Admin_Servicio.validacionReportes');
+//}) -> name('validacionReportes');
 
 //------------------------FER INICIO------------------------------------
 
