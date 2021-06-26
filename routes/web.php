@@ -576,6 +576,8 @@ Route::delete('/BorraUserSer/{id}', [App\Http\Controllers\ConsultaAdminSerContro
 
 
 Route::get('/ConsultaAdminPra','ConsultaAdminPraController@index');
+Route::get('/EditarAdminPra/{id}', [App\Http\Controllers\ConsultaAdminPraController::class, 'edit'])->name('home');
+Route::put('/EditarAdminPra1/{id}', [App\Http\Controllers\ConsultaAdminPraController::class, 'update'])->name('EditarAdminPraController.update');
 Route::delete('/BorraUserPra/{id}', [App\Http\Controllers\ConsultaAdminPraController::class, 'destroy'])->name('pruebaEditarForm3.update');
 
 
