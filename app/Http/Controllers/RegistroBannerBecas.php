@@ -48,7 +48,7 @@ class RegistroBannerBecas extends Controller
 
         bannerBecasImagen::create($entrada);
 
-        return redirect('Registro_exitoso');
+        return redirect('Registro_exitosoBannersBecas');
     }
 
     /**

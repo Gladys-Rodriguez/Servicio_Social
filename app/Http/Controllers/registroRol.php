@@ -95,7 +95,7 @@ class registroRol extends Controller
         ]);
 
       });
-      return redirect()->back() ->with('alert', 'Registro Exitoso');
+      return redirect()->back() ->with('alert', 'Registro_exitosoRoles');
     }
 
     /**

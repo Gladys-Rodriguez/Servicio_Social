@@ -232,7 +232,7 @@ Route::get('/docsSolicitudAlumno', [App\Http\Controllers\docsExpediente::class, 
 //Ruta para ver el listado de alumnos
 Route::get('/concentradosInfo', [App\Http\Controllers\AlumnoController::class, 'lista'])->name('alumno.lista');
 
-//Ruta para ver Buscar los alumnos 
+//Ruta para ver Buscar los alumnos
 Route::get('/buscarAlumnos', [App\Http\Controllers\AlumnoController::class, 'buscar'])->name('alumno.buscar');
 
 //Ruta para validar documentos por parte del admin
@@ -375,6 +375,31 @@ Route::post('/registros/(id)', [App\Http\Controllers\registro::class, 'store'])-
 Route::get('/Registro_exitoso', function (){
     return view('Pantallas_Principales.Registro_exitoso');
 }) -> name('Registro_exitoso');
+
+//Ruta oara pantalla de registro exitoso de imagenes de banner de home
+Route::get('/Registro_exitosoBannersHome', function (){
+    return view('Pantallas_Principales.Registro_exitosoBannersHome');
+}) -> name('Registro_exitoso');
+
+//Ruta oara pantalla de registro exitoso de imagenes de banner de servicio
+Route::get('/Registro_exitosoBannersServicio', function (){
+    return view('Pantallas_Principales.Registro_exitosoBannersServicio');
+}) -> name('Registro_exitoso');
+
+//Ruta oara pantalla de registro exitoso de imagenes de banner de practicas
+Route::get('/Registro_exitosoBannersPracticas', function (){
+    return view('Pantallas_Principales.Registro_exitosoBannersPracticas');
+}) -> name('Registro_exitoso');
+
+//Ruta oara pantalla de registro exitoso de imagenes de banner de becas
+Route::get('/Registro_exitosoBannersBecas', function (){
+    return view('Pantallas_Principales.Registro_exitosoBannersBecas');
+}) -> name('Registro_exitoso');
+
+//Ruta oara pantalla de registro exitoso de roles
+Route::get('/Registro_exitosoRoles', function (){
+    return view('Pantallas_Principales.Registro_exitosoRoles');
+}) -> name('Registro_exitosoRoles');
 
 //Ruta para el registro de imagenes del home
 Route::get('/RegisterBannerInicio', function (){

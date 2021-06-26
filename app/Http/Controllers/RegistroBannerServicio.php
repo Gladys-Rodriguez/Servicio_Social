@@ -57,7 +57,7 @@ class RegistroBannerServicio extends Controller
 
 
 
-        return redirect('Registro_exitoso');
+        return redirect('Registro_exitosoBannersServicio');
 
     }
 
