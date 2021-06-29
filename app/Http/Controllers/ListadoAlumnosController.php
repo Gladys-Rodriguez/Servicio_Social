@@ -19,14 +19,6 @@ class ListadoAlumnosController extends Controller
     {
         $search=$request->get('search');
 
-
-        /*$servicios=DB::table('servicios')
-        ->join('alumnos', 'servicios.id_alumnos', 'alumnos.id_alumnos')
-        ->join('users', 'alumnos.id_usuarios', 'users.id')
-        ->join('datos', 'alumnos.id_datos', 'datos.id_datos')
-        ->where('alumnos.id_usuarios', 'LIKE', '%'.$search.'%')
-        ->get();*/
-
         $busqueda=DB::table('registros')
         ->join('servicios', 'registros.id_servicios', 'servicios.id_servicios')
         ->join('alumnos', 'servicios.id_alumnos', 'alumnos.id_alumnos')
