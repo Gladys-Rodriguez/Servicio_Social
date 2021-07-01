@@ -47,7 +47,7 @@
                 <h2>---------</h2>
                 <ul class="category-list">
                     <li class="list-items" data-aos="fade-left" data-aos-delay="100">
-                        <a href="{{url('/NuevoRegistro')}}"">Nuevo Registro</a>
+                        <a href="{{url('/NuevoRegistro')}}" id="new_register">Nuevo Registro</a>
                         <span><i class="fas fa-user text-gray"></i></span>
                     </li>
                     <li class="list-items" data-aos="fade-left" data-aos-delay="200">
@@ -68,5 +68,8 @@
 @section('script')
 <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"> </script>
 
-<script src="{{asset('js/Pantallas_Principales/Index_Alumno.js')}}"></script>
+<script src="{{asset('js/Pantallas_Principales/Index_Alumno.js')}}"></script>}
+<script src="{{asset('js/Pantallas_Alumno_Servicio/Registros/NuevoRegistro.js')}}"></script>
+
+
 @endsection

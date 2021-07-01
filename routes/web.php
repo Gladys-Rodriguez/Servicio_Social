@@ -106,9 +106,11 @@ Route::get('/LoginPruebaGla', function (){
 Route::get('/RegistroAlumno', function (){
     return view('Pantallas_Alumno_Servicio.RegistroAlumno');
 }) -> name('RegistroAlumno');
+
 Route::get('/FormRegistro', function (){
     return view('Pantallas_Alumno_Servicio.FormRegistro');
 }) -> name('FormRegistro');
+
 Route::get('/NuevoRegistro', function (){
     return view('Pantallas_Alumno_Servicio.Registros.NuevoRegistro');
 }) -> name('Nuevo Registro');
@@ -119,7 +121,7 @@ Route::get('/NuevoRegistro', function (){
 //Ruta para obtener los datos desde el controlador
 
 Route::get('RegistroAlumno', [App\Http\Controllers\AlumnosController::class, 'index'])->name('RegistroAlumno.index');
-Route::get('NuevoRegistro', [App\Http\Controllers\ServiciosController::class, 'index'])->name('NuevoRegistro.index');
+Route::get('NuevoRegistro',[App\Http\Controllers\ServiciosController::class, 'index'])->name('NuevoRegistro.index');
 Route::post('RegistroAlumno', [App\Http\Controllers\AlumnosController::class, 'store'])->name('RegistroAlumno.store');
 Route::post('NuevoRegistro', [App\Http\Controllers\ServiciosController::class, 'store'])->name('NuevoRegistro.store');
 //Auth::routes();
@@ -133,6 +135,10 @@ Route::get('/Index_Alumno', function (){
     return view('Pantallas_Alumno_Servicio.Index_Alumno');
 }) -> name('Index_Alumno');
 
+
+Route::get('/Inicio Alumno', function (){
+    return view('Pantallas_Alumno_Servicio.Index_AlumnoV2');
+}) -> name('Inicio Alumno');
 
 //Ruta oara pantalla Prueba de datos Personales
 Route::get('/DatosPersonales', function (){

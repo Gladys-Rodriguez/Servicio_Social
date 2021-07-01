@@ -16,15 +16,45 @@ use App\Models\direccion;
 
 class ServiciosController extends Controller
 {
+    /*public function __construct(){
+        $this->middleware('NuevoRegistroMiddleware',['only'=> ['index']]);
+    }*/
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     *
+     *
      */
+
+
+
     public function index()
     {
         //
+        $id_users = Auth::user()->id;
+        $alumnos=DB::table('alumnos')->where('id_usuarios',$id_users)->pluck('id_alumnos')->first();
+
+        $serv= DB::table('servicios')
+        ->join('alumnos', 'servicios.id_alumnos', 'alumnos.id_alumnos')
+        ->where('servicios.id_alumnos', $alumnos)
+        ->pluck('servicios.id_alumnos')->first();
+
+       // var_dump($serv);
+        if($alumnos == $serv)
+        {
+            return redirect('Inicio Alumno');
+        }
+        else{
         return response()->view('Pantallas_Alumno_Servicio/Registros/NuevoRegistro');
+    }
+
+
+
+
+
+
 
     }
 

@@ -14,10 +14,18 @@ let current = 1;
 const form = document.getElementById('formulario');
 
 
+var nuevo_registro = document.getElementById('nuevo_registro');
+
+
 const formulario_mensaje = document.getElementById('formulario__mensaje');
 
 
+ //nuevo_registro.removeAttribute ("href");
+ //nuevo_registro.remove();
 
+ /*submitBtn.on("click", function(){
+     nuevo_registro.remove();
+ });*/
 
 
 // **************** PRIMER BOTON NEXT *************************
@@ -32,11 +40,18 @@ if(campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.
     progressCheck[current - 1].classList.add("active");
     progressText[current - 1].classList.add("active");
     current += 1;
+
+
+
+
     document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
   } else{
   document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+
   }
 });
+
+
 
 // ********************* SEGUNDO BOTON NEXT **************************
 nextBtnSec.addEventListener("click", function(event){
@@ -54,6 +69,7 @@ nextBtnSec.addEventListener("click", function(event){
         document.getElementById('formulario__mensaje2').classList.remove('formulario__mensaje-activo');
       } else{
       document.getElementById('formulario__mensaje2').classList.add('formulario__mensaje-activo');
+
       }
 });
 //******************** TERCER BOTON NEXT ************************** */
@@ -79,6 +95,7 @@ nextBtnThird.addEventListener("click", function(event){
 submitBtn.addEventListener("click", function(event){
     event.preventDefault();
 
+
     if(campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext /*&& campos.num_int*/ && campos.cp &&
         campos.nombre_depen &&
         campos.nom_responsable && campos.ap_responsable && campos.am_responsable && campos.telefono && campos.email_responsable ){/* &&
@@ -89,15 +106,22 @@ submitBtn.addEventListener("click", function(event){
             current += 1;
 
             form.submit();
+
             /*setTimeout(function(){
 
                 location.reload();
             },800);*/
-
+           // nuevo_registro.style.display = "none";
             document.getElementById('formulario__mensaje4').classList.remove('formulario__mensaje-activo');
+
+
+
             } else{
             document.getElementById('formulario__mensaje4').classList.add('formulario__mensaje-activo');
             }
+
+
+
 });
 
 
@@ -285,10 +309,6 @@ inputs.forEach((input) => {
 
 formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
-
-
-
-
 
 });
 
