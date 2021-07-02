@@ -20,10 +20,9 @@
             <div class="nav__content bd-grid">
                 <a href="" class="nav__perfil">
                     <div class="nav__img">
-                        <img src="assets/img/perfil.jpg" alt="">
+                        
                     </div>
                 </a>
-
                 <div class="nav__menu">
                     <ul class="nav__list">
                         <li class="nav__item"><a href="#" class="nav__link active">Home</a></li>
@@ -94,6 +93,7 @@
     </section>
     <section class="section-two">
   AQUI EMPIEZA CONTENIDO; -->
+  
       @yield('content')
 
     </section>

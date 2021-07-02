@@ -35,6 +35,6 @@ class direccion extends Model
 
     public function empresa()
     {
-        return $this->hasOne(Empresa::class,'direccion_id','id_direccions');
+        return $this->hasOne(Empresa::class,'direccion_id','id');
     }
 }
