@@ -1,6 +1,6 @@
 @extends('Pantallas_Admin_Servicio.navbarAdminServicio')
 
-@section('title', 'LOGIN')
+@section('title', 'Listado de Alumnos')
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Servicio/ListaAlumnos.css')}}">
@@ -41,7 +41,17 @@
 
         @foreach ($busqueda as $busque )
                             <tr>
-                                <td class="matricula">{{$busque->id_usuarios}}</td>
+                                <td class="matricula" name="boleta">
+                                    <form action="{{route('DatosServicio.index')}}" method="GET">
+                                    <button type="submit" id="boleta" placeholder="" name="boleta" value="{{$busque->id_usuarios}}">
+                                        {{$busque->id_usuarios}}
+                                    </button>
+                                    <!--<input type="text"  id="boleta" placeholder="" name="boleta" value="{{$busque->id_usuarios}}"/>-->
+                                    <!--<a href="{{route('DatosServicio.index')}}"> -->
+
+                                    </a>
+                                    </form>
+                                    </td>
                                 <td>{{$busque->nombre}}</td>
                                 <td>{{$busque->ap_paterno}}</td>
                                 <td>{{$busque->ap_materno}}</td>

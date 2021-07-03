@@ -146,6 +146,12 @@ Route::get('/DatosPersonales', function (){
 }) -> name('DatosPersonales');
 
 
+//Ruta oara pantalla  de datos del servicio
+Route::get('/DatosServicio', function (){
+    return view('Pantallas_Admin_Servicio.DatosServicio');
+}) -> name('DatosServicio');
+
+
 Route::get('/ListaDeAlumnos', function (){
     return view('Pantallas_Admin_Servicio.ListaAlumnos');
 }) -> name('ListaDeAlummos');
@@ -156,6 +162,7 @@ Route::get('/Reportes', function (){
 
 
 Route::get('/ListaDeAlumnos', [App\Http\Controllers\ListadoAlumnosController::class, 'index'])->name('ListaDeAlumnos.index');
+Route::get('/DatosServicio', [App\Http\Controllers\RegistroServicioController::class, 'index'])->name('DatosServicio.index');
 
 // ************************************* FIN   RUTAS    DE    GLADYS    *******************************************
 

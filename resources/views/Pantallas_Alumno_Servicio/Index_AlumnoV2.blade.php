@@ -1,6 +1,6 @@
 @extends('Pantallas_Alumno_Servicio.Layout_Alumno.Layout_Alumno4')
 
-@section('title', 'Registro')
+@section('title', 'Inicio Alumno')
 
 @section('css')
 

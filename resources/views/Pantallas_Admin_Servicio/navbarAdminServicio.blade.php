@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="{{asset('css/Pantallas_Alumno_Servicio/Layout_Alumno/Layout_Alumno2.css')}}">
+    <link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Servicio/Layout_Admin_Servicio.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
     @yield('css')
@@ -32,8 +32,8 @@
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="{{url('/AdminIndex')}}" class="nav__link active">Inicio</a></li>
-                    <li class="nav__item"><a href="{{url('/concentrados')}}" class="nav__link active">Concentrados </a></li>
+                    <li class="nav__item"><a href="{{url('/AdminIndex')}}" class="nav__link ">Inicio</a></li>
+                    <li class="nav__item"><a href="{{url('/concentrados')}}" class="nav__link ">Concentrados </a></li>
 
 
                     <li class="nav__item"><a href="{{url('/estadistica')}}" class="nav__link">Estadística</a></li>
@@ -59,8 +59,6 @@
             </div>
         </div>
     </nav>
-
-
     </header>
     <script src="{{asset('js/Pantallas_Alumno_Servicio/Layout_Alumno.js')}}"></script>
     <script type="text/javascript">
