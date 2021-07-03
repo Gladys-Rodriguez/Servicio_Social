@@ -24,6 +24,12 @@
 <label class="label-sol">Número de alumnos: {{$new->cantidad_alumnos}}</label><br>
 <label class="label-sol">Fecha de visita: {{$new->fecha_visita}}</label><br>
 <hr><hr><hr><br>
+<h1>Solicitud</h1>
+<a href=" @php echo \Illuminate\Support\Facades\Storage::url($new->ruta) @endphp"
+                        class="boton_chido" target="_blank">
+                        Ver Documento
+                    </a><br><br>
+<hr><hr><hr><br>
 <h1>Acciones</h1><br>
 <input type="hidden" name="_method" value="PUT">
 <div class="form-check">

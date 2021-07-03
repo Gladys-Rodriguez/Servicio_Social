@@ -123,7 +123,7 @@
          <input type="text" name="celular" placeholder="Ingresa el celular" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
          <!-- matricula INPUT -->
         <label>Matricula</label>
-        <input type="text" name="id" placeholder="Ingresa valores númericos" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
+        <input type="text" name="id" placeholder="Ingresa valores númericos" required minlength="8" maxlength="10" onkeypress="return solonumeros(event)">
         <!-- correo INPUT -->
         <label>Correo Institucional</label>
         <input type="email" name="email" placeholder="correo@hotmail.com" required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">

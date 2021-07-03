@@ -232,6 +232,12 @@ h1{
 p {
   margin-bottom: 1em;
 }
+.boton_chido{
+    text-decoration: none;
+    background-color: rgb(29, 105, 102);
+    color: #e5c0c0;
+    border-radius: 4px;
+}
 
 
 Resources
