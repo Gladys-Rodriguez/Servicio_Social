@@ -20,7 +20,7 @@ class PracticasAceptadasController extends Controller
         ->join('users','docentes.user_id','=','users.id')
         ->join('datos','docentes.dato_id','=','datos.id_datos')
 
-        ->select('visitas.id as id',\DB::raw('CONCAT(datos.nombre," ",datos.ap_paterno," ",datos.ap_materno) as fullname'),'empresas.nombre as empresaN','users.email','grupos.secuencia','visitas.fecha_visita')->where('visitas.validacion','1')->get();
+        ->select('visitas.observaciones','visitas.id as id',\DB::raw('CONCAT(datos.nombre," ",datos.ap_paterno," ",datos.ap_materno) as fullname'),'empresas.nombre as empresaN','users.email','grupos.secuencia','visitas.fecha_visita')->where('visitas.validacion','1')->get();
         return view('Pantallas_Admin_Practicas_Visitas.AceptadasV',compact('datos'));
     }
 

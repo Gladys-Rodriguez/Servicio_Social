@@ -27,7 +27,7 @@
 									<td data-label="Empresa">{{$dato->empresaN}}</td>
 									<td data-label="Secuencia">{{$dato->secuencia}}</td>
 									<td data-label="Fecha de visita">{{$dato->fecha_visita}}</td>
-									<td data-label="Observaciones"></td>
+									<td data-label="Observaciones">{{$dato->observaciones}}</td>
 									<td><a class="boton_personalizado1" href="/SolicitudesPra/{{$dato->id}}">Ver</a></td>
 							</tr>
 							@endforeach

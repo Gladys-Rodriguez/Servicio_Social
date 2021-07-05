@@ -33,6 +33,8 @@
 <h1>Acciones</h1><br>
 <input type="hidden" name="_method" value="PUT">
 <div class="form-check">
+@csrf
+  <textarea name="observaciones" placeholder="Observaciones:" id="" value="" cols="70" rows="5">{{$new->observaciones}}</textarea><br>
   <input class="form-check-input" type="radio" value="1" name="validacion" id="flexRadioDefault1" checked>
   <label class="label-sol" for="flexRadioDefault1">
     Aceptar Solicitud
@@ -41,7 +43,6 @@
   <label class="label-sol" for="flexRadioDefault2">
     Rechazar Solicitud
   </label><br>
-  <!--<textarea name="observaciones" placeholder="Observaciones:" id="" cols="50" rows="10"></textarea> -->
   <button type="submit">Enviar</button>
          
 </div>
