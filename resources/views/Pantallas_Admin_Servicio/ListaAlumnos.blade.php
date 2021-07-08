@@ -18,6 +18,7 @@
             <form action="{{route('ListaDeAlumnos.index')}}" method="GET">
             <span class="icon" ><i class="fa fa-search"></i></span>
             <input type="search" id="search" placeholder="Search..." name="search" value="{{$search}}"/>
+
            <!-- <input type="submit" value="Buscar">-->
             </form>
         </div>

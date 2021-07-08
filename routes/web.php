@@ -156,6 +156,10 @@ Route::get('/ListaDeAlumnos', function (){
     return view('Pantallas_Admin_Servicio.ListaAlumnos');
 }) -> name('ListaDeAlummos');
 
+Route::get('/Registro de Fechas', function (){
+    return view('Pantallas_Admin_Servicio.RegistroFechas');
+}) -> name('Registro de Fechas');
+
 Route::get('/Reportes', function (){
     return view('Pantallas_Alumno_Servicio.Reportes');
 }) -> name('Reportes');
@@ -164,6 +168,8 @@ Route::get('/Reportes', function (){
 Route::get('/ListaDeAlumnos', [App\Http\Controllers\ListadoAlumnosController::class, 'index'])->name('ListaDeAlumnos.index');
 Route::get('/DatosServicio', [App\Http\Controllers\RegistroServicioController::class, 'index'])->name('DatosServicio.index');
 
+Route::get('/Registro de Fechas', [App\Http\Controllers\FechasServicioController::class, 'index'])->name('Registro de Fechas.index');
+Route::put('/Registro de Fechas/{id}', [App\Http\Controllers\FechasServicioController::class, 'update'])->name('Registro de Fechas.update');
 // ************************************* FIN   RUTAS    DE    GLADYS    *******************************************
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
