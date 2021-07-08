@@ -8,6 +8,16 @@
 @endsection
 
 @section('content')
+<div class="titulo">
+    @foreach ($busqueda as $busque )
+    <h2>Inscripción al <a  target="_blank">Servicio Social</a> </h2>
+    <h2>Alumno con Boleta:  <a  target="_blank">{{$boleta}}</a> </h2>
+
+    @endforeach
+
+</div>
+<br>
+<br>
 
 <div class="container">
     <!--<div id="logo" class="logo">
@@ -101,6 +111,18 @@
     <div class="btn_editar">
 
     <a class="boton_personalizado" >Editar Datos</a>
+
+    </div>
+
+    <div class="btn_registrar">
+
+        <a class="boton_personalizado" href="{{route('Registro de Fechas.index')}}">Control de Fechas</a>
+
+    </div>
+
+    <div class="btn_checar">
+
+        <a class="boton_personalizado" >Control de expediente</a>
 
     </div>
 

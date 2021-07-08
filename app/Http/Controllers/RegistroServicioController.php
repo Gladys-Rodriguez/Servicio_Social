@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\View;
 
 use App\Models\dato;
 use App\Models\Usuario;
@@ -13,6 +15,7 @@ use App\Models\alumno;
 use App\Models\servicio;
 use App\Models\dependencia;
 use App\Models\direccion;
+
 class RegistroServicioController extends Controller
 {
     /**
@@ -23,7 +26,8 @@ class RegistroServicioController extends Controller
     public function index(Request $request)
     {
         //
-        $boleta=$request->get('boleta');
+        $boleta=$request->input('boleta');
+        session(['boleta' => $request->boleta]);
 
         $busqueda=DB::table('servicios')
         ->join('alumnos', 'servicios.id_alumnos', 'alumnos.id_alumnos')
@@ -33,8 +37,11 @@ class RegistroServicioController extends Controller
         ->get();
 
         //var_dump($busqueda);
-
+       // view('Pantallas_Admin_Servicio.RegistroFechas')->share('registros', $boleta);
+       //view::share('registros', $boleta);
     return view('Pantallas_Admin_Servicio.DatosServicio ', compact("boleta","busqueda"));
+    //return compact("boleta","busqueda");
+    //View::share('user', $user);
 
 
     }
@@ -69,6 +76,7 @@ class RegistroServicioController extends Controller
     public function show($id)
     {
         //
+
     }
 
     /**
