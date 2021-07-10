@@ -10,6 +10,8 @@ use App\Models\dato;
 // use App\Models\Alum_Datos, App\Models\alumno ;
 
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 
 use RealRashid\SweetAlert\Facades\Alert;
@@ -56,6 +58,7 @@ class docsExpediente extends Controller
 
 
         foreach ($files as $file){
+            if(Storage::putFileAs('/public/'.$user_id.'/', $file, $file->getClientOriginalName())){
                     docs_expedientePrueba::create([
                         'nombre_doc' => $file->getClientOriginalName(),
                         'user' => $user_id,
@@ -65,11 +68,10 @@ class docsExpediente extends Controller
                 ]);
 
             }
+        }
 
-            return "Archivo subido";
-          /* return Alert::success('¡Éxito! 📦📦📦 ', 'Se subio satisfactoriamente el archivo. ');
-           return back(); */
-
+            Alert::success('¡Éxito! 📦📦📦 ', 'Se subio satisfactoriamente el archivo. ');
+            return back();
 
 
     }
@@ -83,7 +85,18 @@ class docsExpediente extends Controller
     public function show($id)
     {
 
-        
+        $file = docs_expedientePrueba::whereid($id)->firstOrFail();
+        $user_id = Auth::id();
+
+        if ($file->user == $user_id) {
+            return redirect('/storage'.'/'.$user_id.'/'.$file->nombre);
+            # code...
+        } else {
+            Alert::error('¡Error! 📢📢📢 ', 'No tienes permisos para ver el archivo.');
+            return back();
+        }
+
+
     }
 
     /**
@@ -100,9 +113,9 @@ class docsExpediente extends Controller
     public function edit( $id){
         $files = docs_expedientePrueba::findOrFail($id);
 
-        
+
         return view('Pantallas_Admin_Servicio.editDocsAlumno',  compact('files'));
-        
+
 
     }
 

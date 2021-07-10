@@ -37,7 +37,7 @@
       <td><input type="textarea" name="observaciones" value="{{ $files->observaciones}}"></td>
 
       <td>
-        <a  href="#" class="btn btn-danger "> Ir al documento</a>
+        <a target="_blank" href="/storage/public/{{ Auth::id() }}/{{ $files->nombre_doc }}" value="{{ $files->nombre_doc}}" class="btn btn-danger "> Ir al documento</a>
       </td>
       <td>
         <button type="submit" class="btn btn1" > Enviar</button>
