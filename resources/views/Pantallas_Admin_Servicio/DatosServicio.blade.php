@@ -121,9 +121,9 @@
     </div>
 
     <div class="btn_checar">
-
-        <a class="boton_personalizado" >Control de expediente</a>
-
+        @foreach ($busqueda as $busque )
+        <a class="boton_personalizado" href="{{route('Expediente.docs', $busque->id_usuarios)}}">Control de expediente</a>
+        @endforeach
     </div>
 
 </div>

@@ -111,6 +111,19 @@ class FechasServicioController extends Controller
 
     }
 
+    public function docs($id){
+        $alumno = DB::table('alumnos')
+        ->join('datos', 'alumnos.id_datos', 'datos.id_datos')
+        ->where('alumnos.id_usuarios', $id)
+        ->get();
+
+        $docs = DB::table('docs_expediente_pruebas')
+        ->where('user',$id)
+        ->get();
+        //var_dump($docs);
+        return view('Pantallas_Admin_Servicio.Expediente ', compact("docs","alumno"));
+
+    }
     /**
      * Remove the specified resource from storage.
      *
