@@ -33,10 +33,10 @@
             <div class="nav__menu">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="{{url('/AdminIndex')}}" class="nav__link active">Inicio</a></li>
-                    <li class="nav__item"><a href="{{url('/concentrados')}}" class="nav__link active">Concentrados </a></li>
+                    <li class="nav__item"><a href="{{url('/concentradosInfo')}}" class="nav__link active">Concentrados </a></li>
 
 
-                    <li class="nav__item"><a href="{{url('/estadistica')}}" class="nav__link">Estadística</a></li>
+                    <li class="nav__item"><a href="{{url('/estadisticas')}}" class="nav__link">Estadística</a></li>
                     <li class="nav__item"><a href="{{url('/validacionAlumno')}}" class="nav__link">Validación Alumno</a></li>
 
 
