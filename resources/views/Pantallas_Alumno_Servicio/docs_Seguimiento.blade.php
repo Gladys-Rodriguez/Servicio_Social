@@ -34,7 +34,7 @@
       <td>{{ $file->observaciones}}</td>
 
       <td>
-        <a target="_blank" href="storage/public/{{ Auth::id() }}/{{ $file->nombre_doc }}" class="btn "> Ver el documento</a>
+        <a target="_blank" href="storage/{{ Auth::id() }}/{{ $file->nombre_doc }}" class="btn "> Ver el documento</a>
       </td>
     </tr>
     @endforeach
