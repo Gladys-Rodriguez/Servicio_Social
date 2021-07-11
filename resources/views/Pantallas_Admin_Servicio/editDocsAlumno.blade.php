@@ -24,30 +24,30 @@
     </tr>
   </thead>
   <tbody>
-    
+
     <tr>
       <th scope="row">{{ $files->id }}</th>
       <td>{{ $files->nombre_doc }}</td>
       <td><select class="select" name="estado" value="{{ $files->estado}}"  >
       <option value="0"> Sin validar</option>
       <option value="1"> Aceptado</option>
-       
+
        </td>
       <td>{{ $files->tipo_doc}}</td>
       <td><input type="textarea" name="observaciones" value="{{ $files->observaciones}}"></td>
 
       <td>
-        <a target="_blank" href="/storage/public/{{ Auth::id() }}/{{ $files->nombre_doc }}" value="{{ $files->nombre_doc}}" class="btn btn-danger "> Ir al documento</a>
+        <a target="_blank" href="/storage/{{ $files->user}}/{{ $files->nombre_doc }}" value="{{ $files->nombre_doc}}" class="btn btn-danger "> Ir al documento</a>
       </td>
       <td>
         <button type="submit" class="btn btn1" > Enviar</button>
       </td>
     </tr>
-    
+
   </tbody>
   </table>
 </div>
 </div>
-  
+
 </form>
 @endsection
