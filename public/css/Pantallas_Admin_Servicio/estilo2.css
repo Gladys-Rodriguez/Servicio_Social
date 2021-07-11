@@ -115,6 +115,13 @@ h2{
     text-align: left;
 }
 
+h3{
+    color: white;
+    font-family: 'Bitter', serif;;
+    font-size: 20px;
+    text-align: left;
+}
+
 #tabla{
     color: cornsilk;
     margin-top: 70px;
