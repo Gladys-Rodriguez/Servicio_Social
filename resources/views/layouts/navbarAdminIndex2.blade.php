@@ -36,6 +36,8 @@
 
 
                     <li class="nav__item"><a href="{{url('/estadisticas')}}" class="nav__link">Estadística</a></li>
+
+                    <li class="nav__item"><a href="{{url('/concentrados')}}" class="nav__link">Concentrados</a></li>
                     <li class="nav__item dropdown">
                         <a  href="{{url('/validacionAlumno')}}" class="nav__link dropdown__link">Validaciones <i class='bx bx-chevron-down dropdown__icon'></i></a>
 
@@ -57,6 +59,8 @@
                             <li class="dropdown__item"><a href="{{url('/consultaBannerServicioInhabilitadas')}}" class="nav__link">Consulta de imagenes inhabilitadas de servicio</a></li>
 
                              </ul>
+
+                             <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
         </div>
     </nav>
 
