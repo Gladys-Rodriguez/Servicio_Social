@@ -19,12 +19,12 @@ class DatabaseSeeder extends Seeder
         //$this->call(UserSeeder::class);
         //$this->call(DatoSeeder::class);
         //$this->call(DocenteSeeder::class);
-        //$this->call(CarreraSeeder::class);
+        $this->call(CarreraSeeder::class);
         //$this->call(DireccionSeeder::class);
         //$this->call(EmpresaSeeder::class);
-        //$this->call(GrupoSeeder::class);
+        $this->call(GrupoSeeder::class);
         //$this->call(VisitaSeeder::class);
-        $this->call(TipoDocumentoSeeder::class);
+       //$this->call(TipoDocumentoSeeder::class);
         //$this->call(VisitaDocumentoSeeder::class);
         //$this->call(GrupoVisitaSeeder::class);
     

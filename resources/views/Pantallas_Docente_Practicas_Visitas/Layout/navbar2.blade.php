@@ -25,28 +25,20 @@
                 </a>
                 <div class="nav__menu">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="#" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href=" {{ route('docente.inicio') }} " class="nav__link active">INICIO</a></li>
 
                         <li class="nav__item dropdown">
-                            <a href="#" class="nav__link dropdown__link">General <i class='bx bx-chevron-down dropdown__icon'></i></a>
+                            <a href="{{ route('docente.index')}}" class="nav__link dropdown__link">VISITAS<i class='bx bx-chevron-down dropdown__icon'></i></a>
 
                             <ul class="dropdown__menu">
-                                <li class="dropdown__item"><a href="#" class="nav__link">Calendario de Visitas</a></li>
-                                <li class="dropdown__item"><a href="#" class="nav__link">Requisitos Empresas</a></li>
-                                <li class="dropdown__item"><a href="#" class="nav__link">Descarga de Documentos</a></li>
+                                <li class="dropdown__item"><a href=" {{ route('docente.index')}}" class="nav__link active">Solicitudes</a></li>
+                                <li class="dropdown__item"><a href="#" class="nav__link active">Visitas Validadas</a></li>
+                                <li class="dropdown__item"><a href="#" class="nav__link active">Visitas Finalizadas</a></li>
                             </ul>
                         </li>
 
-
-                        <li class="nav__item dropdown">
-                            <a href="#" class="nav__link dropdown__link">Visitas <i class='bx bx-chevron-down dropdown__icon'></i></a>
-
-                            <ul class="dropdown__menu">
-                                <li class="dropdown__item"><a href="#" class="nav__link">Solicitar Visita</a></li>
-                                <li class="dropdown__item"><a href="#" class="nav__link">Mis Visitas</a></li>
-                                <!--<li class="dropdown__item"><a href="#" class="nav__link">Registro</a></li>-->
-                            </ul>
-                        </li>
+                        <li class="nav__item"><a href="#" class="nav__link">MIS DATOS</a></li>
+                        
 
                         <li class="nav__item"><a href="{{url('/logout')}}" class="nav__link"> CERRAR SESIÓN</a></li>
 

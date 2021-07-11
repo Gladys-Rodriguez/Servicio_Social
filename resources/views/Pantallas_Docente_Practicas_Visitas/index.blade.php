@@ -7,8 +7,7 @@
 @section('content')
 
 <section class="section-main">
-    <h1>Bienvenido a Prácticas y Visitas Escolares
-    <br> Usuario con matricula: {{ Auth::user()->id}}</h1>
+    <h1>Solicitudes de Visitas Escolares</h1>
 </section>
 
 <section class="section-dos">

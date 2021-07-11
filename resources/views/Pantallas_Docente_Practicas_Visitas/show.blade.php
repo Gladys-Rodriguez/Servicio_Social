@@ -75,13 +75,11 @@
                 <td> {{ $documento->observaciones }} </td>
                 <td> 
                     <a href=" @php echo \Illuminate\Support\Facades\Storage::url($documento->ruta) @endphp"
-                        style="color: blue">
                         Ver
                     </a>
                 </td>
             </tr>
             @empty
-                
             @endforelse
         </tbody>
     </table>

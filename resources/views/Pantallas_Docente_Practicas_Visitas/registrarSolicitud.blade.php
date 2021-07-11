@@ -20,15 +20,21 @@
             <input type="hidden" name="empresa_id" value="{{ $empresa->id}}">
             <input type="hidden" name="docente_id" value="{{ $docente->id}}">
         
-            <label for="fecha_visita">FECHA VISITA: </label>
-            <input type="date" name="fecha_visita" id="fecha_visita">
+            <div class="col-12">
+                <label for="fecha_visita">FECHA VISITA: </label>
+                <input type="date" name="fecha_visita" id="fecha_visita">
+            </div> 
 
-            <p>Documentos:</p>
+            <div class="col-12">
                 <label  for="ruta">Solicitud de Visita</label>
                 <input name="ruta" type="file" accept="application/pdf">
+            </div>
         
-            Antes de registrar vreifica que todos los datos sean correctos
-            <button type="submit">Registrar Solicitud </button>
+            <div class="col-12">
+                Antes de registrar vreifica que todos los datos sean correctos*
+                <button type="submit">Registrar Solicitud </button>
+            </div>
+            
         </form>
     </div>
 </section>
