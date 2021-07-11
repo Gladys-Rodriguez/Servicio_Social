@@ -36,8 +36,16 @@
 
 
                     <li class="nav__item"><a href="{{url('/estadisticas')}}" class="nav__link">Estadística</a></li>
-                    <li class="nav__item"><a href="{{url('/validacionAlumno')}}" class="nav__link">Validación Alumno</a></li>
+                    <li class="nav__item dropdown">
+                        <a  href="{{url('/validacionAlumno')}}" class="nav__link dropdown__link">Validaciones <i class='bx bx-chevron-down dropdown__icon'></i></a>
 
+
+                        <ul class="dropdown__menu">
+                            <li class="dropdown__item"><a href="{{url('/ListaDeAlumnos')}}" class="nav__link">Lista de Alumnos</a></li>
+
+                            <li class="dropdown__item"><a href="#" class="nav__link">Validacion por Alumno</a></li>
+                        </ul>
+                    </li>
 
                     <li class="nav__item"><a href="{{url('/validacionReportes')}}" class="nav__link">Validación Reportes</a></li>
 
