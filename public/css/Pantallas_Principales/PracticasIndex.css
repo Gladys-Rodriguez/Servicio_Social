@@ -42,6 +42,68 @@ textarea {
 
 }
 
+.carousel-inner{
+    width: 820px;
+    height: 500px;
+   }
+
+/*.carousel-control-prev{
+    color: red;
+    border: 2px solid red;
+    padding: 2px;
+}
+
+.carousel-control-next{
+    color: red;
+    border: 2px solid red;
+    padding: 2px;
+}
+
+.carousel-control-prev-icon{
+    border: 2px solid #40D3DC;
+} */
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: #40D3DC;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: #40D3DC;
+}
+
+.carousel-control-prev{
+    position:absolute;
+  	left:0px;
+
+}
+
+.carousel-control-next{
+    /*border: 2px solid #40D3DC;*/
+    position:absolute;
+  	left:790px;
+
+
+}
+
+
+
+
 .slider{
     width: 820px;
     height: 500px;
@@ -176,7 +238,7 @@ form {
 
 }
 
-h3::after,h3:before{
+/*h3::after,h3:before{
     content: "";
     position: absolute;
     width: 120px;
@@ -186,12 +248,12 @@ h3::after,h3:before{
 }
 
 h3::before{
-    left: 55px;
+    left: 110px;
 }
 
 h3::after{
-    right: 55px;
-}
+    right: 110px;
+} */
 
 .input-container {
   position: relative;

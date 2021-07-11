@@ -31,7 +31,7 @@ Route::get('/Servicio', function (){
     return view('Servicio');
 }) -> name('Servicio');*/
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 //Route::get('/Servicio', [App\Http\Controllers\Datos::class, 'create'])->name('Servicio');
 
@@ -94,7 +94,10 @@ Route::get('/FormatosAdministrativosPA', [App\Http\Controllers\FormatosAControll
 Route::post('/upload', [App\Http\Controllers\FormatosAFilesController::class, 'store'])->name('user.files.store');
 
 // ************************************* RUTAS    DE    GLADYS    *******************************************
-
+//Prueba de Login
+Route::get('/LoginPruebaGla', function (){
+    return view('Pantallas_Alumno_Servicio.pantallaLogin');
+}) -> name('LoginPruebaGla');
 
 
 /*Route::get('/', [App\Http\Controllers\AlumnoController::class, 'muestra']);*/
@@ -103,34 +106,82 @@ Route::post('/upload', [App\Http\Controllers\FormatosAFilesController::class, 's
 Route::get('/RegistroAlumno', function (){
     return view('Pantallas_Alumno_Servicio.RegistroAlumno');
 }) -> name('RegistroAlumno');
-Route::get('/RegistroAlumno/Nuevo_Registro', function (){
+
+Route::get('/FormRegistro', function (){
+    return view('Pantallas_Alumno_Servicio.FormRegistro');
+}) -> name('FormRegistro');
+
+Route::get('/NuevoRegistro', function (){
     return view('Pantallas_Alumno_Servicio.Registros.NuevoRegistro');
 }) -> name('Nuevo Registro');
 
+//Route::get('Index_Alumno', [App\Http\Controllers\registro::class, 'index'])->name('Index_Alumno.index');
 
 
 //Ruta para obtener los datos desde el controlador
 
 Route::get('RegistroAlumno', [App\Http\Controllers\AlumnosController::class, 'index'])->name('RegistroAlumno.index');
+Route::get('NuevoRegistro',[App\Http\Controllers\ServiciosController::class, 'index'])->name('NuevoRegistro.index');
 Route::post('RegistroAlumno', [App\Http\Controllers\AlumnosController::class, 'store'])->name('RegistroAlumno.store');
-Auth::routes();
+Route::post('NuevoRegistro', [App\Http\Controllers\ServiciosController::class, 'store'])->name('NuevoRegistro.store');
+//Auth::routes();
 //Ruta de controlador para guardar datos de un formulario
 //Route::post('DatosAlumno', [App\Http\Controllers\AlumnoController::class, 'create'])->name('DatosAlumnno.create');
 Route::resource('direcciones', "DireccionsController");
 Route::resource('alumnos', "AlumnosController");
 
+//Ruta oara pantalla Index Alumno
+Route::get('/Index_Alumno', function (){
+    return view('Pantallas_Alumno_Servicio.Index_Alumno');
+}) -> name('Index_Alumno');
 
 
+Route::get('/Inicio Alumno', function (){
+    return view('Pantallas_Alumno_Servicio.Index_AlumnoV2');
+}) -> name('Inicio Alumno');
+
+//Ruta oara pantalla Prueba de datos Personales
+Route::get('/DatosPersonales', function (){
+    return view('Pantallas_Alumno_Servicio.DatosPersonales');
+}) -> name('DatosPersonales');
+
+
+//Ruta oara pantalla  de datos del servicio
+Route::get('/DatosServicio', function (){
+    return view('Pantallas_Admin_Servicio.DatosServicio');
+}) -> name('DatosServicio');
+
+
+Route::get('/ListaDeAlumnos', function (){
+    return view('Pantallas_Admin_Servicio.ListaAlumnos');
+}) -> name('ListaDeAlummos');
+
+Route::get('/Registro de Fechas', function (){
+    return view('Pantallas_Admin_Servicio.RegistroFechas');
+}) -> name('Registro de Fechas');
+
+Route::get('/Expediente', function (){
+    return view('Pantallas_Admin_Servicio.expediente');
+}) -> name('Expediente');
+
+
+Route::get('/ListaDeAlumnos', [App\Http\Controllers\ListadoAlumnosController::class, 'index'])->name('ListaDeAlumnos.index');
+Route::get('/DatosServicio', [App\Http\Controllers\RegistroServicioController::class, 'index'])->name('DatosServicio.index');
+
+Route::get('/Registro de Fechas', [App\Http\Controllers\FechasServicioController::class, 'index'])->name('Registro de Fechas.index');
+Route::put('/Registro de Fechas/{id}', [App\Http\Controllers\FechasServicioController::class, 'update'])->name('Registro de Fechas.update');
+
+Route::get('/Expediente/{id}', [App\Http\Controllers\FechasServicioController::class, 'docs'])->name('Expediente.docs');
 
 // ************************************* FIN   RUTAS    DE    GLADYS    *******************************************
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/files', [App\Http\Controllers\FilesController::class, 'index'])->name('index');
@@ -172,7 +223,7 @@ Route::get('/docsConcentradoPOA', [App\Http\Controllers\concentradoPOAController
 //Ruta para subir archivos de Informes POA
 Route::post('/uploadConcentradoPOA', [App\Http\Controllers\concentradoPOAController::class, 'store'])->name('uploadConcentradoPOA.store');
 
-//Ruta de archivos pdf Informes POA 
+//Ruta de archivos pdf Informes POA
 Route::get('/docsConcentradoPOA/{file}', [App\Http\Controllers\concentradoPOAController::class, 'show'])->name('docsConcentradoPOA.show');
 
 
@@ -215,10 +266,10 @@ Route::get('/docsSolicitudAlumno', [App\Http\Controllers\docsExpediente::class, 
 Route::get('/docsSolicitudAlumno/{file}', [App\Http\Controllers\docsExpediente::class, 'show'])->name('uploaddocexpediente.show');
 
 
-//Ruta para ver el listado de alumnos 
+//Ruta para ver el listado de alumnos
 Route::get('/concentradosInfo', [App\Http\Controllers\AlumnoController::class, 'lista'])->name('alumno.lista');
 
-//Ruta para ver Buscar los alumnos 
+//Ruta para ver Buscar los alumnos
 Route::get('/buscarAlumnos', [App\Http\Controllers\AlumnoController::class, 'buscar'])->name('alumno.buscar');
 
 //Ruta para validar documentos por parte del admin
@@ -249,8 +300,8 @@ Route::get('/storagelink', function() {
    // return view('Pantallas_Admin_Servicio.validacionReportes');
 //}) -> name('validacionReportes');
 
-//------------------------FER INICIO------------------------------------
 
+//------------------------FER INICIO------------------------------------
 
 //Ruta Admin Becas Index3
 Route::get('/Admin_Becas_Index3', function () {
@@ -262,6 +313,10 @@ Route::get('/Validacion_Alumno_Becas', function () {
     return view('Pantallas_Admin_Becas.Validacion_Alumno_Becas');
 }) -> name('Validacion_Alumno_Becas');
 
+//Ruta Tipo_Alumno_Becas
+Route::get('/Tipo_Alumno_Becas', function () {
+    return view('Pantallas_Admin_Becas.Tipo_Alumno_Becas');
+}) -> name('Tipo_Alumno_Becas');
 
 //Ruta Admin Practicas y Visitas Index
 Route::get('/Admin_Practicas_Visitas_Index2', function () {
@@ -269,11 +324,27 @@ Route::get('/Admin_Practicas_Visitas_Index2', function () {
 }) -> name('Admin_Practicas_Visitas_Index2');
 
 
-//Ruta Validacion Practicas y Visitas Index
+//Ruta Validacion Practicas y Visitas
 Route::get('/Validacion_Practicas_Visitas', function () {
     return view('Pantallas_Admin_Practicas_Visitas.Validacion_Practicas_Visitas');
 }) -> name('Validacion_Practicas_Visitas');
 
+//Ruta Clasificacion Practicas y Visitas
+Route::get('/Solicitudes_Practicas_Visitas', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.Solicitudes_Practicas_Visitas');
+}) -> name('Solicitudes_Practicas_Visitas');
+
+Route::get('/RechazadasV', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.RechazadasV');
+}) -> name('RechazadasV');
+
+Route::get('/AceptadasV', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.AceptadasV');
+}) -> name('AceptadasV');
+
+Route::get('/ValidacionV2', function () {
+    return view('Pantallas_Admin_Practicas_Visitas.ValidacionV2');
+}) -> name('ValidacionV2');
 //------------------------FER TERMINO------------------------------------
 
 
@@ -283,6 +354,12 @@ Route::get('/Validacion_Practicas_Visitas', function () {
 Route::get('/Index_gnral', function (){
     return view('Pantallas_Principales.Index_gnral');
 }) -> name('Index_gnral');
+
+//Vista para consulta de imagenes de banner de servicio
+Route::get('/Index_gnral', [App\Http\Controllers\indexBannerInicioController::class, 'index'])->name('home');
+
+//Vista para consulta de imagenes de banner de servicio
+Route::get('/', [App\Http\Controllers\indexBannerInicioController::class, 'index'])->name('home');
 
 
 //Pantalla general con segunda barra
@@ -295,20 +372,44 @@ Route::get('/ServicioIndex', function (){
     return view('Pantallas_Principales.ServicioIndex');
 }) -> name('ServicioIndex');
 
+//Pantalla general de servicio
+Route::get('/ServicioIndex2', function (){
+    return view('Pantallas_Principales.ServicioIndex2');
+}) -> name('ServicioIndex2');
+
+
+//Vista para consulta de imagenes de banner de servicio
+Route::get('/ServicioIndex', [App\Http\Controllers\indexBannerServicioController::class, 'index'])->name('home');
+
+
 //Pantalla general de becas
 Route::get('/BecasIndex', function (){
     return view('Pantallas_Principales.BecasIndex');
 }) -> name('BecasIndex');
+
+//Vista para consulta de imagenes de banner de servicio
+Route::get('/BecasIndex', [App\Http\Controllers\indexBannerBecasController::class, 'index'])->name('home');
+
 
 //Pantalla general de practicas
 Route::get('/PracticasIndex', function (){
     return view('Pantallas_Principales.PracticasIndex');
 }) -> name('PracticasIndex');
 
+//Vista para consulta de imagenes de banner de servicio
+Route::get('/PracticasIndex', [App\Http\Controllers\indexBannerPracticasController::class, 'index'])->name('home');
+
+
 //Pantalla Registro
 Route::get('/RegisterForm', function (){
     return view('Pantallas_Principales.RegisterForm');
 }) -> name('RegisterForm');
+
+
+
+//Ruta para recibir los datos que enviamos para el registro
+Route::resource('Servicio','registro');
+Route::post('/registrosRoles/(id)', [App\Http\Controllers\registroRol::class, 'store'])->name('registrosRoles.store'); //aqui se edita la pantalla de alcance
 
 
 //Ruta para recibir los datos que enviamos para el registro
@@ -319,6 +420,44 @@ Route::post('/registros/(id)', [App\Http\Controllers\registro::class, 'store'])-
 Route::get('/Registro_exitoso', function (){
     return view('Pantallas_Principales.Registro_exitoso');
 }) -> name('Registro_exitoso');
+
+//Ruta para el registro de imagenes del home
+Route::get('/RegisterBannerInicio', function (){
+    return view('Pantallas_Principales.RegisterBannerInicio');
+}) -> name('RegisterBannerInicio');
+
+//Ruta para recibir los datos que enviamos para el registro de imagenes de servicio
+Route::resource('Inicio','registro');
+Route::post('/registrosImagenesI/(id)', [App\Http\Controllers\RegistroBannerInicio::class, 'store'])->name('registrosImagenesI.store'); //aqui se edita la pantalla de alcance
+
+
+//Ruta para el registro de imagenes de servicio
+Route::get('/RegisterBannerServicio', function (){
+    return view('Pantallas_Principales.RegisterBannerServicio');
+}) -> name('RegisterBannerServicio');
+
+//Ruta para recibir los datos que enviamos para el registro de imagenes de servicio
+Route::resource('Servicio','registro');
+Route::post('/registrosImagenesS/(id)', [App\Http\Controllers\RegistroBannerServicio::class, 'store'])->name('registrosImagenesS.store'); //aqui se edita la pantalla de alcance
+
+//Ruta para el registro de imagenes de becas
+Route::get('/RegisterBannerBecas', function (){
+    return view('Pantallas_Principales.RegisterBannerBecas');
+}) -> name('RegisterBannerServicio');
+
+//Ruta para recibir los datos que enviamos para el registro de imagenes de becas
+Route::resource('Becas','registro');
+Route::post('/registrosImagenesB/(id)', [App\Http\Controllers\RegistroBannerBecas::class, 'store'])->name('registrosImagenesB.store'); //aqui se edita la pantalla de alcance
+
+//Ruta para el registro de imagenes de practicas
+Route::get('/RegisterBannerPracticas', function (){
+    return view('Pantallas_Principales.RegisterBannerPracticas');
+}) -> name('RegisterBannerPracticas');
+
+//Ruta para recibir los datos que enviamos para el registro de imagenes de becas
+Route::resource('Practicas','registro');
+Route::post('/registrosImagenesP/(id)', [App\Http\Controllers\RegistroBannerPracticas::class, 'store'])->name('registrosImagenesP.store'); //aqui se edita la pantalla de alcance
+
 
 //RUTAS PARA EL LOGIN
 //Pantalla Login
@@ -359,12 +498,53 @@ Route::get('/Admin_Becas_Index3.blade', [App\Http\Controllers\BecasController ::
 Route::get('/logout', [App\Http\Controllers\BecasController::class, 'getLogout'])->name('logout');
 Route::get('/Admin_Practicas_Visitas_Index2.blade', [App\Http\Controllers\PracticasController ::class, 'index'])->name('home');
 Route::get('/logout', [App\Http\Controllers\BecasController::class, 'getLogout'])->name('logout');
-Route::get('/RegistroAlumno.blade', [App\Http\Controllers\AlumnoLController::class, 'index'])->name('home');
+Route::get('/Index_Alumno.blade', [App\Http\Controllers\AlumnoLController::class, 'index'])->name('home');
 Route::get('/logout', [App\Http\Controllers\BecasController::class, 'getLogout'])->name('logout');
+Route::get('/prueba.blade', [App\Http\Controllers\pruebaController::class, 'index'])->name('home');
+Route::get('/logout', [App\Http\Controllers\pruebaController::class, 'getLogout'])->name('logout');
+Route::get('/Index_Master.blade', [App\Http\Controllers\AdminMasterController::class, 'index'])->name('home');
+Route::get('/logout', [App\Http\Controllers\AdminMasterController::class, 'getLogout'])->name('logout');
+Route::get('/index.blade', [App\Http\Controllers\DocenteController::class, 'index'])->name('home');
+Route::get('/logout', [App\Http\Controllers\DocenteController::class, 'getLogout'])->name('logout');
+
 //DocenteController
+
 
 //Vista para prueba de consulta
 Route::get('/consultaPrueba', [App\Http\Controllers\consultaController::class, 'index'])->name('home');
+
+//Vista para consulta de alumnos para el super administrador
+Route::get('/consultaAlumnoM', [App\Http\Controllers\consultaAlumnoMController::class, 'index'])->name('home');
+
+
+//Vista para consulta de imagenes de banner de inicio
+Route::get('/consultaBannerInicio', [App\Http\Controllers\consultaBannerInicioController::class, 'index'])->name('home');
+
+//Vista para consulta de imagenes de banner de inicio inhabilitadas
+Route::get('/consultaBannerInicioInhabilitadas', [App\Http\Controllers\consultaBannerInicioInhabilitadasController::class, 'index'])->name('home');
+
+//Vista para consulta de imagenes de banner de servicio
+Route::get('/consultaBannerServicio', [App\Http\Controllers\consultaBannerServicioController::class, 'index'])->name('home');
+
+//Vista para consulta de imagenes inhabilitadas de banner de servicio
+Route::get('/consultaBannerServicioInhabilitadas', [App\Http\Controllers\consultaBannerServicioInhabilitadasController::class, 'index'])->name('home');
+
+//Vista para consulta de imagenes de banner de becas
+Route::get('/consultaBannerBecas', [App\Http\Controllers\consultaBannerBecasController::class, 'index'])->name('home');
+
+//Vista para consulta de imagenes inhabilitadas de banner de becas
+Route::get('/consultaBannerBecasInhabilitadas', [App\Http\Controllers\consultaBannerBecasInhabilitadasController::class, 'index'])->name('home');
+
+
+//Vista para consulta de imagenes de banner de practicas
+Route::get('/consultaBannerPracticas', [App\Http\Controllers\consultaBannerPracticasController::class, 'index'])->name('home');
+
+//Vista para consulta de imagenes inhabilitadas de banner de practicas
+Route::get('/consultaBannerPracticasInhabilitadas', [App\Http\Controllers\consultaBannerPracticasInhabilitadasController::class, 'index'])->name('home');
+
+//Vista para consulta de todos los usuarios
+Route::get('/consultaUsuarios', [App\Http\Controllers\consultaUsuariosController::class, 'index'])->name('home');
+
 
 //Vista para editar y actualizar datos
 Route::get('/showPrueba/{id}', [App\Http\Controllers\showController::class, 'show'])->name('home');
@@ -376,50 +556,107 @@ Route::get('/showPrueba/{id}', [App\Http\Controllers\showController::class, 'sho
 //Route::get('/pruebaEditarForm', function (){
 //    return view('Pantallas_Principales.pruebaEditarForm');
 //}) -> name('pruebaEditarForm');
+
+//editar prueba
 Route::get('/pruebaEditarForm/{id}', [App\Http\Controllers\editarController::class, 'edit'])->name('home');
 Route::put('/pruebaEditarForm2/{id}', [App\Http\Controllers\editarController::class, 'update'])->name('pruebaEditarForm2.update');
 
+//editar datos de alumno
+Route::get('/EditarAlumnoForm/{id}', [App\Http\Controllers\editarAlumnoController::class, 'edit'])->name('home');
+Route::put('/EditarAlumnoForm2/{id}', [App\Http\Controllers\editarAlumnoController::class, 'update'])->name('EditarAlumnoController.update');
+
+//editar estado del alumno
+Route::get('/EditarAdminForm/{id}', [App\Http\Controllers\AdminMasterIndexController::class, 'edit'])->name('home');
+Route::put('/EditarAdminForm2/{id}', [App\Http\Controllers\AdminMasterIndexController::class, 'update'])->name('EditarAlumnoController.update');
+
+
+//Pantalla de editar de imagenes de inicio
+Route::get('/EditarFormBannerInicio', function (){
+    return view('Pantallas_Principales.EditarFormBannerInicio');
+}) -> name('EditarFormBannerInicio');
+
+Route::get('/EditarFormBannerInicio/{id}', [App\Http\Controllers\editarBannerInicioController::class, 'edit'])->name('home');
+Route::put('/EditarFormBannerInicio2/{id}', [App\Http\Controllers\editarBannerInicioController::class, 'update'])->name('EditarFormBannerServicio2.update');
+Route::delete('/EditarFormBannerInicio3/{id}', [App\Http\Controllers\editarBannerInicioController::class, 'destroy'])->name('pruebaEditarForm3.update');
+
+
+//Pantalla de editar de imagenes de servicio
+Route::get('/EditarFormBannerServicio', function (){
+    return view('Pantallas_Principales.EditarFormBannerServicio');
+}) -> name('EditarFormBannerServicio');
+
+Route::get('/EditarFormBannerServicio/{id}', [App\Http\Controllers\editarBannerServicioController::class, 'edit'])->name('home');
+Route::put('/EditarFormBannerServicio2/{id}', [App\Http\Controllers\editarBannerServicioController::class, 'update'])->name('EditarFormBannerServicio2.update');
+Route::delete('/EditarFormBannerServicio3/{id}', [App\Http\Controllers\editarBannerServicioController::class, 'destroy'])->name('pruebaEditarForm3.update');
+
+
+//Pantalla de editar de imagenes de becas
+Route::get('/EditarFormBannerBecas', function (){
+    return view('Pantallas_Principales.EditarFormBannerBecas');
+}) -> name('EditarFormBannerBecas');
+
+Route::get('/EditarFormBannerBecas/{id}', [App\Http\Controllers\editarBannerBecasController::class, 'edit'])->name('home');
+Route::put('/EditarFormBannerBecas2/{id}', [App\Http\Controllers\editarBannerBecasController::class, 'update'])->name('EditarFormBannerServicio2.update');
+Route::delete('/EditarFormBannerBecas3/{id}', [App\Http\Controllers\editarBannerBecasController::class, 'destroy'])->name('pruebaEditarForm3.update');
+
+//Pantalla de editar de imagenes de practicas
+Route::get('/EditarFormBannerPracticas', function (){
+    return view('Pantallas_Principales.EditarFormBannerPracticas');
+}) -> name('EditarFormBannerPracticas');
+
+Route::get('/EditarFormBannerPracticas/{id}', [App\Http\Controllers\editarBannerPracticasController::class, 'edit'])->name('home');
+Route::put('/EditarFormBannerPracticas2/{id}', [App\Http\Controllers\editarBannerPracticasController::class, 'update'])->name('EditarFormBannerPracticas2.update');
+Route::delete('/EditarFormBannerPracticas3/{id}', [App\Http\Controllers\editarBannerPracticasController::class, 'destroy'])->name('pruebaEditarForm3.update');
+
+
+Route::get('/prueba', function (){
+    return view('Pantallas_Principales.prueba');
+}) -> name('prueba');
+
+//Route::get('/datosPersonalesA', [App\Http\Controllers\registro::class, 'index'])->name('datosPersonalesA.index');
+Route::get('/DatosPersonales', [App\Http\Controllers\registro::class, 'index'])->name('DatosPersonales.index');
+
 //------------------------IVAN TERMINO------------------------------------
 
-Auth::routes();
+//-----------------------------------SANTOS INICIO-----------------------------------
+Route::get('/ConvocatoriaBecas', function (){
+    return view('Pantallas_Alumno_Becas.ConvocatoriaBecas');
+}) -> name('ConvocatoriaBecas');
 
+Route::get('/FormatosBeca', function (){
+    return view('Pantallas_Alumno_Becas.FormatosBeca');
+}) -> name('FormatosBeca');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/MiBeca','MiBecaDatosController@index');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/Index_Master','AdminMasterIndexController@index');
+//Pantalla Registro con roles
+Route::get('/RegisterFormRoles', function (){
+    return view('Pantallas_Admin_Master.RegisterFormRoles');
+}) -> name('RegisterFormRoles');
+//-----------------------SANTOS TERMINO----------------------------------
+//Auth::routes();
 
 
 
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+// ************************************* RUTAS    DE    MOY    *******************************************
 //Rutas Practicas-y-Vistas Docente
-Route::get('/VisitasEscolares/Index','DocenteIndexController');
-Route::get('/VisitasEscolares/SolicitarVisita','DocenteSolicitarVisitaController');
-Route::get('/VisitasEscolares/MisVisitas','DocenteMisVisitasController');
+
+
+Route::get('/VisitasEscolares', 'VisitaController@index')     //Método Index()
+    ->name('docente.index');
+
+Route::get('/VisitasEscolares/solicitar','VisitaController@crear')  //Método create()
+    ->name('docente.solicitarVisita');
+
+Route::post('/VisitasEscolares', 'VisitaController@guardar')    //Método store()
+    ->name('docente.guardarVisita');;
+
+Route::get('/VisitasEscolares/{visita}','VisitaController@ver') //Método show()
+    ->name('docente.verVisita');
+
+Route::get('/VisitasEscolares/{visita}/editar','VisitaController@editar') //Método edit()
+    ->name('docente.editarVisita');
+
+
+

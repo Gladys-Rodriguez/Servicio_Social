@@ -33,7 +33,6 @@
             <div class="nav__menu">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="{{url('/AdminIndex')}}" class="nav__link active">Inicio</a></li>
-                    <li class="nav__item"><a href="{{url('/concentradosInfo')}}" class="nav__link active">Concentrados </a></li>
 
 
                     <li class="nav__item"><a href="{{url('/estadisticas')}}" class="nav__link">Estadística</a></li>
@@ -41,11 +40,15 @@
 
 
                     <li class="nav__item"><a href="{{url('/validacionReportes')}}" class="nav__link">Validación Reportes</a></li>
-                    <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
 
+                    <li class="nav__item dropdown">
+                        <a href="#" class="nav__link dropdown__link">Gestion de Banners <i class='bx bx-chevron-down dropdown__icon'></i></a>
+                        <ul class="dropdown__menu">
+                            <li class="dropdown__item"><a href="{{url('/RegisterBannerServicio')}}" class="nav__link">Registro de imagenes de servicios</a></li>
+                            <li class="dropdown__item"><a href="{{url('/consultaBannerServicio')}}" class="nav__link">Consulta de imagenes habilitadas de servicio</a></li>
+                            <li class="dropdown__item"><a href="{{url('/consultaBannerServicioInhabilitadas')}}" class="nav__link">Consulta de imagenes inhabilitadas de servicio</a></li>
 
-                </ul>
-            </div>
+                             </ul>
         </div>
     </nav>
 
@@ -85,7 +88,8 @@
 
     <section class="section-main">
       <h1>Bienvenido Administrador de servicio social:
-      <br> Usuario con matricula: {{ Auth::user()->id}} </h1>
+      <?php /*<br> Usuario con matricula: {{ Auth::user()->id}} */?>
+      </h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->

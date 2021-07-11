@@ -8,6 +8,16 @@ use Illuminate\Http\Unique;
 use App\Models\Usuario;
 use App\Models\User;
 
+use Illuminate\Support\Facades\DB;
+
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
+use App\Models\dato;
+use App\Models\alumno;
+use App\Models\direccion;
+
 class registro extends Controller
 {
     /**
@@ -17,7 +27,24 @@ class registro extends Controller
      */
     public function index()
     {
-        //
+
+
+
+        $id_users = Auth::user()->id;
+        $alumnos=DB::table('alumnos')->where('id_usuarios',$id_users)->get();
+        $users=DB::table('users')->where('id',$id_users)->get();
+        $datos=DB::table('datos')
+        ->join('alumnos', 'datos.id_datos', 'alumnos.id_datos')
+        ->where('alumnos.id_usuarios',$id_users)
+        ->get();
+        $direccions=DB::table('direccions')
+        ->join('alumnos', 'direccions.id_direccions', 'alumnos.id_direccions')
+        ->where('alumnos.id_usuarios',$id_users)
+        ->get();
+
+        //return view('Pantallas_Alumno_Servicio.datosPersonalesA', compact('alumnos', 'users', 'datos', 'direccions'));
+        return view('Pantallas_Alumno_Servicio.DatosPersonales', compact('alumnos', 'users', 'datos', 'direccions'));
+
     }
 
     /**
@@ -38,22 +65,62 @@ class registro extends Controller
      */
     public function store(Request $request)
     {
-      //return $request->all();
-      $registro= new User;
 
       $validated = $request->validate([
         'email' => 'unique:users',
+        'id' => 'unique:users',
        ]);
+       /*$validator = Validator::make($request->all(), [
+        'email' => 'unique:users',
+        'id' => 'unique:users',
+        ]);*/
 
-      $registro->id=$request->id;
-      $registro->name=$request->name;
-      $registro->email=$request->email;
-      $registro->password=bcrypt($request->password);
-      //$registro->password=bcrypt($request->password);
-      $registro->id_rol= 5;
 
-      $registro->save();
+
+
+
+      DB::transaction(function () use ($request) {
+
+        $id_users = DB::table('users')->insertGetId([
+            'id' => $request->input('id'),
+            'email' => $request->input('email'),
+            'password' => bcrypt($request->input('password')),
+            'id_rol' => 5,
+            'estado' => 1,
+        ]);
+
+        $id_datos = DB::table('datos')->insertGetId([
+            'nombre' => $request->input('nombre'),
+            'ap_paterno' => $request->input('ap_paterno'),
+            'ap_materno' => $request->input('ap_materno'),
+            'telefono' => $request->input('telefono'),
+            'celular' => $request->input('celular'),
+        ]);
+
+        $id_direccions = DB::table('direccions')->insertGetId([
+            'ciudad' => $request->input('ciudad'),
+            'alcaldia' => $request->input('alcaldia'),
+            'colonia' => $request->input('colonia'),
+            'calle' => $request ->input ('calle'),
+            'num_ext' => $request -> input ('num_ext'),
+            'num_int' => $request -> input ('num_int'),
+            'cp' => $request -> input ('cp'),
+        ]);
+
+        $id_alumno = DB::table('alumnos')->insertGetId([
+            'carrera' => $request->input('carrera'),
+            'semestre' => $request->input('semestre'),
+            'grupo' => $request->input('grupo'),
+            'turno' => $request ->input ('turno'),
+            'id_datos' => $id_datos,
+            'id_usuarios' => $id_users,
+            'id_direccions' => $id_direccions,
+        ]);
+      });
+
       return redirect('Registro_exitoso');
+
+
 
     }
 

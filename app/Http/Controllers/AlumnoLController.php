@@ -15,13 +15,17 @@ class AlumnoLController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('verified');
         $this->middleware('alumno',['only'=> ['index']]);
     }
 
     public function index()
     {
         //
-        return view('/RegistroAlumno');
+        if (auth::user()->estado = 0) {
+            return redirect('Registro_exitoso');
+        }
+        return view('/Index_Alumno');
     }
 
     /**

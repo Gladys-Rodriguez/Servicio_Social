@@ -30,4 +30,27 @@ class alumno extends Model
         return $this->belongsTo('App\Models\dato', 'id_datos', 'id_datos');
     }
 
+    public function usuario()
+    {
+        return $this->belongsTo('App\Models\Usuario', 'id_usuarios', 'id');
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User', 'id_usuarios', 'id');
+    }
+
+    protected $fillable = [
+        'carrera',
+        'semestre',
+        'grupo',
+        'turno',
+        'id_datos',
+        'id_usuarios',
+        'id_direccions',
+
+
+
+    ];
+
 }

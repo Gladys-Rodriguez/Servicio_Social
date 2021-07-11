@@ -22,10 +22,10 @@
     <div class="step step1">
 
 
-    <h3 class="title">Datos de Domicilio</h3>
-    <br>
+   <!-- <h3 class="title">Datos de Domicilio</h3>
+    <br> -->
     <!-- Grupo: Ciudad -->
-    <div class="formulario__grupo" id="grupo__ciudad">
+<!--    <div class="formulario__grupo" id="grupo__ciudad">
         <label for="ciudad" class="formulario__label">Ciudad</label>
         <div class="formulario__grupo-input">
             <input type="text" class="formulario__input" name="ciudad" id="ciudad" placeholder="CDMX / Edo. Mexico">
@@ -33,9 +33,9 @@
         </div>
         <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
     </div>
-
+-->
     <!-- Grupo: Alcaldia -->
-    <div class="formulario__grupo" id="grupo__alcaldia">
+<!--    <div class="formulario__grupo" id="grupo__alcaldia">
         <label for="alcaldia" class="formulario__label">Alcaldia o Municipio</label>
         <div class="formulario__grupo-input">
             <input type="text" class="formulario__input" name="alcaldia" id="alcaldia" placeholder="">
@@ -43,9 +43,9 @@
         </div>
         <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
     </div>
-
+-->
     <!-- Grupo: Colonia -->
-    <div class="formulario__grupo" id="grupo__colonia">
+<!--    <div class="formulario__grupo" id="grupo__colonia">
         <label for="colonia" class="formulario__label">Colonia</label>
         <div class="formulario__grupo-input">
             <input type="colonia" class="formulario__input" name="colonia" id="colonia">
@@ -53,9 +53,9 @@
         </div>
         <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
     </div>
-
+-->
     <!-- Grupo:Calle -->
-    <div class="formulario__grupo" id="grupo__calle">
+<!--    <div class="formulario__grupo" id="grupo__calle">
         <label for="calle" class="formulario__label">Calle</label>
         <div class="formulario__grupo-input">
             <input type="calle" class="formulario__input" name="calle" id="calle">
@@ -63,9 +63,9 @@
         </div>
         <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
     </div>
-
+-->
     <!-- Grupo:  Num_Ext -->
-    <div class="formulario__grupo" id="grupo__num_ext">
+<!--    <div class="formulario__grupo" id="grupo__num_ext">
         <label for="num_ext" class="formulario__label">Num. Ext</label>
         <div class="formulario__grupo-input">
             <input type="num_ext" class="formulario__input" name="num_ext" id="num_ext" placeholder="">
@@ -73,9 +73,9 @@
         </div>
         <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
     </div>
-
+-->
     <!-- Grupo: Num_Int -->
-    <div class="formulario__grupo" id="grupo__num_int">
+<!--    <div class="formulario__grupo" id="grupo__num_int">
         <label for="num_int" class="formulario__label">Num. Int</label>
         <div class="formulario__grupo-input">
             <input type="num_int" class="formulario__input" name="num_int" id="num_int" placeholder="">
@@ -83,9 +83,9 @@
         </div>
         <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
     </div>
-
+-->
     <!-- Grupo: CP -->
-    <div class="formulario__grupo" id="grupo__cp">
+<!--    <div class="formulario__grupo" id="grupo__cp">
         <label for="cp" class="formulario__label">C.P.</label>
         <div class="formulario__grupo-input">
             <input type="cp" class="formulario__input" name="cp" id="cp" placeholder="">
@@ -98,7 +98,7 @@
     <div class="formulario__mensaje" id="formulario__mensaje">
         <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
     </div>
-
+-->
     <!--  <div class="formulario__grupo formulario__grupo-btn-enviar">
         <button type="submit" class="formulario__btn">Next</button>
         <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
@@ -108,7 +108,7 @@
     <!--<div class="formulario__grupo formulario__grupo-btn-next">
         <button type="button" class="next-btn">Next</button>
     </div>-->
-    <div class="button-group">
+<!--    <div class="button-group">
 
         <button id="next" class="button">
            next
@@ -117,6 +117,7 @@
 
     </div>
 <br>
+-->
 <!-- *********** FIN DE DATOS DE DIRECCION **************** -->
 
 <!-- *********** PARTE DE DATOS PERSONALES **************** -->
@@ -198,12 +199,11 @@
         <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
     </div>
 -->
-
-<!--    <div class="formulario__grupo formulario__grupo-btn-enviar">
+    <div class="formulario__grupo formulario__grupo-btn-enviar">
         <button type="submit" class="formulario__btn">Enviar</button>
         <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
     </div>
--->
+
 <div class="button-group">
     <button id="previous" class="disabled button" disabled>
        previous
@@ -227,7 +227,7 @@
 @section('script')
 <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 
-<!-- <script src="{{asset('js/Pantallas_Alumno_Servicio/FormRegistro.js')}}"></script> -->
+<script src="{{asset('js/Pantallas_Alumno_Servicio/FormRegistro.js')}}"></script>
 <script src="{{asset('js/Pantallas_Alumno_Servicio/steps.js')}}"></script>
 
 @endsection

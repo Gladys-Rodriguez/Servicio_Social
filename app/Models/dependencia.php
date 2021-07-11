@@ -11,6 +11,17 @@ class dependencia extends Model
 
     protected $table = 'dependencias';
     protected $primarykey = 'id_dependencias';
+
+    protected $fillable = [
+        'nombre_depen',
+        'nom_responsable',
+        'ap_responsable',
+        'am_responsable',
+        'telefono',
+        'email_responsable',
+        'id_direcciones'
+        ];
+
     //Relacion con la tabla de direcciones
     public function direcciones()
     {

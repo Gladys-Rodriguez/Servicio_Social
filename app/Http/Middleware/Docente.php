@@ -17,9 +17,13 @@ class Docente
      */
     public function handle(Request $request, Closure $next)
     {
+        if ($request->user()->estado = 0) {
+            return redirect('Registro_exitoso');
+        }
+        else {
         switch(auth::user()->id_rol){
             case ('1'):
-                return redirect('/SuperAdmin_Index');//si es super administrador continua al HOME
+                return redirect('/Index_Master');//si es super administrador continua al HOME
             break;
 			case('2'):
                 return redirect('AdminIndex');// si es un usuario de servicio social
@@ -31,12 +35,19 @@ class Docente
                 return redirect('/Admin_Practicas_Visitas_Index2');//si es administrador de practicas
             break;
             case ('5'):
-                return redirect('/RegistroAlumno');//si es alumno
+                return redirect('/Index_Alumno');//si es alumno
             break;
             case ('6'):
                 return $next($request);//si es docente
             break;
+            case ('7'):
+                return redirect('/prueba');//si es prueba
+            break;
+            case ('8'):
+                return redirect('/Index_Master');//si es prueba
+            break;
 
         }
+    }
     }
 }

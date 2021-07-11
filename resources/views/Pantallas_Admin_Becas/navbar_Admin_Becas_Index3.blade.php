@@ -29,6 +29,18 @@
                 <ul class="nav__list">
                     <li class="nav__item"><a href="{{url('/Admin_Becas_Index3')}}" class="nav__link active">HOME</a></li>
                     <li class="nav__item"><a href="{{url('/Validacion_Alumno_Becas')}}" class="nav__link">VALIDACIÓN DE DOCUMENTOS</a></li>
+                    <li class="nav__item"><a href="{{url('/Tipo_Alumno_Becas')}}" class="nav__link">LISTAS DE ALUMNOS POR TIPO DE BECA</a></li>
+
+                    <li class="nav__item dropdown">
+                        <a href="#" class="nav__link dropdown__link">Gestion de Banners <i class='bx bx-chevron-down dropdown__icon'></i></a>
+                        <ul class="dropdown__menu">
+                            <li class="dropdown__item"><a href="{{url('/RegisterBannerBecas')}}" class="nav__link">Registro de imagenes de becas</a></li>
+                            <li class="dropdown__item"><a href="{{url('/consultaBannerBecas')}}" class="nav__link">Consulta de imagenes habilitadas de becas</a></li>
+                            <li class="dropdown__item"><a href="{{url('/consultaBannerBecasInhabilitadas')}}" class="nav__link">Consulta de imagenes inhabilitadas de becas</a></li>
+
+                             </ul>
+                    </li>
+
                     <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
 
                 </ul>
@@ -71,7 +83,8 @@
 
     <section class="section-main">
       <h1>ADMINISTRACIÓN DE BECAS
-      <br> Usuario con matricula: {{ Auth::user()->id}}</h1>
+      <br> Usuario con matricula: {{ Auth::user()->id}}
+    </h1>
 
 
 

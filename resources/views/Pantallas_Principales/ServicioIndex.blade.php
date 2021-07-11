@@ -4,6 +4,7 @@
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantallas_Principales/ServicioIndex.css')}}">
+
 @endsection
 
 @section('content')
@@ -12,62 +13,45 @@
     <div class="informacion">
       <div class="contact-info">
         <h3 class="title">"SERVICIO SOCIAL"</h3>
-        <p class="text">
-          Bienvenido
-        </p>
       </div>
-    <!--image slider start-->
-    <div class="slider">
-      <div class="slides">
-        <!--radio buttons start-->
-        <input type="radio" name="radio-btn" id="radio1">
-        <input type="radio" name="radio-btn" id="radio2">
-        <input type="radio" name="radio-btn" id="radio3">
-        <input type="radio" name="radio-btn" id="radio4">
-        <!--radio buttons end-->
-        <!--slide images start-->
-        <div class="slide first">
-        <img src="{{ asset('img/serviciosocial/servicio1.jpg')}}">
-        </div>
-        <div class="slide">
-        <img src="{{ asset('img/serviciosocial/servicio2.jpg')}}">
-        </div>
-        <div class="slide">
-        <img src="{{ asset('img/serviciosocial/servicio3.jpg')}}">
-        </div>
 
-        <!--slide images end-->
-        <!--automatic navigation start-->
-        <div class="navigation-auto">
-          <div class="auto-btn1"></div>
-          <div class="auto-btn2"></div>
-          <div class="auto-btn3"></div>
+      <!--Inicioo carrusel-->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+        <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+        @forelse($bannerServicio as $bannerServicioo)
+        <div class="carousel-item @if ($loop->index==0) active @endif">
+            <img class="d-block w-100" src="img/carrusel/{{$bannerServicioo->ruta}}" alt="First slide">
+        </div>
+        @empty
+
+        @endforelse
 
         </div>
-        <!--automatic navigation end-->
-      </div>
-      <!--manual navigation start-->
-      <div class="navigation-manual">
-        <label for="radio1" class="manual-btn"></label>
-        <label for="radio2" class="manual-btn"></label>
-        <label for="radio3" class="manual-btn"></label>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
 
-      </div>
-      <!--manual navigation end-->
+        </a>
     </div>
-    <!--image slider end-->
+    <!--Fin carrusel-->
 
-    <script type="text/javascript">
-    var counter = 1;
-    setInterval(function(){
-      document.getElementById('radio' + counter).checked = true;
-      counter++;
-      if(counter > 3){
-        counter = 1;
-      }
-    }, 4000);
-    </script>
 
      </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 @endsection

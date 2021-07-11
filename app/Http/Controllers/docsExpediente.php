@@ -14,6 +14,10 @@ use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 
+use RealRashid\SweetAlert\Facades\Alert;
+
+
+
 class docsExpediente extends Controller
 {
     /**
@@ -51,8 +55,8 @@ class docsExpediente extends Controller
         $files = $request->file('files');
         $user_id = Auth::id();
         $tipo = $request->input('documento');
-        
-        
+
+
         foreach ($files as $file){
             if(Storage::putFileAs('/public/'.$user_id.'/', $file, $file->getClientOriginalName())){
                     docs_expedientePrueba::create([
@@ -60,7 +64,7 @@ class docsExpediente extends Controller
                         'user' => $user_id,
                         'tipo_doc' => $tipo
 
-                        
+
                 ]);
 
             }
@@ -68,8 +72,8 @@ class docsExpediente extends Controller
 
             Alert::success('¡Éxito! 📦📦📦 ', 'Se subio satisfactoriamente el archivo. ');
             return back();
-       
-        
+
+
     }
 
     /**
@@ -92,7 +96,7 @@ class docsExpediente extends Controller
             return back();
         }
 
-        
+
     }
 
     /**
@@ -109,9 +113,9 @@ class docsExpediente extends Controller
     public function edit( $id){
         $files = docs_expedientePrueba::findOrFail($id);
 
-        
+
         return view('Pantallas_Admin_Servicio.editDocsAlumno',  compact('files'));
-        
+
 
     }
 

@@ -10,7 +10,7 @@ use Illuminate\Notifications\Notifiable;
 
 
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory, Notifiable;
 
@@ -20,10 +20,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
         'email',
+        'email_verified_at',
         'password',
         'id_rol',
+        'estado',
     ];
 
     /**
@@ -45,6 +46,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function alumnos()
+    {
+        return $this->hasOne('App\Models\alumno', 'id_usuarios', 'id');
+    }
 
     //Relación Uno a Uno
 
@@ -52,6 +57,7 @@ class User extends Authenticatable
     public function role(){
         return $this->belongsTo('App\Role');
     }
+
 
     public function esAdmin(){
 

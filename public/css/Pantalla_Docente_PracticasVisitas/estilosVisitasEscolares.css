@@ -46,7 +46,7 @@ span{
 }
 
 .form input[type="text"], .form input[type="password"],
-.form input[type="email"], .form input[type="date"],
+.form input[type="email"], .form input[type="date"], .form input[type="number"],
 .form select {
     display: block; 
     width: 100%;
@@ -129,14 +129,14 @@ span{
   text-transform: uppercase;
   margin: 30px 0;
 }
-
-.content-wrapper a {
+ 
+.section-tres a {
   display:block;
   margin: 10px 0;
   color:#001018;
 }
 
-.content-wrapper2 a{
+.section-dos a{
   display:block;
   margin: 10px 0;
   color:rgba(255, 255, 255, 0.5);
@@ -157,6 +157,29 @@ span{
     height: 400px;
     color: white;
   }
+
+.section-dos img{
+  display: block;
+  height: 450px;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+dd {
+  display:block;
+  width: 30%;
+  margin-left: 40px;
+  margin-bottom: 30px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: white;
+  color:black;
+  border-radius: 5px;
+}
+
+  
 
 /*----TABLA----*/
   table {
@@ -187,7 +210,7 @@ span{
     border: 0;
   }
   table td, table th {
-    text-align: left;
+    text-align: center;
   }
 
 table th{
