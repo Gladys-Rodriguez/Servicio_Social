@@ -1,0 +1,61 @@
+/* GENERAL STYLES */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.block-pad {
+    display: flex;
+    justify-content: center;
+    padding: 150px 0 150px 0;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 25px;
+    letter-spacing: 4px;
+    color: #53657D;
+    text-align: center;
+}
+
+a {
+    display: flex;
+    min-width: 275px;
+    padding: 25px 35px;
+    margin: 0 35px;
+    border-radius: 10px;
+    color: #d6d6d6;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.block-title {
+    background: #EBEFF3;
+}
+
+
+/* HOVER SECTION */
+
+
+.btn-hover a {
+    background: #335a61c0;
+    box-shadow: 6px 6px 20px -1px rgba(0, 0, 0, 0.9),
+        -6px -6px 20px -1px rgba(255, 255, 255, 0.9);
+}
+
+.btn-hover a:hover {
+    box-shadow: inset 4px 4px 10px -1px rgba(0, 0, 0, 0.2),
+        inset -4px -4px 10px -1px rgba(255, 255, 255, 0.7);
+}
+
+
+

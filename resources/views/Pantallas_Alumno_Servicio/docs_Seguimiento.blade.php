@@ -27,14 +27,14 @@
   <tbody>
     @foreach($files as $file)
     <tr>
-      <th scope="row">{{ $file->id_doc_expedientesP }}</th>
+      <th scope="row">{{ $file->id }}</th>
       <td>{{ $file->nombre_doc }}</td>
       <td>{{ $file->estado ? 'Aceptado': 'Sin Validar'}}</td>
       <td>{{ $file->tipo_doc}}</td>
       <td>{{ $file->observaciones}}</td>
 
       <td>
-        <a  href="#" class="btn "> Ver</a>
+        <a target="_blank" href="storage/{{ Auth::id() }}/{{ $file->nombre_doc }}" class="btn "> Ver el documento</a>
       </td>
     </tr>
     @endforeach

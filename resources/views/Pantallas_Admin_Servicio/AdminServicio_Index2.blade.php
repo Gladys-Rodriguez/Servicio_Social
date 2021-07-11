@@ -3,7 +3,7 @@
 
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Servicio/estilo.css')}}">
+<link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Servicio/estilo4.css')}}">
 @endsection
 
 

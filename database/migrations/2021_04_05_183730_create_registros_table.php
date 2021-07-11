@@ -15,9 +15,9 @@ class CreateRegistrosTable extends Migration
     {
         Schema::create('registros', function (Blueprint $table) {
             $table->increments('id_registros')->unsigned()->notnull();
-            $table->string('estado');
-            $table->date('fecha_envio');
-            $table->text('observaciones');
+            $table->string('status_ss')->nullable();
+            $table->date('fecha_envio')->nullable();
+            $table->text('observaciones')->nullable();
             $table->unsignedInteger('id_alumnos')->unsigned()->notnull();
             $table->unsignedInteger('id_servicios')->unsigned()->notnull();
             $table->timestamps();

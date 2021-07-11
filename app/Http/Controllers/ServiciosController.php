@@ -16,15 +16,45 @@ use App\Models\direccion;
 
 class ServiciosController extends Controller
 {
+    /*public function __construct(){
+        $this->middleware('NuevoRegistroMiddleware',['only'=> ['index']]);
+    }*/
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     *
+     *
      */
+
+
+
     public function index()
     {
         //
+        $id_users = Auth::user()->id;
+        $alumnos=DB::table('alumnos')->where('id_usuarios',$id_users)->pluck('id_alumnos')->first();
+
+        $serv= DB::table('servicios')
+        ->join('alumnos', 'servicios.id_alumnos', 'alumnos.id_alumnos')
+        ->where('servicios.id_alumnos', $alumnos)
+        ->pluck('servicios.id_alumnos')->first();
+
+       // var_dump($serv);
+        if($alumnos == $serv)
+        {
+            return redirect('Inicio Alumno');
+        }
+        else{
         return response()->view('Pantallas_Alumno_Servicio/Registros/NuevoRegistro');
+    }
+
+
+
+
+
+
 
     }
 
@@ -49,6 +79,7 @@ class ServiciosController extends Controller
         //
         $id_users = Auth::user()->id;
         $id_alumnos=alumno::where('id_usuarios',$id_users)->take(1)->get();
+        //$id_ser = servicio::select('id_servicios')->take(1)->get();
 
 
 
@@ -77,13 +108,21 @@ class ServiciosController extends Controller
 
 
 
-        $id_servicios = DB::table('servicios')->insert([
+        $id_servicios = DB::table('servicios')->insertGetId([
             'id_dependencias' => $id_dependencias,
             'id_alumnos' => $id_alumnos->first()->id_alumnos,
             'No_registro' => $request->input('No_registro'),
             'fecha_inicio' => $request->input('fecha_inicio'),
             'fecha_termino' => $request->input('fecha_termino'),
             'fecha_inscripcion' => $request->input('fecha_inscripcion')
+        ]);
+
+        $id_registros = DB::table('registros')->insert([
+            'status_ss' => $request->input('status_ss'),
+            'fecha_envio' => $request->input('fecha_envio'),
+            'observaciones' => $request->input('observaciones'),
+            'id_alumnos' => $id_alumnos->first()->id_alumnos,
+            'id_servicios' => $id_servicios
         ]);
 
 

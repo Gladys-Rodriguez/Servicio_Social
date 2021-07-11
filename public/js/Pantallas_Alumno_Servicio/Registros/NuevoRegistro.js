@@ -13,23 +13,45 @@ const bullet = document.querySelectorAll(".step .bullet");
 let current = 1;
 const form = document.getElementById('formulario');
 
+
+var nuevo_registro = document.getElementById('nuevo_registro');
+
+
 const formulario_mensaje = document.getElementById('formulario__mensaje');
+
+
+ //nuevo_registro.removeAttribute ("href");
+ //nuevo_registro.remove();
+
+ /*submitBtn.on("click", function(){
+     nuevo_registro.remove();
+ });*/
+
 
 // **************** PRIMER BOTON NEXT *************************
 nextBtnFirst.addEventListener("click", function(event){
   event.preventDefault();
-  if(campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext /*&& campos.num_int*/ && campos.cp){
+
+
+if(campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext /*&& campos.num_int*/ && campos.cp){
 
     slidePage.style.marginLeft = "-25%";
     bullet[current - 1].classList.add("active");
     progressCheck[current - 1].classList.add("active");
     progressText[current - 1].classList.add("active");
     current += 1;
+
+
+
+
     document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
   } else{
   document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+
   }
 });
+
+
 
 // ********************* SEGUNDO BOTON NEXT **************************
 nextBtnSec.addEventListener("click", function(event){
@@ -47,6 +69,7 @@ nextBtnSec.addEventListener("click", function(event){
         document.getElementById('formulario__mensaje2').classList.remove('formulario__mensaje-activo');
       } else{
       document.getElementById('formulario__mensaje2').classList.add('formulario__mensaje-activo');
+
       }
 });
 //******************** TERCER BOTON NEXT ************************** */
@@ -72,25 +95,33 @@ nextBtnThird.addEventListener("click", function(event){
 submitBtn.addEventListener("click", function(event){
     event.preventDefault();
 
+
     if(campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext /*&& campos.num_int*/ && campos.cp &&
         campos.nombre_depen &&
-        campos.nom_responsable && campos.ap_responsable && campos.am_responsable && campos.telefono && campos.email_responsable &&
-        campos.No_registro ){
+        campos.nom_responsable && campos.ap_responsable && campos.am_responsable && campos.telefono && campos.email_responsable ){/* &&
+        campos.No_registro */
             bullet[current - 1].classList.add("active");
             progressCheck[current - 1].classList.add("active");
             progressText[current - 1].classList.add("active");
             current += 1;
 
             form.submit();
+
             /*setTimeout(function(){
 
                 location.reload();
             },800);*/
-
+           // nuevo_registro.style.display = "none";
             document.getElementById('formulario__mensaje4').classList.remove('formulario__mensaje-activo');
+
+
+
             } else{
             document.getElementById('formulario__mensaje4').classList.add('formulario__mensaje-activo');
             }
+
+
+
 });
 
 
@@ -146,7 +177,7 @@ const expresiones = {
     email_responsable: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 
     //campos de usuario
-    No_registro: /^\d{1,20}$/, // 7 a 14 numeros.
+    //No_registro: /^\d{1,20}$/, // 7 a 14 numeros.
 
 
 }
@@ -170,7 +201,7 @@ const campos = {
     email_responsable: false,
 
     //campos de servicios
-    No_registro: false,
+   // No_registro: false,
 
 
 }
@@ -222,9 +253,9 @@ const validarFormulario = (e) => {
 		break;
 
         //case para servicios
-        case "No_registro":
+       /* case "No_registro":
 			validarCampo(expresiones.No_registro, e.target, 'No_registro');
-		break;
+		break;*/
 
 	}
 }
@@ -278,10 +309,6 @@ inputs.forEach((input) => {
 
 formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
-
-
-
-
 
 });
 

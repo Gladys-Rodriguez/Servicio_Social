@@ -106,9 +106,11 @@ Route::get('/LoginPruebaGla', function (){
 Route::get('/RegistroAlumno', function (){
     return view('Pantallas_Alumno_Servicio.RegistroAlumno');
 }) -> name('RegistroAlumno');
+
 Route::get('/FormRegistro', function (){
     return view('Pantallas_Alumno_Servicio.FormRegistro');
 }) -> name('FormRegistro');
+
 Route::get('/NuevoRegistro', function (){
     return view('Pantallas_Alumno_Servicio.Registros.NuevoRegistro');
 }) -> name('Nuevo Registro');
@@ -119,7 +121,7 @@ Route::get('/NuevoRegistro', function (){
 //Ruta para obtener los datos desde el controlador
 
 Route::get('RegistroAlumno', [App\Http\Controllers\AlumnosController::class, 'index'])->name('RegistroAlumno.index');
-Route::get('NuevoRegistro', [App\Http\Controllers\ServiciosController::class, 'index'])->name('NuevoRegistro.index');
+Route::get('NuevoRegistro',[App\Http\Controllers\ServiciosController::class, 'index'])->name('NuevoRegistro.index');
 Route::post('RegistroAlumno', [App\Http\Controllers\AlumnosController::class, 'store'])->name('RegistroAlumno.store');
 Route::post('NuevoRegistro', [App\Http\Controllers\ServiciosController::class, 'store'])->name('NuevoRegistro.store');
 //Auth::routes();
@@ -134,11 +136,42 @@ Route::get('/Index_Alumno', function (){
 }) -> name('Index_Alumno');
 
 
+Route::get('/Inicio Alumno', function (){
+    return view('Pantallas_Alumno_Servicio.Index_AlumnoV2');
+}) -> name('Inicio Alumno');
+
 //Ruta oara pantalla Prueba de datos Personales
 Route::get('/DatosPersonales', function (){
     return view('Pantallas_Alumno_Servicio.DatosPersonales');
 }) -> name('DatosPersonales');
 
+
+//Ruta oara pantalla  de datos del servicio
+Route::get('/DatosServicio', function (){
+    return view('Pantallas_Admin_Servicio.DatosServicio');
+}) -> name('DatosServicio');
+
+
+Route::get('/ListaDeAlumnos', function (){
+    return view('Pantallas_Admin_Servicio.ListaAlumnos');
+}) -> name('ListaDeAlummos');
+
+Route::get('/Registro de Fechas', function (){
+    return view('Pantallas_Admin_Servicio.RegistroFechas');
+}) -> name('Registro de Fechas');
+
+Route::get('/Expediente', function (){
+    return view('Pantallas_Admin_Servicio.expediente');
+}) -> name('Expediente');
+
+
+Route::get('/ListaDeAlumnos', [App\Http\Controllers\ListadoAlumnosController::class, 'index'])->name('ListaDeAlumnos.index');
+Route::get('/DatosServicio', [App\Http\Controllers\RegistroServicioController::class, 'index'])->name('DatosServicio.index');
+
+Route::get('/Registro de Fechas', [App\Http\Controllers\FechasServicioController::class, 'index'])->name('Registro de Fechas.index');
+Route::put('/Registro de Fechas/{id}', [App\Http\Controllers\FechasServicioController::class, 'update'])->name('Registro de Fechas.update');
+
+Route::get('/Expediente/{id}', [App\Http\Controllers\FechasServicioController::class, 'docs'])->name('Expediente.docs');
 
 // ************************************* FIN   RUTAS    DE    GLADYS    *******************************************
 
@@ -229,6 +262,10 @@ Route::post('/uploaddocexpediente', [App\Http\Controllers\docsExpediente::class,
 //Ruta para ver la solicitud del alumno
 Route::get('/docsSolicitudAlumno', [App\Http\Controllers\docsExpediente::class, 'index'])->name('uploaddocexpediente.index');
 
+//Ruta para ver los documentos del alumno
+Route::get('/docsSolicitudAlumno/{file}', [App\Http\Controllers\docsExpediente::class, 'show'])->name('uploaddocexpediente.show');
+
+
 //Ruta para ver el listado de alumnos
 Route::get('/concentradosInfo', [App\Http\Controllers\AlumnoController::class, 'lista'])->name('alumno.lista');
 
@@ -236,7 +273,15 @@ Route::get('/concentradosInfo', [App\Http\Controllers\AlumnoController::class, '
 Route::get('/buscarAlumnos', [App\Http\Controllers\AlumnoController::class, 'buscar'])->name('alumno.buscar');
 
 //Ruta para validar documentos por parte del admin
-Route::get('/docsvalidardocalumno', [App\Http\Controllers\docsExpediente::class, 'edit'])->name('uploaddocexpediente.edit');
+Route::get('/docsvalidardocalumno', [App\Http\Controllers\docsExpediente::class, 'lista'])->name('lista.edit');
+
+//Ruta editar documentos del usuario
+Route::get('/docseditardocalumno/{id}', [App\Http\Controllers\docsExpediente::class, 'edit'])->name('uploaddocexpediente.edit');
+
+//Ruta update documentos del usuario alumno
+Route::post('/docsupdatedocalumno/{id}', [App\Http\Controllers\docsExpediente::class, 'update'])->name('uploaddocexpediente.update');
+
+
 
 
 
@@ -246,14 +291,14 @@ Route::get('/storagelink', function() {
 });
 
 //Ruta validación Documentos Alumno
-Route::get('/validacionAlumno', function () {
-    return view('Pantallas_Admin_Servicio.validacionAlumno');
-}) -> name('validacionAlumno');
+//Route::get('/validacionAlumno', function () {
+  //  return view('Pantallas_Admin_Servicio.validacionAlumno');
+// }) -> name('validacionAlumno');
 
 //Ruta validacion Reportes
-Route::get('/validacionReportes', function () {
-    return view('Pantallas_Admin_Servicio.validacionReportes');
-}) -> name('validacionReportes');
+// Route::get('/validacionReportes', function () {
+   // return view('Pantallas_Admin_Servicio.validacionReportes');
+//}) -> name('validacionReportes');
 
 
 //------------------------FER INICIO------------------------------------

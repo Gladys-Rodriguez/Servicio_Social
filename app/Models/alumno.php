@@ -19,7 +19,7 @@ class alumno extends Model
 
     }
     //Relacion con la tabla servicio
-    public function servicio()
+    public function servicios()
     {
         return $this->hasOne('App\Models\servicio', 'id_alumnos', 'id_alumnos');
     }

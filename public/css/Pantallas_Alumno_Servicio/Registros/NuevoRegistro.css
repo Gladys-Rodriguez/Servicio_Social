@@ -11,16 +11,20 @@
     background: #d4ac3f;
   }
    .form-outer .separa form{
-
     width: 25%;
   }
+  .form-outer .separa form  .tabs{
+    pointer-events: none;
+  }
   .form-outer .separa form .page{
+
     padding-left: 2rem;
     transition: margin-left 0.3s ease-in-out;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
   }
+
   /**** ESTILOS EXTRA *****/
  .formulario__grupo .formulario__input-error {
 	font-size: 16px;
@@ -112,6 +116,7 @@
 
       /* CONTENEDOR   */
       .container{
+
         width:auto;
         height: auto;
         background: url("/img/wallpaper/wall20.jpg");
@@ -125,6 +130,7 @@
         margin: 0 0 30px 0;
       }
       .container .form-outer{
+
         border-radius: 5px;
         background: rgba(0, 0, 0, 0.712);
         background-position: 0px -150px;
@@ -132,6 +138,7 @@
         overflow: hidden;
       }
       .container .form-outer form{
+
         display: flex;
         width: 400%;
       }
@@ -148,6 +155,7 @@
 
       }
       .form-outer form .page .field{
+
         width: 330px;
         height: 45px;
         margin: 45px 0;
@@ -241,18 +249,19 @@
         margin-left: 3px;
       }
       .container .progress-bar{
+
         display: flex;
         margin: 40px 0;
         user-select: none;
       }
       .container .progress-bar .step{
+
         text-align: center;
         width: 100%;
         position: relative;
         background: rgba(0, 0, 0, 0.712);
       }
       .container .progress-bar .step p{
-
         font-weight: 700;
         font-size: 22px;
         color: rgb(214, 214, 207);
