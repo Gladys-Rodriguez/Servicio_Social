@@ -60,7 +60,11 @@
                             <td>{{ $doc->tipo_doc }} </td>
                             <td>{{ $doc->observaciones}} </td>
                             <td>{{ $doc->user}} </td>
-                            <td>Verificar Documento</td>
+                            <td>
+                                <a target="_blank" href="/storage/{{ $doc->user }}/{{ $doc->nombre_doc }}" class="btn ">
+                                Verificar Documento
+                                </a>
+                            </td>
                         </tr>
         @endforeach
 
