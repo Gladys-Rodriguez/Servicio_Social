@@ -48,7 +48,7 @@ class RegistroBannerPracticas extends Controller
 
         bannerPracticasImagen::create($entrada);
 
-        return redirect('Registro_exitoso');
+        return redirect('Registro_exitosoBannersPracticas');
     }
 
     /**

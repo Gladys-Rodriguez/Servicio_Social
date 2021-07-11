@@ -423,6 +423,31 @@ Route::get('/Registro_exitoso', function (){
     return view('Pantallas_Principales.Registro_exitoso');
 }) -> name('Registro_exitoso');
 
+//Ruta oara pantalla de registro exitoso de imagenes de banner de home
+Route::get('/Registro_exitosoBannersHome', function (){
+    return view('Pantallas_Principales.Registro_exitosoBannersHome');
+}) -> name('Registro_exitoso');
+
+//Ruta oara pantalla de registro exitoso de imagenes de banner de servicio
+Route::get('/Registro_exitosoBannersServicio', function (){
+    return view('Pantallas_Principales.Registro_exitosoBannersServicio');
+}) -> name('Registro_exitoso');
+
+//Ruta oara pantalla de registro exitoso de imagenes de banner de practicas
+Route::get('/Registro_exitosoBannersPracticas', function (){
+    return view('Pantallas_Principales.Registro_exitosoBannersPracticas');
+}) -> name('Registro_exitoso');
+
+//Ruta oara pantalla de registro exitoso de imagenes de banner de becas
+Route::get('/Registro_exitosoBannersBecas', function (){
+    return view('Pantallas_Principales.Registro_exitosoBannersBecas');
+}) -> name('Registro_exitoso');
+
+//Ruta oara pantalla de registro exitoso de roles
+Route::get('/Registro_exitosoRoles', function (){
+    return view('Pantallas_Principales.Registro_exitosoRoles');
+}) -> name('Registro_exitosoRoles');
+
 //Ruta para el registro de imagenes del home
 Route::get('/RegisterBannerInicio', function (){
     return view('Pantallas_Principales.RegisterBannerInicio');
