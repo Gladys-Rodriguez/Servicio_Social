@@ -128,7 +128,7 @@ class ServiciosController extends Controller
 
     });
 
-    return redirect('Registro_exitoso');
+    return redirect('Registro_exitosoServicio');
     /* DB::transaction(function () use ($request) {
             $direccions = direccion::create([
                 'ciudad' => $request->input('ciudad'),

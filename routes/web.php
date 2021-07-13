@@ -446,6 +446,11 @@ Route::get('/Registro_exitosoRoles', function (){
     return view('Pantallas_Principales.Registro_exitosoRoles');
 }) -> name('Registro_exitosoRoles');
 
+//Ruta oara pantalla de registro exitoso de registro de servicio
+Route::get('/Registro_exitosoServicio', function (){
+    return view('Pantallas_Principales.Registro_exitosoServicio');
+}) -> name('Registro_exitosoServicio');
+
 //Ruta para el registro de imagenes del home
 Route::get('/RegisterBannerInicio', function (){
     return view('Pantallas_Principales.RegisterBannerInicio');
