@@ -13,7 +13,7 @@
     <h2>Control de <a  target="_blank">Expediente </a> <br>
     Revisión de <a  target="_blank">Documentos</a> <br> </h2>
 
-<table class="container">
+<table class="register">
     <thead>
         <tr>
             <th><h1>Nombre del alumno</h1></th>
@@ -36,6 +36,9 @@
 
     </tbody>
 </table>
+<br>
+
+
 
 <table class="container">
     <thead>
@@ -46,30 +49,52 @@
             <th><h1>Tipo de documento </h1></th>
             <th><h1>Observaciones</h1></th>
             <th><h1>No. de matricula  <h1></th>
-            <th><h1>Ver</h1></th>
+            <th><h1>Ver Documento</h1></th>
+            <th><h1>Actualizar   </h1></th>
 
         </tr>
     </thead>
+
+
+
     <tbody>
 
-        @foreach ($docs as $doc )
+        @foreach($docs as $doc)
+
                         <tr>
-                            <td> {{ $doc->id_doc_expedientesP }}  </td>
+                            <td> {{ $doc->id }}  </td>
+
                             <td>{{ $doc->nombre_doc }} </td>
-                            <td>{{ $doc->estado }} </td>
-                            <td>{{ $doc->tipo_doc }} </td>
-                            <td>{{ $doc->observaciones}} </td>
-                            <td>{{ $doc->user}} </td>
-                            <td>
-                                <a target="_blank" href="/storage/{{ $doc->user }}/{{ $doc->nombre_doc }}" class="btn ">
-                                Verificar Documento
-                                </a>
+
+                            <td><select class="select" name="estado" value="{{ $doc->estado}}"  >
+                                <option value="0"> Sin validar</option>
+                                <option value="1"> Aceptado</option>
                             </td>
+
+                            <td>{{ $doc->tipo_doc }} </td>
+
+                            <td><input type="textarea" name="observaciones" value="{{ $doc->observaciones}}"></td>
+
+                            <td>{{ $doc->user}} </td>
+
+                            <td>
+                               <!-- <a target="_blank" href="/storage/{{ $doc->user }}/{{ $doc->nombre_doc }}" class="btn ">
+                                Verificar Documento
+                                </a> -->
+                                <a  href="{{ route('uploaddocexpediente.edit', $doc->id) }}" class="btn "> Verificar Documento</a>
+                            </td>
+                            <td><button type="submit" class="btn btn1" > Enviar</button></td>
+
                         </tr>
-        @endforeach
+
+          @endforeach
 
     </tbody>
 </table>
+
+
+
+</form>
 
 @endsection
 
