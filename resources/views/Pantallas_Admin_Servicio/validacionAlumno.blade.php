@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Servicio/estilo2.css')}}">
 
   <div class="container" id="tabla">
-  <h2>Seguimiento de la solicitud del los alumnos</h2>          
+  <h2>Seguimiento de la solicitud del los alumnos</h2>
   <div class="table-responsive">
   <table class="table">
   <thead>
@@ -31,7 +31,7 @@
       <td>{{ $file->tipo_doc}}</td>
       <td>{{ $file->observaciones}}</td>
       <td>{{ $file->user}}</td>
-      
+
 
       <td>
         <a  href="{{ route('uploaddocexpediente.edit', $file->id) }}" class="btn "> Verificar Documento</a>
@@ -42,8 +42,8 @@
   </table>
 </div>
 </div>
-  
-  
+
+
 
 
 @endsection

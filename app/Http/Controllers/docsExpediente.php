@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 
-
+use Illuminate\Support\Facades\DB;
 use App\Models\docs_expedientePrueba;
 use App\Models\dato;
 // use App\Models\User;
@@ -109,13 +109,14 @@ class docsExpediente extends Controller
         $files = docs_expedientePrueba::all();
         return view('Pantallas_Admin_Servicio.validacionAlumno',  compact('files'));
 
+
     }
     public function edit( $id){
-        $files = docs_expedientePrueba::findOrFail($id);
+        $docs = docs_expedientePrueba::findOrFail($id);
 
 
-        return view('Pantallas_Admin_Servicio.editDocsAlumno',  compact('files'));
-
+        //return view('Pantallas_Admin_Servicio.editDocsAlumno',  compact('files'));
+        return view('Pantallas_Admin_Servicio.editDocsAlumno',  compact('docs'));
 
     }
 
@@ -128,11 +129,20 @@ class docsExpediente extends Controller
      */
     public function update(Request $request, $id)
     {
-        $files=docs_expedientePrueba::findOrFail($id);
-        $files->estado=$request->input('estado');
-        $files->observaciones=$request->input('observaciones');
-        $files->save();
-        return redirect()->route('lista.edit');
+
+        $docs=docs_expedientePrueba::findOrFail($id);
+        $docs->estado=$request->input('estado');
+        $docs->observaciones=$request->input('observaciones');
+        $docs->save();
+
+
+
+        //return redirect()->route('lista.edit');
+       //return 'Archivo actualizado';
+       return redirect()->route('Expediente.docs', $docs->user);
+
+
+
     }
 
     /**

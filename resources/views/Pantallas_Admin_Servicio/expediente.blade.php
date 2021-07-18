@@ -43,15 +43,11 @@
 <table class="container">
     <thead>
         <tr>
-            <th><h1>No. Doc. </h1></th>
-            <th><h1>Nombre del Documento</h1></th>
-            <th><h1>Estado</h1></th>
             <th><h1>Tipo de documento </h1></th>
+            <th><h1>Nombre del Documento</h1></th>
             <th><h1>Observaciones</h1></th>
-            <th><h1>No. de matricula  <h1></th>
-            <th><h1>Ver Documento</h1></th>
-            <th><h1>Actualizar   </h1></th>
-
+            <th><h1>Estado</h1></th>
+            <th><h1>Verificar</h1></th>
         </tr>
     </thead>
 
@@ -62,28 +58,19 @@
         @foreach($docs as $doc)
 
                         <tr>
-                            <td> {{ $doc->id }}  </td>
-
-                            <td>{{ $doc->nombre_doc }} </td>
-
-                            <td><select class="select" name="estado" value="{{ $doc->estado}}"  >
-                                <option value="0"> Sin validar</option>
-                                <option value="1"> Aceptado</option>
-                            </td>
 
                             <td>{{ $doc->tipo_doc }} </td>
-
-                            <td><input type="textarea" name="observaciones" value="{{ $doc->observaciones}}"></td>
-
-                            <td>{{ $doc->user}} </td>
-
-                            <td>
+                            <td>{{ $doc->nombre_doc }} </td>
+                            <td>{{ $doc->observaciones}}</td>
+                            <td>{{ $doc->estado ? 'Aceptado': 'Sin Validar'}}</td>
+                            <td class="btn">
                                <!-- <a target="_blank" href="/storage/{{ $doc->user }}/{{ $doc->nombre_doc }}" class="btn ">
                                 Verificar Documento
                                 </a> -->
-                                <a  href="{{ route('uploaddocexpediente.edit', $doc->id) }}" class="btn "> Verificar Documento</a>
+                                <a  href="{{ route('uploaddocexpediente.edit', $doc->id) }}" class="verificar"> Verificar Documento</a>
+
                             </td>
-                            <td><button type="submit" class="btn btn1" > Enviar</button></td>
+
 
                         </tr>
 

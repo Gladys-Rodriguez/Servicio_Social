@@ -171,8 +171,9 @@ Route::get('/DatosServicio', [App\Http\Controllers\RegistroServicioController::c
 Route::get('/Registro de Fechas', [App\Http\Controllers\FechasServicioController::class, 'index'])->name('Registro de Fechas.index');
 Route::put('/Registro de Fechas/{id}', [App\Http\Controllers\FechasServicioController::class, 'update'])->name('Registro de Fechas.update');
 
-Route::get('/Expediente/{id}', [App\Http\Controllers\FechasServicioController::class, 'docs'])->name('Expediente.docs');
 
+Route::get('/Expediente/{id}', [App\Http\Controllers\FechasServicioController::class, 'docs'])->name('Expediente.docs');
+Route::put('/Expediente/{id}', [App\Http\Controllers\FechasServicioController::class, 'update_doc'])->name('Expediente.update_doc');
 
 Route::get('/RegisterFormRoles', [App\Http\Controllers\registroRol::class, 'index'])->name('RegisterFormRoles.index');
 // ************************************* FIN   RUTAS    DE    GLADYS    *******************************************

@@ -215,8 +215,6 @@ input[type="date"]::-webkit-inner-spin-button,::-webkit-calendar-picker-indicato
     width: 45%;
     margin-left: 10rem;
     display: table;
-
-
  }
 
  .container td, .container th {

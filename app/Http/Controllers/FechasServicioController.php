@@ -124,6 +124,8 @@ class FechasServicioController extends Controller
         return view('Pantallas_Admin_Servicio.Expediente ', compact("docs","alumno"));
 
     }
+
+
     /**
      * Remove the specified resource from storage.
      *
