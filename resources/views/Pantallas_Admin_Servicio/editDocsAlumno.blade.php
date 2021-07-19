@@ -1,11 +1,6 @@
-@extends('layouts.navbarAdminIndex2')
+@extends('Pantallas_Admin_Servicio.navbarAdminServicio')
 
 @section('content')
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
 <link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Servicio/docs.css')}}">
 
@@ -106,7 +101,7 @@
 
             <tr>
             <th class="observacion-th"><h1>Observaciones</h1></th>
-            <td class="observacion-td"><textarea rows="5" cols="1" class="observaciones" name="observaciones">{{$docs->observaciones}}</textarea></td>
+            <td class="observacion-td"><textarea rows="3" cols="1" class="observaciones" name="observaciones">{{$docs->observaciones}}</textarea></td>
             </tr>
             <tr>
             <th><h1>Estado</h1></th>
