@@ -19,13 +19,12 @@ a{
 }
 
 h1 {
-  font-size:3em;
-  font-weight: 300;
-  line-height:1em;
-  text-align: center;
-  color: #4DC3FA;
-}
-
+    font-size:3em;
+    font-weight: 300;
+    line-height:1em;
+    text-align: center;
+    color: #A7A1AE;
+  }
 h2 {
   font-size:1em;
   font-weight: 300;
@@ -126,7 +125,7 @@ text-transform: uppercase;
     text-transform: uppercase;
     width: 350px;
     line-height: 1.8rem;
-
+    resize: none;
 
  }
  .datos td, .datos th{
@@ -174,7 +173,25 @@ text-transform: uppercase;
     width: 150px;
 
 }
+.datos .vuelve:hover{
+    background-color: #185875;
+    box-shadow: #1a495f -1px 1px, #1a495f -2px 2px, #1a495f -3px 3px, #1a495f -4px 4px, #1a495f -5px 5px, #1a495f -6px 6px;
+    transform: translate3d(6px, -6px, 0);
+    transition-delay: 0s;
+        transition-duration: 0.4s;
+        transition-property: all;
+    transition-timing-function: line;
+}
+.datos .vuelve .volver:hover{
+    color: #dddddd;
+    font-weight: bold;
+    background-color: #185875;
+   transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-property: all;
+   transition-timing-function: line;
 
+}
 /* Background-color of the odd rows */
 .container tr:nth-child(odd) {
       background-color: #323C50;
@@ -200,8 +217,27 @@ text-transform: uppercase;
     width: 150px;
     height:40px;
     padding-left: 1rem;
+    margin-top: 1rem;
     border: 2px solid #3c525c;
     color:#A7A1AE;
+}
+
+.container .estado{
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    color:  #A7A1AE;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    width: 350px;
+    height: 60px;
+    line-height: 1.2rem;
+    margin-left:-12rem;
+    resize: none;
 }
 
 .container th{

@@ -49,7 +49,7 @@
 
 
     .container {
-      background:#686d5c;
+      background:#3a505c;
       /*#6b6a69;*/
       width: 1000px;
       height: 1050px;
@@ -189,7 +189,7 @@
         font-family: var(--Yanone);
         font-size: 14.5px;
         display:inline-block;
-        color: #6b6a69;
+        color: #37474F;
         text-transform: uppercase;
         font-weight: 795;
     }
@@ -199,7 +199,7 @@
         font-family: var(--Yanone);
         font-size: 14.5px;
         display:inline-block;
-        color: #6b6a69;
+        color: #37474F;
         text-transform: uppercase;
         font-weight: 795;
     }
@@ -207,7 +207,7 @@
     .btn_editar a{
         font-family: var(--Yanone);
         font-size: 14.5px;
-        color: #6b6a69;
+        color: #37474F;
         text-transform: uppercase;
         font-weight: 795;
     }
@@ -219,7 +219,7 @@
 
     .btn_editar:hover{
         /*background: #000;*/
-        background-color: #6c7a5a;
+        background-color: #607681d3;
         color: rgba(202, 202, 208);
       }
 
@@ -231,7 +231,7 @@
 
     .btn_registrar:hover{
         /*background: #000;*/
-        background-color: #6c7a5a;
+        background-color: #607681d3;
         color: rgba(202, 202, 208);
       }
 
@@ -243,7 +243,7 @@
 
     .btn_checar:hover{
         /*background: #000;*/
-        background-color: #6c7a5a;
+        background-color: #607681d3;
         color: rgba(202, 202, 208);
       }
 
@@ -260,13 +260,13 @@
       list-style: none;
       padding: 40px;
       margin-left: .8rem;
-      color:#686d5c;
+      color:#37474F;
       font-size: 2.5rem;
       display: block;
       transition: all .3s ease-in-out;
     }
     .nav-form a:hover {
-        color: #6c7a5a;
+        color: #607681d3;
         transform: scale(1.2);
         cursor: pointer;
       }

@@ -115,9 +115,9 @@
     </div>
 
     <div class="btn_registrar">
-
-        <a class="boton_personalizado" href="{{route('Registro de Fechas.index')}}">Control de Fechas</a>
-
+        @foreach ($busqueda as $busque )
+        <a class="boton_personalizado" href="{{route('Registro de Fechas.index', $busque->id_usuarios)}}">Control de Fechas</a>
+        @endforeach
     </div>
 
     <div class="btn_checar">

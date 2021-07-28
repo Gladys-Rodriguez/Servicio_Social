@@ -45,13 +45,13 @@
                         <ul class="dropdown__menu">
                             <li class="dropdown__item"><a href="{{url('/ListaDeAlumnos')}}" class="nav__link">Lista de Alumnos</a></li>
 
-                            <li class="dropdown__item"><a href="#" class="nav__link">Validacion por Alumno</a></li>
+                            <li class="dropdown__item"><a href="#" class="nav__link">Validacion de Reportes</a></li>
                         </ul>
                     </li>
 
 
 
-                    <li class="nav__item"><a href="{{url('/validacionReportes')}}" class="nav__link">Validación Reportes</a></li>
+
                     <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
 
 

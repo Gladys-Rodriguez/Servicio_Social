@@ -43,12 +43,11 @@
         @foreach ($busqueda as $busque )
                             <tr>
                                 <td class="matricula" name="boleta">
-                                    <form action="{{route('DatosServicio.index')}}" method="GET">
+                                    <form action="{{route('DatosServicio.index', $busque->id_usuarios)}}" method="GET">
                                     <button type="submit" id="boleta" placeholder="" name="boleta" value="{{$busque->id_usuarios}}">
                                         {{$busque->id_usuarios}}
                                     </button>
-                                    <!--<input type="text"  id="boleta" placeholder="" name="boleta" value="{{$busque->id_usuarios}}"/>-->
-                                    <!--<a href="{{route('DatosServicio.index')}}"> -->
+
 
                                     </a>
                                     </form>
@@ -57,7 +56,7 @@
                                 <td>{{$busque->ap_paterno}}</td>
                                 <td>{{$busque->ap_materno}}</td>
                                 <td>{{$busque->carrera}}</td>
-                                <td>{{$busque->status_ss}}</td>
+                                <td>{{$busque->status_ss  ? 'Aceptado': 'Sin Validar'}}</td>
                             </tr>
         @endforeach
 

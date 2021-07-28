@@ -57,6 +57,7 @@
 
 
 <!-- Diseño de gladys -->
+<h1>Validación Indivudual de Documentos</h1>
 <table class="datos">
     <thead>
         <tr>
@@ -80,8 +81,8 @@
                 <a target="_blank" href="/storage/{{ $docs->user}}/{{ $docs->nombre_doc }}" value="{{ $docs->nombre_doc}}" class="btn btn-danger "> Ir al documento</a>
             </td>
 
-            <td>
-                <a  href="{{ route('Expediente.docs', $docs->user) }}" class="btn "> volver</a>
+            <td class="vuelve">
+                <a  href="{{ route('Expediente.docs', $docs->user) }}" class="volver "> volver</a>
             </td>
 
         </tr>
@@ -106,10 +107,12 @@
             <tr>
             <th><h1>Estado</h1></th>
             <td>
+                <textarea disabled rows="1" cols="1"class="estado">El documento se encuentra: {{$docs->estado ? 'Validado': 'Sin Validar'}}
+                </textarea>
                 <select class="select" name="estado" >
-                <option>{{$docs->estado  ? 'Aceptado': 'Sin Validar'}}</option>
+                <option></option>
                 <option value="0"> Sin validar</option>
-                <option value="1"> Aceptado</option>
+                <option value="1"> Validado</option>
             </td>
             </tr>
             <tr>
@@ -120,4 +123,5 @@
     </thead>
 </table>
 </form>
+
 @endsection

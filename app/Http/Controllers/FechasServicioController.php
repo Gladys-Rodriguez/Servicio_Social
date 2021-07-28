@@ -21,23 +21,23 @@ class FechasServicioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
         //
 
-
+        $boleta = $id;
         //var_dump($busqueda);
-        $boleta = session('boleta');
+        //$boleta = session('boleta');
         $busqueda=DB::table('servicios')
         ->join('alumnos', 'servicios.id_alumnos', 'alumnos.id_alumnos')
         ->join('datos', 'alumnos.id_datos', 'datos.id_datos')
         ->join('dependencias', 'servicios.id_dependencias', 'dependencias.id_dependencias')
         ->join('direccions', 'dependencias.id_direcciones', 'direccions.id_direccions')
-        ->where('alumnos.id_usuarios', 'LIKE', '%'.$boleta.'%')
+        ->where('alumnos.id_usuarios', $id)
         ->get();
         $registro=DB::table('registros')
         ->join('alumnos', 'registros.id_alumnos', 'alumnos.id_alumnos')
-        ->where('alumnos.id_usuarios', 'LIKE', '%'.$boleta.'%')
+        ->where('alumnos.id_usuarios', $id)
         ->get();
 
     return view('Pantallas_Admin_Servicio.RegistroFechas ', compact("boleta","busqueda","registro"));
@@ -107,19 +107,47 @@ class FechasServicioController extends Controller
             'fecha_inscripcion'  => $request->input('fecha_inscripcion'),
         ]);
 
-        return redirect()->action([ListadoAlumnosController::class, 'index']);
+       $matricula=DB::table('servicios')
+        ->where('id_servicios', $id)
+        ->join('alumnos', 'servicios.id_alumnos', 'alumnos.id_alumnos')
+        ->first()->id_usuarios;
+
+
+
+        //var_dump($matricula);
+        //return redirect()->action([ListadoAlumnosController::class, 'index']);
+        return redirect()->route('DatosServicio.index',[$matricula]);
 
     }
+
+    public function update_registro(Request $request, $id)
+    {
+        $boleta = $request->input("boleta_alumno");
+
+        $registro = DB::table('registros')->where('id_registros', $id)
+        ->update([
+            'status_ss' => $request->input('status_ss'),
+            'fecha_envio' => $request -> input('fecha_envio'),
+            'observaciones' => $request -> input('observaciones'),
+        ]);
+
+        //return redirect()->action([ListadoAlumnosController::class, 'index']);
+        return redirect()->route('DatosServicio.index',[$boleta]);
+    }
+
 
     public function docs($id){
         $alumno = DB::table('alumnos')
         ->join('datos', 'alumnos.id_datos', 'datos.id_datos')
+        ->join('registros', 'alumnos.id_alumnos', 'registros.id_alumnos')
         ->where('alumnos.id_usuarios', $id)
         ->get();
 
         $docs = DB::table('docs_expediente_pruebas')
         ->where('user',$id)
         ->get();
+
+
         //var_dump($docs);
         return view('Pantallas_Admin_Servicio.Expediente ', compact("docs","alumno"));
 

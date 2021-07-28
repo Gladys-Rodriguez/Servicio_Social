@@ -32,6 +32,15 @@ class docsExpediente extends Controller
         return view('Pantallas_Alumno_Servicio.docs_Seguimiento', compact('files'));
     }
 
+    public function mostrar()
+    {
+        $id_users = Auth::user()->id;
+        $tipo_doc=DB::table('docs_expediente_pruebas')
+        ->where('user', $id_users)
+        ->get();
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -57,21 +66,25 @@ class docsExpediente extends Controller
         $tipo = $request->input('documento');
 
 
+
         foreach ($files as $file){
             if(Storage::putFileAs('/public/'.$user_id.'/', $file, $file->getClientOriginalName())){
                     docs_expedientePrueba::create([
                         'nombre_doc' => $file->getClientOriginalName(),
                         'user' => $user_id,
-                        'tipo_doc' => $tipo
-
+                        'tipo_doc' => $tipo,
 
                 ]);
 
             }
         }
 
+
+
             Alert::success('¡Éxito! 📦📦📦 ', 'Se subio satisfactoriamente el archivo. ');
-            return back();
+            //return back();
+            return redirect()->route('uploaddocexpediente.index');
+
 
 
     }
