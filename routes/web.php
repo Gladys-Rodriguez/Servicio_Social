@@ -176,6 +176,17 @@ Route::get('/Expediente/{id}', [App\Http\Controllers\FechasServicioController::c
 Route::put('/Expediente/{id}', [App\Http\Controllers\FechasServicioController::class, 'update_registro'])->name('Expediente.update_registro');
 
 Route::get('/RegisterFormRoles', [App\Http\Controllers\registroRol::class, 'index'])->name('RegisterFormRoles.index');
+
+Route::get('/Subida_Reportes', function (){
+    return view('Pantallas_Alumno_Servicio.Expediente_Reportes');
+}) -> name('Subida_Reportes');
+
+// Subir Reportes alumnos store
+Route::post('/uploadreporte', [App\Http\Controllers\DocsReportesController::class, 'store'])->name('uploadreporte.store');
+
+Route::get('/Subir_Reportes', [App\Http\Controllers\DocsReportesController::class, 'index'])->name('Subir_Reportes.index');
+
+
 // ************************************* FIN   RUTAS    DE    GLADYS    *******************************************
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -38,6 +38,7 @@
                         <ul class="dropdown__menu">
                             <li class="dropdown__item"><a href="{{ url('/docexpediente')}}" class="nav__link">Subir documentos</a></li>
                             <li class="dropdown__item"><a href="{{url('/docsSolicitudAlumno')}}" class="nav__link">Seguimiento de solicitud</a></li>
+                            <li class="dropdown__item"><a href="{{url('/Subir_Reportes')}}" class="nav__link">Subida de Reportes</a></li>
                            <!-- <li class="dropdown__item"><a href="#" class="nav__link">Location</a></li>
                             <li class="dropdown__item"><a href="#" class="nav__link">Studies</a></li> -->
                         </ul>
