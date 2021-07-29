@@ -1,4 +1,4 @@
-@extends('Pantallas_Alumno_Servicio.Layout_Alumno.Layout_Alumno2')
+@extends('Pantallas_Alumno_Servicio.Layout_Alumno.Layout_Alumno4')
 
 @section('title', 'Subir Documentos')
 
@@ -67,7 +67,7 @@
                                     </textarea>
                                 </td>
                                 <td><button type="submit" class="btn btn1" > Subir<br> Documento</button> </td>
-                                <td></td>
+
                             </tr>
         </form>
 
@@ -89,7 +89,7 @@
                                 </textarea>
                             </td>
                             <td><button type="submit" class="btn btn1" > Subir<br> Documento</button> </td>
-                            <td></td>
+
                         </tr>
         </form>
 
@@ -111,7 +111,7 @@
                                 </textarea>
                             </td>
                             <td><button type="submit" class="btn btn1" > Subir <br>Documento</button> </td>
-                            <td></td>
+
                         </tr>
         </form>
 
@@ -134,7 +134,7 @@
                                 </textarea>
                             </td>
                             <td><button type="submit" class="btn btn1" > Subir<br> Documento</button> </td>
-                            <td></td>
+
                       </tr>
         </form>
 
@@ -156,7 +156,7 @@
                                 </textarea>
                             </td>
                         <td><button type="submit" class="btn btn1" > Subir <br>Documento</button> </td>
-                        <td></td>
+
                       </tr>
         </form>
 

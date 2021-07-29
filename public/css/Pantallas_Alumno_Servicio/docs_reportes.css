@@ -1,0 +1,311 @@
+
+
+body{
+    align-items: center;
+}
+
+
+
+.container{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+
+  .upload-box{
+    font-size: 14px;
+    background: white;
+    border-radius: 50px;
+    box-shadow: 5px 5px 10px  black;
+    width: 250px;
+    outline: none;
+
+ }
+
+
+
+
+ .upload-box1{
+    font-size: 14px;
+    background: white;
+    border-radius: 50px;
+    box-shadow: 5px 5px 10px  black;
+    width: 390px;
+    outline: none;
+
+ }
+/**********File Inputs**********/
+.container-input {
+    text-align: center;
+    background: transparent;
+    border-radius: 6px;
+    margin-left: -8rem;
+
+}
+
+.inputfile {
+    width: 100px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+
+}
+
+.inputfile + label {
+    width: 300px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+
+}
+
+.inputfile + label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+
+
+}
+
+.iborrainputfile {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* style 1 */
+
+.inputfile-2 + label {
+    font-family: 'Open Sans', sans-serif;
+     font-size: 18px;
+     font-weight: 600;
+    padding: 10px 10px 10px 10px;
+    border-radius: .25rem;
+    color: #122630;
+    border: 2px solid currentColor;
+    text-transform: uppercase;
+}
+
+.inputfile-2:focus + label,
+.inputfile-2.has-focus + label,
+.inputfile-2 + label:hover {
+    color: #153e46;
+    background-color: #d1d1d19f;
+}
+ /*::-webkit-file-upload-button{
+    color:white;
+    background: teal;
+    padding: 20px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 1px 0 1px 1px black;
+    outline: none;
+}
+
+::-webkit-file-upload-button:hover{
+   background:seagreen;
+   cursor: pointer;
+
+}*/
+.btn{
+    /*border: 1px solid black;
+    background:#9c99a0c0;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-family: 'Bitter', 'serif';
+    cursor: pointer;
+    transition: 0.7s;*/
+
+    text-transform:uppercase;
+    padding: .375rem .75rem;
+    border: 2.5px solid #263029;
+    border-radius: .25rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 650;
+    background-color: transparent;
+}
+.material-icons{
+    font-size:30px;
+    color:#122630;
+    overflow:initial;
+    vertical-align:text-bottom;
+}
+
+.seguimiento{
+    margin-top: 3rem;
+    margin-left: 70rem;
+    padding: .375rem .75rem;
+    border: 2.5px solid #554929;
+    border-radius: .25rem;
+    background-color:#D9B44A ;
+    text-transform:uppercase;
+}
+.seguimiento a{
+    color: #122630;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+.seguimiento:hover{
+background-color: #d9b34a85;
+}
+.seguimiento a:hover{
+    color:#c9d8d7
+}
+.material-icons:hover{
+    color:#c9d8d7
+}
+.btn1{
+    color: #122630;
+
+}
+.btn1:hover{
+    background:#497e7b;
+    color:#DFDDDD
+}
+
+.btn1 a{
+
+    text-decoration: none;
+    color: whitesmoke;
+
+
+}
+
+
+
+
+h2{
+    color: white;
+    font-family: 'Bitter', serif;;
+    font-size: 19px;
+    text-align: left;
+}
+
+
+/*Estilos Gladys*/
+a{
+    font-family: 'Open Sans', sans-serif;
+   font-weight: 300;
+   line-height: 1.42em;
+   color:#A7A1AE;
+   font-weight: normal;
+       font-size: 1em;
+
+ }
+
+ h1 {
+   font-size:3em;
+   font-weight: 300;
+   line-height:1em;
+   text-align: center;
+   color: #A7A1AE;
+ }
+.register{
+    text-align: center;
+    overflow: hidden;
+    width: 1000px;
+    margin-left: 15rem;
+    display: table;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+ }
+ .register td input{
+
+    font-weight: normal;
+    font-size: 1em;
+    -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+    -moz-box-shadow: 0 2px 2px -2px #0E1119;
+    box-shadow: 0 2px 2px -2px #0E1119;
+ }
+ .register th h1 {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: left;
+    color: #122630;
+    text-transform: uppercase;
+
+ }
+ .register td, .register th {
+    padding-bottom: 2%;
+    padding-top: 2%;
+    padding-left:2%;
+ }
+
+ .register tr:nth-child(odd) {
+    background-color: #4F6457;
+ }
+
+ .register tr:nth-child(even) {
+    background-color: #62796a;
+ }
+ .register th {
+    background-color: #D9B44A;
+    width:250px;
+ }
+
+ .register tr:hover {
+    background-color: #acd0c094;
+ -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+        -moz-box-shadow: 0 6px 6px -6px #0E1119;
+             box-shadow: 0 6px 6px -6px #0E1119;
+ }
+.nombre{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.42em;
+    color:#DFDDDD;
+    font-weight: normal;
+    font-size: 18px;
+}
+.inputdoc{
+    display:none;
+}
+.nomDoc{
+    border: 0;
+    border-bottom: 2px solid #193341;
+    outline: 0;
+    color:  #122630;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 300px;
+    height: 50px;
+    line-height: 1rem;
+    resize: none;
+
+}
+
+.register select{
+    padding: 10px 10px 10px 10px;
+    border-radius: .25rem;
+    background-color: #4f6b5998;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    width: 250px;
+    height:50px;
+    padding-left: 1rem;
+    border: 2px solid #122630;
+    color:#122630;
+    margin-top: 1rem;
+    font-weight:600;
+}
