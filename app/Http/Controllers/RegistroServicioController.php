@@ -23,25 +23,21 @@ class RegistroServicioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index( $id)
     {
         //
-        $boleta=$request->input('boleta');
-        session(['boleta' => $request->boleta]);
+        //session(['boleta' => $request->boleta]);
+        $boleta = $id;
 
         $busqueda=DB::table('servicios')
         ->join('alumnos', 'servicios.id_alumnos', 'alumnos.id_alumnos')
         ->join('dependencias', 'servicios.id_dependencias', 'dependencias.id_dependencias')
         ->join('direccions', 'dependencias.id_direcciones', 'direccions.id_direccions')
-        ->where('alumnos.id_usuarios', 'LIKE', '%'.$boleta.'%')
+        ->where('alumnos.id_usuarios', $id)
         ->get();
 
-        //var_dump($busqueda);
-       // view('Pantallas_Admin_Servicio.RegistroFechas')->share('registros', $boleta);
-       //view::share('registros', $boleta);
     return view('Pantallas_Admin_Servicio.DatosServicio ', compact("boleta","busqueda"));
-    //return compact("boleta","busqueda");
-    //View::share('user', $user);
+
 
 
     }

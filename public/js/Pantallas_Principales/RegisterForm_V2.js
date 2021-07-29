@@ -38,7 +38,7 @@ nextBtnFirst.addEventListener("click", function(event){
   nextBtnSec.addEventListener("click", function(event){
     event.preventDefault();
 
-  if (campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext && campos.num_int && campos.cp){
+  if (campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext /*&& campos.num_int*/ && campos.cp){
 
 
     slidePage.style.marginLeft = "-50%";
@@ -80,7 +80,7 @@ nextBtnFirst.addEventListener("click", function(event){
 
 
     if(campos.nombre && campos.ap_paterno && campos.ap_materno && campos.telefono && campos.celular &&
-      campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext && campos.num_int && campos.cp &&
+      campos.ciudad && campos.alcaldia && campos.colonia && campos.calle && campos.num_ext /*&& campos.num_int*/ && campos.cp &&
       campos.grupo &&
       campos.id && campos.password && campos.email ){
 
@@ -155,9 +155,9 @@ const expresiones = {
     ciudad: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
     alcaldia: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
     colonia: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-    calle: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-    num_ext: /^\d{1,3}$/, // 7 a 3 numeros.
-    num_int: /^\d{1,3}$/, // 7 a 3 numeros.
+    calle: /^[a-zA-ZÀ-ÿ\s0-9]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+    num_ext: /^[A-Z0-9a-z]{1,4}$/, // 7 a 3 numeros.
+    /*num_int: /^\d{1,3}$/, // 7 a 3 numeros.*/
     cp: /^\d{5}$/, //5 numeros
 
     //campos de alumno
@@ -187,7 +187,7 @@ const campos = {
     colonia: false,
     calle: false,
     num_ext: false,
-    num_int: false,
+    /*num_int: false,*/
     cp: false,
 
     //campos de alumno
@@ -241,9 +241,9 @@ const validarFormulario = (e) => {
         case "num_ext":
 			validarCampo(expresiones.num_ext, e.target, 'num_ext');
 		break;
-        case "num_int":
+        /*case "num_int":
 			validarCampo(expresiones.num_int, e.target, 'num_int');
-		break;
+		break;*/
         case "cp":
 			validarCampo(expresiones.cp, e.target, 'cp');
 		break;

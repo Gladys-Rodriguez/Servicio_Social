@@ -28,6 +28,7 @@ class registroRol extends Controller
     public function index()
     {
         //
+        return view('Pantallas_Admin_Master.RegisterFormRoles');
     }
 
     /**

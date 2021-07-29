@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 
-
+use Illuminate\Support\Facades\DB;
 use App\Models\docs_expedientePrueba;
 use App\Models\dato;
 // use App\Models\User;
@@ -32,6 +32,15 @@ class docsExpediente extends Controller
         return view('Pantallas_Alumno_Servicio.docs_Seguimiento', compact('files'));
     }
 
+    public function mostrar()
+    {
+        $id_users = Auth::user()->id;
+        $tipo_doc=DB::table('docs_expediente_pruebas')
+        ->where('user', $id_users)
+        ->get();
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -57,21 +66,25 @@ class docsExpediente extends Controller
         $tipo = $request->input('documento');
 
 
+
         foreach ($files as $file){
             if(Storage::putFileAs('/public/'.$user_id.'/', $file, $file->getClientOriginalName())){
                     docs_expedientePrueba::create([
                         'nombre_doc' => $file->getClientOriginalName(),
                         'user' => $user_id,
-                        'tipo_doc' => $tipo
-
+                        'tipo_doc' => $tipo,
 
                 ]);
 
             }
         }
 
+
+
             Alert::success('¡Éxito! 📦📦📦 ', 'Se subio satisfactoriamente el archivo. ');
-            return back();
+            //return back();
+            return redirect()->route('uploaddocexpediente.index');
+
 
 
     }
@@ -109,13 +122,14 @@ class docsExpediente extends Controller
         $files = docs_expedientePrueba::all();
         return view('Pantallas_Admin_Servicio.validacionAlumno',  compact('files'));
 
+
     }
     public function edit( $id){
-        $files = docs_expedientePrueba::findOrFail($id);
+        $docs = docs_expedientePrueba::findOrFail($id);
 
 
-        return view('Pantallas_Admin_Servicio.editDocsAlumno',  compact('files'));
-
+        //return view('Pantallas_Admin_Servicio.editDocsAlumno',  compact('files'));
+        return view('Pantallas_Admin_Servicio.editDocsAlumno',  compact('docs'));
 
     }
 
@@ -128,11 +142,20 @@ class docsExpediente extends Controller
      */
     public function update(Request $request, $id)
     {
-        $files=docs_expedientePrueba::findOrFail($id);
-        $files->estado=$request->input('estado');
-        $files->observaciones=$request->input('observaciones');
-        $files->save();
-        return redirect()->route('lista.edit');
+
+        $docs=docs_expedientePrueba::findOrFail($id);
+        $docs->estado=$request->input('estado');
+        $docs->observaciones=$request->input('observaciones');
+        $docs->save();
+
+
+
+        //return redirect()->route('lista.edit');
+       //return 'Archivo actualizado';
+       return redirect()->route('Expediente.docs', $docs->user);
+
+
+
     }
 
     /**

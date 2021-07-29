@@ -14,7 +14,7 @@ class CreateDocsExpedientePruebasTable extends Migration
     public function up()
     {
         Schema::create('docs_expediente_pruebas', function (Blueprint $table) {
-            $table->increments('id_doc_expedientesP')->unsigned()->notnull();
+            $table->increments('id')->unsigned()->notnull();
             $table->string('nombre_doc');
             $table->boolean('estado')->default(0);
             $table->text('observaciones')->nullable();

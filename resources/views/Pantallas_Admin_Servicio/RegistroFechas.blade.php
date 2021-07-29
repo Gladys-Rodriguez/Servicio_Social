@@ -9,8 +9,8 @@
 
 @section('content')
 <h1><span class="blue"></span><span class="blue"></span> <span class="yellow"></span></h1>
-    <h2>Registro de <a  target="_blank">Fechas </a> <br>
-    Alumno con Boleta: <a  target="_blank"> {{$boleta}} </a> <br> </h2>
+    <h1>Registro de Fechas para el Servicio Social <br>
+    Alumno con Boleta: <span class="naranja">{{$boleta}}</span> </h1>
 
 
 
@@ -33,7 +33,7 @@
                             <tr>
                                 <td>{{$busque->nombre}} {{$busque->ap_paterno}} {{$busque->ap_materno}}</td>
                                 <td>{{$busque->carrera}}</td>
-                                <td>{{$register->status_ss}}</td>
+                                <td>{{$register->status_ss ? 'Aceptado': 'Sin Validar'}}</td>
                                 <td>{{$busque->nombre_depen}}</td>
                             </tr>
              @endforeach
@@ -42,7 +42,7 @@
         </tbody>
     </table>
     @foreach ($busqueda as $busque )
-<form action="{{route('Registro de Fechas.update', $busque->id_servicios)}}" method="POST">
+<form class="fechas" action="{{route('Registro de Fechas.update', $busque->id_servicios)}}" method="POST">
     @csrf
     @method('PUT')
 
@@ -69,11 +69,14 @@
         </thead>
 
     </table>
-    <button type="submit" class="submit" class="submit">Submit</button>
-
+    <br>
+    <button type="submit" class="submit" >Actualizar  Fechas</button>
     @endforeach
     </form>
 
+    @foreach ($busqueda as $busque )
+    <a  class="regresar" href="{{route('DatosServicio.index', $busque->id_usuarios)}}"> Regresar </a>
+    @endforeach
 @endsection
 
 @section('script')

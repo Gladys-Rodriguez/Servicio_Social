@@ -166,13 +166,16 @@ Route::get('/Expediente', function (){
 
 
 Route::get('/ListaDeAlumnos', [App\Http\Controllers\ListadoAlumnosController::class, 'index'])->name('ListaDeAlumnos.index');
-Route::get('/DatosServicio', [App\Http\Controllers\RegistroServicioController::class, 'index'])->name('DatosServicio.index');
+Route::get('/DatosServicio/{id}', [App\Http\Controllers\RegistroServicioController::class, 'index'])->name('DatosServicio.index');
 
-Route::get('/Registro de Fechas', [App\Http\Controllers\FechasServicioController::class, 'index'])->name('Registro de Fechas.index');
+Route::get('/Registro de Fechas/{id}', [App\Http\Controllers\FechasServicioController::class, 'index'])->name('Registro de Fechas.index');
 Route::put('/Registro de Fechas/{id}', [App\Http\Controllers\FechasServicioController::class, 'update'])->name('Registro de Fechas.update');
 
-Route::get('/Expediente/{id}', [App\Http\Controllers\FechasServicioController::class, 'docs'])->name('Expediente.docs');
 
+Route::get('/Expediente/{id}', [App\Http\Controllers\FechasServicioController::class, 'docs'])->name('Expediente.docs');
+Route::put('/Expediente/{id}', [App\Http\Controllers\FechasServicioController::class, 'update_registro'])->name('Expediente.update_registro');
+
+Route::get('/RegisterFormRoles', [App\Http\Controllers\registroRol::class, 'index'])->name('RegisterFormRoles.index');
 // ************************************* FIN   RUTAS    DE    GLADYS    *******************************************
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

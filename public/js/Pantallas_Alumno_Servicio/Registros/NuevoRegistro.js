@@ -169,7 +169,7 @@ const expresiones = {
     cp: /^\d{5}$/, //5 numeros
 
     //campos de dependencias
-    nombre_depen: /^[a-zA-ZÀ-ÿ\s]{1,255}$/, // Letras y espacios, pueden llevar acentos.
+    nombre_depen: /^[a-zA-ZÀ-ÿ\s0-9]{1,255}$/, // Letras y espacios, pueden llevar acentos.
     nom_responsable:  /^[a-zA-ZÀ-ÿ\s]{1,30}$/, // Letras y espacios, pueden llevar acentos.
     ap_responsable:  /^[a-zA-ZÀ-ÿ\s]{1,30}$/, // Letras y espacios, pueden llevar acentos.
     am_responsable:  /^[a-zA-ZÀ-ÿ\s]{1,30}$/, // Letras y espacios, pueden llevar acentos.
