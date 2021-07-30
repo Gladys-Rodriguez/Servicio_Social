@@ -18,7 +18,7 @@
             <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
                 <div class="post-image">
                     <div>
-                        <img src="{{asset('img/Alumno/servicio.jpg')}}" class="img" alt="blog1">
+                        <img src="{{asset('img/Alumno/servicio2.jpg')}}" class="img" alt="blog1">
                     </div>
                     <!--<div class="post-info flex-row">
                         <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
@@ -46,6 +46,7 @@
                     </li>
                 </ul> -->
                 <div class="login-box">
+                <h1>FELICIDADES</h1>
                 <h1>YA ESTAS REGISTRADO</h1>
                 </div>
             </div>
