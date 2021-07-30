@@ -18,7 +18,7 @@
             <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
                 <div class="post-image">
                     <div>
-                        <img src="{{asset('img/Alumno/SS.jpg')}}" class="img" alt="blog1">
+                        <img src="{{asset('img/Alumno/servicio.jpg')}}" class="img" alt="blog1">
                     </div>
                     <!--<div class="post-info flex-row">
                         <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
@@ -26,24 +26,14 @@
                         <span>2 Commets</span>
                     </div>-->
                 </div>
-                <div class="post-title">
-                    <a href="#">¿Qué es el Servicio Social? </a>
-                    <p>
-                    Es una actividad formativa que amplia tu información académica
-                    y fomenta una conciencia de solidaridad con la sociedad.
-                    Es de carácter temporal y obligatorio además de ser un requisito
-                    indispensable para la titulación, que te permite obtener competencia laboral.
-                    .. Prueba para commit
-                    </p>
 
-                </div>
             </div>
 
             <hr>
         </div>
 
         <aside class="sidebar">
-            <div class="category">
+            <!-- <div class="category">
                 <h2>---------</h2>
                 <ul class="category-list">
                     <li class="list-items" data-aos="fade-left" data-aos-delay="100">
@@ -54,7 +44,10 @@
                         <a href="#">Descargar Formatos</a>
                         <span><i class="fas fa-user text-gray"></i></span>
                     </li>
-                </ul>
+                </ul> -->
+                <div class="login-box">
+                <h1>YA ESTAS REGISTRADO</h1>
+                </div>
             </div>
         </aside>
 
