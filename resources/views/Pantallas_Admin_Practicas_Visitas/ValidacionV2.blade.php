@@ -5,18 +5,28 @@
 @endsection
 
 @section('content')
-<H1>DATOS DE LA VISITA</H1>
-<hr><hr><br>
-<h3>Solicitud No:12</h3>
-				<p><strong>Solicitante:</strong>  Marlene Jiménez Macías <br>
-				<strong>Grupo:</strong> 2AM24 <br>
-				<strong>Número de alumnos:</strong> 40 <br>
-				<strong>Empresa:</strong> Yakult <br>
-				<strong>Dirección:</strong>  Av. División del Nte. No 1419, Sta Cruz Atoyac, Benito Juárez, 03310 Ciudad de México, CDMX <br>
-				<strong>Fecha de visita:</strong> 21/04/2021 <br>
-                <strong>Observaciones:</strong> En revisión <br>
-
-</p>
+<form action="/SolicitudesPra1/{{$datos->id}}" method="POST">
+@csrf
+@forelse($nuevo as $new)
+<div>
+<h1>Detalles de solicitud</h1>
+<hr>
+<hr>
+<br>
+<label class="label-sol">Número de solicitud: {{$new->id}}</label><br>
+<label class="label-sol">Solicita: {{$new->fullname}}</label><br>
+<label class="label-sol">Matricula: {{$new->matricula}}</label><br>
+<label class="label-sol">Email: {{$new->email}}</label><br>
+<label class="label-sol">Nombre de empresa: {{$new->empresaN}}</label><br>
+<label class="label-sol">Dirección de la empresa: {{$new->fulldir}}</label><br>
+<label class="label-sol">Secuencia: {{$new->secuencia}}</label><br>
+<label class="label-sol">Carrera: {{$new->carrera}}</label><br>
+<label class="label-sol">Número de alumnos: {{$new->cantidad_alumnos}}</label><br>
+<label class="label-sol">Fecha de visita: {{$new->fecha_visita}}</label><br>
+<hr><hr><hr>
+@empty
+@endforelse
+	
 <h1>DOCUMENTOS COMPROBATORIOS</h1>
 <hr><hr><br>
 <div class="container">

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Visita;
 
-class AdminPracSolicitudesController extends Controller
+class ValidacionDocPraController extends Controller
 {
     public function index(){
         $datos = \DB::table('visitas')
@@ -20,10 +20,9 @@ class AdminPracSolicitudesController extends Controller
         ->join('users','docentes.user_id','=','users.id')
         ->join('datos','docentes.dato_id','=','datos.id_datos')
 
-        ->select('visitas.id as id',\DB::raw('CONCAT(datos.nombre," ",datos.ap_paterno," ",datos.ap_materno) as fullname'),'empresas.nombre as empresaN','users.email','grupos.secuencia','visitas.fecha_visita')->where('visitas.validacion','0')->get();
-        return view('Pantallas_Admin_Practicas_Visitas.Solicitudes_Practicas_Visitas',compact('datos'));
+        ->select('visitas.observaciones','visitas.id as id',\DB::raw('CONCAT(datos.nombre," ",datos.ap_paterno," ",datos.ap_materno) as fullname'),'empresas.nombre as empresaN','users.email','grupos.secuencia','visitas.fecha_visita')->where('visitas.validacion','1')->get();
+        return view('Pantallas_Admin_Practicas_Visitas.Validacion_Practicas_Visitas',compact('datos'));
     }
-
     public function edit($id)
     {
         //
@@ -40,18 +39,9 @@ class AdminPracSolicitudesController extends Controller
         ->join('visita_documentos','visitas.id','=','visita_documentos.visita_id')
         ->join('tipo_documentos','visita_documentos.tipo_documento_id','=','tipo_documentos.id')
         ->select('visitas.observaciones',\DB::raw('CONCAT(direccions.calle,", num_ext:",direccions.num_ext,", num_int:",direccions.num_int,", c.p ",direccions.cp,", Col.",direccions.colonia,", ",direccions.alcaldia,", ",direccions.ciudad,".") as fulldir'),'visita_documentos.ruta','carreras.nombre as carrera','grupos_visitas.cantidad_alumnos','visitas.id as id','users.id as matricula',\DB::raw('CONCAT(datos.nombre," ",datos.ap_paterno," ",datos.ap_materno) as fullname'),'empresas.nombre as empresaN','users.email','grupos.secuencia','visitas.fecha_visita')
-        ->where('tipo_documentos.id','1')
         ->where('visitas.id',$id)
         ->get();
 
-        return view("Pantallas_Admin_Practicas_Visitas.SolicitudesPra", compact('nuevo','datos'));
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-        $datos= Visita::findOrFail($id);
-        $datos->update($request->all());
-        return redirect("/Solicitudes_Practicas_Visitas");
+        return view("Pantallas_Admin_Practicas_Visitas.ValidacionV2", compact('nuevo','datos'));
     }
 }

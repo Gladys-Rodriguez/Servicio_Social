@@ -273,9 +273,7 @@ Route::get('/Admin_Practicas_Visitas_Index2', function () {
 
 
 //Ruta Validacion Practicas y Visitas
-Route::get('/Validacion_Practicas_Visitas', function () {
-    return view('Pantallas_Admin_Practicas_Visitas.Validacion_Practicas_Visitas');
-}) -> name('Validacion_Practicas_Visitas');
+Route::get('/Validacion_Practicas_Visitas','ValidacionDocPraController@index');
 
 //Ruta Clasificacion Practicas y Visitas
 Route::get('/Solicitudes_Practicas_Visitas','AdminPracSolicitudesController@index');
@@ -287,10 +285,9 @@ Route::get('/SolicitudesPra/{id}', [App\Http\Controllers\AdminPracSolicitudesCon
 Route::put('/SolicitudesPra1/{id}', [App\Http\Controllers\AdminPracSolicitudesController::class, 'update'])->name('SolicitudesPra1.update');
 
 
+Route::get('/ValidacionV2/{id}', [App\Http\Controllers\ValidacionDocPraController::class, 'edit'])->name('home');
 
-Route::get('/ValidacionV2', function () {
-    return view('Pantallas_Admin_Practicas_Visitas.ValidacionV2');
-}) -> name('ValidacionV2');
+
 //------------------------FER TERMINO------------------------------------
 
 
