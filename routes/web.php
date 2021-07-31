@@ -160,6 +160,14 @@ Route::get('/ListaDeAlumnosInhabilitados', function (){
     return view('Pantallas_Admin_Servicio.ListaAlumnosInhabilitados');
 }) -> name('ListaDeAlummosInhabilitados');
 
+//Pantalla de editar estado de listado de alumnos
+Route::get('/EditarEstadoAlumno', function (){
+    return view('Pantallas_Admin_Servicio.EditarEstadoAlumno');
+}) -> name('EditarEstadoAlumno');
+
+Route::get('/EditarEstadoAlumno/{id}', [App\Http\Controllers\EditarEstadoAlumnoController::class, 'edit'])->name('home');
+Route::put('/EditarEstadoAlumno2/{id}', [App\Http\Controllers\EditarEstadoAlumnoController::class, 'update'])->name('EditarEstadoAlumno.update');
+
 Route::get('/Registro de Fechas', function (){
     return view('Pantallas_Admin_Servicio.RegistroFechas');
 }) -> name('Registro de Fechas');
