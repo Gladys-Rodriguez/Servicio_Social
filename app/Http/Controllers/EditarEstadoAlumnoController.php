@@ -82,19 +82,6 @@ class EditarEstadoAlumnoController extends Controller
         return view("Pantallas_Admin_Servicio.EditarEstadoAlumno", compact('Users','alumnos'));
         //
 
-        /*$search=$request->get('search');
-
-        $busqueda=DB::table('registros')
-        ->join('servicios', 'registros.id_servicios', 'servicios.id_servicios')
-        ->join('alumnos', 'servicios.id_alumnos', 'alumnos.id_alumnos')
-        ->join('users', 'alumnos.id_usuarios', 'users.id')
-        ->join('datos', 'alumnos.id_datos', 'datos.id_datos')
-        ->where('alumnos.id_usuarios', 'LIKE', '%'.$search.'%')
-        ->where ('registros.status_s', 1)
-        ->paginate($this::PAGINACION);
-
-
-        return view("Pantallas_Admin_Servicio.ListaAlumnos", compact("search","busqueda"));*/
     }
 
     /**
@@ -108,7 +95,6 @@ class EditarEstadoAlumnoController extends Controller
     {
         //
         $Users= User::with('alumnos')->findOrFail($id);
-        $Users -> email = $request->input('email');
 
         //var_dump($id);
         $Users->save();
@@ -116,29 +102,13 @@ class EditarEstadoAlumnoController extends Controller
          $alumnos=DB::table('alumnos')
         ->join('direccions', 'alumnos.id_direccions', 'direccions.id_direccions')
         ->join('datos', 'alumnos.id_datos', 'datos.id_datos')
+        ->join('registros', 'alumnos.id_alumnos', 'registros.id_alumnos')
         ->where('alumnos.id_usuarios',$id)
         ->update([
-            'alumnos.carrera' => $request->get('carrera'),
-            'alumnos.semestre' => $request->get('semestre'),
-            'alumnos.grupo' => $request->input('grupo'),
-            'alumnos.turno' => $request->get('turno'),
-
-            'direccions.ciudad' => $request->input('ciudad'),
-            'direccions.alcaldia' => $request->input('alcaldia'),
-            'direccions.colonia' => $request->input('colonia'),
-            'direccions.calle' => $request->input('calle'),
-            'direccions.num_ext' => $request->input('num_ext'),
-            'direccions.num_int' => $request->input('num_int'),
-            'direccions.cp' => $request->input('cp'),
-
-            'datos.nombre' => $request->input('nombre'),
-            'datos.ap_paterno' => $request->input('ap_paterno'),
-            'datos.ap_materno' => $request->input('ap_materno'),
-            'datos.telefono' => $request->input('telefono'),
-            'datos.celular' => $request->input('celular'),
+           'registros.status_s' => $request->input('status_s'),
         ]);
 
-        return view("Pantallas_Alumno_Servicio.Index_Alumno");
+        return view("Pantallas_Admin_Servicio.AdminServicio_Index2");
         //
     }
 
