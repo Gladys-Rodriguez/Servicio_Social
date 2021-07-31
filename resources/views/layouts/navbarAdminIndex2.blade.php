@@ -44,6 +44,7 @@
 
                         <ul class="dropdown__menu">
                             <li class="dropdown__item"><a href="{{url('/ListaDeAlumnos')}}" class="nav__link">Lista de Alumnos</a></li>
+                            <li class="dropdown__item"><a href="{{url('/ListaDeAlumnosInhabilitados')}}" class="nav__link">Lista de Alumnos Inhabilitados</a></li>
 
                             <li class="dropdown__item"><a href="#" class="nav__link">Validacion por Alumno</a></li>
                         </ul>

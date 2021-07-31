@@ -122,7 +122,8 @@ class ServiciosController extends Controller
             'fecha_envio' => $request->input('fecha_envio'),
             'observaciones' => $request->input('observaciones'),
             'id_alumnos' => $id_alumnos->first()->id_alumnos,
-            'id_servicios' => $id_servicios
+            'id_servicios' => $id_servicios,
+            'status_s' => 1,
         ]);
 
 

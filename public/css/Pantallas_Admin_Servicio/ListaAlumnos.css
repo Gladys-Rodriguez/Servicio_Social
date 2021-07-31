@@ -95,9 +95,19 @@
 
  }
 
+ .boton_personalizado{
+ background-color:transparent;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.42em;
+    color:#A7A1AE;
+    font-size: 18px;
+    border: none;
+}
+
  /* Background-color of the odd rows */
  .container tr:nth-child(odd) {
-       background-color: #323C50;
+       background-color: #1c1e20;
  }
 
  /* Background-color of the even rows */
