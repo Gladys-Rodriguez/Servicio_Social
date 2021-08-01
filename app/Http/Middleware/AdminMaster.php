@@ -41,9 +41,6 @@ class AdminMaster
                 return redirect('/VisitasEscolares');//si es docente
             break;
             case ('7'):
-                return redirect('/prueba');//si es prueba
-            break;
-            case ('8'):
                 return $next($request);//si es prueba
             break;
 

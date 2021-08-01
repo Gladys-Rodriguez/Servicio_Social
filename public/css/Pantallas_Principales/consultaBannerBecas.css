@@ -538,3 +538,99 @@ textarea.input {
     color: #CF6D1B;
     background-color: #ffffff;
   }
+
+
+  @media screen and (min-width: 768px)
+  and (max-width:1024px){
+      /**/
+        .nav {
+          width: 100%;
+        }
+        .header__toggle {
+            font-size: 1.7rem;
+            cursor: pointer;
+            color: #fff;
+          }
+          .section-two{
+            width:100%;
+          }
+          header {
+            width: 100%;
+            margin-left:0rem;
+            min-width: 550px;
+        }
+        header .brand{
+            margin-left:-5rem;
+            font-size:16px;
+        }
+
+      header .nav-nav {
+          position: fixed;
+          background: rgba(0, 0, 0, 0.562);
+          flex-direction: column;
+          width: 400px;
+          height: 100vh;
+          top: 0;
+          right: -100%;
+          padding: 80px 50px;
+          transition: 0.5s;
+          transition-property: right;
+  }
+  .dropdown__menu {
+      border-radius:.25rem;
+      background-color: transparent;
+    }
+
+  }
+
+    @media screen and (min-width: 1024px) {
+      /*.bd-grid {
+        margin-left: auto;
+        margin-right: auto;
+      }*/
+      .header__logo, .header__toggle {
+          display: none;
+        }
+        .nav__content {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .header {
+          height: calc(var(--header-height) + 1rem);
+        }
+        .nav {
+          width: 100%;
+        }
+        .nav__list {
+          display: flex;
+          align-items: center;
+        }
+        .nav__item {
+          margin: 0 1.5rem;
+          padding: 1.4rem 0;
+        }
+        .section-two{
+          width:100%;
+        }
+        header .brand{
+          margin-left:-5rem;
+          font-size:18px;
+
+          }
+          .dropdown {
+              position: relative;
+            }
+            .dropdown__menu {
+              position: fixed;
+              margin-top: 1rem;
+              top: calc(var(--header-height) + 1rem);
+              padding: .5rem 1.5rem;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+              border-radius: .5rem;
+
+            }
+            .dropdown__item {
+              margin-top: .5rem 0;
+            }
+    }

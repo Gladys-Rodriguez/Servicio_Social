@@ -41,11 +41,9 @@ class ServicioSocial
                 return redirect('/VisitasEscolares');//si es docente
             break;
             case ('7'):
-                return redirect('/prueba');//si es prueba
-            break;
-            case ('8'):
                 return redirect('/Index_Master');//si es prueba
             break;
+
 
         }
     }
