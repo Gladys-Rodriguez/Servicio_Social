@@ -177,16 +177,28 @@ Route::put('/Expediente/{id}', [App\Http\Controllers\FechasServicioController::c
 
 Route::get('/RegisterFormRoles', [App\Http\Controllers\registroRol::class, 'index'])->name('RegisterFormRoles.index');
 
+
 Route::get('/Subida_Reportes', function (){
     return view('Pantallas_Alumno_Servicio.Expediente_Reportes');
 }) -> name('Subida_Reportes');
 
+
+
 // Subir Reportes alumnos store
 Route::post('/uploadreporte', [App\Http\Controllers\DocsReportesController::class, 'store'])->name('uploadreporte.store');
 
-Route::get('/Subir_Reportes', [App\Http\Controllers\DocsReportesController::class, 'index'])->name('Subir_Reportes.index');
+//Route::get('/Subir_Reportes', [App\Http\Controllers\DocsReportesController::class, 'index'])->name('Subir_Reportes.index');
 
+//Ruta para ver la validacion por parte del alumno
+Route::get('/SeguimientoReportes', [App\Http\Controllers\DocsReportesController::class, 'index'])->name('SeguimientoReportes.index');
 
+Route::get('/Expediente_Reportes/{id}', [App\Http\Controllers\DocsReportesController::class, 'docs'])->name('Expediente_Reportes.docs');
+
+//Ruta editar documentos del usuario
+Route::get('/EditarReportes/{id}', [App\Http\Controllers\DocsReportesController::class, 'edit'])->name('EditarReportes.edit');
+
+//Ruta update documentos del usuario alumno
+Route::post('/UpdateReportes/{id}', [App\Http\Controllers\DocsReportesController::class, 'update'])->name('UpdateReportes.update');
 // ************************************* FIN   RUTAS    DE    GLADYS    *******************************************
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -279,6 +291,8 @@ Route::get('/docsSolicitudAlumno', [App\Http\Controllers\docsExpediente::class, 
 //Ruta para ver los documentos del alumno
 Route::get('/docsSolicitudAlumno/{file}', [App\Http\Controllers\docsExpediente::class, 'show'])->name('uploaddocexpediente.show');
 
+//Ruta eliminar
+Route::delete('/eliminarReportesAlumno/{id}', [App\Http\Controllers\DocsReportesController::class, 'destroy'])->name('uploadReporte.destoy');
 
 //Ruta para ver el listado de alumnos
 Route::get('/concentradosInfo', [App\Http\Controllers\AlumnoController::class, 'lista'])->name('alumno.lista');

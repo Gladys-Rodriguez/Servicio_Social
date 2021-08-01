@@ -144,7 +144,7 @@ body{
     font-size:30px;
     color:#122630;
     overflow:initial;
-    vertical-align: bottom;
+    vertical-align: middle;
 }
 
 .seguimiento{
@@ -288,7 +288,7 @@ a{
     font-weight: bold;
     font-size: 18px;
     text-align: left;
-    color: #185875;
+    color: #122630;
     text-transform: uppercase;
 
  }
@@ -308,9 +308,7 @@ a{
  .register th {
     background-color: #7DA3A1;
  }
- .register th h1{
-     color:#ececec;
- }
+
  .register tr:hover {
     background-color: #8ebebca1;
  -webkit-box-shadow: 0 6px 6px -6px #0E1119;
@@ -344,7 +342,136 @@ a{
     height: 50px;
     line-height: 1rem;
     resize: none;
+}
+
+.anuncio{
+    padding-left: 20rem;
+    padding-top: 2rem;
+
+}
+.anuncio textarea{
+    padding-top:1rem;
+    padding-left: .35rem;
+
+    border-radius: .25rem;
+    width: 1000px;
+    resize: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 2.5px solid #a1a4aa;
+    background-color:#cacccc98;
+    line-height: 1.5rem;
+    color:#922f2b;
+}
+
+/* Responsive */
+/*@media only screen and (min-width: 768px) {
+.anuncio{
+    padding-left: .5rem;
+}
+.anuncio textarea{
+    margin-left: -5rem;
+    width: 350px;
+    height: 200px;
+    padding-left: 0srem;
+}
+.anuncio .anun2{
+    height: 100px;
+}
+
+}*/
+
+@media screen and (min-width: 425px)
+and (max-width:768px){
+
+    .anuncio textarea{
+        width:650px;
+        height: auto;
+        margin-left: -25rem;
+        font-size: 12px;
+        line-height:1rem;
+        padding-left: -1rem;
+        padding-right: 1rem;
+        text-align: center;
+        padding-bottom: .5rem;
+
+    }
+    /*Tabla */
+    .register{
+        margin-left: -5rem;
+        width:650px;
+    }
+
+    .container-input{
+        margin-left: -.5rem;
+    }
+    .inputfile-2 + label {
+        width:150px;
+    }
+    /*Fin tabla */
+
+    /* Text area de la tabla */
+    .nomDoc{
+        font-size: 14px;
+        width:90%;
+    }
+    /* Fin text area de la tabla */
+
+    /*Boton en tabla */
+    .btn{
+        padding: .375rem .75rem;
+        width:100px;
+        font-size:12px;
+    }
+    /*Fin boton de tabla */
+    .titulo{
+        font-size:28px;
+        width:500px;
+
+    }
+    /* Boton que lleva a otra ventana */
+    .seguimiento a{
+        font-size:14px;
+        font-weight: 600;
+
+    }
+    .seguimiento a .material-icons{
+        /*display: none;*/
+        font-size:20px;
+        margin-left: -.5rem;
+    }
+    .seguimiento{
+        width:250px;
+        height: 45px;
+        padding: 0rem 0rem;
+        margin-left:-5rem;
+    }
+
+    /*Fin Boton */
+
 
 }
 
+@media screen and (min-width: 768px)
+and (max-width:1024px){
+    .anuncio{
+        display: none;
+    }
+    .register{
+        display:none;
+    }
 
+
+}
+
+/*@media screen and (min-width: 1024px) {
+    .anuncio{
+        display: none;
+    }
+    .register{
+        display:none;
+    }
+
+}*/

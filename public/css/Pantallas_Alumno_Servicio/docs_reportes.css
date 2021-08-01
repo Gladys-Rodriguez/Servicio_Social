@@ -149,9 +149,9 @@ body{
     margin-top: 3rem;
     margin-left: 70rem;
     padding: .375rem .75rem;
-    border: 2.5px solid #554929;
+    border: 2.5px solid #8584849f;
     border-radius: .25rem;
-    background-color:#D9B44A ;
+    background-color:#d1d1d19f ;
     text-transform:uppercase;
 }
 .seguimiento a{
@@ -161,7 +161,7 @@ body{
     font-weight: 600;
 }
 .seguimiento:hover{
-background-color: #d9b34a85;
+background-color: #acd0c094;
 }
 .seguimiento a:hover{
     color:#c9d8d7
@@ -174,8 +174,8 @@ background-color: #d9b34a85;
 
 }
 .btn1:hover{
-    background:#497e7b;
-    color:#DFDDDD
+    color: #153e46;
+    background-color: #d1d1d19f;
 }
 
 .btn1 a{
@@ -247,14 +247,14 @@ a{
  }
 
  .register tr:nth-child(odd) {
-    background-color: #4F6457;
+    background-color: #626D71;
  }
 
  .register tr:nth-child(even) {
-    background-color: #62796a;
+    background-color: #697579;
  }
  .register th {
-    background-color: #D9B44A;
+    background-color: #CDCDC0;
     width:250px;
  }
 
@@ -297,7 +297,7 @@ a{
 .register select{
     padding: 10px 10px 10px 10px;
     border-radius: .25rem;
-    background-color: #4f6b5998;
+
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
     text-transform: uppercase;
@@ -305,7 +305,9 @@ a{
     height:50px;
     padding-left: 1rem;
     border: 2px solid #122630;
-    color:#122630;
+
     margin-top: 1rem;
     font-weight:600;
+    color: #153e46;
+    background-color: #d1d1d19f;
 }
