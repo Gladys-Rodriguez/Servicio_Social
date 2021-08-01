@@ -100,7 +100,7 @@
         </script>
 
     <section class="section-main">
-      <h1>Bienvenido Administrador de servicio social:
+      <h1>Bienvenido Administrador de servicio social
       <?php /*<br> Usuario con matricula: {{ Auth::user()->id}} */?>
       </h1>
     </section>
