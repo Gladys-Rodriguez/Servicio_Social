@@ -3,42 +3,38 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\View;
+
+use App\Models\dato;
+use App\Models\Usuario;
 use App\Models\alumno;
 use App\Models\servicio;
+use App\Models\dependencia;
+use App\Models\direccion;
 
-use Illuminate\Support\Facades\DB;
-class ListadoAlumnosController extends Controller
+class RegistroServicioInhabilitadosController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    const PAGINACION=10;
-    public function index(Request $request)
+    public function index($id)
     {
-        $search=$request->get('search');
+        //
+        $boleta = $id;
 
-        $busqueda=DB::table('registros')
-        ->join('servicios', 'registros.id_servicios', 'servicios.id_servicios')
+        $busqueda=DB::table('servicios')
         ->join('alumnos', 'servicios.id_alumnos', 'alumnos.id_alumnos')
-        ->join('users', 'alumnos.id_usuarios', 'users.id')
-        ->join('datos', 'alumnos.id_datos', 'datos.id_datos')
-        ->where('alumnos.id_usuarios', 'LIKE', '%'.$search.'%')
-        ->where ('registros.status_s', 1)
-        ->paginate($this::PAGINACION);
+        ->join('dependencias', 'servicios.id_dependencias', 'dependencias.id_dependencias')
+        ->join('direccions', 'dependencias.id_direcciones', 'direccions.id_direccions')
+        ->where('alumnos.id_usuarios', $id)
+        ->get();
 
-
-        return view("Pantallas_Admin_Servicio.ListaAlumnos", compact("search","busqueda"));
-
-    }
-        //$alumnos = alumno::all();
-
-    public function consultar()
-    {
-
-
-
+    return view('Pantallas_Admin_Servicio.DatosServicio ', compact("boleta","busqueda"));
     }
 
     /**
@@ -68,9 +64,9 @@ class ListadoAlumnosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-
+        //
     }
 
     /**

@@ -5,40 +5,25 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\alumno;
 use App\Models\servicio;
+use App\Models\User;
 
 use Illuminate\Support\Facades\DB;
-class ListadoAlumnosController extends Controller
+
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
+
+class EditarEstadoAlumnoController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    const PAGINACION=10;
-    public function index(Request $request)
+    public function index()
     {
-        $search=$request->get('search');
-
-        $busqueda=DB::table('registros')
-        ->join('servicios', 'registros.id_servicios', 'servicios.id_servicios')
-        ->join('alumnos', 'servicios.id_alumnos', 'alumnos.id_alumnos')
-        ->join('users', 'alumnos.id_usuarios', 'users.id')
-        ->join('datos', 'alumnos.id_datos', 'datos.id_datos')
-        ->where('alumnos.id_usuarios', 'LIKE', '%'.$search.'%')
-        ->where ('registros.status_s', 1)
-        ->paginate($this::PAGINACION);
-
-
-        return view("Pantallas_Admin_Servicio.ListaAlumnos", compact("search","busqueda"));
-
-    }
-        //$alumnos = alumno::all();
-
-    public function consultar()
-    {
-
-
-
+        //
     }
 
     /**
@@ -68,9 +53,9 @@ class ListadoAlumnosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-
+        //
     }
 
     /**
@@ -82,6 +67,21 @@ class ListadoAlumnosController extends Controller
     public function edit($id)
     {
         //
+        $Users= User::with('alumnos')->findOrFail($id);
+        //var_dump($id);
+
+         $alumnos=DB::table('alumnos')
+        ->join('direccions', 'alumnos.id_direccions', 'direccions.id_direccions')
+        ->join('datos', 'alumnos.id_datos', 'datos.id_datos')
+        ->join('registros', 'alumnos.id_alumnos', 'registros.id_alumnos')
+        ->where('alumnos.id_usuarios',$id)
+        ->get();
+
+
+
+        return view("Pantallas_Admin_Servicio.EditarEstadoAlumno", compact('Users','alumnos'));
+        //
+
     }
 
     /**
@@ -93,6 +93,22 @@ class ListadoAlumnosController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //
+        $Users= User::with('alumnos')->findOrFail($id);
+
+        //var_dump($id);
+        $Users->save();
+
+         $alumnos=DB::table('alumnos')
+        ->join('direccions', 'alumnos.id_direccions', 'direccions.id_direccions')
+        ->join('datos', 'alumnos.id_datos', 'datos.id_datos')
+        ->join('registros', 'alumnos.id_alumnos', 'registros.id_alumnos')
+        ->where('alumnos.id_usuarios',$id)
+        ->update([
+           'registros.status_s' => $request->input('status_s'),
+        ]);
+
+        return view("Pantallas_Admin_Servicio.AdminServicio_Index2");
         //
     }
 

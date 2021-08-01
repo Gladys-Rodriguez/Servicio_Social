@@ -27,9 +27,9 @@
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                <li class="nav__item"><a href="{{url('/Index_Master')}}" class="nav__link active">HOME</a></li>
+                <li class="nav__item"><a href="{{url('/Index_Master')}}" class="nav__link ">HOME</a></li>
                 <li class="nav__item"><a href="{{url('/consultaAlumnoM')}}" class="nav__link">ALUMNOS REGISTRADOS</a></li>
-                    <li class="nav__item"><a href="{{url('/RegisterFormRoles')}}" class="nav__link">NUEVO ADMIN</a></li>
+                    <li class="nav__item"><a href="{{url('/RegisterFormRoles')}}" class="nav__link active">NUEVO ADMIN</a></li>
                     <li class="nav__item"><a href="{{url('/RegisterPracticas')}}" class="nav__link">ADMIN PRACTICAS</a></li>
                     <li class="nav__item dropdown">
                         <a href="#" class="nav__link dropdown__link">Registro de Banners <i class='bx bx-chevron-down dropdown__icon'></i></a>

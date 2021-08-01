@@ -7,7 +7,8 @@ use App\Models\alumno;
 use App\Models\servicio;
 
 use Illuminate\Support\Facades\DB;
-class ListadoAlumnosController extends Controller
+
+class ListadoAlumnosInhabilitadosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,6 +18,7 @@ class ListadoAlumnosController extends Controller
     const PAGINACION=10;
     public function index(Request $request)
     {
+        //
         $search=$request->get('search');
 
         $busqueda=DB::table('registros')
@@ -25,20 +27,11 @@ class ListadoAlumnosController extends Controller
         ->join('users', 'alumnos.id_usuarios', 'users.id')
         ->join('datos', 'alumnos.id_datos', 'datos.id_datos')
         ->where('alumnos.id_usuarios', 'LIKE', '%'.$search.'%')
-        ->where ('registros.status_s', 1)
+        ->where ('registros.status_s', 0)
         ->paginate($this::PAGINACION);
 
 
-        return view("Pantallas_Admin_Servicio.ListaAlumnos", compact("search","busqueda"));
-
-    }
-        //$alumnos = alumno::all();
-
-    public function consultar()
-    {
-
-
-
+        return view("Pantallas_Admin_Servicio.ListaAlumnosInhabilitados", compact("search","busqueda"));
     }
 
     /**
@@ -68,9 +61,9 @@ class ListadoAlumnosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-
+        //
     }
 
     /**

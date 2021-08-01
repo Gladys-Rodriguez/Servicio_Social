@@ -102,7 +102,8 @@ main .site-content .post-content > .post-image > div{
 }
 
 main .site-content .post-content > .post-image .img{
-    width: 100%;
+    width: 1100px;
+    height: 700px;
     transition: all 1s ease;
 }
 
@@ -145,5 +146,22 @@ main .post-content .post-title a{
 .site-content > .sidebar .category-list .list-items a{
     color:  black;
 }
+
+.login-box {
+    background: #565656;
+    color: #fff;
+    border-radius: 10px;
+
+  }
+
+  .login-box h1 {
+    margin: 0;
+    margin-top: 220px;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 32px;
+  }
+
+
 
 

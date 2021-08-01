@@ -11,7 +11,7 @@
 
 <h1><span class="blue"></span><span class="blue"></span> <span class="yellow"></span></h1>
     <h2>Listado <a  target="_blank">de Alumnos</a> <br>
-    Inscritos al <a  target="_blank">Servicio Social</a></h2>
+    Inhabilitados del <a  target="_blank">Servicio Social</a></h2>
 
     <div class="box">
         <div class="container-1">
@@ -43,21 +43,13 @@
 
         @foreach ($busqueda as $busque )
                             <tr>
-                                <td class="matricula" name="boleta">
-                                    <form action="{{route('DatosServicio.index', $busque->id_usuarios)}}" method="GET">
-                                    <button type="submit" id="boleta" placeholder="" name="boleta" value="{{$busque->id_usuarios}}">
-                                        {{$busque->id_usuarios}}
-                                    </button>
-
-
-                                    </a>
-                                    </form>
-                                    </td>
+                                <td>{{$busque->id_usuarios}}</td>
                                 <td>{{$busque->nombre}}</td>
                                 <td>{{$busque->ap_paterno}}</td>
                                 <td>{{$busque->ap_materno}}</td>
                                 <td>{{$busque->carrera}}</td>
                                 <td>{{$busque->status_ss  ? 'Aceptado': 'Sin Validar'}}</td>
+
                                 <td><a class="boton_personalizado" href="/EditarEstadoAlumno/{{$busque->id_usuarios}}">Habilitar/deshabilitar</a></td>
                             </tr>
         @endforeach

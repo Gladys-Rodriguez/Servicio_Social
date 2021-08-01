@@ -122,13 +122,14 @@ class ServiciosController extends Controller
             'fecha_envio' => $request->input('fecha_envio'),
             'observaciones' => $request->input('observaciones'),
             'id_alumnos' => $id_alumnos->first()->id_alumnos,
-            'id_servicios' => $id_servicios
+            'id_servicios' => $id_servicios,
+            'status_s' => 1,
         ]);
 
 
     });
 
-    return redirect('Registro_exitoso');
+    return redirect('Registro_exitosoServicio');
     /* DB::transaction(function () use ($request) {
             $direccions = direccion::create([
                 'ciudad' => $request->input('ciudad'),

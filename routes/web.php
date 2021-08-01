@@ -156,6 +156,18 @@ Route::get('/ListaDeAlumnos', function (){
     return view('Pantallas_Admin_Servicio.ListaAlumnos');
 }) -> name('ListaDeAlummos');
 
+Route::get('/ListaDeAlumnosInhabilitados', function (){
+    return view('Pantallas_Admin_Servicio.ListaAlumnosInhabilitados');
+}) -> name('ListaDeAlummosInhabilitados');
+
+//Pantalla de editar estado de listado de alumnos
+Route::get('/EditarEstadoAlumno', function (){
+    return view('Pantallas_Admin_Servicio.EditarEstadoAlumno');
+}) -> name('EditarEstadoAlumno');
+
+Route::get('/EditarEstadoAlumno/{id}', [App\Http\Controllers\EditarEstadoAlumnoController::class, 'edit'])->name('home');
+Route::put('/EditarEstadoAlumno2/{id}', [App\Http\Controllers\EditarEstadoAlumnoController::class, 'update'])->name('EditarEstadoAlumno.update');
+
 Route::get('/Registro de Fechas', function (){
     return view('Pantallas_Admin_Servicio.RegistroFechas');
 }) -> name('Registro de Fechas');
@@ -165,8 +177,12 @@ Route::get('/Expediente', function (){
 }) -> name('Expediente');
 
 
+Route::get('/ListaDeAlumnosInhabilitados', [App\Http\Controllers\ListadoAlumnosInhabilitadosController::class, 'index'])->name('ListaDeAlumnosInhabilitados.index');
+Route::get('/DatosServicioInhabilitados/{id}', [App\Http\Controllers\RegistroServicioInhabilitadosController::class, 'index'])->name('DatosServicioInhabilitados.index');
+
 Route::get('/ListaDeAlumnos', [App\Http\Controllers\ListadoAlumnosController::class, 'index'])->name('ListaDeAlumnos.index');
 Route::get('/DatosServicio/{id}', [App\Http\Controllers\RegistroServicioController::class, 'index'])->name('DatosServicio.index');
+
 
 Route::get('/Registro de Fechas/{id}', [App\Http\Controllers\FechasServicioController::class, 'index'])->name('Registro de Fechas.index');
 Route::put('/Registro de Fechas/{id}', [App\Http\Controllers\FechasServicioController::class, 'update'])->name('Registro de Fechas.update');
@@ -473,6 +489,11 @@ Route::get('/Registro_exitosoBannersBecas', function (){
 Route::get('/Registro_exitosoRoles', function (){
     return view('Pantallas_Principales.Registro_exitosoRoles');
 }) -> name('Registro_exitosoRoles');
+
+//Ruta oara pantalla de registro exitoso de registro de servicio
+Route::get('/Registro_exitosoServicio', function (){
+    return view('Pantallas_Principales.Registro_exitosoServicio');
+}) -> name('Registro_exitosoServicio');
 
 //Ruta para el registro de imagenes del home
 Route::get('/RegisterBannerInicio', function (){
