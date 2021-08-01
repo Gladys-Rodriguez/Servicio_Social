@@ -108,23 +108,27 @@
 @endforeach
   </div>
 
+  <div class="btn_registrar">
+    @foreach ($busqueda as $busque )
+    <a class="boton_personalizado" href="{{route('Registro de Fechas.index', $busque->id_usuarios)}}">Control de Fechas</a>
+    @endforeach
+</div>
+
+<div class="btn_checar">
+    @foreach ($busqueda as $busque )
+    <a class="boton_personalizado" href="{{route('Expediente.docs', $busque->id_usuarios)}}">Control de expediente</a>
+    @endforeach
+</div>
     <div class="btn_editar">
-
-    <a class="boton_personalizado" >Editar Datos</a>
+    @foreach ($busqueda as $busque )
+    <a class="boton_personalizado" href="{{route('Expediente_Reportes.docs', $busque->id_usuarios)}}">Validación de Reportes</a>
+    @endforeach
 
     </div>
 
-    <div class="btn_registrar">
-        @foreach ($busqueda as $busque )
-        <a class="boton_personalizado" href="{{route('Registro de Fechas.index', $busque->id_usuarios)}}">Control de Fechas</a>
-        @endforeach
-    </div>
 
-    <div class="btn_checar">
-        @foreach ($busqueda as $busque )
-        <a class="boton_personalizado" href="{{route('Expediente.docs', $busque->id_usuarios)}}">Control de expediente</a>
-        @endforeach
-    </div>
+
+
 
 </div>
 

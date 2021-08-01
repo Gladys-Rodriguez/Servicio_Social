@@ -110,7 +110,7 @@
                 <textarea disabled rows="1" cols="1"class="estado">El documento se encuentra: {{$docs->estado ? 'Validado': 'Sin Validar'}}
                 </textarea>
                 <select class="select" name="estado" >
-                <option></option>
+                <option  value="{{$docs->estado}}"></option>
                 <option value="0"> Sin validar</option>
                 <option value="1"> Validado</option>
             </td>

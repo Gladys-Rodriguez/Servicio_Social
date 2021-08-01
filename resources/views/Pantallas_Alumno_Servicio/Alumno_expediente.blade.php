@@ -8,19 +8,32 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Servicio/estilo2.css')}}">
 
+  <h1 class="titulo">Documentos Requeridos Para Registro </h1>
+<br>
   <button type="button" class="seguimiento">
     <a href="{{ route('uploaddocexpediente.index') }}">
         <span class="material-icons">preview</span>
         Ver el seguimiento de mi solicitud </a></button>
 
-  <h1 class="titulo">Documentos Requeridos <a  target="_blank">Para Registro</a> </h1>
+        <br>
 
+  <div class="anuncio">
+
+    <textarea name="" id="" cols="1" rows="3">
+        No olvides que tu reporte mensual de actividades y el formato de asistencia debe ser
+        subido en un solo archivo por periodo, de lo contrario será rechazado por tu responsable directo
+    </textarea>
+    <br>
+    <textarea class="anun2" name="" id="" cols="1" rows="2">
+        Recuerda que deben ser archivos de tipo .doc .rtf o .pdf y que no deben exceder de 1.5Mb
+    </textarea>
+</div>
   <table class="register">
     <thead>
         <tr>
-            <th><h1><i class="bi bi-archive-fill"></i> Archivo</h1></th>
-            <th><h1><i class="bi bi-file-earmark-pdf"></i> Tipo de Documento</h1></th>
-            <th><h1><i class="bi bi-capslock-fill"></i> Subir Archivo </h1></th>
+            <th><h1><span class="material-icons">text_snippet</span> Archivo</h1></th>
+            <th><h1><span class="material-icons">drive_file_rename_outline</span>Tipo de Documento</h1></th>
+            <th><h1><span class="material-icons">cloud_upload</span>Subir Archivo </h1></th>
 
         </tr>
     </thead>
@@ -30,7 +43,7 @@
         <form method="POST" action="{{ route('uploaddocexpediente.store') }}" enctype="multipart/form-data">
             @csrf
                         <tr>
-                            <td>
+                            <td class="file">
                                 <div class="container-input">
                                     <input type="file" name="files[]" id="file-2" class="inputfile inputfile-2" multiple />
                                     <label for="file-2">

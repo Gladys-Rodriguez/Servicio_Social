@@ -56,19 +56,16 @@ a{
     padding-right: 2rem;
 
  }
- .register .status{
-     width: 200px;
- }
 
  .register tr:nth-child(odd) {
-    background-color: #334952e7;
+    background-color: #626D71;
  }
 
  .register tr:nth-child(even) {
-    background-color: #3b5761e7;
+    background-color: #788185e1;
  }
  .register th {
-    background-color: #7DA3A1;
+    background-color: #CDCDC0;
 
  }
  .register th h1{
@@ -98,15 +95,14 @@ a{
     font-size:30px;
     color:#122630;
     overflow:initial;
-
-    vertical-align: middle;
+    vertical-align: bottom;
 }
 
 .seguimiento{
     padding: .375rem .75rem;
     border: 2.5px solid #526080;;
     border-radius: .25rem;
-    background-color:#7DA3A1 ;
+    background-color:#CDCDC0 ;
     text-transform:uppercase;
 }
 .seguimiento a{
@@ -116,7 +112,7 @@ a{
     font-weight: 600;
 }
 .seguimiento:hover{
-background-color: #5d8684a8;
+background-color: #626D71;
 }
 .seguimiento a:hover{
     color:#c9d8d7
@@ -124,25 +120,3 @@ background-color: #5d8684a8;
 .material-icons:hover{
     color:#c9d8d7
 }
-
-.btn:hover{
-
-        background-color: #54717ce7;
-        box-shadow: #749997c4 -1px 1px, #749997c4 -2px 2px, #749997c4 -3px 3px, #749997c4 -4px 4px, #749997c4 -5px 5px, #749997c4 -6px 6px;
-        transform: translate3d(6px, -6px, 0);
-        transition-delay: 0s;
-            transition-duration: 0.4s;
-            transition-property: all;
-        transition-timing-function: line;
-}
-
-.btn .verificar:hover{
-    color: #c9d8d7;
-    font-weight: bold;
-    background-color: transparent;
-   transition-delay: 0s;
-    transition-duration: 0.4s;
-    transition-property: all;
-   transition-timing-function: line;
-
- }
