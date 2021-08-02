@@ -286,6 +286,7 @@ Route::put('/SolicitudesPra1/{id}', [App\Http\Controllers\AdminPracSolicitudesCo
 
 
 Route::get('/ValidacionV2/{id}', [App\Http\Controllers\ValidacionDocPraController::class, 'edit'])->name('home');
+Route::put('/Validacion3/{id}', [App\Http\Controllers\ValidacionDocPraController::class, 'update'])->name('Validacion3.update');
 
 
 //------------------------FER TERMINO------------------------------------
@@ -590,6 +591,7 @@ Route::get('/RegisterFormRoles', function (){
 Route::get('/EditarAdminForm/{id}', [App\Http\Controllers\AdminMasterIndexController::class, 'edit'])->name('home');
 Route::put('/EditarAdminForm2/{id}', [App\Http\Controllers\AdminMasterIndexController::class, 'update'])->name('EditarAlumnoController.update');
 
+Route::post('/registroBecaB/(id)', [App\Http\Controllers\solicitarBeca::class, 'store'])->name('registroBecaB.store'); 
 
 
 //-----------------------SANTOS TERMINO----------------------------------
@@ -630,6 +632,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 // ************************************* RUTAS    DE    MOY    *******************************************
 //Rutas Practicas-y-Vistas Docente

@@ -41,7 +41,7 @@
             <li><a href="#tab1"><span class="fas fa-user"></span><span class="tab-text">Personales</span></a></li>
             <li><a href="#tab2"><span class="fas fa-address-book"></span><span class="tab-text">Dirección</span></a></li>
             <li><a href="#tab3"><span class="fas fa-money-check"></span><span class="tab-text">Beca</span ></a></li>
-            <li><a href="#tab4"><span class="fas fa-file-upload"></span><span class="tab-text">Documentos</span ></a></li>
+            <li><a href="#tab4"><span class="fas fa-file-upload"></span><span class="tab-text">Solicitud</span ></a></li>
         </ul>
     <div class="secciones">
            <article id="tab1">
@@ -66,119 +66,38 @@
                 <p>Delegación/Municipio: {{$dato->alcaldia}}</p>
                 <p>Estado: {{$dato->ciudad}}</p>                  
            </article> 
+           @endforeach
+           
            <article id="tab3">
-           @if($dato->id_direccions=='2')
-           <p>No tienes beca asignada</p>
+           @foreach($sol as $soli)
+           @if($soli->validacion == 0)
+           <p>Solicitud en revisión</p>   
+           @elseif($soli->validacion == 1)
+           <p>Tienes beca</p>
+           @elseif($soli->validacion == 2)
+           <p>Solicitud Rechazada</p>
            @else
-                <h1>Datos Beca</h1>
-                <p>Solicitud Num:012500</p>
-                <p>Beca: Institucional</p>
-                <p>Monto: $4500.00</p>
-                <p>Fecha de Inicio: 16/01/2021</p>
-                <p>Fecha Fin: 16/12/2021</p> 
-          @endif
-          @endforeach      
+           <p>Te invitamos a ver otras opciones</p>
+           @endif
+           @endforeach 
            </article> 
            <article id="tab4">
-                <h1>Documentos</h1> 
-                <div class="container">
-                    <table class="table">
-                         <thead>
-                              <tr>
-                                   <th>Documento</th>
-                                   <th></th>
-                                   <th></th>
-                                   <th>Estado</th>
-                              </tr>
-                         </thead>
-                         <tbody>
-                              <tr>
-                                   <td data-label="Documentos">Acta de nacimiento</td>
-                                   <td data-label="">
-                                        <form action="" id="1">
-                                        <label for="file-upload" class="subir">
-                                             <i class="fas fa-cloud-upload-alt"></i> Subir archivo
-                                        </label>
-                                        <input id="file-upload" onchange="cambiar()" type="file" style='display: none;'/>
-                                        <div id="info"></div>
-                                   </td>
-                                   <td data-label=""><input type="button" value="Enviar" class="Btn_chido"></td></td>
-                                   </form>
-                                   <td data-label="Estado">Rechazado</td>
-                              </tr>
-                              <tr>
-                                   <td data-label="Documentos">CURP</td>
-                                   <td data-label="">
-                                   <form action="" id="2"></form>
-                                        <label for="file-upload1" class="subir">
-                                             <i class="fas fa-cloud-upload-alt"></i> Subir archivo
-                                        </label>
-                                        <input id="file-upload1" onchange="cambiar1()" type="file" style='display: none;'/>
-                                        <div id="info1"></div>
-                                   </td>
-                                   <td data-label=""><input type="button" value="Enviar" class="Btn_chido"></td>
-                                   </form>
-                                   <td data-label="Estado">Rechazado</td>
-                              </tr>
-                              <tr>
-                                   <td data-label="Documentos">Constancia</td>
-                                   <td data-label="">
-                                        <form action="" id="3">
-                                        <label for="file-upload2" class="subir">
-                                             <i class="fas fa-cloud-upload-alt"></i> Subir archivo
-                                        </label>
-                                        <input id="file-upload2" onchange="cambiar2()" type="file" style='display: none;'/>
-                                        <div id="info2"></div>
-                                   </td>
-                                   <td data-label=""><input type="button" value="Enviar" class="Btn_chido"></td></td>
-                                   </form>
-                                   <td data-label="Estado">Rechazado</td>
-                              </tr>
-                              <tr>
-                                   <td data-label="Documentos">No. IMSS</td>
-                                   <td data-label="">
-                                        <form action="" id="4">
-                                        <label for="file-upload3" class="subir">
-                                             <i class="fas fa-cloud-upload-alt"></i> Subir archivo
-                                        </label>
-                                        <input id="file-upload3" onchange="cambiar3()" type="file" style='display: none;'/>
-                                        <div id="info3"></div>
-                                   </td>
-                                   <td data-label=""><input type="button" value="Enviar" class="Btn_chido"></td></td>
-                                   </form>
-                                   <td data-label="Estado">Rechazado</td>
-                              </tr>
-                              <tr>
-                                   <td data-label="Documentos">Estudio Socioeconómico</td>
-                                   <td data-label="">
-                                        <form action="" id="5">
-                                        <label for="file-upload4" class="subir">
-                                             <i class="fas fa-cloud-upload-alt"></i> Subir archivo
-                                        </label>
-                                        <input id="file-upload4" onchange="cambiar4()" type="file" style='display: none;'/>
-                                        <div id="info4"></div>
-                                   </td>
-                                   <td data-label=""><input type="button" value="Enviar" class="Btn_chido"></td></td>
-                                   </form>
-                                   <td data-label="Estado">Rechazado</td>
-                              </tr>
-                              <tr>
-                                   <td data-label="Documentos">Solicitud</td>
-                                   <td data-label="">
-                                        <form action="" id="6"></form>
-                                        <label for="file-upload5" class="subir">
-                                             <i class="fas fa-cloud-upload-alt"></i> Subir archivo
-                                        </label>
-                                        <input id="file-upload5" onchange="cambiar5()" type="file" style='display: none;'/>
-                                        <div id="info5"></div>
-                                   </td>
-                                   <td data-label=""><input type="button" value="Enviar" class="Btn_chido"></td></td>
-                                   </form>
-                                   <td data-label="Estado">Rechazado</td>
-                               </tr>
-                         </tbody>
-                    </table>
-                </div>
+                <h1>Selecciona la beca para la que quieras postularte</h1> 
+                <form action="{{route('registroBecaB.store')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @foreach ($datos as $dato)
+               <input type="hidden" name="id_alumnos" value="{{$dato->id_alumnos}}">
+               <input type="hidden" name="validacion" value="0">
+                <select name="id_expediente_becas" class="form-select">
+                     <option  Selected value="1">Institucional</option>
+                     <option value="2">Benito Juarez</option>
+                     <option value="3">Excelencia</option>
+                     <option value="4">Transporte</option>
+                     <option value="5">Becalos</option>
+                </select>
+                <button type="submit">Hacer Solicitud</button>
+</form>
+@endforeach
            </article> 
         </div>  
     </div>

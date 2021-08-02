@@ -23,6 +23,7 @@
 		    </thead>
 		    <tbody>
 			@foreach ($datos as $dato)
+			@if($dato->id_rol < 7)
 		    	<tr> 
 		    		<td data-label="Administrador">{{$dato->Tipo_rol}}</td>
 		    		<td data-label="Nombre">{{$dato->nombre}}</td>
@@ -33,6 +34,7 @@
 					<td data-label="Estado">@if($dato->estado==1) Activo @else Inactivo @endif</td>
                     <td><a class="boton_personalizado" href="/EditarAdminForm/{{$dato->id}}">Habilitar/Deshabilitar</a></td>
 		    	</tr>
+				@endif
 				@endforeach
 		    </tbody>
 	    </table>
