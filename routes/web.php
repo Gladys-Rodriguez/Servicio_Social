@@ -263,15 +263,7 @@ Route::get('/Admin_Becas_Index3', function () {
     return view('Pantallas_Admin_Becas.Admin_Becas_Index3');
 }) -> name('Admin_Becas_Index3');
 
-//Ruta Validacion_Alumno_Becas
-Route::get('/Validacion_Alumno_Becas', function () {
-    return view('Pantallas_Admin_Becas.Validacion_Alumno_Becas');
-}) -> name('Validacion_Alumno_Becas');
 
-//Ruta Tipo_Alumno_Becas
-Route::get('/Tipo_Alumno_Becas', function () {
-    return view('Pantallas_Admin_Becas.Tipo_Alumno_Becas');
-}) -> name('Tipo_Alumno_Becas');
 
 //Ruta Admin Practicas y Visitas Index
 Route::get('/Admin_Practicas_Visitas_Index2', function () {
@@ -280,26 +272,29 @@ Route::get('/Admin_Practicas_Visitas_Index2', function () {
 
 
 //Ruta Validacion Practicas y Visitas
-Route::get('/Validacion_Practicas_Visitas', function () {
-    return view('Pantallas_Admin_Practicas_Visitas.Validacion_Practicas_Visitas');
-}) -> name('Validacion_Practicas_Visitas');
+Route::get('/Validacion_Practicas_Visitas','ValidacionDocPraController@index');
+Route::get('/Validacion_Alumno_Becas','ValidacionBController@index');
 
 //Ruta Clasificacion Practicas y Visitas
-Route::get('/Solicitudes_Practicas_Visitas', function () {
-    return view('Pantallas_Admin_Practicas_Visitas.Solicitudes_Practicas_Visitas');
-}) -> name('Solicitudes_Practicas_Visitas');
+Route::get('/Solicitudes_Practicas_Visitas','AdminPracSolicitudesController@index');
+Route::get('/Tipo_Alumno_Becas','SolicitudesBecasController@index');
+Route::get('/AceptadasV','PracticasAceptadasController@index');
+Route::get('/RechazadasV','PracticasRechazadasController@index');
+Route::get('/AceptadasB','AceptadasBController@index');
+Route::get('/RechazadasB','RechazadasBController@index');
 
-Route::get('/RechazadasV', function () {
-    return view('Pantallas_Admin_Practicas_Visitas.RechazadasV');
-}) -> name('RechazadasV');
 
-Route::get('/AceptadasV', function () {
-    return view('Pantallas_Admin_Practicas_Visitas.AceptadasV');
-}) -> name('AceptadasV');
+Route::get('/SolicitudesPra/{id}', [App\Http\Controllers\AdminPracSolicitudesController::class, 'edit'])->name('home');
+Route::put('/SolicitudesPra1/{id}', [App\Http\Controllers\AdminPracSolicitudesController::class, 'update'])->name('SolicitudesPra1.update');
 
-Route::get('/ValidacionV2', function () {
-    return view('Pantallas_Admin_Practicas_Visitas.ValidacionV2');
-}) -> name('ValidacionV2');
+Route::get('/SB/{id}', [App\Http\Controllers\SolicitudesBecasController::class, 'edit'])->name('home');
+Route::put('/SB1/{id}', [App\Http\Controllers\SolicitudesBecasController::class, 'update'])->name('SB1.update');
+
+
+Route::get('/ValidacionV2/{id}', [App\Http\Controllers\ValidacionDocPraController::class, 'edit'])->name('home');
+Route::put('/Validacion3/{id}', [App\Http\Controllers\ValidacionDocPraController::class, 'update'])->name('Validacion3.update');
+
+
 //------------------------FER TERMINO------------------------------------
 
 
@@ -520,9 +515,6 @@ Route::put('/pruebaEditarForm2/{id}', [App\Http\Controllers\editarController::cl
 Route::get('/EditarAlumnoForm/{id}', [App\Http\Controllers\editarAlumnoController::class, 'edit'])->name('home');
 Route::put('/EditarAlumnoForm2/{id}', [App\Http\Controllers\editarAlumnoController::class, 'update'])->name('EditarAlumnoController.update');
 
-//editar estado del alumno
-Route::get('/EditarAdminForm/{id}', [App\Http\Controllers\AdminMasterIndexController::class, 'edit'])->name('home');
-Route::put('/EditarAdminForm2/{id}', [App\Http\Controllers\AdminMasterIndexController::class, 'update'])->name('EditarAlumnoController.update');
 
 
 //Pantalla de editar de imagenes de inicio
@@ -585,10 +577,32 @@ Route::get('/FormatosBeca', function (){
 Route::get('/MiBeca','MiBecaDatosController@index');
 
 Route::get('/Index_Master','AdminMasterIndexController@index');
+
+Route::get('/ConsultaAdminSer','ConsultaAdminSerController@index');
+Route::delete('/BorraUserSer/{id}', [App\Http\Controllers\ConsultaAdminSerController::class, 'destroy'])->name('pruebaEditarForm3.update');
+
+
+Route::get('/ConsultaAdminPra','ConsultaAdminPraController@index');
+Route::get('/EditarAdminPra/{id}', [App\Http\Controllers\ConsultaAdminPraController::class, 'edit'])->name('home');
+Route::put('/EditarAdminPra1/{id}', [App\Http\Controllers\ConsultaAdminPraController::class, 'update'])->name('EditarAdminPraController.update');
+Route::delete('/BorraUserPra/{id}', [App\Http\Controllers\ConsultaAdminPraController::class, 'destroy'])->name('pruebaEditarForm3.update');
+
+
+Route::get('/ConsultaAdminBe','ConsultaAdminBeController@index');
+Route::delete('/BorraUserBe/{id}', [App\Http\Controllers\ConsultaAdminBeController::class, 'destroy'])->name('pruebaEditarForm3.update');
+
 //Pantalla Registro con roles
 Route::get('/RegisterFormRoles', function (){
     return view('Pantallas_Admin_Master.RegisterFormRoles');
 }) -> name('RegisterFormRoles');
+
+//editar estado del alumno
+Route::get('/EditarAdminForm/{id}', [App\Http\Controllers\AdminMasterIndexController::class, 'edit'])->name('home');
+Route::put('/EditarAdminForm2/{id}', [App\Http\Controllers\AdminMasterIndexController::class, 'update'])->name('EditarAlumnoController.update');
+
+Route::post('/registroBecaB/(id)', [App\Http\Controllers\solicitarBeca::class, 'store'])->name('registroBecaB.store'); 
+
+
 //-----------------------SANTOS TERMINO----------------------------------
 //Auth::routes();
 
@@ -681,5 +695,16 @@ Route::post('/VisitasEscolaresAdmin/Formato/Guardar', 'VisitaController@guardarF
 Route::get('/VisitasEscolaresAdmin/Formato/Editar/{visitaFormato}', 'VisitaController@editarFormato')
     ->name('adminVisitas.editarFormato');
 
+<<<<<<< HEAD
 Route::put('/VisitasEscolaresAdmin/Formato/Actualizar/{visitaFormato}', 'VisitaController@actualizarFormato')
     ->name('adminVisitas.actualizarFormato');
+=======
+
+// ************************************* RUTAS    DE    MOY    *******************************************
+//Rutas Practicas-y-Vistas Docente
+Route::get('/VisitasEscolares/Index','DocenteIndexController');
+Route::get('/VisitasEscolares/SolicitarVisita','DocenteSolicitarVisitaController');
+Route::get('/VisitasEscolares/MisVisitas','DocenteMisVisitasController');
+Route::resource('Visitas', 'VisitaController');
+Route::resource('DocenteVisitas', 'DocenteVisitaController');
+>>>>>>> 263d9101b66f2252fcd3d0c949c7a840c9ef818f
