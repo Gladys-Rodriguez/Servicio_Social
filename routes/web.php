@@ -261,10 +261,7 @@ Route::get('/Validacion_Alumno_Becas', function () {
     return view('Pantallas_Admin_Becas.Validacion_Alumno_Becas');
 }) -> name('Validacion_Alumno_Becas');
 
-//Ruta Tipo_Alumno_Becas
-Route::get('/Tipo_Alumno_Becas', function () {
-    return view('Pantallas_Admin_Becas.Tipo_Alumno_Becas');
-}) -> name('Tipo_Alumno_Becas');
+
 
 //Ruta Admin Practicas y Visitas Index
 Route::get('/Admin_Practicas_Visitas_Index2', function () {
@@ -277,12 +274,16 @@ Route::get('/Validacion_Practicas_Visitas','ValidacionDocPraController@index');
 
 //Ruta Clasificacion Practicas y Visitas
 Route::get('/Solicitudes_Practicas_Visitas','AdminPracSolicitudesController@index');
+Route::get('/Tipo_Alumno_Becas','SolicitudesBecasController@index');
 Route::get('/AceptadasV','PracticasAceptadasController@index');
 Route::get('/RechazadasV','PracticasRechazadasController@index');
 
 
 Route::get('/SolicitudesPra/{id}', [App\Http\Controllers\AdminPracSolicitudesController::class, 'edit'])->name('home');
 Route::put('/SolicitudesPra1/{id}', [App\Http\Controllers\AdminPracSolicitudesController::class, 'update'])->name('SolicitudesPra1.update');
+
+Route::get('/SB/{id}', [App\Http\Controllers\SolicitudesBecasController::class, 'edit'])->name('home');
+Route::put('/SB1/{id}', [App\Http\Controllers\SolicitudesBecasController::class, 'update'])->name('SB1.update');
 
 
 Route::get('/ValidacionV2/{id}', [App\Http\Controllers\ValidacionDocPraController::class, 'edit'])->name('home');
