@@ -594,29 +594,12 @@ Route::get('/RegisterFormRoles', function (){
 
 
 
-// ************************************* RUTAS    DE    MOY    *******************************************
-//Rutas Practicas-y-Vistas Docente
+/*---------------------------------------------------------------------------------------- 
+---------------------------------( RUTAS DOCENTE PRACTICAS ESCOLARES )--------------------
+----------------------------------------------------------------------------------------*/   
 
-/*
-Route::get('/VisitasEscolares', 'VisitaController@index')     //Método Index()
-    ->name('docente.index');
 
-Route::get('/VisitasEscolares','VisitaController@crear')  //Método create()
-    ->name('docente.solicitarVisita');
-*/
-Route::post('/VisitasEscolares', 'VisitaController@guardar')    //Método store()
-    ->name('docente.guardarVisita');
-
-Route::get('/VisitasEscolares/{visita}','VisitaController@ver') //Método show()
-    ->name('docente.verVisita');
-
-Route::get('/VisitasEscolares/{visita}/editar','VisitaController@editar') //Método edit()
-    ->name('docente.editarVisita');
-
-Route::get('/hola', function (){
-    return "hola";
-});
-
+/*---------------------------------------------RUTAS EMPRESAS----------------------------------------------------------*/
 
 Route::get('/VisitasEscolares/Empresas/Lista', 'VisitaController@mostrarEmpresas')  //metodo Empresas-index()
     ->name('docente.mostrarEmpresas');
@@ -628,25 +611,75 @@ Route::post('VisitasEscolares/Empresas/Guardar', 'VisitaController@guardarEmpres
     ->name('docente.guardarEmpresa');   
 
 
+  /*---------------------------------------------RUTAS SOLICITUDES---------------------------------------------------------*/
 
 Route::get('/VisitasEscolares', 'VisitaController@index')     //Método Visitas-index()
     ->name('docente.index');
 
-Route::get('/VisitasEscolares/Solicitudes/{empresa}', 'VisitaController@registrarSolicitud') //metodo Visitas-create()
+Route::get('/VisitasEscolares/Solicitudes/{empresa}', 'VisitaController@registrarSolicitud') //Método Visitas-create()
     ->name('docente.registrarSolicitud');
 
-Route::post('/VisitasEscolares/Solicitudes/Guardar', 'VisitaController@guardarSolicitud') //método Visitas-store()
+Route::post('/VisitasEscolares/Solicitudes/Guardar', 'VisitaController@guardarSolicitud') //Método Visitas-store()
     ->name('docente.guardarSolicitud');
 
-
-
-Route::get('/VisitasEscolares/Grupos/Lista', 'VisitaController@mostrarGrupos')
-    ->name('docente.mostrarGrupos');
-
-
-
+Route::get('/VisitasEscolares/Solicitudes/Ver/{visita}','VisitaController@verSolicitud')    //Método Visitas-show()
+    ->name('docente.verSolicitud');
 
     
+/*---------------------------------------------RUTAS VISITAS---------------------------------------------------------*/
+
+Route::get('/VisitasEscolares/Visitas/Lista','VisitaController@mostrarVisitas')
+    ->name('docente.mostrarVisitas');
+
+Route::get('/VisitasEscolares/VisitaDocumentos/{visita}','VisitaController@registrarVisitaDocumento') //Método VisitaDocumento-index() && create()
+->name('docente.registrarVisitaDocumento');
+
+Route::post('/VisitasEscolares/VisitaDocumentos/Guardar', 'VisitaController@guardarVisitaDocumento') //Método VisitaDocumento-store()
+    ->name('docente.guardarVisitaDocumento');
+
+Route::get('/VisitasEscolares/VisitaDocumentos/Editar/{visitaDocumento}', 'VisitaController@editarVisitaDocumento') //Método VisitaDocumento-edit()
+    ->name('docente.editarVisitaDocumento');   
+
+Route::put('/VisitasEscolares/VisitaDocumentos/Actualizar/{visitaDocumento}', 'VisitaController@actualizarVisitaDocumento') //Método VisitaDocumento-update()
+    ->name('docente.actualizarVisitaDocumento');  
+
+
+ /*---------------------------------------------RUTAS GRUPOS----------------------------------------------------------*/
+   
+Route::get('/VisitasEscolares/GrupoVisita/Lista/{visita}', 'VisitaController@mostrarGrupos') //Método GrupoVisita-Index()
+    ->name('docente.mostrarGrupos');
+
+Route::get('/VisitasEscolres/GrupoVisita/{grupo}/{visita}', 'VisitaController@crearGrupoVisita') //Método GrupoVisita-Create()
+    ->name('docente.crearGrupoVisita');
+
+Route::post('VisitasEscolares/GrupoVisita/Guardar', 'VisitaController@guardarGrupoVisita')    //Método GrupoVisita-store()
+    ->name('docente.guardarGrupoVisita');   
+
+Route::delete('VisitasEscolares/GrupoVisita/Eliminar/{grupoVisita}', 'VisitaController@eliminarGrupoVisita') //Método GrupoVisita-Destroy()
+    ->name('docente.eliminarGrupoVisita');
+
+
 Route::get('/VisitasEscolares/Pagina/Inicio', 'VisitaController@inicio')
     ->name('docente.inicio'); 
 
+Route::get('/VisitasEscolares/Pagina/DatosDocente', 'VisitaController@mostrarDatosDocente')
+    ->name('docente.mostrarDatosDocente');
+
+
+/*---------------------------------------------RUTAS FORMATOS----------------------------------------------------------*/
+
+
+Route::get('/VisitasEscolaresAdmin/Formato/Lista', 'VisitaController@mostrarFormatos')
+    ->name('adminVisitas.mostrarFormatos');
+
+Route::get('/VisitasEscolaresAdmin/Formato/Registrar', 'VisitaController@registrarFormato')
+    ->name('adminVisitas.registrarFormato');   
+
+Route::post('/VisitasEscolaresAdmin/Formato/Guardar', 'VisitaController@guardarFormato') //método Formato-store()
+    ->name('adminVisitas.guardarFormato');   
+
+Route::get('/VisitasEscolaresAdmin/Formato/Editar/{visitaFormato}', 'VisitaController@editarFormato')
+    ->name('adminVisitas.editarFormato');
+
+Route::put('/VisitasEscolaresAdmin/Formato/Actualizar/{visitaFormato}', 'VisitaController@actualizarFormato')
+    ->name('adminVisitas.actualizarFormato');
