@@ -99,6 +99,8 @@ class editarBannerBecasController extends Controller
         //
         $bannerBecas= bannerBecasImagen::findOrFail($id);
 
+        unlink(public_path('img'.'/'.'carrusel'.'/'.$bannerBecas->ruta));
+
         $bannerBecas->delete();
 
         return redirect("/consultaBannerBecas");

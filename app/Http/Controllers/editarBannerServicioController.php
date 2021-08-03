@@ -98,6 +98,8 @@ class editarBannerServicioController extends Controller
         //
         $bannerServicio= bannerServicioImagen::findOrFail($id);
 
+        unlink(public_path('img'.'/'.'carrusel'.'/'.$bannerServicio->ruta));
+
         $bannerServicio->delete();
 
         return redirect("/consultaBannerServicio");

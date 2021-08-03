@@ -96,6 +96,8 @@ class editarBannerPracticasController extends Controller
         //
         $bannerPracticas= bannerPracticasImagen::findOrFail($id);
 
+        unlink(public_path('img'.'/'.'carrusel'.'/'.$bannerPracticas->ruta));
+
         $bannerPracticas->delete();
 
         return redirect("/consultaBannerPracticas");

@@ -96,6 +96,8 @@ class editarBannerInicioController extends Controller
         //
         $bannerInicio= bannerInicioImagen::findOrFail($id);
 
+        unlink(public_path('img'.'/'.'carrusel'.'/'.$bannerInicio->ruta));
+
         $bannerInicio->delete();
 
         return redirect("/consultaBannerInicio");
