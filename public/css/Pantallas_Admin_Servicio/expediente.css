@@ -310,3 +310,26 @@ h1 a {
     color: #fff;
     background-color: rgba(216, 188, 31, 0.705);
   }
+
+  .regresar{
+    padding: .375rem 3rem;
+    border: 2.5px solid #526080;;
+    border-radius: .25rem;
+    color: #A7A1AE;
+    background-color: #2C3446;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    /*margin-left: 60rem;
+    margin-top: 1rem;*/
+    float: right;
+    display:inherit;
+    text-transform: uppercase;
+    line-height: 1.5rem;
+    width: 185px;
+
+  }
+  .regresar:hover, .regresar:active, .regresar:focus {
+    color: #fff;
+    background-color: #f5b041da;
+  }

@@ -29,7 +29,14 @@ class docsExpediente extends Controller
     {
         //
         $files = docs_expedientePrueba::where('user', Auth::id())->get();
-        return view('Pantallas_Alumno_Servicio.docs_Seguimiento', compact('files'));
+        $user_id = Auth::id();
+
+        $alumno = DB::table('alumnos')
+        ->join('datos', 'alumnos.id_datos', 'datos.id_datos')
+        ->join('registros', 'alumnos.id_alumnos', 'registros.id_alumnos')
+        ->where('alumnos.id_usuarios', $user_id)
+        ->get();
+        return view('Pantallas_Alumno_Servicio.docs_Seguimiento', compact('files','alumno'));
     }
 
 
@@ -156,8 +163,13 @@ class docsExpediente extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $files=docs_expedientePrueba::findOrFail($id);
+        unlink(public_path('storage'.'/'.Auth::id().'/'.$files->nombre_doc));
+        $files->delete();
+       Alert::warning('Se borró satisfactoriamente el archivo. ');
+        return back();
+
     }
 }

@@ -198,15 +198,20 @@ Route::get('/Subida_Reportes', function (){
     return view('Pantallas_Alumno_Servicio.Expediente_Reportes');
 }) -> name('Subida_Reportes');
 
-
+Route::get('/Subida_Formatos', function (){
+    return view('Pantallas_Admin_Servicio.formatos');
+}) -> name('Subida_Formatos');
 
 // Subir Reportes alumnos store
 Route::post('/uploadreporte', [App\Http\Controllers\DocsReportesController::class, 'store'])->name('uploadreporte.store');
+Route::post('/UploadFormato', [App\Http\Controllers\FormatosController::class, 'store'])->name('UploadFormato.store');
 
 //Route::get('/Subir_Reportes', [App\Http\Controllers\DocsReportesController::class, 'index'])->name('Subir_Reportes.index');
 
 //Ruta para ver la validacion por parte del alumno
 Route::get('/SeguimientoReportes', [App\Http\Controllers\DocsReportesController::class, 'index'])->name('SeguimientoReportes.index');
+Route::get('/SubirFormatos', [App\Http\Controllers\FormatosController::class, 'index'])->name('SubirFormatos.index');
+
 
 Route::get('/Expediente_Reportes/{id}', [App\Http\Controllers\DocsReportesController::class, 'docs'])->name('Expediente_Reportes.docs');
 
@@ -215,6 +220,10 @@ Route::get('/EditarReportes/{id}', [App\Http\Controllers\DocsReportesController:
 
 //Ruta update documentos del usuario alumno
 Route::post('/UpdateReportes/{id}', [App\Http\Controllers\DocsReportesController::class, 'update'])->name('UpdateReportes.update');
+
+//Ruta eliminar
+Route::delete('/eliminarDocsAlumno/{id}', [App\Http\Controllers\docsExpediente::class, 'destroy'])->name('eliminarDocsAlumno.destroy');
+Route::delete('/eliminarFormato/{id}', [App\Http\Controllers\FormatosController::class, 'destroy'])->name('eliminarFormato.destroy');
 // ************************************* FIN   RUTAS    DE    GLADYS    *******************************************
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -3,12 +3,17 @@
 @section('title', 'Datos Personales')
 
 @section('css')
+<link  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+    rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+    crossorigin="anonymous"
+    />
 <link rel="stylesheet" href="{{asset('css/Pantallas_Alumno_Servicio/DatosPersonales.css')}}">
 
 @endsection
 
 @section('content')
-
+<div class="container-fluid bg-dark py-5" >
+    <h3>Consulta de datos personales</h3>
 <div class="container">
     <!--<div id="logo" class="logo">
     <img src="/img/logo/logoSAE2.png" alt="">
@@ -110,7 +115,7 @@
 </div>
 
 </div>
-
+</div>
 
 @endsection
 

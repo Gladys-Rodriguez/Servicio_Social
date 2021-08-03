@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Servicio/Layout_Admin_Servicio.css')}}">
+    <link rel="stylesheet" href="{{asset('css/Pantallas_Alumno_Servicio/Layout_Alumno/Layout_Alumno2.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
     @yield('css')
@@ -17,50 +17,45 @@
       <a href="#" class="brand">APOYOS EDUCATIVOS</a>
       <a href="#" class="header__logo"></a>
         <i class='bx bx-menu header__toggle' id="header-toggle"></i>
-      <nav class="nav" id="nav-menu">
+      <nav class="nav-nav" id="nav-menu">
         <div class="nav__content bd-grid">
-            <a href="" class="nav__perfil">
-                <div class="nav__img">
-                    <img src="assets/img/perfil.jpg" alt="">
-                </div>
 
-                <div>
-                    <span class="nav__name"></span>
-                    <span class="nav__name"></span>
-                </div>
-            </a>
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="{{url('/AdminIndex')}}" class="nav__link ">Inicio</a></li>
-                    <li class="nav__item"><a href="{{url('/concentrados')}}" class="nav__link ">Concentrados </a></li>
+                    <li class="nav__item"><a href="{{url('/AdminIndex')}}" class="nav__link active">Inicio</a></li>
 
 
-                    <li class="nav__item"><a href="{{url('/estadistica')}}" class="nav__link">Estadística</a></li>
+                    <li class="nav__item"><a href="{{url('/estadisticas')}}" class="nav__link">Estadística</a></li>
+
+                    <li class="nav__item"><a href="{{url('/concentrados')}}" class="nav__link">Concentrados</a></li>
+
+                    <li class="nav__item"><a href="{{url('/SubirFormatos')}}" class="nav__link">Subir Formatos</a></li>
+
 
                     <li class="nav__item dropdown">
-                        <a  href="{{url('/validacionAlumno')}}" class="nav__link dropdown__link">Validaciones <i class='bx bx-chevron-down dropdown__icon'></i></a>
-
-
+                        <a  href="#" class="nav__link dropdown__link">Validaciones <i class='bx bx-chevron-down dropdown__icon'></i></a>
                         <ul class="dropdown__menu">
                             <li class="dropdown__item"><a href="{{url('/ListaDeAlumnos')}}" class="nav__link">Lista de Alumnos</a></li>
                             <li class="dropdown__item"><a href="{{url('/ListaDeAlumnosInhabilitados')}}" class="nav__link">Lista de Alumnos Inhabilitados</a></li>
-
-                            <li class="dropdown__item"><a href="#" class="nav__link">Validacion de Reportes</a></li>
                         </ul>
                     </li>
 
-
-
+                    <li class="nav__item dropdown">
+                        <a href="#" class="nav__link dropdown__link">Gestion de Banners<i class='bx bx-chevron-down dropdown__icon'></i></a>
+                        <ul class="dropdown__menu">
+                            <li class="dropdown__item"><a href="{{url('/RegisterBannerServicio')}}" class="nav__link">Registro de imagenes de servicios</a></li>
+                            <li class="dropdown__item"><a href="{{url('/consultaBannerServicio')}}" class="nav__link">Consulta de imagenes habilitadas de servicio</a></li>
+                            <li class="dropdown__item"><a href="{{url('/consultaBannerServicioInhabilitadas')}}" class="nav__link">Consulta de imagenes inhabilitadas de servicio</a></li>
+                        </ul>
+                    </li>
 
                     <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
-
-
                 </ul>
             </div>
         </div>
     </nav>
-    </header>
+</header>
     <script src="{{asset('js/Pantallas_Alumno_Servicio/Layout_Alumno.js')}}"></script>
     <script type="text/javascript">
         //javascript for navigation bar effect on scroll
@@ -93,14 +88,12 @@
 
         </script>
 
-   <!--<section class="section-main">
+ <!--   <section class="section-main">
       <h1>Bienvenido Administrador de servicio social:
       <?php /*<br> Usuario con matricula: {{ Auth::user()->id}} */?>
       </h1>
     </section>-->
     <section class="section-two">
-        <br>
-        <br>
  <!-- AQUI EMPIEZA CONTENIDO; -->
       @yield('content')
       @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])

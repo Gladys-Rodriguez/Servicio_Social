@@ -33,6 +33,16 @@ a{
     margin-top: 5rem;
 
  }
+
+ .registro{
+    text-align: center;
+    overflow: hidden;
+    display: table;
+    margin-top: 1rem;
+    width: 100%;
+ }
+
+
  .register td input{
 
     font-weight: normal;
@@ -40,6 +50,13 @@ a{
     -webkit-box-shadow: 0 2px 2px -2px #0E1119;
     -moz-box-shadow: 0 2px 2px -2px #0E1119;
     box-shadow: 0 2px 2px -2px #0E1119;
+ }
+ .registro td {
+    font-size: 18px;
+    text-align: left;
+    text-transform: uppercase;
+     color:#121533;
+     font-weight: 600;
  }
  .register td{
 
@@ -49,9 +66,15 @@ a{
      color:#d8d8d8;
  }
 
+ .registro td, .registro th {
+    padding-bottom: 2%;
+    padding-top: 3rem;
+    padding-left:2rem;
+    padding-right: 2rem;
+ }
  .register td, .register th {
     padding-bottom: 2%;
-    padding-top: 2%;
+    padding-top: 3rem;
     padding-left:2rem;
     padding-right: 2rem;
 
@@ -63,12 +86,28 @@ a{
  .register tr:nth-child(odd) {
     background-color: #334952e7;
  }
-
+ .registro tr:nth-child(odd) {
+    background-color: #9196a59f;
+ }
  .register tr:nth-child(even) {
     background-color: #3b5761e7;
  }
+ .registro tr:nth-child(even) {
+    background-color: #344161;
+}
  .register th {
     background-color: #7DA3A1;
+
+ }
+ .registro th {
+    background-color: #252e419f;
+ }
+ .registro th h1 {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+    text-transform: uppercase;
+     color:#d4d4d4;
 
  }
  .register th h1{
@@ -85,6 +124,14 @@ a{
         -moz-box-shadow: 0 6px 6px -6px #0E1119;
              box-shadow: 0 6px 6px -6px #0E1119;
  }
+ .registro tr:hover {
+    background-color: #464A52;
+ -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+        -moz-box-shadow: 0 6px 6px -6px #0E1119;
+             box-shadow: 0 6px 6px -6px #0E1119;
+ }
+
+
 .nombre{
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
@@ -93,7 +140,13 @@ a{
     font-weight: normal;
     font-size: 18px;
 }
+.registro .material-icons{
+    font-size:30px;
+    color:#DFDDDD;
+    overflow:initial;
 
+    vertical-align: middle;
+}
 .material-icons{
     font-size:30px;
     color:#122630;
@@ -135,7 +188,6 @@ background-color: #5d8684a8;
             transition-property: all;
         transition-timing-function: line;
 }
-
 .btn .verificar:hover{
     color: #c9d8d7;
     font-weight: bold;
@@ -146,3 +198,23 @@ background-color: #5d8684a8;
    transition-timing-function: line;
 
  }
+ .eliminar{
+    padding: .375rem .75rem;
+    border: 2.5px solid #526080;;
+    border-radius: .25rem;
+    background-color:#749997c4 ;
+    text-transform:uppercase;
+    color:#c9d8d7;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight:600;
+}
+.eliminar a{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight:600;
+
+}
+.eliminar:hover{
+    background-color: #cdcdc0e8;
+    }

@@ -51,6 +51,7 @@
 
  .blue { color: #185875; }
  .yellow { color: #FFF842; }
+ .rosa { color: #FB667A; }
 
  .container th h1 {
        font-weight: bold;
@@ -107,12 +108,12 @@
 
  /* Background-color of the odd rows */
  .container tr:nth-child(odd) {
-       background-color: #1c1e20;
+       background-color: #2C3446;
  }
 
  /* Background-color of the even rows */
  .container tr:nth-child(even) {
-       background-color: #2C3446;
+       background-color: #323b50;
  }
 
  .container th {
@@ -159,7 +160,7 @@
     vertical-align: middle;
     white-space: nowrap;
     position: relative;
-    padding-left: 68.5rem;
+    /*padding-left: 68.5rem;*/
   }
   .container-1 input#search{
     width: 300px;

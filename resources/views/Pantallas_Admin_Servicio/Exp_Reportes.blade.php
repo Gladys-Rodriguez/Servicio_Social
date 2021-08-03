@@ -3,15 +3,22 @@
 @section('title', 'Expediente de Reportes')
 
 @section('css')
+<link  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+    rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+    crossorigin="anonymous"
+    />
 <link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Servicio/expediente.css')}}">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 @endsection
 
 @section('content')
+<div class="container-fluid py-5" >
 
 <h1><span class="blue"></span><span class="blue"></span> <span class="yellow"></span></h1>
     <h1>Revisión de <a  target="_blank">Reportes</a> </h1>
 <br>
+<div class="table-responsive">
+
 <table class="register">
     <thead>
         <tr>
@@ -35,9 +42,11 @@
 
     </tbody>
 </table>
+</div>
 <br>
 
 
+<div class="table-responsive">
 
 <table class="container">
     <thead>
@@ -77,9 +86,15 @@
 
     </tbody>
 </table>
+</div>
 </form>
-<br><br><br>
+<br><br>
+@foreach ($alumno as $alum )
+    <a  class="regresar" href="{{route('DatosServicio.index', $alum->id_usuarios)}}"> Regresar </a>
+    @endforeach
 
+
+</div>
 @endsection
 
 @section('script')

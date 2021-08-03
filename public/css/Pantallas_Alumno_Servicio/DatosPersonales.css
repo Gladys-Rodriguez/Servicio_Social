@@ -20,7 +20,13 @@
 
 
 
-
+h3{
+    font-size:3em;
+    font-weight: 300;
+    line-height:1em;
+    text-align: center;
+    color: #A7A1AE;
+ }
 
 .container {
   background: var(--whit);

@@ -3,7 +3,10 @@
 @section('title', 'Subir Reportes')
 
 @section('content')
-
+<link  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+    rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+    crossorigin="anonymous"
+    />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="{{asset('css/Pantallas_Alumno_Servicio/docs_reportes.css')}}">
@@ -12,10 +15,10 @@
     <a href="#">
         <span class="material-icons">preview</span>
         Ver el seguimiento de mi solicitud </a></button> -->
-
+        <div class="container-fluid bg-dark py-5" >
   <h1 class="titulo">Carga de Reportes <a  target="_blank"> Mensual</a> </h1>
 
-
+  <div class="table-responsive">
 <table class="register">
     <form method="POST" action="{{ route('uploadreporte.store') }}" enctype="multipart/form-data">
         @csrf
@@ -58,11 +61,13 @@
     </thead>
     </form>
 </table>
-
+  </div>
 <button type="button" class="seguimiento">
     <a href="{{ route('SeguimientoReportes.index') }}">
         <span class="material-icons">preview</span>
         Ver la validación de mis reportes</a></button>
+
+        </div>
 @endsection
 
 @section('script')

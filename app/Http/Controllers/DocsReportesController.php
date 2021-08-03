@@ -55,6 +55,7 @@ class DocsReportesController extends Controller
 
 
 
+
         foreach ($files as $file){
             if(Storage::putFileAs('/public/'.$user_id.'/', $file, $file->getClientOriginalName())){
                     reporte::create([
