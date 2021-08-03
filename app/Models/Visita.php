@@ -18,6 +18,7 @@ class Visita extends Model
         'empresa_id',
         'fecha_visita',
         'validacion',
+        'observaciones',
     ];
 
     public function docente()
