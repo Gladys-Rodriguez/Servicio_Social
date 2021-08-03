@@ -7,12 +7,12 @@
 @section('content')
 
 <section class="section-main">
-    <h1>Mis Solicitudes</h1>
+    <h1>Mis Visitas</h1>
 </section>
 
 <div class="container-fluid bg-dark py-5" >
     <div class=" container border rounded text-white p-5" style="min-height: 600px">
-        <div class="display-4 mb-4">Lista de Solicitudes Realizadas</div>
+        <div class="display-4 mb-4">Lista de Visitas Aprobadas</div>
     
         <div class="table-responsive-md">
             <table class="table table-striped table-hover table-dark my-4">
@@ -44,23 +44,17 @@
                                     <a type="button" class="btn btn-sm btn-primary mb-1" href=" {{ route('docente.verSolicitud',['visita'=>$visita->id]) }} ">
                                         Ver Detalles
                                     </a>
-                                    <a type="button" class="btn btn-sm btn-primary" href=" # ">
-                                        Editar
+                                    <a type="button" class="btn btn-sm btn-primary" href=" {{ route('docente.registrarVisitaDocumento',['visita'=>$visita->id]) }} ">
+                                        Subir Documentos
                                     </a>
                                 </div>
                             </td>
                         </tr>
                         @empty
                         @endforelse
-                    </tbody>
-                </table>
+                </tbody>
+            </table>
         </div>
-    
-        <hr class="my-5">
-        <div class="h2 mb-3">¿Desea realizar una solicitud para una Visita Escolar? </div>
-                Haga clic en el siguiente botón: 
-            <a type="button" class="btn btn-primary btn-sm" href=" {{ route('docente.mostrarEmpresas') }} "> Registrar Nueva Solicitud </a>
-            
     </div>
 </div>
 

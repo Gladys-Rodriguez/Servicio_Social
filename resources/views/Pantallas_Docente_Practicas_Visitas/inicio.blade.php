@@ -11,18 +11,58 @@
     <br> Usuario con matricula: {{ Auth::user()->id}}</h1>
 </section>
 
-<section class="section-inicio">
-    <section class="calendario-visitas">
-        <h2>Calendario</h2>
-    </section>
+<div class="container-fluid d-grid bg-dark p-5 text-white gap-4" >
+    <div class="row"> 
+        <div class="col">
+            <div class="border rounded p-3" style="min-height: 500px"> 
+                <div class="display-4 text-center">Calendario de Visitas</div>
+            </div>
+        </div>
+    </div>
+    <div class="row"  >
+        <div class="col ">
+            <div class="border rounded p-3 bg-white text-dark" style="min-height: 500px"> 
+                <div class="h2">Formatos Plantilla</div>
+                <hr class="m-3">
+                <ul class="list-group">
+                    @forelse ($plantillas as $plantilla)
+                        <li class="list-group-item  list-group-item-action list-group-item-dark">
+                                <a class="text-decoration-none text-dark" href=" @php echo \Illuminate\Support\Facades\Storage::url($plantilla->ruta) @endphp">
+                                    {{ $plantilla->nombre }} 
+                                </a>
+                        </li>
+                    @empty
+                    @endforelse
+                </ul>
+            </div>
+        </div>
+        <div class="col">
+            <div class="border rounded p-3 bg-white text-dark" style="min-height: 500px"> 
+                <div class="h2">Formatos de Ejemplo</div>
+                <hr class="m-3">
+                <ul class="list-group">
+                    @forelse ($ejemplos as $ejemplo)
+                        <li class="list-group-item list-group-item-action list-group-item-secondary">
+                            <a class="text-decoration-none text-dark" href=" @php echo \Illuminate\Support\Facades\Storage::url($ejemplo->ruta) @endphp">
+                                {{ $ejemplo->nombre }} 
+                            </a>
+                        </li>
+                    @empty
+                    @endforelse
+                </ul>
+            </div>
+        </div>
 
-    <section class="plantillas-doc">
-        <h2>Documentos-Plantillas</h2>
-    </section>
+    </div>
 
-    <section class="ejemplos-doc">
-        <h2>Documentos-Ejemplos</h2>
-    </section>
-</section>
+  
 
+        
+
+        
+
+
+        
+
+</div>
 @endsection

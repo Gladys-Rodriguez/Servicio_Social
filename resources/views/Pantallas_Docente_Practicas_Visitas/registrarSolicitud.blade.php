@@ -7,35 +7,62 @@
 @section('content')
 
 <section class="section-main">
-    <h1> Registro de Solicitud para Visita Escolar </h1>
+    <h1> Fecha y Solicitud de la Visita Escolar </h1>
 </section>
 
-<section class="section-dos">
-    <div class="content-wrap">
-        @include('Pantallas_Docente_Practicas_Visitas.Layout.datosEmpresa')
+<div class="container-fluid bg-dark py-5">
+    <div class="container p-5 border rounded text-white">
+        
+        <div class="display-5 mb-4">Paso 2: Indica la fecha para la Visita Escolar y sube tu solicitud </div>
+        <div class="progress mb-5" style="height:40px;">
+            <div class="progress-bar progress-bar-striped bg-secondary"
+                style="width:50%;"
+                role="progressbar"
+                aria-valuenow="50"
+                aria-valuemin="0"
+                aria-valuemax="100">
+            </div> 
+        </div>
 
-        <h2>Datos de la Solicitud</h2>
+        <div class="h2"> Empresa Seleccionada </div>
+        <label class="form-label">Nombre:</label>
+        <input class="form-control" value=" {{ $empresa->nombre}}" disabled>
+        <br/>
+        <div class="row">
+            <div class="col-6"> 
+                <label class="form-label">Estado/Ciudad:</label>
+                <input class="form-control" value=" {{ $empresa->direccion->ciudad}}" disabled>
+            </div> 
+            <div class="col-6">
+                <label class="form-label">Alcaldía/Munucipio:</label>
+                <input class="form-control" value=" {{ $empresa->direccion->alcaldia}}" disabled>
+            </div> 
+        </div>
+        
+        <hr class="my-5">
+
+        <div class="h2"> Datos de la solicitud </div>
         <form class="form" action=" {{ route('docente.guardarSolicitud') }} " method="POST" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="empresa_id" value="{{ $empresa->id}}">
             <input type="hidden" name="docente_id" value="{{ $docente->id}}">
         
-            <div class="col-12">
-                <label for="fecha_visita">FECHA VISITA: </label>
-                <input type="date" name="fecha_visita" id="fecha_visita">
-            </div> 
+            <label for="fecha_visita" class="form-label">Fecha de la Visita </label>
+            <input type="date" class="form-control" name="fecha_visita" id="fecha_visita">
+            <br /> 
 
-            <div class="col-12">
-                <label  for="ruta">Solicitud de Visita</label>
-                <input name="ruta" type="file" accept="application/pdf">
-            </div>
-        
-            <div class="col-12">
-                Antes de registrar vreifica que todos los datos sean correctos*
-                <button type="submit">Registrar Solicitud </button>
+            <label  for="ruta" class="form-label">Solicitud de Visita</label>
+            <input name="ruta" type="file" accept="application/pdf" class="form-control">
+            <br />
+
+            <div class="d-flex justify-content-end">
+                <a role="button" class="btn btn-danger mx-3" href="{{route('docente.mostrarEmpresas')}}">Regresar</a>
+                <button type="submit" class="btn btn-light">Registrar Solicitud </button>
             </div>
             
+
         </form>
     </div>
-</section>
+</div>
+
 @endsection

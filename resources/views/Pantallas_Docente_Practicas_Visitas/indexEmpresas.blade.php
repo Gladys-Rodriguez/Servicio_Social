@@ -10,11 +10,22 @@
     <h1>Selecciona tu Empresa</h1>
 </section>
 
-<section class="section-dos">
-    <div class="content-wrap">
-        <h2>Tabla de Empresas Registradas</h2>
-        <p> ¿Su empresa no se encuentra en la lista? <a href=" {{ route('docente.registrarEmpresa') }}  ">Registrela Aquí </a></p>
-        <table class="table">
+<div class="container-fluid bg-dark py-5">
+    <div class="container p-5 border rounded text-white">
+        
+        <div class="display-5 mb-4">Paso 1: Selecciona tu Empresa</div>
+        <div class="progress mb-5" style="height:40px;">
+            <div class="progress-bar progress-bar-striped bg-secondary"
+                style="width:25%;"
+                role="progressbar"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100">
+            </div> 
+        </div>
+
+        <div class="h2 mb-4">Tabla de Empresas Registradas</div>
+                <table class="table table-striped table-hover table-dark my-4">
             <thead>
                 <tr>
                     <th>Empresa</th>
@@ -40,7 +51,8 @@
                         <td> {{ $empresa->direccion->num_int }}  </td>
                         <td> {{ $empresa->direccion->cp }}  </td>
                         <td>
-                            <a href=" {{ route('docente.registrarSolicitud',['empresa'=>$empresa->id]) }} ">
+                            <a role="button" class="btn btn-sm btn-primary" 
+                                href=" {{ route('docente.registrarSolicitud',['empresa'=>$empresa->id]) }} ">
                                 Seleccionar
                             </a>
                         </td>
@@ -49,10 +61,18 @@
                 @endforelse
             </tbody>
         </table>
-        <div class="paginacion">
-            {{$empresas->links('vendor.pagination.simple-tailwind')}}
+        <div class="d-flex justify-content-center">
+            {{$empresas->links()}}
         </div>
+
+        <hr class="mt-5 mb-4">
+
+        <div class="h2 mb-4">¿La empresa que busca no se encuentra en la lista?</div>
+        <p> Registrela haciendo clic en el siguiente boton:  <a type="button" class="btn btn-sm btn-primary" href=" {{ route('docente.registrarEmpresa') }}  ">Registrar Empresa </a></p>
+
+
+        <a type="button" class="btn btn-light mt-4" href=" {{ route('docente.index') }} "><i class="bi bi-arrow-left"></i>Regresar</a>
     </div>
-</section>
+</div>
 
 @endsection
