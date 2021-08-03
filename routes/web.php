@@ -256,11 +256,6 @@ Route::get('/Admin_Becas_Index3', function () {
     return view('Pantallas_Admin_Becas.Admin_Becas_Index3');
 }) -> name('Admin_Becas_Index3');
 
-//Ruta Validacion_Alumno_Becas
-Route::get('/Validacion_Alumno_Becas', function () {
-    return view('Pantallas_Admin_Becas.Validacion_Alumno_Becas');
-}) -> name('Validacion_Alumno_Becas');
-
 
 
 //Ruta Admin Practicas y Visitas Index
@@ -271,12 +266,15 @@ Route::get('/Admin_Practicas_Visitas_Index2', function () {
 
 //Ruta Validacion Practicas y Visitas
 Route::get('/Validacion_Practicas_Visitas','ValidacionDocPraController@index');
+Route::get('/Validacion_Alumno_Becas','ValidacionBController@index');
 
 //Ruta Clasificacion Practicas y Visitas
 Route::get('/Solicitudes_Practicas_Visitas','AdminPracSolicitudesController@index');
 Route::get('/Tipo_Alumno_Becas','SolicitudesBecasController@index');
 Route::get('/AceptadasV','PracticasAceptadasController@index');
 Route::get('/RechazadasV','PracticasRechazadasController@index');
+Route::get('/AceptadasB','AceptadasBController@index');
+Route::get('/RechazadasB','RechazadasBController@index');
 
 
 Route::get('/SolicitudesPra/{id}', [App\Http\Controllers\AdminPracSolicitudesController::class, 'edit'])->name('home');

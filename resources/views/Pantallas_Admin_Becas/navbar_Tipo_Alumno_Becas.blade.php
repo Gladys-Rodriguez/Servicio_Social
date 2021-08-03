@@ -29,7 +29,7 @@
                 <ul class="nav__list">
                 <li class="nav__item"><a href="{{url('/Admin_Becas_Index3')}}" class="nav__link">HOME</a></li>
                     <li class="nav__item"><a href="{{url('/Validacion_Alumno_Becas')}}" class="nav__link">Validación de documentos</a></li>
-                    <li class="nav__item"><a href="{{url('/Tipo_Alumno_Becas')}}" class="nav__link active">Solicitudes</a></li>
+                    <li class="nav__item"><a href="{{url('/Tipo_Alumno_Becas')}}" class="nav__link">Solicitudes</a></li>
                     <li class="nav__item"><a href="{{url('/AceptadasB')}}" class="nav__link">Solicitudes Aceptadas</a></li>
                     <li class="nav__item"><a href="{{url('/RechazadasB')}}" class="nav__link">Solicitudes Rechazadas</a></li>
                     <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>      
@@ -72,7 +72,7 @@
         </script>
 
     <section class="section-main">
-      <h1>LISTADO DE SOLICITUDES DE BECAS</h1>
+      <h1>LISTADO DE BECAS</h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->
