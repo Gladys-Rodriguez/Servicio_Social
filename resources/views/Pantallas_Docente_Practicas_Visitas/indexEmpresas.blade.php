@@ -13,9 +13,9 @@
 <div class="container-fluid bg-dark py-5">
     <div class="container p-5 border rounded text-white">
         
-        <div class="display-5 mb-4">Paso 1: Selecciona tu Empresa</div>
+        <div class="display-5 mb-4"><div class="d-inline text-warning"> <strong>PASO 1: </strong></div> </strong> Selecciona tu Empresa</div>
         <div class="progress mb-5" style="height:40px;">
-            <div class="progress-bar progress-bar-striped bg-secondary"
+            <div class="progress-bar progress-bar-striped bg-warning"
                 style="width:25%;"
                 role="progressbar"
                 aria-valuenow="25"
@@ -65,8 +65,9 @@
             {{$empresas->links()}}
         </div>
 
-        <hr class="mt-5 mb-4">
-
+        <hr class="mt-5 mb-3">
+    </div>
+    <div class="container p-5 mt-5 border rounded text-white">
         <div class="h2 mb-4">¿La empresa que busca no se encuentra en la lista?</div>
         <p> Registrela haciendo clic en el siguiente boton:  <a type="button" class="btn btn-sm btn-primary" href=" {{ route('docente.registrarEmpresa') }}  ">Registrar Empresa </a></p>
 

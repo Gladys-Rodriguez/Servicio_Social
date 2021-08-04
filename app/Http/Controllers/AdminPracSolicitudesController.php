@@ -54,4 +54,8 @@ class AdminPracSolicitudesController extends Controller
         $datos->update($request->all());
         return redirect("/Solicitudes_Practicas_Visitas");
     }
+
+    public function registrarDocente(){
+        return view('Pantallas_Admin_Practicas_Visitas.registroDocente');
+    }
 }

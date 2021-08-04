@@ -13,9 +13,9 @@
 <div class="container-fluid bg-dark py-5">
     <div class="container p-5 border rounded text-white">
         
-        <div class="display-5 mb-4">Paso 2: Indica la fecha para la Visita Escolar y sube tu solicitud </div>
+        <div class="display-5 mb-4"><div class="d-inline text-warning"> <strong>PASO 2: </strong></div>Indica la fecha para la Visita Escolar y sube tu solicitud </div>
         <div class="progress mb-5" style="height:40px;">
-            <div class="progress-bar progress-bar-striped bg-secondary"
+            <div class="progress-bar progress-bar-striped bg-warning"
                 style="width:50%;"
                 role="progressbar"
                 aria-valuenow="50"
@@ -48,11 +48,24 @@
             <input type="hidden" name="docente_id" value="{{ $docente->id}}">
         
             <label for="fecha_visita" class="form-label">Fecha de la Visita </label>
-            <input type="date" class="form-control" name="fecha_visita" id="fecha_visita">
+            <input name="fecha_visita" type="date" class="form-control" value=" {{ old('fecha_visita') }}" />
+            @if ($errors->has('fecha_visita'))
+                <div class="alert alert-warning p-2 mt-2" role="alert">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    {{ $errors->first('fecha_visita') }}
+                </div>
+            @endif
             <br /> 
+            
 
             <label  for="ruta" class="form-label">Solicitud de Visita</label>
-            <input name="ruta" type="file" accept="application/pdf" class="form-control">
+            <input name="ruta" type="file" accept="application/pdf" class="form-control" >
+            @if ($errors->has('ruta'))
+                <div class="alert alert-warning p-2 mt-2" role="alert">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    {{ $errors->first('ruta') }}
+                </div>
+            @endif
             <br />
 
             <div class="d-flex justify-content-end">

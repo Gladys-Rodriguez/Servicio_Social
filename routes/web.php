@@ -283,7 +283,6 @@ Route::get('/RechazadasV','PracticasRechazadasController@index');
 Route::get('/AceptadasB','AceptadasBController@index');
 Route::get('/RechazadasB','RechazadasBController@index');
 
-
 Route::get('/SolicitudesPra/{id}', [App\Http\Controllers\AdminPracSolicitudesController::class, 'edit'])->name('home');
 Route::put('/SolicitudesPra1/{id}', [App\Http\Controllers\AdminPracSolicitudesController::class, 'update'])->name('SolicitudesPra1.update');
 
@@ -294,6 +293,9 @@ Route::put('/SB1/{id}', [App\Http\Controllers\SolicitudesBecasController::class,
 Route::get('/ValidacionV2/{id}', [App\Http\Controllers\ValidacionDocPraController::class, 'edit'])->name('home');
 Route::put('/Validacion3/{id}', [App\Http\Controllers\ValidacionDocPraController::class, 'update'])->name('Validacion3.update');
 
+
+Route::get('/AdminPracticas/Docente/Registrar','AdminPracSolicitudesController@registrarDocente')
+    ->name('AdminPracticas.registrarDocente');
 
 //------------------------FER TERMINO------------------------------------
 
@@ -694,17 +696,3 @@ Route::post('/VisitasEscolaresAdmin/Formato/Guardar', 'VisitaController@guardarF
 
 Route::get('/VisitasEscolaresAdmin/Formato/Editar/{visitaFormato}', 'VisitaController@editarFormato')
     ->name('adminVisitas.editarFormato');
-
-<<<<<<< HEAD
-Route::put('/VisitasEscolaresAdmin/Formato/Actualizar/{visitaFormato}', 'VisitaController@actualizarFormato')
-    ->name('adminVisitas.actualizarFormato');
-=======
-
-// ************************************* RUTAS    DE    MOY    *******************************************
-//Rutas Practicas-y-Vistas Docente
-Route::get('/VisitasEscolares/Index','DocenteIndexController');
-Route::get('/VisitasEscolares/SolicitarVisita','DocenteSolicitarVisitaController');
-Route::get('/VisitasEscolares/MisVisitas','DocenteMisVisitasController');
-Route::resource('Visitas', 'VisitaController');
-Route::resource('DocenteVisitas', 'DocenteVisitaController');
->>>>>>> 263d9101b66f2252fcd3d0c949c7a840c9ef818f

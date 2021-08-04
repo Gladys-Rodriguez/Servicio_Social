@@ -32,14 +32,14 @@
                 </a>
                 <div class="nav__menu">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href=" {{ route('docente.inicio') }} " class="nav__link active">INICIO</a></li>
+                        <li class="nav__item"><a href=" {{ route('docente.inicio') }} " class="nav__link" id="inicio_docente">INICIO</a></li>
 
                         <li class="nav__item dropdown">
-                            <a href="{{ route('docente.index')}}" class="nav__link dropdown__link">VISITAS<i class='bx bx-chevron-down dropdown__icon'></i></a>
+                            <a href="{{ route('docente.index')}}" class="nav__link dropdown__link active">VISITAS<i class='bx bx-chevron-down dropdown__icon'></i></a>
 
                             <ul class="dropdown__menu">
-                                <li class="dropdown__item"><a href=" {{ route('docente.index')}}" class="nav__link active">Solicitudes</a></li>
-                                <li class="dropdown__item"><a href=" {{ route('docente.mostrarVisitas') }} " class="nav__link active">Visitas Validadas</a></li>
+                                <li class="dropdown__item"><a href=" {{ route('docente.index')}}" class="nav__link">Solicitudes</a></li>
+                                <li class="dropdown__item"><a href=" {{ route('docente.mostrarVisitas') }} " class="nav__link">Visitas Validadas</a></li>
                             </ul>
                         </li>
 

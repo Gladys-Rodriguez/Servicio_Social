@@ -47,11 +47,6 @@ class RolSeeder extends Seeder
 
         Rol::create([
             'id_rol' => 7,
-            'Tipo_rol' => 'Prueba',
-        ]);
-
-        Rol::create([
-            'id_rol' => 8,
             'Tipo_rol' => 'Admin Master',
         ]);   
     }

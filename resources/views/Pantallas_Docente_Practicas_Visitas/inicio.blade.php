@@ -54,15 +54,13 @@
         </div>
 
     </div>
-
-  
-
-        
-
-        
-
-
-        
-
 </div>
+<script>
+    var activos = document.getElementsByClassName("active");
+    for (var i = 0; i<activos.length; i++) {
+        activos[i].classList.remove("active");
+    }
+    var activo = document.getElementById("inicio_docente");
+    activo.classList.add("active");
+</script>
 @endsection
