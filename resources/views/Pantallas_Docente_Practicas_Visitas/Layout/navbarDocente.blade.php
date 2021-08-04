@@ -11,7 +11,6 @@
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="{{asset('css/Pantallas_Alumno_Servicio/Layout_Alumno/Layout_Alumno2.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" />
     @yield('css')
     
     
@@ -20,39 +19,45 @@
   <body>
 
     <header class="header">
-        <a href="#" class="brand">APOYOS EDUCATIVOS</a>
-        <a href="#" class="header__logo"></a>
+      <a href="#" class="brand">APOYOS EDUCATIVOS</a>
+      <a href="#" class="header__logo"></a>
         <i class='bx bx-menu header__toggle' id="header-toggle"></i>
-        <nav class="nav" id="nav-menu">
-            <div class="nav__content bd-grid">
-                <a href="" class="nav__perfil">
-                    <div class="nav__img">
-                        
-                    </div>
-                </a>
-                <div class="nav__menu">
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href=" {{ route('docente.inicio') }} " class="nav__link" id="inicio_docente">INICIO</a></li>
+      <nav class="nav-nav" id="nav-menu">
+        <div class="nav__content bd-grid">
+            <a href="" class="nav__perfil">
+                <div class="nav__img">
+                    <img src="assets/img/perfil.jpg" alt="">
+                </div>
 
-                        <li class="nav__item dropdown">
-                            <a href="{{ route('docente.index')}}" class="nav__link dropdown__link active">VISITAS<i class='bx bx-chevron-down dropdown__icon'></i></a>
+                <div>
+                   <!-- <span class="nav__name">Clay</span>
+                    <span class="nav__name">Mitchell</span>
+                </div> -->
+            </a>
+
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="{{route('docente.inicio')}}" class="nav__link active" id="inicio">Home</a></li>
+
+                   <li class="nav__item dropdown">
+                            <a href="{{ route('docente.index')}}" class="nav__link dropdown__link" id="menu_visitas">VISITAS<i class='bx bx-chevron-down dropdown__icon'></i></a>
 
                             <ul class="dropdown__menu">
-                                <li class="dropdown__item"><a href=" {{ route('docente.index')}}" class="nav__link">Solicitudes</a></li>
-                                <li class="dropdown__item"><a href=" {{ route('docente.mostrarVisitas') }} " class="nav__link">Visitas Validadas</a></li>
+                                <li class="dropdown__item"><a href=" {{ route('docente.index')}}" class="nav__link" id="solicitudes">Solicitudes</a></li>
+                                <li class="dropdown__item"><a href=" {{ route('docente.mostrarVisitas') }} " class="nav__link" id="visitas">Visitas Validadas</a></li>
                             </ul>
                         </li>
 
-                        <li class="nav__item"><a href=" {{ route('docente.mostrarDatosDocente') }} " class="nav__link">MIS DATOS</a></li>
+                        <li class="nav__item"><a href=" {{ route('docente.mostrarDatosDocente') }} " class="nav__link" id="datos">MIS DATOS</a></li>
                         
 
                         <li class="nav__item"><a href="{{url('/logout')}}" class="nav__link"> CERRAR SESIÓN</a></li>
 
                     </ul>
-                </div>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+  </header>
 
     <script src="{{asset('js/Pantallas_Alumno_Servicio/Layout_Alumno.js')}}"></script>
     <script type="text/javascript">

@@ -1,4 +1,4 @@
-@extends('Pantallas_Docente_Practicas_Visitas.Layout.navbar2')
+@extends('Pantallas_Docente_Practicas_Visitas.Layout.navbarDocente')
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantalla_Docente_PracticasVisitas/estilosVisitasEscolares.css')}}"/>
@@ -58,5 +58,15 @@
     </div>
 </div>
 
+<script>
+    var activos = document.getElementsByClassName("active");
+    for (var i = 0; i<activos.length; i++) {
+        activos[i].classList.remove("active");
+    }
+    var activo = document.getElementById("menu_visitas");
+    activo.classList.add("active");
+    activo= document.getElementById("visitas");
+    activo.classList.add("active");
+</script>
 
 @endsection

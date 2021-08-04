@@ -1,5 +1,5 @@
 
-@extends('Pantallas_Docente_Practicas_Visitas.Layout.navbar2')
+@extends('Pantallas_Docente_Practicas_Visitas.Layout.navbarDocente')
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantalla_Docente_PracticasVisitas/estilosVisitasEscolares.css')}}"/>

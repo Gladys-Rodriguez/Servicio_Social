@@ -37,9 +37,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-<<<<<<< HEAD
+
         Paginator::useBootstrap();
-=======
+
         //
 
 
@@ -51,6 +51,6 @@ class AppServiceProvider extends ServiceProvider
         {
             $view->with('registros', request()->input('boleta'));
         });*/
->>>>>>> 141f19bdc3a0419d3287e0e72776156d241598dd
+
     }
 }

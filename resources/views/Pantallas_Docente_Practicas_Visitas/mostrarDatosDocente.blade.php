@@ -1,5 +1,5 @@
 
-@extends('Pantallas_Docente_Practicas_Visitas.Layout.navbar2')
+@extends('Pantallas_Docente_Practicas_Visitas.Layout.navbarDocente')
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantalla_Docente_PracticasVisitas/estilosVisitasEscolares.css')}}"/>
@@ -20,7 +20,7 @@
 
         <div class="row" >
             <div class="col-4">
-                <label class="form-label">Matricula:</label>
+                <label class="form-label">Número de Empleado:</label>
                 <input class="form-control" value=" {{ $docente->user->id }}" disabled>
                 <br />
             </div>
@@ -76,4 +76,12 @@
 
     </div>
 </div>
-
+<script>
+    var activos = document.getElementsByClassName("active");
+    for (var i = 0; i<activos.length; i++) {
+        activos[i].classList.remove("active");
+    }
+    var activo = document.getElementById("datos");
+    activo.classList.add("active");
+</script>
+@endsection
