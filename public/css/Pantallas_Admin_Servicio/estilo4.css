@@ -1,0 +1,174 @@
+body {
+    font-size: 20px;
+    padding: 0px;
+    margin: 0px;
+    font-family: "Combo", cursive;
+    background-color: #f8f5f1;
+}
+.mtop16 {
+    margin-top: 16px;
+}
+.mb16 {
+    margin-bottom: 16px;
+}
+.input-group-text {
+    display: block;
+}
+h2 {
+    padding: 0px;
+    margin: 0px;
+}
+
+h3 {
+    padding: 0px;
+    margin: 0px;
+}
+
+h4 {
+    padding: 0px;
+    margin: 0px;
+}
+
+h5 {
+    padding: 0px;
+    margin: 0px;
+}
+
+ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+html {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
+
+ .inside {
+    padding: 16px;
+}
+
+ .inside .big_count {
+    display: block;
+    font-size: 2em;
+    width: 100%;
+    text-align: center;
+}
+
+.page .panel .inside .nav .nav-link {
+    border: 2px solid #5aa897;
+    color: #19213d;
+    border-radius: 5px;
+    margin-right: 8px;
+}
+
+.page .panel .inside .nav .nav-link:hover {
+    background-color: #5aa897;
+    color: #fff;
+}
+
+.page .panel .inside .form_search {
+    margin-bottom: 16px;
+    display: none;
+}
+.page .panel .inside .form_search .btn {
+    width: 100%;
+    background-color: #5aa897;
+}
+
+.opts a {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #dedede;
+    color: #5aa897;
+}
+
+.product_gallery {
+    overflow: hidden;
+}
+
+.product_gallery .btn-submit {
+    display: block;
+    margin-right: 1%;
+    width: 100%;
+}
+
+.product_gallery .btn-submit a {
+    border: 1px dashed #45526c;
+    border-radius: 4px;
+
+    display: block;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 11px;
+    color: #45526c;
+    width: 100%;
+}
+
+.product_gallery .btn-submit a:hover {
+    background-color: whitesmoke;
+    color: #5aa897;
+}
+
+.product_gallery .tumbs {
+    overflow: hidden;
+}
+
+.product_gallery .tumbs .tumb {
+    float: left;
+    margin-top: 9px;
+    position: relative;
+    width: 49%;
+}
+.product_gallery .tumbs .tumb a {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    color: #fff;
+    padding: 6px, 10px;
+    display: inline-block;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+}
+
+.product_gallery .tumbs .tumb img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.product_gallery .tumbs .tumb img:nth-child(odd) {
+    margin-right: 3%;
+}
+
+.page_user .mini_profile .avatar {
+    display: block;
+    width: 140px;
+    margin: 0px auto;
+    border-radius: 50%;
+}
+
+.page_user .mini_profile .info {
+    color: #45526c;
+}
+.page_user .mini_profile .btn {
+    width: 100%;
+    margin-top: 16px;
+}
+
+.page_user .mini_profile .info span {
+    display: block;
+    width: 100%;
+    font-size: 1.2em;
+}
+.page_user .mini_profile .info span.title {
+    font-weight: bolder;
+    margin-top: 16px;
+}
+
+.dropdown .dropdown-toggle {
+    background-color: #5aa897;
+}

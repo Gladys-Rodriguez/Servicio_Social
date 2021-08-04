@@ -9,6 +9,7 @@ const showMenu = (toggleId, navId)=>{
         toggle.classList.toggle('bx-x')
       })
     }
+
   }
   showMenu('header-toggle','nav-menu')
 

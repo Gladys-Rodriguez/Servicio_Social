@@ -10,17 +10,51 @@ use Illuminate\Http\Request;
 class AlumnoController extends Controller
 {
     //
-    public function lista(){
+    public function  dashboard(){
+        $alumnos = alumno::count();
+        $alumnosProceso = alumno::where('servicio', '0')->count();
+        $alumnosFinalizado = alumno::where('servicio', '1')->count();
+        $alumnoMatutino = alumno::where('turno', 'matutino')->where('servicio', '0')->count();
+        $alumnoMatutinoFinalizado = alumno::where('turno', 'matutino')->where('servicio', '1')->count();
+        $alumnoVespertino = alumno::where('turno', 'vespertino')->where('servicio', '0')->count();
+        $alumnoVespertinoFinalizado = alumno::where('turno', 'vespertino')->where('servicio', '1')->count();
+        $data = ['alumnos' => $alumnos, 'alumnosProceso' => $alumnosProceso, 'alumnosFinalizado' => $alumnosFinalizado, 'alumnoMatutino'  => $alumnoMatutino, 'alumnoMatutinoFinalizado' => $alumnoMatutinoFinalizado, 'alumnoVespertino' => $alumnoVespertino, 'alumnoVespertinoFinalizado' => $alumnoVespertinoFinalizado ];
 
+
+        return view('Pantallas_Admin_Servicio.estadisticas', $data );
+    }
+    public function lista(Request $request){
+
+        
+        if($request){
+            $query = trim($request->get(key: 'search'));
+            $alumnos = alumno::where('id', 'LIKE', '%' . $query . '%')
+                                    ->orderBy('id', 'asc')
+                                    ->get();
+                                    return view('Pantallas_Admin_Servicio.ConcentradoInfo', compact('alumnos'),  ['search' => $query]);
+        }
+
+       // $alumnos = alumno::all();
+
+       // return view('Pantallas_Admin_Servicio.ConcentradoInfo', compact('alumnos'));
+
+    }
+
+    public function buscar(Request $request){
+        $search = $request->input('search');
+
+    }
+
+    public function edit(Request $request){
         $alumnos = alumno::all();
 
-        return view('Pantallas_Admin_Servicio.ConcentradoInfo', compact('alumnos'));
+        return view('Pantallas_Admin_Servicio.validacionAlumno',  compact('alumnos'));
+    }
+    
 
-    }
-    public function muestra()
-    {
-        return view('Alumno.Registro_Alumno');
-    }
+    
+
+    
 
 
     public function create(Request $request)

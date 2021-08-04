@@ -31,7 +31,7 @@
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="{{ url('/Index_Alumno')}}" class="nav__link active">Home</a></li>
+                    <li class="nav__item"><a href="{{ url('/Index_Alumno')}}" class="nav__link">Home</a></li>
 
                     <li class="nav__item dropdown">
                         <a href="/Index_Alumno" class="nav__link dropdown__link">Servicio Social <i class='bx bx-chevron-down dropdown__icon'></i></a>
@@ -55,7 +55,7 @@
                         </ul>
                     </li>
 
-                    <li class="nav__item"><a href="{{ url('/DatosPersonales')}}" class="nav__link active">Datos personales</a></li>
+                    <li class="nav__item"><a href="{{ url('/DatosPersonales')}}" class="nav__link">Datos personales</a></li>
 
                     <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
 

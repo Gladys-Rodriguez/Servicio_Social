@@ -1,174 +1,197 @@
-@extends('Pantallas_Alumno_Servicio.Layout_Alumno.Layout_Alumno2')
+@extends('Pantallas_Alumno_Servicio.Layout_Alumno.Layout_Alumno4')
 
 @section('title', 'Subir Documentos')
 
 @section('content')
-
+<link  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+    rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+    crossorigin="anonymous"
+    />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Servicio/estilo2.css')}}">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Servicio/estilo2.css')}}"> -->
 
-  <button type="button" class="btn btn1"><a href="{{ route('uploaddocexpediente.index') }}"> Ver el seguimiento de mi solicitud </a></button>
+  <div class="container-fluid bg-dark py-5" >
 
-  <div class="container" id="tabla">
-  <h2>  Acta de nacimiento</h2>
-  <form method="POST" action="{{ route('uploaddocexpediente.store') }}" enctype="multipart/form-data">
-    @csrf
-  <table class="table">
-  <thead>
-    <tr >
-      <th scope="col"> <i class="bi bi-archive-fill"></i> Archivo</th>
-      <th scope="col"> <i class="bi bi-file-earmark-pdf"></i> Tipo de Documento</th>
-      <th scope="col"> <i class="bi bi-capslock-fill"></i> Subir Archivo </th>
-      <th scope="col"> <i class="bi bi-patch-exclamation-fill"></i> Observaciones </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><input type="file"   name="files[]"  multiple></td>
-      <td><select  class ="select" name="documento">
-        <option value="Acta de Nacimiento">Acta de nacimiento</option>
-        </select></td>
-      <td><button type="submit" class="btn btn1" > subir</button> </td>
-    </tr>
-  </tbody>
+
+  <h1 class="titulo">Documentos Requeridos Para Registro </h1>
+<br>
+  <button type="button" class="seguimiento">
+    <a href="{{ route('uploaddocexpediente.index') }}">
+        <span class="material-icons">preview</span>
+        Ver el seguimiento de mi solicitud </a></button>
+
+        <br>
+
+
+
+    <p name="" id="" cols="1" rows="3" class="border rounded" >
+        No olvides que tu reporte mensual de actividades y el formato de asistencia debe ser
+        subido en un solo archivo por periodo, de lo contrario será rechazado por tu responsable directo
+    </p>
+    <p class="border rounded" name="" id="" cols="1" rows="2">
+        Recuerda que deben ser archivos de tipo .doc .rtf o .pdf y que no deben exceder de 1.5Mb
+    </p>
+
+
+
+<div class="table-responsive">
+    <table class="register">
+    <thead>
+        <tr>
+            <th><h1><span class="material-icons">text_snippet</span> Archivo</h1></th>
+            <th><h1><span class="material-icons">drive_file_rename_outline</span>Tipo de Documento</h1></th>
+            <th><h1><span class="material-icons">cloud_upload</span>Subir Archivo </h1></th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+
+        <form method="POST" action="{{ route('uploaddocexpediente.store') }}" enctype="multipart/form-data">
+            @csrf
+                        <tr>
+                            <td class="file">
+                                <div class="container-input">
+                                    <input type="file" name="files[]" id="file-2" class="inputfile inputfile-2" multiple />
+                                    <label for="file-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="iborrainputfile" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg>
+                                    <span class="iborrainputfile">Seleccionar archivo</span>
+                                    </label>
+                                    </div>
+                            </td>
+                            <td>
+                                <input type="text" class="inputdoc" name="documento" id="No_registro" value="ACTA DE NACIMIENTO ">
+                                <textarea disabled rows="1" cols="1"class="nomDoc" > ACTA DE NACIMIENTO
+                                </textarea>
+                            <td><button type="submit" class="btn btn1" > Subir <br>Documento</button></td>
+
+                        </tr>
+        </form>
+
+
+        <form method="POST" action="{{ route('uploaddocexpediente.store') }}" enctype="multipart/form-data">
+            @csrf
+                            <tr>
+                                <td>
+                                    <div class="container-input">
+                                        <input type="file" name="files[]" id="file-3" class="inputfile inputfile-2" multiple />
+                                        <label for="file-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="iborrainputfile" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg>
+                                        <span class="iborrainputfile">Seleccionar archivo</span>
+                                        </label>
+                                        </div>
+                                </td>
+                                <td>
+                                    <input type="text" class="inputdoc" name="documento" value="CURP">
+                                    <textarea disabled rows="1" cols="1"class="nomDoc" > CURP
+                                    </textarea>
+                                </td>
+                                <td><button type="submit" class="btn btn1" > Subir<br> Documento</button> </td>
+
+                            </tr>
+        </form>
+
+        <form method="POST" action="{{ route('uploaddocexpediente.store') }}" enctype="multipart/form-data">
+            @csrf
+                        <tr>
+                            <td>
+                                <div class="container-input">
+                                    <input type="file" name="files[]" id="file-4" class="inputfile inputfile-2" multiple />
+                                    <label for="file-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="iborrainputfile" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg>
+                                    <span class="iborrainputfile">Seleccionar archivo</span>
+                                    </label>
+                                    </div>
+                            </td>
+                            <td>
+                                <input type="text" class="inputdoc" name="documento" value="NO. IMSS">
+                                <textarea disabled rows="1" cols="1"class="nomDoc" > NO. IMSS
+                                </textarea>
+                            </td>
+                            <td><button type="submit" class="btn btn1" > Subir<br> Documento</button> </td>
+
+                        </tr>
+        </form>
+
+        <form method="POST" action="{{ route('uploaddocexpediente.store') }}" enctype="multipart/form-data">
+            @csrf
+                        <tr>
+                            <td>
+                                <div class="container-input">
+                                    <input type="file" name="files[]" id="file-5" class="inputfile inputfile-2" multiple />
+                                    <label for="file-5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="iborrainputfile" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg>
+                                    <span class="iborrainputfile">Seleccionar archivo</span>
+                                    </label>
+                                    </div>
+                            </td>
+                            <td>
+                                <input type="text" class="inputdoc" name="documento" value="DICTAMEN">
+                                <textarea disabled rows="1" cols="1"class="nomDoc" > DICTAMEN
+                                </textarea>
+                            </td>
+                            <td><button type="submit" class="btn btn1" > Subir <br>Documento</button> </td>
+
+                        </tr>
+        </form>
+
+        <form method="POST" action="{{ route('uploaddocexpediente.store') }}" enctype="multipart/form-data">
+            @csrf
+                        <tr>
+                            <td>
+                                <div class="container-input">
+                                    <input type="file" name="files[]" id="file-6" class="inputfile inputfile-2" multiple />
+                                    <label for="file-6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="iborrainputfile" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg>
+                                    <span class="iborrainputfile">Seleccionar archivo</span>
+                                    </label>
+                                    </div>
+                            </td>
+                            <td>
+
+                                <input type="text" class="inputdoc" name="documento" value="CONSTANCIA ESCUELA">
+                                <textarea disabled rows="1" cols="1"class="nomDoc" > CONSTANCIA ESCUELA
+                                </textarea>
+                            </td>
+                            <td><button type="submit" class="btn btn1" > Subir<br> Documento</button> </td>
+
+                      </tr>
+        </form>
+
+        <form method="POST" action="{{ route('uploaddocexpediente.store') }}" enctype="multipart/form-data">
+            @csrf
+                        <tr>
+                            <td>
+                                <div class="container-input">
+                                    <input type="file" name="files[]" id="file-7" class="inputfile inputfile-2" multiple />
+                                    <label for="file-7">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="iborrainputfile" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg>
+                                    <span class="iborrainputfile">Seleccionar archivo</span>
+                                    </label>
+                                    </div>
+                            </td>
+                            <td>
+                                <input type="text" class="inputdoc" name="documento" value="CARTA COMPROMISO">
+                                <textarea disabled rows="1" cols="1"class="nomDoc" > CARTA COMPROMISO
+                                </textarea>
+                            </td>
+                        <td><button type="submit" class="btn btn1" > Subir <br>Documento</button> </td>
+
+                      </tr>
+        </form>
+
+    </tbody>
 </table>
-</form>
 </div>
 
 
-<div class="container" id="tabla">
-  <h2> CURP </h2>
-  <form method="POST" action="{{ route('uploaddocexpediente.store') }}" enctype="multipart/form-data">
-    @csrf
-  <table class="table">
-  <thead>
-    <tr >
-      <th scope="col"> <i class="bi bi-archive-fill"></i> Archivo</th>
-      <th scope="col"> <i class="bi bi-file-earmark-pdf"></i> Tipo de Documento</th>
-      <th scope="col"> <i class="bi bi-capslock-fill"></i> Subir Archivo </th>
-      <th scope="col"> <i class="bi bi-patch-exclamation-fill"></i> Observaciones </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><input type="file"   name="files[]"  multiple></td>
-      <td><select  class ="select" name="documento">
-        <option value="CURP"> CURP </option>
-        </select></td>
-      <td><button type="submit" class="btn btn1" > subir</button> </td>
-    </tr>
-  </tbody>
-</table>
-</form>
 </div>
-
-<div class="container" id="tabla">
-  <h2> No. IMSS </h2>
-  <form method="POST" action="{{ route('uploaddocexpediente.store') }}" enctype="multipart/form-data">
-    @csrf
-  <table class="table">
-  <thead>
-    <tr >
-      <th scope="col"> <i class="bi bi-archive-fill"></i> Archivo</th>
-      <th scope="col"> <i class="bi bi-file-earmark-pdf"></i> Tipo de Documento</th>
-      <th scope="col"> <i class="bi bi-capslock-fill"></i> Subir Archivo </th>
-      <th scope="col"> <i class="bi bi-patch-exclamation-fill"></i> Observaciones </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><input type="file"   name="files[]"  multiple></td>
-      <td><select  class ="select" name="documento">
-        <option value="No. IMSS">No. IMSS</option>
-        </select></td>
-      <td><button type="submit" class="btn btn1" > subir</button> </td>
-    </tr>
-  </tbody>
-</table>
-</form>
-</div>
-
-
-<div class="container" id="tabla">
-  <h2> Dictamen </h2>
-  <form method="POST" action="{{ route('uploaddocexpediente.store') }}" enctype="multipart/form-data">
-    @csrf
-  <table class="table">
-  <thead>
-    <tr >
-      <th scope="col"> <i class="bi bi-archive-fill"></i> Archivo</th>
-      <th scope="col"> <i class="bi bi-file-earmark-pdf"></i> Tipo de Documento</th>
-      <th scope="col"> <i class="bi bi-capslock-fill"></i> Subir Archivo </th>
-      <th scope="col"> <i class="bi bi-patch-exclamation-fill"></i> Observaciones </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><input type="file"   name="files[]"  multiple></td>
-      <td><select  class ="select" name="documento">
-        <option value="Dictamen"> Dictamen</option>
-        </select></td>
-      <td><button type="submit" class="btn btn1" > subir</button> </td>
-    </tr>
-  </tbody>
-</table>
-</form>
-</div>
-
-<div class="container" id="tabla">
-  <h2> Constancia Escuela  </h2>
-  <form method="POST" action="{{ route('uploaddocexpediente.store') }}" enctype="multipart/form-data">
-    @csrf
-  <table class="table">
-  <thead>
-    <tr >
-      <th scope="col"> <i class="bi bi-archive-fill"></i> Archivo</th>
-      <th scope="col"> <i class="bi bi-file-earmark-pdf"></i> Tipo de Documento</th>
-      <th scope="col"> <i class="bi bi-capslock-fill"></i> Subir Archivo </th>
-      <th scope="col"> <i class="bi bi-patch-exclamation-fill"></i> Observaciones </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><input type="file"   name="files[]"  multiple></td>
-      <td><select  class ="select" name="documento">
-        <option value="Constancia Escuela">Constancia Escuela</option>
-        </select></td>
-      <td><button type="submit" class="btn btn1" > subir</button> </td>
-    </tr>
-  </tbody>
-</table>
-</form>
-</div>
-
-
-<div class="container" id="tabla">
-  <h2> Carta Compromiso  </h2>
-  <form method="POST" action="{{ route('uploaddocexpediente.store') }}" enctype="multipart/form-data">
-    @csrf
-  <table class="table">
-  <thead>
-    <tr >
-      <th scope="col"> <i class="bi bi-archive-fill"></i> Archivo</th>
-      <th scope="col"> <i class="bi bi-file-earmark-pdf"></i> Tipo de Documento</th>
-      <th scope="col"> <i class="bi bi-capslock-fill"></i> Subir Archivo </th>
-      <th scope="col"> <i class="bi bi-patch-exclamation-fill"></i> Observaciones </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><input type="file"   name="files[]"  multiple></td>
-      <td><select  class ="select" name="documento">
-        <option value="Carta Compromiso">Carta Compromiso</option>
-        </select></td>
-      <td><button type="submit" class="btn btn1" > subir</button> </td>
-    </tr>
-  </tbody>
-</table>
-</form>
-</div>
-
-
 
 @endsection
 
+@section('script')
+<script src="{{asset('js/Pantallas_Alumno_Servicio/docs.js')}}"></script>
+
+
+@endsection

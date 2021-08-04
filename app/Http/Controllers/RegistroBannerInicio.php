@@ -48,7 +48,7 @@ class RegistroBannerInicio extends Controller
 
         bannerInicioImagen::create($entrada);
 
-        return redirect('Registro_exitoso');
+        return redirect('Registro_exitosoBannersHome');
     }
 
     /**

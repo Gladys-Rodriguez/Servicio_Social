@@ -126,6 +126,7 @@ class editarAlumnoController extends Controller
          $alumnos=DB::table('alumnos')
         ->join('direccions', 'alumnos.id_direccions', 'direccions.id_direccions')
         ->join('datos', 'alumnos.id_datos', 'datos.id_datos')
+        ->join('users', 'alumnos.id_usuarios', 'users.id')
         ->where('alumnos.id_usuarios',$id)
         ->update([
             'alumnos.carrera' => $request->get('carrera'),
@@ -146,6 +147,8 @@ class editarAlumnoController extends Controller
             'datos.ap_materno' => $request->input('ap_materno'),
             'datos.telefono' => $request->input('telefono'),
             'datos.celular' => $request->input('celular'),
+
+            'users.email' => $request->input('email')
         ]);
 
         return view("Pantallas_Alumno_Servicio.Index_Alumno");

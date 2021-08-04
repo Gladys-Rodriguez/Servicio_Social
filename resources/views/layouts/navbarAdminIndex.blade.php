@@ -37,14 +37,17 @@
                <ul class="nav_list">
                    <li class="nav_item"><a href="{{url('/AdminIndex')}}" class="nav_link active"><i class="fas fa-home"></i>INICIO</a></li>
 
-                   
 
-                        
+
+
                    <li class="nav_item"><a href="{{url('/concentrados')}}" class="nav_link"><i class="fas fa-coins"></i>Concentrados</a></li>
-                  
+
                    <li class="nav_item"><a href="{{url('/estadistica')}}" class="nav_link"><i class="fas fa-coins"></i>Estadisticas</a></li>
-                   <li class="nav_item"><a href="{{url('/validacionAlumno')}}" class="nav_link"><i class="fas fa-bus"></i>Validación Alumnno</a></li>
-                   <li class="nav_item"><a href="{{url('/validacionReportes')}}" class="nav_link"><i class="fas fa-bus"></i>Validación Reportes</a></li>
+                   <ul class="dropdown__menu">
+                   <li class="nav_item"><a href="{{url('/validacionAlumno')}}" class="nav_link"><i class="fas fa-bus"></i>Validaciones Alumnno</a></li>
+                   <li class="nav__item"><a href="#" class="nav__link active">Validacion por Alumno </a></li>
+                   </ul>
+
 
                 </ul>
            </div>

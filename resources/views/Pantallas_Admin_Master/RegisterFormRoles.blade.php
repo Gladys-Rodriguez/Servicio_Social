@@ -126,7 +126,7 @@
         <input type="text" name="id" placeholder="Ingresa valores númericos" required minlength="8" maxlength="8" onkeypress="return solonumeros(event)">
         <!-- correo INPUT -->
         <label>Correo Institucional</label>
-        <input type="email" name="email" placeholder="correo@hotmail.com" required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
+        <input type="email" name="email" placeholder="correo@hotmail.com" required ">
         <!-- PASSWORD INPUT -->
         <label>Contraseña</label>
         <input type="password" name="password" placeholder="Contraseña" required>
@@ -139,16 +139,22 @@
                  <option value="4"> Admin Prácticas </option>
 <<<<<<< HEAD
                  <option value="6"> Docente </option>
+<<<<<<< HEAD
                  <option value="7"> Pruebas </option>
                  <option value="8"> Superadmin </option>
 =======
                 <!-- <option value="7"> Pruebas </option>
                  <option value="8"> Superadmin </option>-->
 >>>>>>> 263d9101b66f2252fcd3d0c949c7a840c9ef818f
+=======
+                 <!--<option value="7"> Pruebas </option>-->
+                 <!--<option value="8"> Superadmin </option>-->
+>>>>>>> 141f19bdc3a0419d3287e0e72776156d241598dd
 
              </select>
                  @error('id_rol')
                   <span class="invalid-feedback" role="alert">
+
                   <strong>{{ $message }}</strong>
                   </span>
                  @enderror
@@ -172,12 +178,6 @@
 
 
      </div>
-     <script>
-    var msg = '{{Session::get('alert')}}';
-    var exist = '{{Session::has('alert')}}';
-    if(exist){
-      alert(msg);
-    }
-  </script>
+
 </div>
 @endsection

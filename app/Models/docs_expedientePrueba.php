@@ -11,11 +11,12 @@ class docs_expedientePrueba extends Model
     protected $fillable = [
         'nombre_doc',
             'estado',
+            'carga',
             'observaciones',
             'user',
         'nombre',
             'tipo_doc'
         ];
 
-    
+
 }
