@@ -15,7 +15,7 @@
 @endsection
 
 @section('content')
-<div class="container-fluid  py-5" >
+<div class="container-fluid py-5" >
     <h1>Subir Formatos Para Descarga </h1>
     <div class="table-responsive">
         <table class="register">
@@ -61,8 +61,8 @@
         <table class="registro">
         <thead>
           <tr>
-            <th><h1 class="h1"><span class="material-icons">description</span>Nombre del Formato</h1></th>
-            <th><h1><span class="material-icons">drive_file_rename_outline</span> Documento</h1></th>
+            <th><h1 class="h1"><span class="material-icons">description</span>Documento</h1></th>
+            <th><h1><span class="material-icons">drive_file_rename_outline</span> Nombre del Formato</h1></th>
             <th><h1><span class="material-icons">preview</span> Ver</h1></th>
             <th><h1><span class="material-icons">delete_forever</span>Eliminar</h1></th>
           </tr>

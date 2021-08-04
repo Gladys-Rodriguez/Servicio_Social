@@ -16,8 +16,9 @@
   <div class="container-fluid bg-dark py-5" >
 
   <h2>validación de reportes mensuales</h2>
-  <button type="button" class="seguimiento">
-    <a href="{{ route('Subida_Reportes') }}">
+
+<button type="button" onclick="window.location='{{ route('Subida_Reportes')}}'" class="seguimiento" name="btn_Seguimiento" id="btn_Seguimiento" >
+ <!--   <a href="{{ route('Subida_Reportes') }}"> -->
         <span class="material-icons">cloud_upload</span>
         Subir Reporte </a></button>
 
@@ -59,4 +60,14 @@
 </div>
 
   </div>
+@endsection
+
+@section('script')
+<!--<script>
+    comprobar();
+
+    function comprobar() {
+        $("#btn_Seguimiento").attr("disabled",$("#estado").val()==='0');
+    }
+</script> -->
 @endsection

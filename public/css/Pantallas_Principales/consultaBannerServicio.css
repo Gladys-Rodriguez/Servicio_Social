@@ -12,15 +12,15 @@ input,
 textarea {
   font-family: "Poppins", sans-serif;
 }*/
-
+/*
 .container {
   position: relative;
   width: 1500px;
   min-height: 40vh;
   height: 400px;
-  padding: 1rem;
+  padding: 1rem;*/
   /*background-color: #fafafa;*/
-  overflow: hidden;
+  /*overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,10 +72,10 @@ textarea {
   .slide img{
     width: 820px;
     height: 500px;
-  }
+  }*/
 
   /*css for manual slide navigation*/
-
+/*
   .navigation-manual{
     position: absolute;
     width: 800px;
@@ -114,10 +114,10 @@ textarea {
 
   #radio4:checked ~ .first{
     margin-left: -60%;
-  }
+  }*/
 
   /*css for automatic navigation*/
-
+/*
   .navigation-auto{
     position: absolute;
     display: flex;
@@ -179,7 +179,7 @@ form {
   margin-bottom: 0.7rem;
 
 }
-
+*/
 /*h3::after,h3:before{
     content: "";
     position: absolute;
@@ -196,7 +196,7 @@ h3::before{
 h3::after{
     right: -5px;
 } */
-
+/*
 .input-container {
   position: relative;
   margin: 1rem 0;
@@ -321,10 +321,10 @@ textarea.input {
 .tabla-consulta {
     padding: 0.4rem 0.4rem;
     position: relative;
-    font-family: 'Bitter', serif;
+    font-family: 'Bitter', serif;*/
     /*margin: 0 auto;*/
     /*border: green 2px solid;*/
-    WIDTH: 500px;
+  /*  WIDTH: 500px;
     height:500px;
 
   }
@@ -538,3 +538,143 @@ textarea.input {
     color: #CF6D1B;
     background-color: #ffffff;
   }
+*/
+.registro .btn{
+    float: left;
+    margin-top: 1rem;
+    text-transform:uppercase;
+    padding: .375rem .75rem;
+    border: 2.5px solid #263029;
+    border-radius: .25rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: transparent;
+}
+.material-icons{
+    font-size:30px;
+    color:#122630;
+    overflow:initial;
+    vertical-align:text-bottom;
+}
+.seguimiento{
+    margin-top: 3rem;
+
+    padding: .375rem .75rem;
+    border: 2.5px solid #8584849f;
+    border-radius: .25rem;
+    background-color:#d1d1d19f ;
+    text-transform:uppercase;
+}
+.seguimiento a{
+    color: #122630;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+.seguimiento:hover{
+background-color: #acd0c094;
+}
+.seguimiento a:hover{
+    color:#c9d8d7
+}
+.material-icons:hover{
+    color:#c9d8d7
+}
+.registro .btn1:hover{
+    color: #153e46;
+    background-color: #d1d1d19f;
+}
+
+.verificar{
+    font-weight:700;
+
+}
+a{
+    font-family: 'Open Sans', sans-serif;
+   font-weight: 300;
+   line-height: 1.42em;
+   color:#122630;
+   font-weight: normal;
+       font-size: 1em;
+
+ }
+
+ h1 {
+   font-size:3em;
+   font-weight: 300;
+   line-height:1em;
+   text-align: center;
+   color: #A7A1AE;
+ }
+ .registro{
+    text-align: center;
+    overflow: hidden;
+    width: 60%;
+    float:right;
+    display: table;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-right: 12rem;
+ }
+ .registro td {
+
+    font-weight: 600;
+    font-size: 1em;
+    text-align: left;
+    -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+    -moz-box-shadow: 0 2px 2px -2px #0E1119;
+    box-shadow: 0 2px 2px -2px #0E1119;
+ }
+ .registro th h1 {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: left;
+    color: #122630;
+    text-transform: uppercase;
+
+ }
+ .registro td, .registro th {
+    padding-bottom: 2%;
+    padding-top: 2%;
+    padding-left:2%;
+ }
+ .registro tr:nth-child(odd) {
+    background-color: #b8cbd1;
+ }
+ .registro tr:nth-child(even) {
+    background-color: #b4c5c2;
+ }
+ .registro th {
+    background-color: #3c5c57;
+    width:250px;
+ }
+ .registro tr:hover {
+    background-color: #acd0c094;
+ -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+        -moz-box-shadow: 0 6px 6px -6px #0E1119;
+             box-shadow: 0 6px 6px -6px #0E1119;
+ }
+ .registro .btn:hover{
+
+    background-color: #66a097;
+    box-shadow: #749997c4 -1px 1px, #749997c4 -2px 2px, #749997c4 -3px 3px, #749997c4 -4px 4px, #749997c4 -5px 5px, #749997c4 -6px 6px;
+    transform: translate3d(6px, -6px, 0);
+    transition-delay: 0s;
+        transition-duration: 0.4s;
+        transition-property: all;
+    transition-timing-function: line;
+}
+.registro .btn .verificar:hover{
+    color: #122630;
+    font-weight: bold;
+    background-color: transparent;
+    transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-property: all;
+    transition-timing-function: line;
+
+    }
+.registro img{
+    width: 100px;;
+}

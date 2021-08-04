@@ -108,12 +108,7 @@
       <h1>Bienvenido Alumno
     <br> Usuario con matricula: {{ Auth::user()->id}}</h1>
     </section>
-    <section class="section-two">
- <!-- AQUI EMPIEZA CONTENIDO; -->
-      @yield('content')
 
-
-    </section>
 
 
 

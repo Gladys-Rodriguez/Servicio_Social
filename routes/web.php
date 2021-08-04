@@ -136,9 +136,9 @@ Route::get('/Index_Alumno', function (){
 }) -> name('Index_Alumno');
 
 
-Route::get('/Inicio Alumno', function (){
+Route::get('/Inicio_Alumno', function (){
     return view('Pantallas_Alumno_Servicio.Index_AlumnoV2');
-}) -> name('Inicio Alumno');
+}) -> name('Inicio_Alumno');
 
 //Ruta oara pantalla Prueba de datos Personales
 Route::get('/DatosPersonales', function (){
@@ -211,6 +211,7 @@ Route::post('/UploadFormato', [App\Http\Controllers\FormatosController::class, '
 //Ruta para ver la validacion por parte del alumno
 Route::get('/SeguimientoReportes', [App\Http\Controllers\DocsReportesController::class, 'index'])->name('SeguimientoReportes.index');
 Route::get('/SubirFormatos', [App\Http\Controllers\FormatosController::class, 'index'])->name('SubirFormatos.index');
+Route::get('/Inicio Alumno', [App\Http\Controllers\FormatosController::class, 'index_Alumno'])->name('Inicio Alumno');
 
 
 Route::get('/Expediente_Reportes/{id}', [App\Http\Controllers\DocsReportesController::class, 'docs'])->name('Expediente_Reportes.docs');

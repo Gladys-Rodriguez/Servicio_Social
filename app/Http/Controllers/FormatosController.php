@@ -27,6 +27,17 @@ class FormatosController extends Controller
         //return redirect()->route('Subida_Formatos', [$docs]);
     }
 
+    public function index_Alumno()
+    {
+        //
+        $docs= formatos::get();
+        //$files = reporte::where('user', Auth::id())->get();
+        //var_dump($docs);
+        return view('Pantallas_Alumno_Servicio.Index_AlumnoV2', compact('docs'));
+        //return redirect()->route('Subida_Formatos', [$docs]);
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *

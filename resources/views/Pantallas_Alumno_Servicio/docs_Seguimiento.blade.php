@@ -17,12 +17,14 @@
   <div class="container-fluid bg-dark py-5" >
 
   <h2>Seguimiento de mi solicitud</h2>
-  <button type="button" class="seguimiento">
-    <a href="{{ route('docexpediente') }}">
+  <button type="button" disabled onclick="window.location='{{ route('docexpediente')}}'" class="seguimiento" name="btn_Seguimiento" id="btn_Seguimiento" >
+    <!--<a href="{{ route('docexpediente') }}" id="a_seguimiento" name="a_seguimiento" > -->
         <span class="material-icons">cloud_upload</span>
         Subir Documento </a></button>
 
-
+        <p name="" id="" cols="1" rows="3" class="border rounded" >
+            En caso de que alguno de tus documentos sea erroneo, puedes eliminarlo para volverlo a subir de la manera correcta.
+        </p>
         <div class="table-responsive">
   <table class="register">
   <thead>
@@ -83,7 +85,7 @@
                 @foreach ($alumno as $alum)
                                 <tr>
                                     <td>
-                                        Actualmente se encuentra: {{$alum->status_ss  ? 'Aceptado': 'Sin Validar'}}
+                                        <input onkeyup="comprobar()" type="text" name="estado"  id="estado" value="{{$alum->status_ss}}"  hidden/>Actualmente se encuentra: {{$alum->status_ss  ? 'Aceptado': 'Sin Validar'}}
                                         </td>
                                     <td>{{$alum->fecha_envio}}</td>
                                     <td>{{$alum->observaciones}}</td>
@@ -103,4 +105,24 @@
 
 
   </div>
+@endsection
+@section('script')
+<!--<script>
+    function comprobar(texto) {
+        var btn = document.getElementById("btn_Seguimiento");
+        if (texto.value == '1'){
+            btn.disabled = true;
+        } else {
+            btn.disabled = false;
+        }
+    }
+</script>-->
+<script>
+    comprobar();
+
+    function comprobar() {
+        $("#btn_Seguimiento").attr("disabled",$("#estado").val()==='1');
+    }
+</script>
+<!--<script src="{{asset('js/Pantallas_Alumno_Servicio/seguimiento.js')}}"></script>-->
 @endsection

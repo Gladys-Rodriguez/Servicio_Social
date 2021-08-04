@@ -111,7 +111,7 @@ body{
 
 }*/
 .registro .btn{
-    margin-left: -9rem;
+    float: left;
     margin-top: 1rem;
     text-transform:uppercase;
     padding: .375rem .75rem;

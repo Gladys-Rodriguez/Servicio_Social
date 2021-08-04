@@ -28,11 +28,7 @@
 
                     <li class="nav__item"><a href="{{url('/estadisticas')}}" class="nav__link">Estadística</a></li>
 
-                    <li class="nav__item"><a href="{{url('/concentrados')}}" class="nav__link">Concentrados</a></li>
-
                     <li class="nav__item"><a href="{{url('/SubirFormatos')}}" class="nav__link">Subir Formatos</a></li>
-
-
                     <li class="nav__item dropdown">
                         <a  href="#" class="nav__link dropdown__link">Validaciones <i class='bx bx-chevron-down dropdown__icon'></i></a>
                         <ul class="dropdown__menu">

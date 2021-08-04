@@ -37,7 +37,6 @@
 
                     <li class="nav__item"><a href="{{url('/estadisticas')}}" class="nav__link">Estadística</a></li>
 
-                    <li class="nav__item"><a href="{{url('/concentrados')}}" class="nav__link">Concentrados</a></li>
 
                     <li class="nav__item"><a href="{{url('/SubirFormatos')}}" class="nav__link">Subir Formatos</a></li>
                     <li class="nav__item dropdown">
