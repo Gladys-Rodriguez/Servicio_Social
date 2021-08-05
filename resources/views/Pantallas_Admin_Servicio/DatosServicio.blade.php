@@ -126,7 +126,7 @@
 </div>
     <div class="btn_editar">
     @foreach ($busqueda as $busque )
-    <a class="boton_personalizado" href="{{route('Expediente_Reportes.docs', $busque->id_usuarios)}}">Validación de Reportes</a>
+    <a class="boton_personalizado" href="{{route('Expediente_Reportes.docs', $busque->id_usuarios)}}">Docs para Seguimiento</a>
     @endforeach
 
     </div>

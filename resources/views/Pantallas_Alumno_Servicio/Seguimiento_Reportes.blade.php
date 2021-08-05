@@ -17,10 +17,10 @@
 
   <h2>validación de reportes mensuales</h2>
 
-<button type="button" onclick="window.location='{{ route('Subida_Reportes')}}'" class="seguimiento" name="btn_Seguimiento" id="btn_Seguimiento" >
+<button type="button" onclick="window.location='{{ route('Subida_Reportes')}}'" class="seguimiento"  >
  <!--   <a href="{{ route('Subida_Reportes') }}"> -->
         <span class="material-icons">cloud_upload</span>
-        Subir Reporte </a></button>
+        Subir Documento </a></button>
 
 
 <div class="table-responsive">
@@ -59,15 +59,59 @@
   </table>
 </div>
 
+<br><br> <br>
+
+<h2>validación de documentos para liberación</h2>
+<br>
+
+<div class="table-responsive">
+    <table class="register">
+    <thead>
+      <tr>
+        <th><h1 class="h1"><span class="material-icons">description</span>Nombre del archivo</h1></th>
+        <th><h1><span class="material-icons">edit_attributes</span>Estado</h1></th>
+        <th><h1><span class="material-icons">drive_file_rename_outline</span>Tipo de Documento</h1></th>
+        <th><h1><span class="material-icons">notifications_active</span>Observaciones</h1></th>
+        <th><h1><span class="material-icons">preview</span> Ver</h1></th>
+        <th><h1><span class="material-icons">delete_forever</span>Eliminar</h1></th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach($docs as $file)
+      <tr>
+
+        <td>{{ $file->nombre_doc }}</td>
+        <td>{{ $file->estado ? 'Aceptado': 'Sin Validar'}}</td>
+        <td>{{ $file->tipo_doc}}</td>
+        <td>{{ $file->observaciones}}</td>
+        <td class="btn">
+          <a target="_blank" href="storage/{{ Auth::id() }}/{{ $file->nombre_doc }}" class="verificar"> Ver el documento</a>
+        </td>
+        <td><form action="{{ route('eliminarDocLiberacion.destroy',$file->id) }}" method="POST">
+          @method('DELETE')
+          @csrf
+          <button class="eliminar" name="eliminar" id="eliminar">
+              <a> Eliminar</a>
+          </button>
+        </form></td>
+      </tr>
+      @endforeach
+    </tbody>
+    </table>
+  </div>
   </div>
 @endsection
 
 @section('script')
 <!--<script>
     comprobar();
-
+    comprobar2()
     function comprobar() {
-        $("#btn_Seguimiento").attr("disabled",$("#estado").val()==='0');
+        $("#eliminar").attr("disabled",$("#estado").val()==='1');
     }
-</script> -->
+    function comprobar2() {
+        $("#eliminar2").attr("disabled",$("#estado2").val()==='1');
+    }
+</script>-->
+
 @endsection

@@ -37,9 +37,9 @@
                         <a href="{{route('Inicio Alumno')}}" class="nav__link dropdown__link">Servicio Social <i class='bx bx-chevron-down dropdown__icon'></i></a>
                         <ul class="dropdown__menu">
                             <!--<li class="dropdown__item"><a href="{{ url('/docexpediente')}}" class="nav__link">Subir documentos</a></li> -->
-                            <li class="dropdown__item"><a href="{{url('/docsSolicitudAlumno')}}" class="nav__link">Seguimiento de solicitud</a></li>
+                            <li class="dropdown__item"><a href="{{url('/docsSolicitudAlumno')}}" class="nav__link">Contol de Expediente</a></li>
                             <!--<li class="dropdown__item"><a href="{{url('/Subida_Reportes')}}" class="nav__link">Subida de Reportes</a></li> -->
-                            <li class="dropdown__item"><a href="{{ route('SeguimientoReportes.index') }}" class="nav__link">Seguimiento de Reportes</a></li>
+                            <li class="dropdown__item"><a href="{{ route('SeguimientoReportes.index') }}" class="nav__link">Documentos de Seguimiento</a></li>
 
                            <!-- <li class="dropdown__item"><a href="#" class="nav__link">Location</a></li>
                             <li class="dropdown__item"><a href="#" class="nav__link">Studies</a></li> -->

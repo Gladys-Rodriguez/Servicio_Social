@@ -125,7 +125,12 @@ class ServiciosController extends Controller
             'id_servicios' => $id_servicios,
             'status_s' => 1,
         ]);
+        $id_liberaciones = DB::table('liberacions')->insert([
 
+            'id_alumnos' => $id_alumnos->first()->id_alumnos,
+            'id_servicios' => $id_servicios,
+            'estado' => 0,
+        ]);
 
     });
 

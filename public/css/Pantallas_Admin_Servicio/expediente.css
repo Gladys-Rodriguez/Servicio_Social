@@ -42,6 +42,12 @@ h1 a {
   text-decoration: none;
 }
 
+.material-icons{
+    font-size:30px;
+    color:#53abd8;
+    overflow:initial;
+    vertical-align:text-bottom;
+}
 .blue { color: #185875; }
 .yellow { color: #FFF842; }
 .Tomato {color:rgb(255,99,71);}
@@ -322,7 +328,7 @@ h1 a {
     font-weight: 400;
     /*margin-left: 60rem;
     margin-top: 1rem;*/
-    float: right;
+    float: left;
     display:inherit;
     text-transform: uppercase;
     line-height: 1.5rem;

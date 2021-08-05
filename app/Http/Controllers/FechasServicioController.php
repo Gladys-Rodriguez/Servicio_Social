@@ -135,6 +135,21 @@ class FechasServicioController extends Controller
         return redirect()->route('DatosServicio.index',[$boleta]);
     }
 
+    public function update_liberacion(Request $request, $id)
+    {
+        $boleta = $request->input("boleta_alumno");
+
+        $registro = DB::table('liberacions')->where('id_liberacions', $id)
+        ->update([
+            'estado' => $request->input('estado'),
+            'fecha_envio' => $request -> input('fecha_envio'),
+            'observaciones' => $request -> input('observaciones'),
+        ]);
+
+        //return redirect()->action([ListadoAlumnosController::class, 'index']);
+        return redirect()->route('DatosServicio.index',[$boleta]);
+    }
+
 
     public function docs($id){
         $alumno = DB::table('alumnos')
