@@ -46,6 +46,7 @@
             @csrf
             <input type="hidden" name="empresa_id" value="{{ $empresa->id}}">
             <input type="hidden" name="docente_id" value="{{ $docente->id}}">
+            <input type="hidden" name="visita_estado_id" value= "1">
         
             <label for="fecha_visita" class="form-label">Fecha de la Visita </label>
             <input name="fecha_visita" type="date" class="form-control" value=" {{ old('fecha_visita') }}" />
@@ -56,17 +57,7 @@
                 </div>
             @endif
             <br /> 
-            
-
-            <label  for="ruta" class="form-label">Solicitud de Visita</label>
-            <input name="ruta" type="file" accept="application/pdf" class="form-control" >
-            @if ($errors->has('ruta'))
-                <div class="alert alert-warning p-2 mt-2" role="alert">
-                    <i class="bi bi-exclamation-triangle"></i>
-                    {{ $errors->first('ruta') }}
-                </div>
-            @endif
-            <br />
+        
 
             <div class="d-flex justify-content-end">
                 <a role="button" class="btn btn-danger mx-3" href="{{route('docente.mostrarEmpresas')}}">Regresar</a>

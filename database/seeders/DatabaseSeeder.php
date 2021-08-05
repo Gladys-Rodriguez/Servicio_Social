@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         
         //$this->call(RolSeeder::class);
+        //$this->call(VisitaEstadosSeeder::class);
         //$this->call(UserSeeder::class);
         //$this->call(DatoSeeder::class);
         //$this->call(DocenteSeeder::class);
@@ -24,7 +25,7 @@ class DatabaseSeeder extends Seeder
         //$this->call(EmpresaSeeder::class);
         $this->call(GrupoSeeder::class);
         //$this->call(VisitaSeeder::class);
-        $this->call(TipoDocumentoSeeder::class);
+        //$this->call(TipoDocumentoSeeder::class);
         //$this->call(VisitaDocumentoSeeder::class);
         //$this->call(GrupoVisitaSeeder::class);
     

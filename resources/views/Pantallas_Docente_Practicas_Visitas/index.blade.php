@@ -38,16 +38,25 @@
                             </td>
                             <td> {{ $visita->empresa->nombre }} </td>
                             <td> {{ date('F d, Y', strtotime($visita->fecha_visita)) }} </td>
-                            <td> {{ $visita->validacion ? 'Aceptada' : 'Sin validar' }} </td>
+                            <td> {{ $visita->visita_estado->estado }} </td>
                             <td>
-                                <div class="btn-group-vertical" role="group" >
-                                    <a type="button" class="btn btn-sm btn-primary mb-1" href=" {{ route('docente.verSolicitud',['visita'=>$visita->id]) }} ">
-                                        Ver Detalles
+                                    @if ($visita->visita_estado->id == 2 || $visita->visita_estado->id == 4)
+                                    <a type="button" class="btn btn-sm btn-primary mb-1 w-100" href=" {{ route('docente.verSolicitud',['visita'=>$visita->id]) }} ">
+                                        Ver
                                     </a>
-                                    <a type="button" class="btn btn-sm btn-primary" href=" # ">
-                                        Editar
+                                    @endif
+                                    
+                                    @if ($visita->visita_estado->id == 1)
+                                    <a type="button" class="btn btn-sm btn-warning mb-1 w-100" href=" {{ route('docente.verSolicitud',['visita'=>$visita->id]) }} ">
+                                        Continuar
                                     </a>
-                                </div>
+                                    @endif
+
+                                    @if ($visita->visita_estado->id == 3)
+                                    <a type="button" class="btn btn-sm btn-warning mb-1 w-100" href=" {{ route('docente.verSolicitud',['visita'=>$visita->id]) }} ">
+                                        Corregir
+                                    </a>
+                                    @endif
                             </td>
                         </tr>
                         @empty

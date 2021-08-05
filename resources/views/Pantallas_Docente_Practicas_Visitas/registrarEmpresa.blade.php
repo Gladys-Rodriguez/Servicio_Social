@@ -1,9 +1,5 @@
 @extends('Pantallas_Docente_Practicas_Visitas.Layout.navbarDocente')
 
-@section('css')
-<link rel="stylesheet" href="{{asset('css/Pantalla_Docente_PracticasVisitas/estilosVisitasEscolares.css')}}"/>
-@endsection
-
 @section('content')
 
 <section class="section-main">
@@ -15,7 +11,7 @@
     <div class="container p-5 border border-light rounded text-light">
         <div class="display-4 mb-4 mt-2">Registra la <div class="d-inline text-warning"> <strong>Empresa</strong></div>:</div>
 
-        <form action="{{ route('docente.guardarEmpresa') }}" method="POST">
+        <form action=" {{ route('docente.guardarEmpresa') }} " method="POST">
             @csrf
             <label for="nombre" class="form-label ">Nombre de la Empresa </label>
             <input type="text" class="form-control" id="nombre" name="nombre" value=" {{old('nombre')}} ">

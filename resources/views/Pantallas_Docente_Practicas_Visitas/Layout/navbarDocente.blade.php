@@ -44,7 +44,7 @@
 
                             <ul class="dropdown__menu">
                                 <li class="dropdown__item"><a href=" {{ route('docente.index')}}" class="nav__link" id="solicitudes">Solicitudes</a></li>
-                                <li class="dropdown__item"><a href=" {{ route('docente.mostrarVisitas') }} " class="nav__link" id="visitas">Visitas Validadas</a></li>
+                                <li class="dropdown__item"><a href=" # " class="nav__link" id="visitas">Visitas Validadas</a></li>
                             </ul>
                         </li>
 

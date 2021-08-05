@@ -393,8 +393,34 @@ Route::get('/ValidacionV2/{id}', [App\Http\Controllers\ValidacionDocPraControlle
 Route::put('/Validacion3/{id}', [App\Http\Controllers\ValidacionDocPraController::class, 'update'])->name('Validacion3.update');
 
 
-Route::get('/AdminPracticas/Docente/Registrar','AdminPracSolicitudesController@registrarDocente')
+Route::get('/AdminPracticas/SolicitudesRechazadas', 'AdminPracSolicitudesController@solicitudesRechazadasIndex')
+    ->name('AdminPracticas.solicitudesRechazadasIndex');
+
+Route::get('/AdminPracticas/SolicitudesCorregidas', 'AdminPracSolicitudesController@solicitudesCorregidasIndex')
+    ->name('AdminPracticas.solicitudesCorregidasIndex');
+
+Route::get('/AdminPracticas/Solicitud/Editar/{visita}', 'AdminPracSolicitudesController@editarSolicitud') //Método SOLICITUD-EDIT()
+    ->name('AdminPracticas.editarSolicitud');
+
+Route::put('/AdminPracticas/Solicitud/Actualizar/{visita}', 'AdminPracSolicitudesController@actualizarSolicitud') //Método SOLICITUD-UPDATE()
+    ->name('AdminPracticas.actualizarSolicitud');  
+
+Route::get('/AdminPracticas/Docente/Registrar','AdminPracSolicitudesController@registrarDocente') //Método DOCENTE-CREATE()
     ->name('AdminPracticas.registrarDocente');
+
+Route::post('AdminPracticas/Docente/Guardar', 'AdminPracSolicitudesController@guardarDocente')    //Método DOCENTE-STORE()
+    ->name('AdminPracticas.guardarDocente');  
+
+
+Route::get('/AdminPracticas/TipoDocumento', 'AdminPracSolicitudesController@indexTipoDocumento')
+    ->name('AdminPracticas.indexTipoDocumento');   
+
+Route::get('/AdminPracticas/TipoDocumento/Registrar','AdminPracSolicitudesController@registrarTipoDocumento') //Método TIPO_DOCUMENTO-CREATE()
+    ->name('AdminPracticas.registrarTipoDocumento');
+
+Route::post('AdminPracticas/TipoDocumento/Guardar', 'AdminPracSolicitudesController@guardarTipoDocumento')    //Método DOCENTE-STORE()
+    ->name('AdminPracticas.guardarTipoDocumento');  
+
 
 //------------------------FER TERMINO------------------------------------
 
@@ -750,11 +776,10 @@ Route::get('/VisitasEscolares/Empresas/Lista', 'VisitaController@mostrarEmpresas
     ->name('docente.mostrarEmpresas');
 
 Route::get('VisitasEscolares/Empresas/Registrar', 'VisitaController@registrarEmpresa') //metodo Empresas-create()
-    ->name('docente.registrarEmpresa');   
+    ->name('docente.registrarEmpresa'); 
 
 Route::post('VisitasEscolares/Empresas/Guardar', 'VisitaController@guardarEmpresa')    //Método Empresas-store()
-    ->name('docente.guardarEmpresa');   
-
+    ->name('docente.guardarEmpresa'); 
 
   /*---------------------------------------------RUTAS SOLICITUDES---------------------------------------------------------*/
 
@@ -768,25 +793,14 @@ Route::post('/VisitasEscolares/Solicitudes/Guardar', 'VisitaController@guardarSo
     ->name('docente.guardarSolicitud');
 
 Route::get('/VisitasEscolares/Solicitudes/Ver/{visita}','VisitaController@verSolicitud')    //Método Visitas-show()
-    ->name('docente.verSolicitud');
+    ->name('docente.verSolicitud');   
+
+Route::get('/VisitasEscolares/Solicitudes/ModificarEstado/{visita}','VisitaController@modificarEstadoSolcitud')
+    ->name('docente.ModificarEstado');
 
     
 /*---------------------------------------------RUTAS VISITAS---------------------------------------------------------*/
 
-Route::get('/VisitasEscolares/Visitas/Lista','VisitaController@mostrarVisitas')
-    ->name('docente.mostrarVisitas');
-
-Route::get('/VisitasEscolares/VisitaDocumentos/{visita}','VisitaController@registrarVisitaDocumento') //Método VisitaDocumento-index() && create()
-->name('docente.registrarVisitaDocumento');
-
-Route::post('/VisitasEscolares/VisitaDocumentos/Guardar', 'VisitaController@guardarVisitaDocumento') //Método VisitaDocumento-store()
-    ->name('docente.guardarVisitaDocumento');
-
-Route::get('/VisitasEscolares/VisitaDocumentos/Editar/{visitaDocumento}', 'VisitaController@editarVisitaDocumento') //Método VisitaDocumento-edit()
-    ->name('docente.editarVisitaDocumento');   
-
-Route::put('/VisitasEscolares/VisitaDocumentos/Actualizar/{visitaDocumento}', 'VisitaController@actualizarVisitaDocumento') //Método VisitaDocumento-update()
-    ->name('docente.actualizarVisitaDocumento');  
 
 
  /*---------------------------------------------RUTAS GRUPOS----------------------------------------------------------*/
@@ -804,24 +818,14 @@ Route::delete('VisitasEscolares/GrupoVisita/Eliminar/{grupoVisita}', 'VisitaCont
     ->name('docente.eliminarGrupoVisita');
 
 
+/*---------------------------------------------RUTAS OTROS----------------------------------------------------------*/
+
 Route::get('/VisitasEscolares/Pagina/Inicio', 'VisitaController@inicio')
     ->name('docente.inicio'); 
 
 Route::get('/VisitasEscolares/Pagina/DatosDocente', 'VisitaController@mostrarDatosDocente')
     ->name('docente.mostrarDatosDocente');
 
-
 /*---------------------------------------------RUTAS FORMATOS----------------------------------------------------------*/
 
 
-Route::get('/VisitasEscolaresAdmin/Formato/Lista', 'VisitaController@mostrarFormatos')
-    ->name('adminVisitas.mostrarFormatos');
-
-Route::get('/VisitasEscolaresAdmin/Formato/Registrar', 'VisitaController@registrarFormato')
-    ->name('adminVisitas.registrarFormato');   
-
-Route::post('/VisitasEscolaresAdmin/Formato/Guardar', 'VisitaController@guardarFormato') //método Formato-store()
-    ->name('adminVisitas.guardarFormato');   
-
-Route::get('/VisitasEscolaresAdmin/Formato/Editar/{visitaFormato}', 'VisitaController@editarFormato')
-    ->name('adminVisitas.editarFormato');

@@ -12,6 +12,13 @@ class TipoDocumento extends Model
     protected $primaryKey = 'id';
     public $timestamp = true;
 
+    protected $fillable = [
+        'nombre',
+        'tramite',
+        'etapa',
+        'estado',
+    ];
+
     public function visita_documentos()
     {
         return $this->hasMany(VisitaDocumento::class, 'tipo_documento_id', 'id');

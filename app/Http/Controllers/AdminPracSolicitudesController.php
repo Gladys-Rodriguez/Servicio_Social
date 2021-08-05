@@ -4,24 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 //use App\Http\Models\MiBecaDato;
-use App\Models\User;
 use App\Models\Visita;
+use App\Models\VisitaDocumento;
+use App\Models\tipoDocumento;
+use App\Models\Docente;
+use App\Models\Empresa;
+use App\Models\direccion;
+use App\Models\Grupo;
+use App\Models\GrupoVisita;
+use App\Models\VisitaFormato;
+
+use Illuminate\Support\Facades\DB;
 
 class AdminPracSolicitudesController extends Controller
 {
     public function index(){
-        $datos = \DB::table('visitas')
-        ->join('empresas','visitas.empresa_id','=','empresas.id')
-        ->join('grupos_visitas','visitas.id','=','grupos_visitas.visita_id')
-        ->join('grupos','grupos_visitas.grupo_id','=','grupos.id')
-        ->join('carreras','grupos.carrera_id','=','carreras.id')
-        ->join('direccions','empresas.direccion_id','=','direccions.id_direccions')
-        ->join('docentes','visitas.docente_id','=','docentes.id')
-        ->join('users','docentes.user_id','=','users.id')
-        ->join('datos','docentes.dato_id','=','datos.id_datos')
+        $visitas = Visita::where('visita_estado_id','2')->orderby('id','desc')->paginate(3);
 
-        ->select('visitas.id as id',\DB::raw('CONCAT(datos.nombre," ",datos.ap_paterno," ",datos.ap_materno) as fullname'),'empresas.nombre as empresaN','users.email','grupos.secuencia','visitas.fecha_visita')->where('visitas.validacion','0')->get();
-        return view('Pantallas_Admin_Practicas_Visitas.Solicitudes_Practicas_Visitas',compact('datos'));
+        return view('Pantallas_Admin_Practicas_Visitas.SolicitudesIndex')
+            ->with('visitas', $visitas);
     }
 
     public function edit($id)
@@ -55,7 +56,89 @@ class AdminPracSolicitudesController extends Controller
         return redirect("/Solicitudes_Practicas_Visitas");
     }
 
+
     public function registrarDocente(){
         return view('Pantallas_Admin_Practicas_Visitas.registroDocente');
+    }
+
+    public function guardarDocente(Request $request){
+
+        $id_user = DB::table('users')->insertGetId([
+            'id' => $request->input('num_empleado'),
+            'email' => $request->input('email'),
+            'password' => bcrypt($request->input('password')),
+            'id_rol' => $request->input('id_rol'),
+            'estado' => $request->input('estado'),
+        ]);
+
+        $id_datos = DB::table('datos')->insertGetId([
+            'nombre' => $request->input('nombre'),
+            'ap_paterno' => $request->input('ap_paterno'),
+            'ap_materno' => $request->input('ap_materno'),
+            'telefono' => $request->input('telefono'),
+            'celular' => $request->input('celular'),
+        ]);
+
+        $docente = Docente::create([
+            'academia' => $request->input('academia'),
+            'dato_id' => $id_datos,
+            'user_id' => $id_user,
+        ]);
+
+        return redirect()->action('AdminPracSolicitudesController@index');
+    }
+
+    public function editarSolicitud(Visita $visita){
+        $documentos = VisitaDocumento::where('visita_id', $visita->id)->get();
+        $gruposVisita = GrupoVisita::where('visita_id', $visita->id)->get();
+
+        return view('Pantallas_Admin_Practicas_Visitas.SolicitudesEditar')
+            ->with('visita',$visita)
+            ->with('documentos',$documentos)
+            ->with('gruposVisita', $gruposVisita);
+    }
+
+    public function solicitudesCorregidasIndex(){
+        $visitas = Visita::where('visita_estado_id','4')->orderby('id','desc')->paginate(3);
+
+        return view('Pantallas_Admin_Practicas_Visitas.SolicitudesIndexCorregidas')
+            ->with('visitas', $visitas);
+    }
+
+    public function solicitudesRechazadasIndex(){
+        $visitas = Visita::where('visita_estado_id','6')->orderby('id','desc')->paginate(3);
+
+        return view('Pantallas_Admin_Practicas_Visitas.SolicitudesIndexRechazadas')
+            ->with('visitas', $visitas);
+    }
+
+    public function actualizarSolicitud(Visita $visita, Request $request){
+        $validateData = $request->validate([
+            'visita_estado_id' => 'required',
+            'observaciones' => 'nullable',
+        ]);
+
+        $visita->fill($validateData);
+        $visita->save();
+        
+        return redirect()->action('AdminPracSolicitudesController@index');
+    }
+    
+    public function registrarTipoDocumento(){       //Método CREATE()
+        return view('Pantallas_Admin_Practicas_Visitas.TipoDocumentoRegistrar');
+    }
+
+    public function guardarTipoDocumento(Request $request){
+        $tipo_documento = TipoDocumento::create($request->input());
+
+        return redirect()->action('AdminPracSolicitudesController@indexTipoDocumento');
+    }
+
+    public function indexTipoDocumento(){
+        $documentos = TipoDocumento::where('tramite', 'Visitas Escolares')
+            ->orderby('estado','desc')->orderby('etapa')->paginate(2);
+
+        return view('Pantallas_Admin_Practicas_Visitas.TipoDocumentoIndex')
+            ->with('documentos', $documentos);
     }
 }

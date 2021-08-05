@@ -41,12 +41,6 @@
         <label class="form-label">Academia:</label>
         <input class="form-control" value="{{ $visita->docente->academia }}" disabled>
         <br />
-
-        @if ($visita->visita_estado->id == 1 || $visita->visita_estado->id == 3)
-        <div class="d-flex justify-content-end mt-4">
-            <a class="btn btn-warning" href=" # "> Modidicar Fecha</a>
-        </div>
-        @endif
         
         <hr class="mt-4 mb-5">
         
@@ -100,13 +94,6 @@
                 <br />
             </div>
         </div>
-        
-        @if ($visita->visita_estado->id == 1 || $visita->visita_estado->id == 3)
-        <div class="d-flex justify-content-end mt-4">
-            <a class="btn btn-warning mx-3" href=" # "> Modidicar Empresa</a>
-            <a class="btn btn-warning" href=" # "> Seleccionar otra Empresa</a>
-        </div>
-        @endif
 
 
         <hr class="mt-4 mb-5">
@@ -131,12 +118,6 @@
                 @endforelse
             </tbody>
         </table>
-
-        @if ($visita->visita_estado->id == 1 || $visita->visita_estado->id == 3)
-        <div class="d-flex justify-content-end mt-4">
-            <a class="btn btn-warning" href=" # "> Modidicar Grupos</a>
-        </div>
-        @endif
 
         <hr class="mt-5 mb-5">
 
@@ -166,19 +147,27 @@
                 @endforelse
             </tbody>
         </table>
-        @if ($visita->visita_estado->id == 1 || $visita->visita_estado->id == 3)
-        <div class="d-flex justify-content-end mt-4">
-            <a class="btn btn-warning" href=" # "> Modidicar Documentos</a>
-        </div>
-        @endif
+        <hr class="mt-5 mb-5">
 
-        <div class="d-flex justify-content-end mt-4">
-            <a class="btn btn-light mx-3" href=" {{ URL::previous() }} "> Regresar</a>
-            @if ($visita->visita_estado->id == 1 || $visita->visita_estado->id == 3)
-                <a class="btn btn-success" href="  {{ route('docente.ModificarEstado', ['visita' => $visita->id])}} "> Finalizar Solicitud</a>
-            @endif
+        <div class="h2 mb-3 text-warning">Estado de la Soclitud</div>
+        <form action="{{ route('AdminPracticas.actualizarSolicitud', ['visita' => $visita]) }}" method="POST" >
+            @method('PUT')
+            @csrf
+            <select  class="form-select" id="ciudad" name="visita_estado_id">
+                <option value="3"> Corregir Solicitud</option>
+                <option value="5"> Aceptada</option>
+                <option value="6"> Rechazada</option>
+                <option value="7"> FInalizada</option>
+            </select>
+            <br>
+            <label for="observaciones" class="form-label">Observaciones:</label>
+            <textarea class="form-control" name="observaciones" id="observaciones" rows="10" cols="50" placeholder="Escribe las observaciones y correciones"></textarea>
             
-        </div>
+            <div class="d-flex justify-content-end mt-4">
+                <a class="btn btn-light mx-3" href=" {{ URL::previous() }} "> Regresar</a>
+                <button class="btn btn-success" type="submit"> Actualizar</button>
+            </div>
+        </form>
     </div>
 </div>
 @endsection

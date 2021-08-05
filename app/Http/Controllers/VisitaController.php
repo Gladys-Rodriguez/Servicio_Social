@@ -29,40 +29,39 @@ class VisitaController extends Controller
 --------------------------------( MÉTODOS EMPRESA )---------------------------------------
 ----------------------------------------------------------------------------------------*/
 
-    public function mostrarEmpresas(){                                     //METODO INDEX()
-        $empresas = Empresa::orderBy( 'nombre')->paginate(10);
-        
-        return view('Pantallas_Docente_Practicas_Visitas.indexEmpresas')
-            ->with('empresas', $empresas);
-    }
+public function mostrarEmpresas(){                                     //METODO INDEX()
+    $empresas = Empresa::orderBy( 'nombre')->paginate(10);
+    
+    return view('Pantallas_Docente_Practicas_Visitas.indexEmpresas')
+        ->with('empresas', $empresas);
+}
 
-    public function registrarEmpresa(){                                     //METODO CREATE()
-        return view('Pantallas_Docente_Practicas_Visitas.registrarEmpresa');
-    }
+public function registrarEmpresa(){                                     //METODO CREATE()
+    return view('Pantallas_Docente_Practicas_Visitas.registrarEmpresa');
+}
 
-    public function guardarEmpresa(Request $request){                       //METODO STORE()
+public function guardarEmpresa(Request $request){                       //METODO STORE()
 
-        $validateEmpresa = $request->validate([
-            'nombre' => 'required',
-        ]);
-        
-        $validateDireccion = $request->validate([
-            'nombre' => 'required',
-            'ciudad' => 'required',
-            'alcaldia' => 'required',
-            'colonia' => 'required',
-            'calle' => 'required',
-            'num_ext' => 'required',
-            'num_int' => 'nullable',
-            'cp' => 'required |regex:/^[0-9]+[0-9]+[0-9]+[0-9]+[0-9]/',
-        ]);
+    $validateEmpresa = $request->validate([
+        'nombre' => 'required',
+    ]);
+    
+    $validateDireccion = $request->validate([
+        'nombre' => 'required',
+        'ciudad' => 'required',
+        'alcaldia' => 'required',
+        'colonia' => 'required',
+        'calle' => 'required',
+        'num_ext' => 'required',
+        'num_int' => 'nullable',
+        'cp' => 'required |regex:/^[0-9]+[0-9]+[0-9]+[0-9]+[0-9]/',
+    ]);
 
-        $direccion = direccion::create($validateDireccion);
-        //$empresa = $direccion->empresa()->create($request->input());
-        $empresa = $direccion->empresa()->create($validateEmpresa);
+    $direccion = direccion::create($validateDireccion);
+    $empresa = $direccion->empresa()->create($validateEmpresa);
 
-        return redirect()->action('VisitaController@registrarSolicitud', ['empresa'=>$empresa->id] );
-    }
+    return redirect()->action('VisitaController@registrarSolicitud', ['empresa'=>$empresa->id] );
+}
 
 
 /*---------------------------------------------------------------------------------------- 
@@ -73,7 +72,7 @@ class VisitaController extends Controller
         $user_id = Auth::user()->id;
         $docente = Docente::where('user_id', $user_id)->first();
         
-        $visitas = Visita::where('docente_id', $docente->id )->where('validacion',0)->orderby('id','desc')->get();
+        $visitas = Visita::where('docente_id', $docente->id )->orderby('visita_estado_id', 'desc')->orderby('id','desc')->get();
         return view('Pantallas_Docente_Practicas_Visitas.index')
             ->with('visitas', $visitas) ;
     }
@@ -88,26 +87,15 @@ class VisitaController extends Controller
     }
 
     public function guardarSolicitud(Request $request){                      //MÉTODO STORE()
-
         $validateVisita = $request->validate([
             'docente_id'=> 'required',
             'empresa_id' => 'required',
+            'visita_estado_id' => 'required',
             'fecha_visita' => 'required| date | after:tomorrow',
-            'ruta' => 'required',
         ]);
 
         $visita = Visita::create($validateVisita);
         
-        /*$visita_documento = VisitaDocumento::create([
-            'visita_id' => $visita->id,
-            'tipo_documento_id' => 1, //Solicitud-Visita
-            'ruta' => '',
-            'validacion' => false,
-            'observaciones' => '',
-        ]);
-        $visita_documento->ruta = $visita_documento->file('ruta')->store('public/DocumentosVisitas');
-        $visita_documento->save();
-*/
         return redirect()->action('VisitaController@mostrarGrupos', ['visita'=>$visita->id] );
     }
 
@@ -121,77 +109,28 @@ class VisitaController extends Controller
             ->with('gruposVisita', $gruposVisita);
     }
 
+
+    public function modificarEstadoSolcitud(Visita $visita){
+
+        if($visita->visita_estado->id == 1){
+            Visita::where('id',$visita->id)->update([
+                'visita_estado_id' => '2',
+            ]);
+        }
+        if($visita->visita_estado->id == 3){
+            Visita::where('id',$visita->id)->update([
+                'visita_estado_id' => '4',
+            ]);
+        }
+        //$visita->save();
+        return redirect()->action('VisitaController@index');
+    }
+
 /*---------------------------------------------------------------------------------------- 
 ---------------------------------( MÉTODOS VISITAS )--------------------------------------
 ----------------------------------------------------------------------------------------*/ 
 
-    public function mostrarVisitas(){                               //MÉTODO INDEX()            
-        $user_id = Auth::user()->id;
-        $docente = Docente::where('user_id', $user_id)->first();
-        $visitas = Visita::where('docente_id', $docente->id )->where('validacion',1)->orderby('id','desc')->get();
 
-        return view('Pantallas_Docente_Practicas_Visitas.indexVisitas')
-            ->with('visitas',$visitas);
-    } 
-
-    public function registrarVisitaDocumento(Visita $visita){                       //MÉTODO CREATE()
-        $documentos = VisitaDocumento::where('visita_id', $visita->id)->get();
-        $tipoDocumentos = TipoDocumento::get()->pluck('nombre', 'id');
-
-        $documentosId =VisitaDocumento::where('visita_id', $visita->id)->select('tipo_documento_id')->get();
-        $tipoDocumentos2 = TipoDocumento::whereNotIn('id',$documentosId)->get()->pluck('nombre', 'id');
-        //dd($tipoDocumentos2);
-
-        return view('Pantallas_Docente_Practicas_Visitas.registrarVisitaDocumento')
-            ->with('documentos', $documentos)
-            ->with('visita', $visita)
-            ->with('tipoDocumentos', $tipoDocumentos2);
-    }
-
-    public function guardarVisitaDocumento(Request $request){
-
-        $visita_documento = VisitaDocumento::create([
-            'visita_id' => $request->input('visita_id'),
-            'tipo_documento_id' => $request->input('tipo_documento_id'), 
-            'ruta' => '',
-            'validacion' => false,
-            'observaciones' => '',
-        ]);
-        $visita_documento->ruta = $request->file('ruta')->store('public/DocumentosVisitas');
-        $visita_documento->save();
-
-        $visita = Visita::where('id', $request->input('visita_id'))->first();
-
-        return redirect()->route('docente.registrarVisitaDocumento', ['visita' => $visita->id])
-            ->with('visita',$visita);
-    }
-
-    public function editarVisitaDocumento(VisitaDocumento $visitaDocumento){
-        $tipoDocumentos = TipoDocumento::get()->pluck('nombre', 'id');
-
-        return view('Pantallas_Docente_Practicas_Visitas.editarVisitaDocumento')
-            ->with('tipoDocumentos', $tipoDocumentos)
-            ->with('visitaDocumento',$visitaDocumento);
-    }
-
-    public function actualizarVisitaDocumento(Request $request, VisitaDocumento $visitaDocumento){
-        $validateData = $request->validate([
-            'visita_id' => 'required',
-            'tipo_documento_id' => 'required',
-        ]);
-        
-        $visitaDocumento->fill($validateData);
-        if($request->file('ruta') != null) {
-            $visitaDocumento->ruta =$request->file('ruta')->store('public/DocumentosVisitas');    
-        }
-        $visitaDocumento->save();
-
-        
-        $visita = Visita::where('id', $request->input('visita_id'))->first();
-
-        return redirect()->route('docente.registrarVisitaDocumento', ['visita' => $visita->id])
-            ->with('visita',$visita);
-    }
 
 /*---------------------------------------------------------------------------------------- 
 ---------------------------------( MÉTODOS GRUPOS )--------------------------------------
@@ -199,7 +138,6 @@ class VisitaController extends Controller
 
     public function mostrarGrupos(Visita $visita){                                //MÉTODO INDEX()
         $gruposVisita = grupoVisita::where('visita_id', $visita->id)->get();
-        //$grupos2 = Grupo::orderby('secuencia')->paginate(10);
 
 
         $gruposVisitaId = grupoVisita::where('visita_id', $visita->id)->select('grupo_id')->get();
@@ -236,6 +174,7 @@ class VisitaController extends Controller
             ->with('visita',$visita);
     }
 
+
 /*---------------------------------------------------------------------------------------- 
 ---------------------------------( MÉTODOS INICIO )--------------------------------------
 ----------------------------------------------------------------------------------------*/   
@@ -256,65 +195,11 @@ class VisitaController extends Controller
         return view('Pantallas_Docente_Practicas_Visitas.mostrarDatosDocente')
             ->with('docente', $docente);
     }
-
 /*---------------------------------------------------------------------------------------- 
 ---------------------------------( MÉTODOS ADMIN FORMATOS )--------------------------------------
 ----------------------------------------------------------------------------------------*/   
 
-    public function mostrarFormatos() {
-        $plantillas_visible = VisitaFormato::where('estado','1')->where('tipo','plantilla')->orderBy('id','desc')->get();
-        $plantillas_oculto = VisitaFormato::where('estado','0')->where('tipo','plantilla')->orderBy('id','desc')->get();
-        
-        $ejemplos_visible = VisitaFormato::where('estado','1')->where('tipo','ejemplo')->orderBy('id','desc')->get();
-        $ejemplos_oculto = VisitaFormato::where('estado','0')->where('tipo','ejemplo')->orderBy('id','desc')->get();
 
-
-        return view('Pantallas_Docente_Practicas_Visitas.Admin.indexFormatos')
-            ->with('plantillas_visible', $plantillas_visible)
-            ->with('plantillas_oculto', $plantillas_oculto)
-            ->with('ejemplos_visible', $ejemplos_visible)
-            ->with('ejemplos_oculto', $ejemplos_oculto);
-    }
-
-    public function registrarFormato() {
-        return view('Pantallas_Docente_Practicas_Visitas.Admin.registrarFormato');
-    }
-
-
-    public function guardarFormato(Request $request) {
-
-        $formato = VisitaFormato::create([
-            'nombre' => $request->input('nombre'),
-            'tipo' => $request->input('tipo'), 
-            'ruta' => '',
-            'estado' => $request->input('estado'),
-        ]);
-        $formato->ruta = $request->file('ruta')->store('public/FormatosVisitas');
-        $formato->save();
-
-        return redirect()->action('VisitaController@mostrarFormatos');
-    }
-
-    public function editarFormato(VisitaFormato $visitaFormato) {
-        return view('Pantallas_Docente_Practicas_Visitas.Admin.editarFormato')
-        ->with('visitaFormato', $visitaFormato);
-    }
-
-    public function actualizarFormato(Request $request, VisitaFormato $visitaFormato) {
-        
-        $validateData = $request->validate([
-            'nombre' => 'required',
-            'tipo' => 'required',
-            'estado' => 'required',
-        ]);
-        
-        $visitaFormato->fill($validateData);
-        if($request->file('ruta') != null) {
-            $visitaFormato->ruta =$request->file('ruta')->store('public/FormatosVisitas');    
-        }
-        $visitaFormato->save();
-        return redirect()->action('VisitaController@mostrarFormatos');
-    }
 
     public function hola(){
         return "hola";

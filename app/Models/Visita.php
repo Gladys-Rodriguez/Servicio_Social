@@ -17,7 +17,7 @@ class Visita extends Model
         'docente_id',
         'empresa_id',
         'fecha_visita',
-        'validacion',
+        'visita_estado_id',
         'observaciones',
     ];
 
@@ -29,6 +29,11 @@ class Visita extends Model
     public function empresa()
     {
         return $this->belongsTo(Empresa::class, 'empresa_id', 'id');
+    }
+
+    public function visita_estado()
+    {
+        return $this->belongsTo(VisitaEstado::class, 'visita_estado_id', 'id');
     }
 
     public function visita_documentos()
