@@ -16,7 +16,7 @@ class VisitaDocumento extends Model
         'visita_id',
         'tipo_documento_id',
         'ruta',
-        'validación',
+        'validacion',
         'observaciones',
     ];
 

@@ -20,4 +20,18 @@ class ValidacionBController extends Controller
         ->select('expediente_becas.Nombre_beca','solicitud_becas.id',\DB::raw('CONCAT(datos.nombre," ",datos.ap_paterno," ",datos.ap_materno) as fullname'),'users.id as mat','users.email',)->where('solicitud_becas.validacion','1')->get();
         return view('Pantallas_Admin_Becas.Validacion_Alumno_Becas',compact('datos'));
     }
+    {
+        //
+        $datos= solicitud_becas::findOrFail($id);
+        $nuevo = \DB::table('solicitud_becas')
+        ->join('alumnos','solicitud_becas.id_alumnos','=','alumnos.id_alumnos')
+        ->join('expediente_becas','solicitud_becas.id_expediente_becas','=','expediente_becas.id_expediente_becas')
+        ->join('direccions','alumnos.id_direccions','=','direccions.id_direccions')
+        ->join('datos','alumnos.id_datos','=','datos.id_datos')
+        ->join('users','alumnos.id_usuarios','=','users.id')
+        ->select('expediente_becas.Nombre_beca','expediente_becas.Fecha_Inicio','expediente_becas.Fecha_Fin','expediente_becas.monto','direccions.alcaldia','direccions.colonia','direccions.calle','direccions.num_ext','direccions.num_int','direccions.cp','direccions.ciudad','expediente_becas.Nombre_beca','solicitud_becas.id',\DB::raw('CONCAT(datos.nombre," ",datos.ap_paterno," ",datos.ap_materno) as fullname'),'users.id as mat','users.email','datos.telefono','datos.celular','alumnos.semestre','alumnos.carrera','alumnos.turno','alumnos.grupo')->get();
+        ->where('solicitud_becas.id',$id)
+        return view('Pantallas_Admin_Becas.SB', compact('nuevo','datos'));
+
+    }
 }

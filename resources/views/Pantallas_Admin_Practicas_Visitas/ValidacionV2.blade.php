@@ -5,8 +5,6 @@
 @endsection
 
 @section('content')
-<form action="/SolicitudesPra1/{{$datos->id}}" method="POST">
-@csrf
 @forelse($nuevo as $new)
 <div>
 <h1>Detalles de solicitud</h1>
@@ -45,10 +43,11 @@
 					@foreach($doc as $documento)
                     @if($documento->tipo_documento_id > 1)
 							<tr>
-							<form action="/Validacion3/{{$documento->id}}" method="POST">	
+							<form action="/Validacion3/{{$documento->id}}" method="POST">
 							<input type="hidden" name="_method" value="PUT">
                             <td data-label="Documento">{{$documento->nombre}}</td>
 							<td data-label="Estado">@if($documento->validacion==1) Aceptado @elseif($documento->validacion==2) Rechazado @else Sin validar @endif</td>
+							@csrf	
 							<td><textarea name="observaciones" placeholder="Observaciones:" id="" value="" cols="50" rows="4">{{$documento->observaciones}}</textarea></td>	
 							<td data-label=""><a href=" @php echo \Illuminate\Support\Facades\Storage::url($documento->ruta) @endphp"
                                     class="boton_chido" target="_blank">

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 //use App\Http\Models\MiBecaDato;
 use App\Models\User;
 use App\Models\Visita;
+use App\Models\VisitaDocumento;
 
 class ValidacionDocPraController extends Controller
 {
@@ -41,6 +42,7 @@ class ValidacionDocPraController extends Controller
         ->get();
         $doc = \DB::table('visita_documentos')
         ->join('tipo_documentos','visita_documentos.tipo_documento_id','=','tipo_documentos.id')
+        ->select('visita_documentos.id as id','visita_documentos.visita_id','visita_documentos.tipo_documento_id','visita_documentos.ruta','visita_documentos.validacion','visita_documentos.observaciones','tipo_documentos.nombre')
         ->where('visita_documentos.visita_id',$id)
         ->get();
 
