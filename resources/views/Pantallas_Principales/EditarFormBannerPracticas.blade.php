@@ -57,7 +57,7 @@
         <button type="submit">Actualizar</button>
     </form>
 
-    <form action="/EditarFormBannerBecas3/{{$bannerPracticas->id}}" method="POST" enctype="multipart/form-data">
+    <form action="/EditarFormBannerPracticas3/{{$bannerPracticas->id}}" method="POST" enctype="multipart/form-data">
           @csrf
           <input type="hidden" name="_method" value="DELETE">
 
