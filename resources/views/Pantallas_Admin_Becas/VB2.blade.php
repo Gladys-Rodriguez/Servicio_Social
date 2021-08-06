@@ -35,14 +35,13 @@
      } 
    </script>
 
-<form action="/SB1/{{$datos->id}}" method="POST">
-@csrf    
+  
 <div class="wrap">
         <ul class="tabs">
             <li><a href="#tab1"><span class="fas fa-user"></span><span class="tab-text">Personales</span></a></li>
             <li><a href="#tab2"><span class="fas fa-address-book"></span><span class="tab-text">Dirección</span></a></li>
             <li><a href="#tab3"><span class="fas fa-money-check"></span><span class="tab-text">Aspirante a</span ></a></li>
-            <li><a href="#tab4"><span class="fas fa-file-upload"></span><span class="tab-text">Acciones</span ></a></li>
+            <li><a href="#tab4"><span class="fas fa-file-upload"></span><span class="tab-text">Documentos</span ></a></li>
         </ul>
         <div class="secciones">
            <article id="tab1">
@@ -90,32 +89,29 @@
 							</tr>
 					</thead>
 					<tbody>
-					@foreach($doc as $documento)
-                    @if($documento->tipo_documento_id > 1)
+          @foreach($doc as $documento)
 							<tr>
-							<form action="/Validacion3/{{$documento->id}}" method="POST">
+							<form action="/VB3/{{$documento->id}}" method="POST">
 							<input type="hidden" name="_method" value="PUT">
-                            <td data-label="Documento">{{$documento->nombre}}</td>
+                            <td data-label="Documento">{{$documento->nombre_doc}}</td>
 							<td data-label="Estado">@if($documento->validacion==1) Aceptado @elseif($documento->validacion==2) Rechazado @else Sin validar @endif</td>
 							@csrf	
-							<td><textarea name="observaciones" placeholder="Observaciones:" id="" value="" cols="50" rows="4">{{$documento->observaciones}}</textarea></td>	
+							<td><textarea name="observaciones" placeholder="Observaciones:" id="" value="" cols="15" rows="4">{{$documento->observaciones}}</textarea></td>	
 							<td data-label=""><a href=" @php echo \Illuminate\Support\Facades\Storage::url($documento->ruta) @endphp"
                                     class="boton_chido" target="_blank">
                                     VER
                              </a></td>
-							<td><input class="form-check-input" type="radio" value="1" name="validacion" id="flexRadioDefault1" checked>
-  <label class="" for="flexRadioDefault1">
-    Aceptar
-  </label>
-  <input class="form-check-input" type="radio" value="2" name="validacion" id="flexRadioDefault2">
-  <label class="" for="flexRadioDefault2">
-    Rechazar
-  </label><br>
+							<td>
+              <select name="validacion" id="">
+                  <option value="1">Aceptar</option>
+                  <option value="2">Rechazar</option>
+              </select>  
+              
   <button type="submit">Enviar</button>
 </td>	</form>
 							</tr>
-                            @endif
 							@endforeach
+				
                             </tbody>
 
         @endsection

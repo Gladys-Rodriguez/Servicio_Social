@@ -287,6 +287,8 @@ Route::put('/SB1/{id}', [App\Http\Controllers\SolicitudesBecasController::class,
 Route::get('/ValidacionV2/{id}', [App\Http\Controllers\ValidacionDocPraController::class, 'edit'])->name('home');
 Route::put('/Validacion3/{id}', [App\Http\Controllers\ValidacionDocPraController::class, 'update'])->name('Validacion3.update');
 
+Route::get('/VB2/{id}', [App\Http\Controllers\ValidacionBController::class, 'edit'])->name('home');
+Route::put('/VB3/{id}', [App\Http\Controllers\ValidacionBController::class, 'update'])->name('VB3.update');
 
 //------------------------FER TERMINO------------------------------------
 
