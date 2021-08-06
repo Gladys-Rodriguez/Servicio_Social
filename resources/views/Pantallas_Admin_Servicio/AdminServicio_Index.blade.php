@@ -1,9 +1,4 @@
 @extends('layouts.navbarAdminIndex')
-
-
-
-
-
     <!DOCTYPE html>
     <html>
     <head>
@@ -21,7 +16,7 @@
                         <div class="content">
                         <h1> Administración </h1>
                         <p>  </p>
-                    
+
                     </div>
                 </div>
             </div>
@@ -34,7 +29,7 @@
                         <div class="content">
                         <h1> Administración de Empresas Turísticas </h1>
                         <p>  </p>
-                    
+
                     </div>
                 </div>
             </div>
@@ -48,7 +43,7 @@
                         <div class="content">
                         <h1>  Contaduría </h1>
                         <p>  </p>
-                    
+
                     </div>
                 </div>
             </div>
@@ -62,7 +57,7 @@
                         <div class="content">
                         <h1>  Gastronomía </h1>
                         <p>  </p>
-                    
+
                     </div>
                 </div>
             </div>
@@ -76,7 +71,7 @@
                         <div class="content">
                         <h1>  Gestión de la Ciberseguridad</h1>
                         <p>  </p>
-            
+
                     </div>
                 </div>
             </div>
@@ -89,7 +84,7 @@
                     <div class="contentBx">
                         <div class="content">
                         <h1> Informática</h1>
-                        <p>  </p>                   
+                        <p>  </p>
 
                     </div>
                 </div>

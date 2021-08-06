@@ -29,8 +29,11 @@ a{
 .register{
     text-align: center;
     overflow: hidden;
+    width: 100%;
+
     display: table;
-    margin-top: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 
  }
  .register td input{
@@ -46,7 +49,8 @@ a{
     font-size: 18px;
     text-align: left;
     text-transform: uppercase;
-     color:#d8d8d8;
+     color:#122630;
+     font-weight:600;
  }
 
  .register td, .register th {
@@ -54,7 +58,6 @@ a{
     padding-top: 2%;
     padding-left:2rem;
     padding-right: 2rem;
-
  }
 
  .register tr:nth-child(odd) {
@@ -98,6 +101,23 @@ a{
     vertical-align: bottom;
 }
 
+.eliminar{
+    padding: .375rem .75rem;
+    border: 2.5px solid #526080;;
+    border-radius: .25rem;
+    background-color:#cdcdc079 ;
+    text-transform:uppercase;
+}
+.eliminar a{
+    color: #122630;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight:600;
+
+}
+.eliminar:hover{
+    background-color: #cdcdc0e8;
+    }
 .seguimiento{
     padding: .375rem .75rem;
     border: 2.5px solid #526080;;
@@ -119,4 +139,30 @@ background-color: #626D71;
 }
 .material-icons:hover{
     color:#c9d8d7
+}
+
+
+.btn:hover{
+
+    background-color: #CDCDC0;
+    box-shadow: #749997c4 -1px 1px, #749997c4 -2px 2px, #749997c4 -3px 3px, #749997c4 -4px 4px, #749997c4 -5px 5px, #749997c4 -6px 6px;
+    transform: translate3d(6px, -6px, 0);
+    transition-delay: 0s;
+        transition-duration: 0.4s;
+        transition-property: all;
+    transition-timing-function: line;
+}
+
+.btn .verificar{
+    color: #122630;
+}
+.btn .verificar:hover{
+color: #122630;
+font-weight: bold;
+background-color: transparent;
+transition-delay: 0s;
+transition-duration: 0.4s;
+transition-property: all;
+transition-timing-function: line;
+
 }

@@ -3,10 +3,16 @@
 @section('title', 'Subir Documentos')
 
 @section('content')
-
+<link  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+    rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+    crossorigin="anonymous"
+    />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Servicio/estilo2.css')}}">
+  <link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Servicio/estilo2.css')}}"> -->
+
+  <div class="container-fluid bg-dark py-5" >
+
 
   <h1 class="titulo">Documentos Requeridos Para Registro </h1>
 <br>
@@ -17,18 +23,16 @@
 
         <br>
 
-  <div class="anuncio">
 
-    <textarea name="" id="" cols="1" rows="3">
-        No olvides que tu reporte mensual de actividades y el formato de asistencia debe ser
-        subido en un solo archivo por periodo, de lo contrario será rechazado por tu responsable directo
-    </textarea>
-    <br>
-    <textarea class="anun2" name="" id="" cols="1" rows="2">
+
+    <p class="border rounded" name="" id="" cols="1" rows="2">
         Recuerda que deben ser archivos de tipo .doc .rtf o .pdf y que no deben exceder de 1.5Mb
-    </textarea>
-</div>
-  <table class="register">
+    </p>
+
+
+
+<div class="table-responsive">
+    <table class="register">
     <thead>
         <tr>
             <th><h1><span class="material-icons">text_snippet</span> Archivo</h1></th>
@@ -175,9 +179,10 @@
 
     </tbody>
 </table>
+</div>
 
 
-
+</div>
 
 @endsection
 

@@ -25,8 +25,9 @@ class DocsReportesController extends Controller
         //
         $id_users = Auth::user()->id;
         $files=DB::table('docs_reportes')->where('user',$id_users)->get();
+        $docs=DB::table('docs_liberaciones')->where('user',$id_users)->get();
         //$files = reporte::where('user', Auth::id())->get();
-        return view('Pantallas_Alumno_Servicio.Seguimiento_Reportes', compact('files'));
+        return view('Pantallas_Alumno_Servicio.Seguimiento_Reportes', compact('files','docs'));
     }
 
     /**
@@ -55,6 +56,7 @@ class DocsReportesController extends Controller
 
 
 
+
         foreach ($files as $file){
             if(Storage::putFileAs('/public/'.$user_id.'/', $file, $file->getClientOriginalName())){
                     reporte::create([
@@ -78,6 +80,8 @@ class DocsReportesController extends Controller
     }
 
     public function docs($id){
+
+
         $alumno = DB::table('alumnos')
         ->join('datos', 'alumnos.id_datos', 'datos.id_datos')
         ->join('registros', 'alumnos.id_alumnos', 'registros.id_alumnos')
@@ -88,9 +92,17 @@ class DocsReportesController extends Controller
         ->where('user',$id)
         ->get();
 
+        $liberaciones =
+        DB::table('docs_liberaciones')
+        ->where('user',$id)
+        ->get();
 
+        $libera= DB::table('alumnos')
+        ->join('liberacions', 'alumnos.id_alumnos', 'liberacions.id_alumnos')
+        ->where('alumnos.id_usuarios', $id)
+        ->get();
         //var_dump($docs);
-        return view('Pantallas_Admin_Servicio.Exp_Reportes', compact("docs","alumno"));
+        return view('Pantallas_Admin_Servicio.Exp_Reportes', compact("docs","alumno","liberaciones","libera"));
 
     }
     /**

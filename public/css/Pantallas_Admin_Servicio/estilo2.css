@@ -45,12 +45,11 @@ body{
     text-align: center;
     background: transparent;
     border-radius: 6px;
-    margin-left: -8rem;
 
 }
 
 .inputfile {
-    width: 100px;
+    width: 20px;
     height: 0.1px;
     opacity: 0;
     overflow: hidden;
@@ -196,6 +195,13 @@ h2{
     text-align: left;
 }
 
+h3{
+    color: white;
+    font-family: 'Bitter', serif;;
+    font-size: 20px;
+    text-align: left;
+}
+
 #tabla{
     color: cornsilk;
     margin-top: 70px;
@@ -270,8 +276,7 @@ a{
 .register{
     text-align: center;
     overflow: hidden;
-    width: 90%;
-    margin-left: 8rem;
+    width: 100%;
     display: table;
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -295,7 +300,6 @@ a{
  .register td, .register th {
     padding-bottom: 2%;
     padding-top: 2%;
-    padding-left:2%;
  }
 
  .register tr:nth-child(odd) {
@@ -306,6 +310,7 @@ a{
     background-color: #3b5761e7;
  }
  .register th {
+
     background-color: #7DA3A1;
  }
 
@@ -325,31 +330,28 @@ a{
 }
 .inputdoc{
     display:none;
+    padding-left: 1rem;;
 }
 .nomDoc{
     border: 0;
     border-bottom: 2px solid #9b9b9b;
     outline: 0;
-    color:  #A7A1AE;
-    padding: 7px 0;
+    color:  #acacac;
     background: transparent;
-    transition: border-color 0.2s;
     font-family: 'Open Sans', sans-serif;
     font-size: 17px;
     font-weight: 600;
+    margin-left: 1rem;
     text-transform: uppercase;
-    width: 300px;
-    height: 50px;
-    line-height: 1rem;
+    max-width: 300px;
+    height: 100px;
     resize: none;
 }
 
-.anuncio{
-    padding-left: 20rem;
-    padding-top: 2rem;
 
-}
-.anuncio textarea{
+ textarea{
+    margin-left: 20rem;
+    margin-top: 2rem;
     padding-top:1rem;
     padding-left: .35rem;
 
@@ -382,7 +384,7 @@ a{
 }
 
 }*/
-
+/*
 @media screen and (min-width: 425px)
 and (max-width:768px){
 
@@ -398,7 +400,6 @@ and (max-width:768px){
         padding-bottom: .5rem;
 
     }
-    /*Tabla */
     .register{
         margin-left: -5rem;
         width:650px;
@@ -410,35 +411,29 @@ and (max-width:768px){
     .inputfile-2 + label {
         width:150px;
     }
-    /*Fin tabla */
 
-    /* Text area de la tabla */
     .nomDoc{
         font-size: 14px;
         width:90%;
     }
-    /* Fin text area de la tabla */
 
-    /*Boton en tabla */
     .btn{
         padding: .375rem .75rem;
         width:100px;
         font-size:12px;
     }
-    /*Fin boton de tabla */
     .titulo{
         font-size:28px;
         width:500px;
 
     }
-    /* Boton que lleva a otra ventana */
     .seguimiento a{
         font-size:14px;
         font-weight: 600;
 
     }
     .seguimiento a .material-icons{
-        /*display: none;*/
+
         font-size:20px;
         margin-left: -.5rem;
     }
@@ -449,7 +444,7 @@ and (max-width:768px){
         margin-left:-5rem;
     }
 
-    /*Fin Boton */
+
 
 
 }
@@ -464,7 +459,7 @@ and (max-width:1024px){
     }
 
 
-}
+} */
 
 /*@media screen and (min-width: 1024px) {
     .anuncio{
