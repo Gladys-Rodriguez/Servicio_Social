@@ -71,22 +71,55 @@
            <article id="tab3">
            @foreach($sol as $soli)
            @if($soli->validacion == 0)
-           <p>Solicitud en revisión</p>   
+           <p>Solicitud en revisión <br>
+           </p>   
            @elseif($soli->validacion == 1)
-           <p>Tienes beca</p>
+           <p>Beca: {{$soli->Nombre_beca}}</p>
+           <p>Fecha Inicio: {{$soli->Fecha_Inicio}}</p>
+           <p>Fecha Fin: {{$soli->Fecha_Fin}}</p>
+           <p>Monto: ${{$soli->monto}}</p>
            @elseif($soli->validacion == 2)
            <p>Solicitud Rechazada</p>
            @else
            <p>Te invitamos a ver otras opciones</p>
            @endif
-           @endforeach 
+           @endforeach
            </article> 
-           <article id="tab4">
+           <article id="tab4">  
+                <p>Subir documentos</p>
+           @foreach($sol as $soli)
+                <table class="table">
+					<caption>DOCUMENTOS PARA APROBACIÓN</caption>
+					<thead>
+                         @if($soli->validacion == 1) 
+							<tr>    
+									<th>Documento</th>
+									<th>Estado</th>
+									<th>Observaciones</th>
+									<th></th>
+									<th></th>
+                                             <th></th>
+							</tr>
+					</thead>
+					<tbody>
+                              <tr>
+                                   <td data-label="Documento">{{$soli->nombre_doc}}</td>
+                                   <td data-label="Estado">@if($soli->estado==1) Aceptado @elseif($soli->estado==2) Rechazado @else Sin validar @endif</td>
+                                   <td data-label="Observaciones">{{$soli->observaciones}}</td>
+                                   <td data-label=""><a href=" @php echo \Illuminate\Support\Facades\Storage::url($soli->ruta) @endphp"
+                                    class="boton_chido" target="_blank">VER</a></td>
+                                   <td data-label="">Editar</td>
+                                   <td data-label="">Eliminar</td>
+                              </tr>	
+                            </tbody>
+                    </table>
+                @elseif($soli->validacion == 0)
+                <p>Solicitud en revisión</p>
+                @else  
                 <h1>Selecciona la beca para la que quieras postularte</h1> 
                 <form action="{{route('registroBecaB.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
-                @foreach ($datos as $dato)
-               <input type="hidden" name="id_alumnos" value="{{$dato->id_alumnos}}">
+               <input type="hidden" name="id_alumnos" value="{{$soli->id_alumnos}}">
                <input type="hidden" name="validacion" value="0">
                 <select name="id_expediente_becas" class="form-select">
                      <option  Selected value="1">Institucional</option>
@@ -97,6 +130,7 @@
                 </select>
                 <button type="submit">Hacer Solicitud</button>
 </form>
+@endif
 @endforeach
            </article> 
         </div>  
