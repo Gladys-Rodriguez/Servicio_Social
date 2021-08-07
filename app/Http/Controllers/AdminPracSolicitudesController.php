@@ -11,6 +11,7 @@ use App\Models\Docente;
 use App\Models\Empresa;
 use App\Models\direccion;
 use App\Models\Grupo;
+use App\Models\Carrera;
 use App\Models\GrupoVisita;
 use App\Models\VisitaFormato;
 
@@ -124,21 +125,232 @@ class AdminPracSolicitudesController extends Controller
         return redirect()->action('AdminPracSolicitudesController@index');
     }
     
-    public function registrarTipoDocumento(){       //Método CREATE()
-        return view('Pantallas_Admin_Practicas_Visitas.TipoDocumentoRegistrar');
+
+/*---------------------------------------------------------------------------------------- 
+---------------------------------( MÉTODOS VISITA DOCUMENTO)--------------------------------
+----------------------------------------------------------------------------------------*/  
+    public function editarDocumentosSolicitud (VisitaDocumento $visita_documento){
+        $tipoDocumentos = TipoDocumento::get()->pluck('nombre', 'id');
+
+        return view('Pantallas_Admin_Practicas_Visitas.VisitaDocumentoEditar')
+            ->with('tipoDocumentos', $tipoDocumentos)
+            ->with('visita_documento',$visita_documento);
     }
 
-    public function guardarTipoDocumento(Request $request){
+    public function actualizarDocumentosSolicitud(Request $request,  VisitaDocumento $visita_documento){
+        $validateData = $request->validate([
+            'visita_id' => 'required',
+            'observaciones' => 'nullable',
+            'validacion' =>'required',
+        ]);
+
+        $id_datos = DB::table('visita_documentos')->where('id', $visita_documento->id)->update([
+            'validacion' => $validateData['validacion'],
+            'observaciones' => $validateData['observaciones'],
+        ]);
+
+
+        $visita = Visita::where('id', $request->input('visita_id'))->first();
+
+        return redirect()->route('AdminPracticas.editarSolicitud', ['visita' => $visita->id])
+            ->with('visita',$visita);
+    }
+
+/*---------------------------------------------------------------------------------------- 
+---------------------------------( MÉTODOS TIPO DOCUMENTO)--------------------------------
+----------------------------------------------------------------------------------------*/  
+
+    public function indexTipoDocumento(){                                       //INDEX()
+        $documentos = TipoDocumento::where('tramite', 'Visitas Escolares')
+            ->orderby('estado','desc')->orderby('etapa')->paginate(15);
+
+        return view('Pantallas_Admin_Practicas_Visitas.TipoDocumentoIndex')
+            ->with('documentos', $documentos);
+    }
+
+    public function registrarTipoDocumento(){                                   // CREATE()
+            return view('Pantallas_Admin_Practicas_Visitas.TipoDocumentoRegistrar');
+        }
+
+    public function guardarTipoDocumento(Request $request){                     //STORE()
         $tipo_documento = TipoDocumento::create($request->input());
 
         return redirect()->action('AdminPracSolicitudesController@indexTipoDocumento');
     }
 
-    public function indexTipoDocumento(){
-        $documentos = TipoDocumento::where('tramite', 'Visitas Escolares')
-            ->orderby('estado','desc')->orderby('etapa')->paginate(2);
-
-        return view('Pantallas_Admin_Practicas_Visitas.TipoDocumentoIndex')
-            ->with('documentos', $documentos);
+    public function editarTipoDocumento(TipoDocumento $tipo_documento){         //EDIT()
+        return view('Pantallas_Admin_Practicas_Visitas.TipoDocumentoEditar')
+            ->with('tipo_documento',$tipo_documento);
     }
+    
+    public function actualizarTipoDocumento(Request $request, TipoDocumento $tipo_documento){    //UPDATE()
+        $validateData = $request->validate([
+            'nombre' => 'required',
+            'tramite' => 'required',
+            'etapa' => 'required',
+            'estado' => 'required',
+        ]);
+
+        $tipo_documento->fill($validateData);
+        $tipo_documento->save();
+
+        return redirect()->action('AdminPracSolicitudesController@indexTipoDocumento');
+    }
+
+/*--------------------------------------------------------------------------------------
+---------------------------------( MÉTODOS FORMATOS)------------------------------------
+----------------------------------------------------------------------------------------*/ 
+
+    public function registrarFormato(){
+        return view('Pantallas_Admin_Practicas_Visitas.FormatosRegistrar');
+    }
+
+    public function guardarFormato(Request $request){
+        $formato = VisitaFormato::create([
+            'nombre' => $request->input('nombre'),
+            'tipo' => $request->input('tipo'), 
+            'ruta' => '',
+            'estado' => $request->input('estado'),
+        ]);
+        $formato->ruta = $request->file('ruta')->store('public/FormatosVisitas');
+        $formato->save();
+
+        return redirect()->action('AdminPracSolicitudesController@indexFormatosEjemplo');
+    }
+
+    public function editarFormato(VisitaFormato $visita_formato){
+        return view('Pantallas_Admin_Practicas_Visitas.FormatosEditar')
+            ->with('visita_formato', $visita_formato);
+    }
+
+    public function actualizarFormato(VisitaFormato $visita_formato, Request $request){
+        $validateData = $request->validate([
+            'nombre' => 'required',
+            'tipo' => 'required',
+            'estado' => 'required',
+        ]);
+        
+        $visita_formato->fill($validateData);
+        $visita_formato->save();
+        if($request->file('ruta') != null) {
+            $visita_formato->ruta =$request->file('ruta')->store('public/FormatosVisitas');    
+        }
+        
+        
+        if($validateData['tipo'] == 'Calendario'){
+            return redirect()->action('AdminPracSolicitudesController@indexFormatosCalendarioVisitas');
+        }
+
+        if($validateData['tipo'] == 'Ejemplo'){
+            return redirect()->action('AdminPracSolicitudesController@indexFormatosEjemplo');
+        }
+
+        if($validateData['tipo'] == 'Plantilla'){
+            return redirect()->action('AdminPracSolicitudesController@indexFormatosPlantilla');
+        }
+        
+    }
+
+    public function indexFormatosEjemplo(){
+        $formatos = VisitaFormato::where('tipo','Ejemplo')->orderBy('estado','desc')->orderBy('id','desc')->get();
+
+        return view('Pantallas_Admin_Practicas_Visitas.FormatosEjemplo')
+            ->with('formatos',$formatos);
+    }
+
+    public function indexFormatosPlantilla(){
+        $formatos = VisitaFormato::where('tipo','Plantilla')->orderBy('estado','desc')->orderBy('id','desc')->get();
+
+        return view('Pantallas_Admin_Practicas_Visitas.FormatosPlantilla')
+            ->with('formatos',$formatos);
+    }
+
+    public function indexFormatosCalendarioVisitas(){
+        $formatos = VisitaFormato::where('tipo','Calendario')->orderBy('estado','desc')->orderBy('id','desc')->get();
+
+        return view('Pantallas_Admin_Practicas_Visitas.FormatosCalendarioVisitas')
+            ->with('formatos',$formatos);
+    }
+/*--------------------------------------------------------------------------------------
+---------------------------------( MÉTODOS CARRERAS)------------------------------------
+----------------------------------------------------------------------------------------*/ 
+
+    public function indexCarrera(){
+        $carreras = Carrera::orderBy('estado','desc')->get();
+        return view('Pantallas_Admin_Practicas_Visitas.CarrerasIndex')
+            ->with('carreras', $carreras);
+    }    
+
+    public function  registrarCarrera(){
+        return view('Pantallas_Admin_Practicas_Visitas.CarrerasRegistrar');
+    }
+    
+    public function  guardarCarrera(Request $request){
+        $carrera = Carrera::create($request->input());
+
+        return redirect()->action('AdminPracSolicitudesController@indexCarrera');
+    } 
+
+    public function editarCarrera(Carrera $carrera){
+        
+        return view('Pantallas_Admin_Practicas_Visitas.CarrerasEditar')
+            ->with('carrera', $carrera);
+    }
+
+    public function actualizarCarrera(Carrera $carrera, Request $request){
+        $validateData = $request->validate([
+            'nombre' => 'required',
+            'estado' => 'required',
+        ]);
+        
+        $carrera->fill($validateData);
+        $carrera->save();
+
+        return redirect()->action('AdminPracSolicitudesController@indexCarrera');
+    }
+
+/*--------------------------------------------------------------------------------------
+---------------------------------(  MÉTODOS GRUPO )------------------------------------
+----------------------------------------------------------------------------------------*/ 
+
+    public function indexGrupo(){
+        $grupos = Grupo::orderBy('carrera_id')->orderby('secuencia')->get();
+        return view('Pantallas_Admin_Practicas_Visitas.GruposIndex')
+            ->with('grupos', $grupos);
+    }    
+
+    public function  registrarGrupo(){
+        $carreras = Carrera::where('estado','1')->get()->pluck('nombre', 'id');
+
+        return view('Pantallas_Admin_Practicas_Visitas.GruposRegistrar')
+            ->with('carreras', $carreras);
+    }
+
+    public function  guardarGrupo(Request $request){
+        $grupo = Grupo::create($request->input());
+
+        return redirect()->action('AdminPracSolicitudesController@indexGrupo');
+    } 
+
+    public function editarGrupo(Grupo $grupo){
+        $carreras = Carrera::where('estado','1')->get()->pluck('nombre', 'id');
+
+        return view('Pantallas_Admin_Practicas_Visitas.GruposEditar')
+            ->with('carreras', $carreras)
+            ->with('grupo',$grupo);
+    }
+
+    public function actualizarGrupo(Grupo $grupo, Request $request){
+        $validateData = $request->validate([
+            'secuencia' => 'required',
+            'carrera_id' => 'required',
+            'estado' => 'required',
+        ]);
+        
+        $grupo->fill($validateData);
+        $grupo->save();
+
+        return redirect()->action('AdminPracSolicitudesController@indexGrupo');
+    }
+
 }

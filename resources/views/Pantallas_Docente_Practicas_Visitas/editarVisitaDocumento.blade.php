@@ -34,7 +34,7 @@
             <br />
 
             <div class="d-flex justify-content-end mt-4">
-                <a class="btn btn-light mx-3" href=" {{ URL::previous() }} "> Regresar</a>
+                <a class="btn btn-light mx-3" href=" {{ route('docente.indexDocumentosSolicitud') }} "> Regresar</a>
                 <button class="btn btn-warning" type="submit">Modificar Documento</button>
             </div>
             @csrf

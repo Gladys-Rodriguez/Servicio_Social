@@ -127,6 +127,65 @@ public function guardarEmpresa(Request $request){                       //METODO
     }
 
 /*---------------------------------------------------------------------------------------- 
+---------------------------------( MÉTODOS DOCUMENTOS )--------------------------------------
+----------------------------------------------------------------------------------------*/ 
+
+    public function indexDocumentosSolicitud(Visita $visita){
+        $documentos = VisitaDocumento::where('visita_id', $visita->id)->get();
+
+        $documentosId =VisitaDocumento::where('visita_id', $visita->id)->select('tipo_documento_id')->get();
+        $tipoDocumentos = TipoDocumento::whereNotIn('id',$documentosId)
+            ->where('estado','1')->where('etapa','solicitud')->get()->pluck('nombre', 'id');
+
+        return view('Pantallas_Docente_Practicas_Visitas.DocumentosSolicitudRegistrar')
+           ->with('documentos', $documentos)
+           ->with('visita', $visita)
+           ->with('tipoDocumentos', $tipoDocumentos);
+    }
+
+    public function guardarDocumentosSolicitud(Request $request){
+        $visita_documento = VisitaDocumento::create([
+            'visita_id' => $request->input('visita_id'),
+            'tipo_documento_id' => $request->input('tipo_documento_id'), 
+            'ruta' => '',
+            'validacion' => false,
+            'observaciones' => '',
+        ]);
+        $visita_documento->ruta = $request->file('ruta')->store('public/DocumentosVisitas');
+        $visita_documento->save();
+
+        $visita = Visita::where('id', $request->input('visita_id'))->first();
+
+        return redirect()->route('docente.indexDocumentosSolicitud', ['visita' => $visita->id])
+            ->with('visita',$visita);
+        
+    }
+
+    public function editarDocumentosSolicitud(VisitaDocumento $visita_documento){
+        $tipoDocumentos = TipoDocumento::where('estado','1')->where('etapa','solicitud')->get()->pluck('nombre', 'id');
+
+        return view('Pantallas_Docente_Practicas_Visitas.DocumentosSolicitudEditar')
+            ->with('tipoDocumentos', $tipoDocumentos)
+            ->with('visita_documento',$visita_documento);
+    }
+
+    public function actualizarDocumentosSolicitud(Request $request, VisitaDocumento $visita_documento){
+        $validateData = $request->validate([
+            'visita_id' => 'required',
+            'ruta' => 'required',
+        ]);
+        
+        $visita_documento->fill($validateData);
+        $visita_documento->ruta =$request->file('ruta')->store('public/DocumentosVisitas');    
+        $visita_documento->save();
+
+        $visita = Visita::where('id', $request->input('visita_id'))->first();
+
+        return redirect()->route('docente.indexDocumentosSolicitud', ['visita' => $visita->id])
+            ->with('visita',$visita);
+    }
+
+/*---------------------------------------------------------------------------------------- 
 ---------------------------------( MÉTODOS VISITAS )--------------------------------------
 ----------------------------------------------------------------------------------------*/ 
 
@@ -141,7 +200,7 @@ public function guardarEmpresa(Request $request){                       //METODO
 
 
         $gruposVisitaId = grupoVisita::where('visita_id', $visita->id)->select('grupo_id')->get();
-        $grupos = Grupo::whereNotIn('id',$gruposVisitaId)->orderby('secuencia')->paginate(10);
+        $grupos = Grupo::whereNotIn('id',$gruposVisitaId)->where('estado','1')->orderby('secuencia')->paginate(10);
 
 
         return view('Pantallas_Docente_Practicas_Visitas.indexGrupos')

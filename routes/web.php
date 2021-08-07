@@ -411,15 +411,90 @@ Route::get('/AdminPracticas/Docente/Registrar','AdminPracSolicitudesController@r
 Route::post('AdminPracticas/Docente/Guardar', 'AdminPracSolicitudesController@guardarDocente')    //Método DOCENTE-STORE()
     ->name('AdminPracticas.guardarDocente');  
 
+//------------------------RUTAS TIPO_DOCUMENTO-----------------------------------
 
-Route::get('/AdminPracticas/TipoDocumento', 'AdminPracSolicitudesController@indexTipoDocumento')
+Route::get('/AdminPracticas/TipoDocumento', 'AdminPracSolicitudesController@indexTipoDocumento') //Método TIPO_DOCUMENTO-INDEX()
     ->name('AdminPracticas.indexTipoDocumento');   
 
 Route::get('/AdminPracticas/TipoDocumento/Registrar','AdminPracSolicitudesController@registrarTipoDocumento') //Método TIPO_DOCUMENTO-CREATE()
     ->name('AdminPracticas.registrarTipoDocumento');
 
-Route::post('AdminPracticas/TipoDocumento/Guardar', 'AdminPracSolicitudesController@guardarTipoDocumento')    //Método DOCENTE-STORE()
+Route::post('AdminPracticas/TipoDocumento/Guardar', 'AdminPracSolicitudesController@guardarTipoDocumento')    //Método TIPO_DOCUMENTO-STORE()
     ->name('AdminPracticas.guardarTipoDocumento');  
+
+Route::get('/AdminPracticas/TipoDocumento/Editar/{tipo_documento}', 'AdminPracSolicitudesController@editarTipoDocumento') //Método SOLICITUD-EDIT()
+    ->name('AdminPracticas.editarTipoDocumento');
+
+Route::put('/AdminPracticas/TipoDocumento/Actualizar/{tipo_documento}', 'AdminPracSolicitudesController@actualizarTipoDocumento') //Método SOLICITUD-UPDATE()
+    ->name('AdminPracticas.actualizarTipoDocumento');  
+
+
+//------------------------RUTAS VISITA_DOCUMENTO-----------------------------------
+
+Route::get('/AdminPracticas/DocumentosSolicitud/Editar/{visita_documento}', 'AdminPracSolicitudesController@editarDocumentosSolicitud') //Método Documento_Visita-EDIT()
+    ->name('AdminPracticas.editarDocumentosSolicitud');
+
+Route::put('/AdminPracticas/DocumentosSolicitud/Actualizar/{visita_documento}', 'AdminPracSolicitudesController@actualizarDocumentosSolicitud') //Método Documento_Visita-UPDATE()
+    ->name('AdminPracticas.actualizarDocumentosSolicitud');   
+
+
+//------------------------RUTAS FORMATOS-----------------------------------
+
+Route::get('/AdminPracticas/Formato/Registrar','AdminPracSolicitudesController@registrarFormato') //Método FORMATO-CREATE()
+    ->name('AdminPracticas.registrarFormato');
+
+Route::post('AdminPracticas/Formato/Guardar', 'AdminPracSolicitudesController@guardarFormato')    //Método FORMATO-STORE()
+    ->name('AdminPracticas.guardarFormato');  
+
+Route::get('/AdminPracticas/Formato/Editar/{visita_formato}', 'AdminPracSolicitudesController@editarFormato') //Método FORMATO-EDIT()
+    ->name('AdminPracticas.editarFormato');
+
+Route::put('/AdminPracticas/Formato/Actualizar/{visita_formato}', 'AdminPracSolicitudesController@actualizarFormato') //Método FORMATO-UPDATE()
+    ->name('AdminPracticas.actualizarFormato');  
+
+Route::get('/AdminPracticas/FormatosPlantilla','AdminPracSolicitudesController@indexFormatosEjemplo') //Método FORMATO-INDEX()
+    ->name('AdminPracticas.indexFormatosEjemplo');    
+
+Route::get('/AdminPracticas/FormatosEjemplo','AdminPracSolicitudesController@indexFormatosPlantilla') //Método FORMATO-INDEX()
+    ->name('AdminPracticas.indexFormatosPlantilla');      
+
+Route::get('/AdminPracticas/FormatosCalendarioVisitas','AdminPracSolicitudesController@indexFormatosCalendarioVisitas') //Método FORMATO-INDEX()
+    ->name('AdminPracticas.indexFormatosCalendarioVisitas');  
+
+//------------------------RUTAS CARRERA-----------------------------------
+
+Route::get('/AdminPracticas/Carrera/Registrar','AdminPracSolicitudesController@registrarCarrera') //Método CARRERA-CREATE()
+    ->name('AdminPracticas.registrarCarrera');
+
+Route::post('AdminPracticas/Carrera/Guardar', 'AdminPracSolicitudesController@guardarCarrera')    //Método CARRERA-STORE()
+    ->name('AdminPracticas.guardarCarrera');  
+
+Route::get('/AdminPracticas/Carrera/Editar/{carrera}', 'AdminPracSolicitudesController@editarCarrera') //Método CARRERA-EDIT()
+    ->name('AdminPracticas.editarCarrera');
+
+Route::put('/AdminPracticas/Carrera/Actualizar/{carrera}', 'AdminPracSolicitudesController@actualizarCarrera') //Método CARRERA-UPDATE()
+    ->name('AdminPracticas.actualizarCarrera');  
+
+Route::get('/AdminPracticas/Carrera','AdminPracSolicitudesController@indexCarrera') //Método CARRERA-INDEX()
+    ->name('AdminPracticas.indexCarrera');    
+
+
+//------------------------RUTAS CARRERA-----------------------------------
+
+Route::get('/AdminPracticas/Grupo/Registrar','AdminPracSolicitudesController@registrarGrupo') //Método GRUPO-CREATE()
+    ->name('AdminPracticas.registrarGrupo');
+
+Route::post('AdminPracticas/Grupo/Guardar', 'AdminPracSolicitudesController@guardarGrupo')    //Método GRUPO-STORE()
+    ->name('AdminPracticas.guardarGrupo');  
+
+Route::get('/AdminPracticas/Grupo/Editar/{grupo}', 'AdminPracSolicitudesController@editarGrupo') //Método GRUPO-EDIT()
+    ->name('AdminPracticas.editarGrupo');
+
+Route::put('/AdminPracticas/Grupo/Actualizar/{grupo}', 'AdminPracSolicitudesController@actualizarGrupo') //Método GRUPO-UPDATE()
+    ->name('AdminPracticas.actualizarGrupo');  
+
+Route::get('/AdminPracticas/Grupo','AdminPracSolicitudesController@indexGrupo') //Método GRUPO-INDEX()
+    ->name('AdminPracticas.indexGrupo');  
 
 
 //------------------------FER TERMINO------------------------------------
@@ -798,7 +873,21 @@ Route::get('/VisitasEscolares/Solicitudes/Ver/{visita}','VisitaController@verSol
 Route::get('/VisitasEscolares/Solicitudes/ModificarEstado/{visita}','VisitaController@modificarEstadoSolcitud')
     ->name('docente.ModificarEstado');
 
+   
+/*---------------------------------------------RUTAS DOCUMENTOS---------------------------------------------------------*/
     
+Route::get('/VisitasEscolares/DocumentosSolicitud/{visita}', 'VisitaController@indexDocumentosSolicitud') //Método Documento_Visita-Create()
+    ->name('docente.indexDocumentosSolicitud');
+
+Route::post('/VisitasEscolares/DocumentosSolicitud/Guardar', 'VisitaController@guardarDocumentosSolicitud') //Método Documento_Visita-store()
+    ->name('docente.guardarDocumentosSolicitud');   
+
+Route::get('/VisitasEscolares/DocumentosSolicitud/Editar/{visita_documento}', 'VisitaController@editarDocumentosSolicitud') //Método Documento_Visita-EDIT()
+    ->name('docente.editarDocumentosSolicitud');
+
+Route::put('/VisitasEscolares/DocumentosSolicitud/Actualizar/{visita_documento}', 'VisitaController@actualizarDocumentosSolicitud') //Método Documento_Visita-UPDATE()
+    ->name('docente.actualizarDocumentosSolicitud');      
+
 /*---------------------------------------------RUTAS VISITAS---------------------------------------------------------*/
 
 

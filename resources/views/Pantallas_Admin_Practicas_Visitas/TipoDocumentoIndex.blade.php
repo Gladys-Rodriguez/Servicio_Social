@@ -9,7 +9,8 @@
 
 <div class="container-fluid bg-dark py-5" >
     <div class=" container border rounded text-white mb-5 p-5" style="min-height: 600px">
-        <div class="display-4 mb-4">Documentos Visitas Escolares<div class="d-inline text-warning"> <strong>Requeridos </strong></div></div>
+        <div class="display-4 mb-4">Documentos de Visitas Escolares<div class="d-inline text-warning"> <strong>Requeridos </strong></div></div>
+        <hr class="mb-5">
         <div class="table-responsive-md">
             <table class="table table-striped table-hover table-dark my-4">
                 <thead>
@@ -29,7 +30,8 @@
                             <td> {{ $documento->etapa}} </td>
                             <td> {{ $documento->estado ? 'Habilidato' : 'Deshabilitado'}} </td>
                             <td>
-                                <a type="button" class="btn btn-sm btn-primary mb-1 w-100" href=" #">
+                                <a type="button" class="btn btn-sm btn-primary mb-1 w-100" 
+                                    href=" {{ route('AdminPracticas.editarTipoDocumento',['tipo_documento'=>$documento->id]) }}">
                                     Modificar
                                 </a>
                             </td>

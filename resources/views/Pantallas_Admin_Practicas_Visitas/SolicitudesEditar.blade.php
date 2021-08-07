@@ -1,9 +1,6 @@
 
-@extends('Pantallas_Docente_Practicas_Visitas.Layout.navbarDocente')
+@extends('Pantallas_Admin_Practicas_Visitas.navbarAdminPracticas')
 
-@section('css')
-<link rel="stylesheet" href="{{asset('css/Pantalla_Docente_PracticasVisitas/estilosVisitasEscolares.css')}}"/>
-@endsection
 
 @section('content')
 
@@ -138,9 +135,7 @@
                     <td> {{ $documento->validacion ? 'Aceptada' : 'Sin validar' }} </td>
                     <td> {{ $documento->observaciones }} </td>
                     <td> 
-                        <a class="btn btn-primary btn-sm" href=" @php echo \Illuminate\Support\Facades\Storage::url($documento->ruta) @endphp">
-                            Ver Documento
-                        </a>
+                        <a class="btn btn-primary btn-sm" href=" {{route('AdminPracticas.editarDocumentosSolicitud', ['visita_documento' => $documento->id])}} "> Ver Documento</a>
                     </td>
                 </tr>
                 @empty
@@ -164,7 +159,7 @@
             <textarea class="form-control" name="observaciones" id="observaciones" rows="10" cols="50" placeholder="Escribe las observaciones y correciones"></textarea>
             
             <div class="d-flex justify-content-end mt-4">
-                <a class="btn btn-light mx-3" href=" {{ URL::previous() }} "> Regresar</a>
+                <a class="btn btn-light mx-3" href=" {{ url('/Solicitudes_Practicas_Visitas')}} "> Regresar</a>
                 <button class="btn btn-success" type="submit"> Actualizar</button>
             </div>
         </form>

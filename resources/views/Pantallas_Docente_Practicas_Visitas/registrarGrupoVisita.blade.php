@@ -14,8 +14,8 @@
     <div class="container text-white border rounded p-5">
         <div class="display-5 mb-4">Indica el número de Alumnos</div>
         <div class="progress mb-5" style="height:40px;">
-            <div class="progress-bar progress-bar-striped bg-secondary"
-                style="width:75%;"
+            <div class="progress-bar progress-bar-striped bg-warning"
+                style="width:60%;"
                 role="progressbar"
                 aria-valuenow="25"
                 aria-valuemin="0"

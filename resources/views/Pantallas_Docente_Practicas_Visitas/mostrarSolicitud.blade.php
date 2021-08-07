@@ -44,7 +44,7 @@
 
         @if ($visita->visita_estado->id == 1 || $visita->visita_estado->id == 3)
         <div class="d-flex justify-content-end mt-4">
-            <a class="btn btn-warning" href=" # "> Modidicar Fecha</a>
+            <a class="btn btn-warning" href=" # "> Modificar Fecha</a>
         </div>
         @endif
         
@@ -103,7 +103,7 @@
         
         @if ($visita->visita_estado->id == 1 || $visita->visita_estado->id == 3)
         <div class="d-flex justify-content-end mt-4">
-            <a class="btn btn-warning mx-3" href=" # "> Modidicar Empresa</a>
+            <a class="btn btn-warning mx-3" href=" # "> Modificar Empresa</a>
             <a class="btn btn-warning" href=" # "> Seleccionar otra Empresa</a>
         </div>
         @endif
@@ -134,7 +134,7 @@
 
         @if ($visita->visita_estado->id == 1 || $visita->visita_estado->id == 3)
         <div class="d-flex justify-content-end mt-4">
-            <a class="btn btn-warning" href=" # "> Modidicar Grupos</a>
+            <a class="btn btn-warning" href=" {{ route('docente.mostrarGrupos', ['visita' => $visita->id])}} "> Modificar Grupos</a>
         </div>
         @endif
 
@@ -157,7 +157,7 @@
                     <td> {{ $documento->validacion ? 'Aceptada' : 'Sin validar' }} </td>
                     <td> {{ $documento->observaciones }} </td>
                     <td> 
-                        <a class="btn btn-primary btn-sm" href=" @php echo \Illuminate\Support\Facades\Storage::url($documento->ruta) @endphp">
+                        <a class="btn btn-primary btn-sm" target="_blank" href=" @php echo \Illuminate\Support\Facades\Storage::url($documento->ruta) @endphp">
                             Ver Documento
                         </a>
                     </td>
@@ -168,17 +168,36 @@
         </table>
         @if ($visita->visita_estado->id == 1 || $visita->visita_estado->id == 3)
         <div class="d-flex justify-content-end mt-4">
-            <a class="btn btn-warning" href=" # "> Modidicar Documentos</a>
+            <a class="btn btn-warning" href=" {{route('docente.indexDocumentosSolicitud', ['visita' => $visita->id])}}"> Modificar Documentos</a>
         </div>
         @endif
 
         <div class="d-flex justify-content-end mt-4">
-            <a class="btn btn-light mx-3" href=" {{ URL::previous() }} "> Regresar</a>
+            <a class="btn btn-light mx-3" href=" {{route('docente.index')}}  "> Regresar</a>
             @if ($visita->visita_estado->id == 1 || $visita->visita_estado->id == 3)
-                <a class="btn btn-success" href="  {{ route('docente.ModificarEstado', ['visita' => $visita->id])}} "> Finalizar Solicitud</a>
+            <a class="btn btn-light mx-3" data-bs-toggle="modal" data-bs-target="#confirmacionModal" > Finalizar Solcitud</a>
             @endif
             
         </div>
+
+        <div id="confirmacionModal" class="modal fade text-dark" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Confirmación de Solicitud</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>¿Esta seguro de que de desea terminar su solicitud? </p>
+                    <p>No podra realizar más cambios después de Terminar</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Regresar</button>
+                  <a class="btn btn-danger mx-3" href="{{ route('docente.ModificarEstado', ['visita' => $visita->id])}}" > Finalizar Solcitud</a>
+                </div>
+              </div>
+            </div>
+          </div>  
     </div>
 </div>
 @endsection
