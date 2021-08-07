@@ -31,12 +31,16 @@ class docsExpediente extends Controller
         $files = docs_expedientePrueba::where('user', Auth::id())->get();
         $user_id = Auth::id();
 
+        $liberaciones= DB::table('alumnos')
+        ->join('liberacions', 'alumnos.id_alumnos', 'liberacions.id_alumnos')
+        ->where('alumnos.id_usuarios', $user_id)
+        ->get();
         $alumno = DB::table('alumnos')
         ->join('datos', 'alumnos.id_datos', 'datos.id_datos')
         ->join('registros', 'alumnos.id_alumnos', 'registros.id_alumnos')
         ->where('alumnos.id_usuarios', $user_id)
         ->get();
-        return view('Pantallas_Alumno_Servicio.docs_Seguimiento', compact('files','alumno'));
+        return view('Pantallas_Alumno_Servicio.docs_Seguimiento', compact('files','alumno','liberaciones'));
     }
 
 

@@ -25,10 +25,6 @@
 
 
 
-    <p name="" id="" cols="1" rows="3" class="border rounded" >
-        No olvides que tu reporte mensual de actividades y el formato de asistencia debe ser
-        subido en un solo archivo por periodo, de lo contrario será rechazado por tu responsable directo
-    </p>
     <p class="border rounded" name="" id="" cols="1" rows="2">
         Recuerda que deben ser archivos de tipo .doc .rtf o .pdf y que no deben exceder de 1.5Mb
     </p>

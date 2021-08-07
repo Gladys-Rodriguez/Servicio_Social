@@ -19,34 +19,16 @@
       <nav class="nav" id="nav-menu">
         <div class="nav__content bd-grid">
             <a href="" class="nav__perfil">
-                <div class="nav__img">
-                    <img src="{{asset('img/logo/logoSAE3.png')}}" alt="">
-                </div>
+
 
             </a>
 
             <div class="nav__menu">
                 <ul class="nav__list">
-<<<<<<< HEAD
-                <li class="nav__item"><a href="{{url('/Index_Master')}}" class="nav__link active">HOME</a></li>
-                <li class="nav__item"><a href="{{url('/consultaAlumnoM')}}" class="nav__link">Activar Cuentas</a></li>
-                <li class="nav__item"><a href="{{url('/RegisterFormRoles')}}" class="nav__link">NUEVO ADMIN</a></li>
-                <li class="nav__item dropdown">
-                        <a href="#" class="nav__link dropdown__link">Consulta Admin<i class='bx bx-chevron-down dropdown__icon'></i></a>
-                        <ul class="dropdown__menu">
-                            <li class="dropdown__item"><a href="{{url('/ConsultaAdminSer')}}" class="nav__link">Admin Servicio</a></li>
-
-                            <li class="dropdown__item"><a href="{{url('/ConsultaAdminBe')}}" class="nav__link">Admin Becas</a></li>
-
-                            <li class="dropdown__item"><a href="{{url('/#ConsultaAdminPra')}}" class="nav__link">Admin Practicas</a></li>
-                        </ul>
-                    </li>
-=======
                 <li class="nav__item"><a href="{{url('/Index_Master')}}" class="nav__link ">HOME</a></li>
                 <li class="nav__item"><a href="{{url('/consultaAlumnoM')}}" class="nav__link">ALUMNOS REGISTRADOS</a></li>
                     <li class="nav__item"><a href="{{url('/RegisterFormRoles')}}" class="nav__link active">NUEVO ADMIN</a></li>
                     <li class="nav__item"><a href="{{url('/RegisterPracticas')}}" class="nav__link">ADMIN PRACTICAS</a></li>
->>>>>>> 141f19bdc3a0419d3287e0e72776156d241598dd
                     <li class="nav__item dropdown">
                         <a href="#" class="nav__link dropdown__link">Nuevo Banner<i class='bx bx-chevron-down dropdown__icon'></i></a>
                         <ul class="dropdown__menu">

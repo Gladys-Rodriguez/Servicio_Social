@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AlterServiciosTable extends Migration
+class AlterAlumnosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class AlterServiciosTable extends Migration
      */
     public function up()
     {
-        Schema::table('servicios', function (Blueprint $table) {
+        Schema::table('alumnos', function (Blueprint $table) {
             //
-            $table->string('No_registro', 20)->unsigned()->nullable()->change();
+            $table->string('carrera', 250)->notnull()->change();
         });
     }
-
 
     /**
      * Reverse the migrations.
@@ -27,9 +26,9 @@ class AlterServiciosTable extends Migration
      */
     public function down()
     {
-        Schema::table('servicios', function (Blueprint $table) {
+        Schema::table('alumnos', function (Blueprint $table) {
             //
-            $table->bigInteger('No_registro')->unsigned()->nullable()->change();
+            $table->string('carrera',40)->notnull()->change();
         });
     }
 }

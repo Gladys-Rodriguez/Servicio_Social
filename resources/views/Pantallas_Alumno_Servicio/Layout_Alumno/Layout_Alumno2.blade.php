@@ -39,7 +39,7 @@
                         <a href="/Index_Alumno" class="nav__link dropdown__link">Servicio Social <i class='bx bx-chevron-down dropdown__icon'></i></a>
                         <ul class="dropdown__menu" id="servicio_social">
 
-                            <li class="dropdown__item"><a href="{{url('/NuevoRegistro')}}" class="nav__link" id="nuevo_registro" >Registro</a></li>
+                            <li class="dropdown__item"><a href="{{url('/NuevoRegistro')}}" class="nav__link" id="nuevo_registro" >Control de Servicio</a></li>
                             <!--<li class="dropdown__item"><a href="{{ url('/docexpediente')}}" class="nav__link">Subir documentos</a></li>
                             <li class="dropdown__item"><a href="{{url('/docsSolicitudAlumno')}}" class="nav__link">Seguimiento de solicitud</a></li> -->
                            <!-- <li class="dropdown__item"><a href="#" class="nav__link">Location</a></li>
@@ -72,6 +72,8 @@
     </nav>
 
     </header>
+
+
     <script src="{{asset('js/Pantallas_Alumno_Servicio/Layout_Alumno.js')}}"></script>
     <script type="text/javascript">
         //javascript for navigation bar effect on scroll
@@ -111,7 +113,11 @@
 
 
 
-
+    <section class="section-two">
+        <!-- AQUI EMPIEZA CONTENIDO; -->
+        @yield('content')
+        @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
+           </section>
 
 
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
