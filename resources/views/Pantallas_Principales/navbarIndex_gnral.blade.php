@@ -21,7 +21,7 @@
         <div class="nav__content bd-grid">
             <a href="" class="nav__perfil">
                 <div class="nav__img">
-                    <img src="{{asset('img/logo/logoSAE3.png')}}" alt="">
+                   <!-- <img src="{{asset('img/logo/logoSAE3.png')}}" alt=""> -->
                 </div>
 
             </a>

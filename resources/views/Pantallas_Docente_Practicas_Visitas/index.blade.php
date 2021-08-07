@@ -1,4 +1,4 @@
-@extends('Pantallas_Docente_Practicas_Visitas.Layout.navbar2')
+@extends('Pantallas_Docente_Practicas_Visitas.Layout.navbarDocente')
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantalla_Docente_PracticasVisitas/estilosVisitasEscolares.css')}}"/>
@@ -7,53 +7,81 @@
 @section('content')
 
 <section class="section-main">
-    <h1>Bienvenido a Prácticas y Visitas Escolares
-    <br> Usuario con matricula: {{ Auth::user()->id}}</h1>
+    <h1>Mis Solicitudes</h1>
 </section>
 
-<section class="section-dos">
+<div class="container-fluid bg-dark py-5" >
+    <div class=" container border rounded text-white p-5" style="min-height: 600px">
+        <div class="display-4 mb-4">Lista de Solicitudes Realizadas</div>
+    
+        <div class="table-responsive-md">
+            <table class="table table-striped table-hover table-dark my-4">
+            
+                <thead>
+                    <tr>
+                        <th>ID SOLICITUD</th>
+                        <th>DOCENTE</th>
+                        <th>EMPRESA SOLICITADA</th>
+                        <th>FECHA SOLICITADA</th>
+                        <th>ESTADO</th>
+                        <th>ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody class="align-middle">
+                    @forelse ($visitas as $visita)
+                        <tr>
+                            <td> {{ $visita->id }} </td>
+                            <td>
+                                {{ $visita->docente->dato->nombre }}
+                                {{ $visita->docente->dato->ap_paterno }}
+                                {{ $visita->docente->dato->ap_materno }}
+                            </td>
+                            <td> {{ $visita->empresa->nombre }} </td>
+                            <td> {{ date('F d, Y', strtotime($visita->fecha_visita)) }} </td>
+                            <td> {{ $visita->visita_estado->estado }} </td>
+                            <td>
+                                    @if ($visita->visita_estado->id == 2 || $visita->visita_estado->id == 4)
+                                    <a type="button" class="btn btn-sm btn-primary mb-1 w-100" href=" {{ route('docente.verSolicitud',['visita'=>$visita->id]) }} ">
+                                        Ver
+                                    </a>
+                                    @endif
+                                    
+                                    @if ($visita->visita_estado->id == 1)
+                                    <a type="button" class="btn btn-sm btn-warning mb-1 w-100" href=" {{ route('docente.verSolicitud',['visita'=>$visita->id]) }} ">
+                                        Continuar
+                                    </a>
+                                    @endif
 
-<h2>Pagina Index</h2>
+                                    @if ($visita->visita_estado->id == 3)
+                                    <a type="button" class="btn btn-sm btn-warning mb-1 w-100" href=" {{ route('docente.verSolicitud',['visita'=>$visita->id]) }} ">
+                                        Corregir
+                                    </a>
+                                    @endif
+                            </td>
+                        </tr>
+                        @empty
+                        @endforelse
+                    </tbody>
+                </table>
+        </div>
+    
+        <hr class="my-5">
+        <div class="h2 mb-3">¿Desea realizar una solicitud para una Visita Escolar? </div>
+                Haga clic en el siguiente botón: 
+            <a type="button" class="btn btn-primary btn-sm" href=" {{ route('docente.mostrarEmpresas') }} "> Registrar Nueva Solicitud </a>
+            
+    </div>
+</div>
 
-<a href=" {{ route('docente.solicitarVisita')}} "> Realizar una nueva Solicitud </a>
-<br /><br />
+<script>
+    var activos = document.getElementsByClassName("active");
+    for (var i = 0; i<activos.length; i++) {
+        activos[i].classList.remove("active");
+    }
+    var activo = document.getElementById("menu_visitas");
+    activo.classList.add("active");
+    activo= document.getElementById("solicitudes");
+    activo.classList.add("active");
+</script>
 
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>DOCENTE</th>
-            <th>EMPRESA</th>
-            <th>FECHA</th>
-            <th>ESTADO</th>
-            <th>ACCIONES</th>
-        </tr>
-    </thead>
-    <tbody>
-        @forelse ($visitas as $visita)
-            <tr>
-                <td> {{ $visita->id }} </td>
-                <td>
-                    {{ $visita->docente->dato->nombre }}
-                    {{ $visita->docente->dato->ap_paterno }}
-                    {{ $visita->docente->dato->ap_materno }}
-                </td>
-                <td> {{ $visita->empresa->nombre }} </td>
-                <td> {{ date('F d, Y', strtotime($visita->fecha_visita)) }} </td>
-                <td> {{ $visita->validacion ? 'Aceptada' : 'Sin validar' }} </td>
-                <td>
-                    <a href=" {{ route('docente.verVisita',['visita'=>$visita->id]) }} ">
-                        Ver Detalles
-                    </a>
-                    <br />
-                    <a href=" {{ route('docente.editarVisita',['visita'=>$visita->id]) }} ">
-                        Editar
-                    </a>
-                </td>
-            </tr>
-        @empty
-        @endforelse
-    </tbody>
-</table>
-</section>
 @endsection

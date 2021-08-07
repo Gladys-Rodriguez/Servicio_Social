@@ -7,7 +7,7 @@
 @section('content')
 <div class="container">
 			<table class="table">
-					<caption>VALIDACIÓN DE DOCUMENTOS DE VISITAS</caption>
+					<caption>VALIDAR DOCUMENTOS</caption>
 					<thead>
 							<tr>    
 									<th>Id Solicitud</th>
@@ -20,18 +20,19 @@
 							</tr>
 					</thead>
 					<tbody>
+					@foreach ($datos as $dato)
 							<tr>
-									<td data-label="Id Solicitante">12</td>
-									<td data-label="Solicitante">Marlene Jiménez Macías</td>
-									<td data-label="Empresa">Yakult</td>
-									<td data-label="Grupo">2AM24</td>
-									<td data-label="Fecha de visita">21/04/2021</td>
-									<td data-label="Observaciones">En revisión</td>
-									<td> <a href="{{url('/ValidacionV2')}}"" class="lbl-modal">Documentos</a></td>
+									<td data-label="Id Solicitante">{{$dato->id}}</td>
+									<td data-label="Solicitante">{{$dato->fullname}}</td>
+									<td data-label="Empresa">{{$dato->empresaN}}</td>
+									<td data-label="Secuencia">{{$dato->secuencia}}</td>
+									<td data-label="Fecha de visita">{{$dato->fecha_visita}}</td>
+									<td data-label="Observaciones">{{$dato->observaciones}}</td>
+									<td><a class="boton_personalizado1" href="/ValidacionV2/{{$dato->id}}">Ver Documentos</a></td>
 							</tr>
-                           
+							@endforeach
 					</tbody>
 			</table>
 	</div>
 
-        @endsection
+@endsection

@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
+    "content-hash": "010888c80f7196aa4a64992bf569bafc",
+=======
     "content-hash": "3d4d80bda8217d754ca6fe29147b9ad3",
+>>>>>>> 141f19bdc3a0419d3287e0e72776156d241598dd
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2512,6 +2516,19 @@
             "time": "2021-05-03T11:20:27+00:00"
         },
         {
+<<<<<<< HEAD
+            "name": "realrashid/sweet-alert",
+            "version": "v4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/realrashid/sweet-alert.git",
+                "reference": "4923bb91d7144c2ac5dacda0b5e1472fff3d88af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/realrashid/sweet-alert/zipball/4923bb91d7144c2ac5dacda0b5e1472fff3d88af",
+                "reference": "4923bb91d7144c2ac5dacda0b5e1472fff3d88af",
+=======
             "name": "psr/simple-cache",
             "version": "1.0.1",
             "source": {
@@ -2523,6 +2540,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
                 "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+>>>>>>> 141f19bdc3a0419d3287e0e72776156d241598dd
                 "shasum": ""
             },
             "require": {
@@ -2560,7 +2578,29 @@
             "support": {
                 "source": "https://github.com/php-fig/simple-cache/tree/master"
             },
+<<<<<<< HEAD
+            "funding": [
+                {
+                    "url": "https://ko-fi.com/realrashid",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.buymeacoffee.com/realrashid",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://issuehunt.io/r/realrashid",
+                    "type": "issuehunt"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/realrashid/sweet-alert",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-06-14T19:01:35+00:00"
+=======
             "time": "2017-10-23T01:57:42+00:00"
+>>>>>>> 141f19bdc3a0419d3287e0e72776156d241598dd
         },
         {
             "name": "psy/psysh",

@@ -19,9 +19,7 @@
       <nav class="nav" id="nav-menu">
         <div class="nav__content bd-grid">
             <a href="" class="nav__perfil">
-                <div class="nav__img">
-                    <img src="{{asset('img/logo/logoSAE3.png')}}" alt="">
-                </div>
+
 
             </a>
 
@@ -32,20 +30,20 @@
                     <li class="nav__item"><a href="{{url('/RegisterFormRoles')}}" class="nav__link active">NUEVO ADMIN</a></li>
                     <li class="nav__item"><a href="{{url('/RegisterPracticas')}}" class="nav__link">ADMIN PRACTICAS</a></li>
                     <li class="nav__item dropdown">
-                        <a href="#" class="nav__link dropdown__link">Registro de Banners <i class='bx bx-chevron-down dropdown__icon'></i></a>
+                        <a href="#" class="nav__link dropdown__link">Nuevo Banner<i class='bx bx-chevron-down dropdown__icon'></i></a>
                         <ul class="dropdown__menu">
                             <li class="dropdown__item"><a href="{{url('/RegisterBannerInicio')}}" class="nav__link">Banner de home</a></li>
 
                      </ul>
                     </li>
                     <li class="nav__item dropdown">
-                        <a href="#" class="nav__link dropdown__link">Imagenes de Banner habilitadas <i class='bx bx-chevron-down dropdown__icon'></i></a>
+                        <a href="#" class="nav__link dropdown__link">Banners Habilitados <i class='bx bx-chevron-down dropdown__icon'></i></a>
                         <ul class="dropdown__menu">
                             <li class="dropdown__item"><a href="{{url('/consultaBannerInicio')}}" class="nav__link">Banner de home</a></li>
   </ul>
                     </li>
                     <li class="nav__item dropdown">
-                        <a href="#" class="nav__link dropdown__link">Imagenes de Banner deshabilitadas <i class='bx bx-chevron-down dropdown__icon'></i></a>
+                        <a href="#" class="nav__link dropdown__link">Banners Deshabilitados <i class='bx bx-chevron-down dropdown__icon'></i></a>
                         <ul class="dropdown__menu">
                             <li class="dropdown__item"><a href="{{url('/consultaBannerInicioInhabilitadas')}}" class="nav__link">Banner de home</a></li>
 

@@ -19,12 +19,6 @@ class CreateExpedienteBecasTable extends Migration
             $table->date('Fecha_Inicio');
             $table->date('Fecha_Fin');
             $table->unsignedInteger('monto');
-            $table->unsignedInteger('id_alumnos')->unsigned()->notnull();
-            $table->unsignedInteger('id_docs_becas')->unsigned()->notnull();
-
-
-            $table->foreign('id_alumnos')->references('id_alumnos')->on('alumnos')->onDelete('cascade');
-            $table->foreign('Id_docs_becas')->references('id_docs_becas')->on('docs_becas')->onDelete('cascade');
             $table->timestamps();
         });
     }

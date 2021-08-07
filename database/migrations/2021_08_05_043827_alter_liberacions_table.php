@@ -30,9 +30,9 @@ class AlterLiberacionsTable extends Migration
     {
         Schema::table('liberacions', function (Blueprint $table) {
             //
-            $table->string('estado');
-            $table->date('fecha_envio');
-            $table->text('observaciones');
+            $table->string('estado')->change();
+            $table->date('fecha_envio')->change();
+            $table->text('observaciones')->change();
         });
     }
 }

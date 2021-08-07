@@ -12,6 +12,11 @@ class Grupo extends Model
     protected $primaryKey = 'id';
     public $timestamp = true;
 
+    protected $fillable = [
+        'secuencia',
+        'carrera_id',
+        'estado',
+    ];
 
     public function carrera()
     {

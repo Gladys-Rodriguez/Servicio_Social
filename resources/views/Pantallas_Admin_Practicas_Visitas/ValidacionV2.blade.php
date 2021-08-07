@@ -5,51 +5,67 @@
 @endsection
 
 @section('content')
-<H1>DATOS DE LA VISITA</H1>
-<hr><hr><br>
-<h3>Solicitud No:12</h3>
-				<p><strong>Solicitante:</strong>  Marlene Jiménez Macías <br>
-				<strong>Grupo:</strong> 2AM24 <br>
-				<strong>Número de alumnos:</strong> 40 <br>
-				<strong>Empresa:</strong> Yakult <br>
-				<strong>Dirección:</strong>  Av. División del Nte. No 1419, Sta Cruz Atoyac, Benito Juárez, 03310 Ciudad de México, CDMX <br>
-				<strong>Fecha de visita:</strong> 21/04/2021 <br>
-                <strong>Observaciones:</strong> En revisión <br>
+@forelse($nuevo as $new)
+<div>
+<h1>Detalles de solicitud</h1>
+<hr>
+<hr>
+<br>
+<label class="label-sol">Número de solicitud: {{$new->id}}</label><br>
+<label class="label-sol">Solicita: {{$new->fullname}}</label><br>
+<label class="label-sol">Matricula: {{$new->matricula}}</label><br>
+<label class="label-sol">Email: {{$new->email}}</label><br>
+<label class="label-sol">Nombre de empresa: {{$new->empresaN}}</label><br>
+<label class="label-sol">Dirección de la empresa: {{$new->fulldir}}</label><br>
+<label class="label-sol">Secuencia: {{$new->secuencia}}</label><br>
+<label class="label-sol">Carrera: {{$new->carrera}}</label><br>
+<label class="label-sol">Número de alumnos: {{$new->cantidad_alumnos}}</label><br>
+<label class="label-sol">Fecha de visita: {{$new->fecha_visita}}</label><br>
+<hr><hr><hr>
+@empty
+@endforelse
+<hr><hr><hr><br>
 
-</p>
-<h1>DOCUMENTOS COMPROBATORIOS</h1>
-<hr><hr><br>
-<div class="container">
-			<table class="table">
+
+
+<table class="table">
+					<caption>DOCUMENTOS PARA APROBACIÓN</caption>
 					<thead>
 							<tr>    
 									<th>Documento</th>
+									<th>Estado</th>
+									<th>Observaciones</th>
 									<th></th>
 									<th></th>
 							</tr>
 					</thead>
-                    <tbody>
-                        <tr>
-                            <td><a href="{{url('/Alumnos.pdf')}}" target="_blank">Lista de alumnos</td>
-                            <td><label for="" class="label_b">Aprobar</label></td>
-                            <td><label for="" class="label_c">Anular</label></td>
-                        </tr>
-                        <tr>
-                            <td><a href="{{url('/Requerimientos.pdf')}}" target="_blank">Requerimientos de empresa</td>
-                            <td><label for="" class="label_b">Aprobar</label></td>
-                            <td><label for="" class="label_c">Anular</label></td>
-                        </tr>
-                        <tr>
-                            <td><a href="{{url('/InformeVisita.pdf')}}" target="_blank">Informe Visita</a></td>
-                            <td><label for="" class="label_b">Aprobar</label></td>
-                            <td><label for="" class="label_c">Anular</label></td>
-                        </tr>
-                        <tr>
-                            <td><a href="{{url('/Informe1.pdf')}}" target="_blank">Informe de visita concluida</a></td>
-                            <td><label for="" class="label_b">Aprobar</label></td>
-                            <td><label for="" class="label_c">Anular</label></td>
-                        </tr>
-                    </tbody>
+					<tbody>
+					@foreach($doc as $documento)
+                    @if($documento->tipo_documento_id > 1)
+							<tr>
+							<form action="/Validacion3/{{$documento->id}}" method="POST">
+							<input type="hidden" name="_method" value="PUT">
+                            <td data-label="Documento">{{$documento->nombre}}</td>
+							<td data-label="Estado">@if($documento->validacion==1) Aceptado @elseif($documento->validacion==2) Rechazado @else Sin validar @endif</td>
+							@csrf	
+							<td><textarea name="observaciones" placeholder="Observaciones:" id="" value="" cols="50" rows="4">{{$documento->observaciones}}</textarea></td>	
+							<td data-label=""><a href=" @php echo \Illuminate\Support\Facades\Storage::url($documento->ruta) @endphp"
+                                    class="boton_chido" target="_blank">
+                                    VER
+                             </a></td>
+							<td><input class="form-check-input" type="radio" value="1" name="validacion" id="flexRadioDefault1" checked>
+  <label class="" for="flexRadioDefault1">
+    Aceptar
+  </label>
+  <input class="form-check-input" type="radio" value="2" name="validacion" id="flexRadioDefault2">
+  <label class="" for="flexRadioDefault2">
+    Rechazar
+  </label><br>
+  <button type="submit">Enviar</button>
+</td>	</form>
+							</tr>
+                            @endif
+							@endforeach
+					</tbody>
 
-</div>
         @endsection
