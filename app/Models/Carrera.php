@@ -12,6 +12,10 @@ class Carrera extends Model
     protected $primaryKey = 'id';
     public $timestamp = true;
 
+    protected $fillable = [
+        'nombre',
+        'estado',
+    ];
 
     public function grupos()
     {

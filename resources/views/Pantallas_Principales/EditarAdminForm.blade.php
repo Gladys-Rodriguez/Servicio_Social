@@ -53,11 +53,22 @@
 
     <!--Formulario-->
     <div class="login-box">
+    
     <form action="/EditarAdminForm2/{{$datos->id}}" method="POST">
           @csrf
+          @foreach($nuevo as $nuevos)
+          <h1>Datos Generales:</h1>
+            <label>Puesto: {{$nuevos->Tipo_rol}}</label>
+            <label>Matricula: {{$nuevos->id}}</label>
+            <label>Nombre: {{$nuevos->fullname}}</label>
+            <label>Teléfono: {{$nuevos->telefono}}</label>
+            <label>Email: {{$nuevos->email}}</label>
+          @endforeach
+          <br>
+          <hr>
           <input type="hidden" name="_method" value="PUT">
-          <label>Estado</label>
-        <div class="col-md-6" type="text">
+          <label>Cambiar Estado</label>
+          <div class="col-md-6" type="text">
              <select name="estado">
                  <option value="1"> Activo </option>
                  <option value="0"> Inactivo </option>

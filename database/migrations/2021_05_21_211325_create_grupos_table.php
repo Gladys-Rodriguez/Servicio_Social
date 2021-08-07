@@ -17,6 +17,7 @@ class CreateGruposTable extends Migration
             $table->bigIncrements('id');
             $table->char('secuencia', 5)->unique();
             $table->unsignedBigInteger('carrera_id')->index('carrera_id');
+            $table->boolean('estado');
             $table->timestamps();
 
             $table->foreign('carrera_id')->references('id')->on('carreras')->onDelete('cascade');

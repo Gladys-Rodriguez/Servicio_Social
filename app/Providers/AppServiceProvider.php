@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Pagination\Paginator;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -36,6 +37,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
+        Paginator::useBootstrap();
+
         //
 
 
@@ -47,5 +51,6 @@ class AppServiceProvider extends ServiceProvider
         {
             $view->with('registros', request()->input('boleta'));
         });*/
+
     }
 }

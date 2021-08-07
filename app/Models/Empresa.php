@@ -12,6 +12,9 @@ class Empresa extends Model
     protected $primaryKey = 'id';
     public $timestamp = true;
 
+    protected $fillable = [
+        'nombre',
+    ];
 
     public function direccion()
     {

@@ -20,24 +20,17 @@
 							</tr>
 					</thead>
 					<tbody>
+					@foreach ($datos as $dato)
 							<tr>
-									<td data-label="Id Solicitante">7</td>
-									<td data-label="Solicitante">Andrea Sánchez Azuara</td>
-									<td data-label="Empresa">MitLife</td>
-									<td data-label="Grupo">5CV52</td>
-									<td data-label="Fecha de visita">03/03/2021</td>
-									<td data-label="Observaciones">Documentación completa</td>
-									<td><label for="btn-modal" class="lbl-modal2">Rechazar</label></td>
+									<td data-label="Id Solicitante">{{$dato->id}}</td>
+									<td data-label="Solicitante">{{$dato->fullname}}</td>
+									<td data-label="Empresa">{{$dato->empresaN}}</td>
+									<td data-label="Secuencia">{{$dato->secuencia}}</td>
+									<td data-label="Fecha de visita">{{$dato->fecha_visita}}</td>
+									<td data-label="Observaciones">{{$dato->observaciones}}</td>
+									<td><a class="boton_personalizado1" href="/SolicitudesPra/{{$dato->id}}">Ver</a></td>
 							</tr>
-                            <tr>
-									<td data-label="Id Solicitante">15</td>
-									<td data-label="Solicitante">Alejandro Rodriguez León </td>
-									<td data-label="Empresa">Coca Cola</td>
-									<td data-label="Grupo">6AV50</td>
-									<td data-label="Fecha de visita">05/10/2021</td>
-									<td data-label="Observaciones">Documentación completa</td>
-									<td><label for="btn-modal" class="lbl-modal2">Rechazar</label></td>
-							</tr>
+							@endforeach
 					</tbody>
 			</table>
 	</div>

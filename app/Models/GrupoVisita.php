@@ -11,4 +11,15 @@ class GrupoVisita extends Model
     protected $table = 'grupos_visitas';
     protected $primaryKey = 'id';
     public $timestamp = true;
+
+    protected $fillable = [
+        'visita_id',
+        'grupo_id',
+        'cantidad_alumnos',
+    ];
+
+    public function grupo()
+    {
+        return $this->belongsTo(grupo::class, 'grupo_id', 'id');
+    }
 }
