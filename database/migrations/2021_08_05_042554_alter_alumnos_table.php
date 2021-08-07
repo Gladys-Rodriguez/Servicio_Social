@@ -28,7 +28,7 @@ class AlterAlumnosTable extends Migration
     {
         Schema::table('alumnos', function (Blueprint $table) {
             //
-            $table->string('carrera',40)->notnull();
+            $table->string('carrera',40)->notnull()->change();
         });
     }
 }

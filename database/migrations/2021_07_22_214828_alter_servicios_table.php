@@ -29,7 +29,7 @@ class AlterServiciosTable extends Migration
     {
         Schema::table('servicios', function (Blueprint $table) {
             //
-            $table->bigInteger('No_registro')->unsigned()->nullable();
+            $table->bigInteger('No_registro')->unsigned()->nullable()->change();
         });
     }
 }
