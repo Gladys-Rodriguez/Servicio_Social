@@ -1,4 +1,4 @@
-@extends('Pantallas_Principales.navbarconsultaBannerPracticas')
+@extends('Pantallas_Admin_Practicas_Visitas.navbarAdminPracticas')
 
 @section('title', 'Consulta Banner Prácticas')
 
@@ -6,8 +6,15 @@
 <link rel="stylesheet" href="{{asset('css/Pantallas_Principales/consultaBannerPracticas.css')}}">
 @endsection
 
+
+
 @section('content')
-<br>
+<section class="section-main">
+  <h1>Consulta de Imagenes Banner Prácticas
+  </h1>
+</section>
+
+<div class="container-fluid bg-dark py-5" >
 <div class="container">
     <div class="informacion">
       <div class="contact-info">
@@ -36,5 +43,6 @@
     </div>
 
      </div>
+</div>
 </div>
 @endsection

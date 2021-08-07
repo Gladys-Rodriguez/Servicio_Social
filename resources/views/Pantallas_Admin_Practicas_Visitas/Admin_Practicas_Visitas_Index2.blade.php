@@ -1,4 +1,4 @@
-@extends('Pantallas_Admin_Practicas_Visitas.navbar_Admin_Practicas_Visitas2')
+@extends('Pantallas_Admin_Practicas_Visitas.navbarAdminPracticas')
 
 @section('title', 'Index Admin Practicas y Visitas')
 
@@ -7,7 +7,13 @@
 @endsection
 
 @section('content')
-<br>
+<section class="section-main">
+  <h1>ADMINISTRACIÓN DE PRÁCTICAS Y VISITAS
+  <br> Usuario con matricula: 
+  </h1>
+</section>
+
+<div class="container-fluid bg-dark py-5" >
 <div class="container">
     <div class="informacion">
       <div class="contact-info">
@@ -66,5 +72,6 @@
     </script>
 
      </div>
+</div>
 </div>
 @endsection

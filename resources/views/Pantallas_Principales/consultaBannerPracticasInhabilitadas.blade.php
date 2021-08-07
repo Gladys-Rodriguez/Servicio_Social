@@ -1,4 +1,4 @@
-@extends('Pantallas_Principales.navbarconsultaBannerPracticasInhabilitadas')
+@extends('Pantallas_Admin_Practicas_Visitas.navbarAdminPracticas')
 
 @section('title', 'Consulta Banner Practicas Inhabilitadas')
 
@@ -7,7 +7,13 @@
 @endsection
 
 @section('content')
-<br>
+
+<section class="section-main">
+  <h1>Consulta de Imagenes Inhabilitadas Banner Prácticas
+  </h1>
+</section>
+
+<div class="container-fluid bg-dark py-5" >
 <div class="container">
     <div class="informacion">
       <div class="contact-info">
@@ -36,5 +42,6 @@
     </div>
 
      </div>
+</div>
 </div>
 @endsection
