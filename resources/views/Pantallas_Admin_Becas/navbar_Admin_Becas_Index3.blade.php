@@ -28,10 +28,26 @@
             <div class="nav__menu">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="{{url('/Admin_Becas_Index3')}}" class="nav__link active">HOME</a></li>
+<<<<<<< HEAD
+                    <li class="nav__item"><a href="{{url('/Validacion_Alumno_Becas')}}" class="nav__link">VALIDACIÓN DE DOCUMENTOS</a></li>
+                    <li class="nav__item"><a href="{{url('/Tipo_Alumno_Becas')}}" class="nav__link">LISTAS DE ALUMNOS POR TIPO DE BECA</a></li>
+
+                    <li class="nav__item dropdown">
+                        <a href="#" class="nav__link dropdown__link">Gestion de Banners <i class='bx bx-chevron-down dropdown__icon'></i></a>
+                        <ul class="dropdown__menu">
+                            <li class="dropdown__item"><a href="{{url('/RegisterBannerBecas')}}" class="nav__link">Registro de imagenes de becas</a></li>
+                            <li class="dropdown__item"><a href="{{url('/consultaBannerBecas')}}" class="nav__link">Consulta de imagenes habilitadas de becas</a></li>
+                            <li class="dropdown__item"><a href="{{url('/consultaBannerBecasInhabilitadas')}}" class="nav__link">Consulta de imagenes inhabilitadas de becas</a></li>
+
+                             </ul>
+                    </li>
+
+=======
                     <li class="nav__item"><a href="{{url('/Validacion_Alumno_Becas')}}" class="nav__link">Validación de documentos</a></li>
                     <li class="nav__item"><a href="{{url('/Tipo_Alumno_Becas')}}" class="nav__link">Solicitudes</a></li>
                     <li class="nav__item"><a href="{{url('/AceptadasB')}}" class="nav__link">Solicitudes Aceptadas</a></li>
                     <li class="nav__item"><a href="{{url('/RechazadasB')}}" class="nav__link">Solicitudes Rechazadas</a></li>
+>>>>>>> 263d9101b66f2252fcd3d0c949c7a840c9ef818f
                     <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
 
                 </ul>

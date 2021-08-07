@@ -19,11 +19,12 @@ class CreateVisitasTable extends Migration
             $table->unsignedBigInteger('empresa_id')->index('empresa_id');
             $table->dateTime('fecha_visita')->nullable();
             $table->string('observaciones')->nullable();
-            $table->boolean('validacion')->default(false);
+            $table->unsignedBigInteger('visita_estado_id')->index('visita_estado_id');
             $table->timestamps();
 
             $table->foreign('docente_id')->references('id')->on('docentes')->onDelete('cascade');
             $table->foreign('empresa_id')->references('id')->on('empresas')->onDelete('cascade');
+            $table->foreign('visita_estado_id')->references('id')->on('visita_estados')->onDelete('cascade');
         });
     }
 

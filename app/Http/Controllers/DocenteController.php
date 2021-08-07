@@ -16,8 +16,10 @@ class DocenteController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('docente',['only'=> ['index']]);
+        $this->middleware('verified');
+        //$this->middleware('docente',['only'=> ['index']]);
     }
+
     public function index()
     {
         //

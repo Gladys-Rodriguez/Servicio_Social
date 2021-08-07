@@ -17,26 +17,32 @@ class CarreraSeeder extends Seeder
     {
         Carrera::create([
             'nombre' => 'Técnico en Administración',
+            'estado' => 1,
         ]);
 
         Carrera::create([
             'nombre' => 'Técnico en Administración de Empresas Turísticas',
+            'estado' => 1,
         ]);
         
         Carrera::create([
             'nombre' => 'Técnico en Contaduría',
+            'estado' => 1,
         ]);
 
         Carrera::create([
             'nombre' => 'Técnico en Informática',
+            'estado' => 1,
         ]);
 
         Carrera::create([
             'nombre' => 'Técnico en Gestión de la Ciberseguridad',
+            'estado' => 1,
         ]);
 
         Carrera::create([
             'nombre' => 'Tronco Común',
+            'estado' => 1,
         ]);
     }
 }

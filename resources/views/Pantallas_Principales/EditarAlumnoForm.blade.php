@@ -195,7 +195,8 @@
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                     </div>
-                    <p class="formulario__input-error">Tu numero interior no puede contener caracteres especiales.</p>
+                    <p class="formulario__input-error">Error, por favor ingresa un dato válido.</p>
+                    <p class="formulario__input-mensaje">Complete el campo en caso de existir</p>
                 </div>
 
                  <!-- Grupo: CP -->
@@ -207,7 +208,7 @@
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                     </div>
-                    <p class="formulario__input-error">Tu codigo postal no puede contener caracteres especiales.</p>
+                    <p class="formulario__input-error">Error, por favor ingresa un CP válido de 5 digitos.</p>
                 </div>
 
 
@@ -326,7 +327,7 @@
                         <div class="field">
                             <div class="label" for="id">Matricula:</div>
                             <div class="formulario__grupo-input">
-                                <input type="text" class="formulario__input" name="id" id="id" placeholder="Ingresa tu matricula" value="{{$Users->id}}">
+                                <input  type="text" class="formulario__input" name="id" id="id" placeholder="Ingresa tu matricula" value="{{$Users->id}}" readonly="readonly">
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                         </div>
@@ -338,7 +339,7 @@
                         <div class="field">
                             <div class="label" for="email">E-mail:</div>
                             <div class="formulario__grupo-input">
-                                <input type="text" class="formulario__input" name="email" id="email" placeholder="correo@hotmail.com" value="{{$Users->email}}">
+                                <input type="text" class="formulario__input" name="email" id="email" placeholder="correo@hotmail.com" value="{{$Users->email}}" readonly="readonly">
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                         </div>

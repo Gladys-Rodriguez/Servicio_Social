@@ -3,14 +3,18 @@
 namespace App\Http\Controllers;
 
 
-
+use Illuminate\Support\Facades\DB;
 use App\Models\docs_expedientePrueba;
 use App\Models\dato;
+// use App\Models\User;
+// use App\Models\Alum_Datos, App\Models\alumno ;
 
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 
-use RealRashid\SweetAlert\Facades\Alert;
+
 
 
 
@@ -25,8 +29,16 @@ class docsExpediente extends Controller
     {
         //
         $files = docs_expedientePrueba::where('user', Auth::id())->get();
-        return view('Pantallas_Alumno_Servicio.docs_Seguimiento', compact('files'));
+        $user_id = Auth::id();
+
+        $alumno = DB::table('alumnos')
+        ->join('datos', 'alumnos.id_datos', 'datos.id_datos')
+        ->join('registros', 'alumnos.id_alumnos', 'registros.id_alumnos')
+        ->where('alumnos.id_usuarios', $user_id)
+        ->get();
+        return view('Pantallas_Alumno_Servicio.docs_Seguimiento', compact('files','alumno'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -53,20 +65,24 @@ class docsExpediente extends Controller
         $tipo = $request->input('documento');
 
 
+
         foreach ($files as $file){
+            if(Storage::putFileAs('/public/'.$user_id.'/', $file, $file->getClientOriginalName())){
                     docs_expedientePrueba::create([
                         'nombre_doc' => $file->getClientOriginalName(),
                         'user' => $user_id,
-                        'tipo_doc' => $tipo
-
+                        'tipo_doc' => $tipo,
 
                 ]);
 
             }
+        }
 
-            return "Archivo subido";
-          /* return Alert::success('¡Éxito! 📦📦📦 ', 'Se subio satisfactoriamente el archivo. ');
-           return back(); */
+
+
+            Alert::success('¡Éxito! 📦📦📦 ', 'Se subio satisfactoriamente el archivo. ');
+            //return back();
+            return redirect()->route('uploaddocexpediente.index');
 
 
 
@@ -80,7 +96,19 @@ class docsExpediente extends Controller
      */
     public function show($id)
     {
-        //
+
+        $file = docs_expedientePrueba::whereid($id)->firstOrFail();
+        $user_id = Auth::id();
+
+        if ($file->user == $user_id) {
+            return redirect('/storage'.'/'.$user_id.'/'.$file->nombre);
+            # code...
+        } else {
+            Alert::error('¡Error! 📢📢📢 ', 'No tienes permisos para ver el archivo.');
+            return back();
+        }
+
+
     }
 
     /**
@@ -89,9 +117,19 @@ class docsExpediente extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function lista(Request $request){
+        $files = docs_expedientePrueba::all();
+        return view('Pantallas_Admin_Servicio.validacionAlumno',  compact('files'));
+
+
+    }
+    public function edit( $id){
+        $docs = docs_expedientePrueba::findOrFail($id);
+
+
+        //return view('Pantallas_Admin_Servicio.editDocsAlumno',  compact('files'));
+        return view('Pantallas_Admin_Servicio.editDocsAlumno',  compact('docs'));
+
     }
 
     /**
@@ -103,7 +141,20 @@ class docsExpediente extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $docs=docs_expedientePrueba::findOrFail($id);
+        $docs->estado=$request->input('estado');
+        $docs->observaciones=$request->input('observaciones');
+        $docs->save();
+
+
+
+        //return redirect()->route('lista.edit');
+       //return 'Archivo actualizado';
+       return redirect()->route('Expediente.docs', $docs->user);
+
+
+
     }
 
     /**
@@ -112,8 +163,13 @@ class docsExpediente extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $files=docs_expedientePrueba::findOrFail($id);
+        unlink(public_path('storage'.'/'.Auth::id().'/'.$files->nombre_doc));
+        $files->delete();
+       Alert::warning('Se borró satisfactoriamente el archivo. ');
+        return back();
+
     }
 }

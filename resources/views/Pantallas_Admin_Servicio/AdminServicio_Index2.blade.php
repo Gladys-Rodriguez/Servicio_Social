@@ -3,12 +3,12 @@
 
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Servicio/estilo.css')}}">
+<link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Servicio/estilo4.css')}}">
 @endsection
 
 
 @section('content')
-  
+
 
     <div class="img-slider">
       <div class="slide active">
@@ -84,7 +84,7 @@
       });
     });
 
-    
+
     var repeat = function(activeClass){
       let active = document.getElementsByClassName('active');
       let i = 1;
@@ -113,7 +113,7 @@
     repeat();
     </script>
 
-   
+
 
 @endsection
 
@@ -122,8 +122,8 @@
 
 
 
- 
 
-    
+
+
 
 

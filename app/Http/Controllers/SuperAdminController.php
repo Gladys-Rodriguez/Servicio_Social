@@ -16,6 +16,7 @@ class SuperAdminController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('verified');
         $this->middleware('adminmaster',['only'=> ['index']]);
     }
 

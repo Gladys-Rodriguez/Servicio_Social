@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
+    
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="{{asset('css/Pantallas_Alumno_Servicio/Layout_Alumno/Layout_Alumno2.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -32,6 +33,17 @@
                     <li class="nav__item"><a href="{{url('/Solicitudes_Practicas_Visitas')}}" class="nav__link">Solicitudes de prácticas</a></li>
                     <li class="nav__item"><a href="{{url('/RechazadasV')}}" class="nav__link">Solicitudes rechazadas</a></li>
                     <li class="nav__item"><a href="{{url('/AceptadasV')}}" class="nav__link">Solicitudes aceptadas</a></li>
+
+                    <li class="nav__item dropdown">
+                        <a href="#" class="nav__link dropdown__link">Gestion de Banners <i class='bx bx-chevron-down dropdown__icon'></i></a>
+                        <ul class="dropdown__menu">
+                            <li class="dropdown__item"><a href="{{url('/RegisterBannerPracticas')}}" class="nav__link">Registro de imagenes de prácticas</a></li>
+                            <li class="dropdown__item"><a href="{{url('/consultaBannerPracticas')}}" class="nav__link">Consulta de imagenes habilitadas de prácticas</a></li>
+                            <li class="dropdown__item"><a href="{{url('/consultaBannerPracticasInhabilitadas')}}" class="nav__link">Consulta de imagenes inhabilitadas de prácticas</a></li>
+
+                             </ul>
+                    </li>
+
                     <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
 
                 </ul>

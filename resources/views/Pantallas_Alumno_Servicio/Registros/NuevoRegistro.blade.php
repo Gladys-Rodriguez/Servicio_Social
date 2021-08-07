@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="{{asset('css/Pantallas_Alumno_Servicio/Registros/NuevoRegistro.css')}}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 
+
 @endsection
 
 @section('content')
@@ -49,12 +50,13 @@
     <!-- ************************** INICIO DEL FORMULARIO ********************************** -->
     <div class="form-outer">
         <div class="separa">
-            <form action="{{route('NuevoRegistro.store')}}" method="POST" autocomplete="off" id="formulario">
+            <form action="{{route('NuevoRegistro.store')}}" method="POST" autocomplete="off" id="formulario" >
                 <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
 
                 <!--     **************************   PRIMER STEP  **************************** -->
 
                 <div class="page slide-page">
+
                     <div class="title">Dirección de la Dependencia:</div>
                     <br>
            <!-- Grupo: Ciudad -->
@@ -154,6 +156,7 @@
                 <p><i class="fas fa-exclamation-triangle"></i>
                     <b>Error:</b> Por favor rellena el formulario correctamente. </p>
             </div>
+
     </div>
 <!--     ************************** FIN PRIMER STEP  **************************** -->
 
@@ -253,7 +256,8 @@
                 </div>
                         <div class="field btns">
                             <button class="prev-2 prev">Previous</button>
-                            <button class="next-2 next">Next</button>
+                          <button class="next-2 next">Next</button>
+
                         </div>
 
                         <!--  Mensaje para marcar que hay campos incorrectos en el formulario -->
@@ -265,11 +269,12 @@
 <!--     ************************** FIN TERCER STEP  **************************** -->
 
 <!--     ************************** CUARTO STEP  **************************** -->
-                <div class="page">
-                    <div class="title">Fechas:</div>
+               <div class="page">
+                    <div class="title">Registro Concluido</div>
                     <br>
+
                     <!-- Grupo: No. de Registro -->
-                    <div class="formulario__grupo" id="grupo__No_registro">
+<!--                    <div class="formulario__grupo" id="grupo__No_registro">
                         <div class="field">
                             <div class="label" for="No_registro">No. de Registro:</div>
                             <div class="formulario__grupo-input">
@@ -279,23 +284,25 @@
                         </div>
                         <p class="formulario__input-error">Error, formato incorrecto.</p>
                     </div>
-
+-->
                         <!-- Grupo: Fecha de Inicio -->
-                        <div class="field">
+<!--                        <div class="field">
                             <div class="label" for="fecha_inicio">Fecha de Inicio:</div>
                             <input type="date" value="2021-05-02" min="2020-01-01" max="2021-12-01" name="fecha_inicio" id="fecha_inicio">
                         </div>
+-->
                         <!-- Grupo: Fecha de Termino -->
-                        <div class="field">
+<!--                        <div class="field">
                             <div class="label" for="fecha_termino">Fecha de Término:</div>
                             <input type="date" value="2021-05-02" min="2020-01-01" max="2021-12-01" name="fecha_termino" id="fecha_termino">
                         </div>
+-->
                         <!-- Grupo: Fecha de Inscripcion -->
-                        <div class="field">
+<!--                        <div class="field">
                             <div class="label" for="fecha_inscripcion">Fecha de Inscripción:</div>
                             <input type="date" value="2021-05-02" min="2020-01-01" max="2021-12-01" name="fecha_inscripcion" id="fecha_inscripcion">
                         </div>
-                        <div class="field btns">
+-->                        <div class="field btns">
                             <button class="prev-3 prev">Previous</button>
                             <button class="submit">Submit</button>
                         </div>
@@ -306,6 +313,7 @@
                             <b>Error:</b> Por favor rellena el formulario correctamente. </p>
                             </div>
                 </div>
+
 <!--     ************************** FIN CUARTO  STEP  **************************** -->
 
 
@@ -321,4 +329,7 @@
 <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"> </script>
 
 <script src="{{asset('js/Pantallas_Alumno_Servicio/Registros/NuevoRegistro.js')}}"></script>
+
+
+
 @endsection

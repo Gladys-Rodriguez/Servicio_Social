@@ -13,6 +13,12 @@ class Docente extends Model
     protected $primaryKey = 'id';
     public $timestamp = true;
 
+    protected $fillable = [
+        'academia',
+        'dato_id',
+        'user_id',
+    ];
+
     public function dato()
     {
         return $this->belongsTo(dato::class,'dato_id','id_datos');

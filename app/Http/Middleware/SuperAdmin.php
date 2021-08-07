@@ -41,12 +41,9 @@ class SuperAdmin
                 return redirect('/Index_Alumno');//si es alumno
             break;
             case ('6'):
-                return redirect('/DocenteVisitas');//si es docente
+                return redirect('/VisitasEscolares');//si es docente
             break;
             case ('7'):
-                return redirect('/prueba');//si es prueba
-            break;
-            case ('8'):
                 return redirect('/Index_Master');//si es prueba
             break;
 

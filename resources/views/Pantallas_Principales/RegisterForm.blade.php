@@ -82,7 +82,7 @@
                         </div>
 
                     </div>
-                    <p class="formulario__input-error">El nombre no puede contener caracteres especiales.</p>
+                    <p class="formulario__input-error">Error, por favor ingresa un dato válido.</p>
 
                 </div>
                 <!-- Grupo: Apellido Paterno -->
@@ -94,7 +94,7 @@
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                     </div>
-                    <p class="formulario__input-error">El Apellido Paterno no puede contener caracteres especiales.</p>
+                    <p class="formulario__input-error">Error, por favor ingresa un dato válido.</p>
                 </div>
                 <!-- Grupo: Apellido Materno -->
                 <div class="formulario__grupo" id="grupo__ap_materno">
@@ -105,7 +105,7 @@
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                         </div>
-                        <p class="formulario__input-error">El Apellido Materno no puede contener caracteres especiales.</p>
+                        <p class="formulario__input-error">Error, por favor ingresa un dato válido.</p>
                     </div>
 
                 <!-- Grupo: Telefono -->
@@ -117,7 +117,7 @@
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                         </div>
-                        <p class="formulario__input-error">El Telefono no puede contener caracteres especiales.</p>
+                        <p class="formulario__input-error">Error, por favor ingresa un telefono de 10 numeros.</p>
                     </div>
                 <!-- Grupo: Celular -->
                 <div class="formulario__grupo" id="grupo__celular">
@@ -128,7 +128,7 @@
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                         </div>
-                        <p class="formulario__input-error">El Telefono no puede contener caracteres especiales.</p>
+                        <p class="formulario__input-error">Error, por favor ingresa un telefono de 10 numeros.</p>
                     </div>
 
                     <div class="field">
@@ -155,7 +155,7 @@
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                     </div>
-                    <p class="formulario__input-error">La ciudad no puede contener caracteres especiales.</p>
+                    <p class="formulario__input-error">Error, por favor ingresa un dato válido.</p>
                 </div>
 
                  <!-- Grupo: Alcaldia/Municipio -->
@@ -167,7 +167,7 @@
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                     </div>
-                    <p class="formulario__input-error">Tu alcaldia no puede contener caracteres especiales.</p>
+                    <p class="formulario__input-error">Error, por favor ingresa un dato válido.</p>
                 </div>
                  <!-- Grupo: Colonia -->
                  <div class="formulario__grupo" id="grupo__colonia">
@@ -178,7 +178,7 @@
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                     </div>
-                    <p class="formulario__input-error">Tu colonia no puede contener caracteres especiales.</p>
+                    <p class="formulario__input-error">Error, por favor ingresa un dato válido.</p>
                 </div>
 
                  <!-- Grupo: Calle -->
@@ -190,7 +190,7 @@
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                     </div>
-                    <p class="formulario__input-error">Tu calle no puede contener caracteres especiales.</p>
+                    <p class="formulario__input-error">Error, por favor ingresa un dato válido.</p>
                 </div>
 
                  <!-- Grupo: Numero Ext. -->
@@ -202,7 +202,7 @@
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                     </div>
-                    <p class="formulario__input-error">No has ingresado ningún dato.</p>
+                    <p class="formulario__input-error">Error, por favor ingresa un dato válido.</p>
                 </div>
 
                  <!-- Grupo: Numero Int -->
@@ -214,7 +214,8 @@
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                     </div>
-                    <p class="formulario__input-error">Tu numero interior no puede contener caracteres especiales.</p>
+                    <p class="formulario__input-error">Error, por favor ingresa un dato válido.</p>
+            <p class="formulario__input-mensaje">Complete el campo en caso de existir</p>
                 </div>
 
                  <!-- Grupo: CP -->
@@ -226,7 +227,7 @@
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                     </div>
-                    <p class="formulario__input-error">Tu codigo postal no puede contener caracteres especiales.</p>
+                    <p class="formulario__input-error">Error, por favor ingresa un dato válido.</p>
                 </div>
 
 
@@ -299,7 +300,7 @@
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                     </div>
-                    <p class="formulario__input-error">Tu grupo no puede contener caracteres especiales.</p>
+                    <p class="formulario__input-error">Error, por favor ingresa un dato válido.</p>
                 </div>
 
                 <!-- Grupo: Turno -->
@@ -346,7 +347,7 @@
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                         </div>
-                        <p class="formulario__input-error">Tu matricula no puede contener caracteres especiales.</p>
+                        <p class="formulario__input-error">Error, por favor ingresa un dato válido.</p>
                     </div>
 
                 <!-- Grupo: Email -->
@@ -358,7 +359,7 @@
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                         </div>
-                        <p class="formulario__input-error">Tu email es incorrecto.</p>
+                        <p class="formulario__input-error">Error, por favor ingresa un dato válido.</p>
                 </div>
 
                 <!-- Grupo: Password -->

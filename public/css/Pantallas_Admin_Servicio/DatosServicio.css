@@ -1,0 +1,393 @@
+:root{
+    --logo: #3DBB3D;
+    --gray: #777777;
+    --black: #070707;
+    --green: #7ED386;
+    --aqua: #3FB6A8;
+    --white: #FFFFFF;
+    --plata:#d3d1d1fd;
+    --guinda: #7A2A40;
+    --verde: #73a889c0;
+    --cafecito:#C8B592;
+    --naranja:#FFA04D;
+    --azulito:#1A4A5A;
+    --gris:#7d7d80;
+    --kaki:#8a9180;
+    --hulu: 'Nunito Sans', sans-serif;
+    --heading: 'Montserrat', sans-serif;
+    --body: 'Roboto', sans-serif;
+    --Raleway :'Raleway', sans-serif;
+    --Signika : 'Signika Negative', sans-serif;
+    --Yanone : 'Yanone Kaffeesatz', sans-serif;
+    }
+
+    @import url('https://fonts.googleapis.com/css?family=Nunito:400,900|Montserrat|Roboto');
+
+
+
+    .titulo h2 a{
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        line-height: 1.42em;
+        color:#A7A1AE;
+
+        font-size: 2rem;
+
+     }
+
+    .titulo h2 {
+        font-size:2rem;
+        font-weight: 500;
+        text-align: center;
+        display: block;
+        line-height:1em;
+        padding-bottom: 2rem;
+        margin-top: -3rem;
+        color: #728d7e;
+      }
+
+
+
+    .container {
+      background:#3a505c;
+      /*#6b6a69;*/
+      width: 1000px;
+      height: 1050px;
+      margin: 0 auto;
+      position: relative;
+      margin-top: -3%;
+      box-shadow: 2px 2px 5px  var(--gray);
+
+    }
+
+    /*.logo {
+      float: right;
+      margin-right: 12px;
+      margin-top: 12px;
+      font-family: var(--hulu);
+      color: var(--logo);
+      font-weight: 900;
+      font-size: 1.5em;
+      letter-spacing: 1px;
+    }*/
+    .container .logo{
+        background-color: var(--plata);
+        background-size: 100%;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        float: right;
+        margin-left: 2rem;
+        margin-bottom: 3rem;
+        padding-right: -1rem;
+    }
+    .container .logo img{
+        width: 100px;
+        height: 100px;
+    }
+
+    .CTA {
+      width: 80px;
+      height: 40px;
+      right: -20px;
+      bottom: 0;
+      margin-bottom: 90px;
+      position: absolute;
+      z-index: 1;
+      background: var(--green);
+      font-size: 1em;
+      transform: rotate(-90deg);
+      transition: all .5s ease-in-out;
+      cursor: pointer;
+    }
+
+    .CTA h1 {
+        color: var(--white);
+        margin-top: 10px;
+        margin-left: 9px;
+      }
+
+    .CTA h1:hover {
+        background: var(--aqua);
+        transform: scale(1.1);
+      }
+
+
+    .leftbox {
+      float: left;
+      top: -1%;
+      left: 5%;
+      position: absolute;
+      width: 15.5%;
+      height: 102%;
+      background:#97afa2f6;
+      /*#B6C9B3*/
+      box-shadow: 3px 3px 10px var(--gray);
+
+    }
+
+    .btn_editar{
+        background-color:transparent;
+        width: 135px;
+        height: 58px;
+        margin-left: 4rem;
+        margin-top: -21rem;
+        position: -webkit-sticky;
+        z-index: 100;
+        position: absolute;
+        line-height: 1.5;
+        background: #8c948b93;
+        color: rgba(202, 202, 208);
+        font-weight: bold;
+        border: 2px solid rgba(202, 202, 208);
+        border-radius: 25px;
+        cursor: pointer;
+        transition: 0.3s;
+
+    }
+    .btn_registrar{
+        background-color:transparent;
+        width: 127px;
+        height: 60px;
+        margin-left: 4rem;
+        margin-top: -26rem;
+        position: -webkit-sticky;
+        z-index: 100;
+        position: absolute;
+        line-height: 1.5;
+        background: #8c948b93;
+        color: rgba(202, 202, 208);
+        font-weight: bold;
+        border: 2px solid rgba(202, 202, 208);
+        border-radius: 25px;
+        cursor: pointer;
+        transition: 0.3s;
+
+    }
+    .btn_checar{
+        background-color:transparent;
+        width: 127px;
+        height: 60px;
+        margin-left: 4rem;
+        margin-top: -31rem;
+        position: -webkit-sticky;
+        z-index: 100;
+        position: absolute;
+        line-height: 1.5;
+        background: #8c948b93;
+        color: rgba(202, 202, 208);
+        font-weight: bold;
+        border: 2px solid rgba(202, 202, 208);
+        border-radius: 25px;
+        cursor: pointer;
+        transition: 0.3s;
+
+    }
+
+    .btn_checar a{
+        margin-top: .5rem;
+        font-family: var(--Yanone);
+        font-size: 14.5px;
+        display:inline-block;
+        color: #37474F;
+        text-transform: uppercase;
+        font-weight: 795;
+    }
+
+    .btn_registrar a{
+        margin-top: .5rem;
+        font-family: var(--Yanone);
+        font-size: 14.5px;
+        display:inline-block;
+        color: #37474F;
+        text-transform: uppercase;
+        font-weight: 795;
+    }
+
+    .btn_editar a{
+        margin-top: .5rem;
+        font-family: var(--Yanone);
+        font-size: 14.5px;
+        display:inline-block;
+        color: #37474F;
+        text-transform: uppercase;
+        font-weight: 795;
+    }
+
+    .boton_personalizado {
+        margin-left:.6rem ;
+
+    }
+
+    .btn_editar:hover{
+        /*background: #000;*/
+        background-color: #607681d3;
+        color: rgba(202, 202, 208);
+      }
+
+      .btn_editar a:hover{
+
+        color:var(--plata);
+
+    }
+
+    .btn_registrar:hover{
+        /*background: #000;*/
+        background-color: #607681d3;
+        color: rgba(202, 202, 208);
+      }
+
+      .btn_registrar a:hover{
+
+        color:var(--plata);
+
+    }
+
+    .btn_checar:hover{
+        /*background: #000;*/
+        background-color: #607681d3;
+        color: rgba(202, 202, 208);
+      }
+
+    .btn_checar a:hover{
+
+        color:var(--plata);
+
+    }
+    .nav-form{
+        padding-top: 5rem;
+    }
+    .nav-form a {
+
+      list-style: none;
+      padding: 40px;
+      margin-left: .8rem;
+      color:#37474F;
+      font-size: 2.5rem;
+      display: block;
+      transition: all .3s ease-in-out;
+    }
+    .nav-form a:hover {
+        color: #607681d3;
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+    .nav-form a:first-child {
+        margin-top: 7px;
+      }
+
+
+    .active {
+      color: var(--aqua);
+    }
+
+    .rightbox {
+      margin-left: 18rem;
+     /* float: right;*/
+      width: 60%;
+      height: 100%;
+
+    }
+
+    .profile,  .payment, .subscription, .privacy, .settings {
+      transition: opacity .5s ease-in;
+      position: absolute;
+      width: 70%;
+      font-size: 12px;
+    }
+
+    h1 {
+      font-family: var(--heading);
+      color: #97afa2f6;
+      font-size: 20px;
+      margin-top: 40px;
+      margin-bottom: 35px;
+    }
+
+    .rightbox  h2 {
+      color: var(--plata);
+      font-family: var(--body);
+      width: 50%;
+      font-size: 18px;
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+      margin-left: 2px;
+    }
+
+    p {
+      border-width: 1px;
+      border-style: solid;
+      border-image: linear-gradient(to right, var(--aqua), var(--green)) 1 0%;
+      border-top: 0;
+      width: 80%;
+      font-family: var(--heading);
+      font-size: .7em;
+      padding: 7px 0;
+      color: var(--black);
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    span {
+      font-size: .5em;
+      color: var(--gray);
+    }
+
+    .btn {
+      float: right;
+      font-family: var(--body);
+      text-transform: uppercase;
+      font-size: 10px;
+      border: none;
+      color: var(--aqua);
+    }
+
+    .btn:hover {
+      text-decoration: underline;
+      font-weight: 900;
+    }
+
+    input {
+      border: 1px solid lighten(var--(gray),40%);
+      font-family: var(--body);
+      padding: 2px;
+      margin: 0;
+    }
+
+    .privacy h2{
+      margin-top: 25px;
+    }
+
+    .settings h2{
+      margin-top: 25px;
+    }
+
+    .noshow {
+      opacity: 0;
+    }
+
+    footer {
+      position: absolute;
+      width: 20%;
+      bottom: 0;
+      right: -20px;
+      text-align: right;
+      font-size: 0.8em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-family: var(--body);
+    }
+     footer p {
+        border: none;
+        padding: 0;
+      }
+      footer a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+      footer a:hover {
+          color: #7d7d7d;
+        }
+
+
