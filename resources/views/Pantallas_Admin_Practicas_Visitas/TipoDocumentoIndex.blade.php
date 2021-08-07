@@ -48,3 +48,16 @@
 	</div>
 </div>
 @endsection
+
+@section('script')
+  <script>
+    var activos = document.getElementsByClassName("active");
+    for (var i = 0; i<activos.length; i++) {
+        activos[i].classList.remove("active");
+    }
+    var activo = document.getElementById("Menu_Documentos");
+    activo.classList.add("active");
+    activo = document.getElementById("Doc_Ver");
+    activo.classList.add("active");
+  </script>
+@endsection

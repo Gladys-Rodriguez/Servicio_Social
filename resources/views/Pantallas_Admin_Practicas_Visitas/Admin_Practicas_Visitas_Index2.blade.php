@@ -75,3 +75,15 @@
 </div>
 </div>
 @endsection
+
+@section('script')
+  <script>
+    var activos = document.getElementsByClassName("active");
+    for (var i = 0; i<activos.length; i++) {
+        activos[i].classList.remove("active");
+    }
+    var activo = document.getElementById("home_practicas");
+    activo.classList.add("active");
+  </script>
+@endsection
+

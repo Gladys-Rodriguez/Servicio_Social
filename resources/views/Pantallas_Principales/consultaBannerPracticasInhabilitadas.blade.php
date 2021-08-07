@@ -45,3 +45,16 @@
 </div>
 </div>
 @endsection
+
+@section('script')
+  <script>
+    var activos = document.getElementsByClassName("active");
+    for (var i = 0; i<activos.length; i++) {
+        activos[i].classList.remove("active");
+    }
+    var activo = document.getElementById("Banner_Practicas");
+    activo.classList.add("active");
+    activo = document.getElementById("Banner_Inhabilitadas");
+    activo.classList.add("active");
+  </script>
+@endsection
