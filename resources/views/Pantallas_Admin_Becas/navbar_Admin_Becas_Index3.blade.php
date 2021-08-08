@@ -12,7 +12,7 @@
   </head>
   <body>
 
-    
+
   <header class="header">
       <a href="#" class="brand">APOYOS EDUCATIVOS</a>
       <a href="#" class="header__logo"></a>
@@ -20,7 +20,7 @@
       <nav class="nav" id="nav-menu">
         <div class="nav__content bd-grid">
             <a href="" class="nav__perfil">
-               
+
 
             </a>
 
@@ -31,8 +31,8 @@
                     <li class="nav__item"><a href="{{url('/Tipo_Alumno_Becas')}}" class="nav__link">Solicitudes</a></li>
                     <li class="nav__item"><a href="{{url('/AceptadasB')}}" class="nav__link">Solicitudes Aceptadas</a></li>
                     <li class="nav__item"><a href="{{url('/RechazadasB')}}" class="nav__link">Solicitudes Rechazadas</a></li>
-                    <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>      
-              
+                    <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
+
                  </ul>
             </div>
         </div>

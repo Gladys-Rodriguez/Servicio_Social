@@ -31,7 +31,7 @@ class registroRol extends Controller
         $this->middleware('verified');
         $this->middleware('adminmaster',['only'=> ['index']]);
     }
-    
+
     public function index()
     {
         //

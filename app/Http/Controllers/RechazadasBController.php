@@ -13,9 +13,9 @@ class RechazadasBController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('verified');
-        $this->middleware('practicas',['only'=> ['index']]);
+        $this->middleware('becas',['only'=> ['index']]);
     }
-    
+
     public function index(){
         $datos = \DB::table('solicitud_becas')
         ->join('alumnos','solicitud_becas.id_alumnos','=','alumnos.id_alumnos')
