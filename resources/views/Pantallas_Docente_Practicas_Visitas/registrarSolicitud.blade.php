@@ -1,5 +1,7 @@
 @extends('Pantallas_Docente_Practicas_Visitas.Layout.navbarDocente')
 
+@section('title', 'Registrar Fecha')
+
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantalla_Docente_PracticasVisitas/estilosVisitasEscolares.css')}}"/>
 @endsection
@@ -7,13 +9,13 @@
 @section('content')
 
 <section class="section-main">
-    <h1> Fecha y Solicitud de la Visita Escolar </h1>
+    <h1> Fecha de la Visita Escolar </h1>
 </section>
 
 <div class="container-fluid bg-dark py-5">
     <div class="container p-5 border rounded text-white">
         
-        <div class="display-5 mb-4"><div class="d-inline text-warning"> <strong>PASO 2: </strong></div>Indica la fecha para la Visita Escolar y sube tu solicitud </div>
+        <div class="display-5 mb-4"><div class="d-inline text-warning"> <strong>PASO 2: </strong></div>Indica la fecha para la Visita Escolar </div>
         <div class="progress mb-5" style="height:40px;">
             <div class="progress-bar progress-bar-striped bg-warning"
                 style="width:50%;"
@@ -60,11 +62,10 @@
         
 
             <div class="d-flex justify-content-end">
-                <a role="button" class="btn btn-danger mx-3" href="{{route('docente.mostrarEmpresas')}}">Regresar</a>
+                <a role="button" class="btn btn-danger mx-3" href="{{route('docente.registrarEmpresa')}}">Regresar</a>
                 <button type="submit" class="btn btn-light">Registrar Solicitud </button>
             </div>
             
-
         </form>
     </div>
 </div>

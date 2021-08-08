@@ -20,21 +20,39 @@
         <form action=" {{route('AdminPracticas.guardarGrupo')}} " method="POST" enctype="multipart/form-data">
             <label for="secuencia" class="form-label">Secuencia: </label>
             <input type="text" name="secuencia" id="secuencia" class="form-control" >
+            @if ($errors->has('secuencia'))
+                <div class="alert alert-warning p-2 mt-2" role="alert">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    {{ $errors->first('secuencia') }}
+                </div>
+            @endif
             <br />
         
             <label for="carrera_id"class="form-label" >Carrera: </label>
             <select name="carrera_id" id="carrera_id" class="form-select" >
                 @foreach($carreras as $id => $display)
-                    <option value="{{ $id }}"> {{ $display }}</option>
+                    <option value="{{ $id }}" > {{ $display }}</option>
                 @endforeach
             </select>
+            @if ($errors->has('carrera_id'))
+                <div class="alert alert-warning p-2 mt-2" role="alert">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    {{ $errors->first('carrera_id') }}
+                </div>
+            @endif
             <br />
             
             <label for="estado"class="form-label" >Estado: </label>
             <select name="estado" id="estado"class="form-select" >
-                <option value="1">Activo</option>
-                <option value="0">Deshabilitado</option>
+                <option value="1" {{ old('estado') == 1 ? 'selected' : '' }} >Activo</option>
+                <option value="0" {{ old('estado') == 0 ? 'selected' : '' }} >Deshabilitado</option>
             </select>
+            @if ($errors->has('estado'))
+                <div class="alert alert-warning p-2 mt-2" role="alert">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    {{ $errors->first('estado') }}
+                </div>
+            @endif
             <br />
         
             <div class="d-flex justify-content-end"> 

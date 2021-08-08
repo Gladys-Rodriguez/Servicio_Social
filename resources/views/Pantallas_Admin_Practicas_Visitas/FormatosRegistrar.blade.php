@@ -15,26 +15,50 @@
 
         <form action=" {{route('AdminPracticas.guardarFormato')}} " method="POST" enctype="multipart/form-data">
             <label for="nombre" class="form-label">Nombre Documento: </label>
-            <input type="text" name="nombre" id="nombre" class="form-control" >
+            <input type="text" name="nombre" id="nombre" class="form-control" value={{old('nombre')}}>
+            @if ($errors->has('nombre'))
+                    <div class="alert alert-warning p-2 mt-2" role="alert">
+                        <i class="bi bi-exclamation-triangle"></i>
+                        {{ $errors->first('nombre') }}
+                    </div>
+            @endif
             <br />
         
             <label for="tipo"class="form-label" >Tipo de Formato: </label>
             <select name="tipo" id="tipo" class="form-select">
-                <option value="Plantilla">Plantilla</option>
-                <option value="Ejemplo">Llenado de Ejemplo</option>
-                <option value="Calendario">Calendario Visitas</option>
+                <option value="Plantilla" {{ old('tipo') == "Plantilla" ? 'selected' : '' }} >Plantilla</option>
+                <option value="Ejemplo" {{ old('tipo') == "Ejemplo" ? 'selected' : '' }} >Llenado de Ejemplo</option>
+                <option value="Calendario"{{ old('tipo') == "Calendario" ? 'selected' : '' }} >Calendario Visitas</option>
             </select>
+            @if ($errors->has('tipo'))
+                    <div class="alert alert-warning p-2 mt-2" role="alert">
+                        <i class="bi bi-exclamation-triangle"></i>
+                        {{ $errors->first('tipo') }}
+                    </div>
+            @endif
             <br />
         
             <label for="estado"class="form-label" >Estado: </label>
             <select name="estado" id="estado"class="form-select" >
-                <option value="1">Visible</option>
-                <option value="0">Oculto</option>
+                <option value="1" {{ old('estado') == 1 ? 'selected' : '' }}>Visible</option>
+                <option value="0" {{ old('estado') == 1 ? 'selected' : '' }} >Oculto</option>
             </select>
+            @if ($errors->has('estado'))
+                    <div class="alert alert-warning p-2 mt-2" role="alert">
+                        <i class="bi bi-exclamation-triangle"></i>
+                        {{ $errors->first('estado') }}
+                    </div>
+            @endif
             <br />
         
             <label for="ruta" class="form-label">Documento:</label>
             <input name="ruta" type="file" accept="application/pdf"class="form-control" >
+            @if ($errors->has('ruta'))
+                    <div class="alert alert-warning p-2 mt-2" role="alert">
+                        <i class="bi bi-exclamation-triangle"></i>
+                        {{ $errors->first('ruta') }}
+                    </div>
+                @endif
             <br />
         
             <div class="d-flex justify-content-end"> 
