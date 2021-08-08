@@ -28,7 +28,7 @@
 					<td data-label="Telefono">{{$dato->telefono}}</td>
 					<td data-label="Estado">@if($dato->estado==1) Activo @else Inactivo @endif</td>
                     <td><a class="boton_personalizado" href="/EditarAdminForm/{{$dato->id}}">Cambiar</a></td>
-					<td><a class="boton_personalizado1" href="/EditarAdminSerDato/{{$dato->id}}">Editar</a></td>
+					<td><a class="boton_personalizado1" href="/EditarAdminPra/{{$dato->id}}">Editar</a></td>
 					<td><form action="/BorraUserBe/{{$dato->id}}" method="POST" enctype="multipart/form-data">
           			@csrf
          			<input type="hidden" name="_method" value="DELETE">

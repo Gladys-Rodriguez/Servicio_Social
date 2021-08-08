@@ -96,7 +96,6 @@
 									<th>Estado</th>
 									<th>Observaciones</th>
 									<th></th>
-									<th></th>
                                              <th></th>
 							</tr>
 					</thead>
@@ -109,7 +108,7 @@
                                    <td data-label="Observaciones">{{$docu->observaciones}}</td>
                                    <td data-label=""><a href=" @php echo \Illuminate\Support\Facades\Storage::url($docu->ruta) @endphp"
                                     class="boton_personalizado1" target="_blank">VER</a></td>
-                                    <td><a class="boton_personalizado" href="/EditarDoc/{{$docu->id}}">Editar</a></td>
+                                   <!-- <td><a class="boton_personalizado" href="/EditarDoc/{{$docu->id}}">Editar</a></td>-->
                                    <td><form action="/BorraDocB/{{$docu->id}}" method="POST" enctype="multipart/form-data">
           			               @csrf
          			               <input type="hidden" name="_method" value="DELETE">
