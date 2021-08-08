@@ -15,9 +15,6 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 
 
-
-
-
 class docsExpediente extends Controller
 {
     /**
@@ -25,6 +22,14 @@ class docsExpediente extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('verified');
+        $this->middleware('alumno',['only'=> ['index']]);
+    }
+
     public function index()
     {
         //

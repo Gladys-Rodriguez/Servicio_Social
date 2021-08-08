@@ -1,4 +1,5 @@
-@extends('Pantallas_Principales.navbarconsultaBannerPracticas')
+@extends('Pantallas_Admin_Practicas_Visitas.navbarAdminPracticas')
+
 
 @section('title', 'Consulta Banner Prácticas')
 
@@ -14,7 +15,11 @@
 @endsection
 
 @section('content')
-<br>
+<section class="section-main">
+  <h1>Subida de imagenes banner practicas
+  </h1>
+</section>
+
 <div class="container-fluid bg-dark py-5" >
 
 <h1>Imagenes de prácticas</h1>
@@ -51,3 +56,4 @@
 
 
 @endsection
+

@@ -1,23 +1,24 @@
 @extends('Pantallas_Admin_Practicas_Visitas.navbarAdminPracticas')
 
-@section('title', 'Registro Docente')
+@section('title', 'Editar Docente')
 
 @section('content')
 
     <section class="section-main">
-        <h1>Registrar Docente</h1>
+        <h1>Editar Docente</h1>
     </section>
 
     <div class="container-fluid bg-dark text-white py-5" >
         <div class="container border rounded p-5" style="min-height: 600px">
-            <div class="display-4 mb-4">Registro de <div class="d-inline text-warning"> <strong>Docente</strong></div> </div>
-            <form  action=" {{route('AdminPracticas.guardarDocente')}} " method="POST">
+            <div class="display-4 mb-4">Editar Datos<div class="d-inline text-warning"> <strong>Docente</strong></div> </div>
+            <form  action=" {{ route('AdminPracticas.actualizarDocente', ['docente' => $docente]) }} " method="POST">
+                @method('PUT')
                 @csrf
                 <div class="h2">Datos Generales</div>
                 <div class="row">
                     <div class="col-6">
-                        <label for="num_empleado" class="form-label" >No. de Empleado: </label>
-                        <input type="text" class="form-control" id="num_empleado" name="num_empleado" value=" {{old('num_empleado')}}"/>
+                        <label for="num_empleado" class="form-label" >Número de Empleado: </label>
+                        <input type="text" class="form-control" id="num_empleado" name="num_empleado" value=" {{ $docente->user->id ?? '' }} " disabled/>
                         @if ($errors->has('num_empleado'))
                             <div class="alert alert-warning p-2 mt-2" role="alert">
                                 <i class="bi bi-exclamation-triangle"></i>
@@ -26,26 +27,24 @@
                         @endif
                         <br />
                     </div>
-                    
                     <div class="col-6">
-                        <label for="num_empleado_conf" class="form-label" >Confirmar No. de Empleado </label>
-                        <input type="text" class="form-control" id="num_empleado_conf" name="num_empleado_conf"value=" {{old('num_empleado_conf')}}"  />
-                        @if ($errors->has('num_empleado_conf'))
+                        <label for="academia" class="form-label" >Academia: </label>
+                        <input type="text" class="form-control" id="academia" name="academia" value=" {{ $docente->academia ?? '' }}" />
+                        @if ($errors->has('academia'))
                             <div class="alert alert-warning p-2 mt-2" role="alert">
                                 <i class="bi bi-exclamation-triangle"></i>
-                                {{ $errors->first('num_empleado_conf') }}
+                                {{ $errors->first('academia') }}
                             </div>
                         @endif
                         <br />
                     </div>
-                    
                     <input type="hidden" name="id_rol" value="6">
                 </div>
                 
                 <div class="row">
                     <div class="col-4">
                         <label for="nombre" class="form-label" >Nombre: </label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" value=" {{old('nombre')}}"/>
+                        <input type="text" class="form-control" id="nombre" name="nombre" value=" {{ $docente->dato->nombre ?? '' }}"  />
                         @if ($errors->has('nombre'))
                             <div class="alert alert-warning p-2 mt-2" role="alert">
                                 <i class="bi bi-exclamation-triangle"></i>
@@ -56,7 +55,7 @@
                     </div>
                     <div class="col-4">
                         <label for="ap_paterno" class="form-label">Apellido Paterno: </label>
-                        <input type="text" class="form-control" id="ap_paterno" name="ap_paterno" value=" {{old('ap_paterno')}}"/>
+                        <input type="text" class="form-control" id="ap_paterno" name="ap_paterno" value=" {{ $docente->dato->ap_paterno ?? '' }}" />
                         @if ($errors->has('ap_paterno'))
                             <div class="alert alert-warning p-2 mt-2" role="alert">
                                 <i class="bi bi-exclamation-triangle"></i>
@@ -67,7 +66,7 @@
                     </div>
                     <div class="col-4">
                         <label for="ap_materno" class="form-label">Apellido Materno: </label>
-                        <input type="text" class="form-control" id="ap_materno" name="ap_materno"  value=" {{old('ap_materno')}}"/>
+                        <input type="text" class="form-control" id="ap_materno" name="ap_materno" value="{{ $docente->dato->ap_materno ?? '' }}"/>
                         @if ($errors->has('ap_materno'))
                             <div class="alert alert-warning p-2 mt-2" role="alert">
                                 <i class="bi bi-exclamation-triangle"></i>
@@ -77,21 +76,13 @@
                         <br />
                     </div>
                 </div>
-                <label for="academia" class="form-label" >Academia: </label>
-                <input type="text" class="form-control" id="academia" name="academia"  value=" {{old('academia')}}"/>
-                @if ($errors->has('academia'))
-                    <div class="alert alert-warning p-2 mt-2" role="alert">
-                        <i class="bi bi-exclamation-triangle"></i>
-                        {{ $errors->first('academia') }}
-                        </div>
-                @endif
 
                 <hr class="my-4">
                 <div class="h2">Datos de Contacto</div>
                 <div class="row">
                     <div class="col-6">
                         <label for="telefono" class="form-label" >Teléfono Casa: </label>
-                        <input type="text" class="form-control" id="telefono" name="telefono"  value=" {{old('telefono')}}"/>
+                        <input type="tel" class="form-control" id="telefono" name="telefono" value="{{ $docente->dato->telefono ?? '' }}"/>
                         @if ($errors->has('telefono'))
                             <div class="alert alert-warning p-2 mt-2" role="alert">
                                 <i class="bi bi-exclamation-triangle"></i>
@@ -102,7 +93,7 @@
                     </div>
                     <div class="col-6">
                         <label for="celular" class="form-label">Celular: </label>
-                        <input type="text" class="form-control" id="celular" name="celular"  value=" {{old('celular')}}"/>
+                        <input type="tel" class="form-control" id="celular" name="celular" value="{{ $docente->dato->celular ?? '' }}" />
                         @if ($errors->has('celular'))
                             <div class="alert alert-warning p-2 mt-2" role="alert">
                                 <i class="bi bi-exclamation-triangle"></i>
@@ -116,9 +107,9 @@
                 <hr class="my-4">
                 <div class="h2">Datos de Usuario</div>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12">
                         <label for="email" class="form-label" >Correo electrónico: </label>
-                        <input type="text" class="form-control" id="email" name="email" value=" {{old('email')}}" />
+                        <input type="text" class="form-control" id="email" name="email" value="{{ $docente->user->email ?? '' }}"/>
                         @if ($errors->has('email'))
                             <div class="alert alert-warning p-2 mt-2" role="alert">
                                 <i class="bi bi-exclamation-triangle"></i>
@@ -127,23 +118,13 @@
                         @endif
                         <br />
                     </div>
-                    <div class="col-6">
-                        <label for="email_conf" class="form-label">Confirmar correo electrónico: </label>
-                        <input type="text" class="form-control" id="email_conf" name="email_conf" value=" {{old('email_conf')}}"  />
-                        @if ($errors->has('email_conf'))
-                            <div class="alert alert-warning p-2 mt-2" role="alert">
-                                <i class="bi bi-exclamation-triangle"></i>
-                                {{ $errors->first('email_conf') }}
-                            </div>
-                        @endif
-                        <br />
-                    </div>
+        
                 </div>
 
                 <label for="estado" class="form-label">Estado: </label>
                 <select  class="form-select" id="estado" name="estado">
-                    <option value="1" >Habilitado</option>
-                    <option value="0" >Deshabilitado</option>
+                    <option value="1" {{ isset($docente->user->estado) && 1 === $docente->user->estado ? 'selected' : '' }}> Habilitado</option>
+                    <option value="0" {{ isset($docente->user->estado) && 0 === $docente->user->estado ? 'selected' : '' }}> Deshabilitado</option>
                 </select>
                 <br />
 
@@ -164,7 +145,7 @@
     }
     var activo = document.getElementById("Menu_Administracion");
     activo.classList.add("active");
-    activo = document.getElementById("Docente_Registrar");
+    activo = document.getElementById("Docente_Ver");
     activo.classList.add("active");
   </script>
 @endsection

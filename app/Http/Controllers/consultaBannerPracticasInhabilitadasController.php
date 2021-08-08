@@ -13,7 +13,14 @@ class consultaBannerPracticasInhabilitadasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('verified');
+        $this->middleware('practicas',['only'=> ['index']]);
+    }
+    
+     public function index()
     {
         //
         $bannerPracticas = DB::table('banner_practicas_imagens')

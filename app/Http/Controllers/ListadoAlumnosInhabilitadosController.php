@@ -16,6 +16,14 @@ class ListadoAlumnosInhabilitadosController extends Controller
      * @return \Illuminate\Http\Response
      */
     const PAGINACION=10;
+    
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('verified');
+        $this->middleware('serviciosocial',['only'=> ['index']]);
+    }
+    
     public function index(Request $request)
     {
         //

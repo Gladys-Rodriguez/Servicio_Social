@@ -1,8 +1,6 @@
 @extends('Pantallas_Admin_Practicas_Visitas.navbarAdminPracticas')
 
-@section('css')
-<link rel="stylesheet" href="{{asset('css/Pantalla_Docente_PracticasVisitas/estilosVisitasEscolares.css')}}"/>
-@endsection
+@section('title', 'Formatos de Calenadrio de Visitas')
 
 @section('content')
 
@@ -16,4 +14,17 @@
         @include('Pantallas_Admin_Practicas_Visitas.FormatosTabla')
     </div>
 </div>
+@endsection
+
+@section('script')
+  <script>
+    var activos = document.getElementsByClassName("active");
+    for (var i = 0; i<activos.length; i++) {
+        activos[i].classList.remove("active");
+    }
+    var activo = document.getElementById("Menu_Documentos");
+    activo.classList.add("active");
+    activo = document.getElementById("Formato_Calendario");
+    activo.classList.add("active");
+  </script>
 @endsection

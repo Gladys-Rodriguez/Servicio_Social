@@ -10,6 +10,13 @@ use Illuminate\Http\Request;
 class AlumnoController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('verified');
+        $this->middleware('alumno',['only'=> ['index']]);
+    }
+
     public function  dashboard(){
         $alumnos = alumno::count();
         $alumnosProceso = alumno::where('servicio', '0')->count();

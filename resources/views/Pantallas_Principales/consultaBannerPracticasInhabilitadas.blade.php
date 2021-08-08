@@ -1,3 +1,5 @@
+
+
 @extends('Pantallas_Principales.navbarconsultaBannerPracticasInhabilitadas')
 
 @section('title', 'Consulta Banner Practicas Inhabilitadas')

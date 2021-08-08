@@ -15,7 +15,15 @@ class concentradoIniciosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('verified');
+        $this->middleware('serviciosocial',['only'=> ['index']]);
+    }
+    
+     public function index()
     {
         $files = concetrado_inicio::where('user', Auth::id())->get();
         return view('Pantallas_Admin_Servicio.docs_concentrados', compact('files'));
