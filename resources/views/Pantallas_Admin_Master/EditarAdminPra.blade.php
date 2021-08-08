@@ -88,7 +88,7 @@
 <div class="container">
 <div class="informacion">
       <div class="contact-info">
-        <h3 class="title">Editar Admin Prácticas</h3>
+        <h3 class="title">Editar Administrador</h3>
 
       <div class="errores">
        @if($errors->any())
