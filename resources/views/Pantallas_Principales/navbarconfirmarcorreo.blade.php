@@ -67,7 +67,7 @@
         </script>
 
     <section class="section-main">
-      <h1>CONFIRMAR CORREO</h1>
+      <h1>IR A VISTA DE LOGIN</h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->

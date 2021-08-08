@@ -11,7 +11,7 @@
 <div class="container">
 <div class="informacion">
       <div class="contact-info">
-        <h3 class="title">"Confirmar"</h3>
+        <h3 class="title">"PRESIONE EL BOTÓN"</h3>
 
       <div class="errores">
        @if($errors->any())
@@ -26,7 +26,7 @@
       </div>
 
     <!--Formulario-->
-    <a class="boton_personalizado" href="/LoginForm">Confirmar correo</a>
+    <a class="boton_personalizado" href="/LoginForm">LOGIN</a>
 
 
      </div>
