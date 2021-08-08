@@ -53,13 +53,13 @@
 
     <!--Formulario-->
     <div class="login-box">
-    
+
     <form action="/EditarAdminForm2/{{$datos->id}}" method="POST">
           @csrf
           @foreach($nuevo as $nuevos)
           <h1>Datos Generales:</h1>
             <label>Puesto: {{$nuevos->Tipo_rol}}</label>
-            <label>Matricula: {{$nuevos->id}}</label>
+            <label>Número de empleado: {{$nuevos->id}}</label>
             <label>Nombre: {{$nuevos->fullname}}</label>
             <label>Teléfono: {{$nuevos->telefono}}</label>
             <label>Email: {{$nuevos->email}}</label>

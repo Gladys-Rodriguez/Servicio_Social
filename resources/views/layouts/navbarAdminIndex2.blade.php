@@ -50,7 +50,7 @@
                     </li>
 
                     <li class="nav__item dropdown">
-                        <a href="#" class="nav__link dropdown__link">Gestion de Banners <i class='bx bx-chevron-down dropdown__icon'></i></a>
+                        <a href="#" class="nav__link dropdown__link">Gstion de Banners <i class='bx bx-chevron-down dropdown__icon'></i></a>
                         <ul class="dropdown__menu">
                             <li class="dropdown__item"><a href="{{url('/RegisterBannerServicio')}}" class="nav__link">Registro de imagenes de servicios</a></li>
                             <li class="dropdown__item"><a href="{{url('/consultaBannerServicio')}}" class="nav__link">Consulta de imagenes habilitadas de servicio</a></li>

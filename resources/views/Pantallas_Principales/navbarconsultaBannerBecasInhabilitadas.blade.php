@@ -25,10 +25,11 @@
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="{{url('/Admin_Becas_Index3')}}" class="nav__link">HOME</a></li>
-                    <li class="nav__item"><a href="{{url('/Validacion_Alumno_Becas')}}" class="nav__link">VALIDACIÓN DE DOCUMENTOS</a></li>
-                    <li class="nav__item"><a href="{{url('/Tipo_Alumno_Becas')}}" class="nav__link">LISTAS DE ALUMNOS POR TIPO DE BECA</a></li>
-
+                <li class="nav__item"><a href="{{url('/Admin_Becas_Index3')}}" class="nav__link">HOME</a></li>
+                    <li class="nav__item"><a href="{{url('/Validacion_Alumno_Becas')}}" class="nav__link">Validación de documentos</a></li>
+                    <li class="nav__item"><a href="{{url('/Tipo_Alumno_Becas')}}" class="nav__link">Solicitudes</a></li>
+                    <li class="nav__item"><a href="{{url('/AceptadasB')}}" class="nav__link">Solicitudes Aceptadas</a></li>
+                    <li class="nav__item"><a href="{{url('/RechazadasB')}}" class="nav__link">Solicitudes Rechazadas</a></li>
                     <li class="nav__item dropdown">
                         <a href="#" class="nav__link dropdown__link active">Gestion de Banners <i class='bx bx-chevron-down dropdown__icon'></i></a>
                         <ul class="dropdown__menu">
@@ -41,7 +42,7 @@
 
                     <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
 
-                </ul>
+                 </ul>
             </div>
         </div>
     </nav>
