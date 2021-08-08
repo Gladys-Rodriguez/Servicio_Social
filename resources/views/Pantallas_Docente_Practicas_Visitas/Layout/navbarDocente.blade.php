@@ -39,19 +39,11 @@
                 <ul class="nav__list">
                     <li class="nav__item"><a href="{{route('docente.inicio')}}" class="nav__link active" id="inicio">Home</a></li>
 
-                   <li class="nav__item dropdown">
-                            <a href="{{ route('docente.index')}}" class="nav__link dropdown__link" id="menu_visitas">VISITAS<i class='bx bx-chevron-down dropdown__icon'></i></a>
+                    <li class="nav__item"><a href="{{route('docente.index')}}" class="nav__link " id="menu_visitas">SOLICITUDES</a></li>
 
-                            <ul class="dropdown__menu">
-                                <li class="dropdown__item"><a href=" {{ route('docente.index')}}" class="nav__link" id="solicitudes">Solicitudes</a></li>
-                                <li class="dropdown__item"><a href=" # " class="nav__link" id="visitas">Visitas Validadas</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="nav__item"><a href=" {{ route('docente.mostrarDatosDocente') }} " class="nav__link" id="datos">MIS DATOS</a></li>
+                    <li class="nav__item"><a href=" {{ route('docente.mostrarDatosDocente') }} " class="nav__link" id="datos">MIS DATOS</a></li>
                         
-
-                        <li class="nav__item"><a href="{{url('/logout')}}" class="nav__link"> CERRAR SESIÓN</a></li>
+                    <li class="nav__item"><a href="{{url('/logout')}}" class="nav__link"> CERRAR SESIÓN</a></li>
 
                     </ul>
             </div>

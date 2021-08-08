@@ -887,6 +887,13 @@ Route::get('VisitasEscolares/Empresas/Registrar', 'VisitaController@registrarEmp
 Route::post('VisitasEscolares/Empresas/Guardar', 'VisitaController@guardarEmpresa')    //Método Empresas-store()
     ->name('docente.guardarEmpresa'); 
 
+Route::get('/VisitasEscolares/Empresas/Editar/{empresa}', 'VisitaController@editarEmpresa') //Método Empresas-EDIT()
+    ->name('docente.editarEmpresa');
+
+Route::put('/VisitasEscolares/Empresas/Actualizar/{empresa}', 'VisitaController@actualizarEmpresa') //Método Empresas-UPDATE()
+    ->name('docente.actualizarEmpresa');      
+
+
   /*---------------------------------------------RUTAS SOLICITUDES---------------------------------------------------------*/
 
 Route::get('/VisitasEscolares', 'VisitaController@index')     //Método Visitas-index()
@@ -904,6 +911,12 @@ Route::get('/VisitasEscolares/Solicitudes/Ver/{visita}','VisitaController@verSol
 Route::get('/VisitasEscolares/Solicitudes/ModificarEstado/{visita}','VisitaController@modificarEstadoSolcitud')
     ->name('docente.ModificarEstado');
 
+Route::get('/VisitasEscolares/Solicitudes/Editar/{visita}', 'VisitaController@editarSolicitud') //Método Solicitudes-EDIT()
+    ->name('docente.editarSolicitudes');
+
+Route::put('/VisitasEscolares/Solicitudes/Actualizar/{visita}', 'VisitaController@actualizarSolicitud') //Método Solicitudes-UPDATE()
+    ->name('docente.actualizarSolicitudes');  
+
    
 /*---------------------------------------------RUTAS DOCUMENTOS---------------------------------------------------------*/
     
@@ -917,7 +930,10 @@ Route::get('/VisitasEscolares/DocumentosSolicitud/Editar/{visita_documento}', 'V
     ->name('docente.editarDocumentosSolicitud');
 
 Route::put('/VisitasEscolares/DocumentosSolicitud/Actualizar/{visita_documento}', 'VisitaController@actualizarDocumentosSolicitud') //Método Documento_Visita-UPDATE()
-    ->name('docente.actualizarDocumentosSolicitud');      
+    ->name('docente.actualizarDocumentosSolicitud');  
+    
+Route::get('/VisitasEscolares/DocumentosVisita/{visita}', 'VisitaController@indexDocumentosVisita') //Método Documento_Visita-Create()
+    ->name('docente.indexDocumentosVisita');   
 
 /*---------------------------------------------RUTAS VISITAS---------------------------------------------------------*/
 

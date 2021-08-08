@@ -269,7 +269,14 @@ class AdminPracSolicitudesController extends Controller
         }
 
     public function guardarTipoDocumento(Request $request){                     //STORE()
-        $tipo_documento = TipoDocumento::create($request->input());
+        $validateData = $request->validate([
+            'nombre' => 'required',
+            'etapa' => 'required',
+            'estado' => 'required',
+            'tramite' => 'required',
+        ]);
+        
+        $tipo_documento = TipoDocumento::create($validateData);
 
         return redirect()->action('AdminPracSolicitudesController@indexTipoDocumento');
     }
@@ -302,16 +309,33 @@ class AdminPracSolicitudesController extends Controller
     }
 
     public function guardarFormato(Request $request){
+        $validateData = $request->validate([
+            'nombre' => 'required',
+            'tipo' => 'required',
+            'estado' => 'required',
+            'ruta' => 'required | file',
+        ]);
+        
         $formato = VisitaFormato::create([
-            'nombre' => $request->input('nombre'),
-            'tipo' => $request->input('tipo'), 
+            'nombre' => $validateData['nombre'],
+            'tipo' => $validateData['tipo'], 
             'ruta' => '',
-            'estado' => $request->input('estado'),
+            'estado' => $validateData['estado'],
         ]);
         $formato->ruta = $request->file('ruta')->store('public/FormatosVisitas');
         $formato->save();
 
-        return redirect()->action('AdminPracSolicitudesController@indexFormatosEjemplo');
+        if($validateData['tipo'] == 'Calendario'){
+            return redirect()->action('AdminPracSolicitudesController@indexFormatosCalendarioVisitas');
+        }
+
+        if($validateData['tipo'] == 'Ejemplo'){
+            return redirect()->action('AdminPracSolicitudesController@indexFormatosEjemplo');
+        }
+
+        if($validateData['tipo'] == 'Plantilla'){
+            return redirect()->action('AdminPracSolicitudesController@indexFormatosPlantilla');
+        }
     }
 
     public function editarFormato(VisitaFormato $visita_formato){
@@ -382,7 +406,12 @@ class AdminPracSolicitudesController extends Controller
     }
     
     public function  guardarCarrera(Request $request){
-        $carrera = Carrera::create($request->input());
+        $validateData = $request->validate([
+            'nombre' => 'required|regex:/^[\pL\s\-]+$/u',
+            'estado' => 'required',
+        ]);
+
+        $carrera = Carrera::create($validateData);
 
         return redirect()->action('AdminPracSolicitudesController@indexCarrera');
     } 
@@ -395,7 +424,7 @@ class AdminPracSolicitudesController extends Controller
 
     public function actualizarCarrera(Carrera $carrera, Request $request){
         $validateData = $request->validate([
-            'nombre' => 'required',
+            'nombre' => 'required|regex:/^[\pL\s\-]+$/u',
             'estado' => 'required',
         ]);
         
@@ -423,7 +452,13 @@ class AdminPracSolicitudesController extends Controller
     }
 
     public function  guardarGrupo(Request $request){
-        $grupo = Grupo::create($request->input());
+        $validateData = $request->validate([
+            'secuencia' => 'required',
+            'carrera_id' => 'required',
+            'estado' => 'required',
+        ]);
+
+        $grupo = Grupo::create($validateData);
 
         return redirect()->action('AdminPracSolicitudesController@indexGrupo');
     } 

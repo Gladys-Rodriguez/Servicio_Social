@@ -1,5 +1,7 @@
 @extends('Pantallas_Docente_Practicas_Visitas.Layout.navbarDocente')
 
+@section('title', 'Home')
+
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantalla_Docente_PracticasVisitas/estilosVisitasEscolares.css')}}"/>
 @endsection
@@ -14,20 +16,33 @@
 <div class="container-fluid d-grid bg-dark p-5 text-white gap-4" >
     <div class="row"> 
         <div class="col">
-            <div class="border rounded p-3" style="min-height: 500px"> 
-                <div class="display-4 text-center">Calendario de Visitas</div>
+            <div class="border rounded" style="min-height: 500px"> 
+                <div class="border rounded p-3 bg-white text-dark" style="min-height: 500px"> 
+                    <div class="h2">Calendario de Visitas</div>
+                    <hr class="m-3">
+                    <ul class="list-group">
+                        @forelse ($calendarios as $calendario)
+                            <li class="list-group-item  list-group-item-action list-group-item-dark">
+                                    <a class="text-decoration-none text-dark" target="_blank" href=" @php echo \Illuminate\Support\Facades\Storage::url($calendario->ruta) @endphp">
+                                        {{ $calendario->nombre }} 
+                                    </a>
+                            </li>
+                        @empty
+                        @endforelse
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
     <div class="row"  >
         <div class="col ">
             <div class="border rounded p-3 bg-white text-dark" style="min-height: 500px"> 
-                <div class="h2">Formatos Plantilla</div>
+                <div class="h2">Formatos de Plantilla</div>
                 <hr class="m-3">
                 <ul class="list-group">
                     @forelse ($plantillas as $plantilla)
                         <li class="list-group-item  list-group-item-action list-group-item-dark">
-                                <a class="text-decoration-none text-dark" href=" @php echo \Illuminate\Support\Facades\Storage::url($plantilla->ruta) @endphp">
+                                <a class="text-decoration-none text-dark" target="_blank" href=" @php echo \Illuminate\Support\Facades\Storage::url($plantilla->ruta) @endphp">
                                     {{ $plantilla->nombre }} 
                                 </a>
                         </li>
@@ -42,8 +57,8 @@
                 <hr class="m-3">
                 <ul class="list-group">
                     @forelse ($ejemplos as $ejemplo)
-                        <li class="list-group-item list-group-item-action list-group-item-secondary">
-                            <a class="text-decoration-none text-dark" href=" @php echo \Illuminate\Support\Facades\Storage::url($ejemplo->ruta) @endphp">
+                        <li class="list-group-item list-group-item-action list-group-item-dark">
+                            <a class="text-decoration-none text-dark" target="_blank"  href=" @php echo \Illuminate\Support\Facades\Storage::url($ejemplo->ruta) @endphp">
                                 {{ $ejemplo->nombre }} 
                             </a>
                         </li>

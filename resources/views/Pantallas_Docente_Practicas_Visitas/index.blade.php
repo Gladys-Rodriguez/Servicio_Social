@@ -1,5 +1,7 @@
 @extends('Pantallas_Docente_Practicas_Visitas.Layout.navbarDocente')
 
+@section('title', 'Solicitudes')
+
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantalla_Docente_PracticasVisitas/estilosVisitasEscolares.css')}}"/>
 @endsection
@@ -20,9 +22,9 @@
                 <thead>
                     <tr>
                         <th>ID SOLICITUD</th>
-                        <th>DOCENTE</th>
                         <th>EMPRESA SOLICITADA</th>
                         <th>FECHA SOLICITADA</th>
+                        <th>OBSERVACIONES</th>
                         <th>ESTADO</th>
                         <th>ACCIONES</th>
                     </tr>
@@ -31,16 +33,12 @@
                     @forelse ($visitas as $visita)
                         <tr>
                             <td> {{ $visita->id }} </td>
-                            <td>
-                                {{ $visita->docente->dato->nombre }}
-                                {{ $visita->docente->dato->ap_paterno }}
-                                {{ $visita->docente->dato->ap_materno }}
-                            </td>
                             <td> {{ $visita->empresa->nombre }} </td>
                             <td> {{ date('F d, Y', strtotime($visita->fecha_visita)) }} </td>
+                            <td> {{ $visita->observaciones }} </td>
                             <td> {{ $visita->visita_estado->estado }} </td>
                             <td>
-                                    @if ($visita->visita_estado->id == 2 || $visita->visita_estado->id == 4)
+                                    @if ($visita->visita_estado->id == 2 || $visita->visita_estado->id == 4 || $visita->visita_estado->id == 6 || $visita->visita_estado->id == 7 || $visita->visita_estado->id == 5 )
                                     <a type="button" class="btn btn-sm btn-primary mb-1 w-100" href=" {{ route('docente.verSolicitud',['visita'=>$visita->id]) }} ">
                                         Ver
                                     </a>
@@ -57,6 +55,12 @@
                                         Corregir
                                     </a>
                                     @endif
+
+                                    @if ($visita->visita_estado->id == 5)
+                                    <a type="button" class="btn btn-sm btn-success mb-1 w-100" href=" {{ route('docente.indexDocumentosVisita',['visita'=>$visita->id]) }} ">
+                                        Subir Documentos
+                                    </a>
+                                    @endif
                             </td>
                         </tr>
                         @empty
@@ -68,7 +72,7 @@
         <hr class="my-5">
         <div class="h2 mb-3">¿Desea realizar una solicitud para una Visita Escolar? </div>
                 Haga clic en el siguiente botón: 
-            <a type="button" class="btn btn-primary btn-sm" href=" {{ route('docente.mostrarEmpresas') }} "> Registrar Nueva Solicitud </a>
+            <a type="button" class="btn btn-primary btn-sm" href=" {{ route('docente.registrarEmpresa') }} "> Registrar Nueva Solicitud </a>
             
     </div>
 </div>

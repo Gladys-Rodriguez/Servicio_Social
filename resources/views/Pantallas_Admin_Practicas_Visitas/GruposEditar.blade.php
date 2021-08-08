@@ -20,22 +20,40 @@
         <form action=" {{route('AdminPracticas.actualizarGrupo', ['grupo'=>$grupo])}} " method="POST" enctype="multipart/form-data">
             @method('PUT')
             <label for="secuencia" class="form-label">Secuencia: </label>
-            <input type="text" name="secuencia" id="secuencia" class="form-control" value=" {{ $grupo->secuencia ?? '' }}">
+            <input type="text" name="secuencia" id="secuencia" class="form-control" value=" {{ old('secuencia') ?? $grupo->secuencia ?? '' }}">
+            @if ($errors->has('secuencia'))
+                <div class="alert alert-warning p-2 mt-2" role="alert">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    {{ $errors->first('secuencia') }}
+                </div>
+            @endif
             <br />
         
             <label for="carrera_id"class="form-label" >Carrera: </label>
             <select name="carrera_id" id="carrera_id" class="form-select" >
                 @foreach($carreras as $id => $display)
                     <option value="{{ $id }}" {{ (isset($grupo->carrera_id) && $id === $grupo->carrera_id) ? 'selected' : '' }} > {{ $display }}</option>
-
                 @endforeach
             </select>
+            @if ($errors->has('carrera_id'))
+                <div class="alert alert-warning p-2 mt-2" role="alert">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    {{ $errors->first('carrera_id') }}
+                </div>
+            @endif
+            <br />
             
             <label for="estado"class="form-label" >Estado: </label>
             <select name="estado" id="estado"class="form-select" >
                 <option value="1" {{ isset($grupo->estado) && 1 === $grupo->estado ? 'selected' : '' }}  >Activo</option>
                 <option value="0" {{ isset($grupo->estado) && 0 === $grupo->estado ? 'selected' : '' }} >Deshabilitado</option>
             </select>
+            @if ($errors->has('estado'))
+                <div class="alert alert-warning p-2 mt-2" role="alert">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    {{ $errors->first('estado') }}
+                </div>
+            @endif
             <br />
         
             <div class="d-flex justify-content-end"> 

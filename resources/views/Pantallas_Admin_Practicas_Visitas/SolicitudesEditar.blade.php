@@ -157,7 +157,7 @@
             </select>
             <br>
             <label for="observaciones" class="form-label">Observaciones:</label>
-            <textarea class="form-control" name="observaciones" id="observaciones" rows="10" cols="50" placeholder="Escribe las observaciones y correciones"></textarea>
+            <textarea class="form-control" name="observaciones" id="observaciones" rows="10" cols="50" placeholder="Escribe las observaciones y correciones">{{$visita->observaciones}} </textarea>
             
             <div class="d-flex justify-content-end mt-4">
                 <a class="btn btn-light mx-3" href=" {{ url('/Solicitudes_Practicas_Visitas')}} "> Regresar</a>

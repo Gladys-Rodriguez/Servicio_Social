@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="{{asset('css/Pantalla_Docente_PracticasVisitas/estilosVisitasEscolares.css')}}"/>
 @endsection
 
+@section('title', 'Editar Documento')
+
 @section('content')
 
 <section class="section-main">

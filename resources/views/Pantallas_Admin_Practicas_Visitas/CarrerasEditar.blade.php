@@ -20,7 +20,13 @@
         <form action=" {{ route('AdminPracticas.actualizarCarrera', ['carrera' => $carrera]) }} " method="POST" enctype="multipart/form-data">
             @method('PUT')
             <label for="nombre" class="form-label">Nombre de la Carrera: </label>
-            <input type="text" name="nombre" id="nombre" class="form-control" value=" {{ $carrera->nombre ?? '' }}" >
+            <input type="text" name="nombre" id="nombre" class="form-control" value=" {{ old('nombre') ?? $carrera->nombre ?? '' }}" >
+            @if ($errors->has('nombre'))
+                <div class="alert alert-warning p-2 mt-2" role="alert">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    {{ $errors->first('nombre') }}
+                </div>
+            @endif
             <br />
         
             <label for="estado"class="form-label" >Estado: </label>
@@ -28,6 +34,12 @@
                 <option value="1" {{ isset($carrera->estado) && 1 === $carrera->estado ? 'selected' : '' }}  >Activo</option>
                 <option value="0" {{ isset($carrera->estado) && 0 === $carrera->estado ? 'selected' : '' }} >Deshabilitado</option>
             </select>
+            @if ($errors->has('estado'))
+                <div class="alert alert-warning p-2 mt-2" role="alert">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    {{ $errors->first('estado') }}
+                </div>
+            @endif
             <br />
         
             <div class="d-flex justify-content-end"> 
