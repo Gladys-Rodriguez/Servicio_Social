@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;  
-use App\Models\docbecas;  
-use App\Models\solicitud_becas; 
+use Illuminate\Support\Facades\Auth;
+use App\Models\docbecas;
+use App\Models\solicitud_becas;
 
 class MiBecaDatosController extends Controller
 {
@@ -15,7 +15,7 @@ class MiBecaDatosController extends Controller
         $this->middleware('verified');
         $this->middleware('alumno',['only'=> ['index']]);
     }
-    
+
     public function index(){
         $user_id = Auth::id();
         $datos = \DB::table('alumnos')
@@ -56,16 +56,19 @@ class MiBecaDatosController extends Controller
     }
     public function update(Request $request, docbecas $visita_documento)
     {
+        dd($visita_documento);
         $validateData= docbecas::findOrFail($visita_documento);
+        dd($validateData);
+
         $visita = solicitud_becas::where('id', $request->input('solicitud_id'))->first();
         $validateData = $request->validate([
             'solicitud_id' => 'required',
             'nombre_doc' => 'required',
             'ruta' => 'required',
         ]);
-        
+
         $visita_documento->fill($validateData);
-        $visita_documento->ruta =$request->file('ruta')->store('public/DocumentosVisitas');    
+        $visita_documento->ruta =$request->file('ruta')->store('public/DocumentosVisitas');
         $visita_documento->save();
 
         return redirect("/FormatosBeca");
@@ -76,8 +79,15 @@ class MiBecaDatosController extends Controller
     {
         //
         $dato= docbecas::findOrFail($id);
+        //unlink(public_path('storage'.'/'.'DocumentosVisitas'.'/'.$dato->id));
 
         $dato->delete();
         return redirect()->back()->with('alert', 'El registro se ha eliminado');
+
+
+
+
+
+
    }
 }

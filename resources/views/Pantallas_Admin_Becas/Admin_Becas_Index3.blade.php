@@ -26,19 +26,11 @@
         <div class="slide first">
         <img src="{{ asset('img/c_becas/becas1.jpg')}}">
         </div>
-        <div class="slide">
-        <img src="{{ asset('img/c_becas/becas2.png')}}">
-        </div>
-        <div class="slide">
-        <img src="{{ asset('img/c_becas/becas3.jpg')}}">
-        </div>
 
         <!--slide images end-->
         <!--automatic navigation start-->
         <div class="navigation-auto">
           <div class="auto-btn1"></div>
-          <div class="auto-btn2"></div>
-          <div class="auto-btn3"></div>
 
         </div>
         <!--automatic navigation end-->
@@ -46,8 +38,6 @@
       <!--manual navigation start-->
       <div class="navigation-manual">
         <label for="radio1" class="manual-btn"></label>
-        <label for="radio2" class="manual-btn"></label>
-        <label for="radio3" class="manual-btn"></label>
 
       </div>
       <!--manual navigation end-->
