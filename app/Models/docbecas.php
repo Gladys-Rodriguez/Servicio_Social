@@ -21,8 +21,8 @@ class docbecas extends Model
         
     ];
 
-    public function solicitud_visita()
+    public function solicitud_becas()
     {
-        return $this->belongsTo(solicitud_visita::class, 'solicitud_id', 'id');
+        return $this->belongsTo(solicitud_becas::class, 'solicitud_id', 'id');
     }
 }

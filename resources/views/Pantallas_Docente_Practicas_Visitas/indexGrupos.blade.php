@@ -1,5 +1,7 @@
 @extends('Pantallas_Docente_Practicas_Visitas.Layout.navbarDocente')
 
+@section('title', 'Seleccionar Grupos')
+
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantalla_Docente_PracticasVisitas/estilosVisitasEscolares.css')}}"/>
 @endsection

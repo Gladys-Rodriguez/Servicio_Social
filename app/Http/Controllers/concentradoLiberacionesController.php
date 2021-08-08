@@ -15,7 +15,15 @@ class concentradoLiberacionesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('verified');
+        $this->middleware('serviciosocial',['only'=> ['index']]);
+    }
+
+     public function index()
     {
         //
         $files = concetrado_liberacion::where('user', Auth::id())->get();

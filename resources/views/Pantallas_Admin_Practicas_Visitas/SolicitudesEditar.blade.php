@@ -1,6 +1,7 @@
 
 @extends('Pantallas_Admin_Practicas_Visitas.navbarAdminPracticas')
 
+@section('title', 'Ver Solcitud')
 
 @section('content')
 
@@ -144,7 +145,7 @@
         </table>
         <hr class="mt-5 mb-5">
 
-        <div class="h2 mb-3 text-warning">Estado de la Soclitud</div>
+        <div class="h2 mb-3 text-warning">Estado de la Solicitud</div>
         <form action="{{ route('AdminPracticas.actualizarSolicitud', ['visita' => $visita]) }}" method="POST" >
             @method('PUT')
             @csrf
@@ -156,7 +157,7 @@
             </select>
             <br>
             <label for="observaciones" class="form-label">Observaciones:</label>
-            <textarea class="form-control" name="observaciones" id="observaciones" rows="10" cols="50" placeholder="Escribe las observaciones y correciones"></textarea>
+            <textarea class="form-control" name="observaciones" id="observaciones" rows="10" cols="50" placeholder="Escribe las observaciones y correciones">{{$visita->observaciones}} </textarea>
             
             <div class="d-flex justify-content-end mt-4">
                 <a class="btn btn-light mx-3" href=" {{ url('/Solicitudes_Practicas_Visitas')}} "> Regresar</a>

@@ -1,5 +1,8 @@
 @extends('Pantallas_Admin_Practicas_Visitas.navbarAdminPracticas')
 
+@section('title', 'Grupos')
+
+
 @section('content')
 
 <section class="section-main">
@@ -36,4 +39,17 @@
         </table>
     </div>
 </div>
+@endsection
+
+@section('script')
+  <script>
+    var activos = document.getElementsByClassName("active");
+    for (var i = 0; i<activos.length; i++) {
+        activos[i].classList.remove("active");
+    }
+    var activo = document.getElementById("Menu_Administracion");
+    activo.classList.add("active");
+    activo = document.getElementById("Grupo_Ver");
+    activo.classList.add("active");
+  </script>
 @endsection

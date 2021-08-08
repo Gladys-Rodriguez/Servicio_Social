@@ -19,23 +19,28 @@
       <nav class="nav" id="nav-menu">
         <div class="nav__content bd-grid">
             <a href="" class="nav__perfil">
-                <div class="nav__img">
-                    <img src="{{asset('img/logo/logoSAE3.png')}}" alt="">
-                </div>
+
 
             </a>
 
             <div class="nav__menu">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="{{url('/AdminIndex')}}" class="nav__link active">Inicio</a></li>
-                    <li class="nav__item"><a href="{{url('/concentrados')}}" class="nav__link active">Concentrados </a></li>
 
 
-                    <li class="nav__item"><a href="{{url('/estadistica')}}" class="nav__link">Estadística</a></li>
-                    <li class="nav__item"><a href="{{url('/validacionAlumno')}}" class="nav__link">Validación Alumno</a></li>
+                    <li class="nav__item"><a href="{{url('/estadisticas')}}" class="nav__link">Estadística</a></li>
 
 
-                    <li class="nav__item"><a href="{{url('/validacionReportes')}}" class="nav__link">Validación Reportes</a></li>
+                    <li class="nav__item"><a href="{{url('/SubirFormatos')}}" class="nav__link">Subir Formatos</a></li>
+                    <li class="nav__item dropdown">
+                        <a  href="#" class="nav__link dropdown__link">Validaciones <i class='bx bx-chevron-down dropdown__icon'></i></a>
+
+
+                        <ul class="dropdown__menu">
+                            <li class="dropdown__item"><a href="{{url('/ListaDeAlumnos')}}" class="nav__link">Lista de Alumnos</a></li>
+                            <li class="dropdown__item"><a href="{{url('/ListaDeAlumnosInhabilitados')}}" class="nav__link">Lista de Alumnos Inhabilitados</a></li>
+                        </ul>
+                    </li>
 
                     <li class="nav__item dropdown">
                         <a href="#" class="nav__link dropdown__link">Gestion de Banners <i class='bx bx-chevron-down dropdown__icon'></i></a>
@@ -45,13 +50,9 @@
                             <li class="dropdown__item"><a href="{{url('/consultaBannerServicioInhabilitadas')}}" class="nav__link">Consulta de imagenes inhabilitadas de servicio</a></li>
 
                              </ul>
-                    </li>
 
-                    <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
-
-
-                </ul>
-            </div>
+                             <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
+        </div>
         </div>
     </nav>
 

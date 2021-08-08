@@ -6,12 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateRolsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
+        public function up()
     {
         Schema::create('rols', function (Blueprint $table) {
             $table->bigInteger('id_rol')->unsigned()->notnull();
@@ -23,11 +18,6 @@ class CreateRolsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('rols');

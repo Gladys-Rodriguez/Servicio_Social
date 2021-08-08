@@ -1,6 +1,8 @@
 
 @extends('Pantallas_Docente_Practicas_Visitas.Layout.navbarDocente')
 
+@section('title', 'Detalles Solicitud')
+
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantalla_Docente_PracticasVisitas/estilosVisitasEscolares.css')}}"/>
 @endsection
@@ -13,7 +15,8 @@
 
 <div class="container-fluid bg-dark py-5">
     <div class="container p-5 border rounded text-white">
-        <div class="display-5 mb-4" >Solicitud de Visita Escolar </div>
+        <div class="display-5 mb-4" ><div class="d-inline text-warning"> <strong>Solicitud de Visita Escolar</strong></div></div>
+        <hr class="mb-4"/>
 
         <div class="h2 mb-3">Datos Generales</div>
         <div class="row" >
@@ -44,7 +47,7 @@
 
         @if ($visita->visita_estado->id == 1 || $visita->visita_estado->id == 3)
         <div class="d-flex justify-content-end mt-4">
-            <a class="btn btn-warning" href=" # "> Modificar Fecha</a>
+            <a class="btn btn-warning" href=" {{route('docente.editarSolicitudes',['visita'=>$visita->id])}} "> Modificar Fecha</a>
         </div>
         @endif
         
@@ -103,8 +106,7 @@
         
         @if ($visita->visita_estado->id == 1 || $visita->visita_estado->id == 3)
         <div class="d-flex justify-content-end mt-4">
-            <a class="btn btn-warning mx-3" href=" # "> Modificar Empresa</a>
-            <a class="btn btn-warning" href=" # "> Seleccionar otra Empresa</a>
+            <a class="btn btn-warning mx-3" href=" {{route('docente.editarEmpresa',['empresa' => $visita->empresa->id])}} "> Modificar Empresa</a>
         </div>
         @endif
 
@@ -171,6 +173,10 @@
             <a class="btn btn-warning" href=" {{route('docente.indexDocumentosSolicitud', ['visita' => $visita->id])}}"> Modificar Documentos</a>
         </div>
         @endif
+        <hr class="mt-5 mb-5">
+
+        <div class="h2 mb-3"><div class="d-inline text-warning"> <strong>Obervaciones</strong></div></div>
+        <textarea class="form-control" id="observaciones" rows="10" cols="50" placeholder="Aquí iran las observaciones y corecciones que haga el área de Visitas y Prácticas Escolares" disabled> {{$visita->observaciones}} </textarea>
 
         <div class="d-flex justify-content-end mt-4">
             <a class="btn btn-light mx-3" href=" {{route('docente.index')}}  "> Regresar</a>

@@ -1,7 +1,6 @@
 @extends('Pantallas_Admin_Practicas_Visitas.navbarAdminPracticas')
 
-@section('css')
-@endsection
+@section('title', 'Editar Documento Requerido')
 
 @section('content')
 
@@ -17,7 +16,13 @@
                 @csrf
                 <hr class="mb-4">
                 <label for="nombre" class="form-label" >Nombre del Documento: </label>
-                <input type="text" class="form-control" id="nombre" name="nombre" value=" {{ $tipo_documento->nombre ?? '' }} "/>
+                <input type="text" class="form-control" id="nombre" name="nombre" value=" {{ old('nombre') ?? $tipo_documento->nombre ?? '' }} "/>
+                @if ($errors->has('nombre'))
+                    <div class="alert alert-warning p-2 mt-2" role="alert">
+                        <i class="bi bi-exclamation-triangle"></i>
+                        {{ $errors->first('nombre') }}
+                    </div>
+                @endif
                 <br />
 
                 <label for="etapa" class="form-label">Etapa: </label>
@@ -25,6 +30,12 @@
                     <option value="Solicitud" {{ isset($tipo_documento->etapa) && "Solicitud" === $tipo_documento->etapa ? 'selected' : '' }}>Documento para Solicitud</option>
                     <option value="Visita" {{ isset($tipo_documento->etapa) && "Visita" === $tipo_documento->etapa ? 'selected' : '' }}>Documento para Visita Aceptada</option>
                 </select>
+                @if ($errors->has('etapa'))
+                    <div class="alert alert-warning p-2 mt-2" role="alert">
+                        <i class="bi bi-exclamation-triangle"></i>
+                        {{ $errors->first('etapa') }}
+                    </div>
+                @endif
                 <br />
 
                 <label for="estado" class="form-label">Estado: </label>
@@ -32,12 +43,18 @@
                     <option value="1" {{ isset($tipo_documento->estado) && 1 === $tipo_documento->estado ? 'selected' : '' }} >Habilitado</option>
                     <option value="0" {{ isset($tipo_documento->estado) && 0 === $tipo_documento->estado ? 'selected' : '' }} >Deshabilitado</option>
                 </select>
+                @if ($errors->has('estado'))
+                    <div class="alert alert-warning p-2 mt-2" role="alert">
+                        <i class="bi bi-exclamation-triangle"></i>
+                        {{ $errors->first('estado') }}
+                    </div>
+                @endif
                 <br />
 
                 <input type="hidden" name="tramite" value="Visitas Escolares">
 
                 <div class="d-flex justify-content-end"> 
-                    <a role="button" class="btn btn-danger text-end mx-2" href="#">Cancelar</a>
+                    <a role="button" class="btn btn-danger text-end mx-2" href=" {{route('AdminPracticas.indexTipoDocumento')}} ">Cancelar</a>
                     <button type="submit" class="btn btn-light" >Editar Documento</button>
                 </div>
             </form>
@@ -46,5 +63,14 @@
 @endsection
 
 @section('script')
-
+  <script>
+    var activos = document.getElementsByClassName("active");
+    for (var i = 0; i<activos.length; i++) {
+        activos[i].classList.remove("active");
+    }
+    var activo = document.getElementById("Menu_Documentos");
+    activo.classList.add("active");
+    activo = document.getElementById("Doc_Ver");
+    activo.classList.add("active");
+  </script>
 @endsection

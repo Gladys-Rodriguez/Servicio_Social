@@ -19,8 +19,16 @@ use Illuminate\Support\Facades\DB;
 
 class AdminPracSolicitudesController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('verified');
+        $this->middleware('practicas',['only'=> ['index']]);
+    }
+
     public function index(){
-        $visitas = Visita::where('visita_estado_id','2')->orderby('id','desc')->paginate(3);
+        $visitas = Visita::whereIn('visita_estado_id',['2','4'])->orderby('id','desc')->paginate(3);
 
         return view('Pantallas_Admin_Practicas_Visitas.SolicitudesIndex')
             ->with('visitas', $visitas);
@@ -57,17 +65,32 @@ class AdminPracSolicitudesController extends Controller
         return redirect("/Solicitudes_Practicas_Visitas");
     }
 
+/*---------------------------------------------------------------------------------------- 
+---------------------------------( MÉTODOS DOCENTE--------------------------------
+----------------------------------------------------------------------------------------*/     
 
     public function registrarDocente(){
         return view('Pantallas_Admin_Practicas_Visitas.registroDocente');
     }
 
     public function guardarDocente(Request $request){
+        $validateData = $request->validate([
+            'num_empleado' => 'required|regex:/^\d{8}$/',
+            'num_empleado_conf' => 'required|same:num_empleado',
+            'academia' => 'required | regex:/^[\pL\s\-]+$/u',
+            'nombre' => 'required | regex:/^[\pL\s\-]+$/u',
+            'ap_paterno' => 'required | regex:/^[\pL\s\-]+$/u',
+            'ap_materno' => 'required | regex:/^[\pL\s\-]+$/u',
+            'telefono' => 'nullable|regex:/^\d{10}$/',
+            'celular' => 'nullable|regex:/^\d{10}$/',
+            'email' => 'required | Email',
+            'email_conf' => 'required | same:email',
+        ]);
 
         $id_user = DB::table('users')->insertGetId([
             'id' => $request->input('num_empleado'),
             'email' => $request->input('email'),
-            'password' => bcrypt($request->input('password')),
+            'password' => bcrypt($request->input('num_empleado')),
             'id_rol' => $request->input('id_rol'),
             'estado' => $request->input('estado'),
         ]);
@@ -86,8 +109,67 @@ class AdminPracSolicitudesController extends Controller
             'user_id' => $id_user,
         ]);
 
-        return redirect()->action('AdminPracSolicitudesController@index');
+        return redirect()->action('AdminPracSolicitudesController@indexDocente');
     }
+
+    public function indexdocente(){
+        $docentes=Docente::orderBy('academia')->get();
+        
+        return view('Pantallas_Admin_Practicas_Visitas.DocenteIndex')
+            ->with('docentes',$docentes);
+    }
+
+    public function editarDocente(Docente $docente){
+        
+        return view('Pantallas_Admin_Practicas_Visitas.DocenteEditar')
+            ->with('docente',$docente);
+    }
+
+    public function actualizarDocente(Docente $docente, Request $request){
+
+        $validateData = $request->validate([
+            'academia' => 'required | regex:/^[\pL\s\-]+$/u',
+            'nombre' => 'required | regex:/^[\pL\s\-]+$/u',
+            'ap_paterno' => 'required | regex:/^[\pL\s\-]+$/u',
+            'ap_materno' => 'required | regex:/^[\pL\s\-]+$/u',
+            'telefono' => 'nullable|regex:/^\d{10}$/',
+            'celular' => 'nullable|regex:/^\d{10}$/',
+            'email' => 'required | Email',
+            'estado' => 'required',
+        ]);
+
+        $user = DB::table('users')
+        ->where('id', $docente->user->id)
+        ->update([
+            'email' => $validateData['email'],
+            'estado' => $request->input('estado'),
+        ]);
+
+        $datos = DB::table('datos')
+        ->where('id_datos', $docente->dato->id_datos)
+        ->update([
+            'nombre' => $validateData['nombre'],
+            'ap_paterno' => $validateData['ap_paterno'],
+            'ap_materno' => $validateData['ap_materno'],
+            'telefono' => $validateData['telefono'],
+            'celular' => $validateData['celular'],
+        ]);
+
+        $docente = DB::table('docentes')
+        ->where('id', $docente->id)
+        ->update([
+            'academia' => $validateData['academia'],
+        ]);
+       
+
+
+        return redirect()->action('AdminPracSolicitudesController@indexDocente');
+
+    }
+
+/*---------------------------------------------------------------------------------------- 
+---------------------------------( MÉTODOS VISITAS)--------------------------------------
+----------------------------------------------------------------------------------------*/ 
 
     public function editarSolicitud(Visita $visita){
         $documentos = VisitaDocumento::where('visita_id', $visita->id)->get();
@@ -100,16 +182,30 @@ class AdminPracSolicitudesController extends Controller
     }
 
     public function solicitudesCorregidasIndex(){
-        $visitas = Visita::where('visita_estado_id','4')->orderby('id','desc')->paginate(3);
+        $visitas = Visita::where('visita_estado_id','3')->orderby('id','desc')->paginate(20);
 
         return view('Pantallas_Admin_Practicas_Visitas.SolicitudesIndexCorregidas')
             ->with('visitas', $visitas);
     }
 
     public function solicitudesRechazadasIndex(){
-        $visitas = Visita::where('visita_estado_id','6')->orderby('id','desc')->paginate(3);
+        $visitas = Visita::where('visita_estado_id','6')->orderby('id','desc')->paginate(20);
 
         return view('Pantallas_Admin_Practicas_Visitas.SolicitudesIndexRechazadas')
+            ->with('visitas', $visitas);
+    }
+
+    public function solicitudesAceptadasIndex(){
+        $visitas = Visita::where('visita_estado_id','5')->orderby('id','desc')->paginate(20);
+
+        return view('Pantallas_Admin_Practicas_Visitas.SolicitudesIndexAceptadas')
+            ->with('visitas', $visitas);
+    }
+
+    public function solicitudesFinalizadasIndex(){
+        $visitas = Visita::where('visita_estado_id','7')->orderby('id','desc')->paginate(20);
+
+        return view('Pantallas_Admin_Practicas_Visitas.SolicitudesIndexFinalizadas')
             ->with('visitas', $visitas);
     }
 
@@ -173,7 +269,14 @@ class AdminPracSolicitudesController extends Controller
         }
 
     public function guardarTipoDocumento(Request $request){                     //STORE()
-        $tipo_documento = TipoDocumento::create($request->input());
+        $validateData = $request->validate([
+            'nombre' => 'required',
+            'etapa' => 'required',
+            'estado' => 'required',
+            'tramite' => 'required',
+        ]);
+        
+        $tipo_documento = TipoDocumento::create($validateData);
 
         return redirect()->action('AdminPracSolicitudesController@indexTipoDocumento');
     }
@@ -206,16 +309,33 @@ class AdminPracSolicitudesController extends Controller
     }
 
     public function guardarFormato(Request $request){
+        $validateData = $request->validate([
+            'nombre' => 'required',
+            'tipo' => 'required',
+            'estado' => 'required',
+            'ruta' => 'required | file',
+        ]);
+        
         $formato = VisitaFormato::create([
-            'nombre' => $request->input('nombre'),
-            'tipo' => $request->input('tipo'), 
+            'nombre' => $validateData['nombre'],
+            'tipo' => $validateData['tipo'], 
             'ruta' => '',
-            'estado' => $request->input('estado'),
+            'estado' => $validateData['estado'],
         ]);
         $formato->ruta = $request->file('ruta')->store('public/FormatosVisitas');
         $formato->save();
 
-        return redirect()->action('AdminPracSolicitudesController@indexFormatosEjemplo');
+        if($validateData['tipo'] == 'Calendario'){
+            return redirect()->action('AdminPracSolicitudesController@indexFormatosCalendarioVisitas');
+        }
+
+        if($validateData['tipo'] == 'Ejemplo'){
+            return redirect()->action('AdminPracSolicitudesController@indexFormatosEjemplo');
+        }
+
+        if($validateData['tipo'] == 'Plantilla'){
+            return redirect()->action('AdminPracSolicitudesController@indexFormatosPlantilla');
+        }
     }
 
     public function editarFormato(VisitaFormato $visita_formato){
@@ -286,7 +406,12 @@ class AdminPracSolicitudesController extends Controller
     }
     
     public function  guardarCarrera(Request $request){
-        $carrera = Carrera::create($request->input());
+        $validateData = $request->validate([
+            'nombre' => 'required|regex:/^[\pL\s\-]+$/u',
+            'estado' => 'required',
+        ]);
+
+        $carrera = Carrera::create($validateData);
 
         return redirect()->action('AdminPracSolicitudesController@indexCarrera');
     } 
@@ -299,7 +424,7 @@ class AdminPracSolicitudesController extends Controller
 
     public function actualizarCarrera(Carrera $carrera, Request $request){
         $validateData = $request->validate([
-            'nombre' => 'required',
+            'nombre' => 'required|regex:/^[\pL\s\-]+$/u',
             'estado' => 'required',
         ]);
         
@@ -327,7 +452,13 @@ class AdminPracSolicitudesController extends Controller
     }
 
     public function  guardarGrupo(Request $request){
-        $grupo = Grupo::create($request->input());
+        $validateData = $request->validate([
+            'secuencia' => 'required',
+            'carrera_id' => 'required',
+            'estado' => 'required',
+        ]);
+
+        $grupo = Grupo::create($validateData);
 
         return redirect()->action('AdminPracSolicitudesController@indexGrupo');
     } 
@@ -351,6 +482,13 @@ class AdminPracSolicitudesController extends Controller
         $grupo->save();
 
         return redirect()->action('AdminPracSolicitudesController@indexGrupo');
+    }
+
+    public function getLogout()
+    {
+        //
+        Auth::logout();
+        return redirect('/');
     }
 
 }

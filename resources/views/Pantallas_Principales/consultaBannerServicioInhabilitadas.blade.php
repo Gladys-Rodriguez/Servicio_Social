@@ -9,40 +9,44 @@
     />
 
 <link rel="stylesheet" href="{{asset('css/Pantallas_Principales/consultaBannerServicio.css')}}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 @endsection
 
 @section('content')
 <br>
-<div class="container-fluid  py-5" >
+<div class="container-fluid bg-dark py-5" >
 
-<div class="container">
-    <div class="informacion">
-      <div class="contact-info">
-        <h3 class="title">"Imagenes de servicio inhabilitadas"</h3>
-      </div>
+<h1 >Imagenes de servicio inhabilitadas</h1>
 
-    <div class="tabla-consulta">
-         <table border="1">
-             <tr>
-                 <td></td>
-                 <td>Id imagen</td>
-                 <td>Imagen</td>
+<div class="table-responsive">
 
-            </tr>
-               @foreach($bannerServicio as $bannerServicioo)
-               <tr>
-                 <td>
-                 <?php /*<a class="boton_personalizado" href="{{url('showPrueba', $bannerServicio->id)}}">Ver</a> */ ?>
-                 <a class="boton_personalizado" href="/EditarFormBannerServicio/{{$bannerServicioo->id}}">Editar</a>
-                 <td>{{$bannerServicioo->id}}</td>
-                 <td><img src="img/carrusel/{{$bannerServicioo->ruta}}" width="150"/></td>
+<div class="table-responsive">
+        <table class="registro">
+        <thead>
+          <tr>
+          <th><h1><span class="material-icons">drive_file_rename_outline</span> ID IMAGEN</h1></th>
+            <th><h1><span class="material-icons">preview</span> IMAGEN</h1></th>
+            <th><h1 class="h1"></th>
+         </tr>
+         </thead>
+         <tbody>
+            @foreach($bannerServicio as $bannerServicioo)
+          <tr>
 
-                <tr>
-               @endforeach
+            <td>{{$bannerServicioo->id}}</td>
+
+            <td><img src="img/carrusel/{{$bannerServicioo->ruta}}"/></td>
+            <td class="btn">
+                <a class="verificar" href="/EditarFormBannerServicio/{{$bannerServicioo->id}}">Editar</a>
+            </td>
+
+          </tr>
+          @endforeach
+        </tbody>
         </table>
-    </div>
+</div>
 
-     </div>
 </div>
-</div>
+
 @endsection

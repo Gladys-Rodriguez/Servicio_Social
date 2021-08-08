@@ -7,7 +7,7 @@
 @section('content')
 
 <section class="section-main">
-    <h1>Selecciona tu Empresa</h1>
+    <h1>Selecciona la Empresa</h1>
 </section>
 
 <div class="container-fluid bg-dark py-5">
@@ -16,7 +16,7 @@
         <div class="display-5 mb-4"><div class="d-inline text-warning"> <strong>PASO 1: </strong></div> </strong> Selecciona tu Empresa</div>
         <div class="progress mb-5" style="height:40px;">
             <div class="progress-bar progress-bar-striped bg-warning"
-                style="width:25%;"
+                style="width:20%;"
                 role="progressbar"
                 aria-valuenow="25"
                 aria-valuemin="0"

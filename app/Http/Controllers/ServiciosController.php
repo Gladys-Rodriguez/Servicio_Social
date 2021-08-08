@@ -27,7 +27,12 @@ class ServiciosController extends Controller
      *
      *
      */
-
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('verified');
+        $this->middleware('alumno',['only'=> ['index']]);
+    }
 
 
     public function index()

@@ -10,6 +10,13 @@ use App\Models\VisitaDocumento;
 
 class ValidacionDocPraController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('verified');
+        $this->middleware('practicas',['only'=> ['index']]);
+    }
+    
     public function index(){
         $datos = \DB::table('visitas')
         ->join('empresas','visitas.empresa_id','=','empresas.id')

@@ -1,5 +1,6 @@
 @extends('Pantallas_Docente_Practicas_Visitas.Layout.navbarDocente')
 
+@section('title', 'Registrar Documento')
 
 @section('content')
 
@@ -66,10 +67,22 @@
                     <option value="{{ $id }}"> {{ $display }}</option>
                 @endforeach
             </select>
+            @if ($errors->has('tipo_documento_id'))
+                <div class="alert alert-warning p-2 mt-2" role="alert">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    {{ $errors->first('tipo_documento_id') }}
+                </div>
+            @endif
             <br />
 
             <label for="ruta" class="form-label">Documento:</label>
             <input name="ruta" type="file" accept="application/pdf" class="form-control">
+            @if ($errors->has('ruta'))
+                <div class="alert alert-warning p-2 mt-2" role="alert">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    {{ $errors->first('ruta') }}
+                </div>
+            @endif
             <br />
             @csrf
 

@@ -1,6 +1,8 @@
 
 @extends('Pantallas_Admin_Practicas_Visitas.navbarAdminPracticas')
 
+@section('title', 'Editar Carrera')
+
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantalla_Docente_PracticasVisitas/estilosVisitasEscolares.css')}}"/>
 @endsection
@@ -18,7 +20,13 @@
         <form action=" {{ route('AdminPracticas.actualizarCarrera', ['carrera' => $carrera]) }} " method="POST" enctype="multipart/form-data">
             @method('PUT')
             <label for="nombre" class="form-label">Nombre de la Carrera: </label>
-            <input type="text" name="nombre" id="nombre" class="form-control" value=" {{ $carrera->nombre ?? '' }}" >
+            <input type="text" name="nombre" id="nombre" class="form-control" value=" {{ old('nombre') ?? $carrera->nombre ?? '' }}" >
+            @if ($errors->has('nombre'))
+                <div class="alert alert-warning p-2 mt-2" role="alert">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    {{ $errors->first('nombre') }}
+                </div>
+            @endif
             <br />
         
             <label for="estado"class="form-label" >Estado: </label>
@@ -26,6 +34,12 @@
                 <option value="1" {{ isset($carrera->estado) && 1 === $carrera->estado ? 'selected' : '' }}  >Activo</option>
                 <option value="0" {{ isset($carrera->estado) && 0 === $carrera->estado ? 'selected' : '' }} >Deshabilitado</option>
             </select>
+            @if ($errors->has('estado'))
+                <div class="alert alert-warning p-2 mt-2" role="alert">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    {{ $errors->first('estado') }}
+                </div>
+            @endif
             <br />
         
             <div class="d-flex justify-content-end"> 
@@ -37,3 +51,17 @@
     </div>
 </div>
 @endsection
+
+@section('script')
+  <script>
+    var activos = document.getElementsByClassName("active");
+    for (var i = 0; i<activos.length; i++) {
+        activos[i].classList.remove("active");
+    }
+    var activo = document.getElementById("Menu_Administracion");
+    activo.classList.add("active");
+    activo = document.getElementById("Carrera_Ver");
+    activo.classList.add("active");
+  </script>
+@endsection
+

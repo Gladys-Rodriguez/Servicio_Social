@@ -19,9 +19,7 @@
       <nav class="nav" id="nav-menu">
         <div class="nav__content bd-grid">
             <a href="" class="nav__perfil">
-                <div class="nav__img">
-                    <img src="{{asset('img/logo/logoSAE3.png')}}" alt="">
-                </div>
+
 
             </a>
 
@@ -29,7 +27,7 @@
                 <ul class="nav__list">
                 <li class="nav__item"><a href="#" class="nav__link active">HOME</a></li>
                     <li class="nav__item"><a href="{{url('/RegisterFormRoles')}}" class="nav__link">Nuevo Admin</a></li>
-                                                          
+
                     <li class="nav__item dropdown">
                         <a href="#" class="nav__link dropdown__link">Consulta Admin<i class='bx bx-chevron-down dropdown__icon'></i></a>
                         <ul class="dropdown__menu">

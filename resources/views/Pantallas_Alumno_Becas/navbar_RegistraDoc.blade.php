@@ -11,8 +11,7 @@
 
   </head>
   <body>
-
-    <header class="header">
+  <header class="header">
       <a href="#" class="brand">APOYOS EDUCATIVOS</a>
       <a href="#" class="header__logo"></a>
         <i class='bx bx-menu header__toggle' id="header-toggle"></i>
@@ -20,33 +19,59 @@
         <div class="nav__content bd-grid">
             <a href="" class="nav__perfil">
                 <div class="nav__img">
-                    <img src="{{asset('img/logo/logoSAE3.png')}}" alt="">
+                    <img src="assets/img/perfil.jpg" alt="">
                 </div>
 
+                <div>
+                   <!-- <span class="nav__name">Clay</span>
+                    <span class="nav__name">Mitchell</span>
+                </div> -->
             </a>
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="{{url('/Admin_Practicas_Visitas_Index2')}}" class="nav__link">HOME</a></li>
-                    <li class="nav__item"><a href="{{url('/Validacion_Practicas_Visitas')}}" class="nav__link active">Validación de documentos</a></li>
-                    <li class="nav__item"><a href="{{url('/Solicitudes_Practicas_Visitas')}}" class="nav__link">Solicitudes de prácticas</a></li>
-                    <li class="nav__item"><a href="{{url('/RechazadasV')}}" class="nav__link">Solicitudes rechazadas</a></li>
-                    <li class="nav__item"><a href="{{url('/AceptadasV')}}" class="nav__link">Solicitudes aceptadas</a></li>
-                    <li class="nav__item dropdown">
-                        <a href="#" class="nav__link dropdown__link">Gestion de Banners <i class='bx bx-chevron-down dropdown__icon'></i></a>
-                        <ul class="dropdown__menu">
-                            <li class="dropdown__item"><a href="{{url('/RegisterBannerPracticas')}}" class="nav__link">Registro de imagenes de prácticas</a></li>
-                            <li class="dropdown__item"><a href="{{url('/consultaBannerPracticas')}}" class="nav__link">Consulta de imagenes habilitadas de prácticas</a></li>
-                            <li class="dropdown__item"><a href="{{url('/consultaBannerPracticasInhabilitadas')}}" class="nav__link">Consulta de imagenes inhabilitadas de prácticas</a></li>
+                    <li class="nav__item"><a href="{{ url('/Index_Alumno')}}" class="nav__link active">Home</a></li>
 
-                             </ul>
+
+
+                    <li class="nav__item dropdown">
+                        <a href="/Index_Alumno" class="nav__link dropdown__link">Servicio Social <i class='bx bx-chevron-down dropdown__icon'></i></a>
+                        <ul class="dropdown__menu" id="servicio_social">
+
+                            <li class="dropdown__item"><a href="{{url('/NuevoRegistro')}}" class="nav__link" id="nuevo_registro" >Control de Servicio</a></li>
+                            <!--<li class="dropdown__item"><a href="{{ url('/docexpediente')}}" class="nav__link">Subir documentos</a></li>
+                            <li class="dropdown__item"><a href="{{url('/docsSolicitudAlumno')}}" class="nav__link">Seguimiento de solicitud</a></li> -->
+                           <!-- <li class="dropdown__item"><a href="#" class="nav__link">Location</a></li>
+                            <li class="dropdown__item"><a href="#" class="nav__link">Studies</a></li> -->
+                        </ul>
                     </li>
+
+                    <!--<li class="nav__item"><a href="#" class="nav__link">Skills</a></li>-->
+
+
+                    <li class="nav__item dropdown">
+                        <a href="#" class="nav__link dropdown__link">Becas <i class='bx bx-chevron-down dropdown__icon'></i></a>
+
+
+                        <ul class="dropdown__menu">
+                        <li class="dropdown__item"><a href="{{ url('/MiBeca')}}" class="nav__link">Mi beca</a></li>
+                            <li class="dropdown__item"><a href="{{ url('/ConvocatoriaBecas')}}" class="nav__link">Convocatoria</a></li>
+
+                            <li class="dropdown__item"><a href="{{ url('/FormatosBeca')}}" class="nav__link">Formatos Beca</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav__item"><a href="{{ url('/DatosPersonales')}}" class="nav__link">Datos personales</a></li>
+
                     <li class="nav__item"><a href="{{ url('/logout')}}" class="nav__link"> Cerrar Sesión</a></li>
+
+                   <!-- <li class="nav__item"><a href="#" class="nav__link">Contact</a></li> -->
                 </ul>
             </div>
         </div>
     </nav>
 
+    </header>
     </header>
     <script src="{{asset('js/Pantallas_Alumno_Servicio/Layout_Alumno.js')}}"></script>
     <script type="text/javascript">
@@ -81,7 +106,7 @@
         </script>
 
     <section class="section-main">
-      <h1>VALIDACIÓN DE DOCUMENTOS</h1>
+      <h1>Registrar Documento</h1>
     </section>
     <section class="section-two">
  <!-- AQUI EMPIEZA CONTENIDO; -->

@@ -1,4 +1,4 @@
-@extends('Pantallas_Principales.navbarRegisterBannerPracticas')
+@extends('Pantallas_Admin_Practicas_Visitas.navbarAdminPracticas')
 
 @section('title', 'Imagenes Banner Practicas')
 
@@ -7,7 +7,12 @@
 @endsection
 
 @section('content')
-<br>
+<section class="section-main">
+  <h1>Subida de imagenes para practicas
+  </h1>
+</section>
+
+<div class="container-fluid bg-dark py-5" >
 <div class="container">
 <div class="informacion">
       <div class="contact-info">
@@ -63,4 +68,18 @@
 
      </div>
 </div>
+</div>
+@endsection
+
+@section('script')
+  <script>
+    var activos = document.getElementsByClassName("active");
+    for (var i = 0; i<activos.length; i++) {
+        activos[i].classList.remove("active");
+    }
+    var activo = document.getElementById("Banner_Practicas");
+    activo.classList.add("active");
+    activo = document.getElementById("Banner_Registro");
+    activo.classList.add("active");
+  </script>
 @endsection

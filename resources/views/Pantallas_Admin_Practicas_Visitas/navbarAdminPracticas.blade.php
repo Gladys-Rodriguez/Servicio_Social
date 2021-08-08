@@ -35,53 +35,53 @@
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="{{url('/Admin_Practicas_Visitas_Index2')}}" class="nav__link">HOME</a></li>
+                    <li class="nav__item"><a href="{{url('/Admin_Practicas_Visitas_Index2')}}" class="nav__link" id="home_practicas">HOME</a></li>
 
                     <li class="nav__item dropdown">
-                      <a href="#" class="nav__link dropdown__link" id="menu_visitas">Documentacion<i class='bx bx-chevron-down dropdown__icon'></i></a>
+                      <a href="#" class="nav__link dropdown__link" id="Menu_Documentos">Documentacion<i class='bx bx-chevron-down dropdown__icon'></i></a>
                       <ul class="dropdown__menu">
-                          <li class="dropdown__item"><a href=" {{ route('AdminPracticas.indexTipoDocumento') }} " class="nav__link" id="">Ver Documentos Requeridos</a></li>
-                          <li class="dropdown__item"><a href=" {{ route('AdminPracticas.registrarTipoDocumento') }} " class="nav__link" id="">Registrar Nuevo Documento Requerido</a></li>
+                          <li class="dropdown__item"><a href=" {{ route('AdminPracticas.registrarTipoDocumento') }} " class="nav__link" id="Doc_Registrar">Registrar Nuevo Documento Requerido</a></li>
+                          <li class="dropdown__item"><a href=" {{ route('AdminPracticas.indexTipoDocumento') }} " class="nav__link" id="Doc_Ver">Ver Documentos Requeridos</a></li>
                           <li class="dropdown-divider"></li>
-                          <li class="dropdown__item"><a href=" {{ route('AdminPracticas.registrarFormato') }} " class="nav__link" id="">Subir Formato de Vista Escolar</a></li>
-                          <li class="dropdown__item"><a href=" {{ route('AdminPracticas.indexFormatosEjemplo') }} " class="nav__link" id="">Formatos de Ejemplo</a></li>
-                          <li class="dropdown__item"><a href=" {{ route('AdminPracticas.indexFormatosPlantilla') }} " class="nav__link" id="">Formatos Plantilla</a></li>
-                          <li class="dropdown__item"><a href=" {{ route('AdminPracticas.indexFormatosCalendarioVisitas') }} " class="nav__link" id="">Calendario de Visitas</a></li>
+                          <li class="dropdown__item"><a href=" {{ route('AdminPracticas.registrarFormato') }} " class="nav__link" id="Formato_Registrar">Subir Formato de Vista Escolar</a></li>
+                          <li class="dropdown__item"><a href=" {{ route('AdminPracticas.indexFormatosEjemplo') }} " class="nav__link" id="Formato_Ejemplo">Formatos de Ejemplo</a></li>
+                          <li class="dropdown__item"><a href=" {{ route('AdminPracticas.indexFormatosPlantilla') }} " class="nav__link" id="Formato_Plantilla">Formatos Plantilla</a></li>
+                          <li class="dropdown__item"><a href=" {{ route('AdminPracticas.indexFormatosCalendarioVisitas') }} " class="nav__link" id="Formato_Calendario">Calendario de Visitas</a></li>
                         </ul>
                     </li>
 
                     <li class="nav__item dropdown">
-                      <a href="#" class="nav__link dropdown__link" id="menu_visitas">Administración<i class='bx bx-chevron-down dropdown__icon'></i></a>
+                      <a href="#" class="nav__link dropdown__link" id="Menu_Administracion">Administración<i class='bx bx-chevron-down dropdown__icon'></i></a>
                       <ul class="dropdown__menu">
-                          <li class="dropdown__item"><a href="{{ route('AdminPracticas.registrarDocente') }}" class="nav__link" id="solicitudes">Registrar Docente</a></li>
-                          <li class="dropdown__item"><a href="#" class="nav__link" id="">Ver Docentes</a></li>
+                          <li class="dropdown__item"><a href="{{ route('AdminPracticas.registrarDocente') }}" class="nav__link" id="Docente_Registrar">Registrar Docente</a></li>
+                          <li class="dropdown__item"><a href=" {{ route('AdminPracticas.indexDocente') }} " class="nav__link" id="Docente_Ver">Ver Docentes</a></li>
                           <li class="dropdown-divider"></li>
-                          <li class="dropdown__item"><a href=" {{ route('AdminPracticas.registrarCarrera') }} " class="nav__link" id="">Registrar Carrera</a></li>
-                          <li class="dropdown__item"><a href=" {{ route('AdminPracticas.indexCarrera') }} " class="nav__link" id="">Ver Carreras</a></li>
+                          <li class="dropdown__item"><a href=" {{ route('AdminPracticas.registrarCarrera') }} " class="nav__link" id="Carrera_Registrar">Registrar Carrera</a></li>
+                          <li class="dropdown__item"><a href=" {{ route('AdminPracticas.indexCarrera') }} " class="nav__link" id="Carrera_Ver">Ver Carreras</a></li>
                           <li class="dropdown-divider"></li>
-                          <li class="dropdown__item"><a href=" {{ route('AdminPracticas.registrarGrupo') }} " class="nav__link" id="">Registrar Grupo</a></li>
-                          <li class="dropdown__item"><a href=" {{ route('AdminPracticas.indexGrupo') }} " class="nav__link" id="">Ver Grupos</a></li>
+                          <li class="dropdown__item"><a href=" {{ route('AdminPracticas.registrarGrupo') }} " class="nav__link" id="Grupo_Registrar">Registrar Grupo</a></li>
+                          <li class="dropdown__item"><a href=" {{ route('AdminPracticas.indexGrupo') }} " class="nav__link" id="Grupo_Ver">Ver Grupos</a></li>
                       </ul>
                     </li>
 
                     <li class="nav__item dropdown">
                       <a href="#" class="nav__link dropdown__link" id="menu_visitas">Solicitudes<i class='bx bx-chevron-down dropdown__icon'></i></a>
                       <ul class="dropdown__menu">
-                          <li class="dropdown__item"><a href="{{url('/Solicitudes_Practicas_Visitas')}}" class="nav__link" id="">Solicitudes Nuevas</a></li>
-                          <li class="dropdown__item"><a href="{{ route('AdminPracticas.solicitudesCorregidasIndex') }}" class="nav__link" id="">Solicitudes Corregidas</a></li>
+                          <li class="dropdown__item"><a href="{{url('/Solicitudes_Practicas_Visitas')}}" class="nav__link" id="Solicitud_Revisar">Revision de Solicitudes</a></li>
+                          <li class="dropdown__item"><a href="{{ route('AdminPracticas.solicitudesCorregidasIndex') }}" class="nav__link" id="Solicitud_Correccion">Solicitudes mandadas a Corregir</a></li>
                           <li class="dropdown-divider"></li>
-                          <li class="dropdown__item"><a href="{{ route('AdminPracticas.solicitudesRechazadasIndex') }}" class="nav__link" id="">Visitas Rechazadas</a></li>
-                          <li class="dropdown__item"><a href="{{url('/AceptadasV')}}" class="nav__link" id="">Visitas Aceptadas</a></li>
-                          <li class="dropdown__item"><a href="{{url('/AceptadasV')}}" class="nav__link" id="">Visitas Finalizadas</a></li>
+                          <li class="dropdown__item"><a href="{{ route('AdminPracticas.solicitudesRechazadasIndex') }}" class="nav__link" id="Solicitud_Rechazada">Visitas Rechazadas</a></li>
+                          <li class="dropdown__item"><a href="{{ route('AdminPracticas.solicitudesAceptadasIndex') }}" class="nav__link" id="Solicitud_Aceptada">Visitas Aceptadas</a></li>
+                          <li class="dropdown__item"><a href="{{ route('AdminPracticas.solicitudesFinalizadasIndex') }}" class="nav__link" id="Solicitud_Finalizada">Visitas Finalizadas</a></li>
                       </ul>
                     </li>
 
                     <li class="nav__item dropdown">
-                        <a href="#" class="nav__link dropdown__link">Gestion de Banners <i class='bx bx-chevron-down dropdown__icon'></i></a>
+                        <a href="#" class="nav__link dropdown__link" id="Banner_Practicas">Gestion de Banners <i class='bx bx-chevron-down dropdown__icon'></i></a>
                         <ul class="dropdown__menu">
-                            <li class="dropdown__item"><a href="{{url('/RegisterBannerPracticas')}}" class="nav__link">Registro de imagenes de prácticas</a></li>
-                            <li class="dropdown__item"><a href="{{url('/consultaBannerPracticas')}}" class="nav__link">Consulta de imagenes habilitadas de prácticas</a></li>
-                            <li class="dropdown__item"><a href="{{url('/consultaBannerPracticasInhabilitadas')}}" class="nav__link">Consulta de imagenes inhabilitadas de prácticas</a></li>
+                            <li class="dropdown__item"><a href="{{url('/RegisterBannerPracticas')}}" class="nav__link" id="Banner_Registro">Registro de imagenes de prácticas</a></li>
+                            <li class="dropdown__item"><a href="{{url('/consultaBannerPracticas')}}" class="nav__link" id="Banner_Habilitadas">Consulta de imagenes habilitadas de prácticas</a></li>
+                            <li class="dropdown__item"><a href="{{url('/consultaBannerPracticasInhabilitadas')}}" class="nav__link" id="Banner_Inhabilitadas">Consulta de imagenes inhabilitadas de prácticas</a></li>
 
                         </ul>
                     </li>

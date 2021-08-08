@@ -6,11 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateBannerInicioImagensTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('banner_inicio_imagens', function (Blueprint $table) {
@@ -21,11 +17,6 @@ class CreateBannerInicioImagensTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('banner_inicio_imagens');

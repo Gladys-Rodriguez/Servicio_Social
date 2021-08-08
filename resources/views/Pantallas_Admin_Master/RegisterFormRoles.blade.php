@@ -122,7 +122,7 @@
          <label>Celular</label>
          <input type="text" name="celular" placeholder="Ingresa el celular" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
          <!-- matricula INPUT -->
-        <label>Matricula</label>
+        <label>Número de empleado</label>
         <input type="text" name="id" placeholder="Ingresa valores númericos" required minlength="8" maxlength="8" onkeypress="return solonumeros(event)">
         <!-- correo INPUT -->
         <label>Correo Institucional</label>
@@ -137,19 +137,7 @@
                  <option value="2"> Admin Servicio Social </option>
                  <option value="3"> Admin Becas </option>
                  <option value="4"> Admin Prácticas </option>
-<<<<<<< HEAD
-                 <option value="6"> Docente </option>
-<<<<<<< HEAD
-                 <option value="7"> Pruebas </option>
-                 <option value="8"> Superadmin </option>
-=======
-                <!-- <option value="7"> Pruebas </option>
-                 <option value="8"> Superadmin </option>-->
->>>>>>> 263d9101b66f2252fcd3d0c949c7a840c9ef818f
-=======
-                 <!--<option value="7"> Pruebas </option>-->
-                 <!--<option value="8"> Superadmin </option>-->
->>>>>>> 141f19bdc3a0419d3287e0e72776156d241598dd
+                 <option value="7"> Admin Master </option>
 
              </select>
                  @error('id_rol')

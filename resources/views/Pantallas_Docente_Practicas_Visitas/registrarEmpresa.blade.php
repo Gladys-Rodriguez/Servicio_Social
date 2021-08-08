@@ -1,15 +1,26 @@
 @extends('Pantallas_Docente_Practicas_Visitas.Layout.navbarDocente')
 
+@section('title', 'registrar Empresa')
+
 @section('content')
 
 <section class="section-main">
-    <h1>Registra tu empresa</h1>
+    <h1>Registra la Empresa</h1>
 </section>
 
 
 <div class="container-fluid bg-dark py-5">
     <div class="container p-5 border border-light rounded text-light">
-        <div class="display-4 mb-4 mt-2">Registra la <div class="d-inline text-warning"> <strong>Empresa</strong></div>:</div>
+        <div class="display-4 mb-4 mt-2"> <div class="d-inline text-warning"> <strong>Paso 1: </strong></div>Registra la Empresa:</div>
+        <div class="progress mb-5" style="height:40px;">
+            <div class="progress-bar progress-bar-striped bg-warning"
+                style="width:20%;"
+                role="progressbar"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100">
+            </div> 
+        </div>
 
         <form action=" {{ route('docente.guardarEmpresa') }} " method="POST">
             @csrf
@@ -23,11 +34,14 @@
             @endif
             <br />
         
-            <label for="ciudad" class="form-label">Alcaldía/Municipio: </label>
-            <select  class="form-select" id="ciudad" name="ciudad">
-                <option value="CDMX" {{old('ciudad') == "CDMX" ? 'selected' : '' }}  >CDMX</option>
-                <option value="Edo México" {{old('ciudad') == "Edo México" ? 'selected' : '' }} >Edo. México</option>
-            </select>
+            <label for="ciudad" class="form-label">Ciudad/Estado: </label>
+            <input type="text" class="form-control" id="ciudad" name="ciudad" value=" {{old('ciudad') ?? $empresa->direccion->ciudad ?? '' }} ">
+            @if ($errors->has('ciudad'))
+                <div class="alert alert-warning p-2 mt-2" role="alert">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    {{ $errors->first('ciudad') }}
+                </div>
+            @endif
             <br />
         
             <label for="alcaldia" class="form-label">Alcaldía/Municipio: </label>
@@ -94,7 +108,7 @@
             <br />
             
             <div class="d-flex justify-content-end"> 
-                <a role="button" class="btn btn-danger text-end mx-2" href="{{route('docente.mostrarEmpresas')}}">Cancelar</a>
+                <a role="button" class="btn btn-danger text-end mx-2" href="{{route('docente.index')}}">Cancelar</a>
                 <button type="submit" class="btn btn-light" >Registrar Empresa </button>
             </div>
             

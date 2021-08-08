@@ -12,7 +12,15 @@ class DocenteSolicitarVisitaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request)
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('verified');
+        $this->middleware('docente',['only'=> ['index']]);
+    }
+
+    
+     public function __invoke(Request $request)
     {
         return view('Pantallas_Docente_Practicas_Visitas.SolicitarVisita');
     }

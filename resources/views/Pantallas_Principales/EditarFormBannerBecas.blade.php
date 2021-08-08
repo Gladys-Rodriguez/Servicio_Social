@@ -1,6 +1,6 @@
 @extends('Pantallas_Principales.navbarEditarFormBannerBecas')
 
-@section('title', 'Prueba editarr datos')
+@section('title', 'Editar banner de becas')
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantallas_Principales/EditarFormBannerBecas.css')}}">
