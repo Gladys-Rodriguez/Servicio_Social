@@ -207,6 +207,8 @@ Route::get('/Subida_Formatos', function (){
 Route::post('/uploadreporte', [App\Http\Controllers\DocsReportesController::class, 'store'])->name('uploadreporte.store');
 Route::post('/UploadFormato', [App\Http\Controllers\FormatosController::class, 'store'])->name('UploadFormato.store');
 Route::post('/uploadLiberacion', [App\Http\Controllers\DocsLiberacionesController::class, 'store'])->name('uploadLiberacion.store');
+Route::post('/UploadTuto', [App\Http\Controllers\TutotialController::class, 'store'])->name('UploadTuto.store');
+
 
 //Route::get('/Subir_Reportes', [App\Http\Controllers\DocsReportesController::class, 'index'])->name('Subir_Reportes.index');
 
@@ -225,6 +227,7 @@ Route::get('/EditarDocsLiberación/{id}', [App\Http\Controllers\DocsLiberaciones
 //Ruta update documentos del usuario alumno
 Route::post('/UpdateReportes/{id}', [App\Http\Controllers\DocsReportesController::class, 'update'])->name('UpdateReportes.update');
 Route::post('/UpdateDocsLiberacion/{id}', [App\Http\Controllers\DocsLiberacionesController::class, 'update'])->name('UpdateDocsLiberacion.update');
+Route::put('/updateTuto', [App\Http\Controllers\TutotialController::class, 'update'])->name('updateTuto.update');
 
 //Ruta eliminar
 Route::delete('/eliminarDocsAlumno/{id}', [App\Http\Controllers\docsExpediente::class, 'destroy'])->name('eliminarDocsAlumno.destroy');
@@ -410,30 +413,30 @@ Route::get('/AdminPracticas/Solicitud/Editar/{visita}', 'AdminPracSolicitudesCon
     ->name('AdminPracticas.editarSolicitud');
 
 Route::put('/AdminPracticas/Solicitud/Actualizar/{visita}', 'AdminPracSolicitudesController@actualizarSolicitud') //Método SOLICITUD-UPDATE()
-    ->name('AdminPracticas.actualizarSolicitud');  
+    ->name('AdminPracticas.actualizarSolicitud');
 
 Route::get('/AdminPracticas/Docente/Registrar','AdminPracSolicitudesController@registrarDocente') //Método DOCENTE-CREATE()
     ->name('AdminPracticas.registrarDocente');
 
 Route::post('AdminPracticas/Docente/Guardar', 'AdminPracSolicitudesController@guardarDocente')    //Método DOCENTE-STORE()
-    ->name('AdminPracticas.guardarDocente');  
+    ->name('AdminPracticas.guardarDocente');
 
 //------------------------RUTAS TIPO_DOCUMENTO-----------------------------------
 
 Route::get('/AdminPracticas/TipoDocumento', 'AdminPracSolicitudesController@indexTipoDocumento') //Método TIPO_DOCUMENTO-INDEX()
-    ->name('AdminPracticas.indexTipoDocumento');   
+    ->name('AdminPracticas.indexTipoDocumento');
 
 Route::get('/AdminPracticas/TipoDocumento/Registrar','AdminPracSolicitudesController@registrarTipoDocumento') //Método TIPO_DOCUMENTO-CREATE()
     ->name('AdminPracticas.registrarTipoDocumento');
 
 Route::post('AdminPracticas/TipoDocumento/Guardar', 'AdminPracSolicitudesController@guardarTipoDocumento')    //Método TIPO_DOCUMENTO-STORE()
-    ->name('AdminPracticas.guardarTipoDocumento');  
+    ->name('AdminPracticas.guardarTipoDocumento');
 
 Route::get('/AdminPracticas/TipoDocumento/Editar/{tipo_documento}', 'AdminPracSolicitudesController@editarTipoDocumento') //Método SOLICITUD-EDIT()
     ->name('AdminPracticas.editarTipoDocumento');
 
 Route::put('/AdminPracticas/TipoDocumento/Actualizar/{tipo_documento}', 'AdminPracSolicitudesController@actualizarTipoDocumento') //Método SOLICITUD-UPDATE()
-    ->name('AdminPracticas.actualizarTipoDocumento');  
+    ->name('AdminPracticas.actualizarTipoDocumento');
 
 
 //------------------------RUTAS VISITA_DOCUMENTO-----------------------------------
@@ -442,7 +445,7 @@ Route::get('/AdminPracticas/DocumentosSolicitud/Editar/{visita_documento}', 'Adm
     ->name('AdminPracticas.editarDocumentosSolicitud');
 
 Route::put('/AdminPracticas/DocumentosSolicitud/Actualizar/{visita_documento}', 'AdminPracSolicitudesController@actualizarDocumentosSolicitud') //Método Documento_Visita-UPDATE()
-    ->name('AdminPracticas.actualizarDocumentosSolicitud');   
+    ->name('AdminPracticas.actualizarDocumentosSolicitud');
 
 
 //------------------------RUTAS FORMATOS-----------------------------------
@@ -451,22 +454,22 @@ Route::get('/AdminPracticas/Formato/Registrar','AdminPracSolicitudesController@r
     ->name('AdminPracticas.registrarFormato');
 
 Route::post('AdminPracticas/Formato/Guardar', 'AdminPracSolicitudesController@guardarFormato')    //Método FORMATO-STORE()
-    ->name('AdminPracticas.guardarFormato');  
+    ->name('AdminPracticas.guardarFormato');
 
 Route::get('/AdminPracticas/Formato/Editar/{visita_formato}', 'AdminPracSolicitudesController@editarFormato') //Método FORMATO-EDIT()
     ->name('AdminPracticas.editarFormato');
 
 Route::put('/AdminPracticas/Formato/Actualizar/{visita_formato}', 'AdminPracSolicitudesController@actualizarFormato') //Método FORMATO-UPDATE()
-    ->name('AdminPracticas.actualizarFormato');  
+    ->name('AdminPracticas.actualizarFormato');
 
 Route::get('/AdminPracticas/FormatosPlantilla','AdminPracSolicitudesController@indexFormatosEjemplo') //Método FORMATO-INDEX()
-    ->name('AdminPracticas.indexFormatosEjemplo');    
+    ->name('AdminPracticas.indexFormatosEjemplo');
 
 Route::get('/AdminPracticas/FormatosEjemplo','AdminPracSolicitudesController@indexFormatosPlantilla') //Método FORMATO-INDEX()
-    ->name('AdminPracticas.indexFormatosPlantilla');      
+    ->name('AdminPracticas.indexFormatosPlantilla');
 
 Route::get('/AdminPracticas/FormatosCalendarioVisitas','AdminPracSolicitudesController@indexFormatosCalendarioVisitas') //Método FORMATO-INDEX()
-    ->name('AdminPracticas.indexFormatosCalendarioVisitas');  
+    ->name('AdminPracticas.indexFormatosCalendarioVisitas');
 
 //------------------------RUTAS CARRERA-----------------------------------
 
@@ -474,16 +477,16 @@ Route::get('/AdminPracticas/Carrera/Registrar','AdminPracSolicitudesController@r
     ->name('AdminPracticas.registrarCarrera');
 
 Route::post('AdminPracticas/Carrera/Guardar', 'AdminPracSolicitudesController@guardarCarrera')    //Método CARRERA-STORE()
-    ->name('AdminPracticas.guardarCarrera');  
+    ->name('AdminPracticas.guardarCarrera');
 
 Route::get('/AdminPracticas/Carrera/Editar/{carrera}', 'AdminPracSolicitudesController@editarCarrera') //Método CARRERA-EDIT()
     ->name('AdminPracticas.editarCarrera');
 
 Route::put('/AdminPracticas/Carrera/Actualizar/{carrera}', 'AdminPracSolicitudesController@actualizarCarrera') //Método CARRERA-UPDATE()
-    ->name('AdminPracticas.actualizarCarrera');  
+    ->name('AdminPracticas.actualizarCarrera');
 
 Route::get('/AdminPracticas/Carrera','AdminPracSolicitudesController@indexCarrera') //Método CARRERA-INDEX()
-    ->name('AdminPracticas.indexCarrera');    
+    ->name('AdminPracticas.indexCarrera');
 
 
 //------------------------RUTAS CARRERA-----------------------------------
@@ -492,16 +495,16 @@ Route::get('/AdminPracticas/Grupo/Registrar','AdminPracSolicitudesController@reg
     ->name('AdminPracticas.registrarGrupo');
 
 Route::post('AdminPracticas/Grupo/Guardar', 'AdminPracSolicitudesController@guardarGrupo')    //Método GRUPO-STORE()
-    ->name('AdminPracticas.guardarGrupo');  
+    ->name('AdminPracticas.guardarGrupo');
 
 Route::get('/AdminPracticas/Grupo/Editar/{grupo}', 'AdminPracSolicitudesController@editarGrupo') //Método GRUPO-EDIT()
     ->name('AdminPracticas.editarGrupo');
 
 Route::put('/AdminPracticas/Grupo/Actualizar/{grupo}', 'AdminPracSolicitudesController@actualizarGrupo') //Método GRUPO-UPDATE()
-    ->name('AdminPracticas.actualizarGrupo');  
+    ->name('AdminPracticas.actualizarGrupo');
 
 Route::get('/AdminPracticas/Grupo','AdminPracSolicitudesController@indexGrupo') //Método GRUPO-INDEX()
-    ->name('AdminPracticas.indexGrupo');  
+    ->name('AdminPracticas.indexGrupo');
 
 
 //------------------------FER TERMINO------------------------------------
@@ -839,7 +842,7 @@ Route::get('/RegisterFormRoles', function (){
 Route::get('/EditarAdminForm/{id}', [App\Http\Controllers\AdminMasterIndexController::class, 'edit'])->name('home');
 Route::put('/EditarAdminForm2/{id}', [App\Http\Controllers\AdminMasterIndexController::class, 'update'])->name('EditarAlumnoController.update');
 
-Route::post('/registroBecaB/(id)', [App\Http\Controllers\solicitarBeca::class, 'store'])->name('registroBecaB.store'); 
+Route::post('/registroBecaB/(id)', [App\Http\Controllers\solicitarBeca::class, 'store'])->name('registroBecaB.store');
 
 
 //-----------------------SANTOS TERMINO----------------------------------
@@ -847,9 +850,9 @@ Route::post('/registroBecaB/(id)', [App\Http\Controllers\solicitarBeca::class, '
 
 
 
-/*---------------------------------------------------------------------------------------- 
+/*----------------------------------------------------------------------------------------
 ---------------------------------( RUTAS DOCENTE PRACTICAS ESCOLARES )--------------------
-----------------------------------------------------------------------------------------*/   
+----------------------------------------------------------------------------------------*/
 
 
 /*---------------------------------------------RUTAS EMPRESAS----------------------------------------------------------*/
@@ -858,10 +861,10 @@ Route::get('/VisitasEscolares/Empresas/Lista', 'VisitaController@mostrarEmpresas
     ->name('docente.mostrarEmpresas');
 
 Route::get('VisitasEscolares/Empresas/Registrar', 'VisitaController@registrarEmpresa') //metodo Empresas-create()
-    ->name('docente.registrarEmpresa'); 
+    ->name('docente.registrarEmpresa');
 
 Route::post('VisitasEscolares/Empresas/Guardar', 'VisitaController@guardarEmpresa')    //Método Empresas-store()
-    ->name('docente.guardarEmpresa'); 
+    ->name('docente.guardarEmpresa');
 
   /*---------------------------------------------RUTAS SOLICITUDES---------------------------------------------------------*/
 
@@ -875,32 +878,32 @@ Route::post('/VisitasEscolares/Solicitudes/Guardar', 'VisitaController@guardarSo
     ->name('docente.guardarSolicitud');
 
 Route::get('/VisitasEscolares/Solicitudes/Ver/{visita}','VisitaController@verSolicitud')    //Método Visitas-show()
-    ->name('docente.verSolicitud');   
+    ->name('docente.verSolicitud');
 
 Route::get('/VisitasEscolares/Solicitudes/ModificarEstado/{visita}','VisitaController@modificarEstadoSolcitud')
     ->name('docente.ModificarEstado');
 
-   
+
 /*---------------------------------------------RUTAS DOCUMENTOS---------------------------------------------------------*/
-    
+
 Route::get('/VisitasEscolares/DocumentosSolicitud/{visita}', 'VisitaController@indexDocumentosSolicitud') //Método Documento_Visita-Create()
     ->name('docente.indexDocumentosSolicitud');
 
 Route::post('/VisitasEscolares/DocumentosSolicitud/Guardar', 'VisitaController@guardarDocumentosSolicitud') //Método Documento_Visita-store()
-    ->name('docente.guardarDocumentosSolicitud');   
+    ->name('docente.guardarDocumentosSolicitud');
 
 Route::get('/VisitasEscolares/DocumentosSolicitud/Editar/{visita_documento}', 'VisitaController@editarDocumentosSolicitud') //Método Documento_Visita-EDIT()
     ->name('docente.editarDocumentosSolicitud');
 
 Route::put('/VisitasEscolares/DocumentosSolicitud/Actualizar/{visita_documento}', 'VisitaController@actualizarDocumentosSolicitud') //Método Documento_Visita-UPDATE()
-    ->name('docente.actualizarDocumentosSolicitud');      
+    ->name('docente.actualizarDocumentosSolicitud');
 
 /*---------------------------------------------RUTAS VISITAS---------------------------------------------------------*/
 
 
 
  /*---------------------------------------------RUTAS GRUPOS----------------------------------------------------------*/
-   
+
 Route::get('/VisitasEscolares/GrupoVisita/Lista/{visita}', 'VisitaController@mostrarGrupos') //Método GrupoVisita-Index()
     ->name('docente.mostrarGrupos');
 
@@ -908,7 +911,7 @@ Route::get('/VisitasEscolres/GrupoVisita/{grupo}/{visita}', 'VisitaController@cr
     ->name('docente.crearGrupoVisita');
 
 Route::post('VisitasEscolares/GrupoVisita/Guardar', 'VisitaController@guardarGrupoVisita')    //Método GrupoVisita-store()
-    ->name('docente.guardarGrupoVisita');   
+    ->name('docente.guardarGrupoVisita');
 
 Route::delete('VisitasEscolares/GrupoVisita/Eliminar/{grupoVisita}', 'VisitaController@eliminarGrupoVisita') //Método GrupoVisita-Destroy()
     ->name('docente.eliminarGrupoVisita');
@@ -917,7 +920,7 @@ Route::delete('VisitasEscolares/GrupoVisita/Eliminar/{grupoVisita}', 'VisitaCont
 /*---------------------------------------------RUTAS OTROS----------------------------------------------------------*/
 
 Route::get('/VisitasEscolares/Pagina/Inicio', 'VisitaController@inicio')
-    ->name('docente.inicio'); 
+    ->name('docente.inicio');
 
 Route::get('/VisitasEscolares/Pagina/DatosDocente', 'VisitaController@mostrarDatosDocente')
     ->name('docente.mostrarDatosDocente');
