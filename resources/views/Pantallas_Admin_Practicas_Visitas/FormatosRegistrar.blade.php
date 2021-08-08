@@ -1,6 +1,7 @@
 
 @extends('Pantallas_Admin_Practicas_Visitas.navbarAdminPracticas')
 
+@section('title', 'Subir Formato de Visita')
 
 @section('content')
 

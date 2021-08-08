@@ -1,5 +1,7 @@
 @extends('Pantallas_Admin_Practicas_Visitas.navbarAdminPracticas')
 
+@section('title', 'Formatos de Ejemplo')
+
 @section('content')
 
 <section class="section-main">

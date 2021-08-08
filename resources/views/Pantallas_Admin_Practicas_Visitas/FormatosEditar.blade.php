@@ -1,5 +1,7 @@
 @extends('Pantallas_Admin_Practicas_Visitas.navbarAdminPracticas')
 
+@section('title', 'Editar Formato')
+
 
 @section('content')
 
@@ -41,7 +43,7 @@
         
             <div class="d-flex justify-content-end"> 
                 <a role="button" class="btn btn-danger text-end mx-2" href="{{ URL::previous()}}">Cancelar</a>
-                <button type="submit" class="btn btn-light" >Actualizar Documento </button>
+                <button type="submit" class="btn btn-light" >Actualizar Formato </button>
             </div>
             @csrf
         </form>

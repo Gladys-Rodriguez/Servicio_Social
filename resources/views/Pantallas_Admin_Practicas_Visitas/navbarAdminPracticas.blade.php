@@ -54,7 +54,7 @@
                       <a href="#" class="nav__link dropdown__link" id="Menu_Administracion">Administración<i class='bx bx-chevron-down dropdown__icon'></i></a>
                       <ul class="dropdown__menu">
                           <li class="dropdown__item"><a href="{{ route('AdminPracticas.registrarDocente') }}" class="nav__link" id="Docente_Registrar">Registrar Docente</a></li>
-                          <li class="dropdown__item"><a href="#" class="nav__link" id="Docente_Ver">Ver Docentes</a></li>
+                          <li class="dropdown__item"><a href=" {{ route('AdminPracticas.indexDocente') }} " class="nav__link" id="Docente_Ver">Ver Docentes</a></li>
                           <li class="dropdown-divider"></li>
                           <li class="dropdown__item"><a href=" {{ route('AdminPracticas.registrarCarrera') }} " class="nav__link" id="Carrera_Registrar">Registrar Carrera</a></li>
                           <li class="dropdown__item"><a href=" {{ route('AdminPracticas.indexCarrera') }} " class="nav__link" id="Carrera_Ver">Ver Carreras</a></li>
@@ -67,12 +67,12 @@
                     <li class="nav__item dropdown">
                       <a href="#" class="nav__link dropdown__link" id="menu_visitas">Solicitudes<i class='bx bx-chevron-down dropdown__icon'></i></a>
                       <ul class="dropdown__menu">
-                          <li class="dropdown__item"><a href="{{url('/Solicitudes_Practicas_Visitas')}}" class="nav__link" id="">Revision de Solicitudes</a></li>
-                          <li class="dropdown__item"><a href="{{ route('AdminPracticas.solicitudesCorregidasIndex') }}" class="nav__link" id="">Solicitudes mandadas a Corregir</a></li>
+                          <li class="dropdown__item"><a href="{{url('/Solicitudes_Practicas_Visitas')}}" class="nav__link" id="Solicitud_Revisar">Revision de Solicitudes</a></li>
+                          <li class="dropdown__item"><a href="{{ route('AdminPracticas.solicitudesCorregidasIndex') }}" class="nav__link" id="Solicitud_Correccion">Solicitudes mandadas a Corregir</a></li>
                           <li class="dropdown-divider"></li>
-                          <li class="dropdown__item"><a href="{{ route('AdminPracticas.solicitudesRechazadasIndex') }}" class="nav__link" id="">Visitas Rechazadas</a></li>
-                          <li class="dropdown__item"><a href="{{url('/AceptadasV')}}" class="nav__link" id="">Visitas Aceptadas</a></li>
-                          <li class="dropdown__item"><a href="{{url('/AceptadasV')}}" class="nav__link" id="">Visitas Finalizadas</a></li>
+                          <li class="dropdown__item"><a href="{{ route('AdminPracticas.solicitudesRechazadasIndex') }}" class="nav__link" id="Solicitud_Rechazada">Visitas Rechazadas</a></li>
+                          <li class="dropdown__item"><a href="{{ route('AdminPracticas.solicitudesAceptadasIndex') }}" class="nav__link" id="Solicitud_Aceptada">Visitas Aceptadas</a></li>
+                          <li class="dropdown__item"><a href="{{ route('AdminPracticas.solicitudesFinalizadasIndex') }}" class="nav__link" id="Solicitud_Finalizada">Visitas Finalizadas</a></li>
                       </ul>
                     </li>
 

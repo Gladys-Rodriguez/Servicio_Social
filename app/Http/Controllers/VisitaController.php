@@ -23,7 +23,11 @@ class VisitaController extends Controller
         $this->middleware('auth');
         $this->middleware('verified');
         $this->middleware('docente',['only'=> ['index']]);
+
+
     }
+
+    
 
 /*---------------------------------------------------------------------------------------- 
 --------------------------------( MÉTODOS EMPRESA )---------------------------------------

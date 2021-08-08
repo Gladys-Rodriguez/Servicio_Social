@@ -1,7 +1,6 @@
 @extends('Pantallas_Admin_Practicas_Visitas.navbarAdminPracticas')
 
-@section('css')
-@endsection
+@section('title', 'Editar Documento Requerido')
 
 @section('content')
 

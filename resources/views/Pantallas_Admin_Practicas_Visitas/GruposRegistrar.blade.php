@@ -1,6 +1,8 @@
 
 @extends('Pantallas_Admin_Practicas_Visitas.navbarAdminPracticas')
 
+@section('title', 'Registrar Grupo')
+
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantalla_Docente_PracticasVisitas/estilosVisitasEscolares.css')}}"/>
 @endsection
@@ -26,6 +28,7 @@
                     <option value="{{ $id }}"> {{ $display }}</option>
                 @endforeach
             </select>
+            <br />
             
             <label for="estado"class="form-label" >Estado: </label>
             <select name="estado" id="estado"class="form-select" >
@@ -35,7 +38,7 @@
             <br />
         
             <div class="d-flex justify-content-end"> 
-                <button type="submit" class="btn btn-light" >Añadir Carrera</button>
+                <button type="submit" class="btn btn-light" >Añadir Grupo</button>
             </div>
             @csrf
         </form>

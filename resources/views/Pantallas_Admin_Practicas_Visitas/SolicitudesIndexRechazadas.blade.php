@@ -1,5 +1,7 @@
 @extends('Pantallas_Admin_Practicas_Visitas.navbarAdminPracticas')
 
+@section('title', 'Solicitudes Rechazadas')
+
 @section('content')
 <section class="section-main">
 	<h1>VISITAS RECHAZADAS</h1>
@@ -12,4 +14,17 @@
         @include('Pantallas_Admin_Practicas_Visitas.SolicitudesIndexTabla')
     </div>
 </div>
+@endsection
+
+@section('script')
+  <script>
+    var activos = document.getElementsByClassName("active");
+    for (var i = 0; i<activos.length; i++) {
+        activos[i].classList.remove("active");
+    }
+    var activo = document.getElementById("menu_visitas");
+    activo.classList.add("active");
+    activo = document.getElementById("Solicitud_Rechazada");
+    activo.classList.add("active");
+  </script>
 @endsection

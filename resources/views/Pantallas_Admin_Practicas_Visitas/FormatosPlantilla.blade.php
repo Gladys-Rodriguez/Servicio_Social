@@ -1,8 +1,6 @@
 @extends('Pantallas_Admin_Practicas_Visitas.navbarAdminPracticas')
 
-@section('css')
-<link rel="stylesheet" href="{{asset('css/Pantalla_Docente_PracticasVisitas/estilosVisitasEscolares.css')}}"/>
-@endsection
+@section('title', 'Formatos de Plantilla')
 
 @section('content')
 

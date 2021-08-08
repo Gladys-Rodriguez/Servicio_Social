@@ -1,5 +1,7 @@
 @extends('Pantallas_Admin_Practicas_Visitas.navbar_rechazadasV')
 
+@section('title','Visitas Rechazadas')
+
 @section('css')
 <link rel="stylesheet" href="{{asset('css/Pantallas_Admin_PracticasVisitas/estilosSolicitudes.css')}}">
 @endsection

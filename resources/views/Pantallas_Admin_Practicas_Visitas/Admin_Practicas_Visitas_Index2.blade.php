@@ -9,7 +9,7 @@
 @section('content')
 <section class="section-main">
   <h1>ADMINISTRACIÓN DE PRÁCTICAS Y VISITAS
-  <br> Usuario con matricula: 
+  <br> Usuario con Núm de Empleado: {{ Auth::user()->id}}
   </h1>
 </section>
 
@@ -23,18 +23,10 @@
     <div class="slider">
       <div class="slides">
         <!--radio buttons start-->
-        <input type="radio" name="radio-btn" id="radio1">
-        <input type="radio" name="radio-btn" id="radio2">
-        <input type="radio" name="radio-btn" id="radio3">
-        <input type="radio" name="radio-btn" id="radio4">
+
         <!--radio buttons end-->
         <!--slide images start-->
         <div class="slide first">
-        <img src="{{ asset('img/c_visitas/visita1.jpg')}}">
-        </div>
-        <div class="slide">
-        <img src="{{ asset('img/c_visitas/visita5.jpg')}}">
-        </div>
         <div class="slide">
         <img src="{{ asset('img/c_visitas/visita4.jpg')}}">
         </div>
@@ -51,9 +43,7 @@
       </div>
       <!--manual navigation start-->
       <div class="navigation-manual">
-        <label for="radio1" class="manual-btn"></label>
-        <label for="radio2" class="manual-btn"></label>
-        <label for="radio3" class="manual-btn"></label>
+
 
       </div>
       <!--manual navigation end-->

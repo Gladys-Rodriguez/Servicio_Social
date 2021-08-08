@@ -1,5 +1,7 @@
 @extends('Pantallas_Admin_Practicas_Visitas.navbarAdminPracticas')
 
+@section('title', 'Registrar Documento Requerido')
+
 @section('css')
 @endsection
 
