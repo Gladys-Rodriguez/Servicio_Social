@@ -6,6 +6,13 @@ use Illuminate\Http\Request;
 
 class MiBecaDatosController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('verified');
+        $this->middleware('alumno',['only'=> ['index']]);
+    }
+    
     public function index(){
         $datos = \DB::table('alumnos')
         ->join('direccions','alumnos.id_direccions','=','direccions.id_direccions')

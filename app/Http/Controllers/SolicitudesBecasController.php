@@ -9,6 +9,14 @@ use App\Models\solicitud_becas;
 
 class SolicitudesBecasController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('verified');
+        $this->middleware('becas',['only'=> ['index']]);
+    }
+
+
     public function index(){
         $datos = \DB::table('solicitud_becas')
         ->join('alumnos','solicitud_becas.id_alumnos','=','alumnos.id_alumnos')

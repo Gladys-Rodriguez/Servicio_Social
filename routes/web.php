@@ -419,6 +419,7 @@ Route::put('/AdminPracticas/Solicitud/Actualizar/{visita}', 'AdminPracSolicitude
     ->name('AdminPracticas.actualizarSolicitud');  
 
 //------------------------RUTAS DOCENTE -----------------------------------   
+Route::middleware(['auth', 'practicas'])->group(function () {
 
 Route::get('/AdminPracticas/Docente/Registrar','AdminPracSolicitudesController@registrarDocente') //Método DOCENTE-CREATE()
     ->name('AdminPracticas.registrarDocente');
@@ -434,6 +435,8 @@ Route::get('/AdminPracticas/Docente/Editar/{docente}', 'AdminPracSolicitudesCont
 
 Route::put('/AdminPracticas/Docente/Actualizar/{docente}', 'AdminPracSolicitudesController@actualizarDocente') //Método DOCENTE-UPDATE()
     ->name('AdminPracticas.actualizarDocente');  
+
+});
 
 //------------------------RUTAS TIPO_DOCUMENTO-----------------------------------
 
@@ -630,7 +633,7 @@ Route::get('/Registro_exitosoServicio', function (){
 //Ruta para el registro de imagenes del home
 Route::get('/RegisterBannerInicio', function (){
     return view('Pantallas_Principales.RegisterBannerInicio');
-}) -> name('RegisterBannerInicio');
+}) -> name('RegisterBannerInicio')->middleware(['auth']);
 
 //Ruta para recibir los datos que enviamos para el registro de imagenes de servicio
 Route::resource('Inicio','registro');
@@ -638,9 +641,13 @@ Route::post('/registrosImagenesI/(id)', [App\Http\Controllers\RegistroBannerInic
 
 
 //Ruta para el registro de imagenes de servicio
-Route::get('/RegisterBannerServicio', function (){
-    return view('Pantallas_Principales.RegisterBannerServicio');
-}) -> name('RegisterBannerServicio');
+Route::middleware(['auth', 'serviciosocial'])->group(function () {
+
+    Route::get('/RegisterBannerServicio', function (){
+        return view('Pantallas_Principales.RegisterBannerServicio');
+    }) -> name('RegisterBannerServicio');
+
+});
 
 //Ruta para recibir los datos que enviamos para el registro de imagenes de servicio
 Route::resource('Servicio','registro');

@@ -8,6 +8,13 @@ use App\Models\User;
 
 class ConsultaAdminSerController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('verified');
+        $this->middleware('adminmaster',['only'=> ['index']]);
+    }
+    
     public function index(){
         $datos = \DB::table('administradors')
         ->join('datos','administradors.id_datos','=','datos.id_datos')
