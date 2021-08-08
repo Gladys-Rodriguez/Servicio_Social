@@ -24,7 +24,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: blue 2px solid;
+  /*border: blue 2px solid;*/
   margin: 5px auto;
 }
 

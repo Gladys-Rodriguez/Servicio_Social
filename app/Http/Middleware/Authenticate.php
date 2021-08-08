@@ -6,14 +6,7 @@ use Illuminate\Auth\Middleware\Authenticate as Middleware;
 
 class Authenticate extends Middleware
 {
-    /**
-     * Get the path the user should be redirected to when they are not authenticated.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return string|null
-     */
-
-    /* public function login(Request $request)
+     /* public function login(Request $request)
     {
         $credentials = array('email' => $request->email, 'password' => $request->password, "estado" => 1);
         if (Auth::attempt($credentials, false)) {
@@ -25,18 +18,11 @@ class Authenticate extends Middleware
         }
     }*/
 
-
-
-
-
     public function redirectTo($request)
     {
         if (! $request->expectsJson()) {
             return route('login');
         }
     }
-
-
-
 
 }

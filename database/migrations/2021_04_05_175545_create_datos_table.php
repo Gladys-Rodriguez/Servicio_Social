@@ -6,11 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateDatosTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('datos', function (Blueprint $table) {
@@ -20,19 +16,10 @@ class CreateDatosTable extends Migration
             $table->string('ap_materno', 30)->notnull();
             $table->string('telefono');
             $table->string('celular');
-
             $table->timestamps();
-
-
-
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('datos');
