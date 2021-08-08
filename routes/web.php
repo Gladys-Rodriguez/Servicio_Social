@@ -102,15 +102,20 @@ Route::get('/LoginPruebaGla', function (){
 
 /*Route::get('/', [App\Http\Controllers\AlumnoController::class, 'muestra']);*/
 
+//No se ocupa
+Route::middleware(['auth', 'serviciosocial'])->group(function(){
 //Ruta Registro Alumno
 Route::get('/RegistroAlumno', function (){
     return view('Pantallas_Alumno_Servicio.RegistroAlumno');
 }) -> name('RegistroAlumno');
+});
 
+//No se ocupa
 Route::get('/FormRegistro', function (){
     return view('Pantallas_Alumno_Servicio.FormRegistro');
 }) -> name('FormRegistro');
 
+//Ya tiene reestrincion
 Route::get('/NuevoRegistro', function (){
     return view('Pantallas_Alumno_Servicio.Registros.NuevoRegistro');
 }) -> name('Nuevo Registro');
@@ -120,9 +125,15 @@ Route::get('/NuevoRegistro', function (){
 
 //Ruta para obtener los datos desde el controlador
 
+//No se ocupa
 Route::get('RegistroAlumno', [App\Http\Controllers\AlumnosController::class, 'index'])->name('RegistroAlumno.index');
+
+//Ya tiene reestrinccion
 Route::get('NuevoRegistro',[App\Http\Controllers\ServiciosController::class, 'index'])->name('NuevoRegistro.index');
+
+//No se ocupa
 Route::post('RegistroAlumno', [App\Http\Controllers\AlumnosController::class, 'store'])->name('RegistroAlumno.store');
+//Ya tiene reestrinccion
 Route::post('NuevoRegistro', [App\Http\Controllers\ServiciosController::class, 'store'])->name('NuevoRegistro.store');
 //Auth::routes();
 //Ruta de controlador para guardar datos de un formulario
@@ -130,6 +141,7 @@ Route::post('NuevoRegistro', [App\Http\Controllers\ServiciosController::class, '
 Route::resource('direcciones', "DireccionsController");
 Route::resource('alumnos', "AlumnosController");
 
+//Ya tiene reestrinccion
 //Ruta oara pantalla Index Alumno
 Route::get('/Index_Alumno', function (){
     return view('Pantallas_Alumno_Servicio.Index_Alumno');
