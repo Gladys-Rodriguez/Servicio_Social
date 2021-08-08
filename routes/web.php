@@ -871,7 +871,15 @@ Route::put('/EditarAdminForm2/{id}', [App\Http\Controllers\AdminMasterIndexContr
 
 Route::post('/registroBecaB/(id)', [App\Http\Controllers\solicitarBeca::class, 'store'])->name('registroBecaB.store');
 
+Route::get('/RegistrarDoc','RegistrarDocController@index');
 
+Route::get('/EditarDoc/{id}', [App\Http\Controllers\MiBecaDatosController::class, 'edit'])->name('home');
+
+Route::delete('/BorraDocB/{id}', [App\Http\Controllers\MiBecaDatosController::class, 'destroy'])->name('pruebaEditarForm3.update');
+Route::put('/EditarDoc1/{id}', [App\Http\Controllers\MiBecaDatosController::class, 'update'])->name('EditarMiBecaController.update');
+
+Route::post('/RegistrarDoc/Documentos/Guardar', 'RegistrarDocController@guardarDoc') //Método Visitas-store()
+    ->name('documento.guardarDoc');
 //-----------------------SANTOS TERMINO----------------------------------
 //Auth::routes();
 
