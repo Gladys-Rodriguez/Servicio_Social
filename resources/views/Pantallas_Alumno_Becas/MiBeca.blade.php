@@ -41,8 +41,9 @@
             <li><a href="#tab1"><span class="fas fa-user"></span><span class="tab-text">Personales</span></a></li>
             <li><a href="#tab2"><span class="fas fa-address-book"></span><span class="tab-text">Dirección</span></a></li>
             <li><a href="#tab3"><span class="fas fa-money-check"></span><span class="tab-text">Beca</span ></a></li>
-            <li><a href="#tab4"><span class="fas fa-file-upload"></span><span class="tab-text">Solicitud</span ></a></li>
-        </ul>
+            <li><a href="#tab4"><span class="fas fa-file-upload"></span><span class="tab-text">Documentos</span ></a></li>
+               
+          </ul>
     <div class="secciones">
            <article id="tab1">
            @foreach ($datos as $dato)
@@ -69,7 +70,7 @@
            @endforeach
            
            <article id="tab3">
-           @foreach($sol as $soli)
+           @forelse($sol as $soli)
            @if($soli->validacion == 0)
            <p>Solicitud en revisión <br>
            </p>   
@@ -83,15 +84,13 @@
            @else
            <p>Te invitamos a ver otras opciones</p>
            @endif
-           @endforeach
+           
+
            </article> 
            <article id="tab4">  
-                <p>Subir documentos</p>
-           @foreach($sol as $soli)
-                <table class="table">
-					<caption>DOCUMENTOS PARA APROBACIÓN</caption>
+           <table class="table">
+					<caption>DOCUMENTOS ADJUNTADOS</caption>
 					<thead>
-                         @if($soli->validacion == 1) 
 							<tr>    
 									<th>Documento</th>
 									<th>Estado</th>
@@ -102,24 +101,32 @@
 							</tr>
 					</thead>
 					<tbody>
+                         @foreach($doc as $docu)
                               <tr>
-                                   <td data-label="Documento">{{$soli->nombre_doc}}</td>
-                                   <td data-label="Estado">@if($soli->estado==1) Aceptado @elseif($soli->estado==2) Rechazado @else Sin validar @endif</td>
-                                   <td data-label="Observaciones">{{$soli->observaciones}}</td>
-                                   <td data-label=""><a href=" @php echo \Illuminate\Support\Facades\Storage::url($soli->ruta) @endphp"
-                                    class="boton_chido" target="_blank">VER</a></td>
-                                   <td data-label="">Editar</td>
-                                   <td data-label="">Eliminar</td>
-                              </tr>	
-                            </tbody>
-                    </table>
-                @elseif($soli->validacion == 0)
-                <p>Solicitud en revisión</p>
-                @else  
+                                   
+                                   <td data-label="Documento">{{$docu->nombre_doc}}</td>
+                                   <td data-label="Estado">@if($docu->estado==1) Aceptado @elseif($docu->estado==2) Rechazado @else Sin validar @endif</td>
+                                   <td data-label="Observaciones">{{$docu->observaciones}}</td>
+                                   <td data-label=""><a href=" @php echo \Illuminate\Support\Facades\Storage::url($docu->ruta) @endphp"
+                                    class="boton_personalizado1" target="_blank">VER</a></td>
+                                    <td><a class="boton_personalizado" href="/EditarDoc/{{$docu->id}}">Editar</a></td>
+                                   <td><form action="/BorraDocB/{{$docu->id}}" method="POST" enctype="multipart/form-data">
+          			               @csrf
+         			               <input type="hidden" name="_method" value="DELETE">
+          			          <button type="submit" class="boton_personalizado2">Eliminar</button>
+    				               </form></td> 
+
+                              </tr>
+                              @endforeach
+                              </tbody>
+                    </table>  <br>
+                             	
+                              <a href="{{ url('/RegistrarDoc')}}" class="new1">Agregar Nuevo Documento->></a>
+                              @empty
                 <h1>Selecciona la beca para la que quieras postularte</h1> 
                 <form action="{{route('registroBecaB.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
-               <input type="hidden" name="id_alumnos" value="{{$soli->id_alumnos}}">
+               <input type="hidden" name="id_alumnos" value="{{$dato->id_alumnos}}">
                <input type="hidden" name="validacion" value="0">
                 <select name="id_expediente_becas" class="form-select">
                      <option  Selected value="1">Institucional</option>
@@ -130,9 +137,8 @@
                 </select>
                 <button type="submit">Hacer Solicitud</button>
 </form>
-@endif
-@endforeach
-           </article> 
+                        
         </div>  
     </div>
+    @endforelse
 @endsection
