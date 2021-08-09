@@ -1,10 +1,4 @@
-body {
-    font-size: 20px;
-    padding: 0px;
-    margin: 0px;
-    font-family: "Combo", cursive;
-    background-color: #f8f5f1;
-}
+
 .mtop16 {
     margin-top: 16px;
 }
@@ -39,10 +33,7 @@ ul {
     margin: 0px;
 }
 
-html {
-    padding: 0px;
-    margin: 0px;
-}
+
 
 
 
@@ -171,4 +162,8 @@ html {
 
 .dropdown .dropdown-toggle {
     background-color: #5aa897;
+}
+
+.page-header{
+    margin-top:1px;
 }

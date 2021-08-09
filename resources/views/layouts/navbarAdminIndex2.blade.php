@@ -24,10 +24,7 @@
                     <img src="assets/img/perfil.jpg" alt="">
                 </div>
 
-                <div>
-                    <span class="nav__name"></span>
-                    <span class="nav__name"></span>
-                </div>
+
             </a>
 
             <div class="nav__menu">
