@@ -86,26 +86,8 @@
 
         <div class="d-flex justify-content-end mt-4">
             <a class="btn btn-light mx-3" href=" {{route('docente.index')}}  "> Regresar</a>
-            <a class="btn btn-light mx-3" data-bs-toggle="modal" data-bs-target="#confirmacionModal" > Finalizar Solcitud</a>
+            
         </div>
-          
-          <div id="confirmacionModal" class="modal fade text-dark" tabindex="-1">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Confirmación de Solicitud</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <p>¿Esta seguro de que de desea terminar su solicitud? </p>
-                    <p>No podra realizar más cambios después de Terminar</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Regresar</button>
-                  <a class="btn btn-danger mx-3" href="{{ route('docente.ModificarEstado', ['visita' => $visita->id])}}" > Finalizar Solcitud</a>
-                </div>
-              </div>
-            </div>
-          </div>  
+        
     </div>
 </div>

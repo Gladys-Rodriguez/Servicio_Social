@@ -229,6 +229,11 @@ class VisitaController extends Controller
 
         $visita = Visita::where('id', $request->input('visita_id'))->first();
 
+        if($visita_documento->tipo_documento->etapa == 'Visita'){
+            return redirect()->route('docente.indexDocumentosVisita', ['visita' => $visita->id])
+            ->with('visita',$visita);
+        }
+
         return redirect()->route('docente.indexDocumentosSolicitud', ['visita' => $visita->id])
             ->with('visita',$visita);
         
