@@ -148,7 +148,7 @@
                 <br />
 
                 <div class="d-flex justify-content-end"> 
-                    <a role="button" class="btn btn-danger text-end mx-2" href="#">Cancelar</a>
+                    
                     <button type="submit" class="btn btn-light" >Registrar Docente</button>
                 </div>
             </form>
