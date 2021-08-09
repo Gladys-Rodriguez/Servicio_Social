@@ -114,10 +114,15 @@
     </div>
 </main>
 
-                <video class="fm-video video-js vjs-16-9 vjs-big-play-centered" data-setup="{}" controls id="fm-video">
+                <!--<video class="fm-video video-js vjs-16-9 vjs-big-play-centered" data-setup="{}" controls id="fm-video">
                     <source src="/img/videos/video_tutorial.mp4" type="video/mp4">
-                </video>
+                </video>-->
+                <p align="center">
+                    @foreach($tuto as $file)
+                <iframe width="900" height="500" src="{{$file->url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen></iframe>
+                    @endforeach
 
+            </p>
 
 
 

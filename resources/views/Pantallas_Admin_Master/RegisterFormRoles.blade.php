@@ -3,7 +3,7 @@
 @section('title', 'Registro administradores')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Master/RegisterFormRoles.css')}}">
+<link rel="stylesheet" href="{{asset('css/Pantallas_Admin_Master/RegisterFormRole.css')}}">
 @endsection
 
 @section('content')
@@ -85,10 +85,7 @@
     </script>
 
 <br>
-<div class="container">
-<div class="informacion">
-      <div class="contact-info">
-        <h3 class="title">"Registro"</h3>
+
 
       <div class="errores">
        @if($errors->any())
@@ -99,57 +96,89 @@
         </ul>
         @endif
       </div>
+<section class="form-register">
+    <h4>Formulario Registro</h4>
+    <form action="{{route('registrosRoles.store')}}" method="POST">
+    @csrf
+    <label for="">Nombre:</label>
+    <input class="controls" type="text" name="nombre" id="nombres" placeholder="Ingrese su Nombre" required maxlength="30" onkeypress="return sololetrasespacio(event)">
+    <label for="">Apellido Paterno:</label>
+    <input class="controls" type="text" name="ap_paterno" id="apellidos" placeholder="Ingrese su Apellido Paterno" required maxlength="30" onkeypress="return sololetras(event)">
+    <label for="">Apellido Materno:</label>
+    <input class="controls" type="text" name="ap_materno" id="apellidom" placeholder="Ingrese su Apellido Materno" required maxlength="30" onkeypress="return sololetras(event)">
+    <label for="">Telefono:</label>
+    <input class="controls" type="text" name="telefono" id="telefono" placeholder="Ingrese su telefono" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
+    <label for="">Telefono:</label>
+    <input class="controls" type="text" name="celular" id="celular" placeholder="Ingrese su celular" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
+    <label for="">Correo Institucional:</label>
+    <input class="controls" type="email" required name="email" id="correo" placeholder="Ingrese su Correo">
+    <label for="">Contraseña:</label>
+    <input class="controls" type="password" required name="password" id="password" placeholder="Ingrese su Contraseña">
+    <label>Número de empleado</label>
+    <input class="controls" type="text" name="id" required id="empleado" placeholder="Ingrese Número de Empleado" required minlength="8" maxlength="8" onkeypress="return solonumeros(event)">
+    <label for="">Rol:</label>
+    <div type="text">
+             <select class="controls" name="id_rol">
+                 <option value="2"> Admin Servicio Social </option>
+                 <option value="3"> Admin Becas </option>
+                 <option value="4"> Admin Prácticas </option>
+                 <!--<option value="7"> Admin Master </option>-->
 
-      </div>
+             </select>
+                 @error('id_rol')
+                  <span class="invalid-feedback" role="alert">
 
-    <!--Formulario-->
+                  <strong>{{ $message }}</strong>
+                  </span>
+                 @enderror
+        </div>
+        <label for="">Estado</label>
+        <div class="col-md-6" type="text">
+             <select class="controls" name="estado">
+                 <option value="1"> Activo </option>
+                 <option value="0"> Inactivo </option>
+             </select>
+        </div>
+    <input class="botons" type="submit" value="Registrar">
+</form>
+  </section>
+
+    <!--Formulario
     <div class="login-box">
     <form action="{{route('registrosRoles.store')}}" method="POST">
           @csrf
-        <!-- Nombre INPUT -->
+        Nombre INPUT 
         <label>Nombre</label>
         <input type="text" name="nombre" placeholder="Ingresa el nombre" required maxlength="30" onkeypress="return sololetrasespacio(event)">
-        <!-- Apellido paterno INPUT -->
+        Apellido paterno INPUT 
         <label>Apellido paterno</label>
         <input type="text" name="ap_paterno" placeholder="Ingresa el apellido paterno" required maxlength="30" onkeypress="return sololetras(event)">
-        <!-- Apellido materno INPUT -->
+        Apellido materno INPUT
         <label>Apellido materno</label>
         <input type="text" name="ap_materno" placeholder="Ingresa el apellido materno" required maxlength="30" onkeypress="return sololetras(event)">
-         <!-- Telefono INPUT -->
+         Telefono INPUT
          <label>Telefono</label>
          <input type="text" name="telefono" placeholder="Ingresa el telefono" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
-         <!-- Celular INPUT -->
+          Celular INPUT
          <label>Celular</label>
          <input type="text" name="celular" placeholder="Ingresa el celular" required minlength="10" maxlength="10" onkeypress="return solonumeros(event)">
-         <!-- matricula INPUT -->
-        <label>Matricula</label>
+         <matricula INPUT 
+        <label>Número de empleado</label>
         <input type="text" name="id" placeholder="Ingresa valores númericos" required minlength="8" maxlength="8" onkeypress="return solonumeros(event)">
-        <!-- correo INPUT -->
+         correo INPUT -
         <label>Correo Institucional</label>
         <input type="email" name="email" placeholder="correo@hotmail.com" required ">
-        <!-- PASSWORD INPUT -->
+        <! PASSWORD INPUT --
         <label>Contraseña</label>
         <input type="password" name="password" placeholder="Contraseña" required>
-        <!--ROL INPUT-->
+        <!ROL INPUT--
         <label>Rol</label>
         <div class="col-md-6" type="text">
              <select name="id_rol">
                  <option value="2"> Admin Servicio Social </option>
                  <option value="3"> Admin Becas </option>
                  <option value="4"> Admin Prácticas </option>
-<<<<<<< HEAD
-                 <option value="6"> Docente </option>
-<<<<<<< HEAD
-                 <option value="7"> Pruebas </option>
-                 <option value="8"> Superadmin </option>
-=======
-                <!-- <option value="7"> Pruebas </option>
-                 <option value="8"> Superadmin </option>-->
->>>>>>> 263d9101b66f2252fcd3d0c949c7a840c9ef818f
-=======
-                 <!--<option value="7"> Pruebas </option>-->
-                 <!--<option value="8"> Superadmin </option>-->
->>>>>>> 141f19bdc3a0419d3287e0e72776156d241598dd
+                 <option value="7"> Admin Master </option>
 
              </select>
                  @error('id_rol')
@@ -174,7 +203,7 @@
 
       </form>
 
-    </div>
+    </div>-->
 
 
      </div>

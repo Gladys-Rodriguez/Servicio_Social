@@ -18,7 +18,7 @@
                 @csrf
                 <hr class="mb-4">
                 <label for="nombre" class="form-label" >Nombre del Documento: </label>
-                <input type="text" class="form-control" id="nombre" name="nombre" value= {{old('nombre')}} />
+                <input type="text" class="form-control" id="nombre" name="nombre" value= "{{old('nombre')}}" />
                 @if ($errors->has('nombre'))
                     <div class="alert alert-warning p-2 mt-2" role="alert">
                         <i class="bi bi-exclamation-triangle"></i>
@@ -55,7 +55,7 @@
 
                 <input type="hidden" name="tramite" value="Visitas Escolares">
 
-                <div class="d-flex justify-content-end"> 
+                <div class="d-flex justify-content-end">
                     <a role="button" class="btn btn-danger text-end mx-2"  href=" {{route('AdminPracticas.indexTipoDocumento')}}">Cancelar</a>
                     <button type="submit" class="btn btn-light" >Registrar Documento</button>
                 </div>

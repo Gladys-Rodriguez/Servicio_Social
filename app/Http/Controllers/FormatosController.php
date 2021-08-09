@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 
 use App\Models\formatos;
+use App\Models\Tutotial;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Storage;
@@ -28,9 +29,10 @@ class FormatosController extends Controller
     {
         //
         $docs= formatos::get();
+        $tuto= Tutotial::get();
         //$files = reporte::where('user', Auth::id())->get();
         //var_dump($docs);
-        return view('Pantallas_Admin_Servicio.formatos', compact('docs'));
+        return view('Pantallas_Admin_Servicio.formatos', compact('docs','tuto'));
         //return redirect()->route('Subida_Formatos', [$docs]);
     }
 
@@ -38,9 +40,10 @@ class FormatosController extends Controller
     {
         //
         $docs= formatos::get();
+        $tuto= Tutotial::get();
         //$files = reporte::where('user', Auth::id())->get();
         //var_dump($docs);
-        return view('Pantallas_Alumno_Servicio.Index_AlumnoV2', compact('docs'));
+        return view('Pantallas_Alumno_Servicio.Index_AlumnoV2', compact('docs','tuto'));
         //return redirect()->route('Subida_Formatos', [$docs]);
     }
 

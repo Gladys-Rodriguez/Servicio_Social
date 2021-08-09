@@ -90,15 +90,102 @@
         </table>
       </div>
 
+     <h1>Subir Link para tutorial </h1>
+      <div class="table-responsive">
+        <table class="register">
+            <form method="POST" action="{{ route('UploadTuto.store') }}">
+                @csrf
+            <thead>
+                <tr>
+                    <th><h1><span class="material-icons">manage_search</span> URL TUTORIAL </h1></th>
+                        <td>
+                            <textarea rows="3" cols="1" class="formato" name="url"></textarea>
+                        </td>
+                </tr>
+                <tr>
+                    <th><h1><span class="material-icons">mode_edit_outline</span>Nombre Tutorial</h1></th>
+                        <td>
+                            <textarea rows="3" cols="1" class="formato" name="nombre_tuto"></textarea></td>
+
+                        </td>
+                </tr>
+                <tr>
+                    <th><h1><span class="material-icons">cloud_upload</span> Subir Tutorial </h1></th>
+                    <td>
+                        <button type="submit" class="btn btn1" name="cargar" id="btn_cargar" disabled>
+                        <span class="material-icons">file_upload</span>Cargar</button>
+                    </td>
+                </tr>
+
+
+            </thead>
+            </form>
+        </table>
+    </div>
+
+    <p name="" id="" cols="1" rows="3" class="p border rounded" >
+        Si desea actualizar la liga del video, por favor hágalo directamente en la tabla siguiente
+        sin subir otro video.
+    </p>
+
+    <form class="fechas" action="{{route('updateTuto.update')}}" method="POST">
+        @csrf
+        @method('PUT')
+
+    <div class="table-responsive">
+        <table class="registro">
+        <thead>
+          <tr>
+            <th><h1 class="h1"><span class="material-icons">description</span>Nombre Tutorial</h1></th>
+            <th><h1><span class="material-icons">drive_file_rename_outline</span> URL</h1></th>
+            <th><h1><span class="material-icons">preview</span> Editar</h1></th>
+          <!--  <th><h1><span class="material-icons">delete_forever</span>Eliminar</h1></th> -->
+          </tr>
+        </thead>
+        <tbody>
+          @foreach($tuto as $file)
+          <tr>
+            <td><input type="text" class="tutorialdoc"  name="nombre_tuto" value="{{ $file->nombre_tuto }}">
+                <input type="text"  onkeyup="comprobar()" class="tutorial"  name="estado" id="estado" value="{{ $file->estado }}" hidden>
+            </td>
+            <td class="text-uppercase">
+                <textarea name="" id="" cols="1" rows="2">Asegúrese que su link tenga el siguiente formato:https://www.youtube.com/embed/(código)
+                </textarea>
+
+                <input  class="tutorial" type="text"  name="url" value="{{ $file->url}}"></td>
+            <td >
+                <button type="submit" class="eliminar" id="actualizar">Actualizar </button>
+
+            </td>
+          <!--  <td></td> -->
+          </tr>
+          @endforeach
+        </tbody>
+        </table>
+      </div>
+    </form>
 
 </div>
 
 @endsection
 
 @section('script')
+
+<script>
+    comprobar();
+
+
+         function comprobar() {
+        $("#btn_cargar").attr("disabled",$("#estado").val()==='1');
+    }
+
+
+</script>
 <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"> </script>
 
 <script src="{{asset('js/Pantallas_Alumno_Servicio/docs.js')}}"></script>
 
 
 @endsection
+
+
