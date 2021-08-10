@@ -50,10 +50,13 @@
 
                     <li class="nav__item dropdown">
                         <a href="#" class="nav__link dropdown__link">Becas <i class='bx bx-chevron-down dropdown__icon'></i></a>
-                        <ul class="dropdown__menu">
-                            <li class="dropdown__item"><a href="#" class="nav__link">Convocatoria</a></li>
 
-                            <li class="dropdown__item"><a href="#" class="nav__link">Registro</a></li>
+
+                        <ul class="dropdown__menu">
+                        <li class="dropdown__item"><a href="{{ url('/MiBeca')}}" class="nav__link">Mi beca</a></li>
+                            <li class="dropdown__item"><a href="{{ url('/ConvocatoriaBecas')}}" class="nav__link">Convocatoria</a></li>
+
+                            <li class="dropdown__item"><a href="{{ url('/FormatosBeca')}}" class="nav__link">Formatos Beca</a></li>
                         </ul>
                     </li>
 
